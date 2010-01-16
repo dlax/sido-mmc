@@ -1,0 +1,1430 @@
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=latex 2009.7.14)  8 NOV 2009 18:45
+entering extended mode
+ %&-line parsing enabled.
+**MMC.tex
+(./MMC.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
+tin, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, r
+omanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turki
+sh, ukenglish, ukrainian, uppersorbian, welsh, loaded.
+(/opt/texlive/2008/texmf-dist/tex/latex/memoir/memoir.cls
+Document Class: memoir 2009/02/06 v1.6180339e configurable book, report, articl
+e document class
+\onelineskip=\skip41
+\lxvchars=\skip42
+\xlvchars=\skip43
+\@memcnta=\count79
+\c@@memmarkcntra=\count80
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode not detected.
+)
+Class memoir Info: An `ifetex' package is being emulated on input line 247.
+
+(/opt/texlive/2008/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/10 v1.1 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+\stockheight=\skip44
+\stockwidth=\skip45
+\trimtop=\skip46
+\trimedge=\skip47
+
+(/opt/texlive/2008/texmf-dist/tex/latex/memoir/mem11.clo
+File: mem11.clo 2008/01/30 v0.3 memoir class 11pt size option
+)
+\binding=\skip48
+\spinemargin=\skip49
+\foremargin=\skip50
+\uppermargin=\skip51
+\lowermargin=\skip52
+\headdrop=\skip53
+\normalrulethickness=\skip54
+\headwidth=\skip55
+\c@storedpagenumber=\count81
+\memPD=\dimen102
+\m@mabparskip=\skip56
+\thanksmarkwidth=\skip57
+\thanksmarksep=\skip58
+\droptitle=\skip59
+\c@book=\count82
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\beforechapskip=\skip60
+\midchapskip=\skip61
+\afterchapskip=\skip62
+\chapindent=\skip63
+\bottomsectionskip=\skip64
+\secindent=\skip65
+\beforesecskip=\skip66
+\aftersecskip=\skip67
+\subsecindent=\skip68
+\beforesubsecskip=\skip69
+\aftersubsecskip=\skip70
+\subsubsecindent=\skip71
+\beforesubsubsecskip=\skip72
+\aftersubsubsecskip=\skip73
+\paraindent=\skip74
+\beforeparaskip=\skip75
+\afterparaskip=\skip76
+\subparaindent=\skip77
+\beforesubparaskip=\skip78
+\aftersubparaskip=\skip79
+\pfbreakskip=\skip80
+\c@@ppsavesec=\count90
+\c@@ppsaveapp=\count91
+\ragrparindent=\dimen103
+\everylistparindent=\dimen104
+\parsepi=\skip81
+\topsepi=\skip82
+\itemsepi=\skip83
+\parsepii=\skip84
+\topsepii=\skip85
+\topsepiii=\skip86
+\itemsepii=\skip87
+\itemsepiii=\skip88
+\partopsepii=\skip89
+\partopsepiii=\skip90
+\m@msavetopsep=\skip91
+\m@msavepartopsep=\skip92
+\@enLab=\toks14
+\abstitleskip=\skip93
+\absleftindent=\skip94
+\abs@leftindent=\dimen105
+\absrightindent=\skip95
+\absparindent=\skip96
+\absparsep=\skip97
+\c@vslineno=\count92
+\c@poemline=\count93
+\c@modulo@vs=\count94
+\c@memfvsline=\count95
+\vleftskip=\skip98
+\vrightskip=\skip99
+\stanzaskip=\skip100
+\versewidth=\skip101
+\vgap=\skip102
+\vindent=\skip103
+\vleftmargin=\dimen106
+\c@verse=\count96
+\c@chrsinstr=\count97
+\beforepoemtitleskip=\skip104
+\afterpoemtitleskip=\skip105
+\c@poem=\count98
+\beforePoemTitleskip=\skip106
+\midPoemTitleskip=\skip107
+\afterPoemTitleskip=\skip108
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks15
+\extratabsurround=\skip109
+\backup@length=\skip110
+\TX@col@width=\dimen109
+\TX@old@table=\dimen110
+\TX@old@col=\dimen111
+\TX@target=\dimen112
+\TX@delta=\dimen113
+\TX@cols=\count99
+\TX@ftn=\toks16
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count100
+\@cmidlb=\count101
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count102
+\@lastruleclass=\count103
+\@thisrulewidth=\dimen126
+\ctableftskip=\skip111
+\ctabrightskip=\skip112
+\abovecolumnspenalty=\count104
+\@linestogo=\count105
+\@cellstogo=\count106
+\@cellsincolumn=\count107
+\crtok=\toks17
+\@mincolumnwidth=\dimen127
+\c@newflo@tctr=\count108
+\@contcwidth=\skip113
+\@contindw=\skip114
+\abovecaptionskip=\skip115
+\belowcaptionskip=\skip116
+\subfloattopskip=\skip117
+\subfloatcapskip=\skip118
+\subfloatcaptopadj=\skip119
+\subfloatbottomskip=\skip120
+\subfloatlabelskip=\skip121
+\subfloatcapmargin=\dimen128
+\c@@contsubnum=\count109
+\m@mscap@capbox=\box26
+\m@mscap@fbox=\box27
+\sidecapsep=\dimen129
+\sidecapwidth=\dimen130
+\m@m@tempdima=\dimen131
+\m@mscapraise=\dimen132
+\sidecapraise=\dimen133
+\m@mscapmainwidth=\dimen134
+\m@mscaplkern=\dimen135
+\beforeepigraphskip=\skip122
+\afterepigraphskip=\skip123
+\epigraphwidth=\skip124
+\epigraphrule=\skip125
+LaTeX Info: Redefining \em on input line 6881.
+LaTeX Info: Redefining \emph on input line 6889.
+\tocentryskip=\skip126
+\tocbaseline=\skip127
+\cftparskip=\skip128
+\cftbeforebookskip=\skip129
+\cftbookindent=\dimen136
+\cftbooknumwidth=\dimen137
+\cftbeforepartskip=\skip130
+\cftpartindent=\skip131
+\cftpartnumwidth=\skip132
+\cftbeforechapterskip=\skip133
+\cftchapterindent=\skip134
+\cftchapternumwidth=\skip135
+\cftbeforesectionskip=\skip136
+\cftsectionindent=\skip137
+\cftsectionnumwidth=\skip138
+\cftbeforesubsectionskip=\skip139
+\cftsubsectionindent=\skip140
+\cftsubsectionnumwidth=\skip141
+\cftbeforesubsubsectionskip=\skip142
+\cftsubsubsectionindent=\skip143
+\cftsubsubsectionnumwidth=\skip144
+\cftbeforeparagraphskip=\skip145
+\cftparagraphindent=\skip146
+\cftparagraphnumwidth=\skip147
+\cftbeforesubparagraphskip=\skip148
+\cftsubparagraphindent=\skip149
+\cftsubparagraphnumwidth=\skip150
+\prechapterprecisshift=\dimen138
+\c@maxsecnumdepth=\count110
+\bibindent=\dimen139
+\bibitemsep=\skip151
+\indexcolsep=\skip152
+\indexrule=\skip153
+\indexmarkstyle=\toks18
+\@indexbox=\insert233
+\glossarycolsep=\dimen140
+\glossaryrule=\dimen141
+\sideparvshift=\skip154
+\sideins=\insert232
+\sidebartopsep=\skip155
+\sidebarhsep=\skip156
+\sidebarvsep=\skip157
+\sidebarwidth=\skip158
+\footmarkwidth=\skip159
+\footmarksep=\skip160
+\footparindent=\skip161
+\footinsdim=\skip162
+\footinsv@r=\insert231
+\@mpfootinsv@r=\insert230
+\m@m@k=\count111
+\m@m@h=\dimen142
+\m@mipn@skip=\skip163
+\c@pagenote=\count112
+\every@verbatim=\toks19
+\afterevery@verbatim=\toks20
+\verbatim@line=\toks21
+\tab@position=\count113
+\verbatim@in@stream=\read1
+\verbatimindent=\skip164
+\verbatim@out=\write3
+\bvboxsep=\skip165
+\c@memfbvline=\count114
+\c@bvlinectr=\count115
+\bvnumlength=\skip166
+\fb@frw=\dimen143
+\fb@frh=\dimen144
+\FrameRule=\dimen145
+\FrameSep=\dimen146
+\c@cp@cntr=\count116
+LaTeX Info: Redefining \: on input line 10718.
+LaTeX Info: Redefining \! on input line 10720.
+\c@ism@mctr=\count117
+\c@xsm@mctr=\count118
+\c@csm@mctr=\count119
+\c@ksm@mctr=\count120
+\c@xksm@mctr=\count121
+\c@cksm@mctr=\count122
+\c@msm@mctr=\count123
+\c@xmsm@mctr=\count124
+\c@cmsm@mctr=\count125
+\c@bsm@mctr=\count126
+\c@workm@mctr=\count127
+\c@sheetsequence=\count128
+\c@lastsheet=\count129
+\c@lastpage=\count130
+\c@figure=\count131
+\c@lofdepth=\count132
+\cftbeforefigureskip=\skip167
+\cftfigureindent=\skip168
+\cftfigurenumwidth=\skip169
+\c@table=\count133
+\c@lotdepth=\count134
+\cftbeforetableskip=\skip170
+\cfttableindent=\skip171
+\cfttablenumwidth=\skip172
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package array [2008/07/23] emulated by memoir.
+Package booktabs [2008/07/23] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package dcolumn [2008/07/23] emulated by memoir.
+Package delarray [2008/07/23] emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package ifetex [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package mparhack [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package tabularx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/memoir/mempatch.sty
+File: mempatch.sty 2008/07/23 v6.0 Patches for memoir class v1.6180339
+))
+(/opt/texlive/2008/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2004/10/17 UCS: Unicode input support
+
+(/opt/texlive/2008/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2004/10/17 UCS: Unicode global data
+)
+\uc@secondtry=\count135
+\uc@combtoks=\toks22
+\uc@combtoksb=\toks23
+\uc@temptokena=\toks24
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
+
+(/opt/texlive/2008/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/opt/texlive/2008/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/opt/texlive/2008/texmf-dist/tex/generic/babel/frenchb.ldf
+Language: frenchb 2008/05/08 v2.2a French support from the babel system
+
+(/opt/texlive/2008/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count136
+\U@D=\dimen147
+)
+Package babel Info: Making : an active character on input line 119.
+Package babel Info: Making ; an active character on input line 120.
+Package babel Info: Making ! an active character on input line 121.
+Package babel Info: Making ? an active character on input line 122.
+\FB@Mht=\dimen148
+\std@mcc=\count137
+\dec@mcc=\count138
+\parindentFFN=\dimen149
+
+*************************************
+* Local config file frenchb.cfg used
+*
+(/opt/texlive/2008/texmf-dist/tex/generic/babel/frenchb.cfg)))
+(/opt/texlive/2008/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks27
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/opt/texlive/2008/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/opt/texlive/2008/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2007/01/14 v1.3 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 13.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 14.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 15.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 16.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 17.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 18.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 19.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 20.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 22.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 23.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 24.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 25.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 27.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 29.
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip173
+
+For additional information on amsmath, use the `?' option.
+(/opt/texlive/2008/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/opt/texlive/2008/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks28
+\ex@=\dimen150
+))
+(/opt/texlive/2008/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen151
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count139
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count140
+\leftroot@=\count141
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count142
+\DOTSCASE@=\count143
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count144
+\c@MaxMatrixCols=\count145
+\dotsspace@=\muskip10
+\c@parentequation=\count146
+\dspbrk@lvl=\count147
+\tag@help=\toks29
+\row@=\count148
+\column@=\count149
+\maxfields@=\count150
+\andhelp@=\toks30
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks31
+\multlinegap=\skip174
+\multlinetaggap=\skip175
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/jknapltx/mathbbol.sty
+Package: mathbbol 1995/01/01
+\symbbold=\mathgroup6
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks33
+\thm@bodyfont=\toks34
+\thm@headfont=\toks35
+\thm@notefont=\toks36
+\thm@headpunct=\toks37
+\thm@preskip=\skip176
+\thm@postskip=\skip177
+\thm@headsep=\skip178
+\dth@everypar=\toks38
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
+\pltopsep=\skip179
+\plpartopsep=\skip180
+\plitemsep=\skip181
+\plparsep=\skip182
+\pl@lab=\toks39
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/opt/texlive/2008/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count151
+\pfg@scount=\count152
+\pfg@temp=\write4
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/opt/texlive/2008/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/opt/texlive/2008/texmf-dist/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks/pstricks.tex
+`PSTricks' v1.27  <2009/01/25> (tvz)
+\pst@dima=\dimen161
+\pst@dimb=\dimen162
+\pst@dimc=\dimen163
+\pst@dimd=\dimen164
+\pst@dimg=\dimen165
+\pst@dimh=\dimen166
+\pst@hbox=\box30
+\pst@boxg=\box31
+\pst@cnta=\count153
+\pst@cntb=\count154
+\pst@cntc=\count155
+\pst@cntd=\count156
+\pst@cntg=\count157
+\pst@cnth=\count158
+\pst@toks=\toks40
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen167
+\psxunit=\dimen168
+\psyunit=\dimen169
+\pslinewidth=\dimen170
+\pst@customdefs=\toks41
+\pslinearc=\dimen171
+\everypsbox=\toks42
+\psframesep=\dimen172
+\pslabelsep=\dimen173
+\pst@shift=\dimen174
+\theoverlaybox=\box32
+)
+File: pstricks.tex 2009/01/25 v1.27 `PSTricks' (tvz,hv)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/opt/texlive/2008/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvips.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/opt/texlive/2008/texmf-dist/tex/latex/pstricks-add/pstricks-add.sty
+Package: pstricks-add 2009/03/17 v. 0.13 package wrapper for pstricks-add.tex (
+hv)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks/pst-plot.tex
+(/opt/texlive/2008/texmf-dist/tex/generic/multido/multido.tex
+ v1.41, 2004/05/18 <tvz>
+\multido@count=\count159
+\multidocount=\count160
+\multido@stuff=\toks43
+)  v1.03, 2008/11/24)
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks/pst-node.tex
+ v1.01, 2008/11/26
+\psrow=\count161
+\pscol=\count162
+\psmatrixcnt=\count163
+\psrowsep=\skip183
+\pscolsep=\skip184
+) (/opt/texlive/2008/texmf-dist/tex/generic/pst-3d/pst-3d.tex (/opt/texlive/200
+8/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks44
+\XKV@tempa@toks=\toks45
+\XKV@depth=\count164
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+)))
+`PST-3d' v1.00, 2005/09/03 (tvz))
+(/opt/texlive/2008/texmf-dist/tex/generic/pstricks-add/pst-fp.tex
+`pst-fp' v0.02, 2009/04/02 (hv)
+\pstFP@xs=\count165
+\pstFP@xia=\count166
+\pstFP@xib=\count167
+\pstFP@xfa=\count168
+\pstFP@xfb=\count169
+\pstFP@rega=\count170
+\pstFP@regb=\count171
+\pstFP@regs=\count172
+\pstFP@times=\count173
+) `pstricks-add' v3.31, 2009/04/29 (dr,hv)
+\pst@dimm=\dimen175
+\pst@dimn=\dimen176
+\pst@dimo=\dimen177
+\pst@dimp=\dimen178
+\pst@cntm=\count174
+\pst@cntn=\count175
+\pst@cnto=\count176
+\pst@cntp=\count177
+\@zero=\count178
+\pstRadUnit=\dimen179
+\pstRadUnitInv=\dimen180
+\pshooklength=\dimen181
+\pshookwidth=\dimen182
+\@digitcounter=\count179
+\psk@subticksize=\dimen183
+\pst@xticksizeA=\dimen184
+\pst@xticksizeB=\dimen185
+\pst@xticksizeC=\dimen186
+\pst@yticksizeA=\dimen187
+\pst@yticksizeB=\dimen188
+\pst@yticksizeC=\dimen189
+\psk@llx=\dimen190
+\psk@lly=\dimen191
+\psk@urx=\dimen192
+\psk@ury=\dimen193
+\pst@xunit=\dimen194
+\pst@yunit=\dimen195
+\linecnt=\count180
+\chart@ColorIndex=\dimen196
+\chart@ColorStep=\dimen197
+\pst@chartHeight=\dimen198
+\pst@chartStackDepth=\dimen199
+\pst@chartStackWidth=\dimen200
+\chart@Toggle=\count181
+)
+File: pstricks-add.tex 2009/04/29 v3.31 `PSTricks-add' (hv)
+)
+
+Class memoir Warning: You are using the caption package with the memoir 
+(memoir)              class. This may cause unexpected or inconsistent 
+(memoir)              results if you use any of memoir's captioning facilities.
+
+
+(/opt/texlive/2008/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2008/08/24 v3.1j Customizing captions (AR)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2008/08/24 v3.1j caption3 kernel (AR)
+\captionmargin=\dimen201
+\captionmargin@=\dimen202
+\captionwidth=\dimen203
+\caption@indent=\dimen204
+\caption@parindent=\dimen205
+\caption@hangindent=\dimen206
+)
+\c@ContinuedFloat=\count182
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count183
+\sf@farskip=\skip185
+\sf@captopadj=\dimen207
+\sf@capskip=\skip186
+\sf@nearskip=\skip187
+\c@subfigure=\count184
+\c@subfigure@save=\count185
+\c@subtable=\count186
+\c@subtable@save=\count187
+\sf@top=\skip188
+\sf@bottom=\skip189
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/05/01 v6.78r Hypertext links for LaTeX
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2008/09/08 v1.4 Code for color options of hyperref/bookmark (H
+O)
+
+(/opt/texlive/2008/texmf-dist/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2008/09/08 xcolor patch
+))
+\@linkdim=\dimen208
+\Hy@linkcounter=\count188
+\Hy@pagecounter=\count189
+
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/05/01 v6.78r Hyperref: PDFDocEncoding definition (HO)
+)
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/opt/texlive/2008/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/04/10 v3.1 Keyval support for LaTeX options (HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 2842.
+Package hyperref Info: Option `bookmarks' set `true' on input line 2842.
+Package hyperref Info: Hyper figures OFF on input line 2953.
+Package hyperref Info: Link nesting OFF on input line 2958.
+Package hyperref Info: Hyper index ON on input line 2961.
+Package hyperref Info: Plain pages OFF on input line 2968.
+Package hyperref Info: Backreferencing ON on input line 2971.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3163.
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2006/09/05 v1.28 Bibliographical back referencing
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3400.
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/04/10 v0.4 LuaTeX support for pdfTeX utility functions
+ (HO)
+Package pdftexcmds Info: LuaTeX not detected on input line 145.
+)))
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2007/09/29 v1.3 Key value parser with default handler suppor
+t (HO)
+)
+\Fld@menulength=\count190
+\Field@Width=\dimen209
+\Fld@charsize=\dimen210
+\Field@toks=\toks46
+Package hyperref Info: Hyper figures OFF on input line 4317.
+Package hyperref Info: Link nesting OFF on input line 4322.
+Package hyperref Info: Hyper index ON on input line 4325.
+Package hyperref Info: backreferencing ON on input line 4330.
+Package hyperref Info: Link coloring ON on input line 4335.
+Package hyperref Info: Link coloring with OCG OFF on input line 4342.
+Package hyperref Info: PDF/A mode OFF on input line 4347.
+
+(/opt/texlive/2008/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count191
+\c@Item=\count192
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/memoir/memhfixc.sty
+Package: memhfixc 2009/02/06 v1.12 nameref/hyperref package fixes for memoir cl
+ass
+\c@memhycontfloat=\count193
+)
+*hyperref using driver hdvips*
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2009/05/01 v6.78r Hyperref driver for dvips
+
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2009/05/01 v6.78r Hyperref definitions for pdfmark specials
+\pdf@docset=\toks47
+\pdf@box=\box33
+\pdf@toks=\toks48
+\pdf@defaulttoks=\toks49
+\Fld@listcount=\count194
+))
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 24.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen211
+\WF@size=\dimen212
+\c@WF@wrappedlines=\count195
+\WF@box=\box34
+\WF@everypar=\toks50
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
+\c@tracingmulticols=\count196
+\mult@box=\box35
+\multicol@leftmargin=\dimen213
+\c@unbalance=\count197
+\c@collectmore=\count198
+\doublecol@number=\count199
+\multicoltolerance=\count200
+\multicolpretolerance=\count201
+\full@width=\dimen214
+\page@free=\dimen215
+\premulticols=\dimen216
+\postmulticols=\dimen217
+\multicolsep=\skip190
+\multicolbaselineskip=\skip191
+\partial@page=\box36
+\last@line=\box37
+\mult@rightbox=\box38
+\mult@grightbox=\box39
+\mult@gfirstbox=\box40
+\mult@firstbox=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\c@columnbadness=\count202
+\c@finalcolumnbadness=\count203
+\last@try=\dimen218
+\multicolovershoot=\dimen219
+\multicolundershoot=\dimen220
+\mult@nat@firstbox=\box59
+\colbreak@box=\box60
+)
+
+******************************************************
+Stock height and width: 845.04684pt by 597.50787pt
+Top and edge trims: 0.0pt and 0.0pt
+Page height and width: 845.04684pt by 597.50787pt
+Text height and width: 636.60028pt by 448.0pt
+Spine and edge margins: 59.73816pt and 89.63971pt
+Upper and lower margins: 113.81102pt and 94.63554pt
+Headheight and headsep: 13.6pt and 27.20001pt
+Footskip: 27.20001pt
+Columnsep and columnseprule: 10.0pt and 0.0pt
+Marginparsep and marginparwidth: 17.0pt and 51.0pt
+Sidecapsep and sidecapwidth: 7.0pt and 101.0pt
+Sidebarhsep and sidebarwidth: 7.0pt and 101.0pt
+Sidebarvsep and sidebartopsep: 13.6pt and 0.0pt
+Sidebarheight: 594.32022pt
+******************************************************
+
+\c@thm=\count204
+\c@prop=\count205
+\c@lem=\count206
+(./MMC.aux (./Ch1.aux) (./Ch2.aux) (./Ch3.aux) (./AnnA.aux))
+\openout1 = `MMC.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 91.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+(/opt/texlive/2008/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
+)
+LaTeX Info: Redefining \degres on input line 91.
+LaTeX Info: Redefining \dots on input line 91.
+LaTeX Info: Redefining \up on input line 91.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 91.
+Package caption Info: Incompatible package detected (regarding \caption).
+(caption)             \caption = \long macro:->\donemaincaptiontrue \m@moldhypc
+aption .
+
+
+Package caption Warning: \caption will not be redefined since it's already
+(caption)                redefined by a document class or package which is
+(caption)                unknown to the caption package.
+See the caption package documentation for explanation.
+
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 91.
+(/opt/texlive/2008/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/opt/texlive/2008/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count207
+)
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+ (./MMC.out)
+(./MMC.out)
+\@outlinefile=\write5
+\openout5 = `MMC.out'.
+
+\AtBeginShipoutBox=\box61
+
+Redoing nameref's sectioning
+Redoing nameref's label
+(./MMC.toc
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
+ (/opt/texlive/2008/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+bbold on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/bbold/Ubbold.fd)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 2.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 3.
+) [1
+
+
+] [2
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 96.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 96.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\utf@viii@undeferr' on input line 96.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\endgroup' on input line 96.
+
+(/opt/texlive/2008/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+) [1
+
+] [2]
+\openout2 = `Ch1.aux'.
+
+ (./Ch1.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
+
+
+]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[4]
+File: ../images/T1_Ch01-0002.eps Graphic file (type eps)
+ <../images/T1_Ch01-0002.eps>
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 113.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 113.
+
+Overfull \hbox (10.74693pt too wide) detected at line 124
+[] []
+ []
+
+[5]
+File: ../images/T1_Ch01-0003.eps Graphic file (type eps)
+ <../images/T1_Ch01-0003.eps>
+File: ../images/T1_Ch01-0004.eps Graphic file (type eps)
+ <../images/T1_Ch01-0004.eps>
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[6]
+File: ../images/T1_Ch01-0005.eps Graphic file (type eps)
+ <../images/T1_Ch01-0005.eps>
+File: ../images/T1_Ch01-0006.eps Graphic file (type eps)
+ <../images/T1_Ch01-0006.eps>
+
+Package amsthm Warning: Unknown theoremstyle `thm' on input line 290.
+
+[7]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[8] [9]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[10] [11]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[12] [13]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[14]
+
+LaTeX Warning: Reference `lem:Ch01-2p' on page 15 undefined on input line 710.
+
+[15])
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[16]
+\openout2 = `Ch2.aux'.
+
+ (./Ch2.tex
+File: ../images/T1_Ch02-0001.eps Graphic file (type eps)
+ <../images/T1_Ch02-0001.eps>
+File: ../images/T1_Ch02-0002.eps Graphic file (type eps)
+ <../images/T1_Ch02-0002.eps>
+File: ../images/T1_Ch02-0003a.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0003a.eps>
+File: ../images/T1_Ch02-0003b.eps Graphic file (type eps)
+ <../images/T1_Ch02-0003b.eps>
+File: ../images/T1_Ch02-0003c.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0003c.eps> [17
+
+
+
+] [18]
+File: ../images/T1_Ch02-0004.eps Graphic file (type eps)
+ <../images/T1_Ch02-0004.eps>
+File: ../images/T1_Ch02-0005.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0005.eps>
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[19] [20]
+File: ../images/T1_Ch02-0006a.eps Graphic file (type eps)
+ <../images/T1_Ch02-0006a.eps>
+File: ../images/T1_Ch02-0006b.eps Graphic file (type eps)
+ <../images/T1_Ch02-0006b.eps>
+File: ../images/T1_Ch02-0007a.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0007a.eps>
+File: ../images/T1_Ch02-0007b.eps Graphic file (type eps)
+ <../images/T1_Ch02-0007b.eps>
+File: ../images/T1_Ch02-0008.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0008.eps>
+Overfull \hbox (19.43333pt too wide) in paragraph at lines 306--329
+[]$[]$ $[]$ 
+ []
+
+
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[21]
+File: ../images/T1_Ch02-0009a.eps Graphic file (type eps)
+ <../images/T1_Ch02-0009a.eps>
+File: ../images/T1_Ch02-0009b.eps Graphic file (type eps)
+ <../images/T1_Ch02-0009b.eps>
+File: ../images/T1_Ch02-0010.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0010.eps>
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 370--386
+$[]$ $[]$ 
+ []
+
+[22]
+File: ../images/T1_Ch02-0011.eps Graphic file (type eps)
+ <../images/T1_Ch02-0011.eps>
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[23]
+File: ../images/T1_Ch02-0012.eps Graphic file (type eps)
+ <../images/T1_Ch02-0012.eps>
+File: ../images/T1_Ch02-0013.eps Graphic file (type eps)
+ <../images/T1_Ch02-0013.eps> [24]
+File: ../images/T1_Ch02-0014.eps Graphic file (type eps)
+
+<../images/T1_Ch02-0014.eps>
+File: ../images/T1_Ch02-0015.eps Graphic file (type eps)
+ <../images/T1_Ch02-0015.eps>
+Underfull \vbox (badness 2608) has occurred while \output is active []
+
+
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[25]
+Overfull \hbox (1.94136pt too wide) in paragraph at lines 610--613
+\T1/lmr/m/n/10.95 c'est à dire que les angles $[]$ et $[]$ soient ai-gus et l'a
+ngle $[]$
+ []
+
+[26]
+File: ../images/T1_Ch02-0016a.eps Graphic file (type eps)
+ <../images/T1_Ch02-0016a.eps>
+File: ../images/T1_Ch02-0016b.eps Graphic file (type eps)
+ <../images/T1_Ch02-0016b.eps>
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[27]
+File: ../images/T1_Ch02-0017.eps Graphic file (type eps)
+ <../images/T1_Ch02-0017.eps> [28]
+File: ../images/T1_Ch02-0018.eps Graphic file (type eps)
+ <../images/T1_Ch02-0018.eps>)
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[29]
+\openout2 = `Ch3.aux'.
+
+ (./Ch3.tex [30
+
+
+
+] [31]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[32]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[33]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[34]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[35]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[36]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[37]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[38]
+
+LaTeX Warning: Reference `chap:09' on page 39 undefined on input line 587.
+
+
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[39]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[40]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[41])
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[42]
+\openout2 = `AnnA.aux'.
+
+ (./AnnA.tex [43
+
+
+
+] [44] [45] [46] [47] [48]
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[49] [50] [51]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 597.
+
+ (/opt/texlive/2008/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2007/01/14 v1.3 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 597.
+File: ../images/T1_AnnA-0002.eps Graphic file (type eps)
+
+<../images/T1_AnnA-0002.eps>
+Overfull \vbox (51.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (50.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (49.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (48.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (47.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (46.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (45.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (44.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (43.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (42.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (41.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (40.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (39.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (38.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (37.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (36.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (35.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (34.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (33.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (32.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (31.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (30.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (29.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (28.93996pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (27.93996pt too high) has occurred while \output is active []
+
+
+[52]
+File: ../images/T1_AnnA-0003.eps Graphic file (type eps)
+ <../images/T1_AnnA-0003.eps>
+Overfull \vbox (41.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (40.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (39.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (38.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (37.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (36.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (35.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (34.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (33.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (32.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (31.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (30.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (29.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (28.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (27.3512pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (0.5595pt too high) has occurred while \output is active []
+
+
+[53]) [54]
+\tf@toc=\write6
+\openout6 = `MMC.toc'.
+
+ (./MMC.aux (./Ch1.aux) (./Ch2.aux) (./Ch3.aux) (./AnnA.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14545 strings out of 493877
+ 204036 string characters out of 1150612
+ 420011 words of memory out of 3000000
+ 17486 multiletter control sequences out of 10000+50000
+ 86446 words of font info for 77 fonts, out of 3000000 for 5000
+ 714 hyphenation exceptions out of 8191
+ 55i,21n,92p,512b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on MMC.dvi (56 pages, 432548 bytes).

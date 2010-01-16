@@ -1,0 +1,101 @@
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=latex 2009.5.20)  13 JUL 2009 22:12
+entering extended mode
+ %&-line parsing enabled.
+**thmtest.tex
+(./thmtest.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, basque, french, loaded.
+
+LaTeX Warning: File `exercise.thm' already exists on the system.
+               Not generating it from this source.
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+ (./exercise.thm)
+\thm@style=\toks14
+\thm@bodyfont=\toks15
+\thm@headfont=\toks16
+\thm@notefont=\toks17
+\thm@headpunct=\toks18
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks19
+)
+\c@thm=\count87
+\c@prop=\count88
+\c@note=\count89
+\c@bthm=\count90
+\c@exer=\count91
+\c@thmsw=\count92
+\c@propsw=\count93
+ (./thmtest.aux)
+\openout1 = `thmtest.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 129.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 129.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 129.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 137.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 137.
+
+Overfull \hbox (1.43993pt too wide) in paragraph at lines 145--148
+\OT1/cmr/bx/n/10 Lemma 1.1 \OT1/cmr/m/n/10 (neg-a-tively curved fam-i-lies)\OT1
+/cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ds[]; [
+] ; ds[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/it/10 be a neg-a-tively curved
+ []
+
+[1
+
+]
+Overfull \hbox (1.43993pt too wide) in paragraph at lines 230--233
+\OT1/cmr/bx/n/10 4.1 Lemma \OT1/cmr/m/n/10 (neg-a-tively curved fam-i-lies)\OT1
+/cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ds[]; [
+] ; ds[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/it/10 be a neg-a-tively curved
+ []
+
+[2] (./thmtest.aux) ) 
+Here is how much of TeX's memory you used:
+ 414 strings out of 495037
+ 4223 string characters out of 1180691
+ 52221 words of memory out of 3000000
+ 3664 multiletter control sequences out of 10000+50000
+ 8553 words of font info for 30 fonts, out of 3000000 for 5000
+ 28 hyphenation exceptions out of 8191
+ 23i,6n,18p,163b,199s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on thmtest.dvi (2 pages, 6140 bytes).

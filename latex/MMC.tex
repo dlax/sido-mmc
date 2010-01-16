@@ -1,0 +1,102 @@
+% Mécanique des solides
+% François Sidoroff
+%
+\documentclass[dvips,11pt,a4paper]{memoir}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsfonts}
+\usepackage{mathbbol}
+\usepackage{amsthm}
+\usepackage{paralist}
+
+\usepackage[dvips]{graphicx}
+\usepackage{psfrag}
+\usepackage[dvips]{color}
+\usepackage{pstricks,pstricks-add}%pst-text,pst-plot,pst-all}
+\usepackage[indention=.5cm,textfont=it,labelfont={sf,bf},labelsep=space]{caption}
+\usepackage{subfig}
+\usepackage[backref,colorlinks=true,dvips,bookmarks=true,pagebackref]{hyperref}
+\hypersetup{pdfauthor={F.~Sidoroff},
+ pdftitle={M\'ecanique~des~solides},
+ bookmarksnumbered=true}
+\usepackage{stmaryrd} % pour llbracket et rrbracket
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{memhfixc}
+
+% page layout
+\settrimmedsize{297mm}{210mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{634pt}{448.13pt}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{*}{*}{1.5}
+\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+
+%\headstyles{memman}
+%\chapterstyle{thatcher}
+\setsecnumdepth{subsection}
+
+\newcommand{\tmp}[1]{{\color{red}{#1}}}
+% alias math
+\newcommand{\ud}{\mathrm{d}}
+\DeclareMathOperator*{\dive}{\mathrm{div}}
+\DeclareMathOperator*{\grad}{\mathrm{grad}}
+\DeclareMathOperator*{\gradb}{\mathbf{grad}}
+\DeclareMathOperator*{\rot}{\mathrm{rot}\,}
+\DeclareMathOperator*{\rotB}{\mathrm{rot}}
+\DeclareMathOperator*{\trace}{\mathrm{trace}}
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+\DeclareMathOperator{\mat}{\mathrm{mat}\,}
+
+
+\newtheorem{thm}{Théoreme}[chapter]
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemme}
+\theoremstyle{remark}
+\newtheorem*{rmq}{Remarque}
+%\newtheorem*{def}{Définition}
+
+\theoremstyle{plain}
+\newtheorem*{cauchy}{Postulat de Cauchy}
+\newtheorem*{thmn}{Théoreme}
+
+\theoremstyle{definition}
+\newtheorem*{defn}{Définition}
+
+
+%\newtheoremstyle{break}% name
+  %{9pt}%      Space above, empty = `usual value'
+  %{9pt}%      Space below
+  %{\itshape}% Body font
+  %{}%         Indent amount (empty = no indent, \parindent = para indent)
+  %{\bfseries}% Thm head font
+  %{.}%        Punctuation after thm head
+  %{\newline}% Space after thm head: \newline = linebreak
+  %{}%         Thm head spec
+
+
+\author{F. Sidorrof}
+\title{M\'ecanique des Solides}
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+\psset{linewidth=1pt,arrowsize=2pt 4}
+\part{Mécanique des Milieux Continus}
+\include{Ch1}
+\include{Ch2}
+\include{Ch3}
+\appendix
+\include{AnnA}
+\end{document}
