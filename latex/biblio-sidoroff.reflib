@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<manage_target braces="true" utf8="true">biblio-sidoroff.bib</manage_target>
+<library_folder monitor="false"></library_folder>
+<taglist>
+</taglist>
+<doclist>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Germain-62</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mécanique des Milieux Continus</bib_title>
+    <bib_authors>Germain, P.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1962</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Masson</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Germain-73</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Cours de Mécanique des Milieux Continus, Tome 1: Théorie Générale</bib_title>
+    <bib_authors>Germain, P.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1973</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Masson</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Mandel-66</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Cours de Mécanique des Milieux Continus, tomes 1 et 2</bib_title>
+    <bib_authors>Mandel, J.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1966</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Gauthier-Villars</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Mandel-74</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Introduction à la Mécanique des Milieux Continus Déformables</bib_title>
+    <bib_authors>Mandel, J.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1974</bib_year>
+    <bib_extra key="address">Varsovie</bib_extra>
+    <bib_extra key="publisher">P.W.N.</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Gontier-69</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mécanique des Milieux Déformables</bib_title>
+    <bib_authors>Gontier, G.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1969</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Dunod</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Roy-66</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mécanique, tome II: Milieux Continus</bib_title>
+    <bib_authors>Roy, M.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1966</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Dunod</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Sedov-71</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>A course in continuum mechanics, tomes I, II, III, IV</bib_title>
+    <bib_authors>Sedov, L. I.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1971</bib_year>
+    <bib_extra key="address">Groningen</bib_extra>
+    <bib_extra key="publisher">Walters Noordhoff</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Eringen-67</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mechanics of Continua</bib_title>
+    <bib_authors>Eringen, A. C.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1967</bib_year>
+    <bib_extra key="address">New York</bib_extra>
+    <bib_extra key="publisher">J. Wiley \&amp; Sons</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Prager-61</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Introduction to Mechanics of Continua</bib_title>
+    <bib_authors>Prager, W.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1961</bib_year>
+    <bib_extra key="address">New York</bib_extra>
+    <bib_extra key="publisher">Ginn and Co</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Lai-78</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Introduction to continuum mechanics</bib_title>
+    <bib_authors>Lai, W. M. and Rubin, D. and Krempl, E.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1978</bib_year>
+    <bib_extra key="address">Oxford</bib_extra>
+    <bib_extra key="publisher">Pergamon</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Truesdell-60</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The classical field theories</bib_title>
+    <bib_authors>Truesdell, C. A. and Toupin, R.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1960</bib_year>
+    <bib_extra key="address">Berlin</bib_extra>
+    <bib_extra key="publisher">Springer</bib_extra>
+    <bib_extra key="series">Handbuch der Physik, Bd III/1</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Truesdell-65</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The non linear field theories of mechanics</bib_title>
+    <bib_authors>Truesdell, C. A. and Noll, W.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1965</bib_year>
+    <bib_extra key="address">Berlin</bib_extra>
+    <bib_extra key="publisher">Springer</bib_extra>
+    <bib_extra key="series">Handbuch der Physik, Bd III/3</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Solomon</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Élasticité linéaire</bib_title>
+    <bib_authors>Solomon, L.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1968</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Masson</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Timoshenko-61</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Théorie de l&apos;élasticité</bib_title>
+    <bib_authors>Timoshenko, S. and Goodier, J.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1961</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Béranger</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Duc-76</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mécanique des solides réels. Élasticité</bib_title>
+    <bib_authors>Duc, J. and Beller, D.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1976</bib_year>
+    <bib_extra key="address">Toulouse</bib_extra>
+    <bib_extra key="publisher">Cepadues</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Duc-76b</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Problèmes d&apos;élasticité</bib_title>
+    <bib_authors>Duc, J. and Bellet, D.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1976</bib_year>
+    <bib_extra key="address">Toulouse</bib_extra>
+    <bib_extra key="publisher">Cepadues</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Love-44</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Mathematical theory of elasticity</bib_title>
+    <bib_authors>Love, A.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1944</bib_year>
+    <bib_extra key="address">London</bib_extra>
+    <bib_extra key="publisher">Dover</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Landau-67</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Théorie de l&apos;élasticité, Cours de Physique théorique, tome VII</bib_title>
+    <bib_authors>Landau, L. D. and Lifschitz, E. M.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1967</bib_year>
+    <bib_extra key="publisher">Ed. de Moscou</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Muskhelishvili-53</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Some basic problems of the mathematical theory of elasticity</bib_title>
+    <bib_authors>Muskhelishvili, N. I.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1953</bib_year>
+    <bib_extra key="address">Groningen</bib_extra>
+    <bib_extra key="publisher">Noordhoff</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Gurtin-xx</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Linear elasticity</bib_title>
+    <bib_authors>Gurtin, M. E.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>19xx</bib_year>
+    <bib_extra key="address">Berlin</bib_extra>
+    <bib_extra key="publisher">Springer Verlag</bib_extra>
+    <bib_extra key="series">Handbuch der Physik, Bd VIa 2</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Valid-77</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>La mécanique des milieux continus et le calcul des structures</bib_title>
+    <bib_authors>Valid, R.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1977</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Eyrolles</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Zienkiewicz-xx</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>La méthode des éléments finis appliqueée à l&apos;art de l&apos;ingénieur</bib_title>
+    <bib_authors>Zienkiewicz, O. C.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>19xx</bib_year>
+    <bib_extra key="publisher">??</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Dym-73</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Solid mechanics, a variational approach</bib_title>
+    <bib_authors>Dym C. I. and Shames, I. H.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1973</bib_year>
+    <bib_extra key="address">New York</bib_extra>
+    <bib_extra key="publisher">McGraw Hill</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Duvaut-72</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Les inéquations variationnelles en Mécanique et en Physique</bib_title>
+    <bib_authors>Duvaut, G. and Lions, J. L.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1972</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Dunod</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Mandel-77</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Propriétés mécaniques des matériaux: rhéologie, plasticité</bib_title>
+    <bib_authors>Mandel, J.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1977</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Eyrolles</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Hill-64</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>The mathematical theory of plasticity</bib_title>
+    <bib_authors>Hill, R.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1964</bib_year>
+    <bib_extra key="publisher">Oxford University Press</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Iliouchine-56</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Plasticité, Déformation élastoplastiques</bib_title>
+    <bib_authors>Iliouchine, A. A.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1956</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Eyrolles</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Jonhson-52</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Plasticity for mechanical engineers</bib_title>
+    <bib_authors>Jonhson, W. and Mellok, P. B.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1962</bib_year>
+    <bib_extra key="address">London</bib_extra>
+    <bib_extra key="publisher">Van Nostrand</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Prager-xx</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Problèmes de plasticité théorique</bib_title>
+    <bib_authors>Prager, W.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>19xx</bib_year>
+    <bib_extra key="address">Paris</bib_extra>
+    <bib_extra key="publisher">Dunod</bib_extra>
+  </doc>
+  <doc>
+    <filename></filename>
+    <relative_filename></relative_filename>
+    <key>Parkus-68</key>
+    <notes></notes>
+    <bib_type>book</bib_type>
+    <bib_doi></bib_doi>
+    <bib_title>Thermoelasticity</bib_title>
+    <bib_authors>Parkus, H.</bib_authors>
+    <bib_journal></bib_journal>
+    <bib_volume></bib_volume>
+    <bib_number></bib_number>
+    <bib_pages></bib_pages>
+    <bib_year>1968</bib_year>
+    <bib_extra key="address">Waltham</bib_extra>
+    <bib_extra key="publisher">Blaisdell</bib_extra>
+  </doc>
+</doclist>
+</library>

@@ -2,7 +2,7 @@
 Les éléments de base de la MMC (cinématique des milieux continus, variables lagrangiennes et eulériennes, dérivées particulaires, -- description des efforts intérieurs, contraintes) ont présentés dans le cours d'introduction à la MMC.
 Nous nous bornerons donc, dans ce chapitre, à les replacer dans un contexte «~Mécanique des Solides~». 
 En particulier, nous ne donnerons pas le détail des démonstrations. 
-Le lecteur pourra se référer aux traités classiques (voir \tmp{bibliographie, (1) à (10)}).
+Le lecteur pourra se référer aux traités classiques (voir \cite{Germain-62,Germain-73,Mandel-66,Mandel-74,Gontier-69,Roy-66,Sedov-71,Eringen-67,Prager-61,Lai-78}).
 \section{Lois de conservation} \label{sec:Ch01-1}
 \subsection{Lois de la physique} \label{ssec:Ch01-1.1}
 En MMC, on appelle «~loi de conservation~» la traduction mathématique des lois de la physique.
@@ -17,7 +17,7 @@ En introduisant la masse spécifique, c'est-à-dire la masse par unité de volum
     \frac{\ud}{\ud t}\iiint_D \rho \ud v =0
     \label{eq:Ch01-001}
 \end{equation}
-où $\frac{\ud}{\ud t}$ est la dérivée «~particulaire~», c'est à dire la dérivée obtenue en suivant le domaine $D$ dans son mouvement (voir par exemple \tmp{[2]}).
+où $\frac{\ud}{\ud t}$ est la dérivée «~particulaire~», c'est à dire la dérivée obtenue en suivant le domaine $D$ dans son mouvement (voir par exemple~\cite{Germain-73}).
 
 Pour écrire la loi fondamentale, il faut schématiser les efforts exercés sur $D$:
 \begin{itemize}
@@ -126,7 +126,7 @@ en remarquant que pour $II$ ou $III$, l'élément de volume $\ud v$ (hachuré su
 \begin{equation*}
     \ud v=\pm V \ud t \cdot \ud S \cdot \cos\theta = \pm \vec{V}\cdot\vec{n} \ud S \ud t
 \end{equation*}
-On trouvera des démonstrations plus détaillées et plus rigoureuses en \tmp{[1], [2], [3], [5]....}
+On trouvera des démonstrations plus détaillées et plus rigoureuses dans \cite{Germain-62,Germain-73,Mandel-66,Gontier-69} entre autres.
 
 En utilisant le théorème de la divergence (Annexe~\ref{Ann:A}) et la formule donnant la dérivée particulaire $\mathcal{A}$:
 \begin{equation*}
@@ -262,7 +262,7 @@ En présence d'une surface de discontinuité $\Sigma$ se déplaçant à la vites
     \psfrag{N}{\scriptsize $\vec N$}
     \includegraphics{../images/T1_Ch01-0006}
 \end{wrapfigure}
-On peut alors montrer (voir \tmp{[2]}) que l'équation locale~\eqref{eq:Ch01-008} doit être complétée par une «~équation aux discontinuités~»:
+On peut alors montrer (voir \cite{Germain-73}) que l'équation locale~\eqref{eq:Ch01-008} doit être complétée par une «~équation aux discontinuités~»:
 \begin{equation}
     \llbracket\mathcal{A}U + a_iN_i\rrbracket = 0 
     \label{eq:Ch01-010}
@@ -430,7 +430,7 @@ On retrouve donc l'énoncé classique des puissances virtuelles, à condition d'
     \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}=-\iiint_\Omega \sigma_{ij}{\mathop{\mathcal{D}}^{\ast}}_{ij} \ud v
     \label{eq:Ch01-025}
 \end{equation}
-On peut s'assurer (voir \tmp{[I],[5]}) que c'est une interprétation justifiée dans la mesure où elle généralise la puissance virtuelle des efforts intérieurs introduite en mécanique rationnelle pour un système de solides rigides.
+On peut s'assurer (voir \cite{Germain-62,Gontier-69}) que c'est une interprétation justifiée dans la mesure où elle généralise la puissance virtuelle des efforts intérieurs introduite en mécanique rationnelle pour un système de solides rigides.
 En particulier, le lemme suivant montre que la puissance virtuelle des efforts intérieurs est nulle dans tout champ de vitesses rigidifiant, c'est à dire lorsque $\displaystyle {\mathop{V}^{\ast}}_i$ est le champ de vitesses d'un solide rigide. 
 
 \begin{lem}
