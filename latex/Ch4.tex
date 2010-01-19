@@ -1,5 +1,6 @@
 \chapter{Lois de comportement}
-\section{Problèmes dynamiques et quasi-statiques}
+\section{Problèmes de mécanique des solides} \label{sec:Ch4-1}
+\subsection{Problèmes dynamiques et quasi-statiques}  \label{ssec:Ch4-1.1}
 Pour résoudre un problème de Mécanique des Solides, il faut calculer la solution $(u_i, \sigma_{ij})$, c'est à dire calculer les champs de vecteurs déplacements $u_i(x)$ et de tenseurs des contraintes $\sigma_{ij}(x)$, à partir des données, qui sont constituées par
 \begin{enumerate}
     \item L'ensemble des sollicitations imposées au solide
@@ -64,7 +65,7 @@ Pour résoudre un problème de Mécanique des Solides, il faut calculer la solut
         Cette hypothèse est tout à fait essentielle en mécanique des solides, car elle permet de ramener à des problèmes statiques les problèmes réels qui, eux, dépendent toujours du temps.
         L'essentiel de ce cours sera désormais limité au cas où cette hypothèse est valable, l'étude des problèmes réellement dynamiques (chocs, vibrations) étant renvoyée au cours de Mécanique des Vibrations.
 \end{enumerate}
-\section{Conditions aux limites}
+\subsection{Conditions aux limites} \label{ssec:Ch4-1.2}
 \textbf{Exemple 2.} Ecrasement d'un lopin entre les deux plateaux rigides d'une presse:
 \begin{wrapfigure}{l}{7cm}
     \begin{center}
@@ -265,17 +266,22 @@ Avec les conditions \eqref{eq:Ch04-025}, on en tire la valeur de $p$
 De manière générale, dans un problème réel, l'écriture des conditions aux limites est une étape tout à fait essentielle, car d'une part ces conditions comprennent l'essentiel de la physique du problème, d'autre part elles conditionnent la facilité -- voire la possibilité -- de la résolution du problème mathématique obtenu.
 Il faudra souvent faire un compromis entre la précision de la description physique et la facilité de résolution du problème mathématique.
 
-\section{Lois de comportement}
-\endinput
-Pour résoudrE: un problème de Déc.;.:::'::.;,.; àes scl::2s, _c._~ CODe résoudre un systêc~ d'quations aux ~érivéeE ;Er~ielles. =2ur :'i~s:a~t, nous avons trois équations scalaires -les ÉC:t.,;.ations du J:}uve=ent (5) ou les équations d'équilibre (7), suivant que l'en considère le Froblè=2 dyna­mique DU le problème qt!.asi-~t2.t.icp.!e -FC"'.!!" 9 Ch2~pS ~:1co:1nus: 3 co:::pcsantes du déplacement ..u.4 C'x.,-t) et 6 composantes du tenseur des contraintes cr;,,~ ('-x.I.c~­Il manque donc 6 équations scalaires. Ces 6 équations nous seront fournies par la "loi de comportement" du matériau. Tout'es les équations écrites jus­qu'à présent. é-taie-nt. -dans. le cadIe-d··' une-· schématisation donnée -univeI­selles, càd indépendantes du matériau considéré. Les équations écrites au § 1.2 restent les mêmes pour un bloc d'acier, d'aluminium, de matière plas­tique, de caoutchouc, de bois, de béton,' d'argile, de pâte à modeler, etc ... , sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations). 
-De manière générale, la loi de comportement se présente comme une "relation" entre le tenseur des contraintes et le tenseur des déformations. Cette relation peut être de nature très diverse -nous en verrons quelques exemples au § 2 -mais elle sera en général de nature "fonctionnellel1. A 
-quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -càd de la valeur du tenseur des d~forrnations à l'instant considérê et à tous les 1n5-­
-tants antérieurs -ou bien le tenseur des déforrrtions à partir de l'histoire du tenseur des contraintes. 
+\subsection{Lois de comportement}  \label{ssec:Ch4-1.3}
+Pour résoudre un problème de mécanique des solides, if faut donc résoudre un système d'équations aux dérivées partielles.
+Pour l'instant, nous avons trois équations scalaires -- les équations du mouvement~\eqref{eq:Ch04-005} ou les équations d'équilibre~\eqref{eq:Ch04-007}, suivant que l'en considère le problème dynamique ou le problème quasi-statique -- pour 9 champs inconnus: 3 composantes du déplacement $u_i(x,t)$ et 6 composantes du tenseur des contraintes $\sigma_{ij}(x,t)$.
+Il manque donc 6 équations scalaires.
+Ces 6 équations nous seront fournies par la ``loi de comportement'' du matériau.
+Toutes les équations écrites jusqu'à présent étaient -- dans le cadre d'une schématisation donnée -- -universelles, c'est à dire indépendantes du matériau considéré.
+Les équations écrites au paragraphe~\ref{ssec:Ch4-1.2} restent les mêmes pour un bloc d'acier, d'aluminium, de matière plastique, de caoutchouc, de bois, de béton, d'argile, de pâte à modeler, \ldots , sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations).
 
-.. 
-(28) 
-Ht) = [ t(J(k-A)) 
-hO 
+De manière générale, la loi de comportement se présente comme une ``relation'' entre le tenseur des contraintes et le tenseur des déformations.
+Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch4-2} -- mais elle sera en général de nature ``fonctionnelle''.
+À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -- c'est à dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs -- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
+\begin{equation}
+    \bbsigma (t) = \mathop{\bbsigma}_{s=0}^{\infty} \left\{ \mathbb{\epsilon} (t-s) \right\}, \quad \mathbb{\epsilon} (t) = \mathop{\mathbb{\epsilon}}_{s=0}^{\infty} \left\{ \bbsigma (t-s) \right\}
+    \label{eq:Ch04-028}
+\end{equation}
+\endinput
 Cette loi de comportement ne peut être déterminée qu'expérimentale­ment par un certain nombre "d'essais". Les essais les plus faciles à inter­préter sont les flessais homogènes" où l'on cherche à réaliser dans une éprou­vette un état de contrainte et de déformation homogène. L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du § 1.2 . Si l'on cherche un état de contrainte et de déformation homogène 
 
 alors la condition aux limites (8) sur la surface latérale montre que toutes les composantes de Cf';'6 l.t) sont nulles, sauf <T-en effet, sur St 1'1'\" =0
