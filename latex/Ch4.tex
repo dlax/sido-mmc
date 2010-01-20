@@ -278,48 +278,76 @@ De manière générale, la loi de comportement se présente comme une ``relation
 Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch4-2} -- mais elle sera en général de nature ``fonctionnelle''.
 À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -- c'est à dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs -- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
 \begin{equation}
-    \bbsigma (t) = \mathop{\bbsigma}_{s=0}^{\infty} \left\{ \mathbb{\epsilon} (t-s) \right\}, \quad \mathbb{\epsilon} (t) = \mathop{\mathbb{\epsilon}}_{s=0}^{\infty} \left\{ \bbsigma (t-s) \right\}
+    \bbsigma (t) = \mathop{\bbsigma}_{s=0}^{\infty} \left\{ \bbespilon (t-s) \right\}, \quad \bbespilon (t) = \mathop{\bbespilon}_{s=0}^{\infty} \left\{ \bbsigma (t-s) \right\}
     \label{eq:Ch04-028}
 \end{equation}
+
+Cette loi de comportement ne peut être déterminée qu'expérimentale­ment par un certain nombre ``d'essais''.
+Les essais les plus faciles à interpréter sont les ``essais homogènes'' où l'on cherche à réaliser dans une éprouvette un état de contrainte et de déformation homogène.
+L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du paragraphe~\ref{ssec:Ch4-1.2}.
+Si l'on cherche un état de contrainte et de déformation homogène
+\begin{equation}
+    \sigma_{ij} (x,t) = \sigma_{ij}(t), \quad \varepsilon_{ij}(x,t) = \varepsilon_{ij}(t)
+    \label{eq:Ch04-029}
+\end{equation}
+alors la condition aux limites~\eqref{eq:Ch04-008} sur la surface latérale montre que toutes les composantes de $\sigma_{ij}(t)$ sont nulles, sauf $\sigma_{33}$ -- en effet, sur $S_l$ $n_3=0$ tandis que $n_1$ et $n_2$ sont quelconques -- et \eqref{eq:Ch04-016} donne $\sigma_{33}(t)=-F(t)/S$
+\begin{equation}
+    \bbsigma(t) = \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & -F(t)/S
+    \end{bmatrix}
+    \label{eq:Ch04-030}
+\end{equation}
+La loi de conportement \eqref{eq:Ch04-028} donne alors $\bbespilon(t)$ en fonction de $F(t)$.
+On obtient alors la forme générale de déplacement par \eqref{eq:Ch03-062}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_1 &= \varepsilon_{11} x_1 &+ \varepsilon_{12}x_2 &+ \varepsilon_{13}x_3 &+ \omega_{2}x_3 - \omega_{3} x_2 +c_1\\
+        u_2 &= \varepsilon_{12} x_1 &+ \varepsilon_{22}x_2 &+ \varepsilon_{23}x_3 &+ \omega_{3}x_1 - \omega_{1} x_3 +c_2\\
+        u_3 &= \varepsilon_{13} x_1 &+ \varepsilon_{23}x_2 &+ \varepsilon_{33}x_3 &+ \omega_{1}x_2 - \omega_{2} x_1 +c_3
+    \end{aligned}
+    \right.
+    \label{eq:Ch04-031}
+\end{equation}
+La CL~\eqref{eq:Ch04-009} en $x_3 =0$ donne alors
+\begin{equation*}
+    c_3 = 0, \quad \omega_1 = -\varepsilon_{23}, \quad \omega_2 = \varepsilon_{13}
+\end{equation*}
+La CL~\eqref{eq:Ch04-009}  en $x_3=h$ est alors vérifiée si
+\begin{equation}
+    U(t) = -h \varepsilon_{33}(t)
+    \label{eq:Ch04-032}
+\end{equation}
+et il vient
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_1(x,t) &= \varepsilon_{11}x_1 &+ (\varepsilon_{12} - \omega_3) x_2 &+ 2\varepsilon_{13}x_3 \\
+        u_2(x,t) &= (\varepsilon_{12} + \omega_3) x_1 &+ \varepsilon_{22}x_2 &+ 2\varepsilon_{23}x_3 \\
+        u_3(x,t) &= -U(t) x_3/h
+    \end{aligned}
+    \right.
+    \label{eq:Ch04-033}
+\end{equation}
+Et la solution définie par \eqref{eq:Ch04-030}, \eqref{eq:Ch04-033} est solution du problème associé au cas sans frottement défini par les CL \eqref{eq:Ch04-011}.
+Ainsi, pour réaliser un essai de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au maximum des conditions de non frottement, et en imposant, par exemple, une force $F(t)$ -- essai à force imposée --, la mesure des déplacements donne alors $\bbespilon(t)$, et permet donc de déterminer la loi de comportement pour un tenseur $\bbsigma$ de la forme \eqref{eq:Ch04-030}.
+
+Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors un tenseur $\bbsigma(t)$ de la forme \eqref{eq:Ch04-030} produit une déformation de la forme
+\begin{equation}
+    \bbespilon (t) = 
+    \begin{bmatrix}
+        \varepsilon_T(t) & 0 & 0 \\
+        0 & \varepsilon_T (t) & 0 \\
+        0 & 0 & -U(t)/h
+    \end{bmatrix}
+    \label{eq:Ch04-034}
+\end{equation}
+La déformation se réduit à un écrasement longitudinal, mesuré par $U(t)$ et une dilatation transversale que l'on mesure facilement à l'aide d'une jauge de déformation.
+
+\subsection{Les essais 	classiques}
 \endinput
-Cette loi de comportement ne peut être déterminée qu'expérimentale­ment par un certain nombre "d'essais". Les essais les plus faciles à inter­préter sont les flessais homogènes" où l'on cherche à réaliser dans une éprou­vette un état de contrainte et de déformation homogène. L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du § 1.2 . Si l'on cherche un état de contrainte et de déformation homogène 
-
-alors la condition aux limites (8) sur la surface latérale montre que toutes les composantes de Cf';'6 l.t) sont nulles, sauf <T-en effet, sur St 1'1'\" =0
-n 
-tanèÏs que 'TI.~ et 'TI.~ sont quelconques -et (16) donne C-,; (.t) = -F;,t) ,'5 
-0 0 0 (3e, (]):) 
-0 0 0= 
-l 
-Lo c -F(:t)jS J 
-rie ccnportement (28) donne alors &: (, k'1 en fonction dE:  Oc 0:­tien~ alors la forme générale GU déplacement par (III.62) 
-r JJ... = E.~~ ':1:, ... E,,, 'X.:, .,. ~1;:I:.~ + W~"X.~ w. X~ T c.
--
-(31 ) ...
-~ JJ..~ = E~l, ':1:, + El.l, :L~ + ~~ô X. T W; 'X.. -w1 -:c. c,..
-, 
-_ w 
-
-~
-( JJ..~ = E~; :1:.. ;-~J,; XJ. + En 'X.. + Cù1'X.~ :, . T .c. 
-La CL (9) en x =0 donne alors
-3 
-
-La CL (9) en x=h est alors vérifiée si
-3
-(32) et il vient 
-
-.A.l..{':I:,..t:) .,. EH 'X.~ ;-(f..2. 'XL T t E.1; 'X~.
--w.) 
-(33) .A.l.:z, (lX,l) = (!:~~ +-W~) 'X.. + f:z,l. 'l:~ +-2, E:z,; 'X; 
-r Al. (IX)k) = -U(t) IX../Yn, 
-Et la solution définie par (30) , (33) est solution du problème associé au cas sans frottement défini par les CL (II). Ainsi, pour réaliser un essa~ de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au rnaXlmurn des conditions de non frottement, et en imposant, par exemple, une force F(k) -essai à force imposée -, la mesure des dépla­cements donne alors !(k) , et permet donc de déterminer la loi de compor­tement pour un tenseur cr de la forme (30). 
-Si le matériau est isotrope -notion que nous préciserons plus tard -alors un tenseur cr("\:) de la forme (30) produit une déformation de la forme 
-(34) w:) 
-
-La déformation se réduit à un écrasement longitudinal, mesuré par UC.\;) 
-et une dila ta tian transversale que l'on mesure fac ilement à l t aide dl une 
-jauge de déformation. 
-1.4 LES ESSAIS 	CLASSIQUES 
 L'essai de COffipreSSlon simple est le protoc)pe ries essais homo­gÈnes. L'idée de base est de réaliser un état àe contrainte et è2 déforma­tion hOTIXJgène qui peut alors être déterminé par des mesures glo::ales cl' ef­forts et de déformation. Pour les métaux et la plupart des soliàes, l'essai de base est "l'essai de traction", oU un barreau cylindrique de longueur i et de secticn S est SOU~lS à une force 18~gitudi~ale F . L'état de ~8~­trainte et de déformation a la même forme (30), (34) que pour l'essai de compression. 
 F 
 ':tA On mesure -la force de trac tian FU;) -l'allongement longitudinal 
