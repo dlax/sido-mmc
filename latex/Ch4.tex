@@ -278,7 +278,7 @@ De manière générale, la loi de comportement se présente comme une ``relation
 Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch4-2} -- mais elle sera en général de nature ``fonctionnelle''.
 À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -- c'est à dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs -- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
 \begin{equation}
-    \bbsigma (t) = \mathop{\bbsigma}_{s=0}^{\infty} \left\{ \bbespilon (t-s) \right\}, \quad \bbespilon (t) = \mathop{\bbespilon}_{s=0}^{\infty} \left\{ \bbsigma (t-s) \right\}
+    \tens{\sigma} (t) = \mathop{\tens{\sigma}}_{s=0}^{\infty} \left\{ \tens{\varepsilon} (t-s) \right\}, \quad \tens{\varepsilon} (t) = \mathop{\tens{\varepsilon}}_{s=0}^{\infty} \left\{ \tens{\sigma} (t-s) \right\}
     \label{eq:Ch04-028}
 \end{equation}
 
@@ -292,14 +292,14 @@ Si l'on cherche un état de contrainte et de déformation homogène
 \end{equation}
 alors la condition aux limites~\eqref{eq:Ch04-008} sur la surface latérale montre que toutes les composantes de $\sigma_{ij}(t)$ sont nulles, sauf $\sigma_{33}$ -- en effet, sur $S_l$ $n_3=0$ tandis que $n_1$ et $n_2$ sont quelconques -- et \eqref{eq:Ch04-016} donne $\sigma_{33}(t)=-F(t)/S$
 \begin{equation}
-    \bbsigma(t) = \begin{bmatrix}
+    \tens{\sigma}(t) = \begin{bmatrix}
         0 & 0 & 0 \\
         0 & 0 & 0 \\
         0 & 0 & -F(t)/S
     \end{bmatrix}
     \label{eq:Ch04-030}
 \end{equation}
-La loi de conportement \eqref{eq:Ch04-028} donne alors $\bbespilon(t)$ en fonction de $F(t)$.
+La loi de conportement \eqref{eq:Ch04-028} donne alors $\tens{\varepsilon}(t)$ en fonction de $F(t)$.
 On obtient alors la forme générale de déplacement par \eqref{eq:Ch03-062}
 \begin{equation}
     \left\{
@@ -332,11 +332,11 @@ et il vient
     \label{eq:Ch04-033}
 \end{equation}
 Et la solution définie par \eqref{eq:Ch04-030}, \eqref{eq:Ch04-033} est solution du problème associé au cas sans frottement défini par les CL \eqref{eq:Ch04-011}.
-Ainsi, pour réaliser un essai de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au maximum des conditions de non frottement, et en imposant, par exemple, une force $F(t)$ -- essai à force imposée --, la mesure des déplacements donne alors $\bbespilon(t)$, et permet donc de déterminer la loi de comportement pour un tenseur $\bbsigma$ de la forme \eqref{eq:Ch04-030}.
+Ainsi, pour réaliser un essai de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au maximum des conditions de non frottement, et en imposant, par exemple, une force $F(t)$ -- essai à force imposée --, la mesure des déplacements donne alors $\tens{\varepsilon}(t)$, et permet donc de déterminer la loi de comportement pour un tenseur $\tens{\sigma}$ de la forme \eqref{eq:Ch04-030}.
 
-Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors un tenseur $\bbsigma(t)$ de la forme \eqref{eq:Ch04-030} produit une déformation de la forme
+Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors un tenseur $\tens{\sigma}(t)$ de la forme \eqref{eq:Ch04-030} produit une déformation de la forme
 \begin{equation}
-    \bbespilon (t) = 
+    \tens{\epsilon} (t) = 
     \begin{bmatrix}
         \varepsilon_T(t) & 0 & 0 \\
         0 & \varepsilon_T (t) & 0 \\
@@ -347,46 +347,60 @@ Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors 
 La déformation se réduit à un écrasement longitudinal, mesuré par $U(t)$ et une dilatation transversale que l'on mesure facilement à l'aide d'une jauge de déformation.
 
 \subsection{Les essais 	classiques}
-\endinput
-L'essai de COffipreSSlon simple est le protoc)pe ries essais homo­gÈnes. L'idée de base est de réaliser un état àe contrainte et è2 déforma­tion hOTIXJgène qui peut alors être déterminé par des mesures glo::ales cl' ef­forts et de déformation. Pour les métaux et la plupart des soliàes, l'essai de base est "l'essai de traction", oU un barreau cylindrique de longueur i et de secticn S est SOU~lS à une force 18~gitudi~ale F . L'état de ~8~­trainte et de déformation a la même forme (30), (34) que pour l'essai de compression. 
-F 
-':tA On mesure -la force de trac tian FU;) -l'allongement longitudinal 
+L'essai de compression simple est le prototype des essais homogènes.
+L'idée de base est de réaliser un état de contrainte et de déformation homogène qui peut alors être déterminé par des mesures globales d'efforts et de déformation.
+Pour les métaux et la plupart des solides, l'essai de base est ``l'essai de traction'', où un barreau cylindrique de longueur $l$ et de section $S$ est soumis à une force longitudinale $F$.
+L'état de contrainte et de déformation a la même forme~\eqref{eq:Ch04-030}, \eqref{eq:Ch04-034} que pour l'essai de compression.
 
-
--l'allongement transversal ET (t) 
-F 
-ir F(J;)/S o 
-(35) 
-dl"" = 0 	o 
-o
-
-L 0 
-
-
-
-Les conditions aux limites (11) de non frottement sont pratiquement irréali­sables, mais on constate expérimentalement que, pourvu que l'éprouvette soit 
-assez longue, alors les résultats de l'essai ne dépendent pratiquement pas 
-de la manière dont est appliquée la force f , càd des conditions aux limi­
-t~s précises sur So et 51  C'est le principe de Saint-Venant, sur lequel 
-nous reviendrons au chapitre VII. 
-L'essai de traction est le plus simple à réaliser, mais il ne per­met d'obtenir la loi de comportement que pour un tenseur des contraintes de 
-traction ou compression simple. Cela suffit pour déterminer complètement cer­
-taines lois de comportement, mais il est souvent nécessaire de réaliser des états de contrainte plus complexes.Le choix est alors guidé par la possibili­té technologique de réaliser un état de contrainte et déformation le plus ho­mogène possible. L'essai le plus couramment utilisé pour les métaux est l'es­sai de "traction-torsion" d'un tube mince. Un tube mince de diamètre D, d'é-
-F 
-
-paisseur ..e. et de longueur .c est soumis à 
-,­
-une force longitudinale F(k; ~3 et à un couple 
-de torsion 
-
+\begin{wrapfigure}{l}{3cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0007}
+    \end{center}
+\end{wrapfigure}
 On mesure 
-, ,nl,'-),If
+\begin{itemize}
+    \item la force de traction $F(t)$
+    \item l'allongement longitudinal $\varepsilon_{l} = \Delta l(t)/l$
+    \item l'allongement transfersal $\varepsilon_T(t)$
+\end{itemize}
+\begin{equation}
+    \tens{\sigma} =
+    \begin{bmatrix}
+        F(t)/S & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \quad
+    \tens{\varepsilon} = 
+    \begin{bmatrix}
+        \Delta l(t)/l & 0 & 0 \\
+        0 & \varepsilon_T(t) & 0 \\
+        0 & 0 & \varepsilon_T(t)
+    \end{bmatrix}
+    \label{eq:Ch04-035}
+\end{equation}
 
--1 allongement longitudinal u~~ ~ l'allongement transversal < r..t'
-c. i \. , -la rotation relative tJ.e(x) des deux sections 
-extrémi tés. tw~e sc:t suffisamoent ~ince, l'état de contrainte et ceIO=~­
+Les conditions aux limites \eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que, pourvu que l'éprouvette soit assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$ , c'est à dire des conditions aux limites précises sur $S_0$ et $S_1$.
+C'est le principe de Saint-Venant, sur lequel nous reviendrons au chapitre~\ref{chap:7}.
 
-~
+L'essai de traction est le plus simple à réaliser, mais il ne permet d'obtenir la loi de comportement que pour un tenseur des contraintes de traction ou compression simple.
+Cela suffit pour déterminer complètement certaines lois de comportement, mais il est souvent nécessaire de réaliser des états de contrainte plus complexes.
+Le choix est alors guidé par la possibilité technologique de réaliser un état de contrainte et déformation le plus homogène possible.
+L'essai le plus couramment utilisé pour les métaux est l'essai de ``traction-torsion'' d'un tube mince.
+Un tube mince de diamètre $D$, d'épaisseur $e$ et de longueur $l$ est soumis à une force longitudinale $F(t) \vec{e}_3$ et à un couple de torsion $M(t) \vec{e}_3$.
+
+\begin{wrapfigure}{l}{3cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0008}
+    \end{center}
+\end{wrapfigure}
+On mesure
+\begin{itemize}
+    \item l'allongement longitudinal $\Delta l(t)/l$
+    \item l'allongement transversal $\varepsilon_T(t)$
+    \item la rotation relative $\Delta \theta(t)$ des deux sections extrémités.
+\end{itemize}
+\endinput
 tian est G2tr...nê àans le repère local (~'l..'.e.@, .e~) associé aux coorcionnées cy­
 
 ; 1 [> ,
