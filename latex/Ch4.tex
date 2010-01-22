@@ -389,7 +389,7 @@ Le choix est alors guidé par la possibilité technologique de réaliser un éta
 L'essai le plus couramment utilisé pour les métaux est l'essai de ``traction-torsion'' d'un tube mince.
 Un tube mince de diamètre $D$, d'épaisseur $e$ et de longueur $l$ est soumis à une force longitudinale $F(t) \vec{e}_3$ et à un couple de torsion $M(t) \vec{e}_3$.
 
-\begin{wrapfigure}{l}{3cm}
+\begin{wrapfigure}[14]{l}{3cm}
     \begin{center}
         \includegraphics{../images/T1_Ch04-0008}
     \end{center}
@@ -400,46 +400,85 @@ On mesure
     \item l'allongement transversal $\varepsilon_T(t)$
     \item la rotation relative $\Delta \theta(t)$ des deux sections extrémités.
 \end{itemize}
+Pourvu que le le tube soit suffisament mince, l'état de contrainte et de déformation est donné dans le repère local $\left(\vec{e}_r, \vec{e}_{\theta}, \vec{e}_z  \right)$ associé aux coordonnées cylindrique par
+\begin{equation}
+    \tens{\sigma} =
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 2M/\pi D^2 e \\
+        0 & 2M/\pi D^2 e & F/\pi D e
+    \end{bmatrix}
+    \quad
+    \tens{\varepsilon} = 
+    \begin{bmatrix}
+        \varepsilon_T & 0 & 0 \\
+        0 & \varepsilon_T & D \Delta \theta / 4 l \\
+        0 & D \Delta \theta / 4 l & \Delta l/l
+    \end{bmatrix}
+    \label{eq:Ch04-036}
+\end{equation}
+superposition d'une traction simple et d'un cisaillement simple.
+
+Ce type d'essai convient pour des matériaux suffisamment consistants.
+En mécanique des sols, où l'on a affaire à des matériaux peu ou pas cohérents, on utilise classiquement deux types d'essais.
+
+\begin{wrapfigure}[8]{l}{3cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0009}
+    \end{center}
+\end{wrapfigure}
+Dans l'essai oediométrique, on comprime le matériau dans un moule rigide.
+On réalise ainsi un état de contrainte et de déformation de la forme
+\begin{equation}
+    \tens{\varepsilon} =
+    \begin{bmatrix}
+        \Delta h/h & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \quad
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        P/S & 0 & 0 \\
+        0 & \sigma_T & 0 \\
+        0 & 0 & \sigma_T
+    \end{bmatrix}
+    \label{eq:Ch04-037}
+\end{equation}
+
+\begin{wrapfigure}[10]{l}{3cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0010}
+    \end{center}
+\end{wrapfigure}
+Dans l'essai ``triaxial'', on place une éprouvette dans une cellule triaxiale que l'on soumet à une pression $p$ et on superpose une force longitudinale $P$.
+On réalise ainsi un état de contrainte et de déformation de révolution (paragraphe~\ref{ssec:Ch02-1.3})
+\begin{equation}
+    \tens{\varepsilon} =
+    \begin{bmatrix}
+        \varepsilon_L & 0 & 0 \\
+        0 & \varepsilon_T & 0 \\
+        0 & 0 & \varepsilon _T
+    \end{bmatrix}
+    \quad
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        p + P/S & 0 & 0 \\
+        0 & p & 0 \\
+        0 & 0 & p
+    \end{bmatrix}
+    \label{eq:Ch04-038}
+\end{equation}
+
+Tous ces essais homogènes présentent l'avantage de pouvoir s'interpréter directement en termes de loi de comportement.
+Mis à part l'essai de traction, ils présentent cependant l'inconvénient d'être assez fins, nécessitant de grandes précautions pour obtenir des résultats significatifs.
+Dans la pratique courante, on utilise souvent des essais non homogènes, souvent issus de la tradition (essai pénétrornétrique en Mécanique des Sols, essai de dureté ou de résilience pour les métaux) qui permettent d'obtenir simplement des caractéristiques globales du comportement.
+Malheureusement, ces essais ne fournissent sur les lois de comportement que des informations qualitatives, que l'on ne peut pas utiliser directement.
+
+\section{Comportement des solides}
+\subsection{Diversité des comportements}
 \endinput
-tian est G2tr...nê àans le repère local (~'l..'.e.@, .e~) associé aux coorcionnées cy­
-
-; 1 [> ,
-0 0 0 0 
-1 rET 
-<-1 1 
-(36) cr 0 0 iM/rrli e i &: 1 0 }) t:.fj/4 t  
-= ET
-=1 
-, i 
-L 1 0 J L , ,
-tMjrr n".e-FI Tf. Ti~ l 0 :Dtle/4-L M./L 
-superposition d'une traction simple et d'un cisaillement simple. 
-Ce type dtessai convient pour des matériaux suffisamment consistants_ En mécanique des sols, où l'on a affaire à des matériaux peu ou pas cohérents, on utilise classiquement deux types d'essais. 
-
-Dans l'essai oediométrique, on comprlme le matériau dans un moule rigide. On réalise ainsi un état de contrainte et de déformation de la forme 
-
-o 
-(37) 
-o o 
-
-
-
-Dans l'essai "triaxial", on place une éprou­vette dans une cellule triaxiale que l'on sou­
-p 
-met à une pression ""fL et on superpose une, force longitudinale P On réalise ainsi un état de contrainte et de déformation de révolution (§ II.I.3) 
-
-o 
-
-o o 
-(38) 
-o o o o 
-qr =
-o 
-Tous ces essaIS homogènes présentent l'avantage de pouvoIr s'inter­préter directement en termes de loi de comportement. Mis à part l'essai de traction, ils présentent cependant l'inconvénient d'être assez fins, nécessi­tant de grandes précautions pour obtenir des résultats significatifs. Dans la pratique courante, on utilise souvent des essais non homogènes, souvent issus de la tradition (essai pénétrornétrique en Mécanique des Sols, essai de dureté ou de résilience pour les métaux) qui permettent d'obtenir simplement des ca­ractéristiques globales du comportement. Malheureusement, ces essalS ne four­nissent sur les lois de comportement que des informations qualitatives, que l'on ne peut pas utiliser directement. 
-2. COMPORTEMENT DES SOLIDES 
-=========================== 
-2.1 DIVERSITE DES COMPORTEMENTS 
-Le but de ce paragraphe est double: d'une part nOUS allons décrire quelques uns des types de comportement que l'on peut rencontrer; d'autre part nous allons introduire la terminologie utilisée pour caractériser ces compor­tements. 
+le but de ce paragraphe est double: d'une part nOUS allons décrire quelques uns des types de comportement que l'on peut rencontrer; d'autre part nous allons introduire la terminologie utilisée pour caractériser ces compor­tements. 
 Pour les métaux à température ambiante, le comportement est convena­blement décrit par la courbe de traction, résultat de l'essai de traction. On fait croître la force F et on mesure l'allongement longitudinal 
 13 
 c. 
