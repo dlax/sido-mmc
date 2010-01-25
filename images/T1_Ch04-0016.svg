@@ -8,14 +8,41 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
+   width="210.54147"
+   height="129.99857"
    id="svg4617"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="Nouveau document 13">
+   sodipodi:docname="T1_Ch04-0016.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="465.29552"
+     inkscape:cy="84.129481"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4662"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
   <defs
      id="defs4619">
     <inkscape:perspective
@@ -59,28 +86,6 @@
          id="path3628" />
     </marker>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="269.15006"
-     inkscape:cy="571.99184"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     inkscape:window-width="605"
-     inkscape:window-height="481"
-     inkscape:window-x="0"
-     inkscape:window-y="261"
-     inkscape:window-maximized="0">
-    <inkscape:grid
-       type="xygrid"
-       id="grid4662" />
-  </sodipodi:namedview>
   <metadata
      id="metadata4622">
     <rdf:RDF>
@@ -96,7 +101,8 @@
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-194.72926,-418.46957)">
     <g
        transform="translate(-48.571429,157.7931)"
        id="g7389">
@@ -150,7 +156,7 @@
    style="fill:#000000;stroke-width:0" />
 </g>    </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:LMRoman10;-inkscape-font-specification:LMRoman10"
        d="m 209.71077,538.47477 c 30,-60 100.00001,-75 160,-80"
        id="path4585"
        sodipodi:nodetypes="cc" />
@@ -164,5 +170,23 @@
        d="m 210,456.34437 180,0"
        id="path4589"
        sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:LMRoman10;-inkscape-font-specification:LMRoman10"
+       id="text4873"
+       sodipodi:linespacing="125%"
+       transform="translate(2,10)"><textPath
+         xlink:href="#path4585"
+         id="textPath4889"><tspan
+   id="tspan4875"
+   style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:LMRoman10;-inkscape-font-specification:LMRoman10">                        sol lâche</tspan></textPath></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:LMRoman10;-inkscape-font-specification:LMRoman10"
+       id="text4892"
+       transform="translate(2,-2)"><textPath
+         xlink:href="#path4587"
+         id="textPath4896"><tspan
+   id="tspan4894">                                        sol dense</tspan></textPath></text>
   </g>
 </svg>

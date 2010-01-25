@@ -540,33 +540,64 @@ La courbe de traction permet également de décrire le comportement d'autres mat
     \end{center}
 \end{multicols}
 
+Pour des matériaux comme les matières plastiques ou les métaux à haute température, la courbe de traction perd toute signification, car elle dépend de manière cruciale de la vitesse de déformation.
+On caractérise alors le comportement par des essais de fluage et de relaxation.
+Pour l'essai de fluage, toujours en traction ou compression simple, on impose une contrainte constante et on observe la déformation en fonction du temps: l'application de la contrainte s'accompagne d'une déformation instantanée, puis la déformation se poursuit, puis se stabilise, soit vers une constante, soit vers un état de fluage stationnaire à vitesse de déformation constante.
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0017}
+
+        Matériau de type fluide
+    \end{center}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0018}
+
+        Solide
+    \end{center}
+\end{multicols}
+Si à un l'instant $t_0$ on relache la contrainte, alors la déformation de décompose en trois port parties:
+\begin{itemize}
+    \item une déformation instantanée (recouvrance instantanée),
+    \item une déformation obtenue progressivement (recouvrance différée),
+    \item une déformation résiduelle qui subsiste,
+\end{itemize}
+cette dernière pouvant disparaître pour un matériau de type solide.
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0019}
+
+        Fluide
+    \end{center}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0020}
+
+        Solide
+    \end{center}
+\end{multicols}
+
+L'essai de relaxation consiste à appliquer une déformation constant,­et à observer la contrainte nécessaire
+
+Si l'on pousse plus loin l'essai de fluage, on voit apparaître après le fluage primaire (régime transitoire) et le fluage secondaire (régime stabilisé) une zone de fluage tertiaire qui correspond au phénomène «~d'endommagement~» (détérioration du matériau qui conduit à la rupture).
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0021}
+    \end{center}
+    \columnbreak
+    \begin{enumerate}
+        \item fluage primaire
+        \item fluage secondaire
+        \item fluage tertiaire
+    \end{enumerate}
+\end{multicols}
+
+Ce type de comportement dépendant du temps est appelé «~viscoplastique~»  ou «~viscoélastique~», selon qu'il existe ou non un seuil en dessous duquel le comportement peut être considéré comme élastique.
+En première approximation, les matières plastiques ont un comportement viscoélastique, et les métaux à haute température un comportement viscoplastique.
+
+\subsection{Modèles rhéologiques}
 \endinput
-Pour des matériaux comme les matières plastiques ou les métaux à haute température, la courbe de traction perd toute signification, car elle dépend de manière cruciale de la vitesse de déformation. On caractérise alors le comportement par des essais de fluage et de relaxation. Pour l'essai de fluage, toujours en traction ou compression simple, on impose une contrainte constante et on observe la déformation en fonction du temps: l'application 
-----­
 
-~rance 
-instantanée 
-rec. différée 
-déf. 
-instant dU. résiduelle 
-
-------~--------------~t 
-
-t 
-Marériau de type fluide Solide 
-de la contrainte s'accompagne d'une déformation instantanée, puis la déforma­tion se poursuit, puis se stabilise, soit vers une constante, soit vers un état de fluage stationnaire à vitesse de déforr,ation constante. Si à un lns­tant to on relache la contrainte, alors la d~f0rn3tion de d&compose en trois port Lt·S: 
--une d('formation instant3nt:"·c (rcc,t.nJ\'rance ins l:-4!1tanéé), 
--une d~f(\rmation obtenue rn)lre.ssÎvCr:Jént (Y"~LOUV'r3nce différé:c), 
--une déformation résiduelle qui subsiste, cette dernière pouvant disparaître pour un matériau de type solide. 
-L'essai de relaxation consiste à appliquer une déformation constant,­et à observer la contrainte nécessaire 
-
-Fluide Solide Si l'on pousse plus loin l'essai de fluage, on voit apparaître 
-
-l fluage primaire II fluage secondaire III fluage tertiaire 
-t 
-après le fluage primaire (régime transitoire) et le fluage secondaire (régime stabilisé) une zone de fluage tertiaire qui correspond au phénomène I!d'endom­rnagementll (détérioration du matériau qui conduit à la rupture). 
-Ce type de comportement dépendant du temps est appelé I!viscoplasti­que l1 ou "viscoélastiquefl , selon qu'il existe ou non un seuil en dessous du­quel le comportement peut être considéré comme élastique. En première appro­ximation, les matières plastiques ont un comportement viscoélastique, et les métaux à haute température un comportement viscoplastique. 
-2. 2 HODELES RHEOLOGIQUES 
 Il est important de savoir construire des modèles mathématiques de comportement décrivant, au moins qualitativement, les différents types de COlT"­portement que nous venons de présenter. Les modèles rhéologiques forment une classe déjà très vaste de tels modèles. Ils s'obtiennent par combinaison de 3 modèles élémentaires 
 le ressort, modèle de C(lmportement élastique 
 (39) cr = Et 
