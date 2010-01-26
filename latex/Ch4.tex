@@ -596,84 +596,136 @@ Ce type de comportement dépendant du temps est appelé «~viscoplastique~»  ou
 En première approximation, les matières plastiques ont un comportement viscoélastique, et les métaux à haute température un comportement viscoplastique.
 
 \subsection{Modèles rhéologiques}
-\endinput
+Il est important de savoir construire des modèles mathématiques de comportement décrivant, au moins qualitativement, les différents types de comportement que nous venons de présenter.
+Les modèles rhéologiques forment une classe déjà très vaste de tels modèles.
+Ils s'obtiennent par combinaison de 3 modèles élémentaires
+\begin{itemize}
+    \item le ressort, modèle de comportement élastique
+        \begin{multicols}{2}
+            \begin{equation}
+                \sigma = E \varepsilon
+                \label{eq:Ch04-039}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics{../images/T1_Ch04-0022}
+            \end{center}
+        \end{multicols}
+    \item le patin, modèle de comportement plastique
+        \begin{multicols}{2}
+            \begin{equation}
+                \begin{cases}
+                    \dot\varepsilon = 0 & \text{ si } |\sigma|<\sigma_0 \\
+                    \dot\varepsilon > 0 & \text{ si } |\sigma|=\sigma_0 \\
+                    \dot\varepsilon < 0 & \text{ si } |\sigma|=-\sigma_0
+                \end{cases}
+                \label{eq:Ch04-040}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics{../images/T1_Ch04-0023}
+            \end{center}
+        \end{multicols}
+    \item l'amortisseur, modèle de comportement visqueux
+        \begin{multicols}{2}
+            \begin{equation}
+                \sigma = \eta \dot \varepsilon
+                \label{eq:Ch04-041}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics{../images/T1_Ch04-0024}
+            \end{center}
+        \end{multicols}
+\end{itemize}
+Les modèles rhéologiques s'obtiennent par montage en parallèle (les contraintes s'additionnent, les deformations sont les mêmes) ou en série (les déformations s'additionnent, les contraintes sont les mêmes).
 
-Il est important de savoir construire des modèles mathématiques de comportement décrivant, au moins qualitativement, les différents types de COlT"­portement que nous venons de présenter. Les modèles rhéologiques forment une classe déjà très vaste de tels modèles. Ils s'obtiennent par combinaison de 3 modèles élémentaires 
-le ressort, modèle de C(lmportement élastique 
-(39) cr = Et 
+Le comportement viscoélastique peut être représenté par une combinaison de ressorts et d'amortisseurs. 
+\begin{itemize}
+    \item Par montage en série d'un ressort et d'un amortisseur, on obtient le modèle de Maxwell:
+        \begin{multicols}{2}
+            \begin{equation}
+                \left\{
+                \begin{aligned}
+                    \sigma &= E \varepsilon_1 = \eta \dot{\varepsilon}_2 \\
+                    \varepsilon &= \varepsilon_1 + \varepsilon_2
+                \end{aligned}
+                \right.
+                \label{eq:Ch04-042}
+            \end{equation}
+            ou en éliminant $\varepsilon_1$ et $\varepsilon_2$
+            \begin{equation}
+                \dot \varepsilon = \frac{\dot \sigma}{E} + \frac{\sigma}{\eta}
+                \label{eq:Ch04-043}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics{../images/T1_Ch04-0025}
+            \end{center}
+        \end{multicols}
+        qui est la loi de comportement sous forme différentielle.
+        Conformément à \eqref{eq:Ch04-028}, on voit que, connaissant l'histoire de $\sigma$ (ou de $\varepsilon$), on peut en déduire la valeur à l'instant $t$ de $\varepsilon$ (ou de $\sigma$ par intégration de l'équation différentielle~\eqref{eq:Ch04-043}.
+    \item Par montage en parallèle d'un ressort et d'un amortisseur, on obtient le modèle de Kelvin-Voigt
+        \begin{multicols}{2}
+            \begin{equation}
+                \left\{
+                \begin{aligned}
+                    \sigma &= E \varepsilon_1 = \eta_2 \dot{\varepsilon}_2 = E_3 \varepsilon_3 + \eta_3 \dot \varepsilon_3 \\
+                    \varepsilon &= \varepsilon_1 + \varepsilon_2 + \varepsilon_3
+                \end{aligned}
+                \right.
+                \label{eq:Ch04-045}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics{../images/T1_Ch04-0026}
+            \end{center}
+        \end{multicols}
+    \item Par montage en série-d'un modèle de-Maxwell et d'un modèle de Kelvin-Voigt, on obtient le modèle de Burgers
+        \begin{multicols}{2}
+            \begin{equation}
+                \sigma = E \varepsilon + \eta \dot \varepsilon
+                \label{eq:Ch04-044}
+            \end{equation}
+            \columnbreak
+            \begin{center}
+                \includegraphics[scale=0.8]{../images/T1_Ch04-0027}
+            \end{center}
+        \end{multicols}
+        En éliminant $\varepsilon_1$, $\varepsilon_2$ et $\varepsilon_3$, il vient
+        \begin{equation}
+            \ddot \varepsilon + \frac{E_3}{\eta_3} \dot{\varepsilon} = \frac{1}{E_1} \ddot{\sigma} + \left( \frac{E_3}{\eta_3E_1} + \frac{1}{\eta_2} + \frac{1}{\eta_3} \right)\dot{\sigma} + \frac{E_3}{\eta_2\eta_3} \sigma
+            \label{eq:Ch04-046}
+        \end{equation}
+        forme différentielle de la loi de comportement.
+        En particulier, on obtient en fluage une courbe qui représente qualitativement le comportement de certaines matières plastiques.
+\end{itemize}
+Et ainsi de suite.
 
--62 ­-le patin, modèle de comportement plastique 
-L = 0 si \cr 1< (To 
-(40) E. > 0 Si cr 
-=cro
-[ . 
+Les comportements élasto-plastiques s'obtiennent par combinaison de ressorts et de patins.
+\begin{itemize}
+    \item Par montage en série d'un ressort et d'un patin, on obtient un modèle élasto-plastique sans écrouissage
+        \begin{center}
+            \includegraphics{../images/T1_Ch04-0028}
+        \end{center}
+    \item On obtient un modèle avec écrouissage linéaire montage suivant
+        \begin{center}
+            \includegraphics{../images/T1_Ch04-0029}
+        \end{center}
+\end{itemize}
 
-E. < 0 Si (J = -Uo 
-l' amortisseur, modèle de comportement visqueux 
-'7
-. 
-(41 ) (J E.
-= ")  TI D 
-Les modèles rhéologiques s'obtiennent par montage en parallèle (les contrain­
-tes s'additionnent, les deformations sont les mêmes) ou en série (les défor­
-mations s'additionnent, les contraintes sont les mêmes). 
-Le comportement viscoélastique peut être représenté par une combi­naison de ressorts et d'amortisseurs . 
- Par montage en série d'un ressort et d'un amortisseur, OR obtient le modèle de Maxwell: 
-. 
-E
-cr = EL, = '7 E.J., '7. 
-(42) 
-{ = E
-[ , + EJ., 
-CVW.l~ 
-L.,
-ou en éliminant El.
-E, et El, 
-cr cr
-(43 ) E 
-= + 
-E 
-"l 
-qui est la loi de comportement sous forme différentielle. Conformément à (28) 
-on voit que, connaissant 1 'histoire de 0-(ou de E. ), on peut en déduire la valeur à l'instant t de E (ou de cr par intégration de l'équation dif­férentielle (43) . 
- Par montage en parallèle d'un ressort et d'un amortisseur, on obtient le 
-modèle de Kelvin-Voigt 
-(44) 
+\begin{wrapfigure}{l}{6cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch04-0030}
+    \end{center}
+\end{wrapfigure}
+Enfin, on peut obtenir des comportements viscoplastiques par des combinaisons des trois éléments de base.
+Par exemple le modèle de Bingham permet de décrire le comportement du goudron et de certaines pâtes.
 
-
-__ Par montage en série-d'un modèle de-Maxwell et d'un modèle de Kelvin-Voigt, on obtient le modèle de Burgers 
-(45) 
-[ 
-
-
-En éliminant E" E.l, et E?, , il vient 
-" E3 .. .. [;:;
-+ _~_+_,._ CT
-+ = (E 1r +
-( 46) E E CT -1 CT 
-"l3 E, "l:l E, "1 ,. '1:. (\,"1') 
-forme différentielle de la loi de comportement. En particulier, on obtient 
-
-
-en fluage' une courbe qUI représente qualitativement le comportement de certaines matières plastiques. 
-L---------------~t 
-Et ainsi de suite. 
-Les comportements élasto-plastiques s'obtiennent par combinaison de ressorts et de patins . 
- Par montage en série d'un ressort et d'un patin, on obtient un modèle 
-élasta-plastique sans écrouissage 
-
-
- On obtient un modèle avec écrouissage linéaire montage suivant 
-
-Enfin, on peut obtenir des comportements viscoplastiques par des combinaisons des trois éléments de base. Par exemple le modèle de Bingham 
-
-permet de décrire le comportement du goudron et de certaines pâtes. 
-De manière générale, le choix d'un modèle représentant le compor­tement d'un matériau réel est un problème difficile. Le comportement des matériaux réels est complexe, et nous n'en avons présenté qu'une esquisse 
-très  incomplète.  Même  pour  des  matériaux aussi  courants  que  l'acier,  de  
-nombreux  aspects  du  comportement  restent mal  connus,  et  il  est  impossible  
-de  construire  un  modèle .représentant  le comportement  d'un rnatérjau donné  
-
-en toutes circonstances. Dans chaque problème, il convient de choisir le modèle le plus simple conduisant à des résultats satisfaisants pour l'uti­
-lisation qu'on veut en faire. Dans certains cas, en particulier si l'on recherche une grande fiabilité, il conviendra de faire le calcul avec une loi de comportement très sophistiquée, prenant en compte tous les risques de ruine possibles, ceS calculs étant rendus possibles par les développe­ments de l'informatique. Dans d'autres cas, par contre, on pourra se satis­faire d'approximations plus grossières du comportement, et c'est la raison d'être des modèles élémentaires qui feront l'objet de la suite de ce cours. 
--65 ­Chapitre V 
+De manière générale, le choix d'un modèle représentant le comportement d'un matériau réel est un problème difficile.
+Le comportement des matériaux réels est complexe, et nous n'en avons présenté qu'une esquisse très  incomplète.
+Même pour des matériaux aussi courants que l'acier, de nombreux aspects du comportement restent mal connus, et il est impossible de  construire un modèle représentant le comportement d'un matérjau donné en toutes circonstances.
+Dans chaque problème, il convient de choisir le modèle le plus simple conduisant à des résultats satisfaisants pour l'utilisation qu'on veut en faire.
+Dans certains cas, en particulier si l'on recherche une grande fiabilité, il conviendra de faire le calcul avec une loi de comportement très sophistiquée, prenant en compte tous les risques de ruine possibles, ces calculs étant rendus possibles par les développements de l'informatique.
+Dans d'autres cas, par contre, on pourra se satisfaire d'approximations plus grossières du comportement, et c'est la raison d'être des modèles élémentaires qui feront l'objet de la suite de ce cours.
 

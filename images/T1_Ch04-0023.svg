@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:ns0="http://www.iki.fi/pav/software/textext/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="94.5"
+   height="35.404949"
+   id="svg4278"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="T1_Ch04-0022.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="47.379211"
+     inkscape:cy="6.249006"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="29"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       snapvisiblegridlinesonly="true"
+       enabled="true"
+       visible="true"
+       empspacing="5"
+       id="grid4377"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4280">
+    <marker
+       style="overflow:visible"
+       id="EmptyTriangleOutM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="EmptyTriangleOutM">
+      <path
+         transform="scale(0.4) translate(-4.5,0)"
+         style="fill-rule:evenodd;fill:#FFFFFF;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path3765" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleInM">
+      <path
+         transform="scale(-0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path3738" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path3747" />
+    </marker>
+    <inkscape:perspective
+       id="perspective4286"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective4265" />
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DotM"
+       style="overflow:visible">
+      <path
+         id="path3666"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none;marker-end:none"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="DotM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4271"
+       style="overflow:visible">
+      <path
+         id="path4273"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none;marker-end:none"
+         transform="matrix(0.4,0,0,0.4,2.96,0.4)" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata4283">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-329.89286,-343.23114)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Calque 1">
+    <path
+       transform="translate(329.89286,343.23114)"
+       id="path4379"
+       d="m 0,25.404949 50,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:none;marker-start:url(#marker4271)" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       transform="translate(329.89286,343.23114)"
+       id="path4381"
+       d="m 95,25.404949 -20,0 0,-10 -35,0 0,9"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker4271);marker-end:url(#EmptyTriangleOutM)" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       ns0:preamble=""
+       ns0:text="$\\sigma_0$"
+       text-anchor="start"
+       word-spacing="normal"
+       letter-spacing="normal"
+       font-size-adjust="none"
+       font-stretch="normal"
+       font-weight="normal"
+       font-variant="normal"
+       font-style="normal"
+       fill-opacity="1"
+       fill-rule="even-odd"
+       fill="none"
+       stroke-opacity="1"
+       stroke-dashoffset="0"
+       stroke-dasharray="none"
+       stroke-miterlimit="10.433"
+       stroke-linejoin="miter"
+       stroke-linecap="butt"
+       stroke="black"
+       xml:space="preserve"
+       transform="matrix(1.199997,0,0,-1.199997,104.23487,1199.909)"
+       id="content">
+<path
+   id="path6264"
+   fill="black"
+   stroke-width="0"
+   d="M228.59,710.84 L228.61,710.84 L228.62,710.84 L228.64,710.84 L228.65,710.84 L228.67,710.84 L228.69,710.84 L228.7,710.84 L228.72,710.84 L228.74,710.85 L228.76,710.85 L228.78,710.85 L228.8,710.86 L228.83,710.86 L228.85,710.87 L228.87,710.87 L228.89,710.88 L228.91,710.89 L228.92,710.9 L228.94,710.91 L228.96,710.92 L228.98,710.93 L228.99,710.95 L229,710.96 L229.01,710.96 L229.02,710.97 L229.02,710.98 L229.03,710.99 L229.04,711 L229.04,711.01 L229.05,711.02 L229.05,711.03 L229.06,711.04 L229.06,711.05 L229.07,711.07 L229.07,711.08 L229.07,711.09 L229.07,711.1 L229.08,711.12 L229.08,711.13 L229.08,711.15 L229.08,711.16 L229.08,711.18 C229.08,711.42,228.87,711.42,228.69,711.42 H226.42 C224.92,711.42,223.81,709.77,223.81,708.59 C223.81,707.71,224.4,707.01,225.3,707.01 L225.32,707.23 C224.83,707.23,224.43,707.59,224.43,708.31 C224.43,708.61,224.55,709.42,224.9,710.01 C225.32,710.7,225.91,710.84,226.25,710.84 C227.09,710.84,227.17,710.18,227.17,709.87 C227.17,709.4,226.97,708.59,226.63,708.08 C226.24,707.49,225.7,707.23,225.32,707.23 H225.32 L225.3,707.01 C226.48,707.01,227.81,708.22,227.81,709.75 C227.81,709.92,227.81,710.4,227.5,710.84 Z " />
+<path
+   id="path6266"
+   fill="black"
+   stroke-width="0"
+   d="M232.72,707.85 L232.72,708 L232.72,708.13 L232.71,708.26 L232.7,708.39 L232.69,708.52 L232.68,708.63 L232.66,708.75 L232.64,708.86 L232.61,708.97 L232.58,709.08 L232.55,709.18 L232.51,709.28 L232.47,709.38 L232.42,709.47 L232.37,709.57 L232.34,709.62 L232.31,709.66 C232.1,709.98,231.66,710.26,231.11,710.26 C229.49,710.26,229.49,708.36,229.49,707.85 C229.49,707.35,229.49,705.49,231.11,705.49 V705.69 C230.79,705.69,230.36,705.87,230.22,706.45 C230.12,706.86,230.12,707.43,230.12,707.95 C230.12,708.45,230.12,708.98,230.23,709.37 C230.37,709.92,230.82,710.07,231.11,710.07 C231.48,710.07,231.85,709.84,231.97,709.43 C232.08,709.05,232.09,708.55,232.09,707.95 C232.09,707.43,232.09,706.91,232,706.47 C231.86,705.84,231.38,705.69,231.11,705.69 H231.11 V705.49 C232.72,705.49,232.72,707.35,232.72,707.85 Z " />
+</g>  </g>
+</svg>
