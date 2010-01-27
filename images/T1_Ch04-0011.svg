@@ -10,12 +10,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
+   width="210.54147"
+   height="135.2724"
    id="svg9471"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="Nouveau document 32">
+   sodipodi:docname="T1_Ch04-0011.svg">
   <defs
      id="defs9473">
     <inkscape:perspective
@@ -145,8 +145,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="520"
+     inkscape:cx="131.69931"
+     inkscape:cy="-138.07808"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -163,14 +163,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-243.30069,-259.0117)">
     <path
        id="path2824"
        d="m 258.28218,270.68174 0,109.99995 174.99986,0"
