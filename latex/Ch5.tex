@@ -94,7 +94,7 @@ En dérivant \eqref{eq:Ch05-007} et en identifiant avec \eqref{eq:Ch05-006} on o
 Les déformations étant petites, on peut développer $w$ en série de Taylor
 \begin{equation}
     w \left( \varepsilon_{ij} \right) = w_0 + \cancel{a_{ij} \varepsilon_{ij}} + \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh}
-    \label{<++>}
+    \label{eq:Ch05-010}
 \end{equation}
 où $a_{ij}$ est symétrique et où $A_{ijkh}$ vérifie les conditions de symétrie \eqref{eq:Ch05-002} et \eqref{eq:Ch05-003} qui, dans cette approche, sont automatiquement vérifiées.
 En reportant dans \eqref{eq:Ch05-008} il vient
@@ -176,356 +176,534 @@ On voit donc que les manifestations de l'anisotropie sont aussi nombreuses que v
 Nous avons présenté le concept dans le cadre de l'élasticité linéaire, mais le problème se pose pour tout comportement.
 Il s'agit néanmoins d'une question difficile et encore imparfaitement comprise. 
 
-\subsection{Élasticité anisotrope}\endinput 
-Les propriétés de symétrie, décrites par le groupe d'isotropie ~ , permettent de réduire le nombre des coefficients d'élasticité. Nous allons envisager quelques cas particuliers correspondant aux types d'anisotropie que l'on rencontre le plus f~équemment en mécanique. 
-a) Orthotropie. Il existe trois directions privilégiées mutuellement or[ho­gona1es, et le groupe d'isotropie est formé des symétries laissant invarian­tes chacune de ces trois directions (non orientées), càd des symétries par rapport aux axes correspondants. Si nous choisissons le repère formé par ces trois directions, alors le groupe d'isotropie ~ est formé des 4 matrices 
-(15) [~::] I~ -~:] [-~ ~ ~] [-~ -~ ~l 
-o 0 1 0 0 -1 0 0 -1 0 0-1 
-En écrivant (14) pour ces matrices, on obtient directement la nullité des coefficients A.H1~ , A~~H ' A.1i!-~ , A~t .. ~ , etc ... , et la matrice d'élasti­cité a la forme suivante 
-o:;~ 
-<r.w, 0";; 
-( 16) 
-0;,; <r3~ <r~l, 
-= 
+\subsection{Élasticité anisotrope} 
+Les propriétés de symétrie, décrites par le groupe d'isotropie $\mathcal{G}$, permettent de réduire le nombre des coefficients d'élasticité.
+Nous allons envisager quelques cas particuliers correspondant aux types d'anisotropie que l'on rencontre le plus fréquemment en mécanique. 
+\subsubsection{Orthotropie}
+Il existe trois directions privilégiées mutuellement orthogona1es, et le groupe d'isotropie est formé des symétries laissant invariantes chacune de ces trois directions (non orientées), c'est à dire des symétries par rapport aux axes correspondants.
+Si nous choisissons le repère formé par ces trois directions, alors le groupe d'isotropie $\mathcal{G}$ est formé des 4 matrices 
+\begin{equation}
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        -1 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \label{eq:Ch05-015}
+\end{equation}
+En écrivant \eqref{eq:Ch05-014} pour ces matrices, on obtient directement la nullité des coefficients $A_{1112}$, $A_{1113}$, $A_{1123}$, $A_{1213}$, etc., et la matrice d'élasticité a la forme suivante 
+\begin{equation}
+    \begin{bmatrix}
+        \sigma_{11}\\
+        \sigma_{22}\\
+        \sigma_{33}\\
+        \sigma_{23}\\
+        \sigma_{31}\\
+        \sigma_{12}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        A_{1} & B_{12} & B_{13} & 0 & 0 & 0 \\
+        B_{12} & A_{1} & B_{23} & 0 & 0 & 0 \\
+        B_{13} & B_{23} & A_1 & 0 & 0 & 0 \\
+        0 & 0 & 0 & C_{4} & 0 & 0 \\
+        0 & 0 & 0 & 0 & C_{5} & 0 \\
+        0 & 0 & 0 & 0 & 0 & C_{6}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \varepsilon_{11}\\
+        \varepsilon_{22}\\
+        \varepsilon_{33}\\
+        \varepsilon_{23}\\
+        \varepsilon_{31}\\
+        \varepsilon_{12}
+    \end{bmatrix}
+    \label{eq:Ch05-016}
+\end{equation}
+Pour un matériau orthotrope, la matrice élastique ne fait plus intervenir que 9 coefficients.
+La matrice d'élasticité associée à $\Lambda$, inverse de \eqref{eq:Ch05-016}, a évidemment la même structure.
+Bien entendu, cette forme simple est liée au choix du repère associé aux directions d'orthotropie.
+Dans un autre repère, cette matrice aurait une forme plus compliquée, déduite de \eqref{eq:Ch05-016} par \eqref{eq:Ch05-013}.
+Des essais de traction sur des éprouvettes découpées dans les directions d'orthotropie permettent de déterminer assez facilement les coefficients $A_1$, $A_2$, $A_3$, beaucoup plus difficilement les coefficients $B_{12}$, $B_{13}$, $B_{23}$. 
+Quant aux coefficients $C_4$, $C_5$, $C_6$ ils sont très difficiles à obtenir expérimentalement.
 
+Physiquement, cette anisotropie s'applique par exemple aux tôles laminées ou aux matériaux composites renforcés par deux ou trois systèmes de fibres dans des directions perpendiculaires.
 
+\subsubsection{Symétrie cubique}
+C'est un cas particulier de la précédente; il existe toujours trois directions privilégiées mutuellement orthogonales, mais de plus ces trois directions sont équivalentes.
+Physiquement, cette anisotropie est celle d'un monocristal d'un matériau cubique ou cubique à face centrée.
+Aux matrices \eqref{eq:Ch05-015}, il faut rajouter les 4 matrices suivantes 
+\begin{equation}
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        1 & 0 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        0 & 0 & 1 \\
+        0 & 1 & 0 \\
+        1 & 0 & 0
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 0 & 1 \\
+        0 & 1 & 0
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch05-017}
+\end{equation}
+(et celles qu'elles engendrent par produit entre elles et avec celles de \eqref{eq:CH05-015}).
+On obtient alors 
+\begin{equation}
+    \begin{bmatrix}
+        \sigma_{11}\\
+        \sigma_{22}\\
+        \sigma_{33}\\
+        \sigma_{23}\\
+        \sigma_{31}\\
+        \sigma_{12}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        A & B & B & 0 & 0 & 0 \\
+        B & A & B & 0 & 0 & 0 \\
+        B & B & A & 0 & 0 & 0 \\
+        0 & 0 & 0 & C & 0 & 0 \\
+        0 & 0 & 0 & 0 & C & 0 \\
+        0 & 0 & 0 & 0 & 0 & C
+    \end{bmatrix}
+    \begin{bmatrix}
+        \varepsilon_{11}\\
+        \varepsilon_{22}\\
+        \varepsilon_{33}\\
+        \varepsilon_{23}\\
+        \varepsilon_{31}\\
+        \varepsilon_{12}
+    \end{bmatrix}
+    \label{eq:Ch05-018}
+\end{equation}
+forme qui ne fait intervenir que trois coefficients $A$, $B$ et $C$. 
 
+Physiquement, cette anisotropie correspond par exemple à un matériau composite renforcé par trois systèmes de fibres identiques et dans des directions perpendiculaires.
+Elle correspond aussi à un monocristal en système cubique ou cubique à face centrée.
+Plus généralement, on sait construire les matrices d'élasticité associées aux divers systèmes cristallographiques, mais ce type d'anisotropie intervient rarement en mécanique. 
 
-o 
+\subsubsection{Isotropie transverse}
+Le matériau a une direction privilégiée, et le groupe d'isotropie $\mathcal{G}$ est le groupe des transformations laissant invariante cette direction non orientée.
+Nous choisissons un repère ayant comme axe $x_3$ direction privilégiée.
+Le groupe $\mathcal{G}$ est alors formé:
+\begin{itemize}
+    \item des rotations autour de $x_3$ (d'angle quelconque)
+    \item des symétries par rapport aux droites du plan $x_1,\ x_2$
+\end{itemize}
+C'est donc le groupe des matrices de la forme 
+\begin{equation}
+    \begin{bmatrix}
+        \cos \theta & \sin \theta & 0 \\
+        -\sin \theta & \cos \theta & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \quad
+    \begin{bmatrix}
+        \cos \varphi & \sin \varphi & 0 \\
+        \sin \varphi & -\cos \varphi & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \label{eq:Ch05-019}
+\end{equation}
+On peut alors obtenir la forme suivante pour la matrice d'élasticité 
+\begin{equation}
+    \begin{bmatrix}
+        \sigma_{11}\\
+        \sigma_{22}\\
+        \sigma_{33}\\
+        \sigma_{23}\\
+        \sigma_{31}\\
+        \sigma_{12}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        A & B & E & 0 & 0 & 0 \\
+        B & A & E & 0 & 0 & 0 \\
+        E & E & A & 0 & 0 & 0 \\
+        0 & 0 & 0 & C & 0 & 0 \\
+        0 & 0 & 0 & 0 & C & 0 \\
+        0 & 0 & 0 & 0 & 0 & A-B
+    \end{bmatrix}
+    \begin{bmatrix}
+        \varepsilon_{11}\\
+        \varepsilon_{22}\\
+        \varepsilon_{33}\\
+        \varepsilon_{23}\\
+        \varepsilon_{31}\\
+        \varepsilon_{12}
+    \end{bmatrix}
+    \label{eq:Ch05-020}
+\end{equation}
+Il reste 5 coefficients d'élasticité.
+Les coefficients $D$ et $E$ s'obtiennent par un essai de traction sur une éprouvette parallèle à la direction privilégiée, les coefficients $A$ et $B$ par un essai de traction sur une éprouvette perpendiculaire à la direction privilégiée, enfin le coefficient $C$ peut s'obtenir par une expérience de torsion sur un tube minee parallèle à l'axe privilégié (paragraphe \ref{ssec:Ch04-1.4}).
+C'est le type d'anisotropie que l'on rencontre le plus fréquemment: composites renforcés par fibres unidirectionnelles, composites stratifiés, bois, barres obtenues par filage, roches et sols sédimentaires, etc.
 
-o o 
-o o 
-C,. o 
-o o 
-
-EH 
-el,J. El, 
-Et,; 
-E;~ 
-E.t 
-Pour un matériau orthotrope, la matrice élastique ne fait plus intervenir 
-que 9 coefficients. La matrice d'élasticité associée à A , inverse de (16), 
-a évidemment la même structure. Bien entendu, cette forme simple est liée 
-au choix du repère associé aux directions d'orthotropie. Dans un autre repère, 
-cette matrice aurait une forme plus compliquée, déduite de (16) par (13). Des essais de traction sur des éprouvettes découpées dans les directions d'orthotropie permettent de déterminer assez facilement les coefficients 
-Ai' A", A3' beaucoup plus difficilement les coefficients ~~~, B~~ , B.t,' 
-Quant  aux  coefficients  C~,  C5  '  C"  ils sont  très diffiéiles à obtenir  
-expérimentalement.  
-Physiquement,  cette anisotropie s'applique par exemple  aux  tôles  
-
-laminées ou aux matériaux composites renforcés par deux ou trois systèmes 
-de fibres dans des directions perpendiculaires. 
-b) Symétrie cubique. C'est un cas particulier de la précédente; il existe 
-touj?UrS trois directions privilégiées mutuellement orthogonales, mais de plus ces trois directions sont équivalentes. Physiquement, cette anisotropie est celle d'un monocristal d'un matériau cubique ou cubique à face centrée. Aux matrices (15), il faut rajouter les 4 matrices suivantes 
-
-(et celles qu'elles engendrent par produit entre elles'et avec celles de (15». On obtient alors 
-r~i 1 
-(j~ , 
-(j~~ 1 =
-(18) 
-<" j
-(J..~ (j~~ 
-rA I!> ~ 0 0 0 
-e,  A  ~  0  0  0  
-B  >  A  0  0  0  
-0  0  0  C  0  0  
-0  0  0  0  C  0  
-0  0  0  0  0  C  
-
-l 
-
-oI~ .u 
-E~~ 
-El3 
-EH 
-E~" 
-forme qui ne fait intervenir que trois coefficients A , e, et C . 
-Physiquement, cette anisotropie correspond par exemple à un matériau composite renforcé par trois systèmes de fibres identi~ues et dans des direc­tions perpendiculaires. Elle correspond aussi à un monocristal en système cu­bique ou cubique à face centrée. Plus généralement, on sait construire les matrices d'élasticité associées aux divers systèmes cristallographiques, malS ce type d'anisotropie intervient rarement en mécanique. 
-c) Isotropie transverse. Le matériau a une direction privilégiée, et le groupe d'isotropie ~ est le groupe des transformations laissant invariante cette 
-direction non orientée. Nous choisissons un repère ayant comme axe xla di­
-3 
-rection privilégiée. Le groupe ~ est alors formé: 
--71 ­-des rotations autour de x(d'angle quelconque)
-3 -des symétries par rapport aux droites du plan 
-xI' x2· C'est donc le groupe des matrices de la forme 
-.MM, 6 ,Mmdl' 
-(19) [M' [ "'l 
--~e ~e ..MM,!f -c'f 
-0 0 0
-:1 :1 
-On. peut alors obtenir la forme suivante pour la matrice d'élasticité 
-c:;:;~ 
-<rU 
-0- 
-(20) 
-<1"1.. 
-(j~i 
-o:.!j, 
-= 
-
-A  B  E  0  0  0  
-~  A  E  0  0  0  
-E  E D  0  0  0  
-0  0  0  C  0  0  
-0  0  0  0  c.  0  
-0  0  0  0  0  A-B  
-
-(Al 
-Eu .  
-E1.~ 
-fOi 
-f~J. 
-Il reste 5 coefficients d'élasticité. Les coefficients J) et E s'obtiennent par un essai de traction sur une éprouvette parallèle à la direction privilé­giée, les coefficients A et e. par un essai de traction sur une éprouvette perpendiculaire à la direction privilégiée, enfin le coefficient C peut s'ob­tenir par une expérience de torsion sur up tube minee parallèle à l'axe pri­vilégié (§ IV.I.4). C'est le type d'anisotropie que l'on rencontre le plus fréquemment: composites renforcés par fibres unidirectionnelles, composites stratifiés, bois, barres obtenues par filage, roches et sols sédimentaires, etc. 
-2. ELASTICITE LINEAIRE ISOTROPE 
-=============================== 
-2.1 COEFFICIENTS D'ELASTICITE 
-Pour un matériau isotrope, sans direction privilégiée, les compo­
-santes, du tenseur d'élasticité doivent vérifier la relation (14) pour toute matrice orthogonale Qk! . On vérifie facilement que le tenseur 
-
-satisfait à cette condition. Réciproquement, on peut montrer que cette con­
-dition ne peut être vérifiée que si le tenseur d'élasticité a la forme (21). En écrivant (1), on obtient la loi de comportement 
-(22) cr.. 
-~â' 
-
--72 ­
+\section{Élasticité linéaire isotrope}
+\subsection{Coéfficients d'élasticité}
+Pour un matériau isotrope, sans direction privilégiée, les composantes, du tenseur d'élasticité doivent vérifier la relation \eqref{eq:Ch05-014} pour toute matrice orthogonale $Q_{ij}$.
+On vérifie facilement que le tenseur 
+\begin{equation}
+    A_{ijkh} = \lambda \delta_{ij} \delta_{kh} + \mu \left( \delta_{ik} \delta_{jh} + \delta_{ih} \delta_{jk} \right)
+    \label{eq:Ch05-021}
+\end{equation}
+satisfait à cette condition.
+Réciproquement, on peut montrer que cette condition ne peut être vérifiée que si le tenseur d'élasticité a la forme \eqref{eq:Ch05-021}.
+En écrivant \eqref{eq:Ch05-001}, on obtient la loi de comportement 
+\begin{equation}
+    \sigma_{ij} = \lambda \delta_{ij} \varepsilon_{kh} + 2 \mu \varepsilon_{ij}
+    \label{eq:Ch05-022}
+\end{equation}
 ou en composantes 
-[ 
-0:;, = (Ât2e-) E." + Â El.+ T ÎI E~,
-(23) 
-= J., e-E,2­
-<J:il. ce qU1 donne pour la matrice d'élasticité 
-<T" 
-<ftl. <f"
-(24) 
-crl" 
-0"" O:;l. 
-'" 
+\begin{equation}
+    \begin{aligned}
+        \sigma_{11} &= \left( \lambda+ 2 \mu \right) \varepsilon_{11} + \lambda \varepsilon_{22} + \lambda \varepsilon_{33} \\
+        \sigma_{12} &= 2\mu \varepsilon_12
+    \end{aligned}
+    \label{eq:Ch05-023}
+\end{equation}
+ce qui donne pour la matrice d'élasticité 
+\begin{equation}
+    \begin{bmatrix}
+        \sigma_{11}\\
+        \sigma_{22}\\
+        \sigma_{33}\\
+        \sigma_{23}\\
+        \sigma_{31}\\
+        \sigma_{12}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \lambda+2\mu & \lambda      & 0            & 0    & 0    & 0 \\
+        \lambda      & \lambda+2\mu & \lambda      & 0    & 0    & 0 \\
+        0            & \lambda      & \lambda+2\mu & 0    & 0    & 0 \\
+        0            & 0            & 0            & 2\mu & 0    & 0 \\
+        0            & 0            & 0            & 0    & 2\mu & 0 \\
+        0            & 0            & 0            & 0    & 0    & 2\mu
+    \end{bmatrix}
+    \begin{bmatrix}
+        \varepsilon_{11}\\
+        \varepsilon_{22}\\
+        \varepsilon_{33}\\
+        \varepsilon_{23}\\
+        \varepsilon_{31}\\
+        \varepsilon_{12}
+    \end{bmatrix}
+    \label{eq:Ch05-024}
+\end{equation}
+La matrice d'élasticité a la. même forme que pour un matériau à symétrie cubique, avec en plus la relation 
+\begin{equation}
+	C = A-B
+	\label{eq:Ch05-025}
+\end{equation}
+C'est normal puisque l'isotropie est une restriction plus forte que la symétrie cubique.
+En fait, on peut construire \eqref{eq:Ch05-021} ou \eqref{eq:Ch05-024} en remarquant que la relation \eqref{eq:Ch05-014}, vraie pour tout $Q_{ij}$ orthogonal, doit l'être en particulier pour les $Q_{ij}$ \eqref{eq:Ch05-015} et \eqref{eq:Ch05-017}, ce qui donne \eqref{eq:Ch05-018}.
+La relation \eqref{eq:Ch05-025} se démontre alors en prenant pour $Q_{ij}$ une rotation quelconque, par exemple une rotation infinitésimale d'angle $\ud \theta$ autour de $x_1$. 
 
-? ';\ 0 0 0
-ÎI+~t'­
-'Àtle-Â 0 0 0
-" ? 0 0
-'Àt-1e-0
-"0 
-0 0 2,e-0 0 
-0 0 0 0 .le-0 
-0 0 0 0
+Pour calculer les coefficients $A_{ijkl}$ de la loi de comportement inverse, nous prenons la trace de  \eqref{eq:Ch05-022}
+\begin{equation}
+    \sigma_{kk} = \left( 3 \lambda + 2\mu \right) \varepsilon_{kk}
+    \label{eq:Ch05-026}
+\end{equation}
+qui donne les déformations en fonction des contraintes par 
+\begin{equation}
+    \varepsilon_{ij} = \frac{1}{2\mu} \sigma_{ij} - \frac{\lambda}{2\mu \left( 3\lambda + 2 \mu \right)}\sigma_{kk} \delta_{ij}
+    \label{eq:Ch05-027}
+\end{equation}
 
-0 ~~ j 
-E~, l
-Etl. 
-f. " 
-EB 
-é~, 
-E,l. 
-La matrice d'élasticité a la. même forme que pour un matériau à symétrie cu­
-bique, avec en ~l~. la relation 
-(25) C = A -~ 
-c'est normal puisque l'isotropie est une restriction plus forte que la symé­
-trie cubique. En fait, on peut construire (21) ou (24) en remarquant que la relation (14), vraie pour tout Q.. orthogonal, doit l'être en particulier
-Â~ 
-pour les Q .. (15) et (17), ce qui donne (18). La relation (25) se démontre 
-~~ 
-alors en prenant pour Q.. une rotation quelconque, par exemple une rotation 
-4~ 
-infini tésimale d'angle ete autour de xI' 
-Pour calculer les coefficients Â~iit de la loi de comportement inverse, nous prenons la trace de (22) 
-(L6) 
+Ainsi, la loi élastique linéaire isotrope générale dépend de deux coefficients, les coefficients de Lamé $\lambda$ et $\mu$.
+Pour dégager leur signification physique, et en particutier pour les mesurer, envisageons quelques états de contraintes et de déformations particuliers.
+\begin{enumerate}
+    \item Tension ou compression hydrostatique \eqref{eq:Ch02-017}.
+        La relation \eqref{eq:Ch05-027} donne alors
+        \begin{equation}
+            \sigma_{ij} = \sigma \delta_{ij}, \quad \varepsilon_{ij} = \varepsilon \varepsilon_{ij}, \quad \sigma = \left( 3 \lambda + 2 \mu \right) \varepsilon
+            \label{eq:Ch05-028}
+        \end{equation}
+        $3 K = 3 \lambda + 2 \mu$ est le module de rigidité à la compression.
+    \item Glissement simple \eqref{eq:Ch03-044}.
+        La loi de comportement \eqref{eq:Ch05-021} donne alors 
+        \begin{equation}
+            u_{i,j} = 
+            \begin{bmatrix}
+                0 & \gamma & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+            \end{bmatrix}
+            \tens{\sigma} = 
+            \begin{bmatrix}
+                0 & \mu\gamma & 0 \\
+                \mu\gamma & 0 & 0 \\
+                0 & 0 & 0
+            \end{bmatrix}
+            \label{eq:Ch05-029}
+        \end{equation}
+        L'état de contrainte est un cisaillement simple \eqref{eq:Ch02-021}, $G=\mu$ est le module de rigidité au cisaillement ou module de Coulomb.
+    \item Traction simple \eqref{eq:Ch02-020} ou \eqref{eq:Ch04-035}.
+        D'après la loi de comportement \eqref{eq:Ch05-027}, on a 
+        \begin{equation}
+            \tens{\sigma} = 
+            \begin{bmatrix}
+                \sigma & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 0
+            \end{bmatrix}
+            \quad
+            \tens{\varepsilon} = 
+            \begin{bmatrix}
+                \varepsilon_L & 0 & 0 \\
+                0 & \varepsilon_T & 0 \\
+                0 & 0 & \varepsilon_T
+            \end{bmatrix}
+            \label{eq:Ch05-030}
+        \end{equation}
+        avec
+        \begin{equation}
+            \begin{aligned}
+                \varepsilon_L &= \frac{\lambda + \mu}{\mu \left( 3 \lambda + 2 \mu \right)} \sigma = \frac{\sigma}{\varepsilon} \\
+                \varepsilon_T &= -\frac{\lambda}{2\mu \left( 3 \lambda + 2 \mu \right)} \sigma = -\nu \varepsilon_L
+            \end{aligned}
+            \label{eq:Ch05-031}
+        \end{equation}
+        où $E$, module d'Young, et $\nu$, coefficient de Poisson, sont donnés par 
+        \begin{equation}
+            E = \frac{\mu \left( 3 \lambda + 2 \mu \right)}{\lambda + \mu}, \quad \nu = \frac{\lambda}{2 \left( \lambda + \mu \right)}
+            \label{eq:Ch05-032}
+        \end{equation}
+\end{enumerate}
 
-qui donne les dl!fornlàtions en f01'w~i.on des c:ontraintes par 
-
-Ainsi, la loi élastique linéair~ isotrope générale dépend de deux cuefficients, les coefficients de Lamé :>. et e-. Paur dégager leur signifi­cation physique, et en particutier pOur ièS mes, rel', envisageons quelques états de contraintes et de déformations particuliers. 
-a) Tension ou compression hydrostatique (11.17). La relation (27) donne alors 
-(28) (Je . '; 0-b .. , ê .. = f. S. , cr = (')Â +.2.1;'-) E. 
-~~ 
-~~
-'a 'a 
-~I<\ = ~';\+~f;L est le module de rigidité à la compression. 
-b) Glissement simple (111.44). La loi de comporte~cnL (2?') donne alors 
-
-~~ 0 
-(29) 
-
-o 0 
-o 0 
-L'état de contrainte est un cisaillement simple (11.21) 
-G= ~ est le module de rigidité au cisaillement ou ~dule de Coulomb. 
-
-c) Traction simple (11.20) ou (IV.35). D'après la loi de comportement (27), 
-on a 
-
-(30) 
-
-
-
-.avec 
-
-{f"
-cr 
-= 
-E 
-(31 ) 
-
-où E , module d'Young, et V, coefficient de Poisson, sont donnés par 
-(32) 
-
-, v = 
-
-Ainsi, on peut obtenir par un essai de traction le module d'Young 
-et le coefficient de Poisson: le module d'Young est la pente de la courbe de traction (qui est rectiligne dans le domaine élastique), et la mesure de la 
-contraction transversale donne le coefficient de Poisson. On peut ensuite à 
-partir de E et V calculer '). , ~ et K par 
-E v E
-(33) e-= ). = 
-E 
-,2, (.AtV) (.·q,V) (.-\ H» On peut également réécrire (27) avec E et \J , et il vient 
-
-v
-(34) 
-E 
-
+Ainsi, on peut obtenir par un essai de traction le module d'Young et le coefficient de Poisson: le module d'Young est la pente de la courbe de traction (qui est rectiligne dans le domaine élastique), et la mesure de la contraction transversale donne le coefficient de Poisson.
+On peut ensuite à partir de $E$ et $\nu$ calculer $\lambda$, $\mu$ et $K$ par 
+\begin{equation}
+    \mu = \frac{E}{2 \left( 1+\nu \right)} \quad \lambda = \frac{\nu E}{\left( 1 - 2 \nu \right)\left( 1 + \nu \right)} \quad 3 K = \frac{E}{1 - 2\nu}
+    \label{eq:Ch05-033}
+\end{equation}
+On peut également réécrire \eqref{eq:Ch05-027} avec $E$ et $\nu$, et il vient 
+\begin{equation}
+    \varepsilon_{ij} = \frac{1 + \nu}{E} \sigma_{ij} - \frac{\nu}{E} \sigma_{kk} \delta_{ij}
+    \label{eq:Ch05-034}
+\end{equation}
 ou en composantes 
-ê~~ = ~ [(J"~~ -V( {f"u, + (J"n)]
-[ E 
-(35) 
-....\-1-1> -l 
-=
-e:1~ = -~~ -~!j,
-E tG-
-La matrice d'élasticité inverse de (24) peut alors s'écrire 
-E 
-ft.!. 
-..j
-E~. 
-(36) 
-= 
-E. .!.~ 
-E 
-EH 
-E.l, 
-~  -'"  -)1  0  0  0  
--y  ~  -v  0  0  0  
--)1  -)1  -1  0  0  0  
-0  0  0  ·H'"  0  0  
-0  0  0  0  A-I-V  0  
-0  0  0  0  0  .-lW  
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \varepsilon_{11} &= \frac{1}{E} \left[ \sigma_{11} - \nu \left( \sigma_{22} + \sigma_{33}\right) \right] \\
+        \varepsilon_{12} &= \frac{1+ \nu}{E} \sigma_{12} = \frac{1}{2G} \sigma_{12}
+    \end{aligned}\right.
+    \label{eq:Ch05-035}
+\end{equation}
+La matrice d'élasticité inverse de \eqref{eq:Ch05-024} peut alors s'écrire 
+\begin{equation}
+    \begin{bmatrix}
+        \varepsilon_{11}\\
+        \varepsilon_{22}\\
+        \varepsilon_{33}\\
+        \varepsilon_{23}\\
+        \varepsilon_{31}\\
+        \varepsilon_{12}
+    \end{bmatrix}
+    =
+    \frac{1}{E}
+    \begin{bmatrix}
+        1    & -\nu & -\nu & 0     & 0     & 0 \\
+        -\nu & 1    & -\nu & 0     & 0     & 0 \\
+        -\nu & -\nu & 1    & 0     & 0     & 0 \\
+        0    & 0    & 0    & 1+\nu & 0     & 0 \\
+        0    & 0    & 0    & 0     & 1+\nu & 0 \\
+        0    & 0    & 0    & 0     & 0     & 1+\nu
+    \end{bmatrix}
+    \begin{bmatrix}
+        \sigma_{11}\\
+        \sigma_{22}\\
+        \sigma_{33}\\
+        \sigma_{23}\\
+        \sigma_{31}\\
+        \sigma_{12}
+    \end{bmatrix}
+    \label{eq:Ch05-036}
+\end{equation}
 
-a-~~ 
-(ft.!. <r 
-n 
-cr.!.~ ()~t 
-<r
-H1 
-Les coefficients d'élasticité  E ,  ::\  , e­ ,  K  , sont homogènes  
-à  des contraintes,  tandis que  le coefficient de Poisson  V  est  sans  dimen­ 
-sion.  Quelques valeurs  typiques de  E  et  y  sont  données  dans  le tableau  
-suivant  
+Les coefficients d'élasticité $E$, $\lambda$, $\mu$, $K$ sont homogènes à des contraintes, tandis que le coefficient de Poisson $\nu$ est  sans  dimension.
+Quelques valeurs typiques de $E$ et $\nu$  sont données dans le tableau suivant
+\begin{center}
+    \begin{tabular}[h]{lll}
+        & $E$ (hbar) & $\nu$ \\
+        Acier & 22.000 & 0,26 -- 0,29 \\
+        Aluminium & 7.000 & 0,32 -- 0,34 \\
+        Cuivre & 12.000 & 0,33 -- 0,36 \\
+        Titane & 11.000 & 0,34 \\
+        Verre & 6.000 & 0,21 -- 0,27 \\
+        Caoutchouc & 0,2 & 0,4999\ldots
+    \end{tabular}
+\end{center}
+ 
+\subsection{Découplage déviateur-partie sphérique}
+La forme générale \eqref{eq:Ch05-021} du tenseur d'élasticité dans le cas isotrope présente quelques propriétés remarquables. 
 
-E (hbar) 'V 
-Acie.r 22.000 0,26 -0,29 
-Aluminium 7.000 0,32 -0,34 Cuivre 12.000 0,33 -0,36 Titane Il.000 0,34 
-Verre 6.000 0,21 -0,27 r.aoutchouc 0,2 0,4999 . 
-2.2 DECOUPLAGE DEVIATEUR-PARTIE SPHERIQUE 
-.La forme générale (21) du tenseur d'élasticité dans le cas isotrope présente quelques propriétés remarquables. 
-Tout d'abord, cette forme (21) vérifie automatiquement l' hypothèse thermodynamique (3). C'est une des raisons pour laquelle cette hypothèse n'a pas de support expérimental, car le cas isotrope, le plus simple et le mieux connu, ne prouve rien. 
-Ensuite, on remarque, par exemple sur (22) ou (34), que les direc­
-tions principales des contraintes et des déformations coincident. C'est une propriété générale du comportement élastique isotrope. La relation entre con­
-traintes et déformations principales est d'après (23) et (35) donnée par 
+Tout d'abord, cette forme \eqref{eq:Ch05-021} vérifie automatiquement l'hypothèse thermodynamique \eqref{eq:Ch05-03}.
+C'est une des raisons pour laquelle cette hypothèse n'a pas de support expérimental, car le cas isotrope, le plus simple et le mieux connu, ne prouve rien. 
 
-(38) 
-E 
+Ensuite, on remarque, par exemple sur \eqref{eq:Ch05-022} ou \eqref{eq:Ch05-034}, que les directions principales des contraintes et des déformations coincident.
+C'est une propriété générale du comportement élastique isotrope.
+La relation entre contraintes et déformations principales est d'après \eqref{eq:Ch05-023} et \eqref{eq:Ch05-035} donnée par 
+\begin{equation}
+    \sigma_1 = \left( \lambda + 2 \mu \right) \varepsilon_1 + \lambda \left( \varepsilon_2 + \varepsilon_3 \right)
+    \label{eq:Ch05-037}
+\end{equation}
+\begin{equation}
+    \varepsilon_1 = \frac{\sigma_1}{E} - \frac{\nu}{E} \left( \sigma_2 + \sigma_3 \right)
+    \label{eq:Ch05-038}
+\end{equation}
+Enfin, on remarque que la loi de comportement \eqref{eq:Ch05-022} ou \eqref{eq:Ch05-034} se découple en deux lois de comportement, portant la première sur les parties sphériques, la seconde sur les déviateurs voir \eqref{eq:Ch02-012} et \eqref{eq:Ch03-038} ­
+\begin{equation}
+    \sigma = 3 K \varepsilon , \quad s_{ij} = 2 \mu e_{ij}
+    \label{eq:Ch05-039}
+\end{equation}
+Ce découplage entre partie sphérique et déviateur est spécifique du cas isotrope.
+En utilisant ce découplage, l'énergie de déformation $w$ peut, d'après \eqref{eq:Ch05-012}, s'écrire 
+\begin{equation*}
+    \begin{split}
+        w &= \frac{1}{2} \sigma_{ij} \varepsilon_{ij} = \frac{1}{2} \left[ 3 \sigma \varepsilon + s_{ij} e_{ij} \right] \\
+        & \frac{1}{2} \left[ 9 K \varepsilon^2 + 2\mu e_{ij} e_{ij} \right] = \frac{K}{2} \varepsilon_{kk} \varepsilon_{ll} + \mu e_{ij} e_{ij}
+    \end{split}
+\end{equation*}
+et de même pour $\mathop{w}^*$
+\begin{equation}
+    w=\mathop{w}^* = \frac{K}{2} \varepsilon_{kk} \varepsilon_{ll} + \mu e_{ij} e_{ij} = \frac{1}{18K} \sigma_{kk} \sigma_{ll} + \frac{1}{4\mu} s_{ij} s_{ij}
+    \label{eq:Ch05-049}
+\end{equation}
+Puisque déviateurs et parties sphériques sont indépendants, on voit qu'une CNS pour que l'hypothèse de stabilité \eqref{eq:Ch05-04} soit vérifiée est que 
+\begin{equation}
+    K>0, \quad \mu >0
+    \label{eq:Ch05-050}
+\end{equation}
+c'est à dire en utilisant \eqref{eq:Ch05-033} 
+\begin{equation}
+    E>0, \quad -1 < \nu < \frac{1}{2}
+    \label{eq:Ch05-051}
+\end{equation}
+La première condition est évidente, le tableau du paragraphe~\ref{ssec:Ch05-2.1} montre que pratiquement 
+\begin{equation}
+    0 < \nu \leq \frac{1}{2}
+    \label{eq:Ch05-052}
+\end{equation}
+Le cas $\nu = 1/2$ est un cas limite, qui correspond aux matériaux incompressibles.
+Supposons en effet que $K$ soit très grand (par rapport à $\mu$ et aux contraintes appliquées).
+La relation \eqref{eq:Ch05-039} montre alors que $\varepsilon_{kk}$, c'est à dire la variation de volume, est très petite, le matériau est donc très peu compressible, et il est raisonnahle de l'approcher par un matériau incompréssible c'est à dire soumis à la liaison 
+\begin{equation}
+    \varepsilon_{ii} = 0, \quad \varepsilon_{ij} = e_{ij}
+    \label{eq:Ch05-053}
+\end{equation}
+Mais, par cette approximation, on perd toute information sur la partie sphérique du tenseur des contraintes, la loi de comportement devient donc 
+\begin{equation}
+    \sigma_{ij} = -p \delta_{ij} + 2 \mu \varepsilon_{ij}
+    \label{eq:Ch05-054}
+\end{equation}
+où $p$ est une pression hydrostatique arbitraite, nouvelle fonction inconnue dans la résolution d'un problème, et qui vient compenser l'équation de liaison supplémentaire \eqref{eq:Ch05-053}.
+Une autre manière de voir les choses est d'adopter l'approche thermodynamique du paragraphe~\ref{ssec:Ch05-1.1} et d'écrire à partir de \eqref{eq:Ch05-06} et \eqref{eq:Ch05-07} 
+\begin{equation}
+    \left( \sigma_{ij} - \frac{\partial w}{\partial \varepsilon_{ij}} \right) \frac{\ud \varepsilon_{ij}}{\ud t} = 0
+    \label{eq:Ch05-055}
+\end{equation}
+qui doit être vérifié pour taut $\ud \varepsilon_{ij} / \ud t$ compatible avec la liaison \eqref{eq:Ch05-053}. 
+Il faut donc introduire un multiplicateur de Lagrange $4p$ et il vient au lieu de \eqref{eq:Ch05-08} 
+\begin{equation}
+    \sigma_{ij} = \frac{\partial w}{\partial \varepsilon_{ij}} -p\delta_{ij}
+    \label{eq:Ch05-056}
+\end{equation}
+qui redonne \eqref{eq:Ch05-054} après développement de $w$.
+L'apparition de cette pression hydrostatique arbitraire est propre aux milieux incompressibles, et on la retrouve en Mécanique des Fluides.
 
-Enfin, on remarque que la loi de comportement (22) ou (34) se dé­couple en deux lois de comportement, portant la première sur les parties sphériques, la seconde sur les déviateurs -voir (11.12) et (111.38) ­
-(39) 
+\section{Critère de limite d'élasticité}
+\subsection{Forme générale du critère}
+\begin{wrapfigure}{r}{7cm}
+    \begin{center}
+        \includegraphics{../images/T1_Ch05-01}
+    \end{center}
+\end{wrapfigure}
+On a vu au \ref{ssec:Ch04-2.1} que le modèle élastique représentait le comportement des matériaux métalliques dans la région élastique, c'est à dire tant que l'on ne dépassait pas le seuil de limite élastique.
+Pour justifier les calculs faits avec ce modèle, il faut donc vérifier, après avoir résolu le problème, que ce seuil n'est pas dépassé.Cc'est le principe du calcul élastique des structures ou des éléments de construction.
 
-, 
+Dans le cas unidimensionnel, cette vérification se réduit à s'assurer que 
+\begin{equation}
+    |\sigma| < \sigma_e
+    \label{eq:Ch05-057}
+\end{equation}
+en appelant $\sigma_e$ la limite élastique en traction simple, dont la valeur est également tirée de l'essai de traction. 
 
-Ce découplage entre partie sphérique et déviateur est spécifique du cas iso­trope. En utilisant ce découplage, l'énergie de déformation ~ peut, d'après (12), s'écrire 
-IW" " ~ 0"., f... "" i [30"f. + b·· lb.']
-~ ~.·tJ J, ~ "'~ 
-" i [9 Ktoi. + ~ e-e'i .e:..tJ = 1ê-li, é..ft + e-lb"'".! .e';'i 
-et de même pour 
-
-Puisque déviateurs et parties sphériques sont indépendants, on voit qu'une CNS pour que l'hypothèse de stabilité (4) soit vérifiée est que 
-(50) 1<'>0 , e->o càd en utilisant (33) 
-(51 ) E >0 , 
-
-
-La première condition est évidente, le tableau du § 2.1 montre que pratique­ment 
-(52) 0< V 
-Le cas V= ~/~ est un cas limite, qui correspond aux matériaux incompressi­~. Supposons en effet que K soit très grand (par rapport à ~ et aux contraintes appliquées). La relation (39) montre alors que E1I,l' càd la variation de volume, est très petite, le matériau est donc très peu compres­sil>Ie->-~t: iL' en. r.a:isonnahle' de 'l.~app.mche:r par un _tériatt' incomprelfsiblEÇ càd soumis à la liaison 
-(53) f... '"' 0 ,
-...... 
-
-Mais, par cette approximation, on perd toute information sur la partie sphé-. rique du tenseur des contraintes, la loi de comportement devient donc 
-(54) 
-
-où 1V est une pression hydrostatique arbitraite, nouvelle fonction inconnue danS la résolution d'un problème, et qui vieht compenser l'équation de liai­
-son supplêmentaire (53). Une autre manière de voir les choses est d'adopter l'approche thermodynamique du § 1.1 et d'écrire à partir de (6) et (7) 
-
-qui doit être vérifié pour taut ctE· . Idt compatible avec la liaison (53). 
-~~ 
-Il faut donc introduire un multiplicateur de Lagrange 1'" et il vient au lieu de (8) 
-ow
-(56) Dé·· "'a
-= -t S·· 
-""~ qui redonne (54) après développement de ~. L'apparition de cette preSS10n 
-hydrostatique arbitraire est propre aux milieux incompressibles, et on la retrouve en Mécanique des Fluides. 
-3. CRITERE DE LIMITE D'ELASTICITE 
-================================= 
-3. 1 FORNE GENERALE DU CRITERE 
-On a vu au § IV.2.1 que le 
-·modèle élastique représentait le com­portement des matériaux métalliques 
-dans la région élastique, càd tant que 
-l'on ne dépassait pas le seuil de li­
-mite élastique. Pour justifier les calculs faits avec ce modèle, il faut 
-donc vérifier, après avoir résolju le problème, que ce seuil n'est pas dépassé. c'est le principe du calcul élastique des structures ou des éléments de cons­truction. 
-Dans le cas unidimensionnel, cette vérification se réduit à s'assu­rer que 
-(57) 
-lerl < O"e 
-en appelant CTe. la limite .élastique en traction simple, dont la valeur est également tirée de l'essai de traction. 
 Dans le cas tridimensionnel, il faut vérifier un critère de limite d'élasticité qui, de manière générale, peut s'écrire 
+\begin{equation}
+    f\left( \tens{\sigma} \right) < 0
+    \label{eq:Ch05-058}
+\end{equation}
+où $f$ est une fonction réelle, la fonction seuil élastique, qui limite, dans l'espace des contraintes, la région élastique dans laquelle doit rester le point représentatif des contraintes.
 
-(58) 
-
-où t est une fonction réelle, la fonction seuil élastique, qui limite, dans 
--77 ­
-l'espace des contraintes, la région élastique dans laquelle doit rester le point représentatif des contraintes. 
 Cette fonction doit vérifier les symétries du matériau, et doit donc être telle que 
-(59) 
+\begin{equation}
+    f \left( Q_{ik} Q_{il} \sigma_{kl} \right) = f \left( \sigma_{ij} \right)
+    \label{eq:Ch05-059}
+\end{equation}
+pour toute matrice $Q_{ij}$ orthogonale.
+En particulier, pour un milieu isotrope, la fonction $f$ doit vérifier l'identité \eqref{eq:Ch05-059} pour toute matrice $Q_{ij}$ orthogonale.
+On dit alors que la fonction $f$ est isotrope, et on montre que $f$ est uniquement fonction des invariants principaux de $\tens{\sigma}$, ou ce qui revient au même, fonction symétrique des contraintes principales 
+\begin{equation}
+    f\left( \tens{\sigma} \right) = f \left( I_1, J_2, J_3 \right) = f\left( \sigma_1, \sigma_2, \sigma_3 \right)
+    \label{eq:Ch05-060}
+\end{equation}
+Plutôt que les invariants $I_1$, $I_2$, $I_3$ de $\tens{\sigma}$ définis par \ref{sec:Ch02-2}, on préfère introduire $I_1$ lié à la partie sphérique de $\tens{\sigma}$ et les invariants $J_2$ du déviateur de $\tens{\sigma}$ \eqref{eq:Ch02-016}.
+En effet, ces variables permettent d'obtenir directement la surface seuil dans l'espace des contraintes principales (voir \ref{ssec:Ch02-2.2}).
+En particulier, si $J_3$ n'intervient pas dans $f$ alors cette surface seuil est de révolution autour de l'axe hydrostatique.
 
+Pour les métaux, on a montré expérimentalement qu'une pression hydrostatique, aussi élevée soit-elle, ne produisait aucune déformation plastique.
+Nous pouvons donc supposer que la partie sphérique du tenseur des contraintes n'intervient pas dans $f$
+\begin{equation}
+    f \left( J_2, J_3 \right) < 0
+    \label{eq:Ch05-061}
+\end{equation}
+Dans l'espace des contraintes principales, la surface seuil est un cylindre de génératrice parallèle à l'axe hydrostatique.
+Le seuil sera donc complètement défini par l'intersection de la surface seuil avec le plan déviatoire (voir \ref{ssec:Ch02-2.2}) ou plutôt, compte tenu des symétries, par cette intersection limitée à un secteur de 60°, le reste étant complété par symétrie.
+Il va de soi que la détermination expérimentale de cette courbe est très difficile.
 
-pour toute matrice Q~ orthogonale. En particulier, pour un milieu isotrope, la fonction ~ doit vérifier l'identité (59) pour toute matrice Q...& ortho­gonale. On dit alors que la fonction f est isotrope, et on montre que t 
-est uniquement fonction des invariants principaux de en , ou ce qui revient au même, fonction symétrique des contraintes principales 
+Pour d'autres matériaux, en particulier pour les sols, la «~pression moyenne~» $-\sigma = \frac{1}{3}\sigma_{kk}$ intervient crutialement dans $f$.
+On suppose alors souvent que la contrainte principale «~intermédiaire~» n'intervient pas dans $f$ c'est à dire que $f\left( \sigma_1, \sigma_{2}, \sigma_3 \right)$ dépend uniquement de la plus grande et de lit plus petite des contraintes principales.
+\begin{equation}
+    f = f\left( \sigma_1, \sigma_3 \right) \leq 0 \quad \text{si} \quad \sigma_1 \geq \sigma_2 \geq \sigma_3
+    \label{eq:Ch05-062}
+\end{equation}
+Il ressort alors du paragraphce~\ref{ssec:Ch02-3.1} que, dans la représentation de Mohr, seul intervient le plus grand des trois demi-cerles.
+Le critère est alors complètement défini par la «~courbe intrinsèque~» $\mathcal{C}$, enveloppe des demi-cercles limites, c'est à dire à  correspondant à $f=0$. 
+C'est le critère de la courbe intrinsèque.
 
-Plutô t que les invariants 1., 1:;,' I!> de ar définis par (II. Il), on préfè­re introduire I~, lié à la partie sphérique de or et les invariants J.I. ' Jdu déviateur de or (11.16). En effet, ces variables permettent d'obtenir
-3 directement la surface seuil dans l'espace des contraintes principales 
-(§ I1.2.2). En particulier, si 3n'intervient pas dans t ' alors cette sur­
-3 face seuil est de révolution autour de l'axe hydrostatique. 
-Pour les métaux, on a montré expérimentalement qu'une pression hy­
-drostatique, aussi élevée soit-elle, ne produisait aucune déformation plasti­que. Nous pouvons donc supposer que la partie sphérique du tenseur des con­
-traintes n'intervient pas dans ~ 
-(61) 
-
-
-Dans l'espace des contraintes principales, la surface seuil est un cylindre de génératrice parallèle à l'axe hydrostatique. Le seuil sera donc complète­ment défini par l'intersection de la surface seuil avec le plan déviatoire (§ II.2.2) ou plutôt, compte tenu des symétries, par cette intersection limi­
-cr;
-tée à un secteur de ~Oo, le reste étant complété par symétrie. Il va de soi que la détermination expérimentale de cette courbe est 
-très difficile. 
-Pour d'autres matériaux, 
-
-en particulier pour les sols, la "pression moyenne" -<r = -~ 
-alors souvent que la contrainte principale "intermédiaire" n'intervient pas 
-dans 1 ' càd que ~(ï., (ï~" <r;) dépend uniquement de la plus grande et de lit plus petite des contraintes principales 
-
-Il ressort alors du § 11.3 ..1 que, dans la représentation de Mohr, seul inter­vient le plus grand des tro~s demi-cer~les. Le critère est alors complètement 
-Tt: 
-défini par la "courbe intrinsèquell 
-~ , enveloppe des demi-cercles li­
-
-mites, càd correspondant à i::: 0 . 
-C'est le critère de la courbe intrin­TV\..-sèque. 
-3.2 CRITERES DE VON MISES ET TRtSCA 
+\subsection{Critères de Von Mises et Tresca} \endinput
 Pour les métaux, Ou plut généralement pour les matériaux dont le critère peut s'écrire sous la forme (61), on 'utilise habituellement les cri­tères de limite d'élasticité de von Mises ou de Tresca. Le critère (61) peut s'écrire sous la forme 
 (63) 
 
