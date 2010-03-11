@@ -215,59 +215,64 @@ Si on prend la divergence de l'équation \eqref{eq:Ch06-025}, on obtient l'équa
 qui nous sera utile plus loin.
 
 \subsection{Équations de Beltrahi}
-\endinput
-La seconde méthode de résolution consiste à postuler un champ de contraintes. La loi de comportement permet alors de calculer le champ des défotmations, mais pour pouvoir calculer le vecteur déplacement, il faut que Ce champ de déformations soit compatible (§ 111.3). Ainsi le champ de contraintes choisi doit vérifier les équations d'équilibre et un système d'équations traduisant les équations de compatibilité. Nous allons obtenir ce Système d'équations dans le cas statique et en élasticité classique et homOgène. 
-Nous partons des équations de compatibilité sous la forme (111.60) et de la loi de comportement sous la forme (V.34). On obtient ainsi 
-À -~y
-(~G -" "~r" S . ) + <TU, ..
-E Ai 
-E .~ J~e E )..,~ 
-.A +>! 2\l 
-( ()iç.,:d.,+ ().<.~, i~ ) + -cru. .. = 0 
-)J,o~
-E E 
-s..
-(...J +v) O:t,~t -li O"H te ~a + <r~. .' 
-) "'"', ""cl 
--(-1+"') [<Jit.,h + <T.i.,,-,i~ ] = o 
-mais d'après les équations d'équilibre \eqref{eq:Ch06-001} 
+La seconde méthode de résolution consiste à postuler un champ de contraintes.
+La loi de comportement permet alors de calculer le champ des déformations, mais pour pouvoir calculer le vecteur déplacement, il faut que ce champ de déformations soit compatible (paragraphe~\ref{sec:Ch03-3}).
+Ainsi le champ de contraintes choisi doit vérifier les équations d'équilibre et un système d'équations traduisant les équations de compatibilité.
+Nous allons obtenir ce système d'équations dans le cas statique et en élasticité classique et homogène.
 
-et; 4'après la loi de comportement (V.34) et l'équation de la dila ta tion \eqref{eq:Ch06-026} 
-E E 
-= ­
-(J.U.,U = éU,U t,À.
---l-~y (:;\ + ~t'")(-1-~)l) 
-
-SOle finalement avec (V. 33) 
+Nous partons des équations de compatibilité sous la forme \eqref{eq:Ch03-060} et de la loi de comportement sous la forme \eqref{eq:Ch05-034}.
+On obtient ainsi
+\begin{equation*}
+    \left( \frac{1+\nu}{E} \sigma_{ij} - \frac{\nu}{E} \sigma_{kk} \delta_{ij} \right)_{,ll} + \frac{1 - 2\nu}{E} \sigma_{kk,ij} - \frac{1+ \nu}{E} \left( \sigma_{jk,ik} + \sigma_{ik,jk} \right) + \frac{2\nu}{E} \sigma_{kk,ij} = 0
+\end{equation*}
+\begin{equation}
+    \left( 1+\nu \right)\sigma_{ij,ll} - \nu \sigma_{kk,ll} \delta_{ij} + \sigma_{kk,ij} - \left( 1+\nu \right) \left[ \sigma_{jk,ki} + \sigma_{ik,kj} \right] = 0
+    \label{eq:Ch06-027}
+\end{equation}
+mais d'après les équations d'équilibre \eqref{eq:Ch06-001}
+\begin{equation}
+    \sigma_{jk,ki} + \sigma_{ik,kj} = - \left( f_{i,j} + f_{j,i} \right)
+    \label{eq:Ch06-028}
+\end{equation}
+et d'après la loi de comportement \eqref{eq:Ch05-034} et l'équation de la dilatation \eqref{eq:Ch06-026}
+\begin{equation*}
+    \sigma_{kk,ll} = \frac{E}{1-2\nu} \varepsilon_{kk,ll} = - \frac{E}{\left( \lambda + 2\mu \right)\left( 1-2\nu \right)}f_{i,i}
+\end{equation*}
+soit finalement avec \eqref{eq:Ch05-033}
+\begin{equation}
+    \sigma_{kk,ll} = - \frac{1+\nu}{1-\nu} f_{i,i}
+    \label{eq:Ch06-029}
+\end{equation}
+En eeportant \eqref{eq:Ch06-028} et \eqref{eq:Ch06-029} dans \eqref{eq:Ch06-027} on obtient
+\begin{equation}
+    \sigma_{ij,ll} + \frac{1}{1+\nu} \sigma_{kk,ij} + f_{i,j} + f_{j,i} + \frac{\nu}{1-\nu} f_{i,i} = 0
+    \label{eq:Ch06-030}
+\end{equation}
+Ces équations sont appelées équations de Beltrami, et elles traduisent les équations de compatibilité pour les contraintes.
+Si les forces de volume sont nulles, elles se simplifient en
+\begin{equation}
+    \sigma_{ij,ll} + \frac{1}{1+\nu} \sigma_{kk,ij} = 0
+    \label{eq:Ch06-031}
+\end{equation}
+En particulier, elles seront automatiquement vérifiées si les contraintes sont des fonctions linéaires des coordonnées.
 
-.A +Ii
-\eqref{eq:Ch06-029} 
-= ­
-.-1-v 
-En teportant \eqref{eq:Ch06-028} et \eqref{eq:Ch06-029} dans \eqref{eq:Ch06-027} on obtient 
-(30) 
-
-+ 
-
-+ 
-
-= 0 
-Ces équations sont appelées équations de Beltrami, et elles traduisent les équations de compatibilité pour les contraintes. Si les forces de volume sont nulles, elles se simplifient en 
-(31) 
-
-=0 
-
-En particulier, elles seront automatiquement vérifiées si les contraintes 
--88 ­
-,Sont des fonctions linéaires des coordonnées. 
-La seconde méthode de résolution d'un problème élasto-statique con­
-siste à postuler un champ de contraintes; vérifier les équations d'équilibre; vrifier les équations de Beltrami; vérifier les CL de type effort; 
+La seconde méthode de résolution d'un problème élasto-statique consiste à 
+\begin{itemize}
+    \item postuler un champ de contraintes;
+    \item vérifier les équations d'équilibre;
+    \item vérifier les équations de Beltrami;
+    \item vérifier les CL de type effort;
 puis, le cas échéant 
-' intégrer le champ de déplacements; 
+\end{itemize}
+\begin{itemize}
+    \item intégrer le champ de déplacements;
+    \item  vérifier les CL de type déplacement.
+\end{itemize}
+On voit donc que cette méthode s'applique tout naturellement aux problèmes de type II pour lesquels on peut sauter les deux dernières étapes.
+Nous en verrons des exemples au paragraphe~\ref{ssec:Ch06-2.1} et aux paragraphe~\ref{ssec:Ch07-2.2} et \ref{ssec:Ch07-3.1}.
 
- vérifier les CL de type déplacement.
-\ On voit donc que cette méthode s'applique tout naturellement aux problèmes de type II pour lesquels on peut sauter les deux dernières étapes. Nous en verrons des exemples au § 2.1 et aux § VII.2.2 et VII.3.1 . 
-
+\section{Exemples de problèmes simples}
+\endinput
 Comme premier exemple, on peut citer le problème de la compression d'un lopin avec CL de non frottement, qui a été résolu de manière tout à fait générale au § IV.I.3  Nous allons traiter deux autres exemples tirés du § IV. 1  
 2.1 DEFORMATION D'UN BLOC PESANT 
 :lt~ 
