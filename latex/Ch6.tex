@@ -89,84 +89,79 @@ Les liaisons élastiques donnent un exemple de problème linéaire non régulier
 Nous rencontrerons aussi des problèmes non réguliers par manque de données, mais il s'agit alors d'une non régularité superficielle, et qui ne nous gênera guère.
 
 \subsection{Theorème d'unicité en dynamique}
-\endinput
 Comme nous l'avons affirmé plus haut, un problème régulier est bien 
-posé, càd admet une solution unique. A titre d'exemple, nous allons démontrer 
-le théorème d'unicité dans le cas dynamique. Nous partons donc d'un problème dynamique régulier. Pour fixer les notations, nous prendrons des CL mixtes de 
--84 ­
-type (7), mais la démonstration est valable, à des difficultés de notations près, pour tout problème régulier. Nous cherchons donc A. ''J.-1), (J.. (x. 1),
-..... l } -\.-â J 
-suivant 
-cs· . := 
-A...~.t\\. e~v..
-(12) .L~
+posé, c'est à dire admet une solution unique.
+A titre d'exemple, nous allons démontrer le théorème d'unicité dans le cas dynamique.
+Nous partons donc d'un problème dynamique régulier.
+Pour fixer les notations, nous prendrons des CL mixtes de type \eqref{eq:Ch06-007}, mais la démonstration est valable, à des difficultés de notations près, pour tout problème régulier.
+Nous cherchons donc $u_i\left( x,t \right)$, $\sigma_{ij}\left( x,t \right)$, $\varepsilon_{ij}\left( x,t \right)$, solution du problème suivant
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \rho \frac{\partial^2 u_i}{\partial t^2} &= \sigma_{ij,j} + f_i \\
+        \sigma_{ij} &= A_{ijkl} \varepsilon_{kh} \\
+        \varepsilon_{ij} &= \frac{1}{2} \left( u_{i,j} + u_{j,i} \right) \\
+        u_i \left( x,0 \right) &= u_i^c \left( x \right) \quad & V_i\left( x,0 \right) = V_i^c\left( x \right) \\
+        u_i{}_{|_{S_u}} &= u_i^d  \quad & \sigma_{ij} n_j{}_{S_f} = T_i^d
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-012}
+\end{equation}
+Au paragraphe~\ref{ssec:Ch01-2.1} nous avons démontré le théorème de l'énergie cinétique \eqref{eq:Ch01-029}, mais en élasticité on a d'après \eqref{eq:Ch05-006} et \eqref{eq:Ch05-008}
+\begin{equation}
+    \sigma_{ij} D_{ij} = \sigma_{ij} \frac{\ud \varepsilon_{ij}}{\ud t} = \frac{\ud w}{\ud t}
+    \label{eq:Ch06-013}
+\end{equation}
+ce qui permet d'écrire \eqref{eq:Ch01-029} sous la forme
+\begin{equation}
+    \frac{\ud}{\ud t} \left( K + W \right) = \iiint_{\Omega} f_i \frac{\partial u_i}{\partial t} \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j \frac{\partial u_i}{\partial t} \ud S
+    \label{eq:Ch06-014}
+\end{equation}
+où $W$ est l' énergie de déformation du so1ide
+\begin{equation}
+    W = \iiint_{\Omega} w \ud v = \frac{1}{2} \iint_{\Omega} A_{ijkh} \varepsilon_{ij} \varepsilon_{kh} \ud v
+    \label{eq:Ch06-015}
+\end{equation}
+La signification de \eqref{eq:Ch06-014} est claire: la dérivée par rapport au temps de l'énergie totale (cinétique + de déformation) du solide est égale à la puissance des efforts extérieurs.
 
-:= J ( ,u.,. . 
-+ Ai,:")
-1 L'3 
+Supposons maintenant que notre problème \eqref{eq:Ch06-012} admette deux solutions correspondant aux mêmes données $\left( f_i, u_i^0, V_i^0, u_i^d, T_i^d \right)$.
+La différence de ces deux solutions
+\begin{equation}
+    \bar{u}_i = u_i^{(2)} - u_i^{(1)}, \quad \bar{\varepsilon}_{ij} = \varepsilon_{ij}^{(2)} - \varepsilon_{ij}^{(1)}, \quad  \bar{\sigma}_{ij} = \sigma_{ij}^{(2)} - \sigma_{ij}^{(1)}
+    \label{eq:Ch06-016}
+\end{equation}
+sera solution du problème homogène associé à \eqref{eq:Ch06-012}, c'est à dire du problème correspondant aux données nulles
+\begin{equation}
+    \bar{f}_i = 0, \quad \bar{u}_i^0 = \bar{V}_i^0 = 0, \quad \bar{T}_i^d= 0
+    \label{eq:Ch06-017}
+\end{equation}
+En appliquant \eqref{eq:Ch06-014} à ce problème, on trouve que le second membre
+\begin{equation}
+    \iint_{\Omega} \bar{f}_i \frac{\partial \bar{u}_i}{\partial t} \ud v + \iint_{S_u} \bar{\sigma_{ij}} n_j \frac{\partial \bar{u}_i^d}{\partial t} \ud S + \iint_{S_f} \bar{T}_i^d \frac{\partial \bar{u}_i}{\partial t} \ud S = 0
+    \label{eq:Ch06-018}
+\end{equation}
+est nul d'après \eqref{eq:Ch06-017} , puisque $\bar{f}_i$, $\bar{T}_i^d$ et $\bar{u}_i^d$ et donc $\partial \bar{u}_i^d/\partial t$ sont nuls.
+On en tire
+\begin{equation}
+    \frac{\ud}{\ud t} \left( \bar{K} + \bar{W} \right) = 0, \quad \bar{K} + \bar{W} = \text{Cte} = 0
+    \label{eq:Ch06-019}
+\end{equation}
+puisqu'à l'instant initial on a d'après \eqref{eq:Ch06-017}
+\begin{equation}
+    \bar{u}_i \left( x,0 \right) = \frac{\partial \bar{u}_i}{\partial t} \left( x,0 \right) = 0
+    \label{eq:Ch06-020}
+\end{equation}
+Or l'énergie cinétique $K$, par définition, et l'énergie de déformation $W$ d'après le postulat de stabilité \eqref{eq:Ch04-004}, sont définis positifs, d'où il résulte que $\bar{K}$ et $\bar{W}$ restent nuls au cours du temps.
+On a donc en tout point et à tout instant $\partial \bar{u}_i/\partial t = 0$ d'où l'on tire
+\begin{equation}
+    \bar{u}_i \left( x,t \right) = 0, \quad u_i^{(2)} \left( x,t \right) = u_i^{(1)} \left( x,t \right)
+    \label{eq:Ch06-021}
+\end{equation}
+Les deux solutions coïncident et le problème \eqref{eq:Ch06-012} a une solution unique.
+Nous démontrerons au chapitre \ref{chap:09} le théorème d'unicité peur le problème statique, mais provisoirement nous l'admettrons.
 
-0
-0 
-..tL. (:r.) , VJx-, 0) = V:,., (x.)
-.... 
-cl. 
-..u.. <i , (J.. T
-... "li rn.~ \si= .L 
-Au § 1.2.1 nous avons démontré le théorème de l'énergie cinétique 
-(1.29), mais en élasticité on a d'après (V.6) et (V.8) 
-
-:=
-(13) 
-ce qui permet d'écrire (I.29) sous la forme 
-cl..
-(14 ) 
-d.t;(K+W) = 
-
-où W es t l' énergie de déformation du so1ide 
-
-La signification de (14) est claire: la dérivée par rapport au temps de l'é­nergie totale (cinétique + de déformation) du solide est égale à la puissance 
-des efforts extérieurs. 
-Supposons maintenant que notre problème (12) admette deux solutions correspondant aux mêmes données (f. ,».-0, V~,)..lel., rd.). La différence de ces 
-.... .... "" "" .... 
-deux solutions 
-
-sera solution du problème homogène associé à (12), càd du problème correspon­dant aux données nulles 
-
--cl
-(17) J = 0  
-, JJ... =0
-..t(,... 
-... 
-5~ 
-
-
-En appliquant (14) à ce problème, on trouve que le second membre 
--85 ­
-'à ~cl. + § -cl. â .il. 
-4 4
-(18) J~n. t oi. ,br + § o::..~ 111.~ clS T.... cls = 0 
-'O.t 5.... ~,t il.l:
-St 
--.. -.1. 
-es t nul d'après (17) , puisque { T. et .)J.. et donc êljit f'aL sont nuls. 
-... ... 
-On en tire 
-cl. -­
-( 19) = 0
-cU; ( 1< -+ VI ) 
-
-puisqu'à l'instant initial on a d'après (17) 
-(20) 
-
-Ô ii... (:c.,0)
-= 
-= ° 
-'Ok 
-Or l'énergie cinétique K , par définition, et l'énergie de déformation W d'après le postulat de stabilité (IV.4), sont définis positifs, d'oD il ré­sulte que K et YJ restent nuls au cours du temps. On a donc en tout point et à tout instant êl..Lë:... /0);; =0, d'oD l'on tire 
-
-Les deux solutions coïncident et le problème (12) a une solution unique. Nous démontrerons au chapitre IX le théorème d'unicité peur le problème sta­
-tique, mais provisoirement nous l'admettrons. 
-1.3 EQUATIONS DE NAVIER 
+\subsection{Équations de Navier}
+\endinput
 Pour résoudre analytiquement un problème d'élasticité, on postule 
 a priori une forme particulière pour la solution, et on essaie de vérifier 
 toutes les équations. Si on y parvient, alors d'après le théorème d'unicité pour un problème régulier, c'est la solution du problème. Il en résulte donc deux méthodes, suïvant que l'on essaie un champ de déplacement ou un champ de contraintes. 
@@ -180,7 +175,7 @@ F
 -8G ..... 
 
 où on a utilisé la symétrie (V.3) de Al~~t.' et en supposant le matériau homogène (A constant). En élasticité, le temps n'intervient pas dans la loi de comportement. Il n'intervient donc que dans l'équation du mouvement et disparaît donc en quasi-statique à l'exception des problèmes de frot­tement, où il reste dans la CL (IV.15) Ainsi en élasticité, on ne parle jamais de problèmes quasi-statiques, mais uniquement de problèmes statiques. Pour résoudre un problème quasi-statique, il suffit en effet de résoudre à chaque instant le problème statique correspondant. Nous n'envisagerons plus désormais que le cas statique. 
-Dans le cas de l'élastictté linéa~re isotrope -élasticité clas­SIque -l'équation (22) dev~ent d'après (V.23), et en nous limitant au cas statique 
+Dans le cas de l'élastictté linéa~re isotrope -élasticité clas­SIque -l'équation \eqref{eq:Ch06-022} dev~ent d'après (V.23), et en nous limitant au cas statique 
 
 soit, en introduisant les opératetlts de l'analyse vectorielle (Annexe A) 
 (24) (~+ ~) ~(dJ....rÂ) + llÂ + { -0
@@ -193,7 +188,7 @@ Ces équationS Gont: appelées ~es lêquations de Navier. Elles traduisent les
 ~~si la premt~re méthode de résolution d'un problème d'élastosta­
 tique consiste â 
 postulev un champ dé d~placements; 
-vérifier les équationS de Navier (24) ou (25); 
+vérifier les équationS de Navier \eqref{eq:Ch06-024} ou \eqref{eq:Ch06-025}; 
  
 vérifie, les CL de type déplacement; 
 
@@ -205,7 +200,7 @@ au § 2.2 et au § VII.2. 1 .
 
 
 
-Si ort prend la divergence de l'équation (25), on obtient l'équation de ïa dilatation 
+Si ort prend la divergence de l'équation \eqref{eq:Ch06-025}, on obtient l'équation de ïa dilatation 
 
 ~ui nous sera utile plus loin. 
 -87 ­
@@ -226,7 +221,7 @@ s..
 -(-1+"') [<Jit.,h + <T.i.,,-,i~ ] = o 
 mais d'après les équations d'équilibre (1) 
 
-et; 4'après la loi de comportement (V.34) et l'équation de la dila ta tion (26) 
+et; 4'après la loi de comportement (V.34) et l'équation de la dila ta tion \eqref{eq:Ch06-026} 
 E E 
 = ­
 (J.U.,U = éU,U t,À.
@@ -235,10 +230,10 @@ E E
 SOle finalement avec (V. 33) 
 
 .A +Ii
-(29) 
+\eqref{eq:Ch06-029} 
 = ­
 .-1-v 
-En teportant (28) et (29) dans (27) on obtient 
+En teportant \eqref{eq:Ch06-028} et \eqref{eq:Ch06-029} dans \eqref{eq:Ch06-027} on obtient 
 (30) 
 
 + 
@@ -298,13 +293,13 @@ o
 (35) 
 o o 
 
-qui vérifie automatiquement' -les conditions aux 1imites (34) sur St -les conditions aux aimites portant sur~. et <T.ta en x3=0 et x=.q" 
+qui vérifie automatiquement' -les conditions aux 1imites \eqref{eq:Ch06-034} sur St -les conditions aux aimites portant sur~. et <T.ta en x3=0 et x=.q" 
 3Les équations d'équilibre donnent alors 
 
 et les conditions aux limites en x~=~ et x3~O donnent 
 
 On retrouve donc (IV.27). Par ailleurs, ce champ de contraintes est linéaire, 
-il vérifie donc automatiquemeQt les équations de Beltrami (31) ( lcctL). Ainsi, le champ de contraintes (35),(36) virifie toutes les équations du pro­blème. C'est la solution. 
+il vérifie donc automatiquemeQt les équations de Beltrami \eqref{eq:Ch06-031} ( lcctL). Ainsi, le champ de contraintes \eqref{eq:Ch06-035},\eqref{eq:Ch06-036} virifie toutes les équations du pro­blème. C'est la solution. 
 Si l'on veut cpnnaître le dép~acement, alors on calcule le champ de déformations par la loi de cOIDPotteUJent 
  
 _)1 rt~3 0 
@@ -410,9 +405,9 @@ vecteur déplacement est radial et ne dépend que de la distance au centre r=OM
 Un calcul direct donne aiors 
 (45 ) 
 Le gradient du déplacement étant symétrique, il s'ensuit que son rotationnel ..... 
-rot.u., est nul. L'équation de Navier (25) donne alors 
+rot.u., est nul. L'équation de Navier \eqref{eq:Ch06-025} donne alors 
 (46) 
-Compte-tenu de (45), il vient 
+Compte-tenu de \eqref{eq:Ch06-045}, il vient 
 (47) 
 
 
@@ -420,9 +415,9 @@ Compte-tenu de (45), il vient
 et par intégration 
 (48) 	0( +
 = 
-Il reste à déterminer les constantes d'intégration d.. et f-> pour vérifier les conditions aux limites (42). Pour cela, nous devons calculer les contraintes 
+Il reste à déterminer les constantes d'intégration d.. et f-> pour vérifier les conditions aux limites \eqref{eq:Ch06-042}. Pour cela, nous devons calculer les contraintes 
 (49) 
-= (eX + et nous allons écrire la loi de comportement sous la forme (39). En effet, la décomposition de (49) en partie sphérique et déviateur donne directement 4
+= (eX + et nous allons écrire la loi de comportement sous la forme \eqref{eq:Ch06-039}. En effet, la décomposition de \eqref{eq:Ch06-049} en partie sphérique et déviateur donne directement 4
 (  Ho .. = c( ~
 = ­
 (SU) 
@@ -436,7 +431,7 @@ et les contraintes principales sont
 "' J.e-r.> ()" I=-?'KC( 4e-f'.>
 (52) 	IJ, = <rJ, = 3Ka: + , ­'l.' ~ If} 
 -92 ­
-avec (J~ associé à la di rec tion radial e. La condi tion (42) s' écri t alors simplement puisque sur les deux sphères frontières, la normale est radiale 
+avec (J~ associé à la di rec tion radial e. La condi tion \eqref{eq:Ch06-042} s' écri t alors simplement puisque sur les deux sphères frontières, la normale est radiale 
 4e-1!> 
 r=a (]'~ = ~ Kct ---c -f-
 Q}
@@ -461,7 +456,7 @@ J... J. ..
 
 = 
 ...~ "'t 
-Si l'on adopte le critère de Tresca, alors à partir de (52) et (V.70) 
+Si l'on adopte le critère de Tresca, alors à partir de \eqref{eq:Ch06-052} et (V.70) 
 (56) 
 Les deux critères donnent donc le même résultat, ce qui était évident a priori puisque l'état de contraintes est de révolution, c'est donc, à un tenseur sphérique près, un état de traction simple pour lequel Tresca et von Mises coincident par construction. Ainsi le calcul élastique est justifié si la con­dition 
 &t a..? t-~
@@ -470,7 +465,7 @@ Les deux critères donnent donc le même résultat, ce qui était évident a pri
 est vérifiée en tout point. Le point le plus sollicité sera donc le point où r est minimum, càd à l'intérieur (r=a). On obtient donc la condition 
 (58) 
 qui donne la pression maximale que peut supporter le réservoir en restant dans le domaine élastique. En particulier, quelles que soient les dimensions du réservoir, on ne peut pas dépasser la pression limite 2,~/?, . Nous re­viendrons sur ce problème en plasticité au chapitre X. 
-La solution générale (51) que nous avons obtenue permet de traiter 
+La solution générale \eqref{eq:Ch06-051} que nous avons obtenue permet de traiter 
 également d'autres problèmes 
  Réservoir sphérique soumis à une preSSIon intérieure f' et une pression 
 extérieure P . On obtient alors 
