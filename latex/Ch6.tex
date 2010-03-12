@@ -272,127 +272,138 @@ On voit donc que cette méthode s'applique tout naturellement aux problèmes de 
 Nous en verrons des exemples au paragraphe~\ref{ssec:Ch06-2.1} et aux paragraphe~\ref{ssec:Ch07-2.2} et \ref{ssec:Ch07-3.1}.
 
 \section{Exemples de problèmes simples}
+Comme premier exemple, on peut citer le problème de la compression d'un lopin avec CL de non frottement, qui a été résolu de manière tout à fait générale au paragraphe~\ref{ssec:Ch04-1.3}.
+Nous allons traiter deux autres exemples tirés du paragraphe~\ref{sec:Ch04-1}.
+\subsection{Déformation d'un bloc pesant}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch06-01}
+    \end{center}
+    \columnbreak
+    Nous considérons donc le problème du bloc pesant posé sur un ballon de baudruche (paragraphe~\ref{ssec:Ch04-1.3}).
+    On aura donc $f_i = -\rho g$ et les CL sont
+\end{multicols}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \sigma_{ij} n_j = 0 \text{ sur } S_2 \\
+        & x_3 = h:\ \sigma_{13} = \sigma_{23} = \sigma_{33} = 0 \\
+        & x_3 = 0:\ \sigma_{13} = \sigma_{23} = 0, \ \sigma_{33} = -p
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-032}
+\end{equation}
+C'est un problème régulier -- la solution sera donc unique -- de type II, ce qui conduit à rechercher le champ de contraintes.
+Les trois équations d'équilibre s'écrivent
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \sigma_{11,1} + \sigma_{12,2} + \sigma_{13,3} &= 0 \\
+        \sigma_{12,1} + \sigma_{22,2} + \sigma_{23,3} &= 0 \\
+        \sigma_{13,1} + \sigma_{23,2} + \sigma_{33,3} &= \rho g
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-033}
+\end{equation}
+Les conditions aux limites sur la surface latérale s'écrivent $\left[ \vec{n} = \left( n_1, n_2, 0 \right) \right]$
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \sigma_{11}n_1 + \sigma_{12}n_2 &= 0 \\
+        \sigma_{21}n_1 + \sigma_{22}n_2 &= 0 \\
+        \sigma_{31}n_1 + \sigma_{32}n_2 &= 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-034}
+\end{equation}
+L'examen de ces équations nous conduit à chercher le tenseur des contraintes sous la forme
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & \sigma_{33}(x)
+    \end{bmatrix}
+    \label{eq:Ch06-035}
+\end{equation}
+qui vérifie automatiquement
+\begin{itemize}
+    \item les conditions aux 1imites \eqref{eq:Ch06-034} sur $S_l$
+    \item les conditions aux aimites portant sur $\sigma_{13}$ et $\sigma_{23}$ en $x_3 = 0$ et $x_3 =h$.
+\end{itemize}
+Les équations d'équilibre donnent alors
+\begin{equation*}
+    \sigma_{33} = \rho g x_3 = \text{Cte}
+\end{equation*}
+et les conditions aux limites en $x_3=h$ et $x_3=0$ donnent
+\begin{equation}
+    \sigma_{33} = \rho g \left( x_3 -h \right), \quad p = \rho g h
+    \label{eq:Ch06-036}
+\end{equation}
+On retrouve donc \eqref{eq:Ch04-027}.
+Par ailleurs, ce champ de contraintes est linéaire, il vérifie donc automatiquement les équations de Beltrami \eqref{eq:Ch06-031} ($f_i = \text{Cte}$).
+Ainsi, le champ de contraintes \eqref{eq:Ch06-035}, \eqref{eq:Ch06-036} virifie toutes les équations du problème.
+C'est la solution.
+
+Si l'on veut connaître le déplacement, alors on calcule le champ de déformations par la loi de comportement
+\begin{equation}
+    \tens{\varepsilon} = \frac{1}{E} 
+    \begin{bmatrix}
+        -\nu \rho g x_3' & 0 & 0 \\
+        0 & -\nu \rho g x_3' & 0 \\
+        0 & 0 & \rho g x_3'
+    \end{bmatrix}
+    \label{eq:Ch06-037}
+\end{equation}
+en prenant $x_3'= x_3 -h$, c'est à dire en prenant l'origine des coordonnées sur la face supérieure du bloc.
+Par rapport à cette nouvelle variable, le champ des déformations est linéaire, et on peut appliquer la formule \eqref{eq:Ch03-065} pour le calcul du déplacement, mais on peut aussi procéder directement à partir de \eqref{eq:Ch06-003}.
+En effet
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \varepsilon_{33} = \frac{\partial u_3}{\partial x_3'} = \frac{1}{E} \rho g x_3' &\Rightarrow E u_3 = \frac{1}{2}\rho g x_3'^2 + \varphi_3 \left( x_1, x_2 \right) \\
+        & \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} = \frac{-\nu}{E} \rho g x_3' &\Rightarrow E u_1 = -\nu\rho g x_3'^2 + \varphi_1 \left( x_2, x_3 \right) \\
+        & \varepsilon_{22} = \frac{\partial u_2}{\partial x_2} = \frac{-\nu}{E} \rho g x_3' &\Rightarrow E u_2 = -\nu\rho g x_3'^2 + \varphi_2 \left( x_3, x_1 \right)
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-038}
+\end{equation}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & 2\varepsilon_{12} = \frac{\partial u_1}{\partial x_2} + \frac{\partial u_2}{\partial x_1} = \varphi_{1,2} + \varphi_{2,1} = 0 \\
+        & 2\varepsilon_{13} = \frac{\partial u_1}{\partial x_3'} + \frac{\partial u_3}{\partial x_1} = -\nu \rho g x_1 + \varphi_{1,3} + \varphi_{3,1} = 0 \\
+        & 2\varepsilon_{23} = \frac{\partial u_2}{\partial x_3'} + \frac{\partial u_3}{\partial x_2} = -\nu \rho g x_2 + \varphi_{2,3} + \varphi_{3,2} = 0 \\
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-039}
+\end{equation}
+et on obtient une solution particulière
+\begin{equation}
+    \varphi_1 = \varphi_2 = 0 \quad,\quad \varphi_3 = + \frac{1}{2}\nu\rho g \left( x_1^2 + x_2^2 \right)
+    \label{eq:Ch06-040}
+\end{equation}
+d'où finalement la solution, en revenant à $x_3$
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        E u_1 & = -\nu \rho g x_1 \left( x_3 - h \right) \\
+        E u_2 & = -\nu \rho g x_2 \left( x_3 - h \right) \\
+        E u_3 & = \frac{1}{2} \rho g \left[ \left( x_3 - h \right)^2 + \nu \left( x_1^2 + x_2^2 \right)  \right]
+    \end{aligned}
+    \right.
+    \label{eq:Ch06-041}
+\end{equation}
+à un déplacement de solide près.
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch06-02}
+    \end{center}
+    \columnbreak
+    On en tire l'allure de la déformation du bloc.
+\end{multicols}
+\subsection{Réservoir sphérique sous pression}
 \endinput
-Comme premier exemple, on peut citer le problème de la compression d'un lopin avec CL de non frottement, qui a été résolu de manière tout à fait générale au § IV.I.3  Nous allons traiter deux autres exemples tirés du § IV. 1  
-2.1 DEFORMATION D'UN BLOC PESANT 
-:lt~ 
-
-
-Nous considérons donc le problème du bloc pesant posé sur un ballon de baudruche (§ IV.I.2). On aura donc et les CL
-i.e -Pt 
-sont 
-(T.. 'fI.. .. 0 sur 
-St
-...t t 
-(32) 
-et& .. Â <l'~\  <l"1.~ <1"\\
-'" c-O x.,. 0 <l'u  <I",!> = 0 , (TU .. -1" 
-C'est un problème régulier -la solution sera donc unique -de type II, ce qui conduit à rechercher le champ de contraintes. Les trois équations d'équi­libre s'écrivent 
--89 ­
-<r .. .. =-0 
--4.04 lot (J'~/~ (f.~,lo 
-e
-(33) 
-cr-.. (f'1. 1. +-<rJ, ~ ; 0
-13., ..f , , Ij + û .. = 
-~~, l. a-a.,~ f''J'
-A.~,"" 
-Les conditions aux limites sur la surface latérale s'écrivent [;n, = (n.,,'n..t., O)J 
-0-:." '1'\..1 + a-~ l, tf\.l, = 
-(34 ) 1-0
-(fl.< '1\., <T~~ '1\.1. =
-{ 0 
-a-,!~ '1\., +-= 0
-0;.'" "'"l. L'examen de ces équations nous conduit à chercher le tenseur des contraintes sous la forme 
-
-o 
-(35) 
-o o 
-
-qui vérifie automatiquement' -les conditions aux 1imites \eqref{eq:Ch06-034} sur St -les conditions aux aimites portant sur~. et <T.ta en x3=0 et x=.q" 
-3Les équations d'équilibre donnent alors 
-
-et les conditions aux limites en x~=~ et x3~O donnent 
-
-On retrouve donc (IV.27). Par ailleurs, ce champ de contraintes est linéaire, 
-il vérifie donc automatiquemeQt les équations de Beltrami \eqref{eq:Ch06-031} ( lcctL). Ainsi, le champ de contraintes \eqref{eq:Ch06-035},\eqref{eq:Ch06-036} virifie toutes les équations du pro­blème. C'est la solution. 
-Si l'on veut cpnnaître le dép~acement, alors on calcule le champ de déformations par la loi de cOIDPotteUJent 
- 
-_)1 rt~3 0 
--
-~ 
-
-(37) (. 
-0 
--)1 f' t 'Jel 0
--
-E 
-
-0 0 r~~l 
-en prenant x.~ & x-~ , càd en prenant l'origine des coordonnées sur la face
-3 supérieure du bloc. Par rapport à cette nouvelle variable, le champ des dé­
--
-formations est linéaire, et on peut appliquer la formule (111.65) pour le cal­
--90 ­
-cul du déplacement, malS on peut aussi procéder directement à partir de \eqref{eq:Ch06-003}. 
-En effet 
-~
-E~; 
-(38) 
-=
-E" 
-=
-f H 
-.2 f.(:/, 
-(39) 
-J­
-E.. ., :l, Et, 
-et on obtient 
-êI..u. ~ -\ ' ../
-%) E 4; ~ -P'à'X-,~ ... 'f; (tc,,!r.,t.)
-=EP~"'; 
-l b
-'il "':~ 
-'GA, , 
-~-Xf~'.X\ =? E -U., E
-o~. 
-'O.u.,. , 
-~ -~ P'à-~, => E.u.,2,'0 'X.,t. E 
-Ô-U, 
-'O.IL" 
-~ 
-= 
-+ 'f-l,,2, +
-Ô (JO,
-" 'X.... 
-'il -U., 'ô .u" = + =-v p ';} le,
-'0 t;:e' 'ô 'X-,
-1 
-'O.u... '0-U.; 
-+ =-)lP'à''X"
-" 
-Ô I.C~ 'Ocr:.... 
-une solution part-icu.lière 
-, = -V F'} 'X, /.Co + 'f.. (T,~ J 'X.~) 
-, 
-+
-= -;J F~.lC", éC,; 'f.l, ('X~, IX-, ) 
-<;0
-'h,~ 0 
-+ (f\~ + '\'",-1 = 0 
-+ % 0
-'f~,; + '\\.l, 
-
-d'où finalement la solution, en revenant à x
-3 
-
--VP'à'I.C,(.lC;-..l) 
-(41 ) 
--V P~ r.i:" (~; -~) 
-:!.. f ~ [(.x, -Ât + V (.x: +r.c;) ) 
-.1, à un déplacement de solide près. 
-
-2.2 RESERVOIR 
 Nous avec et
 Î:.= 0 
 f 
