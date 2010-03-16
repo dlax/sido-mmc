@@ -1,0 +1,1082 @@
+\chapter{Le problème de Saint Venant}
+\section{Le principe de Saint Venant}
+Le problème de Saint Venant est le problème de base de la Résistance des Matériaux.
+Une poutre cylindrique est sollicitee à ses deux extrémités, les efforts exercés étant caractérisés par leur torseur résultant.
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-01}
+    \end{center}
+    \columnbreak
+    On considère une poutre cylindrique de section $\Sigma$ et de longueur $l$
+    \begin{equation*}
+        \Omega = \left[ 0;l \right] \times \Sigma
+    \end{equation*}
+\end{multicols}
+Les efforts de volume sont supposés nuls, $f_i= 0$ la surface latérale  $S_l= \left[ 0;l \right]\partial \Sigma$ est libre de contrainte
+\begin{equation}
+    \sigma_{ij} n_j = 0 \quad \left( x_2, x_3 \right) \in \partial \Sigma
+    \label{eq:Ch07-001}
+\end{equation}
+et les efforts exercés sur les extrémités $\Sigma_0 \left( x_l =0 \right)$ et $\Sigma_1 \left( x_1 =l \right)$ sont caractérisés par leurs torseurs résultants $\left[ \mathcal{T}_0 \right]$ et $\left[ \mathcal{T}_1 \right]$.
+Nous représenterons $\left[ \mathcal{T}_1 \right]$ par sa résultante $\vv{\mathcal{R}}$ et par son moment résultant $\vv{\mathcal{M}}$ au point $A\left( l,0,0 \right)$, centre de $\Sigma_1$, et de même $\left[ \mathcal{T}_0 \right]$ par sa résultante $\vv{\mathcal{R}}_0$ et par son moment résultant $\vv{\mathcal{M}}_0$ au point $A_0\left( l,0,0 \right)$, centre de $\Sigma_0$.
+La poutre étant en équi1ibre, les efforts exerces sur et $\Sigma_0$ et $\Sigma_1$ doivent s'équilibrer, ce qui donne les relations vectorielles
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \vv{\mathcal{R}}_0 + \vv{\mathcal{R}} = 0 \\
+        & \vv{\mathcal{M}}_0 + \vv{\mathcal{M}} + \vv{A_0 A} \wedge  \vv{\mathcal{R}} = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-002}
+\end{equation}
+Ainsi, on peut calculer $\vv{\mathcal{R}}_0$ et $\vv{\mathcal{M}}_0$ en fonction de $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$, et les efforts exercés sur la poutre seront caractérisés par les deux vecteurs $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$.
+
+Pour relier ces efforts aux contraintes, il faut considérer les efforts exercés sur $\Omega$ à travers  $\Sigma_1$:
+\begin{equation}
+    \vv{n} = \left( 1,0,0 \right) \quad \vv{T} = \left( \sigma_{11}, \sigma_{12}, \sigma_{13} \right)
+    \label{eq:Ch07-003}
+\end{equation}
+et intégrer sur toute la section.
+Il vient
+\begin{equation}
+    \vv{\mathcal{R}} = \iint_{\Sigma_1} \vv{T} \ud S \quad,\quad \vv{\mathcal{M}} = \iint_{\Sigma_1} \vv{AM} \wedge \vv{T} \ud S
+    \label{eq:Ch07-004}
+\end{equation}
+soit, en composantes
+\begin{align}
+    \mathcal{R}_1 &= \iint_{\Sigma_1} \sigma_{11} \ud x_2 \ud x_3    \label{eq:Ch07-005} \\
+    \begin{split}
+        \mathcal{R}_2 &= \iint_{\Sigma_1} \sigma_{12} \ud x_2 \ud x_3 \\
+        \mathcal{R}_3 &= \iint_{\Sigma_1} \sigma_{13} \ud x_2 \ud x_3    \label{eq:Ch07-006}
+    \end{split}
+\end{align}
+\begin{align}
+    \mathcal{M}_1 &= \iint_{\Sigma_1} \left( x_2\sigma_{13} - x_3\sigma_{12} \right) \ud x_2 \ud x_3    \label{eq:Ch07-007} \\
+    \begin{split}
+        \mathcal{M}_2 &= \iint_{\Sigma_1} x_3\sigma_{11} \ud x_2 \ud x_3 \\
+        \mathcal{M}_3 &= -\iint_{\Sigma_1} x_2\sigma_{11} \ud x_2 \ud x_3    \label{eq:Ch07-008}
+    \end{split}
+\end{align}
+
+On aurait des formules analogues sur $\Sigma_0$.
+
+Il est clair que le problème de Saint Venant ainsi posé n'est pas régulier, par manque de données.
+En effet, les conditions \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007},\eqref{eq:Ch07-008}, sont insuffisantes pour déterminer la répartition des efforts $\vv{T}$ sur $\Sigma_1$.
+Pour obtenir un problème régulier, il faudrait préciser la manière dont les torseurs $\vv{T}$ sur $\Sigma_1$ sont appliqués.
+Plus précisément, on peut imaginer plusieurs --	en fait une infinité -- répartitions d'efforts surfaciques vérifiant \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, sur $\Sigma_1$, et de même sur $\Sigma_0$ chacune de ces répartitions sera associé un problème régulier (de type II), donc avec solution unique.
+Ainsi le problème de Saint Venant, tel que nous l'avons formulé, admet une infinité de solutions.
+
+\theoremstyle{definition}
+\newtheorem*{psv}{Principe de Saint Venant}
+\begin{psv}
+    L'état de contrainte et de déformation loin des extrémités dépend uniquement du torseur des efforts appliqués, et non de la manière précise dont ces efforts sont appliqués.
+\end{psv}
+
+En d'autres termes, deux répartitions d'efforts surfaciques conduisant au même torseur, conduiront à deux solutions très voisines, sauf au voisinage immédiat des extrémités.
+Ainsi le problème de Saint Venant admet une infinité de solutions, mais ces solutions sont très voisines les unes des autres, et il n'y a pas lieu de les distinguer -- à moins de vouloir des informations précises sur ce qui se passe au voisinage des extrémités.
+
+Initialement, ce principe était d'origine intuitive; c'est lui qui se trouve à la base du célèbre mémoire de Saint Venant qui, déjà en 1856, contenait l'essentiel de ce chapitre.
+Depuis, il a reçu de nombreuses vérifications expérimentales directes ou indirectes, car c'est le postulat de base de la Résistance des Matériaux.
+Récemment, on a pu le démontrer dans certains cas particuliers par une étude mathématique des équations de l'élasticité.
+
+Ce principe joue un rôle tout à fait essentiel pour deux raisons.
+Tout d'abord, dans la pratique, on verra que l'on connaît assez rarement la répartition des efforts, alors que l'on a facilement leur torseur résultant.
+Ensuite, c'est grâce à lui que nous pourrons résoudre le problème de Saint Venant, en jouant sur la latitude qui nous est laissée sur la répartition précise des efforts.
+Notre démarche va être la suivante.
+Nous allons tout d'abord décomposer le problème en 6 problèmes élémentaires correspondant à chacune des composantes de $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$.
+Ensuite, pour chacun de ces problèmes élémentaires, nous trouverons une solution, et par superposition, nous aurons une solution du problème complet.
+
+Nous décomposons donc le problème de Saint Venant en 6 problèmes.
+\paragraph{Problème 1:} Traction
+\begin{equation}
+    \mathcal{R}_1 = F, \quad \mathcal{R}_2 = \mathcal{R}_3 = 0, \quad \vv{\mathcal{M}} = 0
+    \label{eq:Ch07-009}
+\end{equation}
+soit d'après \eqref{eq:Ch07-002}
+\begin{multicols}{2}
+    \begin{equation*}
+        \vv{\mathcal{R}} = -\vv{\mathcal{R}}_0 = F \vv{e}_1, \quad \vv{\mathcal{M}} = \vv{\mathcal{M}}_0 = 0
+    \end{equation*}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-02}
+    \end{center}
+\end{multicols}
+\paragraph{Problèmes 2 et 3:} Flexion composée
+\begin{equation}
+    \mathcal{R}_1 = 0 = \mathcal{R}_3, \quad \mathcal{R}_2 = F, \quad \vv{\mathcal{M}} = 0
+    \label{eq:Ch07-010}
+\end{equation}
+pour le problème 2 (le problème 3 s'obtient en échangeant les indices 2 et 3), d'où
+\begin{multicols}{2}
+    \begin{equation*}
+        \vv{\mathcal{R}} = -\vv{\mathcal{R}}_0 = F \vv{e}_2, \quad \vv{\mathcal{M}} = \vv{\mathcal{M}}_0 = -F l \vv{e}_3
+    \end{equation*}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-03}
+    \end{center}
+\end{multicols}
+\paragraph{Problème 4:} Torsion
+\begin{equation}
+    \vv{\mathcal{R}} = 0 , \quad \mathcal{M}_1 = \mathcal{M}, \quad \mathcal{M}_2 = \mathcal{M}_3 = 0
+    \label{eq:Ch07-011}
+\end{equation}
+\begin{multicols}{2}
+    \begin{equation*}
+        \vv{\mathcal{R}} = \vv{\mathcal{R}}_0 = 0, \quad \vv{\mathcal{M}} = -\vv{\mathcal{M}}_0 = \mathcal{M} \vv{e}_1
+    \end{equation*}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-04}
+    \end{center}
+\end{multicols}
+\paragraph{Problèmes 5 et 6:} Flexion pure
+\begin{equation}
+    \vv{\mathcal{R}} = 0 , \quad \mathcal{M}_1 = \mathcal{M}_2 = 0, \quad \mathcal{M}_3 = 0
+    \label{eq:Ch06-012}
+\end{equation}
+\begin{multicols}{2}
+    \begin{equation*}
+        \vv{\mathcal{R}} = \vv{\mathcal{R}}_0 = 0, \quad \vv{\mathcal{M}} = -\vv{\mathcal{M}}_0 = \mathcal{M} \vv{e}_3
+    \end{equation*}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-05}
+    \end{center}
+\end{multicols}
+pour le problème 6 (le problème 5 s'obtient en échangeant les indices 2 et 3).
+
+Pour chacun de ces problèmes, les conditions portent sur les contraintes.
+Nous adopterons donc l'approche du \ref{ssec:Ch06-1.4} en cherchant un champ de contraintes vérifiant
+\begin{itemize}
+    \item les équations d'équilibre avec $f_i=0$
+    \item les équations de Beltrami
+    \item les CL~\eqref{eq:Ch07-001} sur la surface latérale
+    \item les conditions \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007},\eqref{eq:Ch07-008}, pour le problème étudié.
+\end{itemize}
+\subsection{Répartition des contraintes normales}
+\endinput
+On constate tout d'abord sur \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, que 'R, ' 'n1.~ et 'm~ ne font intervenir que la contrainte norrr~le (pour une facette de la section droite) <r" Nous cherchons donc le champ des contraintes sous la forme 
+CT (~.. ~".'ltl) o 
+\eqref{eq:Ch06-013} o
+or" 0 
+[ 
+o o 
+
+Les CL \eqref{eq:Ch07-001} sur 11). surface latérale sont alors automatique~ijt vé­
+..
+rifiées, pUlsque 'Y\. .. «(},-"".,""',) Les équations d'équilibre se rédttis~I)t à 
+
+Les équations de Beltrami (VI.30) se réduisent alors à 
+
+qui donne (3"",,, fonction linéaire de x2, x3. 
+
+Il ne reste plus. à écrire que les conditions sur les extrémités, en reportant le tenseur des contraintes défini par \eqref{eq:Ch06-013} et \eqref{eq:Ch06-016} dans \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007} et \eqref{eq:Ch07-008}, on obtient 
+~
+'R, Q, § d,s + .R,. § ~J, <is ... .c ~ f.(~ cls 
+r-I: r. 
+-'Ill = CL $f.(~ cis t ~ ~ I.e; ris t .(. § .oc~ "". Js
+( 17) 
+~ r r. 1­
+'ml, = 0-S) f.(~ J.s + ~ %.ocJ, I.e. ris ... .c § lX; cLs 
+1: L-E 
+'RJ, '" 1<, = 0 'hl. = 0
+ 
+Les intégrales qui interviennent dans \eqref{eq:Ch06-017} dépendent uniquement de la forme de la section. Ainsi, le système \eqref{eq:Ch06-017} donnera 0.., ),.., ,Co, en fonction de 1<., ~ et ~ . Nous pourrons donc résoudre par un champ de contraintes de la 
+~ ~ 
+forme \eqref{eq:Ch06-013},\eqref{eq:Ch06-016}, les problèmes 1, 5 et 6 -traction et flexion pure 
+Pour déterminer complètement les contraintes, il reste à calculer 
+Q, , .,g. et .G , càd résoudre le système \eqref{eq:Ch06-017}. Un choix judicieux du système d'axes xxdans le plan de la section droite ! va faciliter cette réso­
+2 3 lution. Tout d'abord, on choisit l'origine au centre de gravité de L , ce 
+qui assure 
+( 18) 
+
+= 0 
+Ensuite, on remarque que \eqref{eq:Ch06-017} fait intervenir les composantes du tenseur d'inertie de la section! 
+
+
+c'est un tenseur plan symétrique, donc diagonalisable. On peut trouver dans le plan xZ,xdeux directions principales d'inertie perpendiculaires telles
+3 que le moment produit J"t~ soit nul 
+\eqref{eq:Ch06-0ZO} 
+Nous choisirons ces directions principales comme axes x' xPratiquement,
+2 30 
+si la section a un axe de symétrie, alors cet axe est principal d'inertie, 
+car la symétrie entraîne \eqref{eq:Ch06-0ZO}. Sinon la diagonalisation est facile, et on peut en particulier utiliser la méthode géométrique exposée au § II.3.Z pour 
+le tenseur des contraintes. 
+Avec ce choix d'axes, \eqref{eq:Ch06-017} devient simplement 
+~
+\eqref{eq:Ch06-021} a.,S  -'hl, ! JJ, '!YI. J, ~ .c. J~
+l 
+'R, = 
+Jl, =§ ,ocl. t cLS , J= § ~~ d,5
+3 
+r. r. 
+où S est la surface de L ) et Jl,' J~ , les moments d'inertie pr~nc~paux. 
+On obtient donc pour 0:;, 
+
+et on a trouvé un champ de contraintes convenables pour l'es problèmes l, 5 et 6. 
+En particulier, pour la traction -Problème 1 -on retrouve la solution 
+présentée au §IV.I.4 
+Fis 0 0 
+F / ES 'X..
+t~ .
+0 0 0
+\eqref{eq:Ch06-023} CF : 
+~~~ -v FI ES 'X.~ 0 0 0 
+-).J FIE';, '):.,
+..(,\.3 = 
+ct es~t la solution du problème régulier associé aux CL 
+\eqref{eq:Ch06-024} X-, : 0 et ~,=.Q, 
+
+En général, les CL réelles -, par exemple dans un essai de traction -sont dif­
+férentes, mais le principe de Saint Venant nous assure que cela n'a guère d'im­portance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction. 
+1  3 FLEXION PURE 
+Considérons maintenant le problème 6 -le problème 5 se traiterait de ma­
+nière identique -. Le tenseur des contraintes a la forme suivante 
+
+o o 
+o o o o o 
+\eqref{eq:Ch06-025} <li = 
+où l'on a supprimé l'indice 2 sur J 
+\eqref{eq:Ch06-026} J = 
+= 
+
+Il reste à calculer les déplacements. Comme au § VI.2. 1, nous procéderons direc­tement en écrivant le tenseUL des déformations 
+'ln 
+0 0
+X"
+fJ "m
+\eqref{eq:Ch06-027} [, 
+0 "<:~ a
+= 
+EJ "m
+0 0 --'L E''J " 
+(l-U., 'm, 
+'Y1t. 
+eH -~ --':cl. =':> 4, = ':c, -::Cl-+ 9< ('X~. 'l:.o)â -::c, [J EJ 
+'à .u.., ,,'n1. v"rn. :,
+\eqref{eq:Ch06-028} 
+E.tt-= --'X:, ~ -U..t = IX.., + er~ (-::c,  -:c3) Cl -:Cl, E.J ~. 
+E _ 'CA3 v'n1. v 'In. 
+r.:c., 9 ---:x: 'l:. + '1', ('X,. -::c.,)
+'H-= ..lt" = 
+!; J a, l
+Cl ':1::3 EJ 'rr\..
+r1<4' '~<. 'C A" = + r<,t + <f't.~ = 0
+Ej ,
+Ô':1:., lb::, 
+ÔA3 v'm,
+\eqref{eq:Ch06-029} x 0
+= + + (\\ J, =
+( ' ',,' h,. 3 'ft,ô ,
+'à ':C3 Ô ':cJ, EJ 
+ÔA~ o..ll,
+:l, E3~ :: + --= f< + 'f~, ~ = 0 Ô':1:, ~ ':C~ 
+et on obtient la solution particulière 
+
+Le déplacement est donc donne par 
+.u.i  ::  - tn'L EJ  ':1:, -:X:.,  -w ~  ':c,2i  
+(31 )  .u.l,  '"  tn'l. ~EJ  [ t:I::,"  +  V ('l:~ _-;x:~).l,]  + W 3 ':1::,  + .<.l'l,  
+.u.1>  ::  v"lYt. EJ  ':I::.t ':1::3  
+
+où, en vue des applications futures, nous n'avons conservé qu'une partie du déplacement de solide, La déformation de la ligne moyenne est donnée par 
+
+o
+tandis que la déformée d'une section droite ";)C1= -!Cest caractérisée par
+1 
+
+cm,.  ) 
+\eqref{eq:Ch06-033} 
+=
+( EJ 'J::, + w~ 
+
+Les relations \eqref{eq:Ch06-032} et \eqref{eq:Ch06-033} montrent qu'après la déformation la ligne moyenne devient une parabole et que les sections droites restent planes et perpendi­culaires à la ligne moyenne 
+:X
+2 
+
+On construit souvent la théorie élémentaire de la flexion à partir de 
+Hypothèse de Navier-Bernoulli. Les sections droites restent planes et norma­[ les à la fibre moyenne. 
+Cette hypothèse se trouve donc vérifiée lCl. On constate également que le moment 'ltL appliqué produit une courbure de la ligne moyenne 
+\eqref{eq:Ch06-034} 
+x = 
+
+Ainsi, on pourrait envisager de mesurer le module d'Young E d'un matériau élastique par un essai de flexion: on impose un moment de flexion ~ et on observe la courbure X , ce qui détermine la "rigidité" de la poutre E J produit d'une rigidité matérielle E , liée au matériau, et d'une rigidité géométrique J , donnée par \eqref{eq:Ch06-026} et liée à la géométrie de la section droite 
+~. 
+En chaque point, on a un état de contraintes de traction simple, et le critère de limite d'élasticité donnera 
+\eqref{eq:Ch06-035} 
+
+
+soit, en introduisant 'YI ' valeur maximale de l'X.~\ 
+\eqref{eq:Ch06-036} 
+
+< 
+
+Ainsi, d'un point de vue géométrique, la rigidité d'une poutre est 
+carac térisée  par le moment  cl 1 inertie  .J  ,  tandis  que  sa  résistance  est  carac­ 
+térisée par le rapport Section rectangulaire'"  J /"'1..  
+i!b~ -:J.-; W  
+ =  ,  '"  ,  J "[S  -ft G  
+Sec tian  en  l  
+~t.I~'l:l  J  '"  1,.~".e ~  ,  J "l  .t-Â.e.  J s  =  ~l­-4  :r -"15  =  ~ 1­ 
+
+f,. <­Ceci montre la supériorité, à poids égal,de la sec tion en l sur la sec tian rectangulaire et, plus généralement, des sections en profil mince sur les sections massives. 
+-103 ­
+2. TORSION 
+========== 
+2.1 SECTION CIRCULAIRE OU ANNULAIRE 
+Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire. On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section x1=O, d'un angle proportion­nel à la distance 
+
+
+Nous postulons donc un champ de déplacements 
+\eqref{eq:Ch06-037} .M., = 0
+i 
+
+On obtient alors pour le gradient du déplacement et pour le tenseur des dé­formations 
+0 0 0 
+\eqref{eq:Ch06-038} oU-. 
+-cl. X 0 -cl. '):., 
+~
+""i = 
+<IX cl. x, 0 
+~ 
+é . 
+= 
+...~ 
+cl.
+0 -.ï 'X, ~ X.l,
+.2­-~ 'X 0 0 .l, ~ cf. 
+0 0
+-'X.l,
+.t 
+La la i de comportement donne alors le tenseur des contraintes 
+
+Ce champ de contraintes vérifie directement -les équations d'équilibre, 
+1-les conditions aux limites sur la surface latérale 
+
+Il  n'est  pas  nécessaire  de  vérifier les  équations  de  BeltraQi,  puisque  l'on  
+est  parti d'un champ  de  déplacements.  Il  ne  reste  donc  plus qu'à écrire  le  
+' 
+
+torseur des efforts appliqués sur L . Puisque <T~~ est nul, 1<:, "IYl,. et 'l'fL"
+1 
+sont nuls. Par symétrie, 1?!j, et 'R.., sont nuls, et il reste simplement 
+\eqref{eq:Ch06-040} 
+
+
+On a donc résolu le problème 4 avec 
+(41 ) G I 0( l 
+o 
+o 
+
+
+-104 ­
+Le moment de torsion crrt crée un "angle unitaire de torsion" a.. , et le mo­
+dule de rigidité G l est à nouveau le produit d'une rigidité matérielle 
+o 
+<7= t!-et d'une rigidité géométrique Io' moment d'inertie polaire de la 
+
+section. 
+Le vecteur contrainte associé à la section droite est 
+a uniquement une contrainte de cisaillement perpendiculaire au 
+rayon Et de module GoI. 't. . En no­
+... ....
+.e>\. ' ..e. e ' les vec teurs de base associés aux coordonnées polai­res ~, e dans le plan x2,x' on a
+3 
+..... ­
+\eqref{eq:Ch06-043} T. G-O('t,(,e 
+... ... ­
+et dans le repère associé aux coordonnées cylindriques autour
+e,1l. ' .e.fi ' .e.1 de x], le tenseur des contraintes a pour composantes 
+
+o 
+\eqref{eq:Ch06-044} 
+o 
+G-dl(, 
+
+L'état de contraintes en chaque point est un état de cisaillement simple, et le critère de limite d'élasticité s'écrit 
+\eqref{eq:Ch06-045} 
+
+
+où T~ est la limite élastique en cisaillement simple donnée par (V.71). En introduisant"R rayon de la section, il vient, en combinant avec \eqref{eq:Ch06-041}, 
+\eqref{eq:Ch06-046} 
+
+
+La rigidité à la tors ion d'un arbre circulaire ou annulaire est donc caractérisée par le moment d'inertie polaire de sa section I.et sa 
+o 
+résistance par le rapport 
+IJR 
+Section circulaire 
+B 
+Tf. 1J~ 'J)2. 1t 1J' :D
+~o ~ 1.
+I = = =
+= 
+" ~t S g "R -1b ~5 4­
+Section en tube mince 
+n 'J)~e-10 'J)~ 1. n J)'.e. 1. "D
+, ­
+1. = = = = 
+e~ 
+4 S 4 1< ~ ~s ~ 
+Ces relations montrent la supériorité, à poids éBal, des sections annulaires sur les sections massives. Dans le cas des tubes minces, on constate aussi 
+que ~N~/t et que les composantes \eqref{eq:Ch06-044} du tenseur des contraintes dans le 
+.... ..... ....
+repère (e.I\.,.e.e,.e-1) peuvent s'écrire 
+
+o 
+o 
+
+soit, compte tenu de \eqref{eq:Ch06-041} et de la valeur de Io 
+0 0 0 
+~'l11.
+\eqref{eq:Ch06-047} 
+0 0
+or '" 
+TI Ir-.e. 
+.2"rf1. 
+0 0 
+R rr-.e. 
+ce qui ,superposé à l'état de contraintes dû à une traction simple, redonne 
+bien la forme (IV.36) obtenue au § IV.I.4 . 
+2.2 THEORIE GENERALE 
+po 
+Nous considérons maintenant le problème 4 dans le cas d'une section 
+quelConque. Le § 1 a montré que la contrainte normale ~ était déterminée
+. 
+~~ 
+par 'R~ , 'lll~, <ro..~. Puisqu'ici ils sont nuls, on prendra donc ~~ = O. Les contraintes de cisaillement 0::.:. et cr~; par contre ne peuvent pas être nulles d'après \eqref{eq:Ch07-007}. Nous cherchons donc un champ de contraintes sous la forme 
+ocr;:. <ro~,]
+\eqref{eq:Ch06-048} <li 
+Sl.. 0
+= [
+<r~) 0 0 
+avec 
+
+fonctions de (x ,x2,x). Les équations d'équilibre donnent
+l 3
+'d 0.;1, ô 0:.,
+\eqref{eq:Ch06-049} 0
++ '" 
+Cl -:1:" Ô 'X.~ 
+
+()c:;~ 0
+'" ""> (J~!j, = ()''ù ( :C" l'Xl) 
+à 'X.,
+\eqref{eq:Ch06-050} r 
+l â 0:;; 
+0 
+â 'X, 
+
+= 0::., = ~; ('X.:., 'X!) 
+L'équation \eqref{eq:Ch06-049} montre alors -voir par exemple le Lemme 2 du § 111.3.1 -que la forme différentielle 
+\eqref{eq:Ch06-051} 
+
+est intégrable, càd il existe une "fonction des contraintes" P(OC.tJ6:!) telle 
+que 
+ô<Ïl '6p
+\eqref{eq:Ch06-052} ,
+<ï.;~ '" ~ô = 
+ô ((.~ o-x.:, 
+
+Les équations de Beltrami donnent alors 
+d ô
+\eqref{eq:Ch06-053} j~ 0
+~ 
+j~ '" 
+Ô/.C.I, Ô -X~ 
+
+ce qUl montre que est constant; nous noterons -.2Gd. cette constante,
+lt~ 
+~ étant une constante d'intégration dont nous verrons plus loin la signifi­cation 
+\eqref{eq:Ch06-054} 
+
+La CL \eqref{eq:Ch07-001} sur la surface latérale s'écrit 
+\eqref{eq:Ch06-055} 
+
+= 0 
+En introduisant le vecteur unitaire 
+tangent à Ô L 
+X = ( d.':!:.)clJ. 
+
+il vient 
+\eqref{eq:Ch06-056} 
+l'(t, = -.k.t -­
+de sorte que, compte tenu de \eqref{eq:Ch06-052}, la CL \eqref{eq:Ch06-055} devient 
+êlg>
+\eqref{eq:Ch06-057} (b:~ dei? o..:t." ci~ 
+t-=' 0 Ô 'l:~ 11. '0 -:c.... M v\b ~ 
+La fonction p(IX..." '.ta) reste constante lorsque l'on suit ô~ , donc sur cha­que composante connexe de "èL Nous supposerons désormais que la section L 
+est simplement connexe. On tire alors de \eqref{eq:Ch06-057} que 'f est constant sur 'à,[ et 
+on peut toujours choisir cette constante nulle 
+\eqref{eq:Ch06-058} = o 
+La fonction de contrainte ~ est donc déterminée par \eqref{eq:Ch06-054} et \eqref{eq:Ch06-055}, équations 
+qui définissent "problème de Dirichlet", qui admet donc une solution uni­
+l1n 
+que. Par le changement de fonction 
+\eqref{eq:Ch06-059} 
+
+c(' rr0r.l ème se tr<LDsforme en 
+LJ4'+.t =0 
+\eqref{eq:Ch06-0GO} f 
+=0 
+-107 ­
+et la fonction 9P' unique solution du problème \eqref{eq:Ch06-060}, dépend uniquement de la forme de la section ~. 
+Il ne reste plus qu'à déterminer la constante OC , ce que nous al­lons faire en calculant les efforts exercés sur L~. On sait déjà que 'R, = 'l1l~ = '11l., = 0 . Pour calculer les autres composantes, nOUS utiliserons la formule de Stokes 
+
+A partir de \eqref{eq:Ch07-006} et \eqref{eq:Ch06-052}, il vient 
+§ o<p cL .
+'R~ = ci 'X~ d,x,1\ = -x, .. dJJ:;;
+~L u1:l" 
+L o:J:1\
+( 62) = -~ il> ch~ = 0 
+dL 
+d'après la formule de Stokes \eqref{eq:Ch06-061} et \eqref{eq:Ch06-058}. De la même manière, on a 'R" = 0 . A partir de \eqref{eq:Ch07-007} on a 
+
+= -Ir [~CL~(~~ p) ~ 
+= ~ § p clxcl:x"
+t
+L 
+
+
+Finalement, le champ de contraintes construit permet de résoudre le problème 4 avec 
+\eqref{eq:Ch06-064} 
+
+l = 
+
+La constante l est appelée "module de rigidité" de la section L , et, com­
+me <f ' elle ne dépend que de la forrne de L . 
+En chaque point de la section, l'état de contraintes est un état
+-
+de cisaillement simple caractérisé par le vecteur contrainte T associé à la section droite 
+... 
+\eqref{eq:Ch06-065} 
+T = (0 1 <r1~ , ~;) 
+-+ 
+La CL \eqref{eq:Ch07-001} expnme que, sur la frontière dL , T est tangent à dL 
+\eqref{eq:Ch06-066} sur ÔL 
+
+Les relations \eqref{eq:Ch06-012} montrent que les courbes iJ1: Cli sont les en­
+.... 
+veloppes du champ de vecteurs T 
+
+L'état de contraintes étant un état de cisaillement simple, le critère de limite d'élasticité donne 
+.... 
+\eqref{eq:Ch06-067} \ T \ ~ 
+
+< (;e 
+avec (;e donné par (V. 71). A partir de f ou <r cette candi tian donne 
+
+= 
+
+" 
+
+Soit finalement 
+
+où est une longueur caractéristique de la section L . On peut par ail­leurs montrer que la borne supérieure de 1~'fI est nécessairement atteinte sur la fronti~re de ~ . Ainsi le problème général de la torsion est résolu, sitôt que l'on connaît la solution 'f('r~I';C~)du problème \eqref{eq:Ch06-060}. 
+2.3 CALCUL DU DEPLACEHENT 
+Pour terminer le calcul, il reste à.calculer le déplacement. A par­
+tir de \eqref{eq:Ch06-048},\eqref{eq:Ch06-052} et \eqref{eq:Ch06-059}, le tenseur des déformations est donné par 
+o 
+-'f,!l, 
+\eqref{eq:Ch06-069} ( = d o o o o 
+
+et on peut intégrer le champ de déplacements 
+Eq = ...u.1.I~ = 0 ~ ..l.L, = »-, (l,' -:c~) 
+
+\eqref{eq:Ch06-070} 0
+t~l. = .u~l. = => .u.2,~ ..l.L:, ( 'l:." êCa)
+1
+{ 
+= = 0 => .Al,> = A.t:!> (x., , 'Ll,)
+t" ..u, >, " 
+2 E.t" :-4-1,, " ... AL,,:l, =-0 ~ ..ll.!" , --..u. =-A(x., )
+-"~ (ca r Al ~}1> =-..l.L.t.,t:.(x-1,1 -.: ~) et .u.." , ~ = Ai. _ ,~( 'J." -x..<> ) et on a 
+
+et on peut interpréter A\eqref{eq:Ch07-00'};.,) comme étant la rotat ion de la section cl rD i te 
+d'abscisse 
+'X., 
+, 
+~
+J; ~~ = .J.t..,-1.I~ t--'L~ ,~ ...u.."11. ;-A'( "-,) 'J:, .;-\) CT,) = c< 'f,?,
+\eqref{eq:Ch06-072} 
+
+
+f :t = Â 	= 4 -A' l'x:,) r:r.:. t C'('L,) -cl. <t',.l,
+
+t~" + ...u...~J1.
+~,' 
+"" 
+Mais dans ces relations, seules les dérivées A'\eqref{eq:Ch06-0T,}(= riA/J./r..~), 17,'('.1:,) et dépendent de X ; elles doivent donc être constantes 
+1 
+Aex,) = -a..X, + cl 
+-Ll:, a.. 'X, 'X., .;-cL'l:, ;-~:x., +.e
+
+'" 
+\eqref{eq:Ch06-073} 
+f 43 = Q., 'X, XJ, 	-'-cL 'J:, 1-.c Xi + { 
+Déplacement de solide rigide 
+
+On voit sur \eqref{eq:Ch06-073} que les 5 constantes t, .c , .a.. e. , f . correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration. A un déplace-ment de solide près, on a donc 
+
+
+ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la cons­tante a.. , rotation par unité de longueur, est donc "l'angle unitaire de tor­sionl! introduit au § 1.1 pour la section circulaire. On peut maintenant calcu­
+
+à partir de \eqref{eq:Ch06-072} 
+\eqref{eq:Ch06-075} 
+
+système qUI sera intégrable SSi 
+
+
+ce qU1, d'après \eqref{eq:Ch06-060}, donne finalement Q..= ex , et la constante ex. , introduite en \eqref{eq:Ch06-054} est l'angle unitaire de torsion, et le déplacement est finale~ent, à un déplacement de solide près 
+! 
+0(
+.1.\., = '\f (X.!" ':C,) 
+\eqref{eq:Ch06-076} 
+.I.\.:l, = cl. ':C. ':C~ 
+At, = C( 'J:" 'l:.J., 
+
+Ainsi, la rotation de chaque section s'accompagne d'un "gauchissement" que l'on peut observer expérimentalement. La fonction de gauchissement l( est donnée par 
+\eqref{eq:Ch06-077} 
+
+
+et \f est la fonction harmonique conjuguée de la fonction harmonique 
+~\eqref{eq:Ch07-003} 3» 
+
+Si 	on calcule sur '0 z:. la dérivée normale de \fl ' il
+'f + 	.ï + :CJ
+'X-.1 
+vient, en utilisant \eqref{eq:Ch06-056} et \eqref{eq:Ch06-057} 
+ci'f o1ji é,,+,
+'Tt.l, t-'Tt,
+'" 
+d."" â :C.l, '() 'X. ~ d.:c~ 'èl'f' ci:C, d,'L
+( 'à 'fi 	+ !;:J, _l,
++ 	+ ~'\
+'" 	'à ):.3 dl. d ::Col-~") <th J.b cl (~('x2,+ :1:.1)J
+'" .2, .t ;
+ru 
+quantité connue le long de 'dL. Ainsi la fonction,+, vérifie 
+0
+f 	6'1' '" 
+\eqref{eq:Ch06-078} 	cL,,+, cl. [~ (~. 2,)] sur dL
+--'Xl, + (1;,
+'" 
+ci'1\. dA .~
+l 
+c'est un problème de Neumann, qui admet une solution unique. Ainsi, pour résoudre le problème de torsion, on peut, soit calculer f par le problème 
+
+\eqref{eq:Ch06-060} et en déduire ensuite '"'1' par \eqref{eq:Ch06-077}, soit calculer l' par le problème \eqref{eq:Ch06-078} et en déduire ensuite 'f' par \eqref{eq:Ch06-077}. 
+Finalement, si l'on compare les relations \eqref{eq:Ch06-064} et \eqref{eq:Ch06-068} du cas géné­ral, aux relations \eqref{eq:Ch06-041} et \eqref{eq:Ch06-046} relatives à la section circulaire, on consta­te que, dans le cas général également, la rigidité de la section est caracté­risée par le module de rigidité l et sa résistance par le rapport Ilrrt Mais dans le cas général, a) il faut résoudre le problème \eqref{eq:Ch06-060} pour pouvolr calculer ces constantes (nous verrons cependant au chapitre IX que l'on peut obtenir des estimations de l sans calculer Cf ), b) la torsion SI accompagne d'un gauchissement des sections. Si ce gauchissement est empêché, par exemple par des CL d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre). 
+Bien entendu, conformément à la démarche générale décrite au § 1.1, nous avons résolu un problème particulier correspondant au probl~me de la tor­sion, et le principe de Saint Venant nous permet d'affirmer que loin des ex­trémités c'est la solution. Il peut être utile de fonnuler expliciter..ent le problème régulier que nous avons résolu. Pour cela, il faut compléter les CL 
+\eqref{eq:Ch07-001} par des CL sur les extrémités. On pourrait écrire des CL donnant sur les extrémités le dêplacement (.él, Al~, ÂJ.,,) connu par \eqref{eq:Ch06-076}, ou bien donnant les 
+1 
+~ 
+efforts appliqués T connus par \eqref{eq:Ch06-065} et \eqref{eq:Ch06-052}, mais la formulation la plus com­
+mode, que nous utiliserons au chapitre IX, fait intervenir des données mixtes 
+
+_ 0 
+
+Â,j, S .tl.! = 0 
+\eqref{eq:Ch06-079} 
+= 0 ..tJ..J.,= -O(.Q'X-~
+ 
+
+Rajoutées à \eqref{eq:Ch07-001}, ces CL définissent bien un problème régulier (§ VI.I.I), et cette formulation présente l'avantage de ne pas faire intervenir les fonctions 
+<f ou 1t' a priori inconnues. 
+2.4 SECTIONS PARTICULIERES 
+Section circulaire 
+D'après la symétrie, les fonctions If et 'Y ne dépendent que de r. Il vient directement 
+\eqref{eq:Ch06-080} ./ (1, 1,)
+'f=i; Q.-'I. ~ = 0 
+
+et on retrouve tous les résultats du § J.I . En particulier, la fonction de 
+gauchissement est nulle. 
+.r 
+J
+Section elliptique 
+La section ~ est limitée par 
+l'ellipse d'équation 
+
+Q 
+(81 ) 
+
+On trouve alors pour <p et "t' 
+t, ~ 
+0.1, }}' 
+( -! -Xl. X~ )
+\eqref{eq:Ch06-082} c
+i 
+Q.,l,
+Q.,.L+ ~? t.L 
+a.,.L _ J..'" 
+\eqref{eq:Ch06-083} 
+l' = ');.,1, 'l:3 
+Q.J., +;"1, Pour le module de rigidité à la torsion, on trouve 
+\eqref{eq:Ch06-084} 
+l = 
+
+Les contraintes sont données par 
+[ 
+a-'l'Il. o'f .t'lll. 
+.. J., = -= ':(.3
+l 'è a!. 11 o.t~ 
+\eqref{eq:Ch06-085} 
+'IY1. 'Of .2,'fQ 
+cr~~ = = ');.~
+n Q.;..p,.
+l "ô :x:.J., 
+et la contrainte de cisaillement maximale 
+'I~ 'Il"
+2'Tl1.. 
+~"nl
+~ . l"
+\eqref{eq:Ch06-086} ­
++ =
+1 T ItmOJ:c = .bI>f­
+!" (L" 7t a. !)}
+lla...Q,. 
+est atteinte à l'extrémité du petit axe OC!.:=' Z. , ce qui donne 
+
+:0
+\eqref{eq:Ch06-087} f = 
+Q,l,+ p,.l" Section ree tangulaire 
+~ 
+CL ,
+On recherche la solution sous forme d'un développement en série de Fourier double 
+
+qui vérifie automatiquement la CL \eqref{eq:Ch06-058}. On dérive \eqref{eq:Ch06-088} terme à terme, ce qUl 
+permet  d'obtenir le développement  de 6~ que  l'on identifie  avec le dévelop­ 
+pernent  de  la fonction  constante· -2 , et  on  obtient les  constantes A . tm.'1\,  
+On obtient des  calculs plus simples  en  cherchant  la solution  sous  
+
+la forme 
+co 
+\eqref{eq:Ch06-089} 'f = 
+L 
+
+développement en série de Fourier simple (mais qui présente l'inconvénient 
+de  détruire  la symétrie  en  x2  et  x3). On  calcule  ~~  par dérivation  terme  
+à  terme,  on  identifie  avec  le développement  de  la  constante  -2,  et  on  ob­ 
+tient  pour  1f~ une  équation différentielle du  second ordre  
+
+
+q "' l, \:1,
+("" rrn. --1 ) 1\ .1 ('I ) 
+( l ! 1',m, ô 
+, Cl. / 
+
+qui donne "f"", par intégration avec les conditions aux limites "1'~t)=O. On obtient finalement 
+
+qui permet de calculer la solution et en particulier le module de rigidité à la torsioI;1 l et la longueur f qUi intervient dans \eqref{eq:Ch06-068} . On trouve 
+. s <,
+I. /1 b ~, JIr ~,(h!Q,J = i; CL JdYr\eqref{eq:Ch06-0a.}
+= 
+1
+\eqref{eq:Ch06-091} < 
+.z a. i(Yrja.)
+l F = 
+-113 ­
+la contrainte tan8entielle maximale étant obtenue au milieu du grand côté 
+«~= ! k si on suppose (t> -&-. Les fonctions ~, et.t sont données par le 
+tableau suivant 
+Rr/O­ 1  1,5  2  3  5  00  
+-Pt,  0,675  0,848  0,930  0,985  0,999  1  
+-foi  0,141  0, 196  U,229  0,263  0,291  1/3  
+
+Plus généralement, on sait résoudre explicitement le problème pour quelques sections particulières (triangle équilatéral, section circulaire en­taillée d'un demi-cercle, etc ... ). Comme le problème se ramène à des calculs de fonctions harmoniques, on peut également utiliser les techniques de varia­
+ble complexe (voir\eqref{eq:Ch06-0l7},[19]). Enfin, le problème \eqref{eq:Ch06-060} se prête bien au calcul 
+numérique. 
+3. FLEXION CO~OSEE 
+==========~======== 
+3.1 CHAMP DE CONTRAINTES 
+Il reste à résoudre le problème 2. :l:'t 
+F~ It==~======~~_=t--l----,»F"''l::~ 
+
+Considérons la section d'abscisse xl' et considérons la poutre [OJ~"'])(. r Elle est en équilibre sous l'action du torseur [~o]des efforts appliqués sur la section x =0 et du torseur ['b(:c,)] des efforts de contact exercés sur la
+1 
+poutre  [O/xJ x  L  par  la partiè supprimée ['l:".eJ. L- Gomme  précédemment,  
+nous  représentons ~  ('CCx,)]  par  sa  résultante  'R('l:.)  et  son  moment  .-..'l'Q.(1.,)  par  
+
+
+L'équilibre de la poutre [D,X,]. L donne alors 
+'R. Fe" de sorte que la répartition des contraintes dans la section xl doit être telle que 
+
+
+\eqref{eq:Ch06-092} : 0
+$r ':!~ o:;~ cLx,t cL'r-; 
+0;, 
+,:
+-! '):~ G.1i J..,X.l. 0"X,3 F(t-/.1:.,) 
+Lx 
+
+1 
+~
+( 93) $ tr~!l, ck.,t J.;x,~ F 
+t",,< 
+\eqref{eq:Ch06-094} § 0:., dr.cJ.,~. ,: 0 
+~'X." . 
+\eqref{eq:Ch06-095} t ('X-J-o:i,-:x:.,<J:i:o) d:.x".:z,clx" :> 0 
+['L< 
+En partant de \eqref{eq:Ch06-092}, les résultats du § 1.2 nous suggèrent de prendre 
+\eqref{eq:Ch06-096} 
+
+, 
+
+D'autre part, \eqref{eq:Ch06-093} montre 
+dans un premler temps 
+\eqref{eq:Ch06-097} 
+
+
+avec ~< donné par \eqref{eq:Ch06-096}. que 
+Û~J, 
+o o 
+Les 
+(î ne peut pas être nul, Nous prenons donc 
+~:/, 
+
+équations d'équilibre nous donnent alors 
+
+= 0 , : 0 
+soit, compte-tenu de \eqref{eq:Ch06-096}, 
+
+Les équations de Beltrami sont toutes 
+aux indices 1,2 qui donne 
+(j"~~, ~~ + ~t,U + f 
+-[ r\eqref{eq:Ch06-0X;} +"1 + 
+3,J 
+vérifiées, sauf l'équation relative 
+(5' 0
+= 
+..(.(J~ 
+F 
+-= 0 
+J 
+
+A 
+Ât)! 
+1 
+-f+v 
+-115 ­
+r(r.,) '" -~'l:~ i" 	Cl, X, + t 
+~+v 
+\eqref{eq:Ch06-099} 	F _.:l.... 'X" + Cl. ')C. + t}
+2,J .-1+>' ; 
+
+Par contre, puisque ~3 est nul, la CL sur la surface latérale, qui s'écrit encore sous la forme \eqref{eq:Ch06-055}, ne peut pas être vérifiée. Nous super­aro
+posons donc à l'état de contraintes obtenu jusqu'à présent, un état de 
+con traintes or avec non nul 
+
+<l1:l­
+_[û",; o 
+(100) 	o t
+-0.;<­o o 
+o
+(101) 
+(j..\<-= 
+Par construction, le champ aro vérifie les équations d'équilibre 
+et les équations de Beltrami; le champ or devra donc les vérifier égale­
+
+ment. On peut alors reprendre l'analyse du § 2.2 et obtenir 
+i ~ 
+..., = 
+F ~ 	F ~ 
+(j1~ 	o:ï~ = -­
+J -a (Co . 	J o'X-:.
+(102) 
+..., ,1<f = di = -le 
+Nous faisons le changement de fone tian 
+(103 ) 
+où est la fonction introduite au § 2.2, solution du problème \eqref{eq:Ch06-060}, de sor­
+te que 
+(104) 
+11 X = 0 
+Comme au § 2.2, la CL sur la surface latérale peut s'écrire 
+o 
++ C = 0 
+Le dernier terme 	s'annule d'après \eqref{eq:Ch06-060} et on a 
+(105) 	d.X A [ K.",'-_ ~,x'-] dA:. '" At;> 3
+d.b .2-	cU 
+Sur d~ , x2 et xsont fonctions de .6 et par intégration de (105) sur oz.
+3 on peut obtenir la valeur de sur ,,[ à une constante près
+1. 
+(106) 
+Pour s'assurer que (106) définit sans ambiguité la fonction X sur '02. , il 
+
+o 
+faut vérifier que 
+(107) 	~ 0 
+Ceci 	résulte directement de la formule de Stokes et de \eqref{eq:Ch06-018}. 
+Ainsi, la fonction 1. est déterminée par 
+
+(108) 
+définie par (106)
+[ 
+c'est un ·problème de Dirichlet qui admet une solution unique dépendant unique­
+ment de 	la section ~ 
+3.2 CALCUL DES EFFORTS APPLIQUES 
+Pour terminer la détermination du champ de contraintes, en parti~u­
+lier pour déterminer la constante C , il convient de vérifier les cO;'1dit~Qns 
+
+aux limites sur l'extrémité -:.:,,,1, càd de vérl.fier les conditions \eqref{eq:Ch07-002},\eqref{eq:Ch06-093}, 
+\eqref{eq:Ch06-094} et 	\eqref{eq:Ch06-095} pour ~i= 1,. Par constructicn de ~~ les relations \eqref{eq:Ch06-092} sont 
+vérifiées 	pour tout xl' A par-tir des calculs du paragraphe précédent, on a 
+cr~.l, = 	i [ _i (~~ _~)J:~ ) + dt + e ~ J2., 3., .-l+V Ô!j:3
+(109) 	è X3 
+F f 'Ot ôcp l
+(j~:. = -	--+-c 
+J.t 'O/(.I, o~" J et a;,~ et 0:.." dépendent uniquement de xet x3 · 
+2 
+Pour \eqref{eq:Ch06-093}, nous partons de (109) et 
+
+F
+'R.t = -	­
+lJ~ 
+(110) 
++ ~ § (aI -t-C ~) d,.r. <k. 
+J L ÔO: "0 ':C J, 3 
+~ 3 :> Compte-tenu de la définition \eqref{eq:Ch06-021} de J~ et Jon obtient pour le i'CDler
+3 
+terme 
+(II 1) 
+Pour le second terme, on utilise la formule de Stokes 
+Le terme en <.p diparaît par \eqref{eq:Ch06-060}, et on intègre le terme en X. par parties. Compte-tenu de (105), on obtient 
+On utilise à nouveau la formule de Stokes 
+§'3I: J.C:),(J.C~ -~ )Ln ck~
+~~~ 
+-i+v 
+F ~ ~ ( K., ( JL! -~~~)] ckJ, ckô
+-.n:. 1:. Ô./C,:}, -l+v = F ~ (?lK; -~4~) tkl, dJt,~ 
+~JJ, I: .-1..\1 et compte-tenu de \eqref{eq:Ch06-021}, le deuxième terme de (110) donne 
+(1 12) 
+La combinaison de (110) et (112) donne alors 'R = F, et permet de vérifier 
+
+J, 
+\eqref{eq:Ch06-093}. La vérification de \eqref{eq:Ch06-094} est analogue. 
+( 113) 
+d'après \eqref{eq:Ch06-020} . Il reste à écrire \eqref{eq:Ch06-095}. Le calcul est mené de manière similaire 
+./J:. ~:),) MJ, d..tL 3 
+D'après le calcul qui a donné \eqref{eq:Ch06-063}, il vient 
+de sorte que nous pouvons écrire 
+(1 14)  .  F(Ii-CI)  
+J:t  
+où  la  constante  H , donnée  par  
+
+y
+(1 15) -l ,.,,; -1-x 0'X i àX 
+~
+li -l ~JI.C;~, -] ck,t ck..
+/:[.3
+1 Àt" 3 l-041. O~, dépend uniquement de la section L. . La condition \eqref{eq:Ch06-095} donne alors la valeur de la constante 
+H
+(116) 
+c = 
+l 
+et le champ de contraintes est parfaitement défini. Il est de la forme 
+-(.e -4.) I.CJ,  
+(1 17)  or  =  F  a(",-.l.'I.C.)  
+J,t  [  f';,(~.l.'~;)  
+
+où 0{ et ~ sont deux fone tions homogènes au carré cl 1 une longueur, et qui 
+dépendent uniquement de la section L . 
+La solution du problème de la flexion composée peut donc, comme pour la torsion, s'obtenir par résolution de problèmes de Dirichlet, mais les cal­
+culs sont beaucoup plus laborieux. En particulier, on peut écrire le critère de limite d'élasticité et calculer le déplacement, malS on ne peut pas en 
+tirer une interprétation simple cormne pour les autres problèmes. En particu­
+lier, l'hypothèse de Navier-Bernoulli (voir § 1.3) n'est plus vérifiée, les 
+sections droites ne restent plus planes: en torsion comme en flexion composée, l'apparition de contraintes de cisaillement entraîne un gauchissement de la section. 
+3.3 SECTION CIRCULAIRE 
+Si la section est symétrique par rapport à l'axe xz' alors, en pre­nant l'origine des abscisses curvilignes sur l'axe xz' on voit que la fonction X définie sur .. L par (106) prend des valeurs opposées en deux points symé­
+o 
+triques par rapport à l'axe des x2. Il en résulte que la fonction ~ définie par le problème (108) est impaire en x
+3 
+
+( 118) 
+
+
+La quantité intégrée dans (115) est donc impaire en x, H est nul, et la cons­
+3 
+-119 ­
+tante C est nulle. On obtient pour le vecteur contrainte tangentielle sur la section droite (0, ~~, ô1.) la symétrie par rapport à l'axe x
+2 f (J"~l, (/f:..z" -J.L~)
+(1 19) 
+
+
+t (J"1~ \eqref{eq:Ch07-001}(./-1 -J:i:-!) '" -<r~ô (h::~1 !.Cl) 
+A titre d'exemple, nous allons calculer la fonction ~ et la répar­tition de contraintes pour une section L circulaire, de rayon ~ . Pour cal­
+culer X on écrit (105)
+ 
+-l
+cl'X = -[t " .t] ck. 
+~.z, --\+>' K3 3
+l 
+...t 
+= [(a..L_)<:~) -~~"] ck
+A+V.3 J
+l 
+J .. 2,\> 4" 
+
+= i [é -1ck,3
+J+V .3 .,1+.2»
+~ [ a..~ IX _
+1. = ~n
+~ .3 ?>(AtV) 
+a..> J +tv
+( 120) [~e ~e]
+~ = 
+0 l ~(À+V) 
+
+Pour calculer 1 a fone tian X(1.:!~/~·3)' nous devons trouver la fone tion A 
+harmonique qui prend la valeur (120) pour '1,,, a. . Pour cela on remarque que
+ 
+les fonctions 
+
+
+sont harmoniques povr tout entier ~ On écrit alors 
+(122) 
+
+et on peut réécrire (120) sous la forme 
+il À+.2,v
+A. o " ~[.èMve (3.&iM.6 -,oiM., ~e) ] j.2, (.Mv)
+(123) 
+~-tl,,, 
+= a..' [ --1+:!.V + ~eJ
+~:,e ~ ,,12(.-hV) li (-1+>') 
+ce qUl permet d'écrire 
+:'+2.V
+-1 [ A+2.v Il} ~:,6 .. ---a...t ft., ».m, e ] 1 ="ï -I.i,(.tl+V) 4(.hv) 
+On utilise à nouveau (122) pour écrire 
+
+-120 ­
+
+ce qui donne pour les contraintes 
+F 3+1\1 l-L -1-3.11 
+~.?. = [ Cl, -/.CJ, -I.(~ ]8J,t My ?+lv
+(125) 
+F À+.'I,y 
+(T~'!. = 1.(:1. &3 
+4J2-...\+\1 
+répartition assez complexe des contraintes de cisaillement. 
+OC" 
+En particulier, on a 
+"" 
+~~.nul sur l'axe des x2 et sur t 
+\ 
+l'axe des x, La répartition de
+3 
+~L sur les deux diamètres AA' 
+
+
+6' 
+et BB 1 est représentée sur les diagrammes suivants 
+?>
+0
+A.' t>. x"­
+:x" 
+F A+.'iV r
+en B = -= ....I,l?> ­
+~~ 
+5 A·w S F ?> + lv f
+en 0 <f~!/, -=.A,:'~ S .2,( A+v) 0;, 
+pour V = 03
+1 
+
