@@ -1,5 +1,6 @@
 \chapter{Le problème de Saint Venant}
-\section{Le principe de Saint Venant}
+\section{Traction et flexion pure}
+\subsection{Le principe de Saint Venant}
 Le problème de Saint Venant est le problème de base de la Résistance des Matériaux.
 Une poutre cylindrique est sollicitee à ses deux extrémités, les efforts exercés étant caractérisés par leur torseur résultant.
 \begin{multicols}{2}
@@ -156,82 +157,109 @@ Nous adopterons donc l'approche du \ref{ssec:Ch06-1.4} en cherchant un champ de 
     \item les conditions \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007},\eqref{eq:Ch07-008}, pour le problème étudié.
 \end{itemize}
 \subsection{Répartition des contraintes normales}
+On constate tout d'abord sur \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, que $\mathcal{R}_1$, $\mathcal{M}_2$, $\mathcal{M}_3$ ne font intervenir que la contrainte normale (pour une facette de la section droite) $\sigma_{11}$.
+Nous cherchons donc le champ des contraintes sous la forme
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        \sigma_{11}\left( x_1, x_2, x_3 \right) & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-013}
+\end{equation}
+Les CL \eqref{eq:Ch07-001} sur la surface latérale sont alors automatiquement vérifiées, puisque $\vv{n}=\left( 0,n_2,n_3 \right)$.
+Les équations d'équilibre se réduisent à
+\begin{equation}
+    \frac{\partial \sigma_{11}}{\partial x_1} = 0 \quad,\quad \sigma_{11} = \sigma_{11}\left( x_2,x_3 \right)
+    \label{eq:Ch07-014}
+\end{equation}
+Les équations de Beltrami \eqref{eq:Ch06-030} se réduisent alors à
+\begin{equation}
+    \frac{\partial^2 \sigma_{11}}{\partial x_2^2} = \frac{\partial^2 \sigma_{11}}{\partial x_3^2} = \frac{\partial^2 \sigma_{11}}{\partial x_2 \partial x_3} = 0
+    \label{eq:Ch07-015}
+\end{equation}
+qui donne $\sigma_{11}$ fonction linéaire de $x_2$, $x_3$.
+\begin{equation}
+    \sigma_{11} = a + b x_2 + c x_3
+    \label{eq:Ch07-016}
+\end{equation}
+Il ne reste plus à écrire que les conditions sur les extrémités, en reportant le tenseur des contraintes défini par \eqref{eq:Ch07-013} et \eqref{eq:Ch07-016} dans \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007} et \eqref{eq:Ch07-008}, on obtient
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \mathcal{R}_1 &= a \iint_{\Sigma} \ud S + b \iint_{\Sigma} x_2 \ud S + c \iint_{\Sigma} x_3 \ud S \\
+        -\mathcal{M}_3 &= a \iint_{\Sigma} x_2\ud S + b \iint_{\Sigma} x_2^2 \ud S + c \iint_{\Sigma} x_2 x_3 \ud S \\
+        \mathcal{M}_2 &= a \iint_{\Sigma} x_3 \ud S + b \iint_{\Sigma} x_2 x_3 \ud S + c \iint_{\Sigma} x_3^2 \ud S \\
+        \mathcal{R}_2 &= \mathcal{R}_3 = 0 \quad, \quad \mathcal{M}_1 = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-017}
+\end{equation}
+Les intégrales qui interviennent dans \eqref{eq:Ch07-017} dépendent uniquement de la forme de la section.
+Ainsi, le système \eqref{eq:Ch07-017} donnera $a$, $b$, $c$, en fonction de $\mathcal{R}_1$, $\mathcal{M}_2$ et $\mathcal{M}_3$.
+Nous pourrons donc résoudre par un champ de contraintes de la forme \eqref{eq:Ch07-013}, \eqref{eq:Ch07-016}, les problèmes 1, 5 et 6 -- traction et flexion pure.
+
+Pour déterminer complètement les contraintes, il reste à calculer $a$, $b$ et $c$, c'est à dire résoudre le système \eqref{eq:Ch07-017}.
+Un choix judicieux du système d'axes $x_2x_3$ dans le plan de la section droite $\Sigma$ va faciliter cette résolution.
+Tout d'abord, on choisit l'origine au centre de gravité de $\Sigma$, ce qui assure
+\begin{equation}
+    \iint_{\Sigma} x_2 \ud S = \iint_{\Sigma} x_3 \ud S = 0
+    \label{eq:Ch07-018}
+\end{equation}
+Ensuite, on remarque que \eqref{eq:Ch07-017} fait intervenir les composantes du tenseur d'inertie de la section $\Sigma$
+\begin{equation}
+    J_{ij} = \iint_{\Sigma} x_i x_j \ud S \quad i,j = 2,3
+    \label{eq:Ch07-019}
+\end{equation}
+c'est un tenseur plan symétrique, donc diagonalisable.
+On peut trouver dans le plan $x_2$, $x_3$ deux directions principales d'inertie perpendiculaires telles que le moment produit $J_{23}$ soit nul
+\begin{equation}
+    J_{23} = \iint_{\Sigma} x_2 x_3 \ud S = 0
+    \label{eq:Ch07-020}
+\end{equation}
+Nous choisirons ces directions principales comme axes $x_2$, $x_3$.
+Pratiquement, si la section a un axe de symétrie, alors cet axe est principal d'inertie, car la symétrie entraîne \eqref{eq:Ch07-02O}.
+Sinon la diagonalisation est facile, et on peut en particulier utiliser la méthode géométrique exposée au paragraphe~\ref{ssec:Ch03-3.2} pour le tenseur des contraintes.
+
+Avec ce choix d'axes, \eqref{eq:Ch07-017} devient simplement
+\begin{equation}
+    \mathcal{R}_1 = a S, \quad -\mathcal{M}_3 = b J_2, \quad \mathcal{M}_2 = c J_3, \quad J_2 = \iint_{\Sigma} x_2^2 \ud S, \quad J_3 = \iint_{\Sigma} x_3^2 \ud S
+    \label{eq:Ch07-021}
+\end{equation}
+où $S$ est la surface de $\Sigma$ et $J_2$, $J_3$ les moments d'inertie principaux.
+On obtient donc pour $\sigma_{11}$
+\begin{equation}
+    \sigma_{11} = \frac{\mathcal{R}_1}{S} - \frac{\mathcal{M}_3}{J_2} x_2 + \frac{\mathcal{M}_2}{J_3}x_3
+    \label{eq:Ch07-022}
+\end{equation}
+et on a trouvé un champ de contraintes convenables pour les problèmes 1, 5 et 6.
+
+En particulier, pour la traction -- Problème 1 -- on retrouve la solution présenté au paragraphe~\ref{ssec:Ch04-1.4}
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        \frac{F}{S} & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \quad
+    \begin{cases}
+        u_1 = \frac{F}{ES} x_1 \\
+        u_2 = -\nu \frac{F}{ES} x_2 \\
+        u_3 = -\nu \frac{F}{ES}  x_3
+    \end{cases}
+    \label{eq:Ch07-023}
+\end{equation}
+C'est la solution du problème régulier associé aux CL
+\begin{equation}
+    x_1 = 0 \text{ et } x_1 = l: \quad \sigma_{11} = F/S, \ \sigma_{12} = \sigma_{13} = 0
+    \label{eq:Ch06-024}
+\end{equation}
+En général, les CL réelles -- par exemple dans un essai de traction -- sont différentes, mais le principe de Saint Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction.
+
+\subsection{Flexion pure}
 \endinput
-On constate tout d'abord sur \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, que 'R, ' 'n1.~ et 'm~ ne font intervenir que la contrainte norrr~le (pour une facette de la section droite) <r" Nous cherchons donc le champ des contraintes sous la forme 
-CT (~.. ~".'ltl) o 
-\eqref{eq:Ch06-013} o
-or" 0 
-[ 
-o o 
-
-Les CL \eqref{eq:Ch07-001} sur 11). surface latérale sont alors automatique~ijt vé­
-..
-rifiées, pUlsque 'Y\. .. «(},-"".,""',) Les équations d'équilibre se rédttis~I)t à 
-
-Les équations de Beltrami (VI.30) se réduisent alors à 
-
-qui donne (3"",,, fonction linéaire de x2, x3. 
-
-Il ne reste plus. à écrire que les conditions sur les extrémités, en reportant le tenseur des contraintes défini par \eqref{eq:Ch06-013} et \eqref{eq:Ch06-016} dans \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007} et \eqref{eq:Ch07-008}, on obtient 
-~
-'R, Q, § d,s + .R,. § ~J, <is ... .c ~ f.(~ cls 
-r-I: r. 
--'Ill = CL $f.(~ cis t ~ ~ I.e; ris t .(. § .oc~ "". Js
-( 17) 
-~ r r. 1­
-'ml, = 0-S) f.(~ J.s + ~ %.ocJ, I.e. ris ... .c § lX; cLs 
-1: L-E 
-'RJ, '" 1<, = 0 'hl. = 0
- 
-Les intégrales qui interviennent dans \eqref{eq:Ch06-017} dépendent uniquement de la forme de la section. Ainsi, le système \eqref{eq:Ch06-017} donnera 0.., ),.., ,Co, en fonction de 1<., ~ et ~ . Nous pourrons donc résoudre par un champ de contraintes de la 
-~ ~ 
-forme \eqref{eq:Ch06-013},\eqref{eq:Ch06-016}, les problèmes 1, 5 et 6 -traction et flexion pure 
-Pour déterminer complètement les contraintes, il reste à calculer 
-Q, , .,g. et .G , càd résoudre le système \eqref{eq:Ch06-017}. Un choix judicieux du système d'axes xxdans le plan de la section droite ! va faciliter cette réso­
-2 3 lution. Tout d'abord, on choisit l'origine au centre de gravité de L , ce 
-qui assure 
-( 18) 
-
-= 0 
-Ensuite, on remarque que \eqref{eq:Ch06-017} fait intervenir les composantes du tenseur d'inertie de la section! 
-
-
-c'est un tenseur plan symétrique, donc diagonalisable. On peut trouver dans le plan xZ,xdeux directions principales d'inertie perpendiculaires telles
-3 que le moment produit J"t~ soit nul 
-\eqref{eq:Ch06-0ZO} 
-Nous choisirons ces directions principales comme axes x' xPratiquement,
-2 30 
-si la section a un axe de symétrie, alors cet axe est principal d'inertie, 
-car la symétrie entraîne \eqref{eq:Ch06-0ZO}. Sinon la diagonalisation est facile, et on peut en particulier utiliser la méthode géométrique exposée au § II.3.Z pour 
-le tenseur des contraintes. 
-Avec ce choix d'axes, \eqref{eq:Ch06-017} devient simplement 
-~
-\eqref{eq:Ch06-021} a.,S  -'hl, ! JJ, '!YI. J, ~ .c. J~
-l 
-'R, = 
-Jl, =§ ,ocl. t cLS , J= § ~~ d,5
-3 
-r. r. 
-où S est la surface de L ) et Jl,' J~ , les moments d'inertie pr~nc~paux. 
-On obtient donc pour 0:;, 
-
-et on a trouvé un champ de contraintes convenables pour l'es problèmes l, 5 et 6. 
-En particulier, pour la traction -Problème 1 -on retrouve la solution 
-présentée au §IV.I.4 
-Fis 0 0 
-F / ES 'X..
-t~ .
-0 0 0
-\eqref{eq:Ch06-023} CF : 
-~~~ -v FI ES 'X.~ 0 0 0 
--).J FIE';, '):.,
-..(,\.3 = 
-ct es~t la solution du problème régulier associé aux CL 
-\eqref{eq:Ch06-024} X-, : 0 et ~,=.Q, 
-
-En général, les CL réelles -, par exemple dans un essai de traction -sont dif­
-férentes, mais le principe de Saint Venant nous assure que cela n'a guère d'im­portance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction. 
-1  3 FLEXION PURE 
 Considérons maintenant le problème 6 -le problème 5 se traiterait de ma­
 nière identique -. Le tenseur des contraintes a la forme suivante 
 
