@@ -259,100 +259,132 @@ C'est la solution du problème régulier associé aux CL
 En général, les CL réelles -- par exemple dans un essai de traction -- sont différentes, mais le principe de Saint Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction.
 
 \subsection{Flexion pure}
-\endinput
-Considérons maintenant le problème 6 -le problème 5 se traiterait de ma­
-nière identique -. Le tenseur des contraintes a la forme suivante 
-
-o o 
-o o o o o 
-\eqref{eq:Ch06-025} <li = 
-où l'on a supprimé l'indice 2 sur J 
-\eqref{eq:Ch06-026} J = 
-= 
-
-Il reste à calculer les déplacements. Comme au § VI.2. 1, nous procéderons direc­tement en écrivant le tenseUL des déformations 
-'ln 
-0 0
-X"
-fJ "m
-\eqref{eq:Ch06-027} [, 
-0 "<:~ a
-= 
-EJ "m
-0 0 --'L E''J " 
-(l-U., 'm, 
-'Y1t. 
-eH -~ --':cl. =':> 4, = ':c, -::Cl-+ 9< ('X~. 'l:.o)â -::c, [J EJ 
-'à .u.., ,,'n1. v"rn. :,
-\eqref{eq:Ch06-028} 
-E.tt-= --'X:, ~ -U..t = IX.., + er~ (-::c,  -:c3) Cl -:Cl, E.J ~. 
-E _ 'CA3 v'n1. v 'In. 
-r.:c., 9 ---:x: 'l:. + '1', ('X,. -::c.,)
-'H-= ..lt" = 
-!; J a, l
-Cl ':1::3 EJ 'rr\..
-r1<4' '~<. 'C A" = + r<,t + <f't.~ = 0
-Ej ,
-Ô':1:., lb::, 
-ÔA3 v'm,
-\eqref{eq:Ch06-029} x 0
-= + + (\\ J, =
-( ' ',,' h,. 3 'ft,ô ,
-'à ':C3 Ô ':cJ, EJ 
-ÔA~ o..ll,
-:l, E3~ :: + --= f< + 'f~, ~ = 0 Ô':1:, ~ ':C~ 
+Considérons maintenant le problème 6 -- le problème 5 se traiterait de manière identique.
+Le tenseur des contraintes a la forme suivante
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        -\frac{\mathcal{M}}{J}x_2 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch06-025}
+\end{equation}
+où l'on a supprimé l'indice $2$ sur $J$
+\begin{equation}
+    J=J_2 = \iint_{\Sigma} x_2^2 \ud S
+    \label{eq:Ch06-026}
+\end{equation}
+Il reste à calculer les déplacements.
+Comme au paragraphe~\ref{ssec:Ch06-2.1}, nous procéderons directement en écrivant le tenseur des déformations
+\begin{equation}
+    \tens{\varepsilon} = 
+    \begin{bmatrix}
+        -\frac{\mathcal{M}}{EJ}x_2 & 0 & 0 \\
+        0 & \nu\frac{\mathcal{M}}{EJ}x_2 & 0 \\
+        0 & 0 & \nu\frac{\mathcal{M}}{EJ}x_2
+    \end{bmatrix}
+    \label{eq:Ch06-027}
+\end{equation}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} = -\frac{\mathcal{M}}{EJ}x_2 & \Rightarrow u_1 = \frac{\mathcal{M}}{EJ}x_1x_2 + \varphi_1 \left( x_2,x_3 \right) \\
+        \varepsilon_{22} = \frac{\partial u_2}{\partial x_2} = \frac{\nu\mathcal{M}}{EJ}x_2 & \Rightarrow u_2 = \frac{\nu\mathcal{M}}{EJ}x_2^2 + \varphi_2 \left( x_1,x_3 \right) \\
+        \varepsilon_{33} = \frac{\partial u_3}{\partial x_3} = \frac{\nu\mathcal{M}}{EJ}x_2 & \Rightarrow u_3 = \frac{\nu\mathcal{M}}{EJ}x_2x_3 + \varphi_3 \left( x_1,x_2 \right)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-028}
+\end{equation}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        2 \varepsilon_{12} &= \frac{\partial u_1}{\partial x_2} + \frac{\partial u_2}{\partial x_1} = - \frac{\mathcal{M}}{EJ}x_1 + \varphi_{1,2} + \varphi_{2,1} = 0 \\
+        2 \varepsilon_{23} &= \frac{\partial u_2}{\partial x_3} + \frac{\partial u_3}{\partial x_2} = \frac{\nu\mathcal{M}}{EJ}x_3 + \varphi_{2,3} + \varphi_{3,2} = 0 \\
+        2 \varepsilon_{31} &= \frac{\partial u_3}{\partial x_1} + \frac{\partial u_1}{\partial x_3} = \varphi_{1,3} + \varphi_{3,1} = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-029}
+\end{equation}
 et on obtient la solution particulière 
+\begin{equation}
+    \varphi_1 = \varphi_3 = 0 \quad , \quad \varphi_2 = \frac{\mathcal{M}}{2EJ} \left( x_1^2 - \nu x_3^2 \right)
+    \label{eq:Ch07-030}
+\end{equation}
+Le déplacement est donc donne par
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_1 & = -\frac{\mathcal{M}}{EJ} x_1x_2 -\omega_3^0x_2 \\
+        u_2 & = \frac{\mathcal{M}}{2EJ} \left[ x_1^2 + \nu \left( x_2^2 - x_3^2 \right) \right] +\omega_3^0x_1 +u_2^0 \\
+        u_3 & = \frac{\nu\mathcal{M}}{EJ} x_2x_3
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-031}
+\end{equation}
+où, en vue des applications futures, nous n'avons conservé qu'une partie du déplacement de solide.
 
-Le déplacement est donc donne par 
-.u.i  ::  - tn'L EJ  ':1:, -:X:.,  -w ~  ':c,2i  
-(31 )  .u.l,  '"  tn'l. ~EJ  [ t:I::,"  +  V ('l:~ _-;x:~).l,]  + W 3 ':1::,  + .<.l'l,  
-.u.1>  ::  v"lYt. EJ  ':I::.t ':1::3  
+La déformation de la ligne moyenne est donnée par
+\begin{equation}
+    u_1 = u_3 = 0 \quad , \quad u_2 = \frac{\mathcal{M}}{2EJ}x_1^2 + \omega_3^0 x_1 = v(x_1)
+    \label{eq:Ch07-032}
+\end{equation}
+tandis que la déformée d'une section droite $x_1=x_1^0$ est caractérisée par
+\begin{equation}
+    u_1 = - \left( \frac{\mathcal{M}}{EJ}x_1^0 + \omega_3^0 \right) x_2 = - \left.\frac{\ud v}{\ud x_1}\right|_{x_1^0} x_2
+    \label{eq:Ch06-033}
+\end{equation}
+Les relations \eqref{eq:Ch06-032} et \eqref{eq:Ch06-033} montrent qu'après la déformation la ligne moyenne devient une parabole et que les sections droites restent planes et perpendiculaires à la ligne moyenne
+\begin{center}
+    \includegraphics{../images/T1_Ch07-06}
+\end{center}
 
-où, en vue des applications futures, nous n'avons conservé qu'une partie du déplacement de solide, La déformation de la ligne moyenne est donnée par 
+On construit souvent la théorie élémentaire de la flexion à partir de
+\paragraph{Hypothèse de Navier-Bernoulli.} Les sections droites restent planes et normales à la fibre moyenne.
 
-o
-tandis que la déformée d'une section droite ";)C1= -!Cest caractérisée par
-1 
+Cette hypothèse se trouve donc vérifiée ici.
+On constate également que le moment $\mathcal{M}$ appliqué produit une courbure de la ligne moyenne
+\begin{equation}
+    \Xi = \frac{\ud^2 v}{\ud x_1} \frac{\mathcal{M}}{EJ}
+    \label{eq:Ch07-034}
+\end{equation}
+Ainsi, on pourrait envisager de mesurer le module d'Young $E$ d'un matériau élastique par un essai de flexion: on impose un moment de flexion $\mathcal{M}$ et on observe la courbure $\Xi$, ce qui détermine la «~rigidité~» de la poutre $EJ$ produit d'une rigidité matérielle $E$, liée au matériau, et d'une rigidité géométrique $J$, donnée par \eqref{eq:Ch06-026} et liée à la géométrie de la section droite $\Sigma$.
 
-cm,.  ) 
-\eqref{eq:Ch06-033} 
-=
-( EJ 'J::, + w~ 
-
-Les relations \eqref{eq:Ch06-032} et \eqref{eq:Ch06-033} montrent qu'après la déformation la ligne moyenne devient une parabole et que les sections droites restent planes et perpendi­culaires à la ligne moyenne 
-:X
-2 
-
-On construit souvent la théorie élémentaire de la flexion à partir de 
-Hypothèse de Navier-Bernoulli. Les sections droites restent planes et norma­[ les à la fibre moyenne. 
-Cette hypothèse se trouve donc vérifiée lCl. On constate également que le moment 'ltL appliqué produit une courbure de la ligne moyenne 
-\eqref{eq:Ch06-034} 
-x = 
-
-Ainsi, on pourrait envisager de mesurer le module d'Young E d'un matériau élastique par un essai de flexion: on impose un moment de flexion ~ et on observe la courbure X , ce qui détermine la "rigidité" de la poutre E J produit d'une rigidité matérielle E , liée au matériau, et d'une rigidité géométrique J , donnée par \eqref{eq:Ch06-026} et liée à la géométrie de la section droite 
-~. 
 En chaque point, on a un état de contraintes de traction simple, et le critère de limite d'élasticité donnera 
-\eqref{eq:Ch06-035} 
+\begin{equation}
+    \left|\sigma_{11}\right| = \frac{\mathcal{M}}{J} \left|x_2\right| < \sigma_e
+    \label{eq:Ch07-035}
+\end{equation}
+soit, en introduisant $\eta$ valeur maximale de $\left|x_2\right|$
+\begin{equation}
+    \frac{\mathcal{M}}{J/\eta} < \sigma_e \quad , \quad \eta = \left|x_2\right|_{max}
+    \label{eq:Ch07-036}
+\end{equation}
+Ainsi, d'un point de vue géométrique, la rigidité d'une poutre est caractérisée  par le moment  d'inertie $J$,  tandis que sa résistance est caractérisée par le rapport $J/\eta$
 
+\underline{Section rectangulaire}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-07}
+    \end{center}
+    \begin{displaymath}
+        J = \frac{bh^3}{12},\ \frac{J}{\eta} = \frac{bh^2}{6},\ \frac{J}{S} = \frac{h^2}{12},\ \frac{J}{\eta S} = \frac{h}{6}
+    \end{displaymath}
+\end{multicols}
+\underline{Section en I}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-08}
+    \end{center}
+    \begin{displaymath}
+        J \approx \frac{bh^2l}{2},\ \frac{J}{\eta} \approx bhl,\ \frac{J}{S} = \frac{h^2}{4},\ \frac{J}{\eta S} = \frac{h}{2}
+    \end{displaymath}
+\end{multicols}
+Ceci montre la supériorité, à poids égal,de la section en $I$ sur la section rectangulaire et, plus généralement, des sections en profil mince sur les sections massives.
 
-soit, en introduisant 'YI ' valeur maximale de l'X.~\ 
-\eqref{eq:Ch06-036} 
-
-< 
-
-Ainsi, d'un point de vue géométrique, la rigidité d'une poutre est 
-carac térisée  par le moment  cl 1 inertie  .J  ,  tandis  que  sa  résistance  est  carac­ 
-térisée par le rapport Section rectangulaire'"  J /"'1..  
-i!b~ -:J.-; W  
- =  ,  '"  ,  J "[S  -ft G  
-Sec tian  en  l  
-~t.I~'l:l  J  '"  1,.~".e ~  ,  J "l  .t-Â.e.  J s  =  ~l­-4  :r -"15  =  ~ 1­ 
-
-f,. <­Ceci montre la supériorité, à poids égal,de la sec tion en l sur la sec tian rectangulaire et, plus généralement, des sections en profil mince sur les sections massives. 
--103 ­
-2. TORSION 
-========== 
-2.1 SECTION CIRCULAIRE OU ANNULAIRE 
+\section{Torsion}
+\subsection{Section circulaire ou annulaire}
+\endinput
 Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire. On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section x1=O, d'un angle proportion­nel à la distance 
 
 
