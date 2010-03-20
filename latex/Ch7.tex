@@ -284,7 +284,7 @@ Comme au paragraphe~\ref{ssec:Ch06-2.1}, nous procéderons directement en écriv
         0 & \nu\frac{\mathcal{M}}{EJ}x_2 & 0 \\
         0 & 0 & \nu\frac{\mathcal{M}}{EJ}x_2
     \end{bmatrix}
-    \label{eq:Ch06-027}
+    \label{eq:Ch07-027}
 \end{equation}
 \begin{equation}
     \left\{
@@ -332,9 +332,9 @@ La déformation de la ligne moyenne est donnée par
 tandis que la déformée d'une section droite $x_1=x_1^0$ est caractérisée par
 \begin{equation}
     u_1 = - \left( \frac{\mathcal{M}}{EJ}x_1^0 + \omega_3^0 \right) x_2 = - \left.\frac{\ud v}{\ud x_1}\right|_{x_1^0} x_2
-    \label{eq:Ch06-033}
+    \label{eq:Ch07-033}
 \end{equation}
-Les relations \eqref{eq:Ch06-032} et \eqref{eq:Ch06-033} montrent qu'après la déformation la ligne moyenne devient une parabole et que les sections droites restent planes et perpendiculaires à la ligne moyenne
+Les relations \eqref{eq:Ch07-032} et \eqref{eq:Ch07-033} montrent qu'après la déformation la ligne moyenne devient une parabole et que les sections droites restent planes et perpendiculaires à la ligne moyenne
 \begin{center}
     \includegraphics{../images/T1_Ch07-06}
 \end{center}
@@ -348,7 +348,7 @@ On constate également que le moment $\mathcal{M}$ appliqué produit une courbur
     \Xi = \frac{\ud^2 v}{\ud x_1} \frac{\mathcal{M}}{EJ}
     \label{eq:Ch07-034}
 \end{equation}
-Ainsi, on pourrait envisager de mesurer le module d'Young $E$ d'un matériau élastique par un essai de flexion: on impose un moment de flexion $\mathcal{M}$ et on observe la courbure $\Xi$, ce qui détermine la «~rigidité~» de la poutre $EJ$ produit d'une rigidité matérielle $E$, liée au matériau, et d'une rigidité géométrique $J$, donnée par \eqref{eq:Ch06-026} et liée à la géométrie de la section droite $\Sigma$.
+Ainsi, on pourrait envisager de mesurer le module d'Young $E$ d'un matériau élastique par un essai de flexion: on impose un moment de flexion $\mathcal{M}$ et on observe la courbure $\Xi$, ce qui détermine la «~rigidité~» de la poutre $EJ$ produit d'une rigidité matérielle $E$, liée au matériau, et d'une rigidité géométrique $J$, donnée par \eqref{eq:Ch07-026} et liée à la géométrie de la section droite $\Sigma$.
 
 En chaque point, on a un état de contraintes de traction simple, et le critère de limite d'élasticité donnera 
 \begin{equation}
@@ -386,123 +386,140 @@ Ceci montre la supériorité, à poids égal,de la section en $I$ sur la section
 
 \section{Torsion}
 \subsection{Section circulaire ou annulaire}
+Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire.
+On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section $x_1=O$, d'un angle proportionnel à la distance
+\begin{center}
+    \includegraphics{../images/T1_Ch07-09}
+\end{center}
+Nous postulons donc un champ de déplacements
+\begin{equation}
+    u_1 = 0 \quad,\quad u_2 = -\alpha x_1 x_3 \quad,\quad u_3 = \alpha x_1 x_2
+    \label{eq:Ch07-037}
+\end{equation}
+On obtient alors pour le gradient du déplacement et pour le tenseur des déformations
+\begin{equation}
+    u_{i,j} = 
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        -\alpha x_3 & 0 & -\alpha x_1 \\
+        \alpha x_2 & \alpha x_1 & 0
+    \end{bmatrix}
+    \varepsilon_{i,j} = 
+    \begin{bmatrix}
+        0 & \frac{\alpha}{2}x_3 & \frac{\alpha}{2}x_2 \\
+        -\frac{\alpha}{2}x_3 & 0 & 0 \\
+        \frac{\alpha}{2}x_2 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-038}
+\end{equation}
+La loi de comportement donne alors le tenseur des contraintes
+\begin{equation}
+    \sigma_{i,j} = 
+    \begin{bmatrix}
+        0 & -G\alpha x_2 & G\alpha x_2 \\
+        -G \alpha x_3 & 0 & 0 \\
+        G \alpha x_2 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-039}
+\end{equation}
+Ce champ de contraintes vérifie directement
+\begin{itemize}
+    \item les équations d'équilibre,
+    \item les conditions aux limites sur la surface latérale $\vec{n} = \pm \left( x_1/r, x_2/r, 0 \right)$
+\end{itemize}
+Il n'est pas nécessaire de vérifier les équations de  Beltrami,  puisque l'on est parti d'un champ de déplacements.
+Il ne reste donc plus qu'à écrire le torseur des efforts appliqués sur $\Sigma_1$.
+Puisque $\sigma_{11}$ est nul, $\mathcal{M}_2$ et $\mathcal{M}_3$ sont nuls.
+Par symétrie, $\mathcal{R}_2$ et $\mathcal{R}_3$, sont nuls, et il reste simplement
+\begin{equation}
+    \mathcal{M}_1 = \iint_{\Sigma} G \alpha \left( x_2^2 + x_3^2 \right) \ud S = G\alpha \iint_{\Sigma} r^2 \ud S    
+    \label{eq:Ch07-040} 
+\end{equation}
+On a donc résolu le problème 4 avec
+\begin{equation}
+    \mathcal{M} = G I_0 \alpha \quad,\quad I_0 = \iint_{\Sigma} r^2 \ud S
+    \label{eq:Ch07-041}
+\end{equation}
+Le moment de torsion $\mathcal{M}$ crée un «~angle unitaire de torsion~» $\alpha$, et le module de rigidité $G I_0$ est à nouveau le produit d'une rigidité matérielle $G=\mu$ et d'une rigidité géométrique $I_0$ moment d'inertie polaire de la section.
+
+Le vecteur contrainte associé à la section droite est
+\begin{equation}
+    \vec{T} = \left( 0, -G\alpha x_3, G \alpha x_2 \right)
+    \label{eq:Ch07-042}
+\end{equation}
+a uniquement une contrainte de cisaillement perpendiculaire au rayon et de module $G\alpha r$.
+En notant $\vec{e}_r$, $\vec{e}_{\theta}$, les vecteurs de base associés aux coordonnées polaires $r$, $\theta$ dans le plan $x_2,x_3$ on a
+\begin{equation}
+    \vec{T} = G \alpha r \vec{e}_{\theta} 
+    \label{eq:Ch07-043}
+\end{equation}
+et dans le repère $\vec{e}_r$, $\vec{e}_{\theta}$, $\vec{e}_{1}$ associé aux coordonnées cylindriques autour de $x_1$, le tenseur des contraintes a pour composantes
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        0 & 0 & 0\\
+        0 & 0 & G\alpha r\\
+        0 & G\alpha r & 0
+    \end{bmatrix}
+    \label{eq:Ch07-044}
+\end{equation}
+L'état de contraintes en chaque point est un état de cisaillement simple, et le critère de limite d'élasticité s'écrit
+\begin{equation}
+    |\vec{T}| = G \alpha r < \tau_e    
+    \label{eq:Ch07-045} 
+\end{equation}
+où $\tau_e$ est la limite élastique en cisaillement simple donnée par \eqref{eq:Ch05-071}.
+En introduisant $R$ rayon de la section, il vient, en combinant avec \eqref{eq:Ch07-041},
+\begin{equation}
+    \frac{\mathcal{M}}{I_0/\mathcal{R}} < \tau_e    
+    \label{eq:Ch07-046} 
+\end{equation}
+
+La rigidité à la torsion d'un arbre circulaire ou annulaire est donc caractérisée par le moment d'inertie polaire de sa section $I_0$ et sa résistance par le rapport $I_0/\mathcal{R}$.
+
+\underline{Section circulaire}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-10}
+    \end{center}
+    \columnbreak
+    \begin{displaymath}
+        I_0 = \frac{\pi D^4}{32},\ \frac{I_0}{S} = \frac{D^2}{8},\ \frac{I_0}{\mathcal{R}} = \frac{\pi D^3}{16},\ \frac{I_0}{\mathcal{R} S} = \frac{D}{4}
+    \end{displaymath}
+\end{multicols}
+\underline{Section en tube mince}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-11}
+    \end{center}
+    \columnbreak
+    \begin{displaymath}
+        I_0 = \frac{r\pi D^3 e}{4},\ \frac{I_0}{S} = \frac{D^2}{4},\ \frac{I_0}{\mathcal{R}} = \frac{\pi D^3 e}{2},\ \frac{I_0}{\mathcal{R} S} = \frac{D}{2}
+    \end{displaymath}
+\end{multicols}
+Ces relations montrent la supériorité, à poids égal, des sections annulaires sur les sections massives.
+Dans le cas des tubes minces, on constate aussi que $r \sim D/2$ et que les composantes \eqref{eq:Ch07-044} du tenseur des contraintes dans le repère $\left( \vec{e}_r, \vec{e}_{\theta}, \vec{e}_1 \right)$ peuvent s'écrire
+\begin{displaymath}
+    \tens{\sigma} \sim
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & G \alpha \frac{D}{2} \\
+        0 & G\alpha \frac{D}{2} & 0
+    \end{bmatrix}
+\end{displaymath}
+soit, compte tenu de \eqref{eq:Ch07-041} et de la valeur de $I_0$
+\begin{equation}
+    \tens{\sigma} \sim
+    \begin{bmatrix}
+        0 & 0 & 0 \\
+        0 & 0 & \frac{2\mathcal{M}}{\pi D^2 e} \\
+        0 & \frac{2\mathcal{M}}{\pi D^2 e} & 0
+    \end{bmatrix}
+    \label{eq:Ch07-047}
+\end{equation}
+ce qui, superposé à l'état de contraintes dû à une traction simple, redonne bien la forme \eqref{eq:Ch04-036} obtenue au paragraphe~\ref{ssec:Ch04-1.4}.
+\subsection{Théorie générale}
 \endinput
-Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire. On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section x1=O, d'un angle proportion­nel à la distance 
-
-
-Nous postulons donc un champ de déplacements 
-\eqref{eq:Ch06-037} .M., = 0
-i 
-
-On obtient alors pour le gradient du déplacement et pour le tenseur des dé­formations 
-0 0 0 
-\eqref{eq:Ch06-038} oU-. 
--cl. X 0 -cl. '):., 
-~
-""i = 
-<IX cl. x, 0 
-~ 
-é . 
-= 
-...~ 
-cl.
-0 -.ï 'X, ~ X.l,
-.2­-~ 'X 0 0 .l, ~ cf. 
-0 0
--'X.l,
-.t 
-La la i de comportement donne alors le tenseur des contraintes 
-
-Ce champ de contraintes vérifie directement -les équations d'équilibre, 
-1-les conditions aux limites sur la surface latérale 
-
-Il  n'est  pas  nécessaire  de  vérifier les  équations  de  BeltraQi,  puisque  l'on  
-est  parti d'un champ  de  déplacements.  Il  ne  reste  donc  plus qu'à écrire  le  
-' 
-
-torseur des efforts appliqués sur L . Puisque <T~~ est nul, 1<:, "IYl,. et 'l'fL"
-1 
-sont nuls. Par symétrie, 1?!j, et 'R.., sont nuls, et il reste simplement 
-\eqref{eq:Ch06-040} 
-
-
-On a donc résolu le problème 4 avec 
-(41 ) G I 0( l 
-o 
-o 
-
-
--104 ­
-Le moment de torsion crrt crée un "angle unitaire de torsion" a.. , et le mo­
-dule de rigidité G l est à nouveau le produit d'une rigidité matérielle 
-o 
-<7= t!-et d'une rigidité géométrique Io' moment d'inertie polaire de la 
-
-section. 
-Le vecteur contrainte associé à la section droite est 
-a uniquement une contrainte de cisaillement perpendiculaire au 
-rayon Et de module GoI. 't. . En no­
-... ....
-.e>\. ' ..e. e ' les vec teurs de base associés aux coordonnées polai­res ~, e dans le plan x2,x' on a
-3 
-..... ­
-\eqref{eq:Ch06-043} T. G-O('t,(,e 
-... ... ­
-et dans le repère associé aux coordonnées cylindriques autour
-e,1l. ' .e.fi ' .e.1 de x], le tenseur des contraintes a pour composantes 
-
-o 
-\eqref{eq:Ch06-044} 
-o 
-G-dl(, 
-
-L'état de contraintes en chaque point est un état de cisaillement simple, et le critère de limite d'élasticité s'écrit 
-\eqref{eq:Ch06-045} 
-
-
-où T~ est la limite élastique en cisaillement simple donnée par (V.71). En introduisant"R rayon de la section, il vient, en combinant avec \eqref{eq:Ch06-041}, 
-\eqref{eq:Ch06-046} 
-
-
-La rigidité à la tors ion d'un arbre circulaire ou annulaire est donc caractérisée par le moment d'inertie polaire de sa section I.et sa 
-o 
-résistance par le rapport 
-IJR 
-Section circulaire 
-B 
-Tf. 1J~ 'J)2. 1t 1J' :D
-~o ~ 1.
-I = = =
-= 
-" ~t S g "R -1b ~5 4­
-Section en tube mince 
-n 'J)~e-10 'J)~ 1. n J)'.e. 1. "D
-, ­
-1. = = = = 
-e~ 
-4 S 4 1< ~ ~s ~ 
-Ces relations montrent la supériorité, à poids éBal, des sections annulaires sur les sections massives. Dans le cas des tubes minces, on constate aussi 
-que ~N~/t et que les composantes \eqref{eq:Ch06-044} du tenseur des contraintes dans le 
-.... ..... ....
-repère (e.I\.,.e.e,.e-1) peuvent s'écrire 
-
-o 
-o 
-
-soit, compte tenu de \eqref{eq:Ch06-041} et de la valeur de Io 
-0 0 0 
-~'l11.
-\eqref{eq:Ch06-047} 
-0 0
-or '" 
-TI Ir-.e. 
-.2"rf1. 
-0 0 
-R rr-.e. 
-ce qui ,superposé à l'état de contraintes dû à une traction simple, redonne 
-bien la forme (IV.36) obtenue au § IV.I.4 . 
-2.2 THEORIE GENERALE 
-po 
 Nous considérons maintenant le problème 4 dans le cas d'une section 
 quelConque. Le § 1 a montré que la contrainte normale ~ était déterminée
 . 
