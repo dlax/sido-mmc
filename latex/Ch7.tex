@@ -388,9 +388,14 @@ Ceci montre la supériorité, à poids égal,de la section en $I$ sur la section
 \subsection{Section circulaire ou annulaire}
 Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire.
 On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section $x_1=O$, d'un angle proportionnel à la distance
-\begin{center}
-    \includegraphics{../images/T1_Ch07-09}
-\end{center}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-09}
+    \end{center}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-10}
+    \end{center}
+\end{multicols}
 Nous postulons donc un champ de déplacements
 \begin{equation}
     u_1 = 0 \quad,\quad u_2 = -\alpha x_1 x_3 \quad,\quad u_3 = \alpha x_1 x_2
@@ -447,8 +452,14 @@ Le vecteur contrainte associé à la section droite est
     \vec{T} = \left( 0, -G\alpha x_3, G \alpha x_2 \right)
     \label{eq:Ch07-042}
 \end{equation}
-a uniquement une contrainte de cisaillement perpendiculaire au rayon et de module $G\alpha r$.
-En notant $\vec{e}_r$, $\vec{e}_{\theta}$, les vecteurs de base associés aux coordonnées polaires $r$, $\theta$ dans le plan $x_2,x_3$ on a
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-11}
+    \end{center}
+    \columnbreak
+    On a uniquement une contrainte de cisaillement perpendiculaire au rayon et de module $G\alpha r$.
+    En notant $\vec{e}_r$, $\vec{e}_{\theta}$, les vecteurs de base associés aux coordonnées polaires $r$, $\theta$ dans le plan $x_2,x_3$ on a
+\end{multicols}
 \begin{equation}
     \vec{T} = G \alpha r \vec{e}_{\theta} 
     \label{eq:Ch07-043}
@@ -480,7 +491,7 @@ La rigidité à la torsion d'un arbre circulaire ou annulaire est donc caractér
 \underline{Section circulaire}
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch07-10}
+        \includegraphics{../images/T1_Ch07-12}
     \end{center}
     \columnbreak
     \begin{displaymath}
@@ -490,7 +501,7 @@ La rigidité à la torsion d'un arbre circulaire ou annulaire est donc caractér
 \underline{Section en tube mince}
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch07-11}
+        \includegraphics{../images/T1_Ch07-13}
     \end{center}
     \columnbreak
     \begin{displaymath}
@@ -519,106 +530,129 @@ soit, compte tenu de \eqref{eq:Ch07-041} et de la valeur de $I_0$
 \end{equation}
 ce qui, superposé à l'état de contraintes dû à une traction simple, redonne bien la forme \eqref{eq:Ch04-036} obtenue au paragraphe~\ref{ssec:Ch04-1.4}.
 \subsection{Théorie générale}
+Nous considérons maintenant le problème 4 dans le cas d'une section quelConque.
+Le paragraphe~\ref{sec:Ch07-1} a montré que la contrainte normale $\sigma_{11}$ était déterminée par $\mathcal{R}_1$, $\mathcal{M}_2$, $\mathcal{M}_3$.
+Puisqu'ici ils sont nuls, on prendra donc $\sigma_{11}=0$.
+Les contraintes de cisaillement $\sigma_{12}$ et $\sigma_{13}$ par contre ne peuvent pas être nulles d'après \eqref{eq:Ch07-007}.
+Nous cherchons donc un champ de contraintes sous la forme
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        0 & \sigma_{12} & \sigma_{13} \\
+        \sigma_{12} & 0 & 0\\
+        \sigma_{13} & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-048}
+\end{equation}
+avec $\sigma_{12}$ et $\sigma_{13}$ fonctions de $\left( x_1, x_2, x_3 \right)$.
+Les équations d'équilibre donnent
+\begin{equation}
+    \frac{\partial \sigma_{12}}{\partial x_2} + \frac{\partial \sigma_{13}}{\partial x_3} = 0
+    \label{eq:Ch07-049}
+\end{equation}
+\begin{equation}
+    \begin{cases}
+        \frac{\partial \sigma_{12}}{\partial x_1} = 0 & \Rightarrow \quad \sigma_{12} = \sigma_{12} \left( x_2, x_3 \right) \\
+        \frac{\partial \sigma_{13}}{\partial x_1} = 0 & \Rightarrow \quad \sigma_{13} = \sigma_{13} \left( x_2, x_3 \right)
+    \end{cases}
+    \label{eq:Ch07-050}
+\end{equation}
+L'équation \eqref{eq:Ch07-049} montre alors -- voir par exemple le Lemme 2 du paragraphe~\ref{ssec:Ch03-3.1} -- que la forme différentielle
+\begin{equation}
+    \ud \Phi = \sigma_{12} \ud x_3 - \sigma_{13} \ud x_2
+    \label{eq:Ch07-051}
+\end{equation}
+est intégrable, c'est à dire il existe une «~fonction des contraintes~» $\Phi\left( x_2, x_3 \right)$ telle que
+\begin{equation}
+    \sigma_{12} = \frac{\partial \Phi}{\partial x_3} \quad , \quad \sigma_{13} = - \frac{\partial \Phi}{\partial x_2}
+    \label{eq:Ch07-052}
+\end{equation}
+Les équations de Beltrami donnent alors
+\begin{equation}
+    \frac{\partial}{\partial x_2} \Delta \Phi = \frac{\partial}{\partial x_3} \Delta \Phi = 0
+    \label{eq:Ch07-053}
+\end{equation}
+ce qui montre que est constant; nous noterons $-2G\alpha$ cette constante, $\alpha$ étant une constante d'intégration dont nous verrons plus loin la signification
+\begin{equation}
+    \Delta \Phi + 2 G \alpha = 0
+    \label{eq:Ch07-054}
+\end{equation}
+La CL \eqref{eq:Ch07-001} sur la surface latérale s'écrit
+\begin{equation}
+    \sigma_{12} n_2 + \sigma_{13} n_3 = 0
+    \label{eq:Ch07-055}
+\end{equation}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-14}
+    \end{center}
+    \columnbreak
+    En introduisant le vecteur unitaire tangent à $\partial \Sigma$
+    \begin{displaymath}
+        \vec{t} = \left( \ud x_2 / \ud s, \ud x_3/\ud s \right)
+    \end{displaymath}
+    il vient
+\end{multicols}
+\begin{equation}
+    n_2 = t_3 = \frac{\ud x_3}{\ud s} \quad , \quad n_3 = -t_2 = - \frac{\ud x_2}{\ud s}
+    \label{eq:Ch07-056}
+\end{equation}
+de sorte que, compte tenu de \eqref{eq:Ch07-052}, la CL \eqref{eq:Ch07-055} devient
+\begin{equation}
+    \frac{\partial \Phi}{\partial x_3} \frac{\ud x_3}{\ud s} + \frac{\partial \Phi}{\partial x_2} \frac{\ud x_2}{\ud s} = \frac{\ud \Phi}{\ud s}
+    \label{eq:Ch07-057}
+\end{equation}
+La fonction $\Phi\left( x_2, x_3 \right)$ reste constante lorsque l'on suit $\partial \Sigma$, donc sur chaque composante connexe de $\partial \Sigma$.
+Nous supposerons désormais que la section $\Sigma$ est simplement connexe.
+On tire alors de \eqref{eq:Ch07-057} que $\Phi$ est constant sur $\partial \Sigma$ et on peut toujours choisir cette constante nulle
+\begin{equation}
+    \Phi_{|_{\partial \Sigma}} = 0
+    \label{eq:Ch07-058}
+\end{equation}
+La fonction de contrainte $\Phi$ est donc déterminée par \eqref{eq:Ch07-054} et \eqref{eq:Ch07-055}, équations qui définissent «~problème de Dirichlet~», qui admet donc une solution unique.
+Par le changement de fonction
+\begin{equation}
+    \Phi \left( x_2, x_3 \right) = G \alpha \varphi \left( x_2, x_3 \right)
+    \label{eq:Ch07-059}
+\end{equation}
+ce problème se transforme en
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \Delta \varphi + 2 = 0 \\
+        & \varphi_{|_{\partial \Sigma}} = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-060}
+\end{equation}
+et la fonction $\varphi$ unique solution du problème \eqref{eq:Ch07-060}, dépend uniquement de la forme de la section $\Sigma$.
+
+Il ne reste plus qu'à déterminer la constante $\alpha$, ce que nous allons faire en calculant les efforts exercés sur $\Sigma_1$.
+On sait déjà que $\mathcal{R}_1 = \mathcal{M}_2 = \mathcal{M}_3 = 0$.
+Pour calculer les autres composantes, nous utiliserons la formule de Stokes
+\begin{equation}
+    \iint_{S} \left( \frac{\partial Q}{\partial x_2} - \frac{\partial P}{\partial x_3} \right) \ud x_2 \ud x_3 = \oint_{\partial S} P \ud x_2 + Q \ud x_3
+    \label{eq:Ch07-061}
+\end{equation}
+A partir de \eqref{eq:Ch07-006} et \eqref{eq:Ch07-052}, il vient
+\begin{equation}
+    \mathcal{R}_2 = \iint_{\Sigma} \sigma_{12} \ud x_2 \ud x_3 = \iint_{\Sigma} \frac{\partial \Phi}{\partial x_3} \ud x_2 \ud x_3 = - \oint_{\partial \Sigma} \Phi \ud x_2 = 0
+    \label{eq:Ch07-062}
+\end{equation}
+d'après la formule de Stokes \eqref{eq:Ch07-061} et \eqref{eq:Ch07-058}.
+De la même manière, on a $\mathcal{R}_3 = 0$.
+A partir de \eqref{eq:Ch07-007} on a
+\begin{equation}
+    \begin{aligned}
+        \mathcal{M}_1 &= -\iint_{\Sigma} \left( x_2 \frac{\partial \Phi}{\partial x_2} + x_3 \frac{\partial \Phi}{\partial x_3} \right) \ud x_2 \ud x_3 \\
+        &= -\iint_{\Sigma} \left[ \frac{\partial}{\partial x_2} \left( x_2 \Phi \right) + \frac{\partial}{\partial x_3} \left( x_3 \Phi \right) - 2\Phi \right] \ud x_2 \ud x_3 \\
+        &= 2 \iint_{\Sigma} \Phi \ud x_2 \ud x_3 + \cancel{\oint_{\partial \Sigma} x_3 \Phi \ud x_2} - \cancel{x_2 \Phi \ud x_3} \\
+        &= 2 G \alpha \iint_{\Sigma} \varphi \ud x_2 \ud x_3
+    \end{aligned}
+    \label{eq:Ch07-063}
+\end{equation}
+Finalement, le champ de contraintes construit permet de résoudre le problème 4 avec
 \endinput
-Nous considérons maintenant le problème 4 dans le cas d'une section 
-quelConque. Le § 1 a montré que la contrainte normale ~ était déterminée
-. 
-~~ 
-par 'R~ , 'lll~, <ro..~. Puisqu'ici ils sont nuls, on prendra donc ~~ = O. Les contraintes de cisaillement 0::.:. et cr~; par contre ne peuvent pas être nulles d'après \eqref{eq:Ch07-007}. Nous cherchons donc un champ de contraintes sous la forme 
-ocr;:. <ro~,]
-\eqref{eq:Ch06-048} <li 
-Sl.. 0
-= [
-<r~) 0 0 
-avec 
-
-fonctions de (x ,x2,x). Les équations d'équilibre donnent
-l 3
-'d 0.;1, ô 0:.,
-\eqref{eq:Ch06-049} 0
-+ '" 
-Cl -:1:" Ô 'X.~ 
-
-()c:;~ 0
-'" ""> (J~!j, = ()''ù ( :C" l'Xl) 
-à 'X.,
-\eqref{eq:Ch06-050} r 
-l â 0:;; 
-0 
-â 'X, 
-
-= 0::., = ~; ('X.:., 'X!) 
-L'équation \eqref{eq:Ch06-049} montre alors -voir par exemple le Lemme 2 du § 111.3.1 -que la forme différentielle 
-\eqref{eq:Ch06-051} 
-
-est intégrable, càd il existe une "fonction des contraintes" P(OC.tJ6:!) telle 
-que 
-ô<Ïl '6p
-\eqref{eq:Ch06-052} ,
-<ï.;~ '" ~ô = 
-ô ((.~ o-x.:, 
-
-Les équations de Beltrami donnent alors 
-d ô
-\eqref{eq:Ch06-053} j~ 0
-~ 
-j~ '" 
-Ô/.C.I, Ô -X~ 
-
-ce qUl montre que est constant; nous noterons -.2Gd. cette constante,
-lt~ 
-~ étant une constante d'intégration dont nous verrons plus loin la signifi­cation 
-\eqref{eq:Ch06-054} 
-
-La CL \eqref{eq:Ch07-001} sur la surface latérale s'écrit 
-\eqref{eq:Ch06-055} 
-
-= 0 
-En introduisant le vecteur unitaire 
-tangent à Ô L 
-X = ( d.':!:.)clJ. 
-
-il vient 
-\eqref{eq:Ch06-056} 
-l'(t, = -.k.t -­
-de sorte que, compte tenu de \eqref{eq:Ch06-052}, la CL \eqref{eq:Ch06-055} devient 
-êlg>
-\eqref{eq:Ch06-057} (b:~ dei? o..:t." ci~ 
-t-=' 0 Ô 'l:~ 11. '0 -:c.... M v\b ~ 
-La fonction p(IX..." '.ta) reste constante lorsque l'on suit ô~ , donc sur cha­que composante connexe de "èL Nous supposerons désormais que la section L 
-est simplement connexe. On tire alors de \eqref{eq:Ch06-057} que 'f est constant sur 'à,[ et 
-on peut toujours choisir cette constante nulle 
-\eqref{eq:Ch06-058} = o 
-La fonction de contrainte ~ est donc déterminée par \eqref{eq:Ch06-054} et \eqref{eq:Ch06-055}, équations 
-qui définissent "problème de Dirichlet", qui admet donc une solution uni­
-l1n 
-que. Par le changement de fonction 
-\eqref{eq:Ch06-059} 
-
-c(' rr0r.l ème se tr<LDsforme en 
-LJ4'+.t =0 
-\eqref{eq:Ch06-0GO} f 
-=0 
--107 ­
-et la fonction 9P' unique solution du problème \eqref{eq:Ch06-060}, dépend uniquement de la forme de la section ~. 
-Il ne reste plus qu'à déterminer la constante OC , ce que nous al­lons faire en calculant les efforts exercés sur L~. On sait déjà que 'R, = 'l1l~ = '11l., = 0 . Pour calculer les autres composantes, nOUS utiliserons la formule de Stokes 
-
-A partir de \eqref{eq:Ch07-006} et \eqref{eq:Ch06-052}, il vient 
-§ o<p cL .
-'R~ = ci 'X~ d,x,1\ = -x, .. dJJ:;;
-~L u1:l" 
-L o:J:1\
-( 62) = -~ il> ch~ = 0 
-dL 
-d'après la formule de Stokes \eqref{eq:Ch06-061} et \eqref{eq:Ch06-058}. De la même manière, on a 'R" = 0 . A partir de \eqref{eq:Ch07-007} on a 
-
-= -Ir [~CL~(~~ p) ~ 
-= ~ § p clxcl:x"
-t
-L 
-
-
-Finalement, le champ de contraintes construit permet de résoudre le problème 4 avec 
 \eqref{eq:Ch06-064} 
 
 l = 
