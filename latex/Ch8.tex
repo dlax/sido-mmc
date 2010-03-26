@@ -4,9 +4,9 @@
 % référence à une équation avec \eqref
 % référence aux sections et au paragraphes \ref{ssec:Ch0X-y.z} ; y : section ; z : ss-section ; si référence à y sec au lieu de ssec ; si référence à tout le chapitre mettre chap 
 
-\chapter{Problèmes plans en élasticité}
-\section{Élasticité plane}
-\subsection{Déformations planes}
+\chapter{Problèmes plans en élasticité}\label{chap:Ch08}
+\section{Élasticité plane}\label{sec:Ch08-1}
+\subsection{Déformations planes}\label{ssec:Ch08-1.1}
 Dans de nombreux problèmes, on peut supposer les déformations planes.
 \begin{equation}
     u_1=u_1(x_1,x_2), u_2=u_2(x_1,x_2), u_3=0
@@ -128,14 +128,14 @@ Ainsi, pour résoudre un problème en déformations planes, il faut trouver une 
 On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par intégration du système 
 \begin{equation}
   \begin{cases}
-  \varepsilon_{11}=u_{11}=\dfrac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
-  \varepsilon_{22}=u_{22}=\dfrac{1+\nu}{E}[(1-\nu)\chi_{,11}-\nu\chi_{,22}] \\
-  2\varepsilon_{12}=u_{12}+u_{21}=\dfrac{2(1+\nu)}{E}\chi_{,12}
+  \varepsilon_{11}=u_{11}=\frac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
+  \varepsilon_{22}=u_{22}=\frac{1+\nu}{E}[(1-\nu)\chi_{,11}-\nu\chi_{,22}] \\
+  2\varepsilon_{12}=u_{12}+u_{21}=\frac{2(1+\nu)}{E}\chi_{,12}
   \end{cases}
 \label{eq:Ch08-013}
 \end{equation}
 système qui est intégrable puisque les équations de Beltrami sont vérifiées. 
-\subsection{Contraintes planes}
+\subsection{Contraintes planes}\label{ssec:Ch08-1.2}
 L'hypothèse des déformations planes convient pour une pièce suffisamment longue pour que l'on puisse négliger la déformation longitudinale. 
 Pour une plaque mince, chargée dans son plan, la condition aux limites pour 
 \begin{center}
@@ -143,7 +143,7 @@ Pour une plaque mince, chargée dans son plan, la condition aux limites pour
 \end{center}
 $x_3=\pm h/2$ donne 
 \begin{equation}
-  x3 = \pm \dfrac{h}{2} : \qquad \sigma_{13}=\sigma_{23}=\sigma_{33}=0
+  x3 = \pm \frac{h}{2} : \qquad \sigma_{13}=\sigma_{23}=\sigma_{33}=0
 \label{eq:Ch08-014}
 \end{equation}
 et on recherche donc un état de contraintes planes 
@@ -206,141 +206,163 @@ et finalement on obtient
   E\varepsilon_{11}=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
 \label{eq:Ch08-021}
 \end{equation*}
+Le système \eqref{eq:Ch08-020} est formellement identique au système \eqref{eq:Ch08-020} en remplaçant $\nu$ par $\nu/(1+\nu)$.
+Il permettra donc de calculer $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ si et seulement si la fonction $\chi$ est biharmonique.
+Il reste à intégrer les équations \eqref{eq:Ch08-021} pour calculer $u_3$ 
+\begin{equation}
+  \varepsilon = - \frac{\nu}{E} \quad \Rightarrow \quad u_3 = - \frac{\nu}{E} \Delta \chi(x_1,x_2)x_3+a(x_1,x_2)
+\label{eq:Ch08-022}
+\end{equation}
+\begin{equation}
+  \begin{cases}
+     2 \varepsilon_{13} & = u_{3,1}+u_{1,3}=-\frac{\nu}{E} \Delta \chi_{,1}x_3+a_{,1} = 0 \\
+     2 \varepsilon_{23} & = u_{3,2}+u_{2,3}=-\frac{\nu}{E} \Delta \chi_{,2}x_3+a_{,2} = 0
+  \end{cases}
+\label{eq:Ch08-023}
+\end{equation}
+équations qui ne pourront jamais être vérifiées puisque $a$ et $\chi$ ne dépendent que de $x_1$ et $x_2$. 
+Ainsi, si $\chi$ est biharmonique, on ne peut pas calculer les déplacements ; c'est tout à fait normal, puisque les équations de Beltrami \eqref{eq:Ch08-019} donnent 
+\begin{equation}
+  \Delta \chi(,11) = \Delta \chi(,22) = \Delta \chi(,12) = 0
+\label{eq:Ch08-024}
+\end{equation}
+conditions que nous avons volontairement laissées de côté.
+Cependant, pour une plaque mince, $x_3$ est petit, et en première approximation, \eqref{eq:Ch08-023} donne $a_{,1}=a_{,2}=0$, $a=Cste$ et la solution ainsi construite est une approximation satisfaisante de la réalité : c'est l'approximation «~contraintes planes~».
+ 
+Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par inté­gration du système
+\begin{equation}
+  \begin{cases}
+    u_{1,1} & =\frac{1+\nu}{E}\{ \chi_{,22}+ r \Delta \chi \} \\
+    u_{2,2} & =\frac{1+\nu}{E}\{ \chi_{,11}+ r \Delta \chi \} \\
+    u_{1,2} & + u_{2,1} = -\frac{2(1+\nu)}{E}\chi_{,12}
+  \end{cases}
+\label{eq:Ch08-025}
+\end{equation}
+\begin{equation*}
+  \text{avec} \quad \left| 
+  \begin{aligned}
+    r & = \nu \text{ en déformations planes} \\
+    r & = \nu / (1+\nu) \text{ en contraintes planes}
+  \end{aligned}
+  \right.
+\end{equation*}
+De plus, en déformations planes, la contrainte axiale $\sigma_{33}$ est donnée par \eqref{eq:Ch08-006}, tandis que, en contraintes planes, la variation d'épaisseur de la plaque mince est donnée par \eqref{eq:Ch08-022} 
+\begin{equation}
+u_3 = -\frac{\nu}{E}\Delta\chi
+\label{eq:Ch08-026}
+\end{equation}
 
-\endinput
-
-Le système (20) est formellement identique au système (13) en remplaçant V 
-par vl(" ... ,,) Il permettra donc de calculer .u., (Il/:"JJ: .. ) et .A.l.s,(Il/:"Il/:.,) SSi la 
-fonction lest biharmonique. Il reste à intégrer ·les équations (ZI) pour 
-calculer .u.~ 
-(22) 
-= -E » 6,1.. "'> .Ll ~ =--E y t;,. 1(4,,«-.1) 'X:1 + Cl. (4",JJ:.2, ) 
-
-E. 
-~b 
-{ 2Ev 
-
-
-
-H = -1.1. ~,~ .. oU. ~, ~ = !J. 'X.I~ 'l:~ ... Cl.d = 0 
-(Z3) E 
-+ Cl. 0
-.t E.2,!) = -1.1..,J. .. -U.!!,, ~ = v E 61-,.2, 1:3 ,li '" 
-équations qui ne pourront jamais être vérifiées pU1sque a. et X ne dépendent 
-que de xI et xz. Ainsi, si X est biharmonique, on ne peut pas calculer les déplacements; c'est tout à fait normal, puisque les équations de Beltrami (19) 
-donnent 
-(24) 
-
-= 0
-= 
-
-= 
-
--125 ­
-conditions que nOUS avonS volontairement laissées de côté. Cependant, pour 
-une plaque mince, xest petit, et en première approximation, (23) donne
-3 ct, = ct =0 , <1.= ct, et la solution ainsi construite est une approximation
-,... 11. satisfaisante de la réalité: c'est l'approximation "contraintes planes". 
-Ainsi, en déformations planes comme en contraintes planes, la solu­
-tion est donnée par une fonction de contraintes r....("L""'X,~) biharmonique, donnant les contraintes par (19) et les déplacements .A.t. (-X -X ) et .u. (I.e. ~) par inté­
-., "" ~ li 4' .a. 
-gration du système 
-.-1 ... " 
-LI. -l{
-= f1,l.), ~ X}
-~,A 
-E 
-A+v
-(25) 
-.u. 
-t,l. = t1,AA -K Ô X1 
-E 
-H·-\ ..,,)
--u. = 
-A,.L + .4:/,,A -l,AL
-E 
-avec ><.=v en déformations planes 1){ = "'/(A+") en contraintes planes De plus, en déformations planes, la contrainte axiale ~~~ est donnée par (6), 
-tandis que, en contraintes planes, la variation d'épaisseur de la plaque min­
-ce est donnée par (22) 
-V
-(26) 
-~ ­
-E 
-1.3 UTILISATION DE LA VARIABLE COMPLEXE 
+\subsection{Utilisation de la variable complexe} \label{ssec:Ch08-1.3}
 Introduisons la variable complexe 
-
-Théorème de la représentation. Toute fonction réelle harmonique peut s'écrire 
-, 
-sous la forme 
-(28) 
-
-
+\begin{equation}
+  z=x_1+\imath x_2 \qquad \bar{z}=x_1-\imath x_2
+\label{eq:Ch08-027}
+\end{equation}
+\newtheorem*{TRep}{Théorème de la représentation}
+\begin{TRep}
+Toute fonction réelle harmonique peut s'écrire sous la forme 
+\begin{equation}
+  \varphi(x_1,x_2)=\Re \[F(z)\]
+\label{eq:Ch08-028}
+\end{equation}
 Toute fonction réelle biharmonique peut s'écrire sous la forme 
-
-avec F , G et K fonc tions holomorphes. 
-Dem. La première représentation est classique: on sait que les parties réelle 
-
--126 '­
-et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques con­juguées, càd reliées par les conditions de Cauchy 
+\begin{equation}
+  \chi(x_1,x_2)=\Re \[\bar{z}G(z)+K(z)\]
+\label{eq:Ch08-029}
+\end{equation}
+avec $F$ , $G$ et $K$ fonctions holomorphes. 
+\end{TRep}
+\\
+\begin{proof}
+La première représentation est classique: on sait que les parties réelle et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques con­juguées, c'est-à-dire reliées par les conditions de Cauchy 
 (30) 
-
-La seconde représentation peut s'obtenir à par[ir de la précédente par deux 
-méthodes. 
-1ère méthode. A partir de (27), on voit que toufe fonction de ('':l'x) peut
-2
-être considérée comme fonction de (~,~ ). On obtient alors facilement 
-
-'"0" '"0"'f "0" <f'
-_Cf
-= + ,...
-Ll'f '0 I.e" 'Ob:" ô~è~
-
- 
-" 
-de sorte que si est biharmonique
-Cf 
--;,~ Cf 
-
-
-= = o 
-ô\o"} 
-on obtient 
-'\' = ~ F~ ("11) + &1 (~) .. if ~(~) +. G-J,(~) 
-et en écrivant que 'f est réelle, on obtient (29). 
-2ème méthode. Si 'X. est biharmonique, la fonction t:o (:j'A est ha=onique, et on peut écrire 
-
+\begin{equation}
+  \begin{cases}
+    \varphi(z)=P(x_1,x_2)+\imath Q(x_1,x_2) \\
+    P_{,1}=Q_{,2} \quad , \quad P_{,2}=Q_{,1}
+  \end{cases}
+\label{eq:Ch08-030}
+\end{equation}
+La seconde représentation peut s'obtenir à partir de la précédente par deux méthodes. \\
+1ère méthode. À partir de \eqref{eq:Ch08-027}, on voit que toute fonction de $(x_1,x_2)$ peut être considérée comme fonction de $(z,\bar{z})$. 
+On obtient alors facilement 
+\begin{equation*}
+  \Delta \varphi = \frac{\partial^2\varphi}{\partial x_1^2} + \frac{\partial^2\varphi}{\partial x_2^2} = \frac{\partial^2\varphi}{\partial z \partial \bar{z}}
+\end{equation*}
+de sorte que si $\varphi$ est biharmonique
+\begin{equation*}
+  \Delta\Delta\varphi=\frac{\partial^4\varphi}{\partial^2 z \partial^2 \bar{z}}=0
+\end{equation*}
+on obtient $\varphi=\bar{z}F_1(z)+G_1(z)+zF_2(\bar{z})+G_2(\bar{z})$ \\
+et en écrivant que $\varphi$ est réelle, on obtient \eqref{eq:Ch08-029}.\\
+2ème méthode. Si $\chi$ est biharmonique, la fonction $p=\Delta\chi$ est harmonique, et on peut écrire 
+\begin{equation*}
+  p=\Re \[ g(z)\]
+\end{equation*}
 Nous introduisons la fonction 
+\begin{equation*}
+  G(z) = \frac{1}{4}\int g(z) dz = P + \imath Q
+\end{equation*}
+avec $p=4P_{,1}=4Q_{,2}$.
+On obtient alors 
+\begin{equation*}
+  \Delta (\chi - Px_1 + Qx_2) = \Delta\chi - 2P_{,1} - 2Q_{,2} = \Delta\chi - p = 0
+\end{equation*}
+et la fonction $\chi - Px_1 + Qx_2$, est harmonique, d'où
+\begin{equation*}
+  \begin{aligned}
+    \chi & = Px_1 + Qx_2 + \Re \[ K(z)\]\\
+         & = \Re \[\bar{z}G(z) + K(z) \]   \qquad \text{cqfd} 
+\end{equation*}
+\end{proof}
 
-avec .Al.= ft 'P = 4 Q . On obtient alors 
--\-;..f ) 2.­
+L'application de ce théorème montre que la fonction de contrainte d'un problème d'élasticité plane est déterminée par deux fonctions holomor­phes $G$ et $K$.
+On posera 
+\begin{equation}
+  \begin{cases}
+    G    & = P + \imath Q \\
+    K    & = R + \imath S \\
+    \chi & = Px_1 + Qx_2 + R
+  \end{cases}
+\label{eq:Ch08-031}
+\end{equation}
+et les relations \eqref{eq:Ch08-009} donneront 
+\begin{equation}
+  \begin{cases}
+    \sigma_{11} & = P_{,22} x_1 + Q_{,22} x_2 + 2 Q_{,2} + R_{,22} \\
+    \sigma_{22} & = P_{,11} x_1 + Q_{,11} x_2 + 2 P_{,1} + R_{,11} \\
+    \sigma_{12} & = Q_{,11} x_1 - P_{,11} x_2 + S_{,11}
+  \end{cases}
+\label{eq:Ch08-032}
+\end{equation}
+En regroupant et en utilisant les relations de Cauchy \eqref{eq:Ch08-030}, on obtient 
+\begin{equation}
+  \begin{cases}
+    \sigma_{11} + \sigma_{22} = 4 \Re \[G'(z)\] \\
+    \sigma_{22} - \sigma_{11} + 2 \imath \sigma_{12} = 2 \[\bar{z}G''(z) + K''(z) \]
+  \end{cases}
+\label{eq:Ch08-033}
+\end{equation}
+L'intégration de \eqref{eq:Ch08-025} donne également 
+\begin{equation}
+  \begin{cases}
+    u_1 & = \frac{1+\nu}{E}\{(3-4r)P - P_{,1}x_1 - Q_{,1}x_2 - R_{,1} + Cx_2 + \alpha \}\\
+    u_2 & = \frac{1+\nu}{E}\{(3-4r)Q - Q_{,1}x_1 - P_{,1}x_2 - S_{,1} + Cx_1 + \beta \}\\
+  \end{cases}
+\label{eq:Ch08-034}
+\end{equation}
+ou sous forme complexe 
+\begin{equation}
+  \frac{E}{1+\nu}(u_1 + \imath u_2) & = (3-4r)G(z) - z\overline{G'(z)} - \overline{K'(z)} - \imath C z + \alpha +\imath\beta
+\label{eq:Ch08-035}
+\end{equation}
+les trois derniers termes représentant le mouvement de solide. 
+Ces représen­tations sont à la base de la théorie de l'élasticité plane qui permet de pous­ser très loin les calculs (voir \cite{Muskhelishvili-53}). 
+Nous présenterons simplement quelques exemples.
 
-et la fonction 'X. -'PI.e,-Q'X2, est harmonique, d'où 1.. = 'P'X, .. Q~2, + ~(Kl'~)) = <n ( ~ G(~) .. K(?!)] cgfd L'application de ce théorème montre que la fonction de contrainte d'un problème d'élasticité plane est déterminée par deux fonctions holomor­phes G et K On posera 
-
--127 ­
-et les relations (9) donneront 
-c
-<r.... r: 1." 1.1:. + Q,u «',1, + ), Q,l, + "R,,,2. 
-(32) = l' Ir. + Q,~. I.I:./, + + "R
-<rU l-i-t -1 l ~. '., ~!l. = Q,A.\ «., -l''AA + :)'.A
-IX." 
-En re~roupant et en utilisant les relations de Cauchy (30), on obtient 
-<r." + (J"~" = ~ ~[G-'('ll))
-(33) 
-f <ru -O:;A + ~..l. ~~ -.t [~G'(~) + K·(~) J 
-L'intégration de (25) donne également 
-A+V 
-.J..(., = t(~ -4 )() l' -l' IX -Q'l:-1? + C'X.'" + 0( }
-'A  ,A '" ,-1
-(34 ) ~ 
-Q «. -CIX.
-{ .ut = ~+v 1n-4~)Q + -~A IX", + S'A   + f.> l
-,A 
-E: l ou sous forme complexe 
-
-les trois derniers termes représentant le mouvement de solide. Ces représen­tations sont à la base de la théorie de l'élasticité plane qui permet de pous­ser très loin les calculs (voir [19)). Nous présenterons simplement quelques exemples. 
-2. EXEMPLES D'APPLICATIONS
-========================== 
-2.1 PROBLEME DE SAINT VENANT 
+\section{Exemples d'applications}\label{sec:Ch08-2}
+\subsection{Problème de Saint-Venant}\label{ssec:Ch08-2.1}
+\endinput 
 Une classe de solutions s'obtient en prenant pour X un polynôme homogène de degré n, .OU, ce qUi revient au même, 
 
 On obtient ainsi pour tout entier TI une solution dépendant de 4 constantes. 
