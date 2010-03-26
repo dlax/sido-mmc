@@ -5,30 +5,33 @@
 % référence aux sections et au paragraphes \ref{ssec:Ch0X-y.z} ; y : section ; z : ss-section ; si référence à y sec au lieu de ssec ; si référence à tout le chapitre mettre chap 
 
 \chapter{Problèmes plans en élasticité}
-
 \section{Élasticité plane}
 \subsection{Déformations planes}
-Dans de nombreux problèmes, on peut supposer les déformations pla­nes.
+Dans de nombreux problèmes, on peut supposer les déformations planes.
 \begin{equation}
-u_1=u_1(x_1,x_2), u_2=u_2(x_1,x_2), u_3=0
-\label{eq:Ch08-001}
+    u_1=u_1(x_1,x_2), u_2=u_2(x_1,x_2), u_3=0
+    \label{eq:Ch08-001}
 \end{equation}
 On en tire le tenseur des déformations 
 \begin{equation}
-        \tens{\varepsilon}=\begin{bmatrix}
+    \tens{\varepsilon}=
+    \begin{bmatrix}
         \varepsilon_{11} & \varepsilon_{12} & 0 \\
         \varepsilon_{12} & \varepsilon_{22} & 0 \\
         0                & 0                & 0 \\     
-    \end{bmatrix} & \begin{aligned}
-         \varepsilon_{11}= u_{1,1} \\
-         \varepsilon_{22}= u_{2,2} \\
-         \varepsilon_{12}= \dfrac{1}{2}(u_{1,2}+u_{2,1} 
+    \end{bmatrix}
+    \quad
+    \begin{aligned}
+         \varepsilon_{11}&= u_{1,1} \\
+         \varepsilon_{22}&= u_{2,2} \\
+         \varepsilon_{12}&= \frac{1}{2}(u_{1,2}+u_{2,1} 
     \end{aligned}
 \label{eq:Ch08-002}
 \end{equation}
-et, par la loi de comportement, le tenseur des contraintes 
+et, par la loi de comportement, le tenseur des contraintes
 \begin{equation}
-\tens{\sigma} =\begin{bmatrix}
+    \tens{\sigma} =
+    \begin{bmatrix}
         \sigma_{11} & \sigma_{12} & 0           \\
         \sigma_{12} & \sigma_{22} & 0           \\
         0           & 0           & \sigma_{33} \\     
@@ -43,12 +46,12 @@ avec les relations suivantes :
      E\varepsilon_{12} = (1+\nu)\sigma_{12}
    \end{cases}
     \label{eq:Ch08-004}
-\end{equation}
+\end{equation}
 \begin{equation}
      E\varepsilon_{33} = 0 = \sigma_{33}-\nu(\sigma_{11}+\sigma_{22})
     \label{eq:Ch08-005}
 \end{equation}
-L'équation \eqref{eq:Ch08-005} donne alors 
+L'équation \eqref{eq:Ch08-005} donne alors
 \begin{equation}
     \sigma_{33}=\nu(\sigma_{11}+\sigma_{22})
     \label{eq:Ch08-006}
@@ -64,7 +67,7 @@ et en reportant dans \eqref{eq:Ch08-004} il vient
 \end{equation}
 
 Pour résoudre un problème en déformations planes, il faut trouver les déplacements $u_1$, $u_2$ et les contraintes $\sigma_{11}$, $\sigma_{22}$, et $\sigma_{12}$ en fonction des coordonnées $(x_1,x_2)$ dans le plan.
-Si nous travaillons sur les contraintes, c'est-à-dire en utilisant l'appro­che du paragraphe~\ref{ssec:Ch06-1.4}, il faudra vérifier les équations d'équilibre et les équa­tions de Beltrami. 
+Si nous travaillons sur les contraintes, c'est-à-dire en utilisant l'approche du paragraphe~\ref{ssec:Ch06-1.4}, il faudra vérifier les équations d'équilibre et les équations de Beltrami. 
 Les équations d'équilibre s'écrivent 
 \begin{equation}
    \begin{cases}
@@ -73,7 +76,7 @@ Les équations d'équilibre s'écrivent
    \end{cases}
     \label{eq:Ch08-008}
 \end{equation}
-en supposant nulles les forces de volume (sinon, l'analyse qui suit peut s'é­tendre, avec des résultats plus compliqués). 
+en supposant nulles les forces de volume (sinon, l'analyse qui suit peut s'étendre, avec des résultats plus compliqués). 
 Ces équations expriment que les formes 
 \begin{equation*}
 \sigma_{11}dx_2-\sigma_{12}dx_1 \qquad,\qquad \sigma_{22}dx_1-\sigma_{12}dx_2
@@ -92,7 +95,7 @@ est une différentielle totale, il existe donc une fonction $\chi(x_1,x_2)$ tell
 \varphi=\chi_{,2} \qquad \psi=\chi_{,1}
 \end{equation*}
 
-La fonction $\chi(x_1,x_2)$ est appelée "fonction d'Airy" ou "fonction de contrain­tes" du problème. 
+La fonction $\chi(x_1,x_2)$ est appelée «~fonction d'Airy~» ou «~fonction de contraintes~» du problème. 
 Elle permet de calculer les contraintes par 
 \begin{equation}
 \sigma_{11}=\chi_{,22} \qquad \sigma_{12}=\chi_{,12} \qquad \sigma_{22}=\chi_{,11}
@@ -100,7 +103,7 @@ Elle permet de calculer les contraintes par
 \end{equation}
 
 les équations de l'équilibre étant alors automatiquement vérifiées. 
-En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-0090}, 
+En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-009}, 
 \begin{equation}
 \sigma_{kk}=(1+\nu)(\sigma){11}+\sigma_{22}=(1+\nu)\Delta\chi
 \label{eq:Ch08-010}
@@ -108,10 +111,10 @@ En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-0090},
 les équations de Beltrami \ref{sec:Ch6-31} donnent 
 \begin{equation}
   \begin{aligned}
-  i,j = 1,1 & : &  (1+\nu) \Delta\chi_{,22} & + & (1+\nu) \Delta\chi_{,11}=0 \\
-        2,2 & : &  (1+\nu) \Delta\chi_{,11} & + & (1+\nu) \Delta\chi_{,22}=0 \\ 
-        1,2 & : & -(1+\nu) \Delta\chi_{,12} & + & (1+\nu) \Delta\chi_{,12}=0 \\
-        3,3 & : & \nu(1+\nu) \Delta\Delta\chi & = & 0 \\
+  i,j = 1,1 & : &  (1+\nu) \Delta\chi_{,22} + (1+\nu) \Delta\chi_{,11}=0 \\
+        2,2 & : &  (1+\nu) \Delta\chi_{,11} + (1+\nu) \Delta\chi_{,22}=0 \\ 
+        1,2 & : & \cancel{-(1+\nu) \Delta\chi_{,12}} + \cancel{(1+\nu) \Delta\chi_{,12}}=0 \\
+        3,3 & : & \nu(1+\nu) \Delta\Delta\chi = 0 \\
   \end{aligned}
 \label{eq:Ch08-011}
 \end{equation}
@@ -121,8 +124,8 @@ Toutes ces équations seront vérifiées si et seulement si la fonction $\chi$ e
 \Delta\Delta\chi=\chi_{,1111}+2\chi_{,1122}+\chi_{,2222}=0
 \label{eq:Ch08-012}
 \end{equation}
-Ainsi, pour résoudre un problème en déformations planes, il faut trouver une fonction de contraintes $\chi$ biharmonique vérifiant les condi­tions aux limites. 
-On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par inté­gration du système 
+Ainsi, pour résoudre un problème en déformations planes, il faut trouver une fonction de contraintes $\chi$ biharmonique vérifiant les conditions aux limites. 
+On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par intégration du système 
 \begin{equation}
   \begin{cases}
   \varepsilon_{11}=u_{11}=\dfrac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
@@ -133,13 +136,11 @@ On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ p
 \end{equation}
 système qui est intégrable puisque les équations de Beltrami sont vérifiées. 
 \subsection{Contraintes planes}
-L'hypothèse des déformations planes convient pour une pièce suffisamment iongue pour que l'on puisse négliger la déformation longitudinale. 
+L'hypothèse des déformations planes convient pour une pièce suffisamment longue pour que l'on puisse négliger la déformation longitudinale. 
 Pour une plaque mince, chargée dans son plan, la condition aux limites pour 
-\begin{wrapfigure}{l}{5cm}
-    \begin{center}
-\includegraphics{../images/T1_Ch08-01}
-    \end{center}
-\end{wrapfigure}
+\begin{center}
+    \includegraphics{../images/T1_Ch08-01}
+\end{center}
 $x_3=\pm h/2$ donne 
 \begin{equation}
   x3 = \pm \dfrac{h}{2} : \qquad \sigma_{13}=\sigma_{23}=\sigma_{33}=0
@@ -164,21 +165,20 @@ Le tenseur des déformations est donné par
 \label{eq:Ch08-016}
 \end{equation}
 \begin{equation}
-  \begin{cases}
-    E \varepsilon_{11} & = & \sigma_{11}-\nu\sigma_{22}\\
-    E \varepsilon_{22} & = & \sigma_{22}-\nu\sigma_{11}\\
-    E \varepsilon_{33} & = & -\nu (\sigma_{11}+\sigma_{22})\\
-    E \varepsilon_{12} & = & (1+\nu)\sigma_{12}
-  \end{cases}
-\label{eq:Ch08-017}
+    \begin{cases}
+        E \varepsilon_{11} & = \sigma_{11}-\nu\sigma_{22}\\
+        E \varepsilon_{22} & = \sigma_{22}-\nu\sigma_{11}\\
+        E \varepsilon_{33} & = -\nu (\sigma_{11}+\sigma_{22})\\
+        E \varepsilon_{12} & = (1+\nu)\sigma_{12}
+    \end{cases}
+    \label{eq:Ch08-017}
 \end{equation}
-Les équations d'équilibre se traitent comme en déformations planes et con­duisent à \eqref{eq:Ch08-009}. 
+Les équations d'équilibre se traitent comme en déformations planes et conduisent à \eqref{eq:Ch08-009}. 
 On a alors 
 \begin{equation}
   \sigma_{kk}=\sigma_{11}+\sigma_{22}=\Delta\chi
 \label{eq:Ch08-018}
 \end{equation}
-
 et les équations de Beltrami donnent 
 \begin{equation}
   \begin{cases}
@@ -188,13 +188,11 @@ et les équations de Beltrami donnent
   \end{cases}
 \label{eq:Ch08-019}
 \end{equation}
-
 équations qui ne pourront être vérifiées que si $\Delta\chi$ est fonction linéaire des coordonnées, ce qui est bien trop restrictif pour permettre de résoudre des problèmes réels.
-Nous oublions donc provisoirement les équations de Bel­trami, et nous allons chercher à calculer les déplacements à partir de \eqref{eq:Ch08-017} 
+Nous oublions donc provisoirement les équations de Beltrami, et nous allons chercher à calculer les déplacements à partir de \eqref{eq:Ch08-017} 
 \begin{equation*}
   E\varepsilon_{11}=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
 \end{equation*}
-
 et finalement on obtient 
 \begin{equation}
   \begin{cases}
@@ -209,6 +207,7 @@ et finalement on obtient
 \label{eq:Ch08-021}
 \end{equation*}
 
+\endinput
 
 Le système (20) est formellement identique au système (13) en remplaçant V 
 par vl(" ... ,,) Il permettra donc de calculer .u., (Il/:"JJ: .. ) et .A.l.s,(Il/:"Il/:.,) SSi la 
