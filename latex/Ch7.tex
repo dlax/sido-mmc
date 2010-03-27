@@ -135,7 +135,7 @@ pour le problème 2 (le problème 3 s'obtient en échangeant les indices 2 et 3)
 \paragraph{Problèmes 5 et 6:} Flexion pure
 \begin{equation}
     \vv{\mathcal{R}} = 0 , \quad \mathcal{M}_1 = \mathcal{M}_2 = 0, \quad \mathcal{M}_3 = 0
-    \label{eq:Ch06-012}
+    \label{eq:Ch07-012}
 \end{equation}
 \begin{multicols}{2}
     \begin{equation*}
@@ -254,7 +254,7 @@ En particulier, pour la traction -- Problème 1 -- on retrouve la solution prés
 C'est la solution du problème régulier associé aux CL
 \begin{equation}
     x_1 = 0 \text{ et } x_1 = l: \quad \sigma_{11} = F/S, \ \sigma_{12} = \sigma_{13} = 0
-    \label{eq:Ch06-024}
+    \label{eq:Ch07-024}
 \end{equation}
 En général, les CL réelles -- par exemple dans un essai de traction -- sont différentes, mais le principe de Saint Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction.
 
@@ -268,12 +268,12 @@ Le tenseur des contraintes a la forme suivante
         0 & 0 & 0 \\
         0 & 0 & 0
     \end{bmatrix}
-    \label{eq:Ch06-025}
+    \label{eq:Ch07-025}
 \end{equation}
 où l'on a supprimé l'indice $2$ sur $J$
 \begin{equation}
     J=J_2 = \iint_{\Sigma} x_2^2 \ud S
-    \label{eq:Ch06-026}
+    \label{eq:Ch07-026}
 \end{equation}
 Il reste à calculer les déplacements.
 Comme au paragraphe~\ref{ssec:Ch06-2.1}, nous procéderons directement en écrivant le tenseur des déformations
@@ -652,52 +652,61 @@ A partir de \eqref{eq:Ch07-007} on a
     \label{eq:Ch07-063}
 \end{equation}
 Finalement, le champ de contraintes construit permet de résoudre le problème 4 avec
-\endinput
-\eqref{eq:Ch06-064} 
+\begin{equation}
+    \alpha = \frac{\mathcal{M}}{GI} \quad,\quad I = 2 \iint_{\Sigma} \varphi \ud x_2 \ud x_3
+    \label{eq:Ch07-064} 
+\end{equation}
+La constante $I$ est appelée «~module de rigidité~» de la section $\Sigma$, et, comme $\varphi$ elle ne dépend que de la forme de $\Sigma$.
 
-l = 
-
-La constante l est appelée "module de rigidité" de la section L , et, com­
-me <f ' elle ne dépend que de la forrne de L . 
-En chaque point de la section, l'état de contraintes est un état
--
-de cisaillement simple caractérisé par le vecteur contrainte T associé à la section droite 
-... 
-\eqref{eq:Ch06-065} 
-T = (0 1 <r1~ , ~;) 
--+ 
-La CL \eqref{eq:Ch07-001} expnme que, sur la frontière dL , T est tangent à dL 
-\eqref{eq:Ch06-066} sur ÔL 
-
-Les relations \eqref{eq:Ch06-012} montrent que les courbes iJ1: Cli sont les en­
-.... 
-veloppes du champ de vecteurs T 
+En chaque point de la section, l'état de contraintes est un état de cisaillement simple caractérisé par le vecteur contrainte $\vec{T}$ associé à la section droite
+\begin{equation}
+    \vec{T} = \left( O, \sigma_{12}, \sigma_{13} \right)
+    \label{eq:Ch07-065} 
+\end{equation}
+La CL~\eqref{eq:Ch07-001} exprime que, sur la frontière $\partial \Sigma$, $\vec{T}$ est tangent à $\partial \Sigma$ 
+\begin{equation}
+    \text{sur } \partial \Sigma \quad \vec{T} \cdot \vec{n} = 0    
+    \label{eq:Ch07-066}
+\end{equation}
+\begin{multicols}{2}
+    Les relations \eqref{eq:Ch07-012} montrent que les courbes $\Phi = \text{Cte}$ sont les enveloppes du champ de vecteurs $\vec{T}$.
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-15}
+    \end{center}
+\end{multicols}
 
 L'état de contraintes étant un état de cisaillement simple, le critère de limite d'élasticité donne 
-.... 
-\eqref{eq:Ch06-067} \ T \ ~ 
+\begin{equation}
+    \abs{\vec{T}} = \sqrt{\sigma_{12}^2 + \sigma_{13}^2} < \tau_e    
+    \label{eq:Ch07-067}
+\end{equation}
+avec $\tau_e$ donné par \eqref{eq:Ch05-071}.
+A partir de $\Phi$ ou $\varphi$ cette condition donne 
+\[
+\sqrt{\Phi_{,3}^2 + \Phi_{,2}^2} = G \alpha \sqrt{\varphi_{,3}^2 + \varphi_{,2}^2} = G \alpha \abs{\grad \varphi} < \tau_e
+\]
+Soit finalement
+\begin{equation}
+    \frac{\mathcal{M}}{I/\rho} < \tau_e \quad , \quad \rho = \left[ \sup_{\Sigma} \abs{\grad \varphi} \right]^{-1}
+    \label{eq:Ch07-068}
+\end{equation}
+où $\rho$ est une longueur caractéristique de la section $\Sigma$.
+On peut par ailleurs montrer que la borne supérieure de $\abs{\grad \varphi}$ est nécessairement atteinte sur la frontière de $\Sigma$.
+Ainsi le problème général de la torsion est résolu, sitôt que l'on connaît la solution $\varphi\left( x_2,x_3 \right)$ du problème \eqref{eq:Ch07-060}. 
 
-< (;e 
-avec (;e donné par (V. 71). A partir de f ou <r cette candi tian donne 
-
-= 
-
-" 
-
-Soit finalement 
-
-où est une longueur caractéristique de la section L . On peut par ail­leurs montrer que la borne supérieure de 1~'fI est nécessairement atteinte sur la fronti~re de ~ . Ainsi le problème général de la torsion est résolu, sitôt que l'on connaît la solution 'f('r~I';C~)du problème \eqref{eq:Ch06-060}. 
-2.3 CALCUL DU DEPLACEHENT 
+\subsection{Calcul du déplacehent}
+\endinput
 Pour terminer le calcul, il reste à.calculer le déplacement. A par­
-tir de \eqref{eq:Ch06-048},\eqref{eq:Ch06-052} et \eqref{eq:Ch06-059}, le tenseur des déformations est donné par 
+tir de \eqref{eq:Ch07-048},\eqref{eq:Ch07-052} et \eqref{eq:Ch07-059}, le tenseur des déformations est donné par 
 o 
 -'f,!l, 
-\eqref{eq:Ch06-069} ( = d o o o o 
+\label{eq:Ch07-069} ( = d o o o o 
 
 et on peut intégrer le champ de déplacements 
 Eq = ...u.1.I~ = 0 ~ ..l.L, = »-, (l,' -:c~) 
 
-\eqref{eq:Ch06-070} 0
+\label{eq:Ch07-070} 0
 t~l. = .u~l. = => .u.2,~ ..l.L:, ( 'l:." êCa)
 1
 { 
@@ -712,7 +721,7 @@ d'abscisse
 , 
 ~
 J; ~~ = .J.t..,-1.I~ t--'L~ ,~ ...u.."11. ;-A'( "-,) 'J:, .;-\) CT,) = c< 'f,?,
-\eqref{eq:Ch06-072} 
+\label{eq:Ch07-072} 
 
 
 f :t = Â 	= 4 -A' l'x:,) r:r.:. t C'('L,) -cl. <t',.l,
@@ -726,7 +735,7 @@ Aex,) = -a..X, + cl
 -Ll:, a.. 'X, 'X., .;-cL'l:, ;-~:x., +.e
 
 '" 
-\eqref{eq:Ch06-073} 
+\label{eq:Ch07-073} 
 f 43 = Q., 'X, XJ, 	-'-cL 'J:, 1-.c Xi + { 
 Déplacement de solide rigide 
 
@@ -736,7 +745,7 @@ On voit sur \eqref{eq:Ch06-073} que les 5 constantes t, .c , .a.. e. , f . corre
 ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la cons­tante a.. , rotation par unité de longueur, est donc "l'angle unitaire de tor­sionl! introduit au § 1.1 pour la section circulaire. On peut maintenant calcu­
 
 à partir de \eqref{eq:Ch06-072} 
-\eqref{eq:Ch06-075} 
+\label{eq:Ch07-075} 
 
 système qUI sera intégrable SSi 
 
@@ -745,16 +754,16 @@ ce qU1, d'après \eqref{eq:Ch06-060}, donne finalement Q..= ex , et la constante
 ! 
 0(
 .1.\., = '\f (X.!" ':C,) 
-\eqref{eq:Ch06-076} 
+\label{eq:Ch07-076} 
 .I.\.:l, = cl. ':C. ':C~ 
 At, = C( 'J:" 'l:.J., 
 
 Ainsi, la rotation de chaque section s'accompagne d'un "gauchissement" que l'on peut observer expérimentalement. La fonction de gauchissement l( est donnée par 
-\eqref{eq:Ch06-077} 
+\label{eq:Ch07-077} 
 
 
 et \f est la fonction harmonique conjuguée de la fonction harmonique 
-~\eqref{eq:Ch07-003} 3» 
+~\label{eq:Ch07-003} 3» 
 
 Si 	on calcule sur '0 z:. la dérivée normale de \fl ' il
 'f + 	.ï + :CJ
