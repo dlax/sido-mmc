@@ -229,7 +229,7 @@ Ainsi, si $\chi$ est biharmonique, on ne peut pas calculer les déplacements ; c
 conditions que nous avons volontairement laissées de côté.
 Cependant, pour une plaque mince, $x_3$ est petit, et en première approximation, \eqref{eq:Ch08-023} donne $a_{,1}=a_{,2}=0$, $a=Cste$ et la solution ainsi construite est une approximation satisfaisante de la réalité : c'est l'approximation «~contraintes planes~».
  
-Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par inté­gration du système
+Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par intégration du système
 \begin{equation}
   \begin{cases}
     u_{1,1} & =\frac{1+\nu}{E}\{ \chi_{,22}+ r \Delta \chi \} \\
@@ -262,26 +262,24 @@ Introduisons la variable complexe
 \begin{TRep}
 Toute fonction réelle harmonique peut s'écrire sous la forme 
 \begin{equation}
-  \varphi(x_1,x_2)=\Re \[F(z)\]
-\label{eq:Ch08-028}
+    \varphi(x_1,x_2)=\Re \left[ F(z) \right]
+    \label{eq:Ch08-028}
 \end{equation}
 Toute fonction réelle biharmonique peut s'écrire sous la forme 
 \begin{equation}
-  \chi(x_1,x_2)=\Re \[\bar{z}G(z)+K(z)\]
-\label{eq:Ch08-029}
+    \chi(x_1,x_2)=\Re \left[ \bar{z}G(z)+K(z) \right]
+    \label{eq:Ch08-029}
 \end{equation}
 avec $F$ , $G$ et $K$ fonctions holomorphes. 
 \end{TRep}
-\\
 \begin{proof}
-La première représentation est classique: on sait que les parties réelle et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques con­juguées, c'est-à-dire reliées par les conditions de Cauchy 
-(30) 
+La première représentation est classique: on sait que les parties réelle et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques conjuguées, c'est-à-dire reliées par les conditions de Cauchy 
 \begin{equation}
-  \begin{cases}
-    \varphi(z)=P(x_1,x_2)+\imath Q(x_1,x_2) \\
-    P_{,1}=Q_{,2} \quad , \quad P_{,2}=Q_{,1}
-  \end{cases}
-\label{eq:Ch08-030}
+    \begin{cases}
+        \varphi(z)=P(x_1,x_2)+\imath Q(x_1,x_2) \\
+        P_{,1}=Q_{,2} \quad , \quad P_{,2}=Q_{,1}
+    \end{cases}
+    \label{eq:Ch08-030}
 \end{equation}
 La seconde représentation peut s'obtenir à partir de la précédente par deux méthodes. \\
 1ère méthode. À partir de \eqref{eq:Ch08-027}, on voit que toute fonction de $(x_1,x_2)$ peut être considérée comme fonction de $(z,\bar{z})$. 
@@ -297,26 +295,27 @@ on obtient $\varphi=\bar{z}F_1(z)+G_1(z)+zF_2(\bar{z})+G_2(\bar{z})$ \\
 et en écrivant que $\varphi$ est réelle, on obtient \eqref{eq:Ch08-029}.\\
 2ème méthode. Si $\chi$ est biharmonique, la fonction $p=\Delta\chi$ est harmonique, et on peut écrire 
 \begin{equation*}
-  p=\Re \[ g(z)\]
+    p=\Re \left[ g(z)\right]
 \end{equation*}
 Nous introduisons la fonction 
 \begin{equation*}
-  G(z) = \frac{1}{4}\int g(z) dz = P + \imath Q
+    G(z) = \frac{1}{4}\int g(z) dz = P + \imath Q
 \end{equation*}
 avec $p=4P_{,1}=4Q_{,2}$.
 On obtient alors 
 \begin{equation*}
-  \Delta (\chi - Px_1 + Qx_2) = \Delta\chi - 2P_{,1} - 2Q_{,2} = \Delta\chi - p = 0
+    \Delta (\chi - Px_1 + Qx_2) = \Delta\chi - 2P_{,1} - 2Q_{,2} = \Delta\chi - p = 0
 \end{equation*}
 et la fonction $\chi - Px_1 + Qx_2$, est harmonique, d'où
 \begin{equation*}
-  \begin{aligned}
-    \chi & = Px_1 + Qx_2 + \Re \[ K(z)\]\\
-         & = \Re \[\bar{z}G(z) + K(z) \]   \qquad \text{cqfd} 
+    \begin{aligned}
+        \chi & = Px_1 + Qx_2 + \Re \left[ K(z)\right]\\
+             & = \Re \left[ \bar{z}G(z) + K(z) \right]
+    \end{aligned}
 \end{equation*}
 \end{proof}
 
-L'application de ce théorème montre que la fonction de contrainte d'un problème d'élasticité plane est déterminée par deux fonctions holomor­phes $G$ et $K$.
+L'application de ce théorème montre que la fonction de contrainte d'un problème d'élasticité plane est déterminée par deux fonctions holomorphes $G$ et $K$.
 On posera 
 \begin{equation}
   \begin{cases}
@@ -337,11 +336,11 @@ et les relations \eqref{eq:Ch08-009} donneront
 \end{equation}
 En regroupant et en utilisant les relations de Cauchy \eqref{eq:Ch08-030}, on obtient 
 \begin{equation}
-  \begin{cases}
-    \sigma_{11} + \sigma_{22} = 4 \Re \[G'(z)\] \\
-    \sigma_{22} - \sigma_{11} + 2 \imath \sigma_{12} = 2 \[\bar{z}G''(z) + K''(z) \]
-  \end{cases}
-\label{eq:Ch08-033}
+    \begin{cases}
+        \sigma_{11} + \sigma_{22} = 4 \Re \left[ G'(z) \right] \\
+        \sigma_{22} - \sigma_{11} + 2 \imath \sigma_{12} = 2 \left[ \bar{z}G''(z) + K''(z) \right]
+    \end{cases}
+    \label{eq:Ch08-033}
 \end{equation}
 L'intégration de \eqref{eq:Ch08-025} donne également 
 \begin{equation}
@@ -353,11 +352,11 @@ L'intégration de \eqref{eq:Ch08-025} donne également
 \end{equation}
 ou sous forme complexe 
 \begin{equation}
-  \frac{E}{1+\nu}(u_1 + \imath u_2) & = (3-4r)G(z) - z\overline{G'(z)} - \overline{K'(z)} - \imath C z + \alpha +\imath\beta
-\label{eq:Ch08-035}
+    \frac{E}{1+\nu}(u_1 + \imath u_2) = (3-4r)G(z) - z\overline{G'(z)} - \overline{K'(z)} - \imath C z + \alpha +\imath\beta
+    \label{eq:Ch08-035}
 \end{equation}
 les trois derniers termes représentant le mouvement de solide. 
-Ces représen­tations sont à la base de la théorie de l'élasticité plane qui permet de pous­ser très loin les calculs (voir \cite{Muskhelishvili-53}). 
+Ces représentations sont à la base de la théorie de l'élasticité plane qui permet de pousser très loin les calculs (voir \cite{Muskhelishvili-53}). 
 Nous présenterons simplement quelques exemples.
 
 \section{Exemples d'applications}\label{sec:Ch08-2}
