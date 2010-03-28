@@ -1,5 +1,5 @@
-\chapter{Élasticité linéaire}
-\section{Description du comportement élastique} \label{sec:Ch5-1}
+\chapter{Élasticité linéaire} \label{chap:Ch05}
+\section{Description du comportement élastique} \label{sec:Ch05-1}
 Le modèle de comportement le plus simple est le modèle élastique.
 Pour des matériaux ayant un comportement élastoplastique ou viscoplastique, ce modèle convient parfaitement, pourvu que l'on ne dépasse pas le seuil de plasticité.
 Pour des matériaux ayant un comportement de type viscoélastique, la transformation de Laplace permet de se ramener à un comportement élastique.
@@ -7,7 +7,7 @@ Même pour des matériaux ayant un comportement plus complexe, un calcul élasti
 Enfin, la résolution numérique d'un problème de Mécanique des Solides, avec une loi de comportement quelconque, s'effectue presque toujours par résolution d'une suite de problèmes élastiques.
 Il est donc naturel, dans un cours de Mécanique des Solides, de réserver une place importante à ce modèle de comportement.
 
-\subsection{Le tenseur d'élasticité} \label{ssec:Ch5-1.1}
+\subsection{Le tenseur d'élasticité} \label{ssec:Ch05-1.1}
 Le comportement élastique est caractérisé par une relation linéaire entre contraintes et déformations.
 Dans le cadre de l'élasticité tridimensionelle, cette relation s'écrit
 \begin{equation}
@@ -74,7 +74,7 @@ On peut le représenter par une matrice $6\times6$ symétrique
 \end{equation}
 
 On peut aussi obtenir le comportement élastique par une approche thermodynamique: un matériau élastique est un matériau sans dissipation, c'est à dire un matériau dans lequel toutes les évolutions sont réversibles.
-En se plaçant d'un point de vue purement mécanique (on verra comment prendre en compte les variables thermiques au chapitre~\ref{chap:11}), l'équation~\eqref{eq:Ch01-059} donne, puisque la dissipation $\varphi$ est nulle, la relation
+En se plaçant d'un point de vue purement mécanique (on verra comment prendre en compte les variables thermiques au chapitre~\ref{chap:Ch11}), l'équation~\eqref{eq:Ch01-059} donne, puisque la dissipation $\varphi$ est nulle, la relation
 \begin{equation}
     \rho \frac{\ud u}{\ud t} = \sigma_{ij} \frac{\ud \varepsilon_{ij}}{\ud t}
     \label{eq:Ch05-006}
@@ -94,7 +94,7 @@ En dérivant \eqref{eq:Ch05-007} et en identifiant avec \eqref{eq:Ch05-006} on o
 Les déformations étant petites, on peut développer $w$ en série de Taylor
 \begin{equation}
     w \left( \varepsilon_{ij} \right) = w_0 + \cancel{a_{ij} \varepsilon_{ij}} + \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh}
-    \label{eq:Ch05-010}
+    \label{eq:Ch05-009}
 \end{equation}
 où $a_{ij}$ est symétrique et où $A_{ijkh}$ vérifie les conditions de symétrie \eqref{eq:Ch05-002} et \eqref{eq:Ch05-003} qui, dans cette approche, sont automatiquement vérifiées.
 En reportant dans \eqref{eq:Ch05-008} il vient
@@ -126,7 +126,7 @@ Finalement, en prenant $w_0=0$, on peut réécrire la loi de comportement élast
     \label{eq:Ch05-012}
 \end{equation}
 
-\subsection{Isotropie et anisotropie}
+\subsection{Isotropie et anisotropie} \label{ssec:Ch05-1.2}
 Le tenseur d'élasticité, qui caractérise complètement les propriétés élastiques du matériau, dépend, dans le cas le plus général, de 21 coefficients.
 Fort heureusernent, on peut restreindre ce nombre en utilisant les symétries du matériau, c'est à dire les propriétés d'isotropie ou d'anisotropie.
 Lors d'un changement de repère, les matrices $\sigma_{ij}$ et $\varepsilon_{ij}$ représentatives des tenseurs des contraintes et de déformations se transforment par \eqref{eq:Ch02-007} et \eqref{eq:Ch03-012}.
@@ -176,7 +176,7 @@ On voit donc que les manifestations de l'anisotropie sont aussi nombreuses que v
 Nous avons présenté le concept dans le cadre de l'élasticité linéaire, mais le problème se pose pour tout comportement.
 Il s'agit néanmoins d'une question difficile et encore imparfaitement comprise. 
 
-\subsection{Élasticité anisotrope} 
+\subsection{Élasticité anisotrope} \label{ssec:Ch05-1.3}
 Les propriétés de symétrie, décrites par le groupe d'isotropie $\mathcal{G}$, permettent de réduire le nombre des coefficients d'élasticité.
 Nous allons envisager quelques cas particuliers correspondant aux types d'anisotropie que l'on rencontre le plus fréquemment en mécanique. 
 \subsubsection{Orthotropie}
@@ -276,7 +276,7 @@ Aux matrices \eqref{eq:Ch05-015}, il faut rajouter les 4 matrices suivantes
     \end{bmatrix}
     \label{eq:Ch05-017}
 \end{equation}
-(et celles qu'elles engendrent par produit entre elles et avec celles de \eqref{eq:CH05-015}).
+(et celles qu'elles engendrent par produit entre elles et avec celles de \eqref{eq:Ch05-015}).
 On obtient alors 
 \begin{equation}
     \begin{bmatrix}
@@ -368,8 +368,8 @@ Il reste 5 coefficients d'élasticité.
 Les coefficients $D$ et $E$ s'obtiennent par un essai de traction sur une éprouvette parallèle à la direction privilégiée, les coefficients $A$ et $B$ par un essai de traction sur une éprouvette perpendiculaire à la direction privilégiée, enfin le coefficient $C$ peut s'obtenir par une expérience de torsion sur un tube minee parallèle à l'axe privilégié (paragraphe \ref{ssec:Ch04-1.4}).
 C'est le type d'anisotropie que l'on rencontre le plus fréquemment: composites renforcés par fibres unidirectionnelles, composites stratifiés, bois, barres obtenues par filage, roches et sols sédimentaires, etc.
 
-\section{Élasticité linéaire isotrope}
-\subsection{Coéfficients d'élasticité}
+\section{Élasticité linéaire isotrope} \label{sec:Ch05-2}
+\subsection{Coéfficients d'élasticité} \label{ssec:Ch05-2.1}
 Pour un matériau isotrope, sans direction privilégiée, les composantes, du tenseur d'élasticité doivent vérifier la relation \eqref{eq:Ch05-014} pour toute matrice orthogonale $Q_{ij}$.
 On vérifie facilement que le tenseur 
 \begin{equation}
@@ -566,10 +566,10 @@ Quelques valeurs typiques de $E$ et $\nu$  sont données dans le tableau suivant
     \end{tabular}
 \end{center}
  
-\subsection{Découplage déviateur-partie sphérique}
+\subsection{Découplage déviateur-partie sphérique} \label{ssec:Ch05-2.2}
 La forme générale \eqref{eq:Ch05-021} du tenseur d'élasticité dans le cas isotrope présente quelques propriétés remarquables. 
 
-Tout d'abord, cette forme \eqref{eq:Ch05-021} vérifie automatiquement l'hypothèse thermodynamique \eqref{eq:Ch05-03}.
+Tout d'abord, cette forme \eqref{eq:Ch05-021} vérifie automatiquement l'hypothèse thermodynamique \eqref{eq:Ch05-003}.
 C'est une des raisons pour laquelle cette hypothèse n'a pas de support expérimental, car le cas isotrope, le plus simple et le mieux connu, ne prouve rien. 
 
 Ensuite, on remarque, par exemple sur \eqref{eq:Ch05-022} ou \eqref{eq:Ch05-034}, que les directions principales des contraintes et des déformations coincident.
@@ -601,7 +601,7 @@ et de même pour $\mathop{w}^*$
     w=\mathop{w}^* = \frac{K}{2} \varepsilon_{kk} \varepsilon_{ll} + \mu e_{ij} e_{ij} = \frac{1}{18K} \sigma_{kk} \sigma_{ll} + \frac{1}{4\mu} s_{ij} s_{ij}
     \label{eq:Ch05-049}
 \end{equation}
-Puisque déviateurs et parties sphériques sont indépendants, on voit qu'une CNS pour que l'hypothèse de stabilité \eqref{eq:Ch05-04} soit vérifiée est que 
+Puisque déviateurs et parties sphériques sont indépendants, on voit qu'une CNS pour que l'hypothèse de stabilité \eqref{eq:Ch05-004} soit vérifiée est que 
 \begin{equation}
     K>0, \quad \mu >0
     \label{eq:Ch05-050}
@@ -629,13 +629,13 @@ Mais, par cette approximation, on perd toute information sur la partie sphériqu
     \label{eq:Ch05-054}
 \end{equation}
 où $p$ est une pression hydrostatique arbitraite, nouvelle fonction inconnue dans la résolution d'un problème, et qui vient compenser l'équation de liaison supplémentaire \eqref{eq:Ch05-053}.
-Une autre manière de voir les choses est d'adopter l'approche thermodynamique du paragraphe~\ref{ssec:Ch05-1.1} et d'écrire à partir de \eqref{eq:Ch05-06} et \eqref{eq:Ch05-07} 
+Une autre manière de voir les choses est d'adopter l'approche thermodynamique du paragraphe~\ref{ssec:Ch05-1.1} et d'écrire à partir de \eqref{eq:Ch05-006} et \eqref{eq:Ch05-007} 
 \begin{equation}
     \left( \sigma_{ij} - \frac{\partial w}{\partial \varepsilon_{ij}} \right) \frac{\ud \varepsilon_{ij}}{\ud t} = 0
     \label{eq:Ch05-055}
 \end{equation}
 qui doit être vérifié pour taut $\ud \varepsilon_{ij} / \ud t$ compatible avec la liaison \eqref{eq:Ch05-053}. 
-Il faut donc introduire un multiplicateur de Lagrange $4p$ et il vient au lieu de \eqref{eq:Ch05-08} 
+Il faut donc introduire un multiplicateur de Lagrange $4p$ et il vient au lieu de \eqref{eq:Ch05-008} 
 \begin{equation}
     \sigma_{ij} = \frac{\partial w}{\partial \varepsilon_{ij}} -p\delta_{ij}
     \label{eq:Ch05-056}
@@ -643,8 +643,8 @@ Il faut donc introduire un multiplicateur de Lagrange $4p$ et il vient au lieu d
 qui redonne \eqref{eq:Ch05-054} après développement de $w$.
 L'apparition de cette pression hydrostatique arbitraire est propre aux milieux incompressibles, et on la retrouve en Mécanique des Fluides.
 
-\section{Critère de limite d'élasticité}
-\subsection{Forme générale du critère}
+\section{Critère de limite d'élasticité} \label{sec:Ch05-3}
+\subsection{Forme générale du critère} \label{ssec:Ch05-3.1}
 \begin{wrapfigure}{r}{7cm}
     \begin{center}
         \includegraphics{../images/T1_Ch05-01}
@@ -713,7 +713,7 @@ Il ressort alors du paragraphce~\ref{ssec:Ch02-3.1} que, dans la représentation
 Le critère est alors complètement défini par la «~courbe intrinsèque~» $\mathcal{C}$, enveloppe des demi-cercles limites, c'est à dire à  correspondant à $f=0$. 
 C'est le critère de la courbe intrinsèque.
 
-\subsection{Critères de Von Mises et Tresca}
+\subsection{Critères de Von Mises et Tresca} \label{ssec:Ch05-3.2}
 Pour les métaux, ou plus généralement pour les matériaux dont le critère peut s'écrire sous la forme \eqref{eq:Ch05-061}, on 'utilise habituellement les critères de limite d'élasticité de von Mises ou de Tresca.
 Le critère \eqref{eq:Ch05-061} peut s'écrire sous la forme 
 \begin{equation}

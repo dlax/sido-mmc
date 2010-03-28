@@ -1,6 +1,6 @@
 \chapter{Étude des déformations} \label{chap:Ch03}
 \section{Grandes déformations} \label{sec:Ch03-1}
-\subsection{Description de la déformation} \label{ssec:Ch03-1}
+\subsection{Description de la déformation} \label{ssec:Ch03-1.1}
 % Generated with LaTeXDraw 2.0.5
 % Sun Nov 08 14:17:03 EST 2009
 \scalebox{1} % Change this value to rescale the drawing.
@@ -590,15 +590,15 @@ et, en statique, le théorème des travaux virtuels \eqref{eq:Ch03-046} peut s'�
     \label{eq:Ch03-050}
 \end{equation}
 
-Nous reviendrons sur cette dualité lorsque nous parlerons des méthodes variationnelles (chapitre \ref{chap:09}).
-\section{Compatibilite des déformations}
+Nous reviendrons sur cette dualité lorsque nous parlerons des méthodes variationnelles (chapitre \ref{chap:Ch09}).
+\section{Compatibilite des déformations} \label{sec:Ch03-3}
 Connaissant le champ des déplacements $u_i (x)$ on en déduit par \eqref{eq:Ch03-029} le champ des déformations $\varepsilon_{ij}(x)$.
 Réciproquement, si on connaît le champ des déformations $\varepsilon_{ij}(x)$, peut-on calculer le champ des déplacements $u_i (x)$ ?
 Et si oui, comment?
 Le premier problème est celui de la compatibilité des déformations, le second celui de l'intégration d'un champ de déplacements.
 Ce problème est extrêmement important en mécanique des solides, car nous verrons que la solution s'obtient souvent sous forme d'un champ de déformation; il faut alors remonter aux déplacements.
 Remarquons que, en vertu de l'analogie discutée au paragraphe~\ref{ssec:Ch03-2.3}, on pourra transposer tous nos résultats en termes de vitesse et de taux de déformation, le problème étant alors de calculer le champ des vitesses à partir de la valeur en tout point du tenseur taux de déformation.
-\subsection{Calcul de la rotation}
+\subsection{Calcul de la rotation} \label{ssec:Ch03-3.1}
 Pour calculer le déplacement $u_i$, il faut intégrer les formes différentielles 
 \begin{equation}
     \ud u_i = u_{i,j} \ud x_j = \left( \varepsilon_{ij} + \omega_{ij} \right) \ud x_j
@@ -680,7 +680,7 @@ Compte-tenu de l'analogie présentée au paragraphe~\ref{ssec:Ch03-2.3}, ce thé
     \end{equation*}
     que l'on peut écrire sous la forme \eqref{eq:Ch03-057} en introduisant le vecteur $\vec{\omega}$ adjoint du tenseur antisymétrique $\omega_{ij}^0$ (le calcul est le même que celui qui a conduit à \eqref{eq:Ch03-037}.
 \end{proof}
-\subsection{Calcul du déplacement}
+\subsection{Calcul du déplacement} \label{ssec:Ch03-3.2}
 Sous réserve que la condition~\eqref{eq:Ch03-056} soit vérifiée, l'intégration du système \eqref{eq:Ch03-053} donne $\omega_{ij}$ à une constante près $\omega_{ij}^0$.
 Le déplacement $u_i$ s'obtiendra alors en intégrant le système \eqref{eq:Ch03-051}
 \begin{equation*}
