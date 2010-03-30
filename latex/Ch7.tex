@@ -836,108 +836,110 @@ Rajoutées à \eqref{eq:Ch07-001}, ces CL définissent bien un problème réguli
 \subsubsection{Section circulaire}
 D'après la symétrie, les fonctions $\varphi$ et $\psi$ ne dépendent que de $r$.
 Il vient directement 
+\begin{equation}
+    \varphi =\frac{1}{2}\left( a^2 - r^2 \right) \quad , \quad \psi = 0 \quad , \quad r^2 = x_2^2 + x_3^2 
+    \label{eq:Ch07-080}
+\end{equation}
+et on retrouve tous les résultats du paragraphe~\ref{ssec:Ch07-1.1}.
+En particulier, la fonction de gauchissement est nulle.
+\subsubsection{Section elliptique}
+\begin{multicols}{2}
+    La section $\Sigma$ est limitée par l'ellipse d'équation
+    \begin{equation}
+        \frac{x_2^2}{a^2} + \frac{x_3^2}{b^2} = 1
+        \label{eq:Ch07-081}
+    \end{equation}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-16}
+    \end{center}
+\end{multicols}
+On trouve alors pour $\varphi$ et $\psi$
+\begin{align}
+    \varphi &= \frac{a^2 b^2}{a^2 + b^2} \left( 1 - \frac{x_2^2}{a^2} - \frac{x_3^2}{b^2} \right) \label{eq:Ch07-082}\\
+    \psi &= \frac{a^2 - b^2}{a^2 + b^2} x_2 x_3 \label{eq:Ch07-083}
+\end{align}
+Pour le module de rigidité à la torsion, on trouve
+\begin{equation}
+    I = \frac{\pi a^3 b^3}{a^2 + b^2}
+    \label{eq:Ch07-084}
+\end{equation}
+Les contraintes sont données par
+\begin{equation}
+    \begin{aligned}
+        \sigma_{12} &= - \frac{\mathcal{M}}{I} \frac{\partial \varphi}{\partial x_3} = - \frac{2 \mathcal{M}}{\pi a b^3} x_3 \\
+        \sigma_{13} &= \frac{\mathcal{M}}{I}\frac{\partial \varphi}{\partial x_2} = \frac{2 \mathcal{M}}{\pi a^3 b} x_2
+    \end{aligned}
+    \label{eq:Ch07-085}
+\end{equation}
+et la contrainte de cisaillement maximale
+\begin{equation}
+    \abs{\vec{T}}_{\text{max}} = \sup \frac{2\mathcal{M}}{\pi a b} \sqrt{\frac{x_3^2}{b^4} + \frac{x_2^2}{a^4}} = \frac{2\mathcal{M}}{\pi a b^2}
+    \label{eq:Ch07-086}
+\end{equation}
+est atteinte à l'extrémité du petit axe $x_3 = b$, ce qui donne 
+\begin{equation}
+    \rho = \frac{2 a^2 b}{a^2 + b^2}
+    \label{eq:Ch07-087}
+\end{equation}
+\subsubsection{Section rectangulaire}
+\begin{multicols}{2}
+    On recherche la solution sous forme d'un développement en série de Fourier double 
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-17}
+    \end{center}
+\end{multicols}
+\begin{equation}
+    \varphi = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} A_{mn} \cos \frac{(2m-1)\pi x_2}{2a} \cos \frac{(2n-1)\pi x_3}{2b}
+    \label{eq:Ch07-088}
+\end{equation}
+qui vérifie automatiquement la CL \eqref{eq:Ch07-058}.
+On dérive \eqref{eq:Ch07-088} terme à terme, ce qui permet  d'obtenir le développement de $\Delta\varphi$ que l'on identifie  avec le développement de la fonction constante $-2$, et  on  obtient les  constantes $A_{mn}$.
+
+On obtient des calculs plus simples en cherchant la solution sous la forme 
+\begin{equation}
+    \varphi = \sum_{m=0}^{\infty} \cos \frac{(2m-1) \pi x_2}{2a} \psi_m (x_3)    
+    \label{eq:Ch07-089}
+\end{equation}
+développement en série de Fourier simple (mais qui présente l'inconvénient de détruire la symétrie en $x_2$ et $x_3$).
+On calcule $\Delta \varphi$ par dérivation terme à terme, on  identifie  avec le développement de la constante $-2$, et on  obtient pour $\psi_m$ une équation différentielle du second ordre
+\begin{displaymath}
+    \frac{\ud^2 \psi_m}{\ud x_3^2} - \left( \frac{(2m-1)^2\pi^2}{2a} \right)^2 \psi_m (x_3) = (-1)^m \frac{8}{(2m-1)\pi}
+\end{displaymath}
+qui donne $\psi_m$ par intégration avec les conditions aux limites $\psi_m(\pm b)=0$.
+On obtient finalement
+\begin{equation}
+    \varphi = \frac{32a^3}{\pi^3} \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m-1)} \left\{ 1 - \frac{\cosh \frac{(2m-1)\pi x_3}{2a}}{\cosh \frac{(2m-1)b}{2a}} \right\} \cos \frac{(2m-1)\pi x_2}{2a}
+    \label{eq:Ch07-090}
+\end{equation}
+qui permet de calculer la solution et en particulier le module de rigidité à la torsion $I$ et la longueur $\rho$ qui intervient dans \eqref{eq:Ch07-068}.
+On trouve 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        I &= 16 a^3 b h_1 (b/a) = 4 S a^2 h_1 (b/a) \\
+        \rho &= 2 a h (b/a)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-091}
+\end{equation}
+la contrainte tangentielle maximale étant obtenue au milieu du grand côté $x_3 = \pm b$ si on suppose $a>b$.
+Les fonctions $h_1$ et $h$ sont données par le tableau suivant 
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c}
+    $b/a$ & 1 & 1,5 & 2 & 3 & 5 & $\infty$ \\ \hline
+    $h$ & 0,675 & 0,848 & 0,930 & 0,985 & 0,999 & 1 \\ \hline
+    $h_1$ & 0,141 & 0,196 & 0,229 & 0,263 & 0,291 & 1/3
+\end{tabular}
+\end{center}
+
+Plus généralement, on sait résoudre explicitement le problème pour quelques sections particulières (triangle équilatéral, section circulaire entaillée d'un demi-cercle, etc.)
+Comme le problème se ramène à des calculs de fonctions harmoniques, on peut également utiliser les techniques de variable complexe (voir~\cite{Love-44,Muskhelishvili-53}).
+Enfin, le problème \eqref{eq:Ch07-060} se prête bien au calcul numérique.
+
+\section{Flexion composée}
 \endinput
-\eqref{eq:Ch06-080} ./ (1, 1,)
-'f=i; Q.-'I. ~ = 0 
-
-et on retrouve tous les résultats du § J.I . En particulier, la fonction de 
-gauchissement est nulle. 
-.r 
-J
-Section elliptique 
-La section ~ est limitée par 
-l'ellipse d'équation 
-
-Q 
-(81 ) 
-
-On trouve alors pour <p et "t' 
-t, ~ 
-0.1, }}' 
-( -! -Xl. X~ )
-\eqref{eq:Ch06-082} c
-i 
-Q.,l,
-Q.,.L+ ~? t.L 
-a.,.L _ J..'" 
-\eqref{eq:Ch06-083} 
-l' = ');.,1, 'l:3 
-Q.J., +;"1, Pour le module de rigidité à la torsion, on trouve 
-\eqref{eq:Ch06-084} 
-l = 
-
-Les contraintes sont données par 
-[ 
-a-'l'Il. o'f .t'lll. 
-.. J., = -= ':(.3
-l 'è a!. 11 o.t~ 
-\eqref{eq:Ch06-085} 
-'IY1. 'Of .2,'fQ 
-cr~~ = = ');.~
-n Q.;..p,.
-l "ô :x:.J., 
-et la contrainte de cisaillement maximale 
-'I~ 'Il"
-2'Tl1.. 
-~"nl
-~ . l"
-\eqref{eq:Ch06-086} ­
-+ =
-1 T ItmOJ:c = .bI>f­
-!" (L" 7t a. !)}
-lla...Q,. 
-est atteinte à l'extrémité du petit axe OC!.:=' Z. , ce qui donne 
-
-:0
-\eqref{eq:Ch06-087} f = 
-Q,l,+ p,.l" Section ree tangulaire 
-~ 
-CL ,
-On recherche la solution sous forme d'un développement en série de Fourier double 
-
-qui vérifie automatiquement la CL \eqref{eq:Ch06-058}. On dérive \eqref{eq:Ch06-088} terme à terme, ce qUl 
-permet  d'obtenir le développement  de 6~ que  l'on identifie  avec le dévelop­ 
-pernent  de  la fonction  constante· -2 , et  on  obtient les  constantes A . tm.'1\,  
-On obtient des  calculs plus simples  en  cherchant  la solution  sous  
-
-la forme 
-co 
-\eqref{eq:Ch06-089} 'f = 
-L 
-
-développement en série de Fourier simple (mais qui présente l'inconvénient 
-de  détruire  la symétrie  en  x2  et  x3). On  calcule  ~~  par dérivation  terme  
-à  terme,  on  identifie  avec  le développement  de  la  constante  -2,  et  on  ob­ 
-tient  pour  1f~ une  équation différentielle du  second ordre  
-
-
-q "' l, \:1,
-("" rrn. --1 ) 1\ .1 ('I ) 
-( l ! 1',m, ô 
-, Cl. / 
-
-qui donne "f"", par intégration avec les conditions aux limites "1'~t)=O. On obtient finalement 
-
-qui permet de calculer la solution et en particulier le module de rigidité à la torsioI;1 l et la longueur f qUi intervient dans \eqref{eq:Ch06-068} . On trouve 
-. s <,
-I. /1 b ~, JIr ~,(h!Q,J = i; CL JdYr\eqref{eq:Ch06-0a.}
-= 
-1
-\eqref{eq:Ch06-091} < 
-.z a. i(Yrja.)
-l F = 
--113 ­
-la contrainte tan8entielle maximale étant obtenue au milieu du grand côté 
-«~= ! k si on suppose (t> -&-. Les fonctions ~, et.t sont données par le 
-tableau suivant 
-Rr/O­ 1  1,5  2  3  5  00  
--Pt,  0,675  0,848  0,930  0,985  0,999  1  
--foi  0,141  0, 196  U,229  0,263  0,291  1/3  
-
-Plus généralement, on sait résoudre explicitement le problème pour quelques sections particulières (triangle équilatéral, section circulaire en­taillée d'un demi-cercle, etc ... ). Comme le problème se ramène à des calculs de fonctions harmoniques, on peut également utiliser les techniques de varia­
-ble complexe (voir\eqref{eq:Ch06-0l7},[19]). Enfin, le problème \eqref{eq:Ch06-060} se prête bien au calcul 
-numérique. 
-3. FLEXION CO~OSEE 
 ==========~======== 
 3.1 CHAMP DE CONTRAINTES 
 Il reste à résoudre le problème 2. :l:'t 
