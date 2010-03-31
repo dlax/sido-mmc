@@ -3,6 +3,10 @@
 % figure : \includegraphics{../images/T1_Ch08-0x}
 % référence à une équation avec \eqref
 % référence aux sections et au paragraphes \ref{ssec:Ch0X-y.z} ; y : section ; z : ss-section ; si référence à y sec au lieu de ssec ; si référence à tout le chapitre mettre chap 
+% \left\{
+%  \begin{aligned}
+%  \end{aligned}
+%  \right.
 
 \chapter{Problèmes plans en élasticité}\label{chap:Ch08}
 \section{Élasticité plane}\label{sec:Ch08-1}
@@ -108,7 +112,7 @@ En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-009},
 \sigma_{kk}=(1+\nu)(\sigma){11}+\sigma_{22}=(1+\nu)\Delta\chi
 \label{eq:Ch08-010}
 \end{equation}
-les équations de Beltrami \ref{sec:Ch6-31} donnent 
+les équations de Beltrami \eqref{eq:Ch06-031} donnent 
 \begin{equation}
   \begin{aligned}
   i,j = 1,1 & : &  (1+\nu) \Delta\chi_{,22} + (1+\nu) \Delta\chi_{,11}=0 \\
@@ -127,11 +131,13 @@ Toutes ces équations seront vérifiées si et seulement si la fonction $\chi$ e
 Ainsi, pour résoudre un problème en déformations planes, il faut trouver une fonction de contraintes $\chi$ biharmonique vérifiant les conditions aux limites. 
 On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par intégration du système 
 \begin{equation}
-  \begin{cases}
+  \left\{
+  \begin{aligned}
   \varepsilon_{11}=u_{11}=\frac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
   \varepsilon_{22}=u_{22}=\frac{1+\nu}{E}[(1-\nu)\chi_{,11}-\nu\chi_{,22}] \\
   2\varepsilon_{12}=u_{12}+u_{21}=\frac{2(1+\nu)}{E}\chi_{,12}
-  \end{cases}
+  \end{aligned}
+  \right.
 \label{eq:Ch08-013}
 \end{equation}
 système qui est intégrable puisque les équations de Beltrami sont vérifiées. 
@@ -214,10 +220,12 @@ Il reste à intégrer les équations \eqref{eq:Ch08-021} pour calculer $u_3$
 \label{eq:Ch08-022}
 \end{equation}
 \begin{equation}
-  \begin{cases}
+  \left\{
+  \begin{aligned}
      2 \varepsilon_{13} & = u_{3,1}+u_{1,3}=-\frac{\nu}{E} \Delta \chi_{,1}x_3+a_{,1} = 0 \\
      2 \varepsilon_{23} & = u_{3,2}+u_{2,3}=-\frac{\nu}{E} \Delta \chi_{,2}x_3+a_{,2} = 0
-  \end{cases}
+  \end{aligned}
+  \right.
 \label{eq:Ch08-023}
 \end{equation}
 équations qui ne pourront jamais être vérifiées puisque $a$ et $\chi$ ne dépendent que de $x_1$ et $x_2$. 
@@ -231,11 +239,13 @@ Cependant, pour une plaque mince, $x_3$ est petit, et en première approximation
  
 Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par intégration du système
 \begin{equation}
-  \begin{cases}
+  \left\{
+  \begin{aligned}
     u_{1,1} & =\frac{1+\nu}{E}\{ \chi_{,22}+ r \Delta \chi \} \\
     u_{2,2} & =\frac{1+\nu}{E}\{ \chi_{,11}+ r \Delta \chi \} \\
     u_{1,2} & + u_{2,1} = -\frac{2(1+\nu)}{E}\chi_{,12}
-  \end{cases}
+  \end{aligned}
+  \right.
 \label{eq:Ch08-025}
 \end{equation}
 \begin{equation*}
@@ -299,7 +309,7 @@ et en écrivant que $\varphi$ est réelle, on obtient \eqref{eq:Ch08-029}.\\
 \end{equation*}
 Nous introduisons la fonction 
 \begin{equation*}
-    G(z) = \frac{1}{4}\int g(z) dz = P + \imath Q
+    G(z) = \frac{1}{4}\int g(z) \ud z = P + \imath Q
 \end{equation*}
 avec $p=4P_{,1}=4Q_{,2}$.
 On obtient alors 
@@ -344,10 +354,12 @@ En regroupant et en utilisant les relations de Cauchy \eqref{eq:Ch08-030}, on ob
 \end{equation}
 L'intégration de \eqref{eq:Ch08-025} donne également 
 \begin{equation}
-  \begin{cases}
+  \left\{
+  \begin{aligned}
     u_1 & = \frac{1+\nu}{E}\{(3-4r)P - P_{,1}x_1 - Q_{,1}x_2 - R_{,1} + Cx_2 + \alpha \}\\
     u_2 & = \frac{1+\nu}{E}\{(3-4r)Q - Q_{,1}x_1 - P_{,1}x_2 - S_{,1} + Cx_1 + \beta \}\\
-  \end{cases}
+  \end{aligned}
+  \right.
 \label{eq:Ch08-034}
 \end{equation}
 ou sous forme complexe 
@@ -362,112 +374,165 @@ Nous présenterons simplement quelques exemples.
 \section{Exemples d'applications}\label{sec:Ch08-2}
 \subsection{Problème de Saint-Venant}\label{ssec:Ch08-2.1}
 \endinput 
-Une classe de solutions s'obtient en prenant pour X un polynôme homogène de degré n, .OU, ce qUi revient au même, 
+Une classe de solutions s'obtient en prenant pour $\chi$ un polynôme homogène de degré $n$, ou, ce qui revient au même, 
+\begin{equation}
+  G(z)=Az^{n-1} \qquad K(z)=Bz^{n}
+    \label{eq:Ch08-036}
+\end{equation}
+On obtient ainsi pour tout entier $n$ une solution dépendant de 4 constantes.
+$n=2$ : Un polynôme du second degré est automatiquement biharmonique, et conduit à un état de contraintes constant 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \chi        & = \frac{1}{2}\left\{\alpha x_1^2 + 2 \beta x_1 x_2 + \gamma x_2^2\right\} \\
+    \sigma_{11} & = \gamma \quad \sigma_{22} = \alpha \quad \sigma_{12} = \beta
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-037}
+\end{equation}
+$n=3$ : Un polynôme du 3ème degré est aussi automatiquement biharmonique, et conduit à un état de contraintes linéaire 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \chi        & = \frac{1}{6}\left\{a x_1^3 + 3 b x_1^2 x_2 + 3 c x_1 x_2^2 + d x_2^3\right\} \\
+    \sigma_{11} & = c x_1 + d x_2 \quad \sigma_{22} = a x_1 + b x_2 \quad \sigma_{12} = -(b x_1 + c x_2)
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-038}
+\end{equation}
+$n=4$ : Pour un polynôme du 4ème degré, on a 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \chi         = \frac{1}{6}\left\{A x_1^4 + 2 B x_1^3 x_2 + 3 (A+D) x_1^2x_2^2 + 2 C x_1 x_2^3 + D x_2^4\right\} \\
+    \begin{aligned}
+      \sigma_{11} & = -(A+D) x_1^2 &+    2 C x_1 x_2 &+   2 D x_2^2 \\
+      \sigma_{22} & =    2 A x_1^2 &+    2 B x_1 x_2 &- (A+D) x_2^2 \\
+      \sigma_{12} & =     -B x_1^2 &+ 2(A+D) x_1 x_2 &-     C x_2^2 
+    \end{aligned}
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-039}
+\end{equation}
+et ainsi de suite. 
 
-On obtient ainsi pour tout entier TI une solution dépendant de 4 constantes. 
-n=2 ! Un polynôme du second degré est automatiquement biharmonique, et con­duit à un état de contraintes constant 
-'X ~ 1t IX. l:1.:,t .. Z f.> 1:>-,1:>-" .,. ~ x,," 1 
-(37) 
-[ 
-a:;~ = t (J"tl, : 01 cr:,l, : -~ 
-~ : Un polynôme du 3ème degré est aussi automatiquement biharmonique, et conduit à un état de contraintes linéaire 
--t
-'X = { a. 1:1.:, ~ + ~ t. ~:oc" + ~ C-IX, oc~ + .d. X; 1 
-G 
-(38~ 
-{ (\""\0\ =-c 1:1.:, + <toc./, <fJ.1, = a..~, + k'X../, (f"l-= -(k -:x., + ,c >:Cl,) 
--128 ­
-n=4 Pour un polynôme du 4ème degré, on a 
-~ 3 	t 1, ~ 
-'X = 	~ tAIX, + J, B'l:.~ /.t2" -?> (A + 1») ~1 1.tJ, +.t C/.t,ft}, + 1> ();l." 1 cr-= -(A .. 1») 'L+ .l, c 'l:., 'l:.J, + 1, J> x;
-f 	t 
-(39) 'H 	1 
-2, A 'LI, 	_ ( A <Il) IX.,t,
-<T!LJ,= ~ + 1, B~I.t,t, ,t,l /.t1, C 1,
-cr:;Q,~ -P-> + J., (A ... D)~ ./l:J, -4"
-1 
-et ainsi de suite. A titre d'application, montrons qu'une superposition de solutions de ce type permet de résoudre le problème de Saint-Venant en contraintes ou 
+À titre d'application, montrons qu'une superposition de solutions de ce type permet de résoudre le problème de Saint-Venant en contraintes ou déformations planes. 
+\begin{center}
+    \includegraphics{../images/T1_Ch08-02}
+\end{center}
+Le matériau occupe le rectangle $\left[0,l\right] \times\left [-h/2,h/2\right]$ ; la surface latérale $x_2=\pm h/2$ est libre de contrainte, et les extrémités $x_1=O$ et $x = l$ sont soumises à deux torseurs plans en équilibre (voir paragraphe \ref{ssec:Ch07-1.1}). 
+Les conditions aux limites sont donc, sur la surface latérale 
+\begin{equation}
+  x_2 = \pm h/2 \qquad \sigma_{12} = \sigma_{12} = 0
+    \label{eq:Ch08-040}
+\end{equation}
+et sur l'extrémité $x_1 = l$ 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+     \int^{+h/2}_{-h/2}     \sigma_{11} \ud x_2 & = P \\
+     \int^{+h/2}_{-h/2}     \sigma_{12} \ud x_2 & = Q \\
+    -\int^{+h/2}_{-h/2} x_2 \sigma_{11} \ud x_2 & = M
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-041}
+\end{equation}
+Bien entendu, comme nous l'avons discuté au paragraphe \ref{ssec:Ch07-1.1}, ce problème admet plusieurs solutions, et nous allons chercher s'il en existe une correspondant à une fonction de contrainte $\chi(x_1,x_2)$ polynôme non homogène du 4ème degré, c'est-à-dire superposition de \eqref{eq:Ch08-037}, \eqref{eq:Ch08-038} et \eqref{eq:Ch08-039}.
+La condition aux limites \eqref{eq:Ch08-040} donne 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \alpha +a x_1 \pm b \frac{h}{2} + 2 A x_1^2 \pm 2 B \frac{h}{2} x_1 - (A+D)\frac{h^2}{4} & = 0 \\
+    \beta +b x_1 \pm c \frac{h}{2} + B x_1^2 \pm (A+D) \frac{h}{2} x_1 + C \frac{h^2}{4}&=0
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-042}
+\end{equation}
+relations qui doivent être vérifiées pour tout $x_1$.
+Il vient
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    A = B = 0 \quad a = b =0 \quad B = A+D =0 \quad b = c =0\\
+    \alpha=(A+D)\frac{h^2}{4}=0 \quad \beta + C \frac{h^2}{4} =0
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-043}
+\end{equation}
+et il reste finalement
+\begin{equation}
+  \chi = \frac{C}{3} x_1 x_2^3 + \frac{d}{6} x_2^3 +\frac{\gamma}{2} x_2^2 - C\frac{h^2}{4} x_1 x_2
+    \label{eq:Ch08-044}
+\end{equation}
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \sigma_{11} & = 2 C x_1 x_2 + d x_2 + \gamma \\
+    \sigma_{12} & = C (\frac{h^2}{4} - x_2^2) \\
+    \sigma_{22} & = 0
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-045}
+\end{equation}
+Les trois conditions \eqref{eq:Ch08-041} permettent alors de déterminer les constantes $C$, $d$ et $\gamma$ en fonction de $P$, $Q$ et $M$ , c'est-à-dire des efforts appliqués 
+\begin{equation}
+  \gamma = \frac{P}{h} \qquad C = \frac{6Q}{h^3} \qquad \frac{12(M-Ql)}{h^3}
+    \label{eq:Ch08-044}
+\end{equation}
 
-e. 
-Le matériau occupe le rectangle [0,2] x[-{/~J t-/l]; la surface latérale «-l,=:!:f./:t est libre de contrainte, et les extrémités x)=O et x = l sont soumises à
-l 
-deux torseurs plans en équilibre (voir § VII.I. 1). Les conditions aux limi­teS sont donc, sur la surface latérale 
+La répartition des contraintes normales est linéaire, comme dans le cas général (paragraphe \ref{ssec:Ch06-1.2}) et la répartition des contraintes tangentielles $\sigma_{12}$ est parabolique. C'est ce que l'on obtiendrait à partir de l'analyse du paragraphe \ref{sec:Ch06-3} pour une section rectangulaire très large (déformations planes) ou très étroite (contraintes planes). 
 
-et sur l'extrémité x I= l 
+\subsection{Traction plane d'une plaque perforée}\label{ssec:Ch08-2.2}
+Pour certaines géométries simples, l'utilisation de la variable complexe permet de construire explicitement la solution d'une vaste classe de problèmes. 
+C'est en particulier le cas pour les domaines intérieurs ou extérieurs limités par un cercle. 
+À titre d'exemple, nous allons donner la solution qui correspond à la traction d'une plaque perforée. 
+\begin{center}
+    \includegraphics{../images/T1_Ch08-03}
+\end{center}
 
-Bien entendu, comme nous l'avons discuté au § VII.I.I, ce problème admet plusieurs solutions, et nous allons chercher s'il en existe une correspondant à une fonction de contrainte X(1:t.4: ) polynôme non homogène du 4ème degré,
-11 1I
-càd 	superposition de (37),(38) et (39). La condition aux limites (40) donne 
-
-relations qU1 doivent être vérifiées pour tout Il vient
-xI' 
-~ 
-= e, 	: 0 , a..=lr.O e, = A .. 'D 0 Jr s oC = 0 
-(43) 
-lA cl. -(A+ 1» ,!t = 0 {:> + C _ .l" 0
-'" 
-4 	4 
-(44) C .,:c, ');~ -t-d. -:c~ 1 'X ~ C Yt."
-x = --+ -t --/.IC,/.IC~
-, " G " l, 4 
-cr = .l,C 1.1:. ILJ, .. cl. ACt + t
-~~ 
-(45) 
-O"~'l, = C ( ~" le:)
-4 
-= 0 
-Les trois conditions (41) permettent alors de déterminer les constantes C , cl et r en fonction de 1', Q et M , càd des efforts appliqués 
-(46) 
-
-c = 
-
-La répartition des contraintes normales est linéaire, COmme dans le cas général (§ VI.I.2) et la répartition des contraintes tangentielles~" est parabolique. C'est ce que l'on obtiendrait à partir de l'analyse du § VI.3 pour une section rectangulaire très large (déformation, ulanes) ou très étroite (contraintes planes). 
-2.2 TRACTION D'UNE PLAQUE PERFOREE 
-Pour certaines géométries simples, l'utilisation de la variable complexe permet de construire explicitement la solution d'une vaste classe 
-de problèmes. C'est en particulier le cas pour les domaines intérieurs ou extérieurs limités par un cercle. A titre d'exemple, nous allons donner la 
-solution qui correspond à la traction d'une plaque perforée. 
-'X 4 ~~ 
-
---+----f-Ar:-o..---+~X1 
-
-
-Si le rayon Cl. du trou est petit par rapport aux dimensions de la plaque, on peut supposer en première approximation la plaque infinie. Dans le repère (x ,x), l'état de contraintes à l'infini est donc
-l 2
-(47) or 
-= 
-
-ce qui, d'après (33), correspond à 
-cr­
-(48) ; -r 
-. 4 
-
-c'est la solution qui se réalise en l'absence de trou, mais en présence d'un trou cette solution ne vérifie pas les CL sur le trou, qui s'écrivent 
-(49) 
-
-
-en notant c:r",~, (J"Jt.9 ,(J'9ft les composantes du tenseur des contraintes sur le repère (.e. ..... .e.e) associé aux coordonnées cylindriques. Le trou indui t donc dans (48) une perturbation, et on montre qu'alors 
-
-(JO' [ CL'"
-(50) 
-
--r --­
-t r 
-
+Si le rayon $a$ du trou est petit par rapport aux dimensions de la plaque, on peut supposer en première approximation la plaque infinie.
+Dans le repère $(x_1,x_2)$, l'état de contraintes à l'infini est donc
+\begin{equation}
+  \tens{\sigma}=
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & \sigma^{\infty}
+    \end{bmatrix}
+    \label{eq:Ch08-047}
+\end{equation}
+ce qui, d'après \eqref{eq:Ch08-033}, correspond à 
+\begin{equation}
+  G(z) = \frac{\sigma^{\infty}}{4} z \qquad K(z) = \frac{\sigma^{\infty}}{2}\frac{z^2}{2}
+    \label{eq:Ch08-048}
+\end{equation}
+C'est la solution qui se réalise en l'absence de trou, mais en présence d'un trou cette solution ne vérifie pas les conditions aux limites sur le trou, qui s'écrivent 
+\begin{equation}
+  r = a : \quad \sigma_{rr}=\sigma_{r\theta}=0
+    \label{eq:Ch08-049}
+\end{equation}
+en notant $\sigma_{rr}$, $\sigma_{r\theta}$, $\sigma_{\theta\theta}$ les composantes du tenseur des contraintes sur le repère $(\vec{e_r},\vec{e_{\theta}})$ associé aux coordonnées cylindriques. Le trou induit donc dans \eqref{eq:Ch08-048} une perturbation, et on montre qu'alors 
+\begin{equation}
+  G(z) = \frac{\sigma^{\infty}}{4}\left[z-\frac{a^2}{z}\right] \quad K'(z)=\frac{\sigma^{\infty}}{2}\left[z-\frac{a^2}{z}-\frac{a^4}{z^3}\right]
+    \label{eq:Ch08-050}
+\end{equation}
 Les contraintes sont alors données par 
-(J""[ é t, 4 
-_(À .;. 4IL + 3 CL) ~.2,e 1
-(J"II-JI. = 
-9-e -~",) 
-'1,'" fi} 
-4
-(j'"
-(51) 
-(j'Le = ( -1+-ié ~ CL ) Mm. .te 9-",'" '1,4 
-é 1
-?> CL'"
-(J"Q9 = (j" f (À + '1,"') + ( À .. '1.'" ) .c«> .2,e
-t 
-En particulier, sur le trou on a bien (49) et 
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \sigma_{rr} & = \frac{\sigma^{\infty}}{2}\left\{(1-\frac{a^2}{r^2})-(1-\frac{4a^2}{r^2}+\frac{3a^4}{r^4})\cos{2\theta}\right\} \\
+    \sigma_{r\theta} & = \frac{\sigma^{\infty}}{2} (1-\frac{2a^2}{r^2}+\frac{3a^4}{r^4})\sin{2\theta}  \\
+    \sigma_{\theta\theta} & = \frac{\sigma^{\infty}}{2}\left\{(1+\frac{a^2}{r^2})+(1+\frac{3a^2}{r^2})\cos{2\theta}\right\} 
+  \end{aligned}
+  \right.
+    \label{eq:Ch08-051}
+\end{equation}
+En particulier, sur le trou on a bien \eqref{eq:Ch08-049} et 
+\begin{equation}
+  \sigma_{\theta\theta}=\sigma^{\infty}(1+2\cos{2\theta})
+    \label{eq:Ch08-052}
+\end{equation}
 
-L'état de contraintes sur le bord du trou est un état de traction simple avec une contrainte variant de .. ~ cr" (traction, sur l'axe des xl) à a~ (compression, sur l'axe des xZ). La contrainte maximale est trois fois plus grande que la contrainte à l'infini. C'est un exemple de concen­tration de contrainte: la présence d'un trou, ou plus généralement d'un dé­faut, aussi petit soit-il, cause une augmentation importante des contraintes locales au voisinage du trou. 
+L'état de contraintes sur le bord du trou est un état de traction simple avec une contrainte variant de $+3\sigma^{\infty}$ (traction, sur l'axe des $x_1$) à $-\sigma^{\infty}$ (compression, sur l'axe des $x_2$). 
+La contrainte maximale est trois fois plus grande que la contrainte à l'infini. 
+C'est un exemple de concentration de contrainte : la présence d'un trou, ou plus généralement d'un défaut, aussi petit soit-il, cause une augmentation importante des contraintes locales au voisinage du trou. 
 
