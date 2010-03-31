@@ -1,6 +1,6 @@
-\chapter{Élasticité classique}
-\section{Les équations de l'élasticité}
-\subsection{Problèmes reguliers}
+\chapter{Élasticité classique} \label{chap:Ch06}
+\section{Les équations de l'élasticité} \label{sec:Ch06-1}
+\subsection{Problèmes reguliers} \label{ssec:Ch06-1.1}
 Pour résoudre un problème d'élasticité, il faut donc trouver un champ de déplacements $u_i\left( x,t \right)$ et un champ de contraintes $\sigma_{ij}\left( x,t \right)$ vérifiant les équations du mouvement ou d'équilibre suivant que l'on s'intéresse au problème dynamique ou quasi-statique
 \begin{equation}
     \sigma_{ij,j} + f_i = \rho \frac{\partial^2 u_i}{\partial t^2} \text{ ou } 0
@@ -23,7 +23,7 @@ Les CI donnent la position et la vitesse du milieu à l'instant 0
     \label{eq:Ch06-004}
 \end{equation}
 
-Les différents types de CL que l'on peut rencontrer ont été discutées au paragraphe~\ref{ssec:Ch4-1.2}.
+Les différents types de CL que l'on peut rencontrer ont été discutées au paragraphe~\ref{ssec:Ch04-1.2}.
 On définit classiquement
 \begin{description}
     \item[Problème de type I.] Les déplacements sont donnés à la frontière
@@ -88,7 +88,7 @@ Dans les deux cas, il s'agit de CL non linéaires qui rendent le problème non l
 Les liaisons élastiques donnent un exemple de problème linéaire non régulier.
 Nous rencontrerons aussi des problèmes non réguliers par manque de données, mais il s'agit alors d'une non régularité superficielle, et qui ne nous gênera guère.
 
-\subsection{Theorème d'unicité en dynamique}
+\subsection{Theorème d'unicité en dynamique} \label{ssec:Ch06-1.2}
 Comme nous l'avons affirmé plus haut, un problème régulier est bien 
 posé, c'est à dire admet une solution unique.
 A titre d'exemple, nous allons démontrer le théorème d'unicité dans le cas dynamique.
@@ -158,9 +158,9 @@ On a donc en tout point et à tout instant $\partial \bar{u}_i/\partial t = 0$ d
     \label{eq:Ch06-021}
 \end{equation}
 Les deux solutions coïncident et le problème \eqref{eq:Ch06-012} a une solution unique.
-Nous démontrerons au chapitre \ref{chap:09} le théorème d'unicité peur le problème statique, mais provisoirement nous l'admettrons.
+Nous démontrerons au chapitre \ref{chap:Ch09} le théorème d'unicité peur le problème statique, mais provisoirement nous l'admettrons.
 
-\subsection{Équations de Navier}
+\subsection{Équations de Navier} \label{ssec:Ch06-1.3}
 Pour résoudre analytiquement un problème d'élasticité, on postule \textit{a priori} une forme particulière pour la solution, et on essaie de vérifier toutes les équations.
 Si on y parvient, alors d'après le théorème d'unicité pour un problème régulier, c'est la solution du problème.
 Il en résulte donc deux méthodes, suivant que l'on essaie un champ de déplacement ou un champ de contraintes.
@@ -214,7 +214,7 @@ Si on prend la divergence de l'équation \eqref{eq:Ch06-025}, on obtient l'équa
 \end{equation}
 qui nous sera utile plus loin.
 
-\subsection{Équations de Beltrahi}
+\subsection{Équations de Beltrahi} \label{ssec:Ch06-1.4}
 La seconde méthode de résolution consiste à postuler un champ de contraintes.
 La loi de comportement permet alors de calculer le champ des déformations, mais pour pouvoir calculer le vecteur déplacement, il faut que ce champ de déformations soit compatible (paragraphe~\ref{sec:Ch03-3}).
 Ainsi le champ de contraintes choisi doit vérifier les équations d'équilibre et un système d'équations traduisant les équations de compatibilité.
@@ -271,10 +271,10 @@ puis, le cas échéant
 On voit donc que cette méthode s'applique tout naturellement aux problèmes de type II pour lesquels on peut sauter les deux dernières étapes.
 Nous en verrons des exemples au paragraphe~\ref{ssec:Ch06-2.1} et aux paragraphe~\ref{ssec:Ch07-2.2} et \ref{ssec:Ch07-3.1}.
 
-\section{Exemples de problèmes simples}
+\section{Exemples de problèmes simples} \label{sec:Ch06-2}
 Comme premier exemple, on peut citer le problème de la compression d'un lopin avec CL de non frottement, qui a été résolu de manière tout à fait générale au paragraphe~\ref{ssec:Ch04-1.3}.
 Nous allons traiter deux autres exemples tirés du paragraphe~\ref{sec:Ch04-1}.
-\subsection{Déformation d'un bloc pesant}
+\subsection{Déformation d'un bloc pesant} \label{ssec:Ch06-2.1}
 \begin{multicols}{2}
     \begin{center}
         \includegraphics{../images/T1_Ch06-01}
@@ -402,7 +402,7 @@ d'où finalement la solution, en revenant à $x_3$
     \columnbreak
     On en tire l'allure de la déformation du bloc.
 \end{multicols}
-\subsection{Réservoir sphérique sous pression}
+\subsection{Réservoir sphérique sous pression} \label{ssec:Ch06-2.2}
 \begin{multicols}{2}
     Nous considérons le réservoir sphérique sous pression du paragraphe~\ref{sec:Ch04-1} avec $f_i = 0$ et les CL
     \begin{equation}
@@ -453,7 +453,7 @@ Il reste à déterminer les constantes d'intégration $\alpha$ et $\beta$ pour v
 Pour cela, nous devons calculer les contraintes
 \begin{equation}
     \varepsilon_{ij} = \left( \alpha + \frac{\beta}{r^3} \right)\delta_{ij} - \frac{3\beta x_i x_j}{r^5}
-    \label{eq:Ch06-048}
+    \label{eq:Ch06-049}
 \end{equation}
 et nous allons écrire la loi de comportement sous la forme \eqref{eq:Ch06-039}.
 En effet, la décomposition de \eqref{eq:Ch06-049} en partie sphérique et déviateur donne directement
@@ -520,7 +520,7 @@ On obtient donc la condition
 \end{equation}
 qui donne la pression maximale que peut supporter le réservoir en restant dans le domaine élastique.
 En particulier, quelles que soient les dimensions du réservoir, on ne peut pas dépasser la pression limite $2\sigma_e/3$.
-Nous reviendrons sur ce problème en plasticité au chapitre~\ref{chap:10}.
+Nous reviendrons sur ce problème en plasticité au chapitre~\ref{chap:Ch10}.
 
 La solution générale \eqref{eq:Ch06-051} que nous avons obtenue permet de traiter également d'autres problèmes
 \begin{itemize}

@@ -1,6 +1,6 @@
-\chapter{Le problème de Saint Venant}
-\section{Traction et flexion pure}
-\subsection{Le principe de Saint Venant}
+\chapter{Le problème de Saint Venant} \label{chap:Ch07} 
+\section{Traction et flexion pure} \label{sec:Ch07-1}
+\subsection{Le principe de Saint Venant} \label{ssec:Ch07-1.1}
 Le problème de Saint Venant est le problème de base de la Résistance des Matériaux.
 Une poutre cylindrique est sollicitee à ses deux extrémités, les efforts exercés étant caractérisés par leur torseur résultant.
 \begin{multicols}{2}
@@ -156,7 +156,7 @@ Nous adopterons donc l'approche du \ref{ssec:Ch06-1.4} en cherchant un champ de 
     \item les CL~\eqref{eq:Ch07-001} sur la surface latérale
     \item les conditions \eqref{eq:Ch07-005},\eqref{eq:Ch07-006},\eqref{eq:Ch07-007},\eqref{eq:Ch07-008}, pour le problème étudié.
 \end{itemize}
-\subsection{Répartition des contraintes normales}
+\subsection{Répartition des contraintes normales} \label{ssec:Ch07-1.2}
 On constate tout d'abord sur \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, que $\mathcal{R}_1$, $\mathcal{M}_2$, $\mathcal{M}_3$ ne font intervenir que la contrainte normale (pour une facette de la section droite) $\sigma_{11}$.
 Nous cherchons donc le champ des contraintes sous la forme
 \begin{equation}
@@ -219,7 +219,7 @@ On peut trouver dans le plan $x_2$, $x_3$ deux directions principales d'inertie 
     \label{eq:Ch07-020}
 \end{equation}
 Nous choisirons ces directions principales comme axes $x_2$, $x_3$.
-Pratiquement, si la section a un axe de symétrie, alors cet axe est principal d'inertie, car la symétrie entraîne \eqref{eq:Ch07-02O}.
+Pratiquement, si la section a un axe de symétrie, alors cet axe est principal d'inertie, car la symétrie entraîne \eqref{eq:Ch07-020}.
 Sinon la diagonalisation est facile, et on peut en particulier utiliser la méthode géométrique exposée au paragraphe~\ref{ssec:Ch03-3.2} pour le tenseur des contraintes.
 
 Avec ce choix d'axes, \eqref{eq:Ch07-017} devient simplement
@@ -258,7 +258,7 @@ C'est la solution du problème régulier associé aux CL
 \end{equation}
 En général, les CL réelles -- par exemple dans un essai de traction -- sont différentes, mais le principe de Saint Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage, et c'est bien ce que l'on fait dans un essal de traction.
 
-\subsection{Flexion pure}
+\subsection{Flexion pure} \label{ssec:Ch07-1.3}
 Considérons maintenant le problème 6 -- le problème 5 se traiterait de manière identique.
 Le tenseur des contraintes a la forme suivante
 \begin{equation}
@@ -384,8 +384,8 @@ Ainsi, d'un point de vue géométrique, la rigidité d'une poutre est caractéri
 \end{multicols}
 Ceci montre la supériorité, à poids égal,de la section en $I$ sur la section rectangulaire et, plus généralement, des sections en profil mince sur les sections massives.
 
-\section{Torsion}
-\subsection{Section circulaire ou annulaire}
+\section{Torsion} \label{sec:Ch07-2}
+\subsection{Section circulaire ou annulaire} \label{ssec:Ch07-2.1}
 Avant d'aborder le cas général, nous allons envisager le cas simple d'une section circulaire ou annulaire.
 On ohserve alors qu'en torsion, chaque section droite tourne, par rapport à la section $x_1=O$, d'un angle proportionnel à la distance
 \begin{multicols}{2}
@@ -529,7 +529,7 @@ soit, compte tenu de \eqref{eq:Ch07-041} et de la valeur de $I_0$
     \label{eq:Ch07-047}
 \end{equation}
 ce qui, superposé à l'état de contraintes dû à une traction simple, redonne bien la forme \eqref{eq:Ch04-036} obtenue au paragraphe~\ref{ssec:Ch04-1.4}.
-\subsection{Théorie générale}
+\subsection{Théorie générale} \label{ssec:Ch07-2.2}
 Nous considérons maintenant le problème 4 dans le cas d'une section quelConque.
 Le paragraphe~\ref{sec:Ch07-1} a montré que la contrainte normale $\sigma_{11}$ était déterminée par $\mathcal{R}_1$, $\mathcal{M}_2$, $\mathcal{M}_3$.
 Puisqu'ici ils sont nuls, on prendra donc $\sigma_{11}=0$.
@@ -695,221 +695,251 @@ où $\rho$ est une longueur caractéristique de la section $\Sigma$.
 On peut par ailleurs montrer que la borne supérieure de $\abs{\grad \varphi}$ est nécessairement atteinte sur la frontière de $\Sigma$.
 Ainsi le problème général de la torsion est résolu, sitôt que l'on connaît la solution $\varphi\left( x_2,x_3 \right)$ du problème \eqref{eq:Ch07-060}. 
 
-\subsection{Calcul du déplacehent}
+\subsection{Calcul du déplacehent} \label{ssec:Ch07-2.3}
+Pour terminer le calcul, il reste à calculer le déplacement.
+A partir de \eqref{eq:Ch07-048}, \eqref{eq:Ch07-052} et \eqref{eq:Ch07-059}, le tenseur des déformations est donné par
+\begin{equation}
+    \tens{\varepsilon} = 
+    \frac{\alpha}{2} 
+    \begin{bmatrix}
+        0 & \varphi_{,3} & -\varphi_{,2} \\
+        \varphi_{,3} & 0 & 0 \\
+        -\varphi_{,2} & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-069}
+\end{equation}
+et on peut intégrer le champ de déplacements
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \varepsilon_{11} = u_{1,1} = 0 & \Rightarrow & u_1 =u_1 \left( x_2,x_3 \right) \\
+        \varepsilon_{22} = u_{2,2} = 0 & \Rightarrow & u_2 =u_2 \left( x_1,x_3 \right) \\
+        \varepsilon_{33} = u_{3,3} = 0 & \Rightarrow & u_3 =u_3 \left( x_1,x_2 \right)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-070}
+\end{equation}
+\[
+2\varepsilon_{23} = u_{2,3} + u_{3,2} =0 \quad \Rightarrow \quad u_{2,3} = - u_{3,2} = A(x_1)
+\]
+(car $u_{2,3} = u_{2,3}(x_1,x_3)$ et $u_{3,2} = u_{3,2} (x_1,x_2)$) et on a
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_2 = A(x_1) x_3 + B(x_1)\\
+        u_3 = -A(x_1) x_2 + C(x_1)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-071} 
+\end{equation}
+et on peut interpréter $A(x_1)$ comme étant la rotation de la section droite d'abscisse $x_1$
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        &2\varepsilon_{12} = u_{1,2} + u_{2,1} = u_{1,2} + A'(x_1) x_3 + B'(x_1) = \alpha \varphi_{,3}\\
+        &2\varepsilon_{13} = u_{1,3} + u_{3,1} = u_{1,3} - A'(x_1) x_2 + C'(x_1) = \alpha \varphi_{,2}
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-072}
+\end{equation}
+Mais dans ces relations, seules les dérivées $A'(x_1) (=\ud A /\ud x_1)$, $B'(x_1)$ et dépendent de $C'(x_1)$ elles doivent donc être constantes 
+\[
+A(x_1) = -a x_1 +d \quad,\quad B(x_1) = b x_1 +e \quad,\quad C(x_1) = c x_1 +f
+\]
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_2 &= -a x_1 x_3 + \ud x_3 + b x_1 + e\\
+        u_3 &= a x_1 x_2 \underbrace{- \ud x_3 + c x_1 + f}_{\text{Déplacement de solide rigide}}
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-073} 
+\end{equation}
+On voit sur \eqref{eq:Ch07-073} que les 5 constantes $b$, $c$, $d$, $e$, $f$ correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration.
+A un déplacement de solide près, on a donc 
+\begin{equation}
+    u_2 = -a x_1 x_3 \quad , \quad u_3 = a x_1 x_2
+    \label{eq:Ch07-074}
+\end{equation}
+ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la constante $a$, rotation par unité de longueur, est donc «~l'angle unitaire de torsion~» introduit au paragraphe~\ref{ssec:Ch07-1.1} pour la section circulaire.
+On peut maintenant calculer $u_1$ à partir de \eqref{eq:Ch07-072} 
+\begin{equation}
+    u_{1,2} = \alpha \varphi_{,3} + a x_3 \quad , \quad u_{1,3} = -\alpha \varphi_{,2} - a x_2
+    \label{eq:Ch07-075}
+\end{equation}
+système qui sera intégrable si et seulement si $u_{1,23} = u_{1,32}$
+\begin{displaymath}
+    \alpha \Delta \varphi + 2 a = 0
+\end{displaymath}
+ce qui, d'après \eqref{eq:Ch07-060}, donne finalement $a=\alpha$, et la constante $\alpha$, introduite en \eqref{eq:Ch07-054} est l'angle unitaire de torsion, et le déplacement est finalement, à un déplacement de solide près 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        u_1 &= \alpha \psi (x_2, x_3) \\
+        u_2 &= - \alpha x_1 x_3 \\
+        u_3 &= \alpha x_1 x_2
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-076}
+\end{equation}
+Ainsi, la rotation de chaque section s'accompagne d'un «~gauchissement~» que l'on peut observer expérimentalement.
+La fonction de gauchissement $\psi$ est donnée par 
+\begin{equation}
+    \frac{\partial \Psi}{\partial x_2} = \left( \frac{\partial \varphi}{\partial x_3} + x_3 \right) \quad , \quad \frac{\partial \Psi}{\partial x_3} = -\left( \frac{\partial \varphi}{\partial x_2} + x_2 \right)
+    \label{eq:Ch07-077}
+\end{equation}
+et $\psi$ est la fonction harmonique conjuguée de la fonction harmonique $\varphi + \frac{1}{2} (x_2^2 + x_3^2)$.
+Si 	on calcule sur $\partial \Sigma$ la dérivée normale de $\psi$, il vient, en utilisant \eqref{eq:Ch07-056} et \eqref{eq:Ch07-057} 
+\begin{align*}
+    \frac{\ud \psi}{\ud n} &= \frac{\partial \psi}{\partial x_2} n_2 + \frac{\partial \psi}{\partial x_3} n_3 \\
+    &= \left( \frac{\partial \varphi}{\partial x_3} \frac{\ud x_2}{\ud s} + \frac{\partial \varphi}{\partial x_2} \frac{\ud x_2}{\ud s} \right) + x_3 \frac{\ud x_2}{\ud s} + x_2 \frac{\ud x_2}{\ud s} \\
+    &= \frac{\ud}{\ud s} \left[ \frac{1}{2} \left( x_2^2 + x_3^2 \right) \right]
+\end{align*}
+quantité connue le long de $\partial \Sigma$.
+Ainsi la fonction $\psi$ vérifie
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        &\Delta \psi = 0 \\
+        &\frac{\ud \psi}{\ud n} = \frac{\ud}{\ud s} \left[ \frac{1}{2} \left( x_2^2 + x_3^2 \right) \right] & \text{ sur } \partial \Sigma
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-078}
+\end{equation}
+c'est un problème de Neumann, qui admet une solution unique.
+Ainsi, pour résoudre le problème de torsion, on peut, soit calculer $\varphi$ par le problème \eqref{eq:Ch07-060} et en déduire ensuite $\psi$ par \eqref{eq:Ch07-077}, soit calculer $\psi$ par le problème \eqref{eq:Ch07-078} et en déduire ensuite $\varphi$ par \eqref{eq:Ch07-077}. 
+
+Finalement, si l'on compare les relations \eqref{eq:Ch07-064} et \eqref{eq:Ch07-068} du cas général, aux relations \eqref{eq:Ch07-041} et \eqref{eq:Ch07-046} relatives à la section circulaire, on constate que, dans le cas général également, la rigidité de la section est caractérisée par le module de rigidité $I$ et sa résistance par le rapport $I/\eta$.
+Mais dans le cas général, 
+\begin{inparaenum}[a)]
+    \item il faut résoudre le problème \eqref{eq:Ch07-060} pour pouvolr calculer ces constantes (nous verrons cependant au chapitre~\ref{chap:Ch09} que l'on peut obtenir des estimations de $I$ sans calculer $\varphi$),
+    \item la torsion s'accompagne d'un gauchissement des sections.
+        Si ce gauchissement est empêché, par exemple par des CL d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre).
+\end{inparaenum}
+
+Bien entendu, conformément à la démarche générale décrite au paragraphe~\ref{ssec:Ch07-1.1}, nous avons résolu un problème particulier correspondant au problème de la torsion, et le principe de Saint Venant nous permet d'affirmer que loin des extrémités c'est la solution.
+Il peut être utile de fonnuler explicitement le problème régulier que nous avons résolu.
+Pour cela, il faut compléter les CL~\eqref{eq:Ch07-001} par des CL sur les extrémités.
+On pourrait écrire des CL donnant sur les extrémités le dêplacement $(u_1, u_2, u_3)$ connu par \eqref{eq:Ch07-076}, ou bien donnant les efforts appliqués $\vec{T}$ connus par \eqref{eq:Ch07-065} et \eqref{eq:Ch07-052}, mais la formulation la plus commode, que nous utiliserons au chapitre~\ref{chap:Ch09}, fait intervenir des données mixtes
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        x_1 = 0 : &\ \sigma_{11} = 0 \quad , \quad u_2 = u_3 = 0 \\
+        x_1 = l : &\ \sigma_{11} = 0 \quad , \quad u_2 = -\alpha l x_3 \quad,\quad u_3 = \alpha l x_2
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-079} 
+\end{equation}
+Rajoutées à \eqref{eq:Ch07-001}, ces CL définissent bien un problème régulier (paragraphe~\ref{ssec:Ch06-1.1}), et cette formulation présente l'avantage de ne pas faire intervenir les fonctions $\varphi$ ou $\psi$ \textit{a priori} inconnues. 
+
+\subsection{Sections particulières} \label{ssec:Ch07-2.4}
+\subsubsection{Section circulaire}
+D'après la symétrie, les fonctions $\varphi$ et $\psi$ ne dépendent que de $r$.
+Il vient directement 
+\begin{equation}
+    \varphi =\frac{1}{2}\left( a^2 - r^2 \right) \quad , \quad \psi = 0 \quad , \quad r^2 = x_2^2 + x_3^2 
+    \label{eq:Ch07-080}
+\end{equation}
+et on retrouve tous les résultats du paragraphe~\ref{ssec:Ch07-1.1}.
+En particulier, la fonction de gauchissement est nulle.
+\subsubsection{Section elliptique}
+\begin{multicols}{2}
+    La section $\Sigma$ est limitée par l'ellipse d'équation
+    \begin{equation}
+        \frac{x_2^2}{a^2} + \frac{x_3^2}{b^2} = 1
+        \label{eq:Ch07-081}
+    \end{equation}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-16}
+    \end{center}
+\end{multicols}
+On trouve alors pour $\varphi$ et $\psi$
+\begin{align}
+    \varphi &= \frac{a^2 b^2}{a^2 + b^2} \left( 1 - \frac{x_2^2}{a^2} - \frac{x_3^2}{b^2} \right) \label{eq:Ch07-082}\\
+    \psi &= \frac{a^2 - b^2}{a^2 + b^2} x_2 x_3 \label{eq:Ch07-083}
+\end{align}
+Pour le module de rigidité à la torsion, on trouve
+\begin{equation}
+    I = \frac{\pi a^3 b^3}{a^2 + b^2}
+    \label{eq:Ch07-084}
+\end{equation}
+Les contraintes sont données par
+\begin{equation}
+    \begin{aligned}
+        \sigma_{12} &= - \frac{\mathcal{M}}{I} \frac{\partial \varphi}{\partial x_3} = - \frac{2 \mathcal{M}}{\pi a b^3} x_3 \\
+        \sigma_{13} &= \frac{\mathcal{M}}{I}\frac{\partial \varphi}{\partial x_2} = \frac{2 \mathcal{M}}{\pi a^3 b} x_2
+    \end{aligned}
+    \label{eq:Ch07-085}
+\end{equation}
+et la contrainte de cisaillement maximale
+\begin{equation}
+    \abs{\vec{T}}_{\text{max}} = \sup \frac{2\mathcal{M}}{\pi a b} \sqrt{\frac{x_3^2}{b^4} + \frac{x_2^2}{a^4}} = \frac{2\mathcal{M}}{\pi a b^2}
+    \label{eq:Ch07-086}
+\end{equation}
+est atteinte à l'extrémité du petit axe $x_3 = b$, ce qui donne 
+\begin{equation}
+    \rho = \frac{2 a^2 b}{a^2 + b^2}
+    \label{eq:Ch07-087}
+\end{equation}
+\subsubsection{Section rectangulaire}
+\begin{multicols}{2}
+    On recherche la solution sous forme d'un développement en série de Fourier double 
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-17}
+    \end{center}
+\end{multicols}
+\begin{equation}
+    \varphi = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} A_{mn} \cos \frac{(2m-1)\pi x_2}{2a} \cos \frac{(2n-1)\pi x_3}{2b}
+    \label{eq:Ch07-088}
+\end{equation}
+qui vérifie automatiquement la CL \eqref{eq:Ch07-058}.
+On dérive \eqref{eq:Ch07-088} terme à terme, ce qui permet  d'obtenir le développement de $\Delta\varphi$ que l'on identifie  avec le développement de la fonction constante $-2$, et  on  obtient les  constantes $A_{mn}$.
+
+On obtient des calculs plus simples en cherchant la solution sous la forme 
+\begin{equation}
+    \varphi = \sum_{m=0}^{\infty} \cos \frac{(2m-1) \pi x_2}{2a} \psi_m (x_3)    
+    \label{eq:Ch07-089}
+\end{equation}
+développement en série de Fourier simple (mais qui présente l'inconvénient de détruire la symétrie en $x_2$ et $x_3$).
+On calcule $\Delta \varphi$ par dérivation terme à terme, on  identifie  avec le développement de la constante $-2$, et on  obtient pour $\psi_m$ une équation différentielle du second ordre
+\begin{displaymath}
+    \frac{\ud^2 \psi_m}{\ud x_3^2} - \left( \frac{(2m-1)^2\pi^2}{2a} \right)^2 \psi_m (x_3) = (-1)^m \frac{8}{(2m-1)\pi}
+\end{displaymath}
+qui donne $\psi_m$ par intégration avec les conditions aux limites $\psi_m(\pm b)=0$.
+On obtient finalement
+\begin{equation}
+    \varphi = \frac{32a^3}{\pi^3} \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m-1)} \left\{ 1 - \frac{\cosh \frac{(2m-1)\pi x_3}{2a}}{\cosh \frac{(2m-1)b}{2a}} \right\} \cos \frac{(2m-1)\pi x_2}{2a}
+    \label{eq:Ch07-090}
+\end{equation}
+qui permet de calculer la solution et en particulier le module de rigidité à la torsion $I$ et la longueur $\rho$ qui intervient dans \eqref{eq:Ch07-068}.
+On trouve 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        I &= 16 a^3 b h_1 (b/a) = 4 S a^2 h_1 (b/a) \\
+        \rho &= 2 a h (b/a)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-091}
+\end{equation}
+la contrainte tangentielle maximale étant obtenue au milieu du grand côté $x_3 = \pm b$ si on suppose $a>b$.
+Les fonctions $h_1$ et $h$ sont données par le tableau suivant 
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c}
+    $b/a$ & 1 & 1,5 & 2 & 3 & 5 & $\infty$ \\ \hline
+    $h$ & 0,675 & 0,848 & 0,930 & 0,985 & 0,999 & 1 \\ \hline
+    $h_1$ & 0,141 & 0,196 & 0,229 & 0,263 & 0,291 & 1/3
+\end{tabular}
+\end{center}
+
+Plus généralement, on sait résoudre explicitement le problème pour quelques sections particulières (triangle équilatéral, section circulaire entaillée d'un demi-cercle, etc.)
+Comme le problème se ramène à des calculs de fonctions harmoniques, on peut également utiliser les techniques de variable complexe (voir~\cite{Love-44,Muskhelishvili-53}).
+Enfin, le problème \eqref{eq:Ch07-060} se prête bien au calcul numérique.
+
+\section{Flexion composée}
 \endinput
-Pour terminer le calcul, il reste à.calculer le déplacement. A par­
-tir de \eqref{eq:Ch07-048},\eqref{eq:Ch07-052} et \eqref{eq:Ch07-059}, le tenseur des déformations est donné par 
-o 
--'f,!l, 
-\label{eq:Ch07-069} ( = d o o o o 
-
-et on peut intégrer le champ de déplacements 
-Eq = ...u.1.I~ = 0 ~ ..l.L, = »-, (l,' -:c~) 
-
-\label{eq:Ch07-070} 0
-t~l. = .u~l. = => .u.2,~ ..l.L:, ( 'l:." êCa)
-1
-{ 
-= = 0 => .Al,> = A.t:!> (x., , 'Ll,)
-t" ..u, >, " 
-2 E.t" :-4-1,, " ... AL,,:l, =-0 ~ ..ll.!" , --..u. =-A(x., )
--"~ (ca r Al ~}1> =-..l.L.t.,t:.(x-1,1 -.: ~) et .u.." , ~ = Ai. _ ,~( 'J." -x..<> ) et on a 
-
-et on peut interpréter A\eqref{eq:Ch07-00'};.,) comme étant la rotat ion de la section cl rD i te 
-d'abscisse 
-'X., 
-, 
-~
-J; ~~ = .J.t..,-1.I~ t--'L~ ,~ ...u.."11. ;-A'( "-,) 'J:, .;-\) CT,) = c< 'f,?,
-\label{eq:Ch07-072} 
-
-
-f :t = Â 	= 4 -A' l'x:,) r:r.:. t C'('L,) -cl. <t',.l,
-
-t~" + ...u...~J1.
-~,' 
-"" 
-Mais dans ces relations, seules les dérivées A'\eqref{eq:Ch06-0T,}(= riA/J./r..~), 17,'('.1:,) et dépendent de X ; elles doivent donc être constantes 
-1 
-Aex,) = -a..X, + cl 
--Ll:, a.. 'X, 'X., .;-cL'l:, ;-~:x., +.e
-
-'" 
-\label{eq:Ch07-073} 
-f 43 = Q., 'X, XJ, 	-'-cL 'J:, 1-.c Xi + { 
-Déplacement de solide rigide 
-
-On voit sur \eqref{eq:Ch06-073} que les 5 constantes t, .c , .a.. e. , f . correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration. A un déplace-ment de solide près, on a donc 
-
-
-ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la cons­tante a.. , rotation par unité de longueur, est donc "l'angle unitaire de tor­sionl! introduit au § 1.1 pour la section circulaire. On peut maintenant calcu­
-
-à partir de \eqref{eq:Ch06-072} 
-\label{eq:Ch07-075} 
-
-système qUI sera intégrable SSi 
-
-
-ce qU1, d'après \eqref{eq:Ch06-060}, donne finalement Q..= ex , et la constante ex. , introduite en \eqref{eq:Ch06-054} est l'angle unitaire de torsion, et le déplacement est finale~ent, à un déplacement de solide près 
-! 
-0(
-.1.\., = '\f (X.!" ':C,) 
-\label{eq:Ch07-076} 
-.I.\.:l, = cl. ':C. ':C~ 
-At, = C( 'J:" 'l:.J., 
-
-Ainsi, la rotation de chaque section s'accompagne d'un "gauchissement" que l'on peut observer expérimentalement. La fonction de gauchissement l( est donnée par 
-\label{eq:Ch07-077} 
-
-
-et \f est la fonction harmonique conjuguée de la fonction harmonique 
-~\label{eq:Ch07-003} 3» 
-
-Si 	on calcule sur '0 z:. la dérivée normale de \fl ' il
-'f + 	.ï + :CJ
-'X-.1 
-vient, en utilisant \eqref{eq:Ch06-056} et \eqref{eq:Ch06-057} 
-ci'f o1ji é,,+,
-'Tt.l, t-'Tt,
-'" 
-d."" â :C.l, '() 'X. ~ d.:c~ 'èl'f' ci:C, d,'L
-( 'à 'fi 	+ !;:J, _l,
-+ 	+ ~'\
-'" 	'à ):.3 dl. d ::Col-~") <th J.b cl (~('x2,+ :1:.1)J
-'" .2, .t ;
-ru 
-quantité connue le long de 'dL. Ainsi la fonction,+, vérifie 
-0
-f 	6'1' '" 
-\eqref{eq:Ch06-078} 	cL,,+, cl. [~ (~. 2,)] sur dL
---'Xl, + (1;,
-'" 
-ci'1\. dA .~
-l 
-c'est un problème de Neumann, qui admet une solution unique. Ainsi, pour résoudre le problème de torsion, on peut, soit calculer f par le problème 
-
-\eqref{eq:Ch06-060} et en déduire ensuite '"'1' par \eqref{eq:Ch06-077}, soit calculer l' par le problème \eqref{eq:Ch06-078} et en déduire ensuite 'f' par \eqref{eq:Ch06-077}. 
-Finalement, si l'on compare les relations \eqref{eq:Ch06-064} et \eqref{eq:Ch06-068} du cas géné­ral, aux relations \eqref{eq:Ch06-041} et \eqref{eq:Ch06-046} relatives à la section circulaire, on consta­te que, dans le cas général également, la rigidité de la section est caracté­risée par le module de rigidité l et sa résistance par le rapport Ilrrt Mais dans le cas général, a) il faut résoudre le problème \eqref{eq:Ch06-060} pour pouvolr calculer ces constantes (nous verrons cependant au chapitre IX que l'on peut obtenir des estimations de l sans calculer Cf ), b) la torsion SI accompagne d'un gauchissement des sections. Si ce gauchissement est empêché, par exemple par des CL d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre). 
-Bien entendu, conformément à la démarche générale décrite au § 1.1, nous avons résolu un problème particulier correspondant au probl~me de la tor­sion, et le principe de Saint Venant nous permet d'affirmer que loin des ex­trémités c'est la solution. Il peut être utile de fonnuler expliciter..ent le problème régulier que nous avons résolu. Pour cela, il faut compléter les CL 
-\eqref{eq:Ch07-001} par des CL sur les extrémités. On pourrait écrire des CL donnant sur les extrémités le dêplacement (.él, Al~, ÂJ.,,) connu par \eqref{eq:Ch06-076}, ou bien donnant les 
-1 
-~ 
-efforts appliqués T connus par \eqref{eq:Ch06-065} et \eqref{eq:Ch06-052}, mais la formulation la plus com­
-mode, que nous utiliserons au chapitre IX, fait intervenir des données mixtes 
-
-_ 0 
-
-Â,j, S .tl.! = 0 
-\eqref{eq:Ch06-079} 
-= 0 ..tJ..J.,= -O(.Q'X-~
- 
-
-Rajoutées à \eqref{eq:Ch07-001}, ces CL définissent bien un problème régulier (§ VI.I.I), et cette formulation présente l'avantage de ne pas faire intervenir les fonctions 
-<f ou 1t' a priori inconnues. 
-2.4 SECTIONS PARTICULIERES 
-Section circulaire 
-D'après la symétrie, les fonctions If et 'Y ne dépendent que de r. Il vient directement 
-\eqref{eq:Ch06-080} ./ (1, 1,)
-'f=i; Q.-'I. ~ = 0 
-
-et on retrouve tous les résultats du § J.I . En particulier, la fonction de 
-gauchissement est nulle. 
-.r 
-J
-Section elliptique 
-La section ~ est limitée par 
-l'ellipse d'équation 
-
-Q 
-(81 ) 
-
-On trouve alors pour <p et "t' 
-t, ~ 
-0.1, }}' 
-( -! -Xl. X~ )
-\eqref{eq:Ch06-082} c
-i 
-Q.,l,
-Q.,.L+ ~? t.L 
-a.,.L _ J..'" 
-\eqref{eq:Ch06-083} 
-l' = ');.,1, 'l:3 
-Q.J., +;"1, Pour le module de rigidité à la torsion, on trouve 
-\eqref{eq:Ch06-084} 
-l = 
-
-Les contraintes sont données par 
-[ 
-a-'l'Il. o'f .t'lll. 
-.. J., = -= ':(.3
-l 'è a!. 11 o.t~ 
-\eqref{eq:Ch06-085} 
-'IY1. 'Of .2,'fQ 
-cr~~ = = ');.~
-n Q.;..p,.
-l "ô :x:.J., 
-et la contrainte de cisaillement maximale 
-'I~ 'Il"
-2'Tl1.. 
-~"nl
-~ . l"
-\eqref{eq:Ch06-086} ­
-+ =
-1 T ItmOJ:c = .bI>f­
-!" (L" 7t a. !)}
-lla...Q,. 
-est atteinte à l'extrémité du petit axe OC!.:=' Z. , ce qui donne 
-
-:0
-\eqref{eq:Ch06-087} f = 
-Q,l,+ p,.l" Section ree tangulaire 
-~ 
-CL ,
-On recherche la solution sous forme d'un développement en série de Fourier double 
-
-qui vérifie automatiquement la CL \eqref{eq:Ch06-058}. On dérive \eqref{eq:Ch06-088} terme à terme, ce qUl 
-permet  d'obtenir le développement  de 6~ que  l'on identifie  avec le dévelop­ 
-pernent  de  la fonction  constante· -2 , et  on  obtient les  constantes A . tm.'1\,  
-On obtient des  calculs plus simples  en  cherchant  la solution  sous  
-
-la forme 
-co 
-\eqref{eq:Ch06-089} 'f = 
-L 
-
-développement en série de Fourier simple (mais qui présente l'inconvénient 
-de  détruire  la symétrie  en  x2  et  x3). On  calcule  ~~  par dérivation  terme  
-à  terme,  on  identifie  avec  le développement  de  la  constante  -2,  et  on  ob­ 
-tient  pour  1f~ une  équation différentielle du  second ordre  
-
-
-q "' l, \:1,
-("" rrn. --1 ) 1\ .1 ('I ) 
-( l ! 1',m, ô 
-, Cl. / 
-
-qui donne "f"", par intégration avec les conditions aux limites "1'~t)=O. On obtient finalement 
-
-qui permet de calculer la solution et en particulier le module de rigidité à la torsioI;1 l et la longueur f qUi intervient dans \eqref{eq:Ch06-068} . On trouve 
-. s <,
-I. /1 b ~, JIr ~,(h!Q,J = i; CL JdYr\eqref{eq:Ch06-0a.}
-= 
-1
-\eqref{eq:Ch06-091} < 
-.z a. i(Yrja.)
-l F = 
--113 ­
-la contrainte tan8entielle maximale étant obtenue au milieu du grand côté 
-«~= ! k si on suppose (t> -&-. Les fonctions ~, et.t sont données par le 
-tableau suivant 
-Rr/O­ 1  1,5  2  3  5  00  
--Pt,  0,675  0,848  0,930  0,985  0,999  1  
--foi  0,141  0, 196  U,229  0,263  0,291  1/3  
-
-Plus généralement, on sait résoudre explicitement le problème pour quelques sections particulières (triangle équilatéral, section circulaire en­taillée d'un demi-cercle, etc ... ). Comme le problème se ramène à des calculs de fonctions harmoniques, on peut également utiliser les techniques de varia­
-ble complexe (voir\eqref{eq:Ch06-0l7},[19]). Enfin, le problème \eqref{eq:Ch06-060} se prête bien au calcul 
-numérique. 
-3. FLEXION CO~OSEE 
 ==========~======== 
 3.1 CHAMP DE CONTRAINTES 
 Il reste à résoudre le problème 2. :l:'t 

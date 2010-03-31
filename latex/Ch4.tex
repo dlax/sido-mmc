@@ -1,6 +1,6 @@
-\chapter{Lois de comportement}
-\section{Problèmes de mécanique des solides} \label{sec:Ch4-1}
-\subsection{Problèmes dynamiques et quasi-statiques}  \label{ssec:Ch4-1.1}
+\chapter{Lois de comportement} \label{chap:Ch04}
+\section{Problèmes de mécanique des solides} \label{sec:Ch04-1}
+\subsection{Problèmes dynamiques et quasi-statiques}  \label{ssec:Ch04-1.1}
 Pour résoudre un problème de Mécanique des Solides, il faut calculer la solution $(u_i, \sigma_{ij})$, c'est à dire calculer les champs de vecteurs déplacements $u_i(x)$ et de tenseurs des contraintes $\sigma_{ij}(x)$, à partir des données, qui sont constituées par
 \begin{enumerate}
     \item L'ensemble des sollicitations imposées au solide
@@ -65,7 +65,7 @@ Pour résoudre un problème de Mécanique des Solides, il faut calculer la solut
         Cette hypothèse est tout à fait essentielle en mécanique des solides, car elle permet de ramener à des problèmes statiques les problèmes réels qui, eux, dépendent toujours du temps.
         L'essentiel de ce cours sera désormais limité au cas où cette hypothèse est valable, l'étude des problèmes réellement dynamiques (chocs, vibrations) étant renvoyée au cours de Mécanique des Vibrations.
 \end{enumerate}
-\subsection{Conditions aux limites} \label{ssec:Ch4-1.2}
+\subsection{Conditions aux limites} \label{ssec:Ch04-1.2}
 \textbf{Exemple 2.} Ecrasement d'un lopin entre les deux plateaux rigides d'une presse:
 \begin{wrapfigure}{l}{7cm}
     \begin{center}
@@ -266,16 +266,16 @@ Avec les conditions \eqref{eq:Ch04-025}, on en tire la valeur de $p$
 De manière générale, dans un problème réel, l'écriture des conditions aux limites est une étape tout à fait essentielle, car d'une part ces conditions comprennent l'essentiel de la physique du problème, d'autre part elles conditionnent la facilité -- voire la possibilité -- de la résolution du problème mathématique obtenu.
 Il faudra souvent faire un compromis entre la précision de la description physique et la facilité de résolution du problème mathématique.
 
-\subsection{Lois de comportement}  \label{ssec:Ch4-1.3}
+\subsection{Lois de comportement}  \label{ssec:Ch04-1.3}
 Pour résoudre un problème de mécanique des solides, if faut donc résoudre un système d'équations aux dérivées partielles.
 Pour l'instant, nous avons trois équations scalaires -- les équations du mouvement~\eqref{eq:Ch04-005} ou les équations d'équilibre~\eqref{eq:Ch04-007}, suivant que l'en considère le problème dynamique ou le problème quasi-statique -- pour 9 champs inconnus: 3 composantes du déplacement $u_i(x,t)$ et 6 composantes du tenseur des contraintes $\sigma_{ij}(x,t)$.
 Il manque donc 6 équations scalaires.
 Ces 6 équations nous seront fournies par la ``loi de comportement'' du matériau.
 Toutes les équations écrites jusqu'à présent étaient -- dans le cadre d'une schématisation donnée -- -universelles, c'est à dire indépendantes du matériau considéré.
-Les équations écrites au paragraphe~\ref{ssec:Ch4-1.2} restent les mêmes pour un bloc d'acier, d'aluminium, de matière plastique, de caoutchouc, de bois, de béton, d'argile, de pâte à modeler, \ldots , sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations).
+Les équations écrites au paragraphe~\ref{ssec:Ch04-1.2} restent les mêmes pour un bloc d'acier, d'aluminium, de matière plastique, de caoutchouc, de bois, de béton, d'argile, de pâte à modeler, \ldots , sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations).
 
 De manière générale, la loi de comportement se présente comme une ``relation'' entre le tenseur des contraintes et le tenseur des déformations.
-Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch4-2} -- mais elle sera en général de nature ``fonctionnelle''.
+Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch04-2} -- mais elle sera en général de nature ``fonctionnelle''.
 À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -- c'est à dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs -- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
 \begin{equation}
     \tens{\sigma} (t) = \mathop{\tens{\sigma}}_{s=0}^{\infty} \left\{ \tens{\varepsilon} (t-s) \right\}, \quad \tens{\varepsilon} (t) = \mathop{\tens{\varepsilon}}_{s=0}^{\infty} \left\{ \tens{\sigma} (t-s) \right\}
@@ -284,7 +284,7 @@ Cette relation peut être de nature très diverse -- nous en verrons quelques ex
 
 Cette loi de comportement ne peut être déterminée qu'expérimentalement par un certain nombre ``d'essais''.
 Les essais les plus faciles à interpréter sont les ``essais homogènes'' où l'on cherche à réaliser dans une éprouvette un état de contrainte et de déformation homogène.
-L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du paragraphe~\ref{ssec:Ch4-1.2}.
+L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du paragraphe~\ref{ssec:Ch04-1.2}.
 Si l'on cherche un état de contrainte et de déformation homogène
 \begin{equation}
     \sigma_{ij} (x,t) = \sigma_{ij}(t), \quad \varepsilon_{ij}(x,t) = \varepsilon_{ij}(t)
@@ -346,7 +346,7 @@ Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors 
 \end{equation}
 La déformation se réduit à un écrasement longitudinal, mesuré par $U(t)$ et une dilatation transversale que l'on mesure facilement à l'aide d'une jauge de déformation.
 
-\subsection{Les essais 	classiques}
+\subsection{Les essais 	classiques} \label{ssec:Ch04-1.4}
 L'essai de compression simple est le prototype des essais homogènes.
 L'idée de base est de réaliser un état de contrainte et de déformation homogène qui peut alors être déterminé par des mesures globales d'efforts et de déformation.
 Pour les métaux et la plupart des solides, l'essai de base est ``l'essai de traction'', où un barreau cylindrique de longueur $l$ et de section $S$ est soumis à une force longitudinale $F$.
@@ -381,7 +381,7 @@ On mesure
 \end{equation}
 
 Les conditions aux limites \eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que, pourvu que l'éprouvette soit assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$ , c'est à dire des conditions aux limites précises sur $S_0$ et $S_1$.
-C'est le principe de Saint-Venant, sur lequel nous reviendrons au chapitre~\ref{chap:7}.
+C'est le principe de Saint-Venant, sur lequel nous reviendrons au chapitre~\ref{chap:Ch07}.
 
 L'essai de traction est le plus simple à réaliser, mais il ne permet d'obtenir la loi de comportement que pour un tenseur des contraintes de traction ou compression simple.
 Cela suffit pour déterminer complètement certaines lois de comportement, mais il est souvent nécessaire de réaliser des états de contrainte plus complexes.
@@ -475,8 +475,8 @@ Mis à part l'essai de traction, ils présentent cependant l'inconvénient d'êt
 Dans la pratique courante, on utilise souvent des essais non homogènes, souvent issus de la tradition (essai pénétrornétrique en Mécanique des Sols, essai de dureté ou de résilience pour les métaux) qui permettent d'obtenir simplement des caractéristiques globales du comportement.
 Malheureusement, ces essais ne fournissent sur les lois de comportement que des informations qualitatives, que l'on ne peut pas utiliser directement.
 
-\section{Comportement des solides}
-\subsection{Diversité des comportements}
+\section{Comportement des solides} \label{sec:Ch04-2}
+\subsection{Diversité des comportements} \label{ssec:Ch04-2.1}
 Le but de ce paragraphe est double: d'une part nous allons décrire quelques uns des types de comportement que l'on peut rencontrer; d'autre part nous allons introduire la terminologie utilisée pour caractériser ces comportements.
 
 Pour les métaux à température ambiante, le comportement est convenablement décrit par la courbe de traction, résultat de l'essai de traction.
@@ -595,7 +595,7 @@ Si l'on pousse plus loin l'essai de fluage, on voit apparaître après le fluage
 Ce type de comportement dépendant du temps est appelé «~viscoplastique~»  ou «~viscoélastique~», selon qu'il existe ou non un seuil en dessous duquel le comportement peut être considéré comme élastique.
 En première approximation, les matières plastiques ont un comportement viscoélastique, et les métaux à haute température un comportement viscoplastique.
 
-\subsection{Modèles rhéologiques}
+\subsection{Modèles rhéologiques} \label{ssec:Ch04-2.2}
 Il est important de savoir construire des modèles mathématiques de comportement décrivant, au moins qualitativement, les différents types de comportement que nous venons de présenter.
 Les modèles rhéologiques forment une classe déjà très vaste de tels modèles.
 Ils s'obtiennent par combinaison de 3 modèles élémentaires
