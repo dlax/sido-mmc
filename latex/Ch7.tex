@@ -939,61 +939,72 @@ Comme le problème se ramène à des calculs de fonctions harmoniques, on peut �
 Enfin, le problème \eqref{eq:Ch07-060} se prête bien au calcul numérique.
 
 \section{Flexion composée}
+\subsection{Champ de contraintes}
+Il reste à résoudre le problème 2.
+\begin{center}
+    \includegraphics{../images/T1_Ch07-18}
+\end{center}
+Considérons la section d'abscisse $x_1$ et considérons la poutre $\left[ 0,x_1 \right] \times \Sigma$.
+Elle est en équilibre sous l'action du torseur $[\mathcal{T}_0]$ des efforts appliqués sur la section $x_1 = 0$ et du torseur $[\mathcal{T}(x_1)]$ des efforts de contact exercés sur la poutre  $[O,x_1]\times \Sigma$ par la partie supprimée $[x_1,l]\times \Sigma$.
+Comme précédemment, nous représentons $[\mathcal{T}(x_1)]$ par sa  résultante $\vec{\mathcal{R}} (x_1)$ et son moment $\vec{\mathcal{M}} (x_1)$ par rapport au centre $(x_1,0,0)$ de la section considérée
+\begin{center}
+    \includegraphics{../images/T1_Ch07-19}
+\end{center}
+L'équilibre de la poutre $[O,x_1]\times \Sigma$ donne alors
+\begin{displaymath}
+    \vec{\mathcal{R}} = F \vec{e}_2 \quad,\quad \vec{\mathcal{M}} = F (l -x_1) \vec{e}_3
+\end{displaymath}
+de sorte que la répartition des contraintes dans la section $x_1$ doit être telle que
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \iint_{\Sigma x_1} \sigma_{11} \ud x_2 \ud x_3 &= 0 \\
+        \iint_{\Sigma x_1} x_3\sigma_{11} \ud x_2 \ud x_3 &= 0 \\
+        -\iint_{\Sigma x_1} x_2\sigma_{11} \ud x_2 \ud x_3 &= F (l-x_1)
+    \end{aligned}
+    \right.
+    \label{eq:Ch07-092}
+\end{equation}
+\begin{equation}
+    \iint_{\Sigma x_1} \sigma_{12} \ud x_2 \ud x_3 = F
+    \label{eq:Ch07-093}
+\end{equation}
+\begin{equation}
+    \iint_{\Sigma x_1} \sigma_{13} \ud x_2 \ud x_3 = 0
+    \label{eq:Ch07-094}
+\end{equation}
+\begin{equation}
+    \iint_{\Sigma x_1} \left( x_2\sigma_{13} - x_3 \sigma_{12} \right) \ud x_2 \ud x_3 = 0
+    \label{eq:Ch07-095}
+\end{equation}
+En partant de \eqref{eq:Ch07-092}, les résultats du paragraphe~\ref{ssec:Ch07-1.2} nous suggèrent de prendre
+\begin{equation}
+    \sigma_{11} = - \frac{F\left( l - x_1 \right)x_2}{J} \quad,\quad J = J_2
+    \label{eq:Ch07-096}
+\end{equation}
+D'autre part, \eqref{eq:Ch07-093} montre que $\sigma_{12}$ ne peut pas être nul.
+Nous prenons donc dans un premier temps
+\begin{equation}
+    \tens{\sigma} = 
+    \begin{bmatrix}
+        \sigma_{11} & \sigma_{12} & 0 \\
+        \sigma_{12} & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-097}
+\end{equation}
+avec $\sigma_{11}$ donné par \eqref{eq:Ch07-096}.
+Les équations d'équilibre nous donnent alors
+\begin{displaymath}
+    \sigma_{11,1} + \sigma_{12,2} = 0 \quad,\quad \sigma_{12,1} = 0
+\end{displaymath}
+soit, compte-tenu de \eqref{eq:Ch07-096}, 
+\begin{equation}
+    \sigma_{12} = -\frac{F}{2J} ( x_2^2 + f(x_3) )
+    \label{eq:Ch07-098}
+\end{equation}
+Les équations de Beltrami sont toutes vérifées, sauf l'équation relative aux indices $1,2$ qui donne 
 \endinput
-==========~======== 
-3.1 CHAMP DE CONTRAINTES 
-Il reste à résoudre le problème 2. :l:'t 
-F~ It==~======~~_=t--l----,»F"''l::~ 
-
-Considérons la section d'abscisse xl' et considérons la poutre [OJ~"'])(. r Elle est en équilibre sous l'action du torseur [~o]des efforts appliqués sur la section x =0 et du torseur ['b(:c,)] des efforts de contact exercés sur la
-1 
-poutre  [O/xJ x  L  par  la partiè supprimée ['l:".eJ. L- Gomme  précédemment,  
-nous  représentons ~  ('CCx,)]  par  sa  résultante  'R('l:.)  et  son  moment  .-..'l'Q.(1.,)  par  
-
-
-L'équilibre de la poutre [D,X,]. L donne alors 
-'R. Fe" de sorte que la répartition des contraintes dans la section xl doit être telle que 
-
-
-\eqref{eq:Ch06-092} : 0
-$r ':!~ o:;~ cLx,t cL'r-; 
-0;, 
-,:
--! '):~ G.1i J..,X.l. 0"X,3 F(t-/.1:.,) 
-Lx 
-
-1 
-~
-( 93) $ tr~!l, ck.,t J.;x,~ F 
-t",,< 
-\eqref{eq:Ch06-094} § 0:., dr.cJ.,~. ,: 0 
-~'X." . 
-\eqref{eq:Ch06-095} t ('X-J-o:i,-:x:.,<J:i:o) d:.x".:z,clx" :> 0 
-['L< 
-En partant de \eqref{eq:Ch06-092}, les résultats du § 1.2 nous suggèrent de prendre 
-\eqref{eq:Ch06-096} 
-
-, 
-
-D'autre part, \eqref{eq:Ch06-093} montre 
-dans un premler temps 
-\eqref{eq:Ch06-097} 
-
-
-avec ~< donné par \eqref{eq:Ch06-096}. que 
-Û~J, 
-o o 
-Les 
-(î ne peut pas être nul, Nous prenons donc 
-~:/, 
-
-équations d'équilibre nous donnent alors 
-
-= 0 , : 0 
-soit, compte-tenu de \eqref{eq:Ch06-096}, 
-
-Les équations de Beltrami sont toutes 
-aux indices 1,2 qui donne 
 (j"~~, ~~ + ~t,U + f 
 -[ r\eqref{eq:Ch06-0X;} +"1 + 
 3,J 
