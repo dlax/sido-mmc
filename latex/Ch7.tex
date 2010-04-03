@@ -1045,10 +1045,10 @@ et les équations de Beltrami; le champ $\tilde{\tens{\sigma}}$  devra donc les 
 On peut alors reprendre l'analyse du paragraphe~\ref{ssec:Ch07-2.2} et obtenir 
 \begin{equation}
     \left\{
-    \begin{split}
+    \begin{aligned}
         \tilde{\sigma}_{12} = \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_3} \quad \tilde{\sigma}_{13} = - \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_2} \\
         \Delta \tilde{\varphi} = \text{Cte} = -2C
-    \end{split}
+    \end{aligned}
     \right.
     \label{eq:Ch07-102}
 \end{equation}
@@ -1099,77 +1099,105 @@ Ainsi, la fonction $\chi$ est déterminée par
 C'est un problème de Dirichlet qui admet une solution unique dépendant uniquement de la section $\Sigma$.
 
 \subsection{Calcul des efforts appliqués} \label{ssec:Ch07-3.2}
-\endinput
-Pour terminer la détermination du champ de contraintes, en parti~u­
-lier pour déterminer la constante C , il convient de vérifier les cO;'1dit~Qns 
+Pour terminer la détermination du champ de contraintes, en particulier pour déterminer la constante $C$, il convient de vérifier les conditions aux limites sur l'extrémité $x_1 = l$ c'est-à-dire de vérifier les conditions \eqref{eq:Ch07-092}, \eqref{eq:Ch07-093}, \eqref{eq:Ch07-094} et \eqref{eq:Ch07-095} pour $x_1$.
+Par construction de $\sigma_{11}$ les relations \eqref{eq:Ch07-092} sont 
+vérifiées pour tout $x_1$.
+A partir des calculs du paragraphe précédent, on a
+\begin{equation}
+    \begin{aligned}
+        \sigma_{12} &= \frac{F}{J_2} \left\{ -\frac{1}{2} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) + \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right\} \\
+        \sigma_{13} &= - \frac{F}{J_2} \left\{ \frac{\partial \chi}{\partial x_2} + C \frac{\partial \varphi}{\partial x_2} \right\}
+    \end{aligned}
+    \label{eq:Ch07-109}
+\end{equation}
+et $\sigma_{12}$ et $\sigma_{13}$ dépendent uniquement de $x_2$ et $x_3$.
 
-aux limites sur l'extrémité -:.:,,,1, càd de vérl.fier les conditions \eqref{eq:Ch07-002},\eqref{eq:Ch06-093}, 
-\eqref{eq:Ch06-094} et 	\eqref{eq:Ch06-095} pour ~i= 1,. Par constructicn de ~~ les relations \eqref{eq:Ch06-092} sont 
-vérifiées 	pour tout xl' A par-tir des calculs du paragraphe précédent, on a 
-cr~.l, = 	i [ _i (~~ _~)J:~ ) + dt + e ~ J2., 3., .-l+V Ô!j:3
-(109) 	è X3 
-F f 'Ot ôcp l
-(j~:. = -	--+-c 
-J.t 'O/(.I, o~" J et a;,~ et 0:.." dépendent uniquement de xet x3 · 
-2 
-Pour \eqref{eq:Ch06-093}, nous partons de (109) et 
-
-F
-'R.t = -	­
-lJ~ 
-(110) 
-+ ~ § (aI -t-C ~) d,.r. <k. 
-J L ÔO: "0 ':C J, 3 
-~ 3 :> Compte-tenu de la définition \eqref{eq:Ch06-021} de J~ et Jon obtient pour le i'CDler
-3 
-terme 
-(II 1) 
-Pour le second terme, on utilise la formule de Stokes 
-Le terme en <.p diparaît par \eqref{eq:Ch06-060}, et on intègre le terme en X. par parties. Compte-tenu de (105), on obtient 
+Pour \eqref{eq:Ch07-093}, nous partons de \eqref{eq:Ch07-109} et 
+\begin{equation}
+    \mathcal{R}_2 = - \frac{F}{2 J_2} \iint_{\Sigma} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \ud x_2 \ud x_3 + \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3
+    \label{eq:Ch07-110}
+\end{equation}
+Compte-tenu de la définition~\eqref{eq:Ch07-021} de $J_2$ et $J_3$ on obtient pour le premier terme
+\begin{equation}
+    -\frac{F}{2} \left[ 1 - \frac{\nu}{1+\nu} \frac{J_3}{J_2} \right]
+    \label{eq:Ch07-111}
+\end{equation}
+Pour le second terme, on utilise la formule de Stokes
+\begin{displaymath}
+    \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3 = -\frac{F}{J_2} \oint_{\partial \Sigma} \left( \chi + \cancel{C\varphi} \right) \ud x_2
+\end{displaymath}
+Le terme en $\varphi$ diparaît par \eqref{eq:Ch07-060}, et on intègre le terme en $\chi$ par parties.
+Compte-tenu de \eqref{eq:Ch07-105}, on obtient
+\begin{displaymath}
+    -\frac{F}{J_2} \oint_{\partial \Sigma} \chi \ud x_2 = \frac{F}{J_2} \oint_{\partial \Sigma} x_2 \ud \chi = \frac{F}{2J_2} \oint_{\partial \Sigma} x_2 \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right) \ud x_3
+\end{displaymath}
 On utilise à nouveau la formule de Stokes 
-§'3I: J.C:),(J.C~ -~ )Ln ck~
-~~~ 
--i+v 
-F ~ ~ ( K., ( JL! -~~~)] ckJ, ckô
--.n:. 1:. Ô./C,:}, -l+v = F ~ (?lK; -~4~) tkl, dJt,~ 
-~JJ, I: .-1..\1 et compte-tenu de \eqref{eq:Ch06-021}, le deuxième terme de (110) donne 
-(1 12) 
-La combinaison de (110) et (112) donne alors 'R = F, et permet de vérifier 
+\begin{align*}
+    \frac{F}{2J_2} x_2 \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right) \ud x_3 &= \frac{F}{2J_2} \iint_{\Sigma} \frac{\partial}{\partial x_2} \left[ x_2 \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \right]\ud x_2 \ud x_3 \\
+    &= \frac{F}{2J_2} \iint_{\Sigma} \left( 3x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right)\ud x_2 \ud x_3
+\end{align*}
+et compte-tenu de \eqref{eq:Ch07-021}, le deuxième terme de \eqref{eq:Ch07-110} donne 
+\begin{equation}
+    \frac{F}{2} \left[ 3 - \frac{\nu}{1+\nu} \frac{J_3}{J_2} \right]
+    \label{eq:Ch07-112}
+\end{equation}
+La combinaison de \eqref{eq:Ch07-110} et \eqref{eq:Ch07-112} donne alors $\mathcal{R}=F$, et permet de vérifier \eqref{eq:Ch07-093}.
+La vérification de \eqref{eq:Ch07-094} est analogue. 
+\begin{equation}
+    \begin{split}
+        \mathcal{R}_3 &= \iint_{\Sigma} \sigma_{13} \ud x_2 \ud x_3 = - \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_2} + C \frac{\partial \varphi}{\partial x_2} \right) \ud x_2 \ud x_3 \\
+        &= - \frac{F}{J_2} \oint_{\partial \Sigma} \left( \chi + \cancel{C\varphi} \right) \ud x_3 = \frac{F}{J_2} \oint x_3 \ud \chi \\
+        & = \frac{F}{2J_2} \oint_{\partial \Sigma} x_3 \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \ud x_3 = \frac{F}{J_2} \iint_{\Sigma} x_3 x_2 \ud x_2 \ud x_3 = 0
+    \end{split}
+    \label{eq:Ch07-113}
+\end{equation}
+d'après \eqref{eq:Ch07-020}.
 
-J, 
-\eqref{eq:Ch06-093}. La vérification de \eqref{eq:Ch06-094} est analogue. 
-( 113) 
-d'après \eqref{eq:Ch06-020} . Il reste à écrire \eqref{eq:Ch06-095}. Le calcul est mené de manière similaire 
-./J:. ~:),) MJ, d..tL 3 
-D'après le calcul qui a donné \eqref{eq:Ch06-063}, il vient 
+Il reste à écrire \eqref{eq:Ch07-095}.
+Le calcul est mené de manière similaire
+\begin{align*}
+    \mathcal{M}_1 &= \iint_{\Sigma} \left( x_2 \sigma_{13} - x_3 \sigma_{12} \right) \ud x_2 \ud x_3 \\
+    &= \frac{F}{J_2} \left\{ \frac{1}{2} \iint_{\Sigma} \left( x_2^2 x_3 - \frac{\nu}{1+\nu} x_3^2 \right) \ud x_2 \ud x_3 - \iint_{\Sigma} \left( x_2 \frac{\partial \chi}{\partial x_2} + x_3 \frac{\partial \chi}{\partial x_3}  \right)\ud x_2 \ud x_3 \right\}
+\end{align*}
+D'après le calcul qui a donné \eqref{eq:Ch07-063}, il vient 
+\begin{displaymath}
+    -\iint_{\Sigma} \left( x_2 \frac{\partial \varphi}{\partial x_2} + x_3 \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3 = 2 \iint_{\Sigma} \varphi \ud x_2 \ud x_3 = I
+\end{displaymath}
 de sorte que nous pouvons écrire 
-(1 14)  .  F(Ii-CI)  
-J:t  
-où  la  constante  H , donnée  par  
+\begin{equation}
+    \mathcal{M}_1 = \frac{F}{J_2} \left( H - CI \right)
+    \label{eq:Ch07-114}
+\end{equation}
+où la constante $H$, donnée par
+\begin{equation}
+    H = \frac{1}{2} \iint_{\Sigma} \left[ x_2^2 x_3 - \frac{\nu}{1+\nu} x_3^3 - 2x_2 \frac{\partial \chi}{\partial x_2} -2x_3 \frac{\partial \chi}{\partial x_3} \right] \ud x_2 \ud x_3
+    \label{eq:Ch07-115}
+\end{equation}
+dépend uniquement de la section $\Sigma$.
+La condition \eqref{eq:Ch07-095} donne alors la valeur de la constante 
+\begin{equation}
+    C = \frac{H}{I}
+    \label{eq:Ch07-116}
+\end{equation}
+et le champ de contraintes est parfaitement défini.
+Il est de la forme 
+\begin{equation}
+    \tens{\sigma} = \frac{F}{J_2} 
+    \begin{bmatrix}
+        -(l-x_1) x_2 & \alpha(x_2,x_3) & \beta(x_2, x_3) \\
+        \alpha(x_2,x_3) & 0 & 0 \\
+        \beta(x_2,x_3) & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch07-117}
+\end{equation}
+où $\alpha$ et $\beta$ sont deux fonctions homogènes au carré d'une longueur, et qui dépendent uniquement de la section $\Sigma$.
 
-y
-(1 15) -l ,.,,; -1-x 0'X i àX 
-~
-li -l ~JI.C;~, -] ck,t ck..
-/:[.3
-1 Àt" 3 l-041. O~, dépend uniquement de la section L. . La condition \eqref{eq:Ch06-095} donne alors la valeur de la constante 
-H
-(116) 
-c = 
-l 
-et le champ de contraintes est parfaitement défini. Il est de la forme 
--(.e -4.) I.CJ,  
-(1 17)  or  =  F  a(",-.l.'I.C.)  
-J,t  [  f';,(~.l.'~;)  
+La solution du problème de la flexion composée peut donc, comme pour la torsion, s'obtenir par résolution de problèmes de Dirichlet, mais les calculs sont beaucoup plus laborieux.
+En particulier, on peut écrire le critère de limite d'élasticité et calculer le déplacement, mais on ne peut pas en tirer une interprétation simple comme pour les autres problèmes.
+En particulier, l'hypothèse de Navier-Bernoulli (voir paragraphe~\ref{ssec:Ch07-1.3}) n'est plus vérifiée, les sections droites ne restent plus planes: en torsion comme en flexion composée, l'apparition de contraintes de cisaillement entraîne un gauchissement de la section.
 
-où 0{ et ~ sont deux fone tions homogènes au carré cl 1 une longueur, et qui 
-dépendent uniquement de la section L . 
-La solution du problème de la flexion composée peut donc, comme pour la torsion, s'obtenir par résolution de problèmes de Dirichlet, mais les cal­
-culs sont beaucoup plus laborieux. En particulier, on peut écrire le critère de limite d'élasticité et calculer le déplacement, malS on ne peut pas en 
-tirer une interprétation simple cormne pour les autres problèmes. En particu­
-lier, l'hypothèse de Navier-Bernoulli (voir § 1.3) n'est plus vérifiée, les 
-sections droites ne restent plus planes: en torsion comme en flexion composée, l'apparition de contraintes de cisaillement entraîne un gauchissement de la section. 
-3.3 SECTION CIRCULAIRE 
+\subsection{Section circulaire}
+\endinput
 Si la section est symétrique par rapport à l'axe xz' alors, en pre­nant l'origine des abscisses curvilignes sur l'axe xz' on voit que la fonction X définie sur .. L par (106) prend des valeurs opposées en deux points symé­
 o 
 triques par rapport à l'axe des x2. Il en résulte que la fonction ~ définie par le problème (108) est impaire en x
