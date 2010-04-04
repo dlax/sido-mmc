@@ -1209,99 +1209,93 @@ En particulier, on peut écrire le critère de limite d'élasticité et calculer
 En particulier, l'hypothèse de Navier-Bernoulli (voir paragraphe~\ref{ssec:Ch07-1.3}) n'est plus vérifiée, les sections droites ne restent plus planes: en torsion comme en flexion composée, l'apparition de contraintes de cisaillement entraîne un gauchissement de la section.
 
 \subsection{Section circulaire}
-\endinput
-Si la section est symétrique par rapport à l'axe xz' alors, en pre­nant l'origine des abscisses curvilignes sur l'axe xz' on voit que la fonction X définie sur .. L par (106) prend des valeurs opposées en deux points symé­
-o 
-triques par rapport à l'axe des x2. Il en résulte que la fonction ~ définie par le problème (108) est impaire en x
-3 
+Si la section est symétrique par rapport à l'axe $x_2$ alors, en prenant l'origine des abscisses curvilignes sur l'axe $x_2$ on voit que la fonction $\chi_0$ définie sur $\partial \chi$ par \eqref{eq:Ch07-106} prend des valeurs opposées en deux points symétriques par rapport à l'axe des $x_2$.
+Il en résulte que la fonction $\chi$ définie par le problème \eqref{eq:Ch07-108} est impaire en $x_3$
+\begin{equation}
+    \chi_2 (x_2,-x_3) = - \chi (x_2, x_3)
+    \label{eq:Ch07-118}
+\end{equation}
+La quantité intégrée dans \eqref{eq:Ch07-115} est donc impaire en $x_3$, $H$ est nul, et la constante $C$ est nulle.
+On obtient pour le vecteur contrainte tangentielle sur la section droite $\left( 0,\sigma_{12}, \sigma_{13} \right)$ la symétrie par rapport à l'axe $x_2$
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-20}
+    \end{center}
+    \columnbreak
+    \begin{equation}
+        \left\{
+        \begin{aligned}
+            \sigma_{12} (x_2, -x_3) &= \sigma_{12} (x_2, x_3) \\
+            \sigma_{13} (x_2, -x_3) &= -\sigma_{13} (x_2, x_3)
+        \end{aligned}
+        \right.
+        \label{eq:Ch07-119}
+    \end{equation}
+\end{multicols}
 
-( 118) 
+A titre d'exemple, nous allons calculer la fonction $\chi$ et la répartition de contraintes pour une section $\Sigma$ circulaire, de rayon $a$.
+Pour calculer $\chi_0$ on écrit \eqref{eq:Ch07-105}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch07-21}
+    \end{center}
+    \columnbreak
+    \begin{align*}
+        \ud\chi &= \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
+        &= \frac{1}{2} \left[ (a^2 - x_3^2) - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
+        &= \frac{1}{2} \left[ a^2 - \frac{1+2\nu}{1+\nu} x_3^2 \right] \ud x_3
+    \end{align*}
+    \begin{align}
+        \chi_0 &= \frac{1}{2} \left[ a^2 x_3 - \frac{1+2\nu}{3(1+\nu)} x_3^3 \right] \nonumber\\
+        \chi_0 &= \frac{a^3}{2} \left[ \sin \theta - \frac{1+2\nu}{3(1+\nu)} \sin^3 \theta \right]
+        \label{eq:Ch07-120}
+    \end{align}
+\end{multicols}
 
-
-La quantité intégrée dans (115) est donc impaire en x, H est nul, et la cons­
-3 
--119 ­
-tante C est nulle. On obtient pour le vecteur contrainte tangentielle sur la section droite (0, ~~, ô1.) la symétrie par rapport à l'axe x
-2 f (J"~l, (/f:..z" -J.L~)
-(1 19) 
-
-
-t (J"1~ \eqref{eq:Ch07-001}(./-1 -J:i:-!) '" -<r~ô (h::~1 !.Cl) 
-A titre d'exemple, nous allons calculer la fonction ~ et la répar­tition de contraintes pour une section L circulaire, de rayon ~ . Pour cal­
-culer X on écrit (105)
- 
--l
-cl'X = -[t " .t] ck. 
-~.z, --\+>' K3 3
-l 
-...t 
-= [(a..L_)<:~) -~~"] ck
-A+V.3 J
-l 
-J .. 2,\> 4" 
-
-= i [é -1ck,3
-J+V .3 .,1+.2»
-~ [ a..~ IX _
-1. = ~n
-~ .3 ?>(AtV) 
-a..> J +tv
-( 120) [~e ~e]
-~ = 
-0 l ~(À+V) 
-
-Pour calculer 1 a fone tian X(1.:!~/~·3)' nous devons trouver la fone tion A 
-harmonique qui prend la valeur (120) pour '1,,, a. . Pour cela on remarque que
- 
-les fonctions 
-
-
-sont harmoniques povr tout entier ~ On écrit alors 
-(122) 
-
-et on peut réécrire (120) sous la forme 
-il À+.2,v
-A. o " ~[.èMve (3.&iM.6 -,oiM., ~e) ] j.2, (.Mv)
-(123) 
-~-tl,,, 
-= a..' [ --1+:!.V + ~eJ
-~:,e ~ ,,12(.-hV) li (-1+>') 
-ce qUl permet d'écrire 
-:'+2.V
--1 [ A+2.v Il} ~:,6 .. ---a...t ft., ».m, e ] 1 ="ï -I.i,(.tl+V) 4(.hv) 
-On utilise à nouveau (122) pour écrire 
-
--120 ­
-
+Pour calculer 1a fonction $\chi (x_2,x_3)$ nous devons trouver la fonction $\chi$ harmonique qui prend la valeur \eqref{eq:Ch07-120} pour $r=a$.
+Pour cela on remarque que les fonctions
+\begin{equation}
+    r^n \sin n \theta = \Im \left\{ \left( x_2 + \imath x_3 \right)^n \right\}
+    \label{eq:Ch07-121}
+\end{equation}
+sont harmoniques pour tout entier $n$.
+On écrit alors 
+\begin{equation}
+    \sin 3 \theta = 3 \sin \theta - 4 \sin^3 \theta
+    \label{eq:Ch07-122}
+\end{equation}
+et on peut réécrire \eqref{eq:Ch07-120} sous la forme 
+\begin{equation}
+    \begin{aligned}
+        \chi_0 &= \frac{a^3}{2} \left[ \sin \theta - \frac{1+2\nu}{12 (1+\nu)} \left( 3 \sin \theta - \sin 3 \theta \right) \right] \\
+        &= \frac{a^3}{2} \left[ \frac{1+2\nu}{12(1+\nu)} \sin 3 \theta + \frac{3 + 2\nu}{4(1+\nu)} \sin \theta \right]
+    \end{aligned}
+    \label{eq:Ch07-123}
+\end{equation}
+On utilise à nouveau \eqref{eq:Ch07-122} pour écrire
+\begin{displaymath}
+    \chi = \frac{1}{2} \left[ \frac{1+2\nu}{4(1+\nu)} r^3 \sin \theta - \frac{1+2\nu}{3(1+\nu)} r^3 \sin^3 \theta + \frac{3+2\nu}{4(1+\nu)}a^2 r \sin \theta \right]
+\end{displaymath}
+\begin{equation}
+    \chi = \frac{1}{8(1+\nu)} \left\{ (1+2\nu) \left( x_2^2 x_3 - \frac{x_3^2}{3}\right) + (3+2\nu) a^2 x_3 \right\}
+    \label{eq:Ch07-124}
+\end{equation}
 ce qui donne pour les contraintes 
-F 3+1\1 l-L -1-3.11 
-~.?. = [ Cl, -/.CJ, -I.(~ ]8J,t My ?+lv
-(125) 
-F À+.'I,y 
-(T~'!. = 1.(:1. &3 
-4J2-...\+\1 
+\begin{equation}
+    \begin{aligned}
+        \sigma_{12} &= \frac{F}{8J_2} \frac{3+2\nu}{1+\nu} \left[ a^2 - x_2^2 - \frac{1-2\nu}{3+ 2\nu}x_3^2 \right] \\
+        \sigma_{13} &= \frac{F}{4J_2} \frac{1+2\nu}{1+\nu} x_2 x_3
+    \end{aligned}
+    \label{eq:Ch07-125}
+\end{equation}
 répartition assez complexe des contraintes de cisaillement. 
-OC" 
-En particulier, on a 
-"" 
-~~.nul sur l'axe des x2 et sur t 
-\ 
-l'axe des x, La répartition de
-3 
-~L sur les deux diamètres AA' 
 
+En particulier, on a $\sigma_{13}$ nul sur l'axe des $x_2$ et sur l'axe des $x_3$.
+La répartition de $\sigma_{12}$ sur les deux diamètres $AA'$ et $BB'$ est représentée sur les diagrammes suivants
 
-6' 
-et BB 1 est représentée sur les diagrammes suivants 
-?>
-0
-A.' t>. x"­
-:x" 
-F A+.'iV r
-en B = -= ....I,l?> ­
-~~ 
-5 A·w S F ?> + lv f
-en 0 <f~!/, -=.A,:'~ S .2,( A+v) 0;, 
-pour V = 03
-1 
-
+\begin{displaymath}
+    \begin{aligned}
+        \text{en } B & \quad \sigma_{12} = \frac{F}{S} \frac{1+2\nu}{1+\nu} = 1,23 \frac{F}{S} \\
+        \text{en } O & \quad \sigma_{12} = \frac{F}{S} \frac{3+2\nu}{2(1+\nu)} = \underbrace{1,38 \frac{F}{S}}_{\text{pour } \nu = 0,3}
+    \end{aligned}
+\end{displaymath}
