@@ -1,13 +1,3 @@
-% une phrase par ligne, une ligne par phrase
-% le label des équations : "eq:Ch08-0xx"
-% figure : \includegraphics{../images/T1_Ch08-0x}
-% référence à une équation avec \eqref
-% référence aux sections et au paragraphes \ref{ssec:Ch0X-y.z} ; y : section ; z : ss-section ; si référence à y sec au lieu de ssec ; si référence à tout le chapitre mettre chap 
-% \left\{
-%  \begin{aligned}
-%  \end{aligned}
-%  \right.
-
 \chapter{Problèmes plans en élasticité}\label{chap:Ch08}
 \section{Élasticité plane}\label{sec:Ch08-1}
 \subsection{Déformations planes}\label{ssec:Ch08-1.1}
@@ -416,9 +406,15 @@ $n=4$ : Pour un polynôme du 4ème degré, on a
 et ainsi de suite. 
 
 À titre d'application, montrons qu'une superposition de solutions de ce type permet de résoudre le problème de Saint-Venant en contraintes ou déformations planes. 
-\begin{center}
-    \includegraphics{../images/T1_Ch08-02}
-\end{center}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch08-02a}
+    \end{center}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch08-02b}
+    \end{center}
+\end{multicols}
 Le matériau occupe le rectangle $\left[0,l\right] \times\left [-h/2,h/2\right]$ ; la surface latérale $x_2=\pm h/2$ est libre de contrainte, et les extrémités $x_1=O$ et $x = l$ sont soumises à deux torseurs plans en équilibre (voir paragraphe \ref{ssec:Ch07-1.1}). 
 Les conditions aux limites sont donc, sur la surface latérale 
 \begin{equation}
@@ -485,9 +481,15 @@ La répartition des contraintes normales est linéaire, comme dans le cas géné
 Pour certaines géométries simples, l'utilisation de la variable complexe permet de construire explicitement la solution d'une vaste classe de problèmes. 
 C'est en particulier le cas pour les domaines intérieurs ou extérieurs limités par un cercle. 
 À titre d'exemple, nous allons donner la solution qui correspond à la traction d'une plaque perforée. 
-\begin{center}
-    \includegraphics{../images/T1_Ch08-03}
-\end{center}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch08-03a}
+    \end{center}
+    \columnbreak
+    \begin{center}
+        \includegraphics{../images/T1_Ch08-03b}
+    \end{center}
+\end{multicols}
 
 Si le rayon $a$ du trou est petit par rapport aux dimensions de la plaque, on peut supposer en première approximation la plaque infinie.
 Dans le repère $(x_1,x_2)$, l'état de contraintes à l'infini est donc
