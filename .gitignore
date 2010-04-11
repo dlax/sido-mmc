@@ -8,4 +8,4 @@
 *.blg
 *.brf
 *.toc
-latex/MMC.pdf
+latex/MMC.pdf*
