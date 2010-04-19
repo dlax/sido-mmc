@@ -1,10 +1,10 @@
-\chapter{Méthodes variationnelles}
-\section{Théoremes variationnels}
+\chapter{Méthodes variationnelles} \label{chap:09}
+\section{Théoremes variationnels} \label{sec:Ch09-1}
 Dans tout ce chapitre, nous nous intéresserons à un problème statique régulier (paragraphe~\ref{ssec:Ch07-1.1}) pour un matériau élastique linéaire quelconque (isotrope ou anisotrope) caractérisé par un tenseur d'élasticité $A_{ijkh}$.
 Pour simplifier l'écriture, nous supposerons le matériau homogène, $A_{ijkh} =$ Cte et nous prendrons les CL sous la forme mixte \eqref{eq:Ch07-007}.
 Pour un autre problème régulier, l'écriture serait plus lourde, mais les résultats et les raisonnements seraient identiques.
 
-\subsection{Notions fondamentales}
+\subsection{Notions fondamentales} \label{ssec:Ch09-1.1}
 Nous cherchons donc un champ de déplacements et un champ de contraintes vérifiant les équations suivantes
 \begin{align}
     & \sigma_{ij,j} + f_i = 0 \label{eq:Ch09-001} \\
@@ -101,56 +101,51 @@ Il faut remarquer que, bien que nous les ayons présentés dans un contexte d'é
 La loi de comportement se présente comme une relation entre les déformations et les contraintes (voir paragraphe~\ref{ssec:Ch04-1.3}).
 En élasticité, cette relation est une application linéaire reliant les valeurs instantanées des déformations et des contraintes, cette application étant de plus supposée symétrique (auto-adjointe) et définie positive (paragraphe~\ref{ssec:Ch05-1.1}). 
 
-\subsection{Le théorème de l'énergie potentielle}
+\subsection{Le théorème de l'énergie potentielle} \label{ssec:Ch09-1.2}
+Soit $\tilde{u}_i$ un CCA, on calcule $\tilde{\varepsilon}_{ij}$ par \eqref{eq:Ch09-005}, et on peut donc définir l'énergie de déformation du CCA $\tilde{u}_i$ par
+\begin{equation}
+    W(\tilde{\varepsilon}_{ij}) = \frac{1}{2} \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij} \tilde{\varepsilon}_{kh} \ud v = \frac{1}{2} \iiint_{\Omega} \tilde{\sigma}_{ij} \tilde{\varepsilon}_{ij} \ud v
+    \label{eq:Ch09-013}
+\end{equation}
+On introduit également le travail des efforts (volumiques et surfaciques) donnés dans le deplacement $\tilde{u}_i$
+\begin{equation}
+    \tilde{T}_{f}^d (\tilde{u}_i) = \iiint_{\Omega} f_i \tilde{u}_i \ud v T_f^d (\tilde{u}_i) \quad,\quad T_f^d(\tilde{u}_i) = \iint_{S_f} T_i^d \tilde{u}_i \ud S
+    \label{eq:Ch09-014}
+\end{equation}
+Pour les CL mixtes \eqref{eq:Ch06-007} choisies, le travail des efforts surfaciques donnés, $T_f^d$ s'exprime simplement.
+Pour un problème régulier quelconque, l'expression peut être plus compliquée, mais, comme on l'a vu au paragraphe~\ref{ssec:Ch06-1.1}, le travail des efforts de surface se décompose sans ambiguïté en $T_u^d$ et $T_f^d$ (voir par exemple \eqref{eq:Ch06-010} et le paragraphe~\ref{ssec:Ch09-1.4}). 
+\begin{defn}
+    L'énergie potentielle du CCA $\tilde{u}_i$ est
+    \begin{equation}
+        K(\tilde{u}_i) = W(\tilde{\varepsilon}_{ij}) - \tilde{T}_f^d (\tilde{u}_i)
+        \label{eq:Ch09-015}
+    \end{equation}
+\end{defn}
+On 	démontre alors
+\newtheorem*{ThEP}{Théorème de l'énergie potentielle}
+\begin{ThEP}
+    Parmi tous les CCA, la (ou les) solution $u_i$ minimise l'énergie potentielle
+    \begin{equation}
+        K(u_i) \leq K (\tilde{u}_i) \quad \forall \tilde{u}_i \text{ CCA}
+        \label{eq:Ch09-016}
+    \end{equation}
+\end{ThEP}
+\begin{proof}
+    Soit $u_i$ une solution du problème \eqref{eq:Ch09-001} à \eqref{eq:Ch09-005}, et $\tilde{u}_i$ un CCA.
+    Nous définissons
+    \begin{equation}
+        \tilde{u}_i = u_i + \tilde{u}_i^0 \quad,\quad \tilde{u}_i^0|_{S_u} = 0
+        \label{eq:Ch09-017}
+    \end{equation}
+    et $u_i$ est un CCA pour le problème homogène associé 
+    \begin{align*}
+        K\left(\tilde{u}_i\right) &=\frac{1}{2} \iiint_{\Omega} A_{ijkh} \left( \varepsilon_{ij} + \tilde{\varepsilon}_{ij}^0 \right) \left( \varepsilon_{kh} + \tilde{\varepsilon}_{kh}^0 \right) \ud v - \iiint_{\Omega} f_i \left( u_i + \tilde{u}_i^0 \right) \ud v - \iint_{S_f} T_i^d \left( u_i + \tilde{u}_i^0 \right) \ud S \\
+        &= K\left( u_i \right) + \frac{1}{2} \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij}^0 \tilde{\varepsilon}_{kh}^0 \ud v + \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij}^0 \varepsilon_{kh} \ud v - \iiint_{\Omega} f_i \tilde{u}_i^0 \ud v - \iint_{S_f} T_i^d \tilde{u}_i^0 \ud S
+    \end{align*}
+    Mais $u_i$ est solution, et le théorème des travaux virtuels \eqref{eq:Ch09-009} donne, en prenant ${\mathop{u}^{\ast}}_i = \tilde{u}_i^0$
+    
+\end{proof}
 \endinput
-Soit..u,. un CCA, on calcule e·· par (5), et on peut donc définir 
-4 	4~ 
-l'énergie de déformation du CCA;i.. par'
-4 
-
-On introduit également le travail des efforts (volumiques et surfaciques) 
-, ~ 
-donnés dans le deplacement M". 
-4 
-
-Pour les CL mixtes (VI.7) choisiAe, le travail des efforts surfaciques don­nés, Tt .s'exprime simplement. Pour un problème régulier quelco~que, l'ex­pression peut être plus compliquée, mais, comme on l'a vu au § VI. 1. 1,' le travail des efforts de surface se décompose sans ambiguïté en T! et Tt (voir par exemple {VI. 10) et le § 1.4). 
-
-...
-L'énergie potentielle du CCA .u.. est 
-4 
-N 
-1< (..u..J 
-
-On 	démontre alors 
-Théorème de l'énergie potentielle. Parmi tous les CCA, la (ou les) solution ~. minimise l'énergie potentielle
-4 
-
-'" 
-( 16) 
-V..u.. CCA 
-N 
-...
-Dem. Soit ..... une solution du problème (I) à (5), et .u.. un CCA. Nous définis
-~ 	4 
-sons 
-( 17) 
-
-, 
-
-= 0
-= ...u...... 
-.... 
-et..u.. est un CCA pour le problème homogène associé 
-K(;';:;) = ~ %.Q. A...!~J" (.i.~ + è:1i)(Eftl+ ËivJ-d.nr 
--~	n {,., (.u.... + ~:) cW--§ T/ (..u..... + ,;:;,.:) clS ~ St 
-
-+i m.Q. A"i~1" 
-
-+ ~ A..~lv,., f:':à ~f..v... cm
-,0 
-
-Hais ..1.(.. est solution, et le théorème des travaux virtuels (9) donne, C~
-.. 
 ..u... _ .,u....
 prenant * "'.
 .. ... 
@@ -162,22 +157,22 @@ s:!. .. las:!. G".i.t l'fI,à <
 '" $ t~: cW + § T..d. ;{o. tl.S .... ~ (J.. IYV ..u... tl.5
 :a/ t 
 n. s( 5~ .l
-puisque sur S, ona (2), et que, d'après 0) et (6), est nul sur S.u,.. Finalement, on obtient donc 
+puisque sur S, ona \eqref{eq:Ch09-002}, et que, d'après 0) et \eqref{eq:Ch09-006}, est nul sur S.u,.. Finalement, on obtient donc 
 .. 
-(18) 1< (.u:..) 
+\eqref{eq:Ch09-018} 1< (.u:..) 
 
-Or le second terme est positif, puisque la matr~ce d' élasticité est défini~ positive (§ V.I.I). Ceci démontre (16). cq f c 
+Or le second terme est positif, puisque la matr~ce d' élasticité est défini~ positive (§ V.I.I). Ceci démontre \eqref{eq:Ch09-016}. cq f c 
 On tire également de cette démonstration 
 f
 ThéOrème d'existence et d'unicité. Pour un problème dé' t::-;::>E:' l ou un problèfi'!t mixte, il existe une solution unique. ! Pour un problème de type Il. il existe une s()L~::.i(1n à~finit :, un !mouvement de solide rigide près SSi 
 càd SSi les efforts appliqués forment un torseur nul. 
 Dem. Unicité. Soit .u.:-et..ll.~ deux solutions, ils sont aussi ceA, et l'appli
 .. .. 
-cation de (16) montre que 
+cation de \eqref{eq:Ch09-016} montre que 
 
 
 
-soit, d'après (18) 
+soit, d'après \eqref{eq:Ch09-018} 
 
 Il en résulte, puisque A;'i\t est défini positif 
 
@@ -190,7 +185,7 @@ Par contre, si S est vide (problème de type II), on ne peut plus éliminer
 .... 
 ce mouvement de solide qui reste indéterminé. 
 Existence. L'existence d'une solution peut par exemple se démontrer en cons­truisant, dans un espace fonctionnel approprié, une suite minimisante pour 
-la fonctionnelle K -voir cours de Mathématiques -. Pour un problème de type II, la condition d'équilibre (19) apparaît naturellement, car sinon la 
+la fonctionnelle K -voir cours de Mathématiques -. Pour un problème de type II, la condition d'équilibre \eqref{eq:Ch09-019} apparaît naturellement, car sinon la 
 fonctionnelle n'est pas minorée. Pour les autres prob~èmes, cette condition 
 d'équilibre n'apparaît pas, car les efforts donnés sont équilibrés par les efforts de liaison (inconnus a priori) s'exerçant à travers S ...... 
 1.3 LE THEOREME DE L'ENERGIE COMPLEMENTAIRE 
@@ -201,7 +196,7 @@ déformation par
 
 et son travail dans les déplacements donnés par 
 ci A
-(23) T (T".. ) = 
+\eqref{eq:Ch09-023} T (T".. ) = 
 .u. ""â 
 
 et nous définissons 
@@ -210,7 +205,7 @@ Définition. L'énergie complémentaire du CSA 0" .. est
 ... t 
 
 cl. ~ 
-[ (24) 
+[ \eqref{eq:Ch09-024} 
 T (0".. ) 
 .... ""â 
 et on obtient le résultat suivant 
@@ -225,7 +220,7 @@ Dem'. 50 i t (J.. la solution, <J .. un CSA, et posons
 ~a ~~ 
 ~ 
 "'.
-(26) (J CT ... CT·  
+\eqref{eq:Ch09-026} (J CT ... CT·  
 ~i 
 4a
 = "'a 
@@ -235,12 +230,12 @@ est un CSA pour le problème hOlllOgène associé ( ~:= 0
 -137 
 '" 0 ".
 ° 
-(27) If... =-iL ",0 , ~ 0 
+\eqref{eq:Ch09-027} If... =-iL ",0 , ~ 0 
 .(.i'~ ~~ f1\.à 1Sf ~ 
 H(cr;) " -~ ])1). fI-'-i H (G"1 + ~.i.i) ((J~~ + ~i~î o..'lr 
 + §S (G-,-~ + éf;.·~ )lY1.~ -U-~ c\,S 
 oU. 
-= H(G) _-: crr !I.r,.1.. .O. -~. drtr
+= H\eqref{eq:Ch09-00G} _-: crr !I.r,.1.. .O. -~. drtr
 Nâ ~ JjJ n. ka ..~,...'" 
 
 "0
@@ -252,9 +247,9 @@ En appliquant le lennne fondamental à (J.. , CSA pour le problème homogène
 
 + ~d.S 
 
-Les deux premiers termes disparaissent d'après (27), tandis que sur S~ 
+Les deux premiers termes disparaissent d'après \eqref{eq:Ch09-027}, tandis que sur S~ 
 d.
--U-. ".u,. par (3). Il vient finalement 
+-U-. ".u,. par \eqref{eq:Ch09-003}. Il vient finalement 
 ~ N 
 
 d'où la conclusion, pU1sque, comme A-'-â~t' la matrice ":"à\\.9,. est définie po
@@ -268,7 +263,7 @@ Théorème de comparaison! Soit (..u.,., (J.. ) la solution d'un problème régu
 
 Les deux théorèmes de l'énergie potentielle et de l'énergie com­plémentaire permettent d'écrire les deux inégalités. Il reste donc à montrer 
 l'égalité 
-(30) 
+\eqref{eq:Ch09-030} 
 
 '" . Il. ( CS· . \ 
 ""Il J 
@@ -279,14 +274,14 @@ Dem. Pour la solution, on a
 E..
 W(JJ..;.) = W(CS-'-"t) 
 ""3 
-A partir de (15) et (24), il vient alors 
+A partir de \eqref{eq:Ch09-015} et \eqref{eq:Ch09-024}, il vient alors 
 -138 
 
 
 -r lJ.. 1Y1.. ..u.. cLS 
 '" 0
 ~è.Q "'â il ... 
-comme il résulte du théorème des travaux virtuels (9), en prenant comme dé­placement virtuel le déplacement sol'ution .(.l,. cqfd
+comme il résulte du théorème des travaux virtuels \eqref{eq:Ch09-009}, en prenant comme dé­placement virtuel le déplacement sol'ution .(.l,. cqfd
 '" 
 Au passage nous aVOns démontré 
 Théorème du travail. Dans un problème élastostatique, l'énergie de déforma­tion est égale à la moitié du travail des efforts extérieurs dans le dépla­cement solution. 
@@ -298,21 +293,21 @@ cL.u. cL
 ôSl. "'â a o.t 
 Pour un problème quasi-statique, on néglige les variations d'énergie cinéti­que, et on obtiendra l'énergie de déformation associée à (4., 6· . ) par in
 ... "'II 
-tégration de (32) par rapport au temps sur un processus quasi-statique fai
+tégration de \eqref{eq:Ch09-032} par rapport au temps sur un processus quasi-statique fai
 sant passer de l'état de référence (..u-. = 0, <r.. =0, W= 0) à l'état final 
 '" A.t 
 
 
 Or, on peut obtenir un tel processus par un chargement proportionnel: d'après la linéarité, (),JA,., Â cs" ) est la solution quasi-statique ou statique asso
 ....* 
-c iée  aux  données  ... (').'f..  '  '). T...d.  , ') ..u.t ). L' é ta t  de  référence correspond  a lors  à  
+c iée  aux  données  ... \eqref{eq:Ch09-00'}.'f..  '  '). T...d.  , ') ..u.t ). L' é ta t  de  référence correspond  a lors  à  
 '"  '" 0  et  l'état  final  à  ").  =1.  .  On  obtient alors  (d.u.. ~ ...  AL· N  cL))  
 W  '"  ~ ~  l N.Q~ t .l.l. 0N­ + K Â (f"i lY1.à Al... ô.a  cLS l ~  J.)  
 
 
 cÂAr -t (\ (J. . 1Y1.. AL. cLS 1 
 t %n t AL" .l)ÔQ ~~ ~ '" ~ 
-Le coefficient 1/2 dans (31) traduit donc physiquement la mlse en charge pro­~ressive du Qilieu. 
+Le coefficient 1/2 dans \eqref{eq:Ch09-031} traduit donc physiquement la mlse en charge pro­~ressive du Qilieu. 
 1.4 APPLICATION A LA TORSION 
 Ainsi, le théorème de comparaison permet un encadremenE de la 50­lut~: -: par des solutions approchées. A titre d'application, nous allons rncn-' 
 trer -:ormnent il permet d'encadrer le module de rigidité à la torsion d'un arbre cylindrique (§ VII.2). Nous avons formulé au § VII.2.3 le problème ré­gûlier le plus commode correspondant à cette sollicitation 
@@ -325,7 +320,7 @@ t
 Sf-': [o).t] x dt (J'. ' rn.. : 0 
 "'li' à 
 
-(33) L 0 -:c.. : 0 cr11 = 0 J.l,2. =-U.., = 0
+\eqref{eq:Ch09-033} L 0 -:c.. : 0 cr11 = 0 J.l,2. =-U.., = 0
 j 
 LIX, =t (J'--I--I = 0 .Ll.l,. = -O(.Q I,l:~ .M-~= Of 1 'x
 1 l, 
@@ -337,9 +332,9 @@ type statique, à savoir
 [ 
 <J, m.. = 0 sur [O,~J x "ôL
 Li Ô' 
-(34) A 0 en -X, =0 -X , =1
+\eqref{eq:Ch09-034} A 0 en -X, =0 -X , =1
 ~1 " 
-Nous inspirant de la solution du § VII.2.2, nous prenons un ch3mp de contraintes de la forme (VII.48), Les CL (34) sur les extrémités so~t alors automatiquement vérifiées. Conune au § VII.2.2, les équations d'équi­libre permettent d'introduire une fonction de contrainte ~ et les CL (:.i) sur la surface la téraI e exigent que p sa i t null e sur () L . Par con t :-0:', pour un CSA, la fonction ~ ne doit pas vérifier l'êquation (VII.3~) ~\Jl Lésul~ait des équations de Beltrami. Ainsi, un CSA est défini par une :C~L
+Nous inspirant de la solution du § VII.2.2, nous prenons un ch3mp de contraintes de la forme (VII.48), Les CL \eqref{eq:Ch09-034} sur les extrémités so~t alors automatiquement vérifiées. Conune au § VII.2.2, les équations d'équi­libre permettent d'introduire une fonction de contrainte ~ et les CL (:.i) sur la surface la téraI e exigent que p sa i t null e sur () L . Par con t :-0:', pour un CSA, la fonction ~ ne doit pas vérifier l'êquation (VII.3~) ~\Jl Lésul~ait des équations de Beltrami. Ainsi, un CSA est défini par une :C~L
 ~ 
 tion 1I\(t:J; ~) nulle sur 'OL avec
 ':! .L"~3 
@@ -357,24 +352,24 @@ l~,
 0 
 Pour ..:..:flculer l' énergie de déformation, en élasticité isotrope, on ...it':': ~::--::: les formules suivantes, qui s'obtiennent directement à partir des fc~~ du chapitre V 
 
-(36) 
+\eqref{eq:Ch09-036} 
 -140 
-et à partir de (35) on obtient 
+et à partir de \eqref{eq:Ch09-035} on obtient 
 
 .!. cl.
-Pour calculer T.... et Tf il faut expliciter la décomposi~ion (VI.8) pour le problème (33) 
+Pour calculer T.... et Tf il faut expliciter la décomposi~ion (VI.8) pour le problème \eqref{eq:Ch09-033} 
 
 r. 
 '~---------------------/ 
 T cl. 
 (r;..)
 .LI., ... il 
-et compte-tenu de la valeur des données (33) 
+et compte-tenu de la valeur des données \eqref{eq:Ch09-033} 
 cl. . 
-(38) 
+\eqref{eq:Ch09-038} 
 T{ (.u....) " 0 
 
-(39) 
+\eqref{eq:Ch09-039} 
 T: (cr-"'t) ,. cd, § ( ,x,t cr-~ .. 
 
 
@@ -382,13 +377,13 @@ T: (cr-"'t) ,. cd, § ( ,x,t cr-~ ..
 
 1 
 "
-où ~1 est le moment de torsion résultant des efforts associés au CSA Compte-tenu de (35), il vient 
+où ~1 est le moment de torsion résultant des efforts associés au CSA Compte-tenu de \eqref{eq:Ch09-035}, il vient 
 " 
 A 
 T6. (A ô~ 
 .u. (}:..il) -cd, o<l! ) d.tc~ ck..
 " ))1: (rL~ + l.C."
-'OrL,t '(1):3 
+'OrL,t '\eqref{eq:Ch09-001}:3 
 9, 01.1 A 
 = ip ck,tdt.cô
 ~r. 
@@ -401,12 +396,12 @@ Un CCA .u.;.. doit unique~ent vérifier les CL de type cinématique
 
 " .v 
 ..u.~ ~ ..u. .. " 0 
-(42) f 
+\eqref{eq:Ch09-042} f 
 ;;.~ = -I)/..Q.~.. 
 
 et, en nous inspirant de la structure (VII.76) de la solution, nous prenons pour CCA le champ 
 
-qui vérifie automatiquement (42). Un CCA Sera donc défini par une fonction quelconque (effectivement, les restrictions (VII.78) imposé~s à lr pour la solution sont d'origine statique) . On a alors 
+qui vérifie automatiquement \eqref{eq:Ch09-042}. Un CCA Sera donc défini par une fonction quelconque (effectivement, les restrictions (VII.78) imposé~s à lr pour la solution sont d'origine statique) . On a alors 
 .. 
 o'f>
 0 -OC +
@@ -414,24 +409,24 @@ o'f>
 '0 'l:.l, 
 
 cl.
-(44) ~ 
+\eqref{eq:Ch09-044} ~ 
 -I:C -t ~ 0 o
 E = 
 3J 
 ~ 3x~ 
 'à~ 
 -X.l,+~ 0 o 'à 'l:~ 
-et on tire de (36) 
+et on tire de \eqref{eq:Ch09-036} 
 
-soit finalement, grâce à (38), 
+soit finalement, grâce à \eqref{eq:Ch09-038}, 
 
-Ainsi, compte tenu de (46) et (41), le théorème de comparaison permet d'encadrer 11(4...) =I«(Ï....~). Compte-tenu de (38) et (39), on a pour la sol ution 
-(47) . li (..u.J = K«Ï...~) = W = 0(1, '1l\.~ -w 
+Ainsi, compte tenu de \eqref{eq:Ch09-046} et \eqref{eq:Ch09-041}, le théorème de comparaison permet d'encadrer 11(4...) =I«(Ï....~). Compte-tenu de \eqref{eq:Ch09-038} et \eqref{eq:Ch09-039}, on a pour la sol ution 
+\eqref{eq:Ch09-047} . li (..u.J = K«Ï...~) = W = 0(1, '1l\.~ -w 
 compte-cenu de (VII.64). Le théorème de comparaison nous donne donc 
 
 
 l 
-(48) 
+\eqref{eq:Ch09-048} 
 
 
 valable pour toute fonction 'fA nulle sur aE et toute fonction "i'.. . On voit 
@@ -449,17 +444,17 @@ On trouve alors par un calcul direct
 
 ~ 
 La fane tian "f es t quelconque par analogie avec la section elliptiqu~, nous prenons 
-(52) 
+\eqref{eq:Ch09-052} 
 
 et nous obtenons 
 
-d'où l'encadrement (48) pour l . Pour obtenir l'encadrement optimal, nous 'choisissons la valeur .de 'Yn, qui maximise ~(~) et la-valeur de t qui mi­nimise ~~) . On trouve 
+d'où l'encadrement \eqref{eq:Ch09-048} pour l . Pour obtenir l'encadrement optimal, nous 'choisissons la valeur .de 'Yn, qui maximise ~\eqref{eq:Ch09-00~} et la-valeur de t qui mi­nimise ~~) . On trouve 
 ~ j,.~
 :; (l. 
 =
 1YY1.~ 
 4(a,~t-%") tf = a-" t-Ji' 40 a-' ~3 4~ 0,; ~~ 
-(54) ~ l .;
+\eqref{eq:Ch09-054} ~ l .;
 -
 3 o."+-ir~ 9 é +-.,e,L 
 En particulier pour la section carrée, on trouve 
@@ -480,7 +475,7 @@ Théorème de réciprocité au de ~!ax-we.ll~Betti. Le travail des efforts exté
 Tleurs 2 dans le dênla2e~ent ~ es~ ê~al au travail des efforts extérieurs 
 
 1 dans le déplacement 2. 
-l(56) 
+l\eqref{eq:Ch09-056} 
 
 
 Dem. On utilise le théorème des h'a\'aux virtuels appliqué au problème 1 avec comme déplacement virtuel·}~ c2placement ~~ solution du problème 2. 
@@ -492,7 +487,7 @@ On obtient
 \ ... .t-
 On effectue la même opération en char.g~ant 1 et 2 
 
-et on obtient (56) en remarquant que. ~'après la symétrie de la matrice cl' élasticité 
+et on obtient \eqref{eq:Ch09-056} en remarquant que. ~'après la symétrie de la matrice cl' élasticité 
 
 A titre d'exemple dlapp~i.::atl,_n, C'îDsidérons un problème du type !.!..? avec des données (i.i..' T...,d.). EY""_ .;;':néral, ~)!""! ne saura pas calculer la so­lution (~L' cr-:"â-). Par contre, c'2rtai:1s pr"'Jlè,,,es de type II peuvent être résolus pour le même domaine, par exemple teus ceux qUl admettent une solu­tion homogène: le problème caractérisé par les données 
 
@@ -501,12 +496,12 @@ A.a
 
 On applique le thécceO\e de Max""e\ l Betti en prenant connne problème 
 -144 
-1 le problème posé, et 	comme problème 2 le problème (57) avec sa solution 
-(58) : 
+1 le problème posé, et 	comme problème 2 le problème \eqref{eq:Ch09-057} avec sa solution 
+\eqref{eq:Ch09-058} : 
 
 Mais l'utilisation du théorème de la divergence donne 
 
-et (58) donne des informations sur la valeur moyenne des déformations 
+et \eqref{eq:Ch09-058} donne des informations sur la valeur moyenne des déformations 
 
 Par exemple, on obtiendra la valeur moyenne de E.(.( et ... ~ en prenant pour 
 
@@ -514,7 +509,7 @@ Par exemple, on obtiendra la valeur moyenne de E.(.( et ... ~ en prenant pour
 isotrope on obtient 
 '" -1 ~f ~ [t~~ -vq~~.l.+t~~'!,)1 èw
 1/ E l ~ 
-(60) 	
+\eqref{eq:Ch09-060} 	
 + t~[T.cl.J.!., -V ( TJ,d./;!.~ -t T:/;!.3 î} d.,5 1 = ~ A+V r)j) (Î'...:: + t.2.:\t..) M t" (\ (T//;!.~ 1" \d.J.!.,) d.,s 1. 
 
 V E SI. ~:o .ll".Q. 	J 
@@ -546,7 +541,7 @@ L'utilisation de ce théorème et du théorème de réciprocité est basée sur 
 ->
 trée  F  appliquée  a~  point M,  alors  le  travail  du  chargement  2 dans  le dé­ 
 placement  1  se  réduit  à  
-(63)  
+\eqref{eq:Ch09-063}  
 
 d'où le calcul du 9éplacement du point M pour le problème 1. Ce type de mé­thode est peu ütilisé en MMe, pour deux raisons: 
 1. 
@@ -603,7 +598,7 @@ noeuds A, B, C, D.
 (41 -.lC~)(o!C...-~) (J.C,-I.e:) (4.. -k~)
 { = tA + -tB
 (Jee.f -).(,'0) (JJ:~ -~~) (~~~ _ ~,A) (IY-f -!:Cf) 
-(65) 
+\eqref{eq:Ch09-065} 
 (IY-, -J.C~) (11;.,-.I!lf) ().c, -.K,c) ( (:i;" -/:C~)
 + + tl)
 ic (1:1.,' -,<Dl (4: -IY-t) (bOJ'-IY-n (JJ:{-J1-~) 
@@ -619,22 +614,22 @@ finis des "catalogues" d'éléments.
 Après aVOlr découpé le modèle et choisi les éléments~ ,---ne fonction de l'espace discrétisé est définie par sa valeur en un certaiTl ~Jrnbre J~ noeuds, et on doit minimiser une fonction d'un nombre fini de '"'l~'iables 1 rro­blème qui se prête bien au calcul numérique. 
 
 -l~g 
-PO'H lA torsion, par exemple, on pC<Jt à partir de (48) construire dc.:-'.x ::,':'::hodes d'§léments finis 1ère ~étbode. On discrétise 1. , et on rr.axir.lise la fcnctionn211e \\.(~) sur 
+PO'H lA torsion, par exemple, on pC<Jt à partir de \eqref{eq:Ch09-048} construire dc.:-'.x ::,':'::hodes d'§léments finis 1ère ~étbode. On discrétise 1. , et on rr.axir.lise la fcnctionn211e \\.\eqref{eq:Ch09-00~} sur 
 "
 l'espace des fonc:ticns <f nulles s'J.r le bord. 
-2ème méthode. On discrétise L. , et on minimise la fonctionnelle ~(~) sur 
+2ème méthode. On discrétise L. , et on minimise la fonctionnelle ~\eqref{eq:Ch09-00~} sur 
 l'espace de toutes les f0uctions ~ 
 
 3.2 APPLICATION A UN EXEMPLE 
 Pour montrer la mise en 0euvre de la méthode, nous allons enVlsa­ger un exemple. Considérons en déIormations planes un barrage triaQgulaire 
 
 Les forces de volume se réduisent à la pesanteur 
-(67) 
+\eqref{eq:Ch09-067} 
 
-p étant la masse volumique du béton. Quant aux conditions aux limites, elles traduisent ltabsence de contrainte sur OB, l'effet de la pression hydrostatique -(j)f'J:." (Ci') étant le poids spé­cifique de l'eau) sur OA, et la liaison supposée rigide avec le sol sur AB 
+p étant la masse volumique du béton. Quant aux conditions aux limites, elles traduisent ltabsence de contrainte sur OB, l'effet de la pression hydrostatique -\eqref{eq:Ch09-00j}f'J:." (Ci') étant le poids spé­cifique de l'eau) sur OA, et la liaison supposée rigide avec le sol sur AB 
 OB =' 0 ",,0
 0:;1 ... <r-l~ "~,, ... cr~~ 
-(68) OA cr "" (j) f'J:..ù 0:,,, "" 0
+\eqref{eq:Ch09-068} OA cr "" \eqref{eq:Ch09-00j} f'J:..ù 0:,,, "" 0
 " 
 AB Mo-0
 , = .-U.,~ =
@@ -649,7 +644,7 @@ la solution minimise la fonctionnelle
 Pour discrétiser ce problème, nous introduisons un découpage en éléments finis 
 
 Par exemple, nous introduisons un maillage régulier et des éléments trian
-gulaires du type (64), et nous approchons 'U, par '/..6n = [ (ul,u), u1 et unuls sur AB et de la forme (64) sur
+gulaires du type \eqref{eq:Ch09-064}, et nous approchons 'U, par '/..6n = [ (ul,u), u1 et unuls sur AB et de la forme \eqref{eq:Ch09-064} sur
 22 chaque triangle] 
 Ainsi, une fonction de tG sera caractérisée par sa valeur aux 
 "" 
@@ -657,9 +652,9 @@ Ainsi, une fonction de tG sera caractérisée par sa valeur aux
 n(n+J)/2 points du maillage non situés sur AB (si DA et AB sont découpés en n intervalles égaux). Ainsi, l'espace ~~ est un espace de dimension n(n+I), et une fonction de·~ sera caractérisée par un vecteur colonne 
 U de n(n+l) éléments donnant "" les deux composantes de ..u.. en chaque point
 <
-du maillage, la formule (64) donnant alors la valeur de ~. en tout point.
+du maillage, la formule \eqref{eq:Ch09-064} donnant alors la valeur de ~. en tout point.
 h 
-Si l'on reporte cette fonction dans la définition (70) ou (15) de l'éner­gie potentielle, l'énergie de déformation \V(~À) devient une forme qua
+Si l'on reporte cette fonction dans la définition \eqref{eq:Ch09-070} ou \eqref{eq:Ch09-015} de l'éner­gie potentielle, l'énergie de déformation \V(~À) devient une forme qua
  "'cl
 dratique par rapport aux cCTIl?osantes de \! et le travail des efforts Ti 
 devient une forme linéaire par rapport à ces mêmes composantes. Ainsi 
@@ -670,12 +665,12 @@ devient une forme linéaire par rapport à ces mêmes composantes. Ainsi
 où la matrice carrée of-est la matrice de rigidité, symétrique et définie 
 positive, et où le vecteur colonne ~ caractérise les efforts extérieurs. Pour minimiser l'énergie potentielle, il faut donc résoudre le système 
 linéaire 
-(72) JI: u F 
+\eqref{eq:Ch09-072} JI: u F 
 Nous utilisons leI le théorème de l'énergie potentielle, car en 
 HHC il est en général très difficile d'engendrer des champs statiquement 
 admissibles, et le théorème de l'énergie complémentaire est peu utilisé dans ce contexte. 
 3.3 ETUDE D'UN ELEMNT 
-Pour calculer les intégrales qui interviennent dans (70), il [dU­dra sonnner les contributions de chaque triangle pour les intégrales de sur face, et de chaque segment pour les intégrales de ligne. Nous allons donc 
+Pour calculer les intégrales qui interviennent dans \eqref{eq:Ch09-070}, il [dU­dra sonnner les contributions de chaque triangle pour les intégrales de sur face, et de chaque segment pour les intégrales de ligne. Nous allons donc 
 -150 
 dêjà examiner la contribution d'~n ~lê~ent triang~laire abc à l'nergie de déforw.3tiony au travail des efforts de volume, et au travail des efforts de surface. 
 Sur chaque élément, nous pouvons donc écrire le déplacement en fonction de la/valeur aux sommets d, b et c de cet élément 
@@ -683,7 +678,7 @@ Sur chaque élément, nous pouvons donc écrire le déplacement en fonction de l
 "ù Âa.' 'À.e. et Â" sont les coordonnées barycentriques du point 
 définies par 
 ÂQ 
-(74) 
+\eqref{eq:Ch09-074} 
 ?'j,. 
 Â" 
 et qui dépendent 
@@ -702,8 +697,8 @@ J.lC.0-J.J:.Ir ",,-'"
 4.,
 J,
 fi. ~ 
-uniquement de la géométrie de l'élément . (73) 
-(75) ,: 
+uniquement de la géométrie de l'élément . \eqref{eq:Ch09-073} 
+\eqref{eq:Ch09-075} ,: 
 .u;<L »..Jr JL'" 
 . 2,
 [~:1 
@@ -715,7 +710,7 @@ a) Discrétisation de l'énergie.
 Le tenseur des 
 A
 [EH é"
-(76) 
+\eqref{eq:Ch09-076} 
 ~
 1 
 [:~
@@ -755,7 +750,7 @@ l.X;a
 -X, 
 -x:J
 ·t 
-(77) 
+\eqref{eq:Ch09-077} 
 = 
 = LI intégratian de l' énerg ie de déforma tion r: ~e tl Langle abc 
 
@@ -768,7 +763,7 @@ r
 1 
 ) 
 donne 
-(78) 
+\eqref{eq:Ch09-078} 
 
 où  ~  désigne le vecteur  colonne  des  dé~  'lcements  aux  noeuds,  donc  
 sous-vec teur  de  U  ,  et où  'lne  éitrice  symétrique  6x6  qui  
@@ -782,30 +777,30 @@ dé
 .
 placements des noeuds, on obtient un vecteur colonne r 
 ~b 
-(79) a .u 
+\eqref{eq:Ch09-079} a .u 
 = a.&..c.. 
 f~~c.'---~bc:-o....:...~ 
 qUI peut s'interpréter énergétiquement comme donnant les "forces élastiques 
 {a.., [.2,-, l,(, ", qui 
 doivent être appliquées aux noeuds pour produire le dé
-placement ~ . Ceci résulte par exemple du bilan énergétique (32) qui montre 
+placement ~ . Ceci résulte par exemple du bilan énergétique \eqref{eq:Ch09-032} qui montre 
 que pour une variation dQ des déplacements aux noeuds, la variation de 
 l'énergie de déformation 
-(80) 
-est égale au travail des efforts exercés sur l'élément. On peut donc inter­préter (80) comme donnant le travail des "forces élastiques" CsuPPo3ées 
+\eqref{eq:Ch09-080} 
+est égale au travail des efforts exercés sur l'élément. On peut donc inter­préter \eqref{eq:Ch09-080} comme donnant le travail des "forces élastiques" CsuPPo3ées 
 ... 
 concentrées aux noeuds) ia., ~h et ~~. Il faut bien garder à l'esprit, 
 cependant, qu'il ne s'agit là que d'une interprétation, et que ces "forces 
 élastiques" sont fictives et sans aucune existence réelle; ce ne sont pas 
 des forces, malS des dérivées de l'énergie de déformation. 
-b) Discrétisation des forces de volume. Calculons la contribution du triangle abc au travail des forces de volume, càd dans (70) des forces de pesanteur. En reportant (73) dans 
-(70) et en remarquant que 
+b) Discrétisation des forces de volume. Calculons la contribution du triangle abc au travail des forces de volume, càd dans \eqref{eq:Ch09-070} des forces de pesanteur. En reportant \eqref{eq:Ch09-073} dans 
+\eqref{eq:Ch09-070} et en remarquant que 
 (81 ) 
 on obtiendra 
-(82) _ _  (.u: + 4;+"'< ) = 
+\eqref{eq:Ch09-082} _ _  (.u: + 4;+"'< ) = 
 ) 
 (83 ) 1 - 1 -P'à'S 1 3 ~ 
-D'un point de vue énergétique, on peut interpréter (82) en disant que les 
+D'un point de vue énergétique, on peut interpréter \eqref{eq:Ch09-082} en disant que les 
 ---1'0.. -"'t--">
 forces de volume sont équivalentes aux trois forces concentrées 'f ,tt' ,~,c.. appliquées aux noeuds. 
 De manière générale, l'écriture du travail des efforts de volume conduit à décomposer ces efforts en trois forces concentrées appliquées aux noeuds. 
@@ -818,14 +813,14 @@ X't -t----------', :r.,
 b
 b
 " 
-La restriction de (75) à ac donne, dans le cas particulier du barrage (ac vertical) 
+La restriction de \eqref{eq:Ch09-075} à ac donne, dans le cas particulier du barrage (ac vertical) 
 
 De sorte que la contribution de ac au travail des efforts surfaciques est 
 
 et on obtient finalement 
 
 = "fT ..u. 
-(86) 'fT = (-~ ll~ (-xt + '\~) 1 0 
+\eqref{eq:Ch09-086} 'fT = (-~ ll~ (-xt + '\~) 1 0 
 
 D, 0)
 , D,
@@ -833,10 +828,10 @@ D, 0)
 ~ 
 D'un point de  vue  énergétique,  les  forces  de  contact  exercées  
 sur  ac  sont  équivalentes  à deux  forces  ~ concentrees  ---. Q."t'  et  -1> ,"1'  exercées  
-aux  noeuds.  Par contre,  ~~ 4  n'intervient  pas  dans  (84),  et donc  -tr'-1'=0.  
+aux  noeuds.  Par contre,  ~~ 4  n'intervient  pas  dans  \eqref{eq:Ch09-084},  et donc  -tr'-1'=0.  
 3.4 ASSEMBLAGE  
 
-Pour calculer Kc.iL.), càd pour expliciter (71), on doit soonner la contribution de tous les triangles pour l'énergie de déformation et le 
+Pour calculer Kc.iL.), càd pour expliciter \eqref{eq:Ch09-071}, on doit soonner la contribution de tous les triangles pour l'énergie de déformation et le 
 travail des forces de volume, ainsi que la contribution de tous les segments de S{ pour le travail des forces de surface. Pour minimiser la fonction K(!:!) résul tante, il faut annuller la dérivée de K par rapport à chaque déplacement de chaque noeud. 
 a) Cas d'un noeud intérieur a. 
 
@@ -847,7 +842,7 @@ n'interviendra dans K que par la contribution de ces n triangles. On pour­ra do
 
 o Wr.
 
-(87) 
+\eqref{eq:Ch09-087} 
 
 
 --' + ... 
@@ -859,7 +854,7 @@ Zn
 Q.., T" .0.., T......
 0' § p~ ;;:" 0...:. cioc~ '" 0 = -( tf~ T ." + '1\ ) 
 .Q
-(88) 	'0-<" 3 E.î' "") ( ..,T, o., T"" ) 
+\eqref{eq:Ch09-088} 	'0-<" 3 E.î' "") ( ..,T, o., T"" ) 
 fL..r 3-il-~ c.k. 04), = ~ (5 T ...... 5 '" -<f~ ... '-. ... Cf~
 Ô..llQ. 
 " 
@@ -870,7 +865,7 @@ Zn ~~ n'interviendra pas dans le travail des efforts de contact, puisque ce
 lui-ci ne 	fait apparaître que les déplacements des noeuds de Sf. Ainsi, la minimisation de K par rapport à .JJ..~ pourra s'écrire
  
 _r<L,T~
-(89) 
+\eqref{eq:Ch09-089} 
 
 = 0 
 On peut interpréter cette équation comme exprimant l'équilibre au noeUG a sous l'action des forces qui lui sont appliquées -forces élastiques exercées par tous les élémetits entourant a, qUl sont égales à l'opposé des fprces élastiques rQ..,T~ exercées sur l'élément; -+ -'1: -?T 
@@ -882,19 +877,19 @@ On obtient alors
 
 3 Q., T1 
 .., \f.Q,T~
-(90) l'JJ (C:l, 4, ch,), = 
+\eqref{eq:Ch09-090} l'JJ (C:l, 4, ch,), = 
 OA 
 ~ 
  ~
 (lA'" JCf 
 et finalement, la minimisation de K donne 
-(91) 
+\eqref{eq:Ch09-091} 
 
 o
 + 
 
 = 
-On peut encore interpréter (91) comme exprimant l'équilibre du noeud a, à appliquées
+On peut encore interpréter \eqref{eq:Ch09-091} comme exprimant l'équilibre du noeud a, à appliquées
 
 qui est la force concentrée équiva
 lente en a aux forces de cont~ct appliquées aux éléments entourant a. 
