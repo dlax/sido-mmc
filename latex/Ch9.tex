@@ -143,52 +143,64 @@ On 	démontre alors
         &= K\left( u_i \right) + \frac{1}{2} \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij}^0 \tilde{\varepsilon}_{kh}^0 \ud v + \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij}^0 \varepsilon_{kh} \ud v - \iiint_{\Omega} f_i \tilde{u}_i^0 \ud v - \iint_{S_f} T_i^d \tilde{u}_i^0 \ud S
     \end{align*}
     Mais $u_i$ est solution, et le théorème des travaux virtuels \eqref{eq:Ch09-009} donne, en prenant ${\mathop{u}^{\ast}}_i = \tilde{u}_i^0$
-    
+    \begin{align*}
+        \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{kh}^0 \ud v &= \iint_{\Omega} \sigma_{ij} \tilde{\varepsilon}_{ij}^0 \ud v \\
+        &= \iiint_{\Omega} f_i \tilde{u}_i^0 \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j \tilde{u}_i^0 \ud S \\
+        &= \iiint_{\Omega} f_i \tilde{u}_i^0 \ud v + \iint_{S_f} T_i^d \tilde{u}_i^0 \ud S + \iint_{S_u} \cancel{\sigma_{ij} n_j \tilde{u}_i^0} \ud S
+    \end{align*}
+    puisque sur $S_f$, on a \eqref{eq:Ch09-002}, et que, d'après \eqref{eq:Ch09-003} et \eqref{eq:Ch09-006}, $\tilde{u}_i^0$ est nul sur $S_u$.
+    Finalement, on obtient donc
+    \begin{equation}
+        K\left( \tilde{u}_i \right) = K \left( u_i \right) + \frac{1}{2} \iiint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij}^0 \tilde{\varepsilon}_{kh}^0 \ud v
+        \label{eq:Ch09-018}
+    \end{equation}
+    Or le second terme est positif, puisque la matrice d'élasticité est définie positive (paragraphe~\ref{ssec:Ch05-1.1}).
+    Ceci démontre \eqref{eq:Ch09-016}.
 \end{proof}
-\endinput
-..u... _ .,u....
-prenant * "'.
-.. ... 
-"'0 ... 
-é .. cW
-~.n.A...iU E·"'a. E~v.. .k = ~n. Cf"'â ...~ D $ i-.û:: cl,,-+ .u."'. J,:,
-s:!. .. las:!. G".i.t l'fI,à <
-.,-
-'" $ t~: cW + § T..d. ;{o. tl.S .... ~ (J.. IYV ..u... tl.5
-:a/ t 
-n. s( 5~ .l
-puisque sur S, ona \eqref{eq:Ch09-002}, et que, d'après 0) et \eqref{eq:Ch09-006}, est nul sur S.u,.. Finalement, on obtient donc 
-.. 
-\eqref{eq:Ch09-018} 1< (.u:..) 
 
-Or le second terme est positif, puisque la matr~ce d' élasticité est défini~ positive (§ V.I.I). Ceci démontre \eqref{eq:Ch09-016}. cq f c 
 On tire également de cette démonstration 
-f
-ThéOrème d'existence et d'unicité. Pour un problème dé' t::-;::>E:' l ou un problèfi'!t mixte, il existe une solution unique. ! Pour un problème de type Il. il existe une s()L~::.i(1n à~finit :, un !mouvement de solide rigide près SSi 
-càd SSi les efforts appliqués forment un torseur nul. 
-Dem. Unicité. Soit .u.:-et..ll.~ deux solutions, ils sont aussi ceA, et l'appli
-.. .. 
-cation de \eqref{eq:Ch09-016} montre que 
+\newtheorem*{ThEU}{Théorème d'existence et d'unicité}
+\begin{ThEU}
+    Pour un problème de type I ou un problème mixte, il existe une solution unique.
+    Pour un problème de type II. il existe une solution définie à un mouvement de solide rigide près si-et-seulement-si
+    \begin{equation}
+        \begin{split}
+            \iiint_{\Omega} f_i \ud v + \iint_{\partial \Omega} T_i^d \ud S = 0 \\
+            \iiint_{\Omega} \varepsilon_{ijk} x_{j} f_k \ud v + \iint_{\partial \Omega} \varepsilon_{ijk} x_j T_k^d = 0
+        \end{split}
+        \label{eq:Ch09-019}
+    \end{equation}
+    c'est à dire si-et-seulement-si les efforts appliqués forment un torseur nul. 
+\end{ThEU}
+\begin{proof}
+    \textit{Unicité.}
+    Soit $u_i^1$ et $u_i^2$ deux solutions, ils sont aussi CCA, et l'application de \eqref{eq:Ch09-016} montre que 
+    \begin{displaymath}
+        K\left( u_i^1 \right) = K \left( u_i^2 \right)
+    \end{displaymath}
+    soit, d'après \eqref{eq:Ch09-018}
+    \begin{eqnarray}
+        \iiint_{\Omega} A_{ijkh} \left( \varepsilon_{ij}^1 - \varepsilon_{ij}^2 \right) \left( \varepsilon_{kh}^1 - \varepsilon_{kh}^2 \right) \ud v = 0
+        \label{eq:Ch09-020}
+    \end{eqnarray}
+    Il en résulte, puisque $A_{ijkh}$ est défini positif 
+    \begin{equation}
+        \varepsilon_{ij}^1 = \varepsilon_{ij}^2 \quad,\quad u_i^1 = u_i^2 + \varepsilon_{ijkh} \omega_j x_k + \alpha_i
+        \label{eq:Ch09-021}
+    \end{equation}
+    et les deux solutions ne diffèrent que d'un mouvement de solide.
+    Si $S_u$ existe (plus précisément, si $S_u$ est de mesure nulle), les CL en déplacements permettent de montrer que $\vec{\omega} = \vec{\alpha} = 0$ 
+et donc $u_i^1 = u_i^2$ d'où l'unicité. 
+    Par contre, si $S_u$ est vide (problème de type II), on ne peut plus éliminer ce mouvement de solide qui reste indéterminé.
 
+    \textit{Existence.}
+    L'existence d'une solution peut par exemple se démontrer en construisant, dans un espace fonctionnel approprié, une suite minimisante pour la fonctionnelle $K$ -- voir cours de Mathématiques.
+    Pour un problème de type II, la condition d'équilibre \eqref{eq:Ch09-019} apparaît naturellement, car sinon la fonctionnelle n'est pas minorée. 
+    Pour les autres problèmes, cette condition d'équilibre n'apparaît pas, car les efforts donnés sont équilibrés par les efforts de liaison (inconnus \textit{a priori}) s'exerçant à travers $S_u$.
+\end{proof}
 
-
-soit, d'après \eqref{eq:Ch09-018} 
-
-Il en résulte, puisque A;'i\t est défini positif 
-
-et les deux solutions ne diffèrent que d'un mouvement de solide. Si 5 ~ existe 
-
-~ l-
-permettent de montrer que 
-et donc ..lLA.-=.J.L,è,..' d'où l'unicité. 
-Par contre, si S est vide (problème de type II), on ne peut plus éliminer 
-.... 
-ce mouvement de solide qui reste indéterminé. 
-Existence. L'existence d'une solution peut par exemple se démontrer en cons­truisant, dans un espace fonctionnel approprié, une suite minimisante pour 
-la fonctionnelle K -voir cours de Mathématiques -. Pour un problème de type II, la condition d'équilibre \eqref{eq:Ch09-019} apparaît naturellement, car sinon la 
-fonctionnelle n'est pas minorée. Pour les autres prob~èmes, cette condition 
-d'équilibre n'apparaît pas, car les efforts donnés sont équilibrés par les efforts de liaison (inconnus a priori) s'exerçant à travers S ...... 
-1.3 LE THEOREME DE L'ENERGIE COMPLEMENTAIRE 
+\subsection{Le théorème de l'énergie complémentaire}
+\endinput
 ... 
 Si nous partons cl' un CSA (j.. , nous définissons son énergie de 
 ""~ 
