@@ -200,127 +200,123 @@ et donc $u_i^1 = u_i^2$ d'où l'unicité.
 \end{proof}
 
 \subsection{Le théorème de l'énergie complémentaire}
-\endinput
-... 
-Si nous partons cl' un CSA (j.. , nous définissons son énergie de 
-""~ 
-déformation par 
-
+Si nous partons d'un CSA $\hat{\sigma}_{ij}$, nous définissons son énergie de déformation par
+\begin{equation}
+    \hat{W}\left( \hat{\sigma}_{ij} \right) = \frac{1}{2} \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij} \hat{\sigma}_{kh} \ud v = \frac{1}{2} \iiint_{\Omega} \hat{\sigma}_{ij} \hat{\varepsilon}_{ij} \ud v
+    \label{eq:Ch09-022}
+\end{equation}
 et son travail dans les déplacements donnés par 
-ci A
-\eqref{eq:Ch09-023} T (T".. ) = 
-.u. ""â 
-
+\begin{equation}
+    T_{u}^d \left( \hat{\sigma}_{ij} \right) = \iint_{S_u} \hat{\sigma}_{ij} n_j u_i^d \ud S
+    \label{eq:Ch09-023}
+\end{equation}
 et nous définissons 
-A 
-Définition. L'énergie complémentaire du CSA 0" .. est 
-... t 
-
-cl. ~ 
-[ \eqref{eq:Ch09-024} 
-T (0".. ) 
-.... ""â 
+\begin{defn}
+    L'énergie complémentaire du CSA est
+    \begin{equation}
+        H \left( \hat{\sigma}_{ij} \right) = T_{u}^d \left( \hat{\sigma}_{ij} \right) - \hat{W}\left( \hat{\sigma}_{ij} \right)
+        \label{eq:Ch09-024}
+    \end{equation}
+\end{defn}
 et on obtient le résultat suivant 
+\newtheorem*{ThECp}{Théorème de l'énergie complémentaire}
+\begin{ThECp}
+    Parmi tous les CSA, la solution $\sigma_{ij}$ maximise l'énergie complémentaire
+    \begin{equation}
+        H \left( \hat{\sigma}_{ij} \right) \leq H \left( \sigma_{ij} \right) \quad \forall \hat{\sigma}_{ij} \text{ CSA}
+        \label{eq:Ch09-025}
+    \end{equation}
+\end{ThECp}
+\begin{proof}
+    Soit $\sigma_{ij}$ la solution, $\sigma_{ij}$ un CSA, et posons
+    \begin{equation}
+        \hat{\sigma}_{ij} = \sigma_{ij} + \hat{\sigma}_{ij}^0
+        \label{eq:Ch09-026}
+    \end{equation}
+    et $\hat{\sigma}_{ij}^0$ est un CSA pour le problème homogène associé ($f_i^0 = 0,\ T_i^{d0} = 0$)
+    \begin{equation}
+        \hat{\sigma}_{ij,j}^0 = -f_i^0 = 0 \quad,\quad \hat{\sigma}_{ij}^0 n_j |_{S_f} = T_i^{d0} = 0
+        \label{eq:Ch09-027}
+    \end{equation}
+    \begin{align*}
+        H\left( \hat{\sigma}_{ij} \right) &= - \frac{1}{2} \iiint_{\Omega} \Lambda_{ijkh} \left( \sigma_{ij} + \hat{\sigma}_{ij}^0 \right) \left( \sigma_{kh} + \hat{\sigma}_{kh}^0 \right) \ud v + \iint_{S_u} \left( \sigma_{ij} + \hat{\sigma}_{ij}^0 \right) n_j u_i^d \ud S \\
+        &= H\left( \sigma_{ij} \right) - \frac{1}{2} \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij}^0 \hat{\sigma}_{kh}^0 \ud v - \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij}^0 \sigma_{kh} \ud v + \iint_{S_u} \hat{\sigma}^0_{ij} n_j u_i^d \ud S
+    \end{align*}
+    En appliquant le lemme fondamental à $\hat{\sigma}_{ij}^0$ CSA pour le problème homogène associé, et à $u_i$, déplacement solution, on obtient
+    \begin{align*}
+        \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij}^0 \sigma_{kh} \ud v &= \iiint_{\Omega} \hat{\sigma}_{ij}^0 \varepsilon_{ij} \ud v \\
+        &= \cancel{\iint_{\Omega} f_i^0 u_i \ud v} + \cancel{\iint_{S_f} T_i^{d0} u_i \ud S} + \iint_{S_u} \hat{\sigma}_{ij}^0 n_j u_i \ud S
+    \end{align*}
+    Les deux premiers termes disparaissent d'après \eqref{eq:Ch09-027}, tandis que sur $S_u$, $u_i=u_i^d$ par \eqref{eq:Ch09-003}.
+    Il vient finalement 
+    \begin{equation}
+        H \left( \hat{\sigma}_{ij} \right) = H \left( \sigma_{ij} \right) - \frac{1}{2} \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij}^0 \hat{\sigma}_{kh}^0 \ud v
+        \label{eq:Ch09-028}
+    \end{equation}
+    d'où la conclusion, puisque, comme $A_{ijkh}$, la matrice $\Lambda_{ijkh}$ est définie positive.
+\end{proof}
+\newtheorem*{ThComp}{Théorème de la comparaison}
+\begin{ThComp}
+    Soit $\left( u_i, \sigma_{ij} \right)$ la solution d'un problème régulier, $\tilde{u}_i$ un CCA et $\hat{\sigma}_{ij}$ un CSA
+    \begin{equation}
+        H \left( \hat{\sigma}_{ij} \right) \leq H \left( \sigma_{ij} \right) = K \left( u_i \right) \leq K \left( \tilde{u}_i \right)
+        \label{eq:Ch09-029}
+    \end{equation}
+\end{ThComp}
 
-Théorème de l'énergie complémentaire. Parmi tous les CSA, la solution <r~~ 
-maximise l'énergie complémentaire 
-
-Vrr.· C5A 
-~a 
-A 
-Dem'. 50 i t (J.. la solution, <J .. un CSA, et posons 
-~a ~~ 
-~ 
-"'.
-\eqref{eq:Ch09-026} (J CT ... CT·  
-~i 
-4a
-= "'a 
-
-est un CSA pour le problème hOlllOgène associé ( ~:= 0 
-
--137 
-'" 0 ".
-° 
-\eqref{eq:Ch09-027} If... =-iL ",0 , ~ 0 
-.(.i'~ ~~ f1\.à 1Sf ~ 
-H(cr;) " -~ ])1). fI-'-i H (G"1 + ~.i.i) ((J~~ + ~i~î o..'lr 
-+ §S (G-,-~ + éf;.·~ )lY1.~ -U-~ c\,S 
-oU. 
-= H\eqref{eq:Ch09-00G} _-: crr !I.r,.1.. .O. -~. drtr
-Nâ ~ JjJ n. ka ..~,...'" 
-
-"0
-En appliquant le lennne fondamental à (J.. , CSA pour le problème homogène
-"'il associé, èt à ~. , déplacement solution, on obtient 
-.... 
-
-" ~~.Q6-~à é;'À d.v 
-
-+ ~d.S 
-
-Les deux premiers termes disparaissent d'après \eqref{eq:Ch09-027}, tandis que sur S~ 
-d.
--U-. ".u,. par \eqref{eq:Ch09-003}. Il vient finalement 
-~ N 
-
-d'où la conclusion, pU1sque, comme A-'-â~t' la matrice ":"à\\.9,. est définie po
-sitive. 
-Théorème de comparaison! Soit (..u.,., (J.. ) la solution d'un problème régulier, 
-
-<'V ..A Jo, ....... ~ 
-
-..(.t.. un CCA et (J".. un CSA 
-"" "'"3 
-
-Les deux théorèmes de l'énergie potentielle et de l'énergie com­plémentaire permettent d'écrire les deux inégalités. Il reste donc à montrer 
-l'égalité 
-\eqref{eq:Ch09-030} 
-
-'" . Il. ( CS· . \ 
-""Il J 
+Les deux théorèmes de l'énergie potentielle et de l'énergie complémentaire permettent d'écrire les deux inégalités.
+Il reste donc à montrer l'égalité 
+\begin{equation}
+    K\left( u_i \right) = H\left( \sigma_{ij} \right)
+    \label{eq:Ch09-030}
+\end{equation}
 pour la solution. 
-Dem. Pour la solution, on a 
-"" 
+\begin{proof}
+    Pour la solution, on a 
+    \begin{displaymath}
+        W\left( u_i \right) = \hat{W} \left( \sigma_{ij} \right) = \frac{1}{2} \iiint_{\Omega} \sigma_{ij} \varepsilon_{ij} \ud v
+    \end{displaymath}
+    A partir de \eqref{eq:Ch09-015} et \eqref{eq:Ch09-024}, il vient alors
+    \begin{displaymath}
+        K\left( u_i \right) - H \left( \sigma_{ij} \right) = 2W - \tilde{T}_f^d \left( u_i \right) - T_u^d \left( \sigma_{ij} \right)
+    \end{displaymath}
+    \begin{displaymath}
+        \iiint_{\Omega} \sigma_{ij} \varepsilon_{ij} \ud v - \iiint_{\Omega} f_i u_i \ud v - \iint_{\partial \Omega} \sigma_{ij} n_j u_i \ud S = 0
+    \end{displaymath}
+    comme il résulte du théorème des travaux virtuels \eqref{eq:Ch09-009}, en prenant comme déplacement virtuel le déplacement solution $u_i$.
+\end{proof}
 
-E..
-W(JJ..;.) = W(CS-'-"t) 
-""3 
-A partir de \eqref{eq:Ch09-015} et \eqref{eq:Ch09-024}, il vient alors 
--138 
+Au passage nous avons démontré
+\newtheorem*{ThTra}{Théorème du travail}
+\begin{ThTra}
+    Dans un problème élastostatique, l'énergie de déformation est égale à la moitié du travail des efforts extérieurs dans le déplacement solution.
+    \begin{equation}
+        W = \frac{1}{2} \iiint_{\Omega} \sigma_{ij} \varepsilon_{ij} \ud v = \frac{1}{2} \left\{ \iiint_{\Omega} f_i u_i \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j u_i \ud S \right\}
+        \label{eq:Ch09-031}
+    \end{equation}
+\end{ThTra}
 
+On peut d'ailleurs obtenir directement ce résultat par une approche de type énergétique.
+Partons en effet du bilan énergétique en élasticité du paragraphe~\ref{ssec:Ch06-1.2} -- équation~\eqref{eq:Ch06-014}
+\begin{equation}
+    \frac{\ud K}{\ud t} + \frac{\ud W}{\ud t} = \iiint_{\Omega} f_i \frac{\ud u_i}{\ud t} \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j \frac{\ud u_i}{\ud t} \ud S
+    \label{eq:Ch09-032}
+\end{equation}
+Pour un problème quasi-statique, on néglige les variations d'énergie cinétique, et on obtiendra l'énergie de déformation associée à $\left( u_i, \sigma_{ij} \right)$ par intégration de \eqref{eq:Ch09-032} par rapport au temps sur un processus quasi-statique faisant passer de l'état de référence ($u_i=0$, $\sigma_{ij} = 0$, $W=0$) à l'état final ($u_i$, $\sigma_{ij}$, $W=W_f$)
+\begin{displaymath}
+    W_f = \int_{\text{état de référence}}^{\text{état final}} \left\{ \iiint_{\Omega} f_i \ud u_i \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j \ud u_i \ud S \right\}
+\end{displaymath}
+Or, on peut obtenir un tel processus par un chargement proportionnel: d'après la linéarité, $\left( \lambda u_i, \lambda \sigma_{ij} \right)$ est la solution quasi-statique ou statique associée aux données $\left( \lambda f_i, \lambda T_i^d, \lambda u_i^d \right)$.
+L'état de référence correspond alors à $\lambda=0$, et l'état  final à $\lambda=1$.
+On  obtient alors $\left( \ud u_i = u_i \ud \lambda \right)$
+\begin{align*}
+    W &= \int_{0}^1 \left\{ \iiint_{\Omega} \lambda f_i u_i \ud v + \iint_{\partial \Omega} \lambda \sigma_{ij} n_j u_i \ud S \right\} \ud \lambda \\
+    &= \underbrace{\int_0^1 \lambda \ud \lambda}_{=1/2} \left\{ \iiint_{\Omega} f_i u_i \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j u_i \ud S \right\}
+\end{align*}
+Le coefficient $1/2$ dans \eqref{eq:Ch09-031} traduit donc physiquement la mise en charge progressive du milieu. 
 
--r lJ.. 1Y1.. ..u.. cLS 
-'" 0
-~è.Q "'â il ... 
-comme il résulte du théorème des travaux virtuels \eqref{eq:Ch09-009}, en prenant comme dé­placement virtuel le déplacement sol'ution .(.l,. cqfd
-'" 
-Au passage nous aVOns démontré 
-Théorème du travail. Dans un problème élastostatique, l'énergie de déforma­tion est égale à la moitié du travail des efforts extérieurs dans le dépla­cement solution. 
-
-On peut d'ailleurs obtenir directement ce résultat par une appro­che de type énergétique. Partons en effet du bilan énergétique en élasticité du § VI. 1.2 -équation (VI.14) 
-cL.u. cL
-+ <1".  1Y1.. --~ S
-§
-ôSl. "'â a o.t 
-Pour un problème quasi-statique, on néglige les variations d'énergie cinéti­que, et on obtiendra l'énergie de déformation associée à (4., 6· . ) par in
-... "'II 
-tégration de \eqref{eq:Ch09-032} par rapport au temps sur un processus quasi-statique fai
-sant passer de l'état de référence (..u-. = 0, <r.. =0, W= 0) à l'état final 
-'" A.t 
-
-
-Or, on peut obtenir un tel processus par un chargement proportionnel: d'après la linéarité, (),JA,., Â cs" ) est la solution quasi-statique ou statique asso
-....* 
-c iée  aux  données  ... \eqref{eq:Ch09-00'}.'f..  '  '). T...d.  , ') ..u.t ). L' é ta t  de  référence correspond  a lors  à  
-'"  '" 0  et  l'état  final  à  ").  =1.  .  On  obtient alors  (d.u.. ~ ...  AL· N  cL))  
-W  '"  ~ ~  l N.Q~ t .l.l. 0N­ + K Â (f"i lY1.à Al... ô.a  cLS l ~  J.)  
-
-
-cÂAr -t (\ (J. . 1Y1.. AL. cLS 1 
-t %n t AL" .l)ÔQ ~~ ~ '" ~ 
-Le coefficient 1/2 dans \eqref{eq:Ch09-031} traduit donc physiquement la mlse en charge pro­~ressive du Qilieu. 
-1.4 APPLICATION A LA TORSION 
+\subsection{Application a la torsion}
+\endinput
 Ainsi, le théorème de comparaison permet un encadremenE de la 50­lut~: -: par des solutions approchées. A titre d'application, nous allons rncn-' 
 trer -:ormnent il permet d'encadrer le module de rigidité à la torsion d'un arbre cylindrique (§ VII.2). Nous avons formulé au § VII.2.3 le problème ré­gûlier le plus commode correspondant à cette sollicitation 
 x, 
