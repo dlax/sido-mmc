@@ -199,7 +199,7 @@ et donc $u_i^1 = u_i^2$ d'où l'unicité.
     Pour les autres problèmes, cette condition d'équilibre n'apparaît pas, car les efforts donnés sont équilibrés par les efforts de liaison (inconnus \textit{a priori}) s'exerçant à travers $S_u$.
 \end{proof}
 
-\subsection{Le théorème de l'énergie complémentaire}
+\subsection{Le théorème de l'énergie complémentaire} \label{ssec:Ch09-1.3}
 Si nous partons d'un CSA $\hat{\sigma}_{ij}$, nous définissons son énergie de déformation par
 \begin{equation}
     \hat{W}\left( \hat{\sigma}_{ij} \right) = \frac{1}{2} \iiint_{\Omega} \Lambda_{ijkh} \hat{\sigma}_{ij} \hat{\sigma}_{kh} \ud v = \frac{1}{2} \iiint_{\Omega} \hat{\sigma}_{ij} \hat{\varepsilon}_{ij} \ud v
@@ -315,122 +315,153 @@ On  obtient alors $\left( \ud u_i = u_i \ud \lambda \right)$
 \end{align*}
 Le coefficient $1/2$ dans \eqref{eq:Ch09-031} traduit donc physiquement la mise en charge progressive du milieu. 
 
-\subsection{Application a la torsion}
-\endinput
-Ainsi, le théorème de comparaison permet un encadremenE de la 50­lut~: -: par des solutions approchées. A titre d'application, nous allons rncn-' 
-trer -:ormnent il permet d'encadrer le module de rigidité à la torsion d'un arbre cylindrique (§ VII.2). Nous avons formulé au § VII.2.3 le problème ré­gûlier le plus commode correspondant à cette sollicitation 
-x, 
+\subsection{Application a la torsion} \label{ssec:Ch09-1.4}
+Ainsi, le théorème de comparaison permet un encadrement de la solution par des solutions approchées.
+À titre d'application, nous allons montrer comment il permet d'encadrer le module de rigidité à la torsion d'un arbre cylindrique (paragraphe~\ref{sec:Ch07-2}).
+Nous avons formulé au paragraphe~\ref{ssec:Ch07-2.3} le problème régulier le plus commode correspondant à cette sollicitation 
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch09-01}
+    \end{center}
+    \[
+        \Omega = [0,l]\times \Sigma
+    \]
+\end{multicols}
+\[
+f_i = 0
+\]
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        S_l:\ [0,l] \times \partial \Sigma & \sigma_{ij} n_j = 0 \\
+        \Sigma_0:\ x_1 = 0 & \sigma_{11} = 0 \;,\; u_2 = u_3 = 0 \\
+        \Sigma_1:\ x_1 = l & \sigma_{11} = 0 \;,\; u_2 = -\alpha l x_3 \;,\; u_3 = \alpha l x_2
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-033}
+\end{equation}
 
-SI. ; [0,1) ;<. ~ 
-X 1 
-t 
-=0 
-Sf-': [o).t] x dt (J'. ' rn.. : 0 
-"'li' à 
+Un CSA $\hat{\sigma}_{ij}$ doit vérifier les équations d'équilibre et les CL de type statique, à savoir
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \hat{\sigma}_{ij} n_j = 0 & \text{sur } [0,l] \times \partial \Sigma \\
+        \hat{\sigma}_{11} = 0 & \text{en } x_1= 0 \;,\; x_1=l
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-034}
+\end{equation}
 
-\eqref{eq:Ch09-033} L 0 -:c.. : 0 cr11 = 0 J.l,2. =-U.., = 0
-j 
-LIX, =t (J'--I--I = 0 .Ll.l,. = -O(.Q I,l:~ .M-~= Of 1 'x
-1 l, 
-~ 
-Un CSA (J.. doit vérifier les équations d'équilibre et les CL de 
-.4~ 
-type statique, à savoir 
-~ 
-[ 
-<J, m.. = 0 sur [O,~J x "ôL
-Li Ô' 
-\eqref{eq:Ch09-034} A 0 en -X, =0 -X , =1
-~1 " 
-Nous inspirant de la solution du § VII.2.2, nous prenons un ch3mp de contraintes de la forme (VII.48), Les CL \eqref{eq:Ch09-034} sur les extrémités so~t alors automatiquement vérifiées. Conune au § VII.2.2, les équations d'équi­libre permettent d'introduire une fonction de contrainte ~ et les CL (:.i) sur la surface la téraI e exigent que p sa i t null e sur () L . Par con t :-0:', pour un CSA, la fonction ~ ne doit pas vérifier l'êquation (VII.3~) ~\Jl Lésul~ait des équations de Beltrami. Ainsi, un CSA est défini par une :C~L
-~ 
-tion 1I\(t:J; ~) nulle sur 'OL avec
-':! .L"~3 
-A 
-A 
-
-~.. ~~Ol "-~
-o~ è<D
-(35 ) (if ~ 0 ! ~
-r~--I~ ~ 0 (j ---F. 
---1" '0 tr;" ,: 3.1:
--:c~
-0 0 1 1
-l~, 
-0 
-Pour ..:..:flculer l' énergie de déformation, en élasticité isotrope, on ...it':': ~::--::: les formules suivantes, qui s'obtiennent directement à partir des fc~~ du chapitre V 
-
-\eqref{eq:Ch09-036} 
--140 
+Nous inspirant de la solution du paragraphe~\ref{ssec:Ch07-2.2}, nous prenons un champ de contraintes de la forme \eqref{eq:Ch07-048}.
+Les CL \eqref{eq:Ch09-034} sur les extrémités sont alors automatiquement vérifiées.
+Comme au paragraphe~\ref{ssec:Ch07-2.2}, les équations d'équilibre permettent d'introduire une fonction de contrainte $\Phi$ et les CL \eqref{eq:Ch09-024} sur la surface latérale exigent que $\Phi$ soit nulle sur $\partial \Omega$.
+Par contre, pour un CSA, la fonction $\Phi$ ne doit pas vérifier l'êquation~\eqref{eq:Ch07-034} qui résultait des équations de Beltrami.
+Ainsi, un CSA est défini par une condition $\hat{\Phi} (x_2, x_3)$ nulle sur $\partial \Sigma$ avec
+\begin{equation}
+    \hat{\tens{\sigma}} = 
+    \begin{bmatrix}
+        0 & \hat{\sigma}_{12} & \hat{\sigma}_{13} \\
+        \hat{\sigma}_{12} 0 & 0 \\
+        \hat{\sigma}_{13} & 0 & 0
+    \end{bmatrix}
+    \quad , \quad \hat{\sigma}_{12} = \frac{\partial \hat{\Phi}}{\partial x_3} \quad,\quad \hat{\sigma}_{13} = - \frac{\partial \hat{\Phi}}{\partial x_2}
+    \label{eq:Ch09-035}
+\end{equation}
+Pour calculer l'énergie de déformation, en élasticité isotrope, on utitlise les formules suivantes, qui s'obtiennent directement à partir des formules du chapitre~\ref{chap:05}
+\begin{align}
+    w(\sigma_{ij}) &= w (\varepsilon_{ij}) = \frac{1}{2} \sigma_{ij} \varepsilon_{ij} \\
+    &= \frac{1}{2E} \left\{ \sigma_{11}^2 + \sigma_{22}^2 + \sigma_{33}^2 - 2 \nu \left( \sigma_{11} \sigma_{22} - \sigma_{22} \sigma_{33} + \sigma_{33}\sigma_{11} \right) \right\} + \frac{1}{2G} \left( \sigma_{12}^2 + \sigma_{23}^2 + \sigma_{13}^2 \right) \\
+    &= \frac{\lambda}{2} \left( \varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33} \right)^2 + 2\mu \left( \varepsilon_{12}^2 + \varepsilon_{23}^2 + \varepsilon_{31}^2 \right)
+    \label{eq:Ch09-036}
+\end{align}
 et à partir de \eqref{eq:Ch09-035} on obtient 
-
-.!. cl.
-Pour calculer T.... et Tf il faut expliciter la décomposi~ion (VI.8) pour le problème \eqref{eq:Ch09-033} 
-
-r. 
-'~---------------------/ 
-T cl. 
-(r;..)
-.LI., ... il 
+\begin{align}
+    \hat{W}\left( \hat{\sigma}_{ij} \right) &= \frac{1}{2G} \iint_{\Sigma} \int_0^l \left\{ \left( \frac{\partial \hat{\Phi}}{\partial x_3} \right)^2 + \left( \frac{\partial \hat{\Phi}}{\partial x_2} \right)^2 \right\} \ud x_1 \ud x_2 \ud x_3 \\
+    &= \frac{l}{2G} \iint_{\Sigma} \left\{ \left( \frac{\partial \hat{\Phi}}{\partial x_3} \right)^2 + \left( \frac{\partial \hat{\Phi}}{\partial x_2} \right)^2 \right\} \ud x_2 \ud x_3
+    \label{eq:Ch09-037}
+\end{align}
+Pour calculer $T_u^d$ et $T_f^d$ il faut expliciter la décomposition~\eqref{eq:Ch06-008} pour le problème \eqref{eq:Ch09-033} 
+\begin{equation*}
+    \begin{aligned}
+        \iint_{\partial \Sigma} \sigma_{ij} n_j u_i \ud S &= \iint_{S_l} T_i^d u_i \ud S + \iint_{\Sigma_1} \left[ \sigma_{11}^d u_1 \right. &+ \left. \sigma_{12} u_2^d + \sigma_{13} u_3^d \right] \ud x_2 \ud x_3 \\
+        & \underbrace{\phantom{\iint_{S_l} T_i^d u_i \ud S} -\iint_{\Sigma_0} \left[ \sigma_{11}^d u_1 \right.}_{T_f^d (u_i)} &+\underbrace{\left. \sigma_{12} u_2^d + \sigma_{13} u_3^d \right]}_{T_u^d (\sigma_{ij})} \ud x_2 \ud x_3
+    \end{aligned}
+\end{equation*}
 et compte-tenu de la valeur des données \eqref{eq:Ch09-033} 
-cl. . 
-\eqref{eq:Ch09-038} 
-T{ (.u....) " 0 
+\begin{equation}
+    T_f^d (u_i) = 0
+    \label{eq:Ch09-038}
+\end{equation}
+\begin{equation}
+    T_u^d (\hat{\sigma}_{ij}) = \alpha l  \iint_{\Sigma_1} \left( x_2 \hat{\sigma}_{13} - x_3 \hat{\sigma}_{12} \right) \ud x_2 \ud x_3 = \alpha l \hat{\mathcal{M}}_1
+    \label{eq:Ch09-039}
+\end{equation}
+où $\hat{\mathcal{M}}_1$ est le moment de torsion résultant des efforts associés au CSA.
+Compte-tenu de \eqref{eq:Ch09-035}, il vient 
+\begin{align*}
+    T_u^d \left( \hat{\sigma}_{ij} \right) &= - \alpha l \iint_{\Sigma} \left( x_2 \frac{\partial \hat{\Phi}}{\partial x_2} + x_3 \frac{\partial \hat{\Phi}}{\partial x_3} \right) \ud x_2 \ud x_3 \\
+    &= 2 \alpha l \iint_{\Sigma} \hat{\Phi} \ud x_2 \ud x_3
+\end{align*}
+en reprenant le calcul de \eqref{eq:Ch08-063}.
+Finalement 
+\begin{equation}
+    H \left( \hat{\sigma}_{ij} \right) = \iint_{\Sigma} \left\{ 2 \alpha l \hat{\Phi} - \frac{l}{2G} \left[ \left( \frac{\partial \hat{\Phi}}{\partial x_2} \right)^2 + \left( \frac{\partial \hat{\Phi}}{\partial x_3} \right)^2 \right] \right\} \ud x_2 \ud x_3
+    \label{eq:Ch09-040}
+\end{equation}
+ou en posant $\hat{\Phi} = G \alpha \hat{\varphi}$
+\begin{equation}
+    H \left( \hat{\sigma}_{ij} \right) = \frac{G\alpha^2 l}{2} \iint_{\Sigma} \left\{ 4 \hat{\varphi} - \left( \frac{\partial \hat{\varphi}}{\partial x_2} \right)^2 - \left( \frac{\partial \hat{\varphi}}{\partial x_3} \right)^2 \right\} \ud x_2 \ud x_3
+    \label{eq:Ch09-041}
+\end{equation}
+où $\hat{\varphi}$ est une fonction de $x_2,x_3$ nulle sur $\partial \Sigma$.
 
-\eqref{eq:Ch09-039} 
-T: (cr-"'t) ,. cd, § ( ,x,t cr-~ .. 
-
-
-1:
-
-1 
-"
-où ~1 est le moment de torsion résultant des efforts associés au CSA Compte-tenu de \eqref{eq:Ch09-035}, il vient 
-" 
-A 
-T6. (A ô~ 
-.u. (}:..il) -cd, o<l! ) d.tc~ ck..
-" ))1: (rL~ + l.C."
-'OrL,t '\eqref{eq:Ch09-001}:3 
-9, 01.1 A 
-= ip ck,tdt.cô
-~r. 
-en reprenant le calcul de (VII.63). Finalement 
-
-où 'fA est une fonction de x2,xnulle sur 'dL
-3 
-N 
-Un CCA .u.;.. doit unique~ent vérifier les CL de type cinématique 
-
-" .v 
-..u.~ ~ ..u. .. " 0 
-\eqref{eq:Ch09-042} f 
-;;.~ = -I)/..Q.~.. 
-
-et, en nous inspirant de la structure (VII.76) de la solution, nous prenons pour CCA le champ 
-
-qui vérifie automatiquement \eqref{eq:Ch09-042}. Un CCA Sera donc défini par une fonction quelconque (effectivement, les restrictions (VII.78) imposé~s à lr pour la solution sont d'origine statique) . On a alors 
-.. 
-o'f>
-0 -OC +
-! 
-'0 'l:.l, 
-
-cl.
-\eqref{eq:Ch09-044} ~ 
--I:C -t ~ 0 o
-E = 
-3J 
-~ 3x~ 
-'à~ 
--X.l,+~ 0 o 'à 'l:~ 
+Un CCA $\tilde{u}_i$ doit uniquement vérifier les CL de type cinématique 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \Sigma_0: & \tilde{u}_2 = \tilde{u}_3 = 0 \\
+        \Sigma_1: & \tilde{u}_2 = -\alpha l x_3 \quad, \quad \tilde{u}_3 = \alpha l x_2
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-042}
+\end{equation}
+et, en nous inspirant de la structure \eqref{eq:Ch08-076} de la solution, nous prenons pour CCA le champ 
+\begin{equation}
+    \tilde{u}_1 = \alpha \tilde{\psi} (x_2, x_3) \quad \tilde{u}_2 = -\alpha x_1 x_3 \quad \tilde{u}_3 = \alpha x_1 x_2
+    \label{eq:Ch09-043}
+\end{equation}
+qui vérifie automatiquement \eqref{eq:Ch09-042}.
+Un CCA sera donc défini par une fonction quelconque (effectivement, les restrictions \eqref{eq:Ch07-078} imposées à $\psi$ pour la solution sont d'origine statique).
+On a alors
+\begin{equation}
+    \tilde{\tens{\varepsilon}} = \frac{\alpha}{2}
+    \begin{bmatrix}
+        0 & -x_3 + \frac{\partial \tilde{\psi}}{\partial x_2} & x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} \\
+        -x_3 + \frac{\partial \tilde{\psi}}{\partial x_2} & 0 & 0 \\
+        x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} & 0 & 0
+    \end{bmatrix}
+    \label{eq:Ch09-044}
+\end{equation}
 et on tire de \eqref{eq:Ch09-036} 
-
+\begin{equation}
+    W \left( \tilde{\varepsilon}_{ij} \right) = \frac{G\alpha^2 l}{2} \iint_{\Sigma} \left\{ \left( x_3 - \frac{\partial \tilde{\psi}}{\partial x_2} \right)^2 + \left( x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} \right)^2 \right\}\ud x_2 \ud x_3
+    \label{eq:Ch09-045}
+\end{equation}
 soit finalement, grâce à \eqref{eq:Ch09-038}, 
+\begin{equation}
+    H \left( \tilde{u}_{i} \right) = \frac{G\alpha^2 l}{2} \iint_{\Sigma} \left\{ \left( x_3 - \frac{\partial \tilde{\psi}}{\partial x_2} \right)^2 + \left( x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} \right)^2 \right\}\ud x_2 \ud x_3
+    \label{eq:Ch09-045}
+\end{equation}
 
-Ainsi, compte tenu de \eqref{eq:Ch09-046} et \eqref{eq:Ch09-041}, le théorème de comparaison permet d'encadrer 11(4...) =I«(Ï....~). Compte-tenu de \eqref{eq:Ch09-038} et \eqref{eq:Ch09-039}, on a pour la sol ution 
-\eqref{eq:Ch09-047} . li (..u.J = K«Ï...~) = W = 0(1, '1l\.~ -w 
-compte-cenu de (VII.64). Le théorème de comparaison nous donne donc 
+Ainsi, compte tenu de \eqref{eq:Ch09-046} et \eqref{eq:Ch09-041}, le théorème de comparaison permet d'encadrer $H(u_i) = K(\sigma_{ij})$.
+Compte-tenu de \eqref{eq:Ch09-038} et \eqref{eq:Ch09-039}, on a pour la solution 
+\begin{equation}
+    H(u_i) = K (\sigma_{ij}) = W = \alpha l \mathcal{M}_1 - W = \frac{\alpha l \mathcal{M}_1}{2} = \frac{G\alpha^2 l}{2} I    
+    \label{eq:Ch09-047}
+\end{equation}
+compte-tenu de \eqref{eq:Ch08-064}.
+\endinput
+Le théorème de comparaison nous donne donc 
 
 
 l 
