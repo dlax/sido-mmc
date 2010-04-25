@@ -460,52 +460,72 @@ Compte-tenu de \eqref{eq:Ch09-038} et \eqref{eq:Ch09-039}, on a pour la solution
     \label{eq:Ch09-047}
 \end{equation}
 compte-tenu de \eqref{eq:Ch08-064}.
-\endinput
 Le théorème de comparaison nous donne donc 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & h \left( \hat{\varphi} \right) \leq I \leq k \left( \tilde{\psi} \right) \\
+        & h \left( \hat{\varphi} \right) = \iint_{\Sigma} \left\{ 4 \hat{\varphi} - \left( \frac{\partial \hat{\varphi}}{\partial x_2} \right)^2 - \left( \frac{\partial \hat{\varphi}}{\partial x_3} \right)^2 \right\} \ud x_2 \ud x_3 \\
+        & k \left( \tilde{\psi} \right) = \iint_{\Sigma} \left\{ \left( x_3 - \frac{\partial \tilde{\psi}}{\partial x_2} \right)^2 + \left( x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} \right)^2 \right\} \ud x_2 \ud x_3
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-048} 
+\end{equation}
+valable pour toute fonction $\hat{\varphi}$ nulle sur $\partial \Sigma$ et toute fonction $\tilde{\psi}$.
+On voit donc que l'on peut encadrer le module de rigidité à la torsion et obtenir ainsi des valeurs approchées. 
 
+On peut ainsi démontrer certains résultats généraux: par exemple, en prenant $\tilde{\psi} = 0$ on obtient
+\begin{equation}
+    I \geq \iint_{\Sigma} \left( x_2^2 + x_3^2 \right) \ud x_2 \ud x_3 = I_0
+    \label{eq:Ch09-049}
+\end{equation}
+le moment polaire $I_0$ est un minorant du module de rigidité à la torsion (on a vu que c'était le module de rigidité à la torsion pour une section circulaire ou annulaire). 
 
-l 
-\eqref{eq:Ch09-048} 
-
-
-valable pour toute fonction 'fA nulle sur aE et toute fonction "i'.. . On voit 
-donc que l'on peut encadrer le module de rigidité à la torsion et obtenir ain2i des valeurs approchées. 
-On peut ainsi démontrer certains résultats généraux: par exemple,
-.. 
-en prenant y = 0 on obtient 
-
-le moment polaire Io est un minorant du module de rigidité à la torsion (on a vu que c'était le module de rigidité à la torsion pour une section circulaire ou annulaire). 
-Pour aller plus loin, considérons par exemple le cas d'une sec­tion rectangulaire. On a vu au § VII.2.4 que l'on pouvait obtenir une so­lution exacte par développement en série de Fourier. Les calculs précédents 
-"
-vont nous fournir une valeur approchée. La fonction <f .doit être nulle Sur le bord, nous prenons 
-
+Pour aller plus loin, considérons par exemple le cas d'une section rectangulaire.
+On a vu au paragraphe~\ref{ssec:Ch07-2.4} que l'on pouvait obtenir une solution exacte par développement en série de Fourier.
+Les calculs précédents vont nous fournir une valeur approchée.
+La fonction $\hat{\varphi}$ doit être nulle sur le bord, nous prenons 
+\begin{equation}
+    \hat{\varphi} = m (a^2 - x_2^2) (b^2 -x_3^2)
+    \label{eq:Ch09-050}
+\end{equation}
 On trouve alors par un calcul direct 
-
-~ 
-La fane tian "f es t quelconque par analogie avec la section elliptiqu~, nous prenons 
-\eqref{eq:Ch09-052} 
-
+\begin{equation}
+    h\left( \hat{\varphi} \right) = \frac{64 a^3 b^3}{9} m \left[ 1 - \frac{2m}{5}\left( a^2 + b^2 \right) \right]
+    \label{eq:Ch09-051}
+\end{equation}
+La fonction $\tilde{\psi}$ est quelconque par analogie avec la section elliptique, nous prenons 
+\begin{equation}
+    \tilde{\psi} = p x_2 x_3
+    \label{eq:Ch09-052}
+\end{equation}
 et nous obtenons 
-
-d'où l'encadrement \eqref{eq:Ch09-048} pour l . Pour obtenir l'encadrement optimal, nous 'choisissons la valeur .de 'Yn, qui maximise ~\eqref{eq:Ch09-00~} et la-valeur de t qui mi­nimise ~~) . On trouve 
-~ j,.~
-:; (l. 
-=
-1YY1.~ 
-4(a,~t-%") tf = a-" t-Ji' 40 a-' ~3 4~ 0,; ~~ 
-\eqref{eq:Ch09-054} ~ l .;
--
-3 o."+-ir~ 9 é +-.,e,L 
+\begin{equation}
+    k\left( \tilde{\psi} \right) = \frac{4 ab}{3} \left[ (p+1)^2 b^2 + (p-1)^2 a^2 \right]
+    \label{eq:Ch09-053}
+\end{equation}
+d'où l'encadrement \eqref{eq:Ch09-048} pour $I$.
+Pour obtenir l'encadrement optimal, nous choisissons la valeur de $m$ qui maximise $h(\hat{\varphi})$ et la valeur de $p$ qui minimise $k(\tilde{\psi})$.
+On trouve 
+\[
+m_{opt} = \frac{5}{4\left( a^2 + b^2\right)} \quad p_{opt} = \frac{a^2-b^2}{a^2+b^2}
+\]
+\begin{equation}
+    \frac{40}{9} \frac{a^3 b^3}{a^2 + b^2} \leq I \leq \frac{48}{9} \frac{a^3 b^3}{a^2 +b^2}
+    \label{eq:Ch09-054}
+\end{equation}
 En particulier pour la section carrée, on trouve 
-(55 ) 0,139 
+\begin{equation}
+    0,139 \leq \frac{I}{a^4} \leq 0,167
+    \label{eq:Ch09-055}
+\end{equation}
+alors que la valeur exacte est de 0,141.
+Bien entendu, on pourrait raffiner en prenant des fonctions $\hat{\varphi}$ et $\tilde{\psi}$ plus compliquées.
+Néanmoins, on voit que notre CSA est déjà assez proche de la solution, et peut nous donner une approximation raisonnable du champ de contraintes réel. 
 
-0, 167 
-alors que la valeur exacte est de 0,141 . Bien entendu., on pourrait raffi­ner en prenant des fonctions A et l' ~ plus compliquées. Néanmoins, on
-'f 
-voit que notre CSA est déjà assez proche de la solution, et peut nous donner une approximation raisonnable du champ de contraintes réel. 
-2. LES THEOREMES DE L'ENERGIE 
-============================= 
-2.1 LE THEOREME DE RECIPROCITE 
+\section{Les théorèmes de l'énergie} \label{sec:Ch09-2}
+\subsection{Le théorème de réciprocité} \label{ssec:Ch09-2.1}
+\endinput
 On considère un solide.. l.lastique pouvant être soumis à deux char­'f<f-S < <' 1) (t. .L) lIt'
 gements dl erents. Olt lJJ-;.,<fct ......;.,(l'~~ es 50 u lOns correspon
 j
