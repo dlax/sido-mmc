@@ -525,98 +525,125 @@ Néanmoins, on voit que notre CSA est déjà assez proche de la solution, et peu
 
 \section{Les théorèmes de l'énergie} \label{sec:Ch09-2}
 \subsection{Le théorème de réciprocité} \label{ssec:Ch09-2.1}
-\endinput
-On considère un solide.. l.lastique pouvant être soumis à deux char­'f<f-S < <' 1) (t. .L) lIt'
-gements dl erents. Olt lJJ-;.,<fct ......;.,(l'~~ es 50 u lOns correspon
-j
-dantes. 
-Théorème de réciprocité au de ~!ax-we.ll~Betti. Le travail des efforts exté­
-Tleurs 2 dans le dênla2e~ent ~ es~ ê~al au travail des efforts extérieurs 
+On considère un solide élastique pouvant être soumis à deux chargements différents.
+Soit $\left( u_i^1, \sigma_{ij}^1 \right)$ et $\left( u_i^2, \sigma_{ij}^2 \right)$ les solutions correspondantes.
 
-1 dans le déplacement 2. 
-l\eqref{eq:Ch09-056} 
+\newtheorem*{ThMB}{Théorème de réciprocité au de Maxwell-Betti}
+\begin{ThMB}
+    Le travail des efforts extérieurs $2$ dans le déplacement $1$ est égal au travail des efforts extérieurs $1$ dans le déplacement $2$.
+    \begin{equation}
+        \iint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud S = \iiint_{\Omega} f_i^1 u_i^2 \ud v + \iint_{\partial \Omega} T_i^1 u_i^2 \ud S
+        \label{eq:Ch09-056}
+    \end{equation}
+\end{ThMB}
+\begin{proof}
+    On utilise le théorème des travaux virtuels appliqué au problème 1 avec comme déplacement virtuel le déplacement $u_i^2$ solution du problème 2. 
+    On obtient
+    \begin{displaymath}
+        \iiint_{\Omega} \sigma_{ij}^1 \varepsilon_{ij}^2 \ud v = \iiint_{\Omega} f_i^1 u_i^2 \ud v + \iint_{\partial \Omega} T_i^1 u_i^2 \ud S
+    \end{displaymath}
+    On effectue la même opération en changeant 1 et 2 
+    \begin{displaymath}
+        \iiint_{\Omega} \sigma_{ij}^2 \varepsilon_{ij}^1 \ud v = \iiint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud S
+    \end{displaymath}
+    et on obtient \eqref{eq:Ch09-056} en remarquant que d'après la symétrie de la matrice d'élasticité 
+    \begin{displaymath}
+        \iiint_{\Omega} \sigma_{ij}^2 \varepsilon_{ij}^1 \ud v = \iiint_{\Omega} A_{ijkh} \varepsilon_{ij}^1 \varepsilon_{kh}^2 \ud v = \iiint_{\Omega} \sigma_{ij}^1 \varepsilon_{ij}^2 \ud v
+    \end{displaymath}
+\end{proof}
 
+A titre d'exemple d'application, considérons un problème du type II avec des données $\left( f_i, T_i^d \right)$.
+En général, on ne saura pas calculer la solution $\left( u_i, \sigma_{ij} \right)$.
+Par contre, certains problèmes de type II peuvent être résolus pour le même domaine, par exemple teus ceux qui admettent une solution homogène: le problème caractérisé par les données 
+\begin{equation}
+    f_i = 0 \quad T_i^d = \sigma_{ij}^0 n_j
+    \label{eq:Ch09-057}
+\end{equation}
+où $\sigma_{ij}^0$ est constant, admet en effet la solution 
+\begin{equation}
+    \sigma_{ij} = \sigma_{ij}^0 \quad u_i = \Lambda_{ijkh} \sigma_{kh}^0 x_j
+    \label{eq:Ch09-058}
+\end{equation}
 
-Dem. On utilise le théorème des h'a\'aux virtuels appliqué au problème 1 avec comme déplacement virtuel·}~ c2placement ~~ solution du problème 2. 
-A. 
-On obtient 
-
-!arc 1 t,
-+-< T<.!.l. c:l.S
-\ ... .t-
-On effectue la même opération en char.g~ant 1 et 2 
-
-et on obtient \eqref{eq:Ch09-056} en remarquant que. ~'après la symétrie de la matrice cl' élasticité 
-
-A titre d'exemple dlapp~i.::atl,_n, C'îDsidérons un problème du type !.!..? avec des données (i.i..' T...,d.). EY""_ .;;':néral, ~)!""! ne saura pas calculer la so­lution (~L' cr-:"â-). Par contre, c'2rtai:1s pr"'Jlè,,,es de type II peuvent être résolus pour le même domaine, par exemple teus ceux qUl admettent une solu­tion homogène: le problème caractérisé par les données 
-
-où (j.o. est constant, admet en effet 14 solution 
-A.a 
-
-On applique le thécceO\e de Max""e\ l Betti en prenant connne problème 
--144 
-1 le problème posé, et 	comme problème 2 le problème \eqref{eq:Ch09-057} avec sa solution 
-\eqref{eq:Ch09-058} : 
-
+On applique le théorème de Maxwell Betti en prenant comme problème I  le problème posé, et comme problème 2 le problème \eqref{eq:Ch09-057} avec sa solution \eqref{eq:Ch09-058}:
+\[
+\iint_{\partial \Omega} \sigma_{ij}^0 n_j u_i \ud S = \iiint_{\Omega} \Lambda_{ijkh} \sigma_{kh}^0 x_j f_i \ud v + \iint_{\partial \Omega} \Lambda_{ijkh} \sigma_{kh}^0 x_j T_i^d \ud S
+\]
 Mais l'utilisation du théorème de la divergence donne 
-
+\[
+\iint_{\partial \Omega} \sigma_{ij}^0 n_j u_i \ud v = \sigma_{ij}^0 \iiint_{\Omega} \varepsilon_{ij} \ud v
+\]
 et \eqref{eq:Ch09-058} donne des informations sur la valeur moyenne des déformations 
-
-Par exemple, on obtiendra la valeur moyenne de E.(.( et ... ~ en prenant pour 
-
-~Là un tenseur de traction simple et de cisaillement simple. En élasticité 
-isotrope on obtient 
-'" -1 ~f ~ [t~~ -vq~~.l.+t~~'!,)1 èw
-1/ E l ~ 
-\eqref{eq:Ch09-060} 	
-+ t~[T.cl.J.!., -V ( TJ,d./;!.~ -t T:/;!.3 î} d.,5 1 = ~ A+V r)j) (Î'...:: + t.2.:\t..) M t" (\ (T//;!.~ 1" \d.J.!.,) d.,s 1. 
-
-V E SI. ~:o .ll".Q. 	J 
+\begin{equation}
+    \sigma_{ij}^0 \iiint_{\Omega} \varepsilon_{ij} \ud v = \iiint_{\Omega} \Lambda_{ijkh} \sigma_{kh}^0 x_j f_i \ud v + \iint_{\partial \Omega} \Lambda_{ijkh} \sigma_{kh}^0 x_j T_i^d \ud S
+    \label{eq:Ch09-059}
+\end{equation}
+Par exemple, on obtiendra la valeur moyenne de $\varepsilon_{11}$ et $\varepsilon_{12}$ en prenant pour $\sigma_{ij}^0$ un tenseur de traction simple et de cisaillement simple.
+En élasticité isotrope on obtient
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \frac{1}{V} \iiint_{\Omega} \varepsilon_{11} \ud v &= \frac{1}{V} \frac{1}{E} \left\{ \iiint_{\Omega} \left[ f_1 x_1 - \nu \left( f_2 x_2 + f_3 x_3 \right) \right] \ud v + \iint_{\partial \Omega} \left[ T_1^d x_1 - \nu \left( T_2^d x_2 + T_3^d x_3 \right) \right] \ud S \right\} \\
+        \frac{1}{V} \iiint_{\Omega} \varepsilon_{12} \ud v &= \frac{1}{V} \frac{1+ \nu}{E} \left\{ \iiint_{\Omega} \left( f_1 x_2 + f_2 x_1 \right) \ud v + \iint_{\partial \Omega} \left( T_1^d x_2 + T_2^d x_1 \right) \ud S \right\}
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-060}
+\end{equation}
 En particulier, la variation de volume est donnée par 
+\begin{equation}
+    \Delta V = \iiint_{\Omega} \varepsilon_{ii} \ud v = \frac{1}{3\lambda+2\mu} \left\{ \iiint_{\Omega} f_i x_i \ud v + \iint_{\partial \Omega} T_i^d x_i \ud S \right\}
+    \label{eq:Ch09-061}
+\end{equation}
+Plus généralement, le théorème de Maxwell Betti permet souvent d'obtenir sans calcul des résultats intéressants. 
 
-Plus généralement, le 	théorème de Maxwell Betti permet souvent 
-d'obtenir sans calcul 	des résultats intéressants. 
-2.2 LE THEOREt1E DE CASTIGLIANO 
-On considère encore le même solide élastique pouvant être so,~is à deux systèmes de chargements 1 et 2. 
-A ~ 
-Théorème de Castigliano. Soit cr·· un CSA pour le problème 2. Le travail 
-...~ 
-des efforts extérieurs 2 dans le déplacement 1 est égal à la dérivée à l'origine de la fonction donnant l'énergie de déformation du champ de 
-contraintes 
+\subsection{Le théorème de Castigliano} \label{ssec:Ch09-2.2}
+On considère encore le même solide élastique pouvant être soumis à deux systèmes de chargements 1 et 2. 
+\newtheorem*{ThCast}{Théorème de Castigliano}
+\begin{ThCast}
+    Soit $\hat{\sigma}_{ij}^2$ un CSA pour le problème 2.
+    Le travail des efforts extérieurs 2 dans le déplacement 1 est égal à la dérivée à l'origine de la fonction donnant l'énergie de déformation du champ de contraintes $\sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2$ en fonction de $\lambda$.
+    \begin{equation}
+        \iiint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud S = \frac{\ud}{\ud \lambda} \left\{ \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 \right) \right\} |_{\lambda=0}
+        \label{eq:Ch09-062}
+    \end{equation}
+\end{ThCast}
+\begin{proof}
+    On développe 
+    \[
+    \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 = \hat{W} \left( \sigma_{ij}^1 \right) + \lambda^2 \hat{W}\left( \hat{\sigma}_{ij}^2 \right) + \lambda \iiint_{\Omega} \Lambda_{ijkh} \sigma_{ij}^1 \hat{\sigma}_{kh}^2 \ud v
+    \]
+    De sorte que 
+    \begin{align*}
+    \frac{\ud}{\ud \lambda} \left\{ \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 \right) \right\} |_{\lambda=0} &= \iiint_{\Omega} \Lambda_{ijkh} \sigma_{ij}^1 \hat{\sigma}_{kh}^2 \ud v \\
+        &= \iiint_{\Omega} \varepsilon_{kh}^1 \hat{\sigma}_{kh}^2 \ud v \\
+        &= \iiint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud v
+    \end{align*}
+\end{proof}
 
-en fonction de ÎI 
+L'utilisation de ce théorème et du théorème de réciprocité est basée sur le fait que, en introduisant comme chargement 2 des chargements fictifs, ils permettent de calculer certains déplacements ou déformations.
+En effet, si on introduit par exemple comme chargement 2 une force concentrée $\vec{F}$ appliquée au point $M$, alors le travail du  chargement 2 dans le déplacement 1 se réduit à
+\begin{equation}
+    \vec{F}\cdot \vec{u}^1 \left( M\right)
+    \label{eq:Ch09-063}
+\end{equation}
+d'où le calcul du 9éplacement du point $M$ pour le problème 1.
+Ce type de méthode est peu utilisé en MMC, pour deux raisons: 
+\begin{enumerate}
+    \item L'introduction de forces concentrées en MMC pose quelques problèmes liés à la singularité du chargement.
+        On sait résoudre ces problèmes, mais ce n'est pas si simple. 
+    \item En MMC, il est en général très difficile de calculer le champ de contraintes solution ou de construire un CSA. 
+\end{enumerate}
 
-Dem. On développe 
+Par contre, ces «~théorèmes de l'énergie~» -- comme sont couramment nommés le théorème de réciprocité et le théorème de Castigliano --seront utilisés de manière intensive en Résistance des Matériaux, où les deux difficultés mentionnées ci-dessus disparaissent.
+De manière générale en effet, tous les théorèmes que nous avons démontrés depuis le début de ce chapitre sont valables pour toute théorie des milieux continus élastiques.
+En fait, ils reposent sur la structure algébrique décrite à la fin du paragraphe~\ref{ssec:Ch09-1.1}.
 
-De sorte que 
+Ces théorèmes ne sont en principe valables que pour les problèmes réguliers.
+Pour un problème non régulier -- problème avec frottement ou avec contact unilatéral par exemple, voir paragraphe~\ref{ssec:Ch06-1.1} -- on peut avoir des résultats analogues, mais il convient de tout reprendre pour chaque cas particulier.
+C'est le champ d'étude des méthodes variationnelles (\cite{Duvaut-72}). 
 
-A t
-(J.. , CSA pour le problème 2, et 
-.(.~ 
-cqfd 
-d'après oU.--1  
-.(. 
-L'utilisation de ce théorème et du théorème de réciprocité est basée sur le fait que, en introduisant comme chargement 2 des chargements fictifs, ils permettent de calculer certains déplacements ou déformations. En effet, si on introduit par exemple comme chargement 2 une force concen
-->
-trée  F  appliquée  a~  point M,  alors  le  travail  du  chargement  2 dans  le dé­ 
-placement  1  se  réduit  à  
-\eqref{eq:Ch09-063}  
-
-d'où le calcul du 9éplacement du point M pour le problème 1. Ce type de mé­thode est peu ütilisé en MMe, pour deux raisons: 
-1. 
-L'introduction de forces concentrées en ~1C pose quelques problèmes liés à la singularité du chargement. On sait résoudre ces problèmes, mais ce n'est pas si simple. 
-
-2. 
-En MMC, il est en général très difficile de calculer le champ de contrain­tes solution ou de construire un CSA. 
-
-
-Par contre, ces "théorèmes de l'énergie" -comme sont CQUram;;lcnt nommés le théorème de réciprocité et le théorème de Castigliano -seront utilisés de manière intensive en Résistance des Matériaux, où les deux dif­ficultés mentionnées ci-dessus disparaissent. De manière générale en effet, tous les théorèmes que nous avons dérnr rés depuis le début de ce chapitre 
-sont valables pour toute théorie d. lieux continus élastiques. En fait, 
-ils reposent sur la structure air _que décrite à la fin du § 1.1 
-Ces théorèmes ne sont en prlDClpe valables que pour les problèmes réguliers. Pour un problème non régulier problème avec frottement ou avec contact unilatéral par exemple, voir § VI.l.1 -on peut avoir des résultats analogues, mais il convient de tout reprendre pour chaque cas particulier. C'est le champ d'étude des méthodes variationnelles ([24). 
-3. LA ~THODE DES ELE~NTS FINIS 
-======~========================= 
-3.1 PRINCIPE DE LA METHODE 
+\section{La méthode des éléments finis} \label{sec:Ch09-3}
+\subsection{Principe de la méthode} \label{ssec:Ch09-3.1}
 Les théorèmes du § 1 énoncent des principes variationnels dont l'affirmation type est la suivante: "La solution minimise une certaine fonc­tionnelle dans un espace de fonctions admissibles"~ Nous avons présenté les deux principes variationnels traditionnels, mais il en existe bien d'autres, plus ou moins appropriés, suivant le type de problème que l'on envisage [21). L'intérêt de ces principes variationnels réside dans le fait qu'ils engen­drent à peu près automatiquement une méthode numérique pour calculer une so­lution approchée. Il suffit en effet de discrétiser l'espace des fonctions admissibles -càd de l'approcher par un espace de dimension finie -et de 
 minimiser la fonctionnelle sur cet espace discrétisé. On obtient ainsi une 
 solution approchée d'autant plus proche de la solution réelle que l'espace discrétisé approche mieux l'espace des fonctions admissibles. 
