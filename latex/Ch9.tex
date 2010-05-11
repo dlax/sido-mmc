@@ -644,69 +644,60 @@ C'est le champ d'étude des méthodes variationnelles (\cite{Duvaut-72}).
 
 \section{La méthode des éléments finis} \label{sec:Ch09-3}
 \subsection{Principe de la méthode} \label{ssec:Ch09-3.1}
-Les théorèmes du § 1 énoncent des principes variationnels dont l'affirmation type est la suivante: "La solution minimise une certaine fonc­tionnelle dans un espace de fonctions admissibles"~ Nous avons présenté les deux principes variationnels traditionnels, mais il en existe bien d'autres, plus ou moins appropriés, suivant le type de problème que l'on envisage [21). L'intérêt de ces principes variationnels réside dans le fait qu'ils engen­drent à peu près automatiquement une méthode numérique pour calculer une so­lution approchée. Il suffit en effet de discrétiser l'espace des fonctions admissibles -càd de l'approcher par un espace de dimension finie -et de 
-minimiser la fonctionnelle sur cet espace discrétisé. On obtient ainsi une 
-solution approchée d'autant plus proche de la solution réelle que l'espace discrétisé approche mieux l'espace des fonctions admissibles. 
-Pour discrétiser l'espace des fonctions admissibles, on peut par exemple introduire une base fonctionnelle de cet espace -base de fonctions sinusoïdales pour un domaine rectangulaire, par exemple -et approcher l'es­pace des fonctions admissibles par l'espace engendré par les TI premlers éléments de cette base. C'est la méthode de Galerkin, et on peut montrer que lorsque n-+M , la solution approchée ainsi calculée tend vers la solution réelle. 
-Le tenn~ "méthode d'éléments finis" recouvre un ensemble de métho­des pour lesquelles l'espace discrétisé s'obtient 
-1. 
-en découpant le domaine .rL en un certain nombre de sous-domaines s lm­pIes (triangles ou rectangles): les éléments finis; 
+Les théorèmes du paragraphe~\ref{sec:Ch09-1} énoncent des principes variationnels dont l'affirmation type est la suivante: «~La solution minimise une certaine fonctionnelle dans un espace de fonctions admissibles~».
+Nous avons présenté les deux principes variationnels traditionnels, mais il en existe bien d'autres, plus ou moins appropriés, suivant le type de problème que l'on envisage~\cite{Valid-77}.
+L'intérêt de ces principes variationnels réside dans le fait qu'ils engendrent à peu près automatiquement une méthode numérique pour calculer une solution approchée.
+Il suffit en effet de discrétiser l'espace des fonctions admissibles -- c'est à dire de l'approcher par un espace de dimension finie -- et de minimiser la fonctionnelle sur cet espace discrétisé.
+On obtient ainsi une solution approchée d'autant plus proche de la solution réelle que l'espace discrétisé approche mieux l'espace des fonctions admissibles. 
 
-2. 
-en prenant sur chaque élément une forme analytique simple, de sorte que la valeur de la fonction en tout point est donnée par sa valeur en un ~()~hre 
+Pour discrétiser l'espace des fonctions admissibles, on peut par exemple introduire une base fonctionnelle de cet espace -- base de fonctions sinusoïdales pour un domaine rectangulaire, par exemple -- et approcher l'espace des fonctions admissibles par l'espace engendré par les $n$ premiers éléments de cette base. 
+C'est la méthode de Galerkin, et on peut montrer que lorsque $n\rightarrow\infty$, la solution approchée ainsi calculée tend vers la solution réelle. 
 
+Le terme «~méthode d'éléments finis~» recouvre un ensemble de méthodes pour lesquelles l'espace discrétisé s'obtient 
+\begin{enumerate}
+    \item en découpant le domaine $\Omega$ en un certain nombre de sous-domaines simples (triangles ou rectangles): les éléments finis; 
+    \item en prenant sur chaque élément une forme analytique simple, de sorte que la valeur de la fonction en tout point est donnée par sa valeur en un nombre limité de nœuds.
+\end{enumerate}
+A titre d'exemple, nous allons présenter les trois éléments les  plus simples pour un espace de fonctions à valeur scalaire  (pour une fonction à valeur vectorielle ou tensorielle, il suffit de  considérer séparément chaque composante) dans le plan.  
 
-limité de noeuds. A titre d'exemple, nous allons présenter les trois élé
-ments  les  plus simples  pour  un  espace  de  fonctions  à  valeur sCdlaire  (pour  
-une  fonction  à  valeur vectorielle  ou  tensorielle,  il  suffit de  ~Jnsidérer  
-séparément chaque composante)  dans  le plan.  
+\paragraph{Exemple 1.} Elément triangulaire avec fonction linéaire sur chaque triangle 
+\[
+f = a +b x_1+cx_2
+\]
+La valeur de la fonction $f$ en un point du triangle ABC dépend de 3 paramètres, par exemple la valeur de $f$ aux trois sommets 
+\begin{equation}
+    f = f_A \lambda_A (x_1,x_2) + f_B \lambda_B (x_1,x_2) + f_C \lambda_C (x_1, x_2)
+    \label{eq:Ch09-064}
+\end{equation}
+où $\lambda_A$, $\lambda_B$, $\lambda_C$ sont les «~coordonnées barycentriques~» du point $M$. 
 
-Exemple J. Elément triangulaire avec fonction linéaire sur chaque triangle 
-X'1 ~,
-i = a. + Jr/.l:1 .. .c.oc~ 
-1____---->;.> 
-La val eur de la fone tion t en un point du triangle ABC dépend de 3 paramètres, par exemple la va~eur de f X1 aux trois sorrnuets 
+\paragraph{Exemple 2.} Elément rectangulaire avec fonction bilinéaire 
+\[
+f = a +b x_1+cx_2 +dx_1x_2
+\]
+La valeur de la fonction $f$ en un point $M$ du rectangle ABCD dépend de 4 paramètres: la valeur $f$ aux nœuds A, B, C, D. 
+\begin{equation}
+    f = f_A \frac{(x_1 - x_1^B)(x_2 -x_2^C)}{(x_1^A - x_1^B)(x_2^A-x_2^C)} +  f_B \frac{(x_1 - x_1^A)(x_2 -x_2^D)}{(x_1^B - x_1^A)(x_2^B-x_2^B)} + f_C \frac{(x_1 - x_1^D)(x_2 -x_2^A)}{(x_1^C - x_1^D)(x_2^C-x_2^A)} + f_D \frac{(x_1 - x_1^C)(x_2 -x_2^B)}{(x_1^D - x_1^C)(x_2^D-x_2^B)}
+    \label{eq:Ch09-065} 
+\end{equation}
 
+\paragraph{Exemple 3.} Elérnent triangulaire avec fonction quadratique sur chaque triangle 
+\begin{equation}
+    f = a + b x_1 + c x_2 + d x_1^2 + e x_1 x_2 +f x_2^2
+    \label{eq:Ch09-066}
+\end{equation}
+La valeur de la fonction sur le triangle ABC dépend de 6 paramètres: la valeur de $f$ aux 6 nœuds A, B, C, D, E, F, et ainsi de suite.
+On trouvera dans la littérature sur les éléments finis des «~catalogues~» d'éléments. 
 
-sont les "coordonnées barycentriques" du point H. 
-=l: 
-Exemple 2. Elément rectangulaire l 
-C-
-avec fonction bilinéaire 
-C] b 
-i" a..+l-1)o1" ~4:l-1-cll.c~4JJ 
-A e 
-La valeur de la fonction ~ en 
-.1:, 
-un point M du rectangle ABCD dépend de 4 paramètres: la valeur t aux
-de 
-noeuds A, B, C, D. 
-(41 -.lC~)(o!C...-~) (J.C,-I.e:) (4.. -k~)
-{ = tA + -tB
-(Jee.f -).(,'0) (JJ:~ -~~) (~~~ _ ~,A) (IY-f -!:Cf) 
-\eqref{eq:Ch09-065} 
-(IY-, -J.C~) (11;.,-.I!lf) ().c, -.K,c) ( (:i;" -/:C~)
-+ + tl)
-ic (1:1.,' -,<Dl (4: -IY-t) (bOJ'-IY-n (JJ:{-J1-~) 
-Exemple 3. Elérnent triangulaire avec fone tian quadra tique sur ..::naque trian­gle 
+Après avoir découpé le modèle et choisi les éléments, une fonction de l'espace discrétisé est définie par sa valeur en un certain nombre de nœuds, et on doit minimiser une fonction d'un nombre fini de variables, problème qui se prête bien au calcul numérique. 
 
-La valeur de la fone tian sur le triangle ABC
-f 
-·dépend de 6 paramètres: la val eur de { aux 6 
-noeuds A, B, C, D, E, F, et ainsi de suite. On 
-trouvera dans la littérature sur les éléments 
-finis des "catalogues" d'éléments. 
-) 
-Après aVOlr découpé le modèle et choisi les éléments~ ,---ne fonction de l'espace discrétisé est définie par sa valeur en un certaiTl ~Jrnbre J~ noeuds, et on doit minimiser une fonction d'un nombre fini de '"'l~'iables 1 rro­blème qui se prête bien au calcul numérique. 
+Pour la torsion, par exemple, on peut à partir de \eqref{eq:Ch09-048} construire méthodes d'éléments finis
+\begin{description}
+    \item[1ère méthode.] On discrétise $\Sigma$, et on maximise la fonctionne11e $h(\hat{\varphi})$ sur l'espace des fonctions $\hat{\varphi}$ nulles sur le bord. 
+    \item[2ème méthode.] On discrétise $\Sigma$, et on minimise la fonctionnelle $h(\hat{\psi})$ sur l'espace de toutes les fonctions $\hat{\psi}$.
+\end{description}
 
--l~g 
-PO'H lA torsion, par exemple, on pC<Jt à partir de \eqref{eq:Ch09-048} construire dc.:-'.x ::,':'::hodes d'§léments finis 1ère ~étbode. On discrétise 1. , et on rr.axir.lise la fcnctionn211e \\.\eqref{eq:Ch09-00~} sur 
-"
-l'espace des fonc:ticns <f nulles s'J.r le bord. 
-2ème méthode. On discrétise L. , et on minimise la fonctionnelle ~\eqref{eq:Ch09-00~} sur 
-l'espace de toutes les f0uctions ~ 
-
-3.2 APPLICATION A UN EXEMPLE 
+\subsection{Application à un exemple} \label{ssec:Ch09-3.2}
 Pour montrer la mise en 0euvre de la méthode, nous allons enVlsa­ger un exemple. Considérons en déIormations planes un barrage triaQgulaire 
 
 Les forces de volume se réduisent à la pesanteur 
@@ -851,7 +842,7 @@ r
 donne 
 \eqref{eq:Ch09-078} 
 
-où  ~  désigne le vecteur  colonne  des  dé~  'lcements  aux  noeuds,  donc  
+où  ~  désigne le vecteur  colonne  des  dé~  'lcements  aux  nœuds,  donc  
 sous-vec teur  de  U  ,  et où  'lne  éitrice  symétrique  6x6  qui  
 sul te  de  l' il ~·êgl-:11­ ·'il  sur  le  triang  et  li.  d2j?cnd  donc  unique.:1ent  
 la  géométrie  ~ /  t­-i:,  gle.  
@@ -861,21 +852,21 @@ un ré­de
 dé
 -151 
 .
-placements des noeuds, on obtient un vecteur colonne r 
+placements des nœuds, on obtient un vecteur colonne r 
 ~b 
 \eqref{eq:Ch09-079} a .u 
 = a.&..c.. 
 f~~c.'---~bc:-o....:...~ 
 qUI peut s'interpréter énergétiquement comme donnant les "forces élastiques 
 {a.., [.2,-, l,(, ", qui 
-doivent être appliquées aux noeuds pour produire le dé
+doivent être appliquées aux nœuds pour produire le dé
 placement ~ . Ceci résulte par exemple du bilan énergétique \eqref{eq:Ch09-032} qui montre 
-que pour une variation dQ des déplacements aux noeuds, la variation de 
+que pour une variation dQ des déplacements aux nœuds, la variation de 
 l'énergie de déformation 
 \eqref{eq:Ch09-080} 
 est égale au travail des efforts exercés sur l'élément. On peut donc inter­préter \eqref{eq:Ch09-080} comme donnant le travail des "forces élastiques" CsuPPo3ées 
 ... 
-concentrées aux noeuds) ia., ~h et ~~. Il faut bien garder à l'esprit, 
+concentrées aux nœuds) ia., ~h et ~~. Il faut bien garder à l'esprit, 
 cependant, qu'il ne s'agit là que d'une interprétation, et que ces "forces 
 élastiques" sont fictives et sans aucune existence réelle; ce ne sont pas 
 des forces, malS des dérivées de l'énergie de déformation. 
@@ -888,8 +879,8 @@ on obtiendra
 (83 ) 1 - 1 -P'à'S 1 3 ~ 
 D'un point de vue énergétique, on peut interpréter \eqref{eq:Ch09-082} en disant que les 
 ---1'0.. -"'t--">
-forces de volume sont équivalentes aux trois forces concentrées 'f ,tt' ,~,c.. appliquées aux noeuds. 
-De manière générale, l'écriture du travail des efforts de volume conduit à décomposer ces efforts en trois forces concentrées appliquées aux noeuds. 
+forces de volume sont équivalentes aux trois forces concentrées 'f ,tt' ,~,c.. appliquées aux nœuds. 
+De manière générale, l'écriture du travail des efforts de volume conduit à décomposer ces efforts en trois forces concentrées appliquées aux nœuds. 
 -152 ­c) Discrétisation des efforts surfaciques 
 Soit ac un côté du triangle abc appartenant à 
 
@@ -914,7 +905,7 @@ D, 0)
 ~ 
 D'un point de  vue  énergétique,  les  forces  de  contact  exercées  
 sur  ac  sont  équivalentes  à deux  forces  ~ concentrees  ---. Q."t'  et  -1> ,"1'  exercées  
-aux  noeuds.  Par contre,  ~~ 4  n'intervient  pas  dans  \eqref{eq:Ch09-084},  et donc  -tr'-1'=0.  
+aux  nœuds.  Par contre,  ~~ 4  n'intervient  pas  dans  \eqref{eq:Ch09-084},  et donc  -tr'-1'=0.  
 3.4 ASSEMBLAGE  
 
 Pour calculer Kc.iL.), càd pour expliciter \eqref{eq:Ch09-071}, on doit soonner la contribution de tous les triangles pour l'énergie de déformation et le 
@@ -948,7 +939,7 @@ fL..r 3-il-~ c.k. 04), = ~ (5 T ...... 5 '" -<f~ ... '-. ... Cf~
 où les quantités ~~' â sont les forces concentrées en a équivalentes aux forces de volume exercées sur chacun des éléments TJ,T"" T " Enfin,
 Zn ~~ n'interviendra pas dans le travail des efforts de contact, puisque ce
 ... 
-lui-ci ne 	fait apparaître que les déplacements des noeuds de Sf. Ainsi, la minimisation de K par rapport à .JJ..~ pourra s'écrire
+lui-ci ne 	fait apparaître que les déplacements des nœuds de Sf. Ainsi, la minimisation de K par rapport à .JJ..~ pourra s'écrire
  
 _r<L,T~
 \eqref{eq:Ch09-089} 
@@ -979,4 +970,4 @@ On peut encore interpréter \eqref{eq:Ch09-091} comme exprimant l'équilibre du 
 
 qui est la force concentrée équiva
 lente en a aux forces de cont~ct appliquées aux éléments entourant a. 
-Ainsi, on peut interpréter la méthode des éléments finis comme exprimant l'éguilibre des tous les noeuds sous l'action des forces élas­tigues exercées par chaque élément, et des forces extérieures (volumiques ou de contact) appliquées, ces forces étant rapportées aux noeuds. 
+Ainsi, on peut interpréter la méthode des éléments finis comme exprimant l'éguilibre des tous les nœuds sous l'action des forces élas­tigues exercées par chaque élément, et des forces extérieures (volumiques ou de contact) appliquées, ces forces étant rapportées aux nœuds. 
