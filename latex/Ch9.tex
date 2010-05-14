@@ -698,179 +698,175 @@ Pour la torsion, par exemple, on peut à partir de \eqref{eq:Ch09-048} construir
 \end{description}
 
 \subsection{Application à un exemple} \label{ssec:Ch09-3.2}
-Pour montrer la mise en 0euvre de la méthode, nous allons enVlsa­ger un exemple. Considérons en déIormations planes un barrage triaQgulaire 
-
+Pour montrer la mise en œuvre de la méthode, nous allons envisager un exemple.
+Considérons en déformations planes un barrage triagulaire OAB
+%\begin{center}
+    %\includegraphics
+%\end{center}
 Les forces de volume se réduisent à la pesanteur 
-\eqref{eq:Ch09-067} 
+\begin{equation}
+    f_1 = 0 \quad,\quad f_2 = -\rho g
+    \label{eq:Ch09-067}
+\end{equation}
+$\rho$ étant la masse volumique du béton.
+Quant aux conditions aux limites, elles traduisent l'absence de contrainte sur OB, l'effet de la pression hydrostatique $-\varpi x_2$ ($\varpi$ étant le poids spécifique de l'eau) sur OA, et la liaison supposée rigide avec le sol sur AB 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \text{OB} & \sigma_{11} + \sigma_{12} = 0 \quad,\quad \sigma_{12} + \sigma_{22} = 0 \\
+        \text{OA} & \sigma_{11} = \varpi x_2 \quad,\quad \sigma_{12} = 0 \\
+        \text{AB} & u_1 = u_2 = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch09-068}
+\end{equation}
 
-p étant la masse volumique du béton. Quant aux conditions aux limites, elles traduisent ltabsence de contrainte sur OB, l'effet de la pression hydrostatique -\eqref{eq:Ch09-00j}f'J:." (Ci') étant le poids spé­cifique de l'eau) sur OA, et la liaison supposée rigide avec le sol sur AB 
-OB =' 0 ",,0
-0:;1 ... <r-l~ "~,, ... cr~~ 
-\eqref{eq:Ch09-068} OA cr "" \eqref{eq:Ch09-00j} f'J:..ù 0:,,, "" 0
-" 
-AB Mo-0
-, = .-U.,~ =
-i 
 Le théorème de l'énergie potentielle affirme que dans l'espace des CCA, 
-( 69) 
-
-~ 0 
-
+\begin{equation}
+    \mathcal{U} = \left\{ \left( \tilde{u}_1, \tilde{u}_2 \right) | \tilde{u}_1 = \tilde{u}_2 = 0 \text{ pour } x_2 = -h \right\}
+    \label{eq:Ch09-069}
+\end{equation}
 la solution minimise la fonctionnelle 
+\begin{equation}
+    K\left( \tilde{u}_i \right) = \frac{1}{2} \iint_{\Omega} A_{ijkh} \tilde{\varepsilon}_{ij} \tilde{\varepsilon}_{kh} \ud x_1 \ud x_2 + \iint_{\Omega} \rho g \tilde{u}_2 \ud x_1 \ud x_2 + \int_{\text{OA}} \varpi x_2 \tilde{u}_1 \ud x_2
+    \label{eq:Ch09-070}
+\end{equation}
 
 Pour discrétiser ce problème, nous introduisons un découpage en éléments finis 
 
-Par exemple, nous introduisons un maillage régulier et des éléments trian
-gulaires du type \eqref{eq:Ch09-064}, et nous approchons 'U, par '/..6n = [ (ul,u), u1 et unuls sur AB et de la forme \eqref{eq:Ch09-064} sur
-22 chaque triangle] 
-Ainsi, une fonction de tG sera caractérisée par sa valeur aux 
-"" 
-
-n(n+J)/2 points du maillage non situés sur AB (si DA et AB sont découpés en n intervalles égaux). Ainsi, l'espace ~~ est un espace de dimension n(n+I), et une fonction de·~ sera caractérisée par un vecteur colonne 
-U de n(n+l) éléments donnant "" les deux composantes de ..u.. en chaque point
-<
-du maillage, la formule \eqref{eq:Ch09-064} donnant alors la valeur de ~. en tout point.
-h 
-Si l'on reporte cette fonction dans la définition \eqref{eq:Ch09-070} ou \eqref{eq:Ch09-015} de l'éner­gie potentielle, l'énergie de déformation \V(~À) devient une forme qua
- "'cl
-dratique par rapport aux cCTIl?osantes de \! et le travail des efforts Ti 
-devient une forme linéaire par rapport à ces mêmes composantes. Ainsi 
-(7 J) 
-
-= 
-
-où la matrice carrée of-est la matrice de rigidité, symétrique et définie 
-positive, et où le vecteur colonne ~ caractérise les efforts extérieurs. Pour minimiser l'énergie potentielle, il faut donc résoudre le système 
+Par exemple, nous introduisons un maillage régulier et des éléments triangulaires du type \eqref{eq:Ch09-064}, et nous approchons $\mathcal{U}$ par
+\[
+\mathcal{U}_n = \left\{ \left( u_1, u_2 \right),\ u_1 \text{ et } u_2\ \text{nuls sur AB et de la forme~\eqref{eq:Ch09-064} sur chaque triangle} \right\}
+\]
+Ainsi, une fonction de $\mathcal{U}_n$ sera caractérisée par sa valeur aux $n(n+1)/2$ points du maillage non situés sur AB (si OA et AB sont découpés en $n$ intervalles égaux).
+Ainsi, l'espace $\mathcal{U}_n$ est un espace de dimension $n(n+1)$, et une fonction de $\mathcal{U}_n$ sera caractérisée par un vecteur colonne $\underline{U}$ de $n(n+1)$ éléments donnant les deux composantes de $u_i$ en chaque point du maillage, la formule \eqref{eq:Ch09-064} donnant alors la valeur de $u_i$ en tout point.
+Si l'on reporte cette fonction dans la définition \eqref{eq:Ch09-070} ou \eqref{eq:Ch09-015} de l'énergie potentielle, l'énergie de déformation $W\left( \tilde{\varepsilon}_{ij} \right)$ devient une forme quadratique par rapport aux composantes de $\underline{U}$ et le travail des efforts $\tilde{T}_f^d$ devient une forme linéaire par rapport à ces mêmes composantes.
+Ainsi 
+\begin{equation}
+    K \left( \tilde{u}_i \right) = \frac{1}{2} \underline{U}^T \underline{\underline{\mathcal{A}}} \underline{\underline{U}} - \underline{F}^T \underline{U}
+    \label{eq:Ch09-071}
+\end{equation}
+où la matrice carrée $\underline{\underline{A}}$ est la matrice de rigidité, symétrique et définie positive, et où le vecteur colonne $\underline{F}$ caractérise les efforts extérieurs.
+Pour minimiser l'énergie potentielle, il faut donc résoudre le système 
 linéaire 
-\eqref{eq:Ch09-072} JI: u F 
-Nous utilisons leI le théorème de l'énergie potentielle, car en 
-HHC il est en général très difficile d'engendrer des champs statiquement 
-admissibles, et le théorème de l'énergie complémentaire est peu utilisé dans ce contexte. 
-3.3 ETUDE D'UN ELEMNT 
-Pour calculer les intégrales qui interviennent dans \eqref{eq:Ch09-070}, il [dU­dra sonnner les contributions de chaque triangle pour les intégrales de sur face, et de chaque segment pour les intégrales de ligne. Nous allons donc 
--150 
-dêjà examiner la contribution d'~n ~lê~ent triang~laire abc à l'nergie de déforw.3tiony au travail des efforts de volume, et au travail des efforts de surface. 
-Sur chaque élément, nous pouvons donc écrire le déplacement en fonction de la/valeur aux sommets d, b et c de cet élément 
+\begin{equation}
+    \underline{\underline{A}} \underline{U} = \underline{F}
+    \label{eq:Ch09-072}
+\end{equation}
+Nous utilisons ici le théorème de l'énergie potentielle, car en 
+MMC il est en général très difficile d'engendrer des champs statiquement admissibles, et le théorème de l'énergie complémentaire est peu utilisé dans ce contexte. 
+\subsection{Étude d'un élément} \label{ssec:Ch09-3.3}
+Pour calculer les intégrales qui interviennent dans \eqref{eq:Ch09-070}, il faudra sonnner les contributions de chaque triangle pour les intégrales de sur face, et de chaque segment pour les intégrales de ligne.
+Nous allons donc déjà examiner la contribution d'un élément triangulaire abc à l'énergie de déformation au travail des efforts de volume, et au travail des efforts de surface. 
 
-"ù Âa.' 'À.e. et Â" sont les coordonnées barycentriques du point 
-définies par 
-ÂQ 
-\eqref{eq:Ch09-074} 
-?'j,. 
-Â" 
-et qui dépendent 
--1 
-~ 
--1
--i -{ -i 
-Ir
-J.lCo. 
-4, K'", 
-J.lC
--
-~ 
-.. 
-J.lC.0-J.J:.Ir ",,-'" 
-4.,
-J,
-fi. ~ 
-uniquement de la géométrie de l'élément . \eqref{eq:Ch09-073} 
-\eqref{eq:Ch09-075} ,: 
-.u;<L »..Jr JL'" 
-. 2,
-[~:1 
-2, 
-~ 
-a) Discrétisation de l'énergie. 
-)L, 4,
-[.'L: .Ir ~ 1 
-Le tenseur des 
-A
-[EH é"
-\eqref{eq:Ch09-076} 
-~
-1 
-[:~
-E'l-EJ,~ 
-AS 
-désigne la matrice 
-= 
-déformations 
-.Ir 
-4, ..u.:] 
-.u;.&
-..u.~'<' 
-~ 
-A symétrJ SéF' 
-= 
-..-\ -1 
-r-{ [. -1 
-'J.. 
-."( /.<:, I.X;"', 
-4, 
-/.<:.Ir '. <
-L 1. "./, 
-[' 
-~l. 
-C· . -:ilt, ,; constant et 
-"i " 
--1 1 
-0 0 
--I.er
-/f." '" 
--1 0
-, :<:, 4, 
-,
-,. i 
-l.X;a 
-0 -i
--X, 
--x:J
-·t 
-\eqref{eq:Ch09-077} 
-= 
-= LI intégratian de l' énerg ie de déforma tion r: ~e tl Langle abc 
+Sur chaque élément, nous pouvons donc écrire le déplacement en fonction de la valeur aux sommets a, b et c de cet élément 
+\begin{equation}
+    \tilde{u}_i = u_i^a \lambda_a \left( x_1, x_2 \right) + u_i^b \lambda_b \left( x_1, x_2 \right) + u_i^c \lambda_c \left( x_1, x_2 \right)
+    \label{eq:Ch09-073}
+\end{equation}
+où $\lambda_a$, $\lambda_b$ et $\lambda_c$ sont les coordonnées barycentriques du point définies par 
+\begin{equation}
+    \begin{bmatrix}
+        \lambda_a\\
+        \lambda_b\\
+        \lambda_c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 1 & \\
+        x_1^a & x_1^b & x_1^c \\
+        x_2^a & x_2^b & x_2^c
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        1 \\
+        x_1 \\
+        x_2
+    \end{bmatrix}
+    \label{eq:Ch09-074}
+\end{equation}
+et qui dépendent uniquement de la géométrie de l'élément.
+\eqref{eq:Ch09-073} donne donc
+\begin{equation}
+    \begin{bmatrix}
+        \tilde{u}_1 \\
+        \tilde{u}_2
+    \end{bmatrix}
+    \begin{bmatrix}
+        u_1^a & u_1^b & u_1^c \\
+        u_2^a & u_2^b & u_2^c
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1 & \\
+        x_1^a & x_1^b & x_1^c \\
+        x_2^a & x_2^b & x_2^c
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        1 \\
+        x_1 \\
+        x_2
+    \end{bmatrix}
+    \label{eq:Ch09-075}
+\end{equation}
+\subsubsection{Discrétisation de l'énergie.}
+Le tenseur des déformations $\varepsilon_{ij}$ est alors constant et donné par
+\begin{equation}
+    \begin{bmatrix}
+        \varepsilon_{11} & \varepsilon_{12} \\
+        \varepsilon_{12} & \varepsilon_{22}
+    \end{bmatrix}
+    =
+    \left\{ 
+    \begin{bmatrix}
+        u_1^a & u_1^b & u_1^c \\
+        u_2^a & u_2^b & u_2^c
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1 & \\
+        x_1^a & x_1^b & x_1^c \\
+        x_2^a & x_2^b & x_2^c
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        0 & 0 \\
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix}
+    \right\}^S
+    \label{eq:Ch09-076}
+\end{equation}
+où $\underline{\underline{A}}^S$ désigne la matrice $\underline{\underline{A}}$ symétrisée
+\begin{equation}
+    \underline{\underline{A}}^S = \frac{1}{2} \left( \underline{\underline{A}} + \underline{\underline{A}}^T \right)
+    \label{eq:Ch09-077}
+\end{equation}
+L'intégration de l'énergie de déformation sur le triangle abc donne
+\begin{equation}
+    \begin{split}
+        W_{abc} &= \frac{1}{2} \iint_{abc} \left\{ \lambda \left( \varepsilon_{11} + \varepsilon_{22} \right)^2 + 2 \left( \varepsilon_{11}^2 + \varepsilon_{22}^2 + 2 \varepsilon_{12}^2 \right) \right\} \ud x_2 \ud x_2
+        &= \frac{1}{2} \underline{u}^T \underline{\underline{a}}_{abc} \underline{u}
+    \label{eq:Ch09-078}
+\end{equation}
+où $\underline{u}$ désigne le vecteur colonne des déplacements  aux nœuds, donc un sous-vecteur de $\underline{U}$, et où $\underline{\underline{a}}_{abc}$ est une matrice symétrique $6\times6$ qui résulte de l'intégration sur le triangle et il dépend donc uniquement de la géométrie.
 
+Si l'on dérive la forme qui \tmp{ itit } $W_{abc}$ par rapport aux 
+un déplacements des nœuds, on obtient un vecteur colonne
+\begin{equation}
+    f = \underline{\underline{a}}_{abc} \underline{u} = \frac{\partial W_{abc}}{\partial \underline{u}}
+    \label{eq:Ch09-079}
+\end{equation}
+qui peut s'interpréter énergétiquement comme donnant les «~forces élastiques $\vec{f}^a$, $\vec{f}^b$, $\vec{f}^c$~», qui doivent être appliquées aux nœuds pour produire le déplacement $\underline{u}$.
+Ceci résulte par exemple du bilan énergétique \eqref{eq:Ch09-032} qui montre que pour une variation $\ud \underline{u}$ des déplacements aux nœuds, la variation de l'énergie de déformation 
+\begin{equation}
+    \ud W_{abc} = \underline{f}^T \ud u
+    \label{eq:Ch09-080}
+\end{equation}
+est égale au travail des efforts exercés sur l'élément.
+On peut donc interpréter \eqref{eq:Ch09-080} comme donnant le travail des «~forces élastiques~» (suppoées concentrées aux nœuds) $\vec{f}^a$, $\vec{f}^b$, $\vec{f}^c$.
+Il faut bien garder à l'esprit, cependant, qu'il ne s'agit là que d'une interprétation, et que ces «~forces élastiques~» sont fictives et sans aucune existence réelle; ce ne sont pas 
+des forces, mais des dérivées de l'énergie de déformation. 
 
-(xI ,x2), 
-donne donc 
-donné par 
-r 
-
-1 
-) 
-donne 
-\eqref{eq:Ch09-078} 
-
-où  ~  désigne le vecteur  colonne  des  dé~  'lcements  aux  nœuds,  donc  
-sous-vec teur  de  U  ,  et où  'lne  éitrice  symétrique  6x6  qui  
-sul te  de  l' il ~·êgl-:11­ ·'il  sur  le  triang  et  li.  d2j?cnd  donc  unique.:1ent  
-la  géométrie  ~ /  t­-i:,  gle.  
-Si  l'e.  dE.  ~"c  la  forme  ql  itit  ~  W {]a.,,«­ par  rapport  aux  
-
-un ré­de 
-dé
--151 
-.
-placements des nœuds, on obtient un vecteur colonne r 
-~b 
-\eqref{eq:Ch09-079} a .u 
-= a.&..c.. 
-f~~c.'---~bc:-o....:...~ 
-qUI peut s'interpréter énergétiquement comme donnant les "forces élastiques 
-{a.., [.2,-, l,(, ", qui 
-doivent être appliquées aux nœuds pour produire le dé
-placement ~ . Ceci résulte par exemple du bilan énergétique \eqref{eq:Ch09-032} qui montre 
-que pour une variation dQ des déplacements aux nœuds, la variation de 
-l'énergie de déformation 
-\eqref{eq:Ch09-080} 
-est égale au travail des efforts exercés sur l'élément. On peut donc inter­préter \eqref{eq:Ch09-080} comme donnant le travail des "forces élastiques" CsuPPo3ées 
-... 
-concentrées aux nœuds) ia., ~h et ~~. Il faut bien garder à l'esprit, 
-cependant, qu'il ne s'agit là que d'une interprétation, et que ces "forces 
-élastiques" sont fictives et sans aucune existence réelle; ce ne sont pas 
-des forces, malS des dérivées de l'énergie de déformation. 
-b) Discrétisation des forces de volume. Calculons la contribution du triangle abc au travail des forces de volume, càd dans \eqref{eq:Ch09-070} des forces de pesanteur. En reportant \eqref{eq:Ch09-073} dans 
+\subsubsection{Discrétisation des forces de volume}
+\endinput
+Calculons la contribution du triangle abc au travail des forces de volume, càd dans \eqref{eq:Ch09-070} des forces de pesanteur. En reportant \eqref{eq:Ch09-073} dans 
 \eqref{eq:Ch09-070} et en remarquant que 
 (81 ) 
 on obtiendra 
