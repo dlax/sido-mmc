@@ -865,105 +865,102 @@ Il faut bien garder à l'esprit, cependant, qu'il ne s'agit là que d'une interp
 des forces, mais des dérivées de l'énergie de déformation. 
 
 \subsubsection{Discrétisation des forces de volume}
-\endinput
-Calculons la contribution du triangle abc au travail des forces de volume, càd dans \eqref{eq:Ch09-070} des forces de pesanteur. En reportant \eqref{eq:Ch09-073} dans 
-\eqref{eq:Ch09-070} et en remarquant que 
-(81 ) 
-on obtiendra 
-\eqref{eq:Ch09-082} _ _  (.u: + 4;+"'< ) = 
-) 
-(83 ) 1 - 1 -P'à'S 1 3 ~ 
-D'un point de vue énergétique, on peut interpréter \eqref{eq:Ch09-082} en disant que les 
----1'0.. -"'t--">
-forces de volume sont équivalentes aux trois forces concentrées 'f ,tt' ,~,c.. appliquées aux nœuds. 
+Calculons la contribution du triangle abc au travail des forces de volume, c'est à dire dans \eqref{eq:Ch09-070} des forces de pesanteur.
+En reportant \eqref{eq:Ch09-073} dans \eqref{eq:Ch09-070} et en remarquant que 
+\begin{equation}
+    \iint_{abc} \lambda_a \ud x_1 \ud x_2 = \iint_{abc} \lambda_b \ud x_1 \ud x_2 = \iint_{abc} \lambda_c \ud x_1 \ud x_2 = \frac{S}{3}
+    \label{eq:Ch09-081}
+\end{equation}
+on obtiendra
+\begin{equation}
+    -\iint_{abc} \rho g \tilde{u}_2 \ud x_1 \ud x_2 = - \frac{\rho g S}{3} \left( u_2^a + u_2^b + u_2^c \right) = \underline{\varphi}^T \cdot \underline{u}
+    \label{eq:Ch09-082}
+\end{equation}
+\begin{equation}
+    \underline{\varphi}^T = \left( 0, 0, 0, -\frac{\rho g S}{3}, -\frac{\rho g S}{3}, -\frac{\rho g S}{3} \right)
+    \label{eq:Ch09-083}
+\end{equation}
+D'un point de vue énergétique, on peut interpréter \eqref{eq:Ch09-082} en disant que les forces de volume sont équivalentes aux trois forces concentrées $\vec{\varphi}^a$, $\vec{\varphi}^b$, $\vec{\varphi}^c$ appliquées aux nœuds. 
+%\begin{center}
+    %\includegraphics
+%\end{center}
 De manière générale, l'écriture du travail des efforts de volume conduit à décomposer ces efforts en trois forces concentrées appliquées aux nœuds. 
--152 ­c) Discrétisation des efforts surfaciques 
-Soit ac un côté du triangle abc appartenant à 
 
-les efforts surfaciques sont donnés 
-X't -t----------', :r., 
+\subsubsection{Discrétisation des efforts surfaciques}
+Soit ac un côté du triangle abc appartenant à $S_f$, c'est à dire où les efforts surfaciques sont donnés
 
-b
-b
-" 
 La restriction de \eqref{eq:Ch09-075} à ac donne, dans le cas particulier du barrage (ac vertical) 
-
+\begin{equation}
+    \tilde{u}_1 = u_1^a \frac{x_2 - x_2^c}{x_2^a -x_2^c} + u_1^c \frac{x_2 - x_2^a}{x_2^c -x_2^a}
+    \label{eq:Ch09-084}
+\end{equation}
 De sorte que la contribution de ac au travail des efforts surfaciques est 
+\[
+\frac{\varpi}{x_2^c -x_2^a} \int_{x_2^a}^{x_2^c} \left[ u_1^c x_2 \left( x_2 - x_2^a \right) - u_1^a x_2 \left( x_2 - x_2^c \right) \right] \ud x_2
+\]
+et on obtient finalement
+\begin{equation}
+    - \int_{a}^c \varpi x_2 \tilde{u}_1 \ud x_2 = - \frac{\varpi \Delta h}{2} \left[ \left( x_2^c - \frac{\Delta h}{3} \right) u_1^c + \left( x_2^a + \frac{\Delta h}{3} \right) u_2^c \right]
+    \label{eq:Ch09-085}
+\end{equation}
+\begin{equation}
+    \underline{\psi}^T = \left( - \frac{\varpi \Delta h \left( x_2^c + \frac{\Delta h}{3} \right)}{2}, 0, - \frac{\varpi \Delta h \left( x_2^a - \frac{\Delta h}{3} \right)}{2}, 0, 0, 0 \right)
+    \label{eq:Ch09-086}
+\end{equation}
 
-et on obtient finalement 
+D'un point de vue énergétique, les forces de contact exercées sur  ac sont équivalentes à deux forces concentrees  $\vec{\psi}^a$ et $\vec{\psi}^c$ exercées aux nœuds.
+Par contre,  $u_i^b$ n'intervient pas dans \eqref{eq:Ch09-084}, et donc $\vec{\psi}^b=0$.
 
-= "fT ..u. 
-\eqref{eq:Ch09-086} 'fT = (-~ ll~ (-xt + '\~) 1 0 
+\subsection{Assemblage} \label{ssec:Ch09-3.4}
+Pour calculer $K \left( \tilde{u}_i \right)$, c'est à dire pour expliciter \eqref{eq:Ch09-071}, on doit sommer la contribution de tous les triangles pour l'énergie de déformation et le travail des forces de volume, ainsi que la contribution de tous les segments de $S_f$ pour le travail des forces de surface.
+Pour minimiser la fonction $K\left( \underline{U} \right)$ résultante, il faut annuler la dérivée de $K$ par rapport à chaque déplacement de chaque nœud. 
+\subsubsection{Cas d'un nœud intérieur a}
+Chaque nœud intérieur appartient à $n$ triangles $T_1,\ T_2, \cdots T_n$ ($n=6$ dans notre exemple).
+D'après ce qu'on a vu au paragraphe précédent, le déplacement $u_i^ a$ n'interviendra dans $K$ que par la contribution de ces $n$ triangles.
+On pourra donc écrire 
+\begin{equation}
+    \frac{\partial W}{\partial u_i^a} = \frac{\partial W_{T_1}}{\partial u_i^a} + \cdots + \frac{\partial W_{T_n}}{\partial u_i^a} = f_i^{a,T_1} + \cdots + f_i^{a, T_n}
+    \label{eq:Ch09-087}
+\end{equation}
+où les quantités $f_i^{a,T_j}$ sont les composantes des forces élastiques appliquées en a sur chacun des éléments  $T_1,\ T_2, \cdots T_n$ entourant a.
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial }{\partial u_1^a} \iint_{\Omega} \rho g \tilde{u}_2 \ud x_1 \ud x_2 &= 0 = - \left( \varphi_1^{a,T_1} + \cdots + \varphi_1^{a,T_n} \right) \\
+        \frac{\partial }{\partial u_2^a} \iint_{\Omega} \rho g \tilde{u}_2 \ud x_1 \ud x_2 &= \frac{\rho g}{3} \left( S^1 + \cdots + S^n \right) = - \left( \varphi_2^{a,T_1} + \cdots + \varphi_2^{a,T_n} \right)
+    \end{aligned}
+    \label{eq:Ch09-088}
+\end{equation}
+où les quantités $\varphi_i^{a,T_j}$ sont les forces concentrées en a équivalentes aux forces de volume exercées sur chacun des éléments $T_1,\ T_2, \cdots T_n$.
+Enfin, $u_i^a$ n'interviendra pas dans le travail des efforts de contact, puisque celui-ci ne fait apparaître que les déplacements des nœuds de $S_f$.
 
-D, 0)
-, D,
-1 
-~ 
-D'un point de  vue  énergétique,  les  forces  de  contact  exercées  
-sur  ac  sont  équivalentes  à deux  forces  ~ concentrees  ---. Q."t'  et  -1> ,"1'  exercées  
-aux  nœuds.  Par contre,  ~~ 4  n'intervient  pas  dans  \eqref{eq:Ch09-084},  et donc  -tr'-1'=0.  
-3.4 ASSEMBLAGE  
+Ainsi, la minimisation de $K$ par rapport à $u_i^a$ pourra s'écrire
+\begin{equation}
+    -\vec{f}^{a,T_1} - \cdots - \vec{f}^{a,T_n} + \vec{\varphi}^a = 0
+    \label{eq:Ch09-089}
+\end{equation}
+On peut interpréter cette équation comme exprimant l'équilibre au nœud a sous l'action des forces qui lui sont appliquées
+\begin{itemize}
+    \item forces élastiques exercées par tous les éléments entourant a, qui sont égales à l'opposé des forces élastiques $\vec{f}^{a,T_i}$ exercées sur l'élément;
+    \item la force $\vec{\varphi}^a = \vec{\varphi}^{a,T_1} + \cdots + \vec{\varphi}^{a,T_n}$ qui est la force concentrée équivalente en a aux forces volumiques appliquées aux éléments entourant a.
+\end{itemize}
+Dans notre exemple, cette force est égale au tiers (car les trois sommets de chaque triangle participent) du poids des éléments entourant a. 
 
-Pour calculer Kc.iL.), càd pour expliciter \eqref{eq:Ch09-071}, on doit soonner la contribution de tous les triangles pour l'énergie de déformation et le 
-travail des forces de volume, ainsi que la contribution de tous les segments de S{ pour le travail des forces de surface. Pour minimiser la fonction K(!:!) résul tante, il faut annuller la dérivée de K par rapport à chaque déplacement de chaque noeud. 
-a) Cas d'un noeud intérieur a. 
+\subsubsection{Cas d'un nœud frontière}
+C'est à dire un nœud appartenant à $S_f$ (car sur $S_u$ le déplacement est donné).
+L'analyse précédente reste valable, mais il faut rajouter la contribution des 2 segments de $S_f$ issus de a.
 
-Chaque noeud intérieur appartient à n triangles T).T... T (n=6 dans notre
-2 n exemple). D'après ce qu'on a vu au paragraphe précédent, le déplacement ~~ 
-N 
-n'interviendra dans K que par la contribution de ces n triangles. On pour­ra donc écrire 
-
-o Wr.
-
-\eqref{eq:Ch09-087} 
-
-
---' + ... 
-'(Lu;"< 
-
-.p~.,T..
-où les quantités fi... d sont les composantes des forces élastiques appli­quées en a sur chacun des éléments T1,T"" T entourant a .
-Zn 
-Q.., T" .0.., T......
-0' § p~ ;;:" 0...:. cioc~ '" 0 = -( tf~ T ." + '1\ ) 
-.Q
-\eqref{eq:Ch09-088} 	'0-<" 3 E.î' "") ( ..,T, o., T"" ) 
-fL..r 3-il-~ c.k. 04), = ~ (5 T ...... 5 '" -<f~ ... '-. ... Cf~
-Ô..llQ. 
-" 
-0.. T· 
-où les quantités ~~' â sont les forces concentrées en a équivalentes aux forces de volume exercées sur chacun des éléments TJ,T"" T " Enfin,
-Zn ~~ n'interviendra pas dans le travail des efforts de contact, puisque ce
-... 
-lui-ci ne 	fait apparaître que les déplacements des nœuds de Sf. Ainsi, la minimisation de K par rapport à .JJ..~ pourra s'écrire
- 
-_r<L,T~
-\eqref{eq:Ch09-089} 
-
-= 0 
-On peut interpréter cette équation comme exprimant l'équilibre au noeUG a sous l'action des forces qui lui sont appliquées -forces élastiques exercées par tous les élémetits entourant a, qUl sont égales à l'opposé des fprces élastiques rQ..,T~ exercées sur l'élément; -+ -'1: -?T 
--la force 'fa. = tfCl, "'1 ... _" + <fa.., """ qui est la force concentrée équivalente en a aux forces volumiques appliquées aux éléments entourant a. Dans notre exemple, cette force est égale au tiers (car les trois sommets de chaque triangle participent) du poids des éléments entourant a. 
-b) Cas d'un noeud frontière. càdg'un noeud appartenant à (car sur SM.
- le déplacement est donné). L'analyse précédente reste valable. mais il 
-faut rajouter la contribution des 2 segments de Sf lSSUS de a. <\. 
 On obtient alors 
+\begin{equation}
+    \frac{\partial}{\partial u_i^a} \int_{OA} \varpi x_2 \tilde{u}_1 \ud x_2 = - \psi_i^{a,T_1} - \psi_i^{a,T_2}
+    \label{eq:Ch09-090}
+\end{equation}
+et finalement, la minimisation de $K$ donne 
+\begin{equation}
+    -\vec{f}^{a,T_1} - \cdots -\vec{f}^{a,T_n} + \vec{\varphi}^a + \vec{\psi}^a = 0 
+    \label{eq:Ch09-091}
+\end{equation}
+On peut encore interpréter \eqref{eq:Ch09-091} comme exprimant l'équilibre du nœud a, à condition de rajouter aux forces appliquées
+\begin{itemize}
+    \item la force $\vec{\psi}^a = \vec{\psi}^{a,T_1}+ \vec{\psi}^{a,T_2}$ qui est la force concentrée équivalente en a aux forces de contact appliquées aux éléments entourant a. 
 
-3 Q., T1 
-.., \f.Q,T~
-\eqref{eq:Ch09-090} l'JJ (C:l, 4, ch,), = 
-OA 
-~ 
- ~
-(lA'" JCf 
-et finalement, la minimisation de K donne 
-\eqref{eq:Ch09-091} 
-
-o
-+ 
-
-= 
-On peut encore interpréter \eqref{eq:Ch09-091} comme exprimant l'équilibre du noeud a, à appliquées
-
-qui est la force concentrée équiva
-lente en a aux forces de cont~ct appliquées aux éléments entourant a. 
-Ainsi, on peut interpréter la méthode des éléments finis comme exprimant l'éguilibre des tous les nœuds sous l'action des forces élas­tigues exercées par chaque élément, et des forces extérieures (volumiques ou de contact) appliquées, ces forces étant rapportées aux nœuds. 
+Ainsi, on peut interpréter la méthode des éléments finis comme exprimant l'équilibre des tous les nœuds sous l'action des forces élastiques exercées par chaque élément, et des forces extérieures (volumiques ou de contact) appliquées, ces forces étant rapportées aux nœuds. 
