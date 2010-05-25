@@ -610,7 +610,7 @@ On considère encore le même solide élastique pouvant être soumis à deux sys
 \begin{proof}
     On développe 
     \[
-    \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 = \hat{W} \left( \sigma_{ij}^1 \right) + \lambda^2 \hat{W}\left( \hat{\sigma}_{ij}^2 \right) + \lambda \iiint_{\Omega} \Lambda_{ijkh} \sigma_{ij}^1 \hat{\sigma}_{kh}^2 \ud v
+    \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 \right) = \hat{W} \left( \sigma_{ij}^1 \right) + \lambda^2 \hat{W}\left( \hat{\sigma}_{ij}^2 \right) + \lambda \iiint_{\Omega} \Lambda_{ijkh} \sigma_{ij}^1 \hat{\sigma}_{kh}^2 \ud v
     \]
     De sorte que 
     \begin{align*}
@@ -840,9 +840,10 @@ où $\underline{\underline{A}}^S$ désigne la matrice $\underline{\underline{A}}
 \end{equation}
 L'intégration de l'énergie de déformation sur le triangle abc donne
 \begin{equation}
-    \begin{split}
+    \begin{aligned}
         W_{abc} &= \frac{1}{2} \iint_{abc} \left\{ \lambda \left( \varepsilon_{11} + \varepsilon_{22} \right)^2 + 2 \left( \varepsilon_{11}^2 + \varepsilon_{22}^2 + 2 \varepsilon_{12}^2 \right) \right\} \ud x_2 \ud x_2
         &= \frac{1}{2} \underline{u}^T \underline{\underline{a}}_{abc} \underline{u}
+    \end{aligned}
     \label{eq:Ch09-078}
 \end{equation}
 où $\underline{u}$ désigne le vecteur colonne des déplacements  aux nœuds, donc un sous-vecteur de $\underline{U}$, et où $\underline{\underline{a}}_{abc}$ est une matrice symétrique $6\times6$ qui résulte de l'intégration sur le triangle et il dépend donc uniquement de la géométrie.
@@ -962,5 +963,6 @@ et finalement, la minimisation de $K$ donne
 On peut encore interpréter \eqref{eq:Ch09-091} comme exprimant l'équilibre du nœud a, à condition de rajouter aux forces appliquées
 \begin{itemize}
     \item la force $\vec{\psi}^a = \vec{\psi}^{a,T_1}+ \vec{\psi}^{a,T_2}$ qui est la force concentrée équivalente en a aux forces de contact appliquées aux éléments entourant a. 
+\end{itemize}
 
 Ainsi, on peut interpréter la méthode des éléments finis comme exprimant l'équilibre des tous les nœuds sous l'action des forces élastiques exercées par chaque élément, et des forces extérieures (volumiques ou de contact) appliquées, ces forces étant rapportées aux nœuds. 
