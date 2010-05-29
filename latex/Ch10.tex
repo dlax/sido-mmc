@@ -96,169 +96,190 @@ On utilise aussi parfois, notamment pour des problèmes qui supposent de grandes
 \end{multicols}
 
 \subsection{Plasticité parfaite}
-\endinput
-Nous nous limiterons désormais à la plasticité parfaite, qui con­
-duit à la théorie classique de la plasticité. Cette théorie peut en effet 
-être poussée assez loin, et permet d'obtenir de nombreux résultats. 
-La définition du seuil de plasticité dans une théorie tridimension­nelle a fait l'objet du § V.3 . De manière générale, le domaine élastique est défini par 
-(9) 
+Nous nous limiterons désormais à la plasticité parfaite, qui conduit à la théorie classique de la plasticité.
+Cette théorie peut en effet être poussée assez loin, et permet d'obtenir de nombreux résultats. 
 
-où i est la fonction seuil ou fonction de fluage. En plasticité parfaite, le domaine élastique ne change pas, et cette fonction est définie une fois pour toutes. Dans le cas isotrope, on a discuté au § V.3.1 la forme que pre­
-nait ce critère pour les métaux 
-(10) = 0
-i(Â':~ ) i(J~, J 3 ) ~ 
-et les deux cri tères les plus utilisés sont le critère de von Mises 
-(j,t
-Â
-(1 1) .h . . A .. , e. 
-'1 ...~
-2 2> 
-et le critère de Tresca (§ V. 3.2) 
-( 12) (cr;, -<Tl ) $ (fe ( (f, ~ <rJ, ~ (J3 ) 
-Pour les sols, la pression hydrostatique intervient essentielle­ment dans le critère, et on obtient en général de bons résultats en prenant le critère de Coulomb 
-[C'i"" " COOIO-: 
-(13) 1 T~ 1 < .c. 
+La définition du seuil de plasticité dans une théorie tridimensionnelle a fait l'objet du paragraphe~\ref{sec:Ch05-3}.
+De manière générale, le domaine élastique est défini par 
+\begin{equation}
+    f\left( \sigma_{ij} \right) \leq 0
+    \label{eq:Ch10-009}
+\end{equation}
+où $f$ est la fonction seuil ou fonction de fluage.
+En plasticité parfaite, le domaine élastique ne change pas, et cette fonction est définie une fois pour toutes.
+Dans le cas isotrope, on a discuté au paragraphe~\ref{ssec:Ch05-3.1} la forme que prenait ce critère pour les métaux 
+\begin{equation}
+    f\left( s_{ij} \right) = f\left( J_2,J_3 \right) \leq 0
+    \label{eq:Ch10-010}
+\end{equation}
+et les deux critères les plus utilisés sont le critère de von Mises 
+\begin{equation}
+    \frac{1}{2} s_{ij} s_{ij} \leq \frac{\sigma_e^2}{3}
+    \label{eq:Ch10-011}
+\end{equation}
+et le critère de Tresca (paragraphe~\ref{ssec:Ch05-3.1}) 
+\begin{equation}
+    \left( \sigma_1 - \sigma_3 \right) \leq \sigma_e \quad \left( \sigma_1 \geq \sigma_2 \geq \sigma_3 \right)
+    \label{eq:Ch10-012}
+\end{equation}
 
-où ..e. est "la cohésion" et if 111' angle de frottement interne". En particu­lier, pour un sol sans cohésion, ~= 0 (cas des matériaux granulaires com­
-me le sable), le critère de Coulomb exprime simplement une loi de frotte­ment coulombien sur chaque facette. 
+Pour les sols, la pression hydrostatique intervient essentiellement dans le critère, et on obtient en général de bons résultats en prenant le critère de Coulomb 
+\newtheorem*{ccoulomb}{Critère de Coulomb}
+\begin{ccoulomb}
+    \begin{equation}
+        |\vec{T}_t| < c - T_n \tan \varphi
+        \label{eq:Ch10-013}
+    \end{equation}
+\end{ccoulomb}
+où $c$ est «~la cohésion~» et $\varphi$ «~l'angle de frottement interne~».
+En particulier, pour un sol sans cohésion,$ c = 0$ (cas des matériaux granulaires comme le sable), le critère de Coulomb exprime simplement une loi de frottement coulombien sur chaque facette. 
+\begin{multicols}{2}
+    \centering
+    %\includegraphics{}<++>
+    \columnbreak
+    C'est un critère du type~\eqref{eq:Ch05-062}, la courbe intrinsèque étant une droite. 
+\end{multicols}
 
-TI:: C'est La critère du type (V.62Y, 
-courbE: 
-la courbe intrinsèque étant une 
-intrinsèque 
-droite. 
-T" 
 Comme dans le cas unidimensionnel, nous décomposons la déformation 
 en une partie élastique et une partie plastique 
--1 se ­
-
-(14 ) 
-
-et la contrainte est donnée par une loi élastique en fonction desdéforma­tions élastiques 
-(15 ) 
-
-et il reste à compléter la théorie par une loi d'écoulement plastique don­nant l'évolution de la déformation plastique au cours du temps. Il convient donc de g~néraliser la loi \eqref{eq:Ch10-007},\eqref{eq:Ch10-008} du cas unidimensionnel. Auparavant, re­prenons, dans le cas de l'élasta-plasticité, le bilan theITlodynamique expn­mé par (1.60). Compte-tenu de \eqref{eq:Ch10-014} et \eqref{eq:Ch10-015}, nous pouvons écrire 
-. e "'\'­
-û' :D .. ~ G:. E ~ (J.. E. .. ... V-S· 
-.c~ .c~ ...~ .v~ .<.~ .<.~ .<.~ J,.;j 
-(16) 
-
-
-o '-~ . e cl.:W 
-
-~
-(J. E. . .,{;,,\\. C· = 
-~ô .ca A'<'~k~ A~ dt 
-où 'Ur est l'énergie de déforrnat·ion élastique . \eqref{eq:Ch10-017} 
-ce qUl permet d'identifier \eqref{eq:Ch10-016} il (l.59) avec 
-\eqref{eq:Ch10-018} 
-
-La puissance l'élastique" se transforme en énergie interne élastique, tandis que la puissance "plastique" est dissipée. Le second principe de la thermo­dynamique donne alors l'inégalité 
-\eqref{eq:Ch10-018} 
+\begin{equation}
+    \varepsilon_{ij} = \varepsilon_{ij}^e + \varepsilon_{ij}^p
+    \label{eq:Ch10-014}
+\end{equation}
+et la contrainte est donnée par une loi élastique en fonction des déformations élastiques 
+\begin{equation}
+    \sigma_{ij} = A_{ijkh} \varepsilon_{kh}^e
+    \label{eq:Ch10-015}
+\end{equation}
+et il reste à compléter la théorie par une loi d'écoulement plastique donnant l'évolution de la déformation plastique au cours du temps.
+Il convient donc de généraliser la loi \eqref{eq:Ch10-007}, \eqref{eq:Ch10-008} du cas unidimensionnel.
+Auparavant, reprenons, dans le cas de l'élasto-plasticité, le bilan thermodynamique exprimé par \eqref{eq:Ch01-060}.
+Compte-tenu de \eqref{eq:Ch10-014} et \eqref{eq:Ch10-015}, nous pouvons écrire 
+\begin{equation}
+    \begin{aligned}
+        & \sigma_{ij} D_{ij} = \sigma_{ij} \dot{\varepsilon}_{ij} = \sigma_{ij} \dot{\varepsilon}_{ij}^e + \sigma_{ij} \dot{\varepsilon}_{ij}^p \\
+        & \sigma_{ij} \dot{\varepsilon}_{ij}^e = A_{ijkh} \varepsilon_{kh}^e \dot{\varepsilon}_{ij}^e = \frac{\ud w}{\ud t}
+    \end{aligned}
+    \label{eq:Ch10-016}
+\end{equation}
+où $w$ est l'énergie de déformation élastique
+\begin{equation}
+    w = \frac{1}{2} A_{ijkh} \varepsilon_{ij}^e \varepsilon_{kh}^e
+    \label{eq:Ch10-017}
+\end{equation}
+ce qui permet d'identifier \eqref{eq:Ch10-016} à \eqref{eq:Ch01-059} avec 
+\begin{equation}
+    \rho u = w \quad,\quad \varphi = \sigma_{ij} \dot{\varepsilon}_{ij}^p
+    \label{eq:Ch10-018}
+\end{equation}
+La puissance «~élastique~» se transforme en énergie interne élastique, tandis que la puissance «~plastique~» est dissipée.
+Le second principe de la thermodynamique donne alors l'inégalité 
+\begin{equation}
+    \sigma_{ij} \dot{\varepsilon}_{ij}^p \geq 0
+    \label{eq:Ch10-018}
+\end{equation}
 restriction thermodynamique sur la loi d'écoulement plastique. 
 
-
-1.3 POTENTIEL PLASTIQUE 
-seuil 
-
-charge
-décharg Domaine 
-élastique 
-IJ 
-
-'J 
-Comme dans le cas unidimensionnel, la déformation plastique reste constante Sl l'on est en évolution élastique, c'est-à-dire si l'on est dans le domai­ne élastique ( '1;<0) ou sur le seuil ~=O si l'on a un processus de dé­charge ( {<O ) 
-si i <0 domaine élastique
-'t
-(19) 	E.. : 0 .(.~ t81 {= 0 {<a décharge 
-La déformation plastique ne varIe donc que sur le seuil et dans un processus 
-de charge (-t=0, t=0). La loi d'évolution est alors habituellement défi­
-nie par 
-Principe du travail maximal. Dans un état de contraintes ~l~ , le taux de 
+\subsection{Potentiel plastique} \label{ssec:Ch10-1.3}
+Comme dans le cas unidimensionnel, la déformation plastique reste constante si l'on est en évolution élastique, c'est-à-dire si l'on est dans le domaine élastique($f<0$) ou sur le seuil $f=O$ si l'on a un processus de décharge ($\dot{f} < 0$) 
+\begin{equation}
+    \dot{\varepsilon}_{ij}^p = 0
+    \begin{cases}
+        \text{si } f < 0 & \text{ domaine élastique} \\
+        \text{si } f = 0, & \dot{f}<0 \text{ décharge}
+    \end{cases}
+    \label{eq:Ch10-019}
+\end{equation}
+La déformation plastique ne varie donc que sur le seuil et dans un processus de charge ($f=0$, $\dot{f}=0$).
+La loi d'évolution est alors habituellement définie par 
+\newtheorem*{PTM}{Principe du travail maximal}
+\begin{PTM}
+    Dans un état de contraintes $\sigma_{ij}$, le taux de 
 déformation plastique vérifie l'inégalité 
-.,. 
-'"\'­
-(20) 	( <r:Ci-Cf.. ) ê .. >--0 
-...~
-'"* 
-.. 	.. 
-pour tout (J" acceptable, ~ 0
-<t 	i ( <r.i.~ ) 
-En particulier, il s'ensuit que la restriction thermodynamique \eqref{eq:Ch10-018} 
-.. 
-est automatiquement vérifiée (il suffit de prendre (J"... ~ =' 0 dans (20», 
-Géométriquernent,en se.plaçant dans l'espace vectoriel des contrain­
-tes (de dimension 6), l'inégalité \eqref{eq:Ch10-020} se traduit par l'inégalité 
-(21) 
+    \begin{equation}
+        \left( \sigma_{ij} - {\mathop{\sigma}^{\ast}}_{ij} \right) \dot{\varepsilon}_{ij}^p \geq 0
+        \label{eq:Ch10-020}
+    \end{equation}
+    pour tout $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}$ acceptable, $\displaystyle f\left( {\mathop{\sigma}^{\ast}}_{ij} \right) \leq 0$.
+\end{PTM}
 
-~ 0 
-où [ est le point représentatif de l'état de contraintes, z:~ un point quel­conque du domaine élastique, et ­
-clEf-le vecteur représentatif de l' incré­ment de déformation plastique. 
-Si l'on se place en un point du seuil où le plan tangent est conti­nu, alors, en faisant varier L~, on constate que l'inégalité \eqref{eq:Ch10-021} sera vé­rifiée pour tout r." SSi le vecteur incrément de déformation plastique est 
+En particulier, il s'ensuit que la restriction thermodynamique \eqref{eq:Ch10-018} est automatiquement vérifiée (il suffit de prendre $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}=0$ dans \eqref{eq:Ch10-020}. 
 
-cr· .
-'1 
-dirigé selon la normale extérieure à la surface seuil en L 
-'f­
-(22) 
-E.. Â 	~ ? ~ 0
-'" 
-""i d(f:..~ 
-La fone tian seuil est un "potentiel plastique". On tire également de \eqref{eq:Ch10-020} la propriété de convexité du domaine élastique 
-En effet, SI ce domaine n'est 
-pas convexe, alors on constate aisément qu'il est impossible 
-.,...... de trouver un vecteur clEt vé­
-rifiant \eqref{eq:Ch10-021} pour tout L* 
-Ainsi, on tire du principe du travail maximal les propriétés de convexité 
-(du domaine élastique) et de normalité (de à la frontière seuil). 
-Par analogie avec ce que nous avons fait au § IV.I.2 pour la con­
-dition de frottement, nous pouvons réécrire la loi d'écoulement plastique 
-sous la forme 
-( 
-'t
-1: .. "-a Sl i(<r:..~) < 0 
-'i
+Géométriquement,en se plaçant dans l'espace vectoriel des contraintes (de dimension 6), l'inégalité \eqref{eq:Ch10-020} se traduit par l'inégalité 
+\begin{equation}
+    \vec{\Sigma^{\ast} \Sigma} \cdot \vec{\ud \varepsilon^p} \geq 0
+    \label{eq:Ch10-021}
+\end{equation}
+où $\Sigma$ est le point représentatif de l'état de contraintes, $\Sigma^{\ast}$ un point quelconque du domaine élastique, et $\vec{\ud \varepsilon^p}$ le vecteur représentatif de l'incrément de déformation plastique. 
 
-(23) 
-si
+Si l'on se place en un point du seuil où le plan tangent est continu, alors, en faisant varier $\Sigma^{\ast}$, on constate que l'inégalité \eqref{eq:Ch10-021} sera vérifiée pour tout $\Sigma^{\ast}$ si-et-seulement-si le vecteur incrément de déformation plastique est 
+\begin{center}
+    %\includegraphics{}
+\end{center}
+dirigé selon la normale extérieure à la surface seuil en $\Sigma$ 
+\begin{equation}
+    \dot{\varepsilon}_{ij}^p = \lambda \frac{\partial f}{\partial \sigma_{ij}} \quad,\quad \lambda \geq 0
+    \label{eq:Ch10-022}
+\end{equation}
+La fonction seuil est un «~potentiel plastique~».
+On tire également de \eqref{eq:Ch10-020} la propriété de convexité du domaine élastique 
+\begin{multicols}{2}
+    \begin{center}
+        %\includegraphics{}
+    \end{center}
+    \columnbreak
+    En effet, si ce domaine n'est pas convexe, alors on constate aisément qu'il est impossible de trouver un vecteur $\vec{\ud \varepsilon^p}$ vérifiant \eqref{eq:Ch10-021} pour tout $\Sigma^{\ast}$.
+\end{multicols}
+Ainsi, on tire du principe du travail maximal les propriétés de convexité (du domaine élastique) et de normalité (de $\vec{\ud \varepsilon^p}$ à la frontière seuil). 
 
-.'1' .. = 'À of l (<f';'a) ~ 0 
-"! 
-ôa:
-"t 
-~ ~ 0 0 = 0
+Par analogie avec ce que nous avons fait au paragraphe~\ref{ssec:Ch04-1.2} pour la condition de frottement, nous pouvons réécrire la loi d'écoulement plastique sous la forme 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \dot{\varepsilon}_{ij}^p = 0 & \text{si} & f\left( \sigma_{ij} \right) < 0 \\
+        \dot{\varepsilon}_{ij}^p = \lambda \frac{\partial f}{\partial \sigma_{ij}} & \text{si} & f\left( \sigma_{ij} \right) = 0
+    \end{aligned}
+    \right.
+    \label{eq:Ch10-023}
+\end{equation}
+\[
+\lambda \geq 0 \quad,\quad \dot{f} \leq 0 \quad,\quad \lambda \dot{f} = 0
+\]
+et la distinction entre processus de charge et de décharge s'effectue automatiquement par le jeu des deux inégalités et de l'inégalité sur $\lambda$ et $\dot{f}$.
+Cela peut sembler bien compliqué, c'est néanmoins la «~bonne formulation mathématique~» qui permet de démontrer de nombreux résultats. 
 
-1~ Â t 
-et la distinction entre processus de charge et de décharge s'effectue au­tomatiquement par le jeu des deux inégalités et de l'inégalité sur? et t Cela peut sembler bien compliqué, c'est néanmoins la "bonne formulation ma­thématique" qui permet de démontrer de nombreux résultats. 
-En particulier, si le critère ne dépend pas de la pression hydro­statique forme \eqref{eq:Ch10-010} alors il résulte de \eqref{eq:Ch10-023} que 
-(24) = o 
-Les déformations plastiques se font à volume constant (incompressibilité plastique) . 
-Si  la  surface seuil  ;,::-f.3-~=-:::::  '-"":1  point anguleux  
-le cas  du critère de  Tresca  - alors  le  principe du  trava~l maximal  montre  
-......  
-que  le  vecteur  clEt  est  dans  le  cône  des normales  
-Cône  des  normales  
+En particulier, si le critère ne dépend pas de la pression hydrostatique forme \eqref{eq:Ch10-010} alors il résulte de \eqref{eq:Ch10-023} que 
+\begin{equation}
+    \dot{\varepsilon}_{ii}^p = 0
+    \label{eq:Ch10-024}
+\end{equation}
+Les déformations plastiques se font à volume constant (incompressibilité plastique). 
 
-_--Ltf=~ 
+Si la surface seuil présente un point anguleux le cas du critère de Tresca -- alors le principe du travail maximal montre que le vecteur $\vec{\ud \varepsilon^p}$ est dans le cône des normales  
+\begin{center}
+    %\includegraphics{}
+\end{center}
 
-Domaine élastique 
+Le principe du travail maximal est une hypothèse qui sera ou non vérifiée selon les matériaux.
+Elle est vérifiée en première approximation pour les métaux; elle n'est pas vérifiée par contre pour les sols.
+Ce principe permet d'engendrer une classe de modèles: les matériaux standard, qui permettent de traiter de nombreux problèmes.
+Les conclusions obtenues à partir de ce type de modèle seront plus ou moins valables selon les problèmes.
 
-Le principe du travail maximal est une hypothèse qUl sera ou non vérifiée selon les matériaux. Elle est vérifiée en première approximation pour les métaux; elle n'est pas vérifiée par contre pour les sols. Ce prin­clpe permet d'engendrer une classe de modèles! les matériaux standard, qui permettent de traiter de nombreux problèmes. Les conclusions obtenues à 
-partir de ce type de modèle seront plus ou mo1ns valables selon les problè­
-meSa 
-Dans le cas du critère de von Mises (II), on obtient 
-''\'
-(25) 	é '. 
--'-t 
-
-
+Dans le cas du critère de von Mises \eqref{eq:Ch10-011}, on obtient 
+\begin{equation}
+    \dot{\varepsilon}_{ij}^p = \lambda s_{ij}
+    \label{eq:Ch10-025}
+\end{equation}
 et, par combinaison avec \eqref{eq:Ch10-015}, on a 
-(26) 
-
+\begin{equation}
+    \dot{\varepsilon}_{ij} = \Lambda_{ijkh} \dot{\sigma}_{kh} + \lambda s_{ij}
+    \label{eq:Ch10-026}
+\end{equation}
 loi de comportement incrémentale de la plasticité. 
-2, EXEMPLES DE PROBLEHES 
-======================== 
-2 , 1 FLEXION D'UNE POUTRE 
+
+\section{Exemples de problèmes} \label{sec:Ch10-2}
+\subsection{Flexion d'une poutre} \label{ssec:Ch10-2.1}
+\endinput
 Considérons un arbre êlastoplastique, et soumettons le à un moment 
 de flexion 'TQ croissant (voir § VII. 1, l, problèmes 5 et 6). Au départ, la 
 solution élastique du § VII.I.3 est valable, et elle le reste tant que 
