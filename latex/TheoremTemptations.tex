@@ -1,0 +1,102 @@
+\documentclass{book}
+\usepackage{amsmath}
+\usepackage[amsmath,thmmarks,framed]{ntheorem}
+\usepackage{lipsum}
+\usepackage{framed}
+\usepackage{color}
+\usepackage[adobe-utopia,uppercase=upright,greeklowercase=upright]{mathdesign}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% permet de redéfinir l'entête des théorèmes (^titre entre parenthèses)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewtheoremstyle{plain}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}%
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ --- ##3 \theorem@separator]}
+%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newskip\theorempreskipamount
+\newskip\theorempostskipamount
+\theorempreskipamount\topsep
+\theorempostskipamount\topsep
+
+
+
+% définition d'environnements mathématiques
+\theoremstyle{plain}
+%\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremstyle{}
+\theoremseparator{}
+\setlength\theorempreskipamount{\baselineskip}
+\setlength\theorempostskipamount{\baselineskip}
+\theoremheaderfont{\bfseries\sffamily}
+\newtheorem{Theoreme}{Théorème}[chapter]
+\newtheorem{Remarque}{Remarque}
+\theoremheaderfont{\normalfont\bfseries\sffamily}  
+
+
+\definecolor{gray}{rgb}{0.6,0.6,0.6}
+%\definecolor{RougePale}{RGB}{249,180,195}
+
+%\renewcommand\FrameCommand{{\color{RougePale}\vrule width 5pt \hspace{10pt}}}
+
+\newframedtheorem{defn}{Définition}[chapter]
+\newframedtheorem{cor}{Corollaire}[chapter]
+
+\theoremsymbol{$\bullet$}
+\theoremstyle{nonumberplain}
+\theorembodyfont{\small}
+\newtheorem{Demonstration}{Preuve}
+\theorembodyfont{\normalsize}
+
+\newenvironment{DefCouleur}{
+\definecolor{RougePale}{RGB}{249,195,180}
+\setlength\theorempreskipamount{0pt}
+\setlength\theorempostskipamount{0pt}
+\renewcommand*\FrameCommand{{\color{RougePale}\vrule width 5pt \hspace{10pt}}}
+\begin{defn}}{\end{defn}}
+
+\newenvironment{CorCouleur}{\definecolor{VertPale}{RGB}{195,249,180}
+\setlength\theorempreskipamount{0pt}
+\setlength\theorempostskipamount{-4pt}
+\renewcommand*\FrameCommand{{\color{VertPale}\vrule width 5pt \hspace{10pt}}}
+\begin{cor}}{\end{cor}}
+
+\begin{document}
+\chapter{Premier chapitre}
+\section{Première section}
+\lipsum[2]
+\begin{Theoreme}[dit de la limite haute]
+Un théorème est une proposition  qui peut être mathématiquement démontrée, c'est-à-dire une assertion  qui peut être établie comme vraie au travers d'un raisonnement logique  construit à partir d'axiomes. Un théorème est à distinguer d'une théorie. Soit $x\in\mathbb{R}$ tel que $x\leqslant 0$ alors:
+\begin{equation}
+x=\mathrm{e}^{\mathrm{i}\omega t}
+\end{equation}
+Ce qui est prouvé.
+\end{Theoreme}%
+\begin{Demonstration}
+pl po popopo propz orp ozpr ozprozp rozpr ozpr ozpe o rzj jri joir jirj çzirj çrj zçr uzç eru ç zru çzru zç ur çz ru zçr uçzeru çer uzçeru sgjkfs
+\end{Demonstration}
+ofrokf rofk eorkf orekf orkf orfk rokf orfk orkf orkforkforkfo fro krofk orfk rokf orkforkf orkfo rofk rokf rof krofk rofk orkfo rfo 
+ofrokf rofk eorkf orekf orkf orfk rokf orfk orkf orkforkforkfo fro krofk orfk rokf orkforkf orkfo rofk rokf rof krofk rofk orkfo rfo 
+ofrokf rofk eorkf orekf orkf orfk rokf orfk orkf orkforkforkfo fro krofk orfk rokf orkforkf orkfo rofk rokf rof krofk rofk orkfo rfo 
+%ofrokf rofk eorkf orekf orkf orfk rokf orfk orkf orkforkforkfo fro krofk orfk rokf orkforkf orkfo rofk rokf rof krofk rofk orkfo rfo 
+\begin{DefCouleur}[dite de la limite haute]
+Un théorème est une proposition  qui peut être mathématiquement démontrée, c'est-à-dire une assertion  qui peut être établie comme vraie au travers d'un raisonnement logique  construit à partir d'axiomes. Un théorème est à distinguer d'une théorie. Soit $x\in\mathbb{R}$ tel que $x\leqslant 0$ alors:
+\begin{equation}
+x=\mathrm{e}^{\mathrm{i}\omega t}
+\end{equation}
+Ce qui est prouvé.
+\end{DefCouleur}
+\lipsum[2]
+\begin{CorCouleur}[dite de la limite haute]
+Un théorème est une proposition  qui peut être mathématiquement démontrée, c'est-à-dire une assertion  qui peut être établie comme vraie au travers d'un raisonnement logique  construit à partir d'axiomes. Un théorème est à distinguer d'une théorie. Soit $x\in\mathbb{R}$ tel que $x\leqslant 0$ alors:
+\begin{equation}
+x=\mathrm{e}^{\mathrm{i}\omega t}
+\end{equation}
+Ce qui est prouvé.
+\end{CorCouleur}
+\lipsum[2]
+
+\end{document}
