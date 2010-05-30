@@ -203,7 +203,7 @@ déformation plastique vérifie l'inégalité
     pour tout $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}$ acceptable, $\displaystyle f\left( {\mathop{\sigma}^{\ast}}_{ij} \right) \leq 0$.
 \end{PTM}
 
-En particulier, il s'ensuit que la restriction thermodynamique \eqref{eq:Ch10-018} est automatiquement vérifiée (il suffit de prendre $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}=0$ dans \eqref{eq:Ch10-020}. 
+En particulier, il s'ensuit que la restriction thermodynamique \eqref{eq:Ch10-018} est automatiquement vérifiée (il suffit de prendre $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}=0$ dans \eqref{eq:Ch10-020}). 
 
 Géométriquement,en se plaçant dans l'espace vectoriel des contraintes (de dimension 6), l'inégalité \eqref{eq:Ch10-020} se traduit par l'inégalité 
 \begin{equation}
@@ -279,50 +279,58 @@ loi de comportement incrémentale de la plasticité.
 
 \section{Exemples de problèmes} \label{sec:Ch10-2}
 \subsection{Flexion d'une poutre} \label{ssec:Ch10-2.1}
+Considérons un arbre élastoplastique, et soumettons le à un moment 
+de flexion $\mathcal{M}$ croissant (voir paragraphe~\ref{ssec:Ch07-1.1}, problèmes 5 et 6).
+Au départ, la solution élastique du paragraphe~\ref{ssec:Ch07-1.3} est valable, et elle le reste tant que 
+\begin{equation}
+    \mathcal{M} < \mathcal{M}_e = \frac{\sigma_e J}{\eta}
+    \label{eq:Ch10-027}
+\end{equation}
+Au delà de $\mathcal{M}_e$, une zone plastique se développe à l'extérieur de la poutre, tandis qu'au milieu subsiste une âme élastique.
+En supposant que, en chaque point, l'état de contraintes reste un état de traction simple \eqref{eq:Ch07-013}, nous sommes amenés à prendre 
+\begin{equation}
+    \sigma_{11} = 
+    \begin{cases}
+        \displaystyle -\sigma_e & \displaystyle \xi \leq x_2 \leq  \frac{h}{2} \\
+        \displaystyle -\frac{\sigma_e x_2}{\xi} & \displaystyle -\xi \leq x_2 \leq \xi \\
+        \displaystyle +\sigma_e & \displaystyle -\frac{h}{2} \leq x_2 \leq -\xi
+    \end{cases}
+    \label{eq:Ch10-028}
+\end{equation}
+en supposant la poutre symétrique par rapport à l'axe $x_3$.
+
+\begin{multicols}{2}
+    Ce champ de contraintes vérifie les équations d'équilibre et les CL sur la surface latérale.
+    Il vérifie aussi si les CL sur les extrémités avec
+    \[
+    \mathcal{M} = - \iint_{\Sigma} x_2 \sigma_{11} \ud x_2 \ud x_3
+    \]
+    \columnbreak
+    \begin{center}
+        %\includegraphics{}
+    \end{center}
+\end{multicols}
+et si on introduit la fonction $b\left( x_2 \right)$ donnant la largeur de la poutre en fonction de $x_2$
+\begin{equation}
+    \mathcal{M} = 2 \sigma_e \left\{ \int_0^{\xi} \frac{b(x_2)x_2^2}{\xi} \ud x_2 + \int_{\xi}^{h/2} b(x_2)x_2 \ud x_2 \right\} = \mathcal{M} \left( \xi \right)
+    \label{eq:Ch10-029}
+\end{equation}
+où la fonction $\mathcal{M}(\xi)$ est une fonction qui croît de $\mathcal{M}_e$ donné par \eqref{eq:Ch10-027} à $\mathcal{M}_l$ donné par 
+\begin{equation}
+    \mathcal{M}_l = 2 \sigma_e \int_0^{h/2} b(x_2) x_2 \ud x_2
+    \label{eq:Ch10-030}
+\end{equation}
+lorsque $\xi$ décroît de $h/2$ à $0$, c'est-à-dire lorsque la zone plastique s'étend jusqu'à occuper tout $\Sigma$.
+
+Il reste à calculer les déplacements.
+Dans la zone élastique, le calcul du paragraphe~\ref{ssec:Ch07-1.3} reste valable en remplaçant $\mathcal{M}/J$ par $\sigma_e/\xi$, et la relation~\eqref{eq:Ch07-034} devient 
+\begin{equation}
+    \kappa = \frac{\sigma_e}{E \xi}
+    \label{eq:Ch10-031}
+\end{equation}
+qui, combiné avec \eqref{eq:Ch10-029}, donne la relation entre le moment et la courbure. 
+
 \endinput
-Considérons un arbre êlastoplastique, et soumettons le à un moment 
-de flexion 'TQ croissant (voir § VII. 1, l, problèmes 5 et 6). Au départ, la 
-solution élastique du § VII.I.3 est valable, et elle le reste tant que 
-(27) 
-
-Au delà de "'l,e.' une zone plastique se développe à l'extérieur de la poutre, tandis qu'au milieu subsiste une âme élastique. En supposant que, en chaque 
-point, l'état de contraintes reste un état de traction simple (VII.13), nous 
-sommes amenés à prendre 
--(Je, 
- ôe (:t~
-(28) 
-~~ =. 
-} 
-... cre, 
-
-en supposant la poutre symétrique par rapport à l'axe x
-3 Ce èhamp de contrain­
-tes vérifie les équations d'é­
-quilibre et les CL 	sur la sur­
-face latérale. Il vérifie aus-	.x. 
-J 
-si les CL sur les extrémités 
-avec 
-
-
-b(~) 
-
-et S1 on introduit la fonction ~oc~) donnant la largeur de la poutre en 
--162 ­
-fonc t ion de x
-2 
-
-où la fonction 'YYl(~) est une fonction qU1 croît de ""1.. donné par \eqref{eq:Ch10-027} à ~donné par 
-
-lorsque '§. décroît de !V..,/J-à 0, c'est-à-dire lorsque la zone plastique s'étend JUS­qu'à occuper tout r 
-Il reste à calculer les déplacements. Dans la zone élastique, le calcul du § VII. 1.3 reste valable en remplaçant crrt./-:r par (Je! ~ , et la re­lation (VII.34) devient 
-(31 ) 
-x. = 
-qui, combiné avec \eqref{eq:Ch10-029} , donne la relation entre le moment et la courbure. 
-'I1t --~~--,,--­
-'fIl.t 
-
-
 Il reste à étendre cette solution au'domaine plastique, par inté­gration de \eqref{eq:Ch10-023}. Cela pose davantag~ de problèmes, mais il est possible de calculer un champ de déplacements répondant au problème. Ce champ n'est ce­pendant pas unique: en général, on n'a pas unicité du champ de déplacements en plasticité. 
 Finalement,. le comportement é1astop1astique d'une poutre en flexion 
 est le suivant 
