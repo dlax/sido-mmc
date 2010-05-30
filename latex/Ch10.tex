@@ -330,24 +330,45 @@ Dans la zone élastique, le calcul du paragraphe~\ref{ssec:Ch07-1.3} reste valab
 \end{equation}
 qui, combiné avec \eqref{eq:Ch10-029}, donne la relation entre le moment et la courbure. 
 
+\begin{center}
+    %\includegraphics{}
+\end{center}
+
+Il reste à étendre cette solution au domaine plastique, par intégration de \eqref{eq:Ch10-023}.
+Cela pose davantage de problèmes, mais il est possible de calculer un champ de déplacements répondant au problème.
+Ce champ n'est ce­pendant pas unique: en général, on n'a pas unicité du champ de déplacements en plasticité. 
+
+Finalement, le comportement é1astop1astique d'une poutre en flexion est le suivant 
+\begin{itemize}
+    \item comportement élastique pour $\mathcal{M}<\mathcal{M}_e$
+    \item au delà de $\mathcal{M}_e$: apparition d'une zone plastique, mais les déformations plastiques restent limitées ou «~contenues~» par le noyau élastique. 
+    \item pour $\mathcal{M} \rightarrow \mathcal{M}_l$, le noyau élastique disparaît, et les déformations plastiques n'étant plus limitées, il y a ruine de la structure. 
+\end{itemize}
+
+\subsection{Réservoir sphérique} \label{ssec:Ch10-2.2}
+Reprenons en élastoplasticité le problème du réservoir sphérique que nous avons résolu, en élasticité, au paragraphe~\ref{ssec:Ch06-2.2}.
+Si l'on augmente progressivement la pression intérieure $p$, alors la solution élastique reste valable jusqu'à la pression 
+\begin{equation}
+    p = p_e = \frac{2\sigma_e}{3} \left( 1 - \frac{a^3}{b^3} \right)
+    \label{eq:Ch10-032}
+\end{equation}
+Au delà, une zone plastique apparaît à l'inrérieur du réservoir. 
+\begin{multicols}{2}
+    \begin{center}
+        %\includegraphics{}
+    \end{center}
+    \columnbreak
+    Par raison de symétrie, cette zone sera limitée par une sphère $r=\xi$.
+\end{multicols}
+Dans la zone élastique, $\xi \leq r \leq b$, l'analyse du paragraphe~\ref{ssec:Ch06-2.2} subsiste, et le tenseur des contraintes est donné par 
+\begin{equation}
+    \sigma_{ij} = \left( 3 K \alpha + \frac{2\mu \beta}{r^3} \right) \delta_{ij} - \frac{6\mu \beta}{r^3} \frac{x_ix_j}{r^2}
+    \label{eq:Ch10-033}
+\end{equation}
+$\alpha$ et $\beta$ étant deux constantes à déterminer.
+
 \endinput
-Il reste à étendre cette solution au'domaine plastique, par inté­gration de \eqref{eq:Ch10-023}. Cela pose davantag~ de problèmes, mais il est possible de calculer un champ de déplacements répondant au problème. Ce champ n'est ce­pendant pas unique: en général, on n'a pas unicité du champ de déplacements en plasticité. 
-Finalement,. le comportement é1astop1astique d'une poutre en flexion 
-est le suivant 
--comportement élastique pour tri\. <: 'YI\.,e au delà de ~: apparition d'une zone plastique, mais les déformations plastiques restent limitées ou "contenues" par le noyau élastique. 
--pour '11\.-mL' le noyau élastique disparaît, et les déformations plas­tiques n'étant plus limitées, il y a ruine de la structure. 
-2.2 RESERVOIR SPHERIQUE 
-Reprenons en élastoplasticité le problème du réservoir sphérique que nous avons résolu, en élasticité, au § VI.2.2 Si l'on augmente pro­gressivement la pression intérieure 1( , alors la solution élastique reste valable jusqu'à la pression 
-\eqref{eq:Ch10-032} 
-
-Au delà, une zone plastique apparaît à l'inrérieur du réservoir. Par raison 
-de symétrie, cette zone sera 
-limitée par une sphère 1t. .. ~ 
-
-Dans la zone élastique, ~~'I.,.e., l'analyse du § VI.2.2 subsiste, et le ten­seur des contraintes est donné par 
-
-
-« et ~ étant deux constantes à déterminer. Dans la zone plastique, a.~'!. <~ , d',,?rès la symétrie sphérique du problème, le tenseur des contraintes aura la forme suivante 
+Dans la zone plastique, a.~'!. <~ , d',,?rès la symétrie sphérique du problème, le tenseur des contraintes aura la forme suivante 
 
 où TIC'!.) représente la partie sphérique du tenseur des contraintes, et 't:('t,) son déviateur. Ce tenseur est de révolution autour de la direction radiale, et les contraintes principales sont 
 
