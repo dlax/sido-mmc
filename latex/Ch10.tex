@@ -336,7 +336,7 @@ qui, combiné avec \eqref{eq:Ch10-029}, donne la relation entre le moment et la 
 
 Il reste à étendre cette solution au domaine plastique, par intégration de \eqref{eq:Ch10-023}.
 Cela pose davantage de problèmes, mais il est possible de calculer un champ de déplacements répondant au problème.
-Ce champ n'est ce­pendant pas unique: en général, on n'a pas unicité du champ de déplacements en plasticité. 
+Ce champ n'est cependant pas unique: en général, on n'a pas unicité du champ de déplacements en plasticité. 
 
 Finalement, le comportement é1astop1astique d'une poutre en flexion est le suivant 
 \begin{itemize}
@@ -367,196 +367,254 @@ Dans la zone élastique, $\xi \leq r \leq b$, l'analyse du paragraphe~\ref{ssec:
 \end{equation}
 $\alpha$ et $\beta$ étant deux constantes à déterminer.
 
-\endinput
-Dans la zone plastique, a.~'!. <~ , d',,?rès la symétrie sphérique du problème, le tenseur des contraintes aura la forme suivante 
-
-où TIC'!.) représente la partie sphérique du tenseur des contraintes, et 't:('t,) son déviateur. Ce tenseur est de révolution autour de la direction radiale, et les contraintes principales sont 
-
+Dans la zone plastique, $a<r<\xi$, d'après la symétrie sphérique du problème, le tenseur des contraintes aura la forme suivante 
+\begin{equation}
+    \sigma_{ij} = \left[ \pi(r) + \tau(r) \right] \delta_{ij} - 3 \tau(r) \frac{x_ix_j}{r^2}
+    \label{eq:Ch10-033}
+\end{equation}
+où $\pi(r)$ représente la partie sphérique du tenseur des contraintes, et $\tau(r)$ son déviateur.
+Ce tenseur est de révolution autour de la direction radiale, et les contraintes principales sont 
+\begin{equation}
+    \sigma_1 = \sigma_2 = \pi(r) + \tau(r) \quad,\quad \sigma_3 = \pi - 2\tau(r)
+    \label{eq:Ch10-035}
+\end{equation}
 Les équations d'équilibre appliquées à \eqref{eq:Ch10-034} donnent 
-\eqref{eq:Ch10-036} 	.2, "t;'C'I.) 1" G 1:('t,) _ ït'(IL) = 0 It. 
-équation différentielle reliant les deux fonctions n('!..) et 'CC'\,) . 
-D'autre part, dans la zone plastique on doit aVOlr 
-= 
-
-
-
-en adoptant par exemple le critère de von Mises (comme on l'a vu en VI.2.2 le critère de Tresca donnerait-le même résultat). On en tire donc 
-(37) 
-
-(le Ch01X du signe se fait par continuité avec la solution élastique du § VI.2.2). En reportant dans \eqref{eq:Ch10-036} et en intégrant, on obtient 
-(38) 
-
+\begin{equation}
+    2\tau'(r) + \frac{6\tau(r)}{r} - \pi'(r) = 0
+    \label{eq:Ch10-036}
+\end{equation}
+équation différentielle reliant les deux fonctions $\pi(r)$ et $\tau(r)$. 
+D'autre part, dans la zone plastique on doit avoir 
+\[
+\frac{1}{2} s_{ij} s_{ij} = 3 \tau^2 = \frac{\sigma_e^2}{3}
+\]
+en adoptant par exemple le critère de von Mises (comme on l'a vu en \ref{ssec:ch06-2.2} le critère de Tresca donnerait-le même résultat).
+On en tire donc 
+\begin{equation}
+    \tau = + \frac{\sigma_e}{3}
+    \label{eq:Ch10-037}
+\end{equation}
+(le choix du signe se fait par continuité avec la solution élastique du paragraphe~\ref{ssec:Ch06-2.2}).
+En reportant dans \eqref{eq:Ch10-036} et en intégrant, on obtient 
+\begin{equation}
+    \pi = 2 \sigma_e \log r + \text{Cte}
+    \label{eq:Ch10-038}
+\end{equation}
 Ainsi, dans le domaine plastique 
-/.lC.... ~â'
-(39) 0'.. 
-~ <Te (~'t, +x) S..~ 0'... Il}
-A.t 
-(40) 0': 1 ,,(l'J-= ~ (je (~~ +·t) (j'~ = ~ <T~ ( ~IL .. ~ -1! 
-où t est une constante d'intégration. Ainsi, le champ de contraintes, défi­
-ni par \eqref{eq:Ch10-033} pour ~~Jt.,.Rret par \eqref{eq:Ch10-039} poura..,~,'t., dépend de trois constantes d'intégration ~ ,~ , ~ Ces trois constantes d'intégration s'obtiennent en écrivant la CL en '1. = 1r et la condition de contin~ité de (J'A ' (J'~ et <l', au travers de la surface 't,= ~ . Remarquons ici que la condition de discon-' tinuité (1.22) impose seulement la continuité de <T~ cependant, en plasti­
-cité, on doit écrire qu'à la frontière élasto-plastique, l'état élastique est un état limite, ce qui revient à écrire la càntinuité de 0-", et 0"1-. Les 
-trois constantes d'intégration étant ainsi déterminées, la CL en '1.= a. donne la valeur de 1" qui correspond à ~ , d'où la fonction t(~) qui croît de f", à ft lorsque ~ croît de Il. jusqu'à ..a-. La valeur limite ft de f s'ob­tient lorsque !. = ir , c'est-à-dire lorsque la zone élastique disparaît. Le champ de contraintes est alors donné par \eqref{eq:Ch10-039}, \eqref{eq:Ch10-040} pour tout 't. . La CL en. '1. = 1r donne alors y et il vient 
-(41) 
+\begin{equation}
+    \sigma_{ij} = 2 \sigma_e \left( \log r + \gamma \right) \delta_{ij} - \sigma_e \frac{x_ix_j}{r^2}
+    \label{eq:Ch10-039}
+\end{equation}
+\begin{equation}
+    \sigma_1 = \sigma_2 = 2 \sigma_e \left( \log r + \gamma \right), \quad \sigma_3 = 2 \sigma_e \left( \log r + \gamma - \frac{1}{2} \right)
+    \label{eq:Ch10-040}
+\end{equation}
+où $\gamma$ est une constante d'intégration.
+Ainsi, le champ de contraintes, défini par \eqref{eq:Ch10-033} pour $\xi \leq r \leq b$ et par \eqref{eq:Ch10-039} pour $a \leq \xi \leq r$, dépend de trois constantes d'intégration $\alpha$, $\beta$, $\gamma$.
+Ces trois constantes d'intégration s'obtiennent en écrivant la CL en $r=b$ et la condition de continuité de $\sigma_1$, $\sigma_2$ et $\sigma_3$ au travers de la surface $r=\xi$.
+Remarquons ici que la condition de discontinuité \eqref{eq:Ch01-022} impose seulement la continuité de $\sigma_3$; cependant, en plasticité, on doit écrire qu'à la frontière élasto-plastique, l'état élastique est un état limite, ce qui revient à écrire la continuité de $\sigma_1$ et $\sigma_2$.
+Les trois constantes d'intégration étant ainsi déterminées, la CL en $r = a$ donne la valeur de $p$ qui correspond à $\xi$, d'où la fonction $p(\xi)$ qui croît de $p_e$ à $p_l$ lorsque $\xi$ croît de $a$ jusqu'à $b$.
+La valeur limite $p_l$ de $p$ s'obtient lorsque $\xi=b$, c'est-à-dire lorsque la zone élastique disparaît.
+Le champ de contraintes est alors donné par \eqref{eq:Ch10-039}, \eqref{eq:Ch10-040} pour tout $r$.
+La CL en $r=b$ donne alors $\gamma$ et il vient 
+\begin{equation}
+    \sigma_3 = 2 \sigma_e \log \frac{r}{b}
+    \label{eq:Ch10-041}
+\end{equation}
+et en faisant $r=a$ on trouve 
+\begin{equation}
+    p_l = 2 \sigma_e \log \frac{b}{a}
+    \label{eq:Ch10-042}
+\end{equation}
 
-et en faisant Jt. =Il. on trouve 
+Comme en flexion, le réservoir se comporte élastiquement jusqu'à $p_e$.
+Au delà de $p_e$ des déformations plastiques apparaissent, mais ces déformations restent contenues par la zone élastique jusqu'à ce que $p$ atteigne la valeur 1imite $p_l$ qui correspond à la ruine du réservoir. 
 
-(42) 
+\section{Méthodes variationnelles} \label{sec:Ch10-3}
+\subsection{Le problème en vitesses} \label{ssec:Ch10-3.1}
+En plasticité, il n'y a pas relation biunivoque entre les contraintes et les déformations; il est donc tout à fait clair qu'un problème statique régulier, tel que nous l'avons formulé au paragraphe~\ref{ssec:Ch06-1.1}, est automatiquement mal posé. 
+En effet, l'état de contraintes et de déformations dans un matériau élasto-plastique ne dépend pas seulement de la sollicitation appliquée à l'instant considéré, mais aussi de tout ce qui s'est passé auparavant.
+Par contre, connaissant l'état actuel de contraintes et de déformations, et connaissant la variation de sollicitation, on peut espérer trouver la solution.
+Dans le cadre de l'hypothèse quasi-statique, on est donc amené à se poser un problème incrémental (ou problème en vitesses). 
 
-Comme en 'fl~xion, le réservoir se comporte élastiquement jusqu 1 à 
-te . Au delà de +e des déformations plastiques 'apparaissent, mais ces dé­
-fonnations restent contenues par la zone élastique jusqu'à ce que t attei­
-gne la valeur 1 imite' 1"1. ' qui correspond à la ruine du réservoir. 
-3. METHODES VARIATIONNELLES 
-=========================== 
-3.1 LE PROBLEME EN VITESSES 
-En plasticité, il n'y a pas rel'ation biunivoque entre les contrain­tes et les déformations; il est donc tout à fait clair qu'un problème stati­que régulier, tel que nous l'avons formulé au § VI.l.1, est automatiquement mal posé. En effet, l'état de contraintes et de déformations dans un maté­
-riau élasto-plastique ne dépend pas seulement de la sollicitation appliquée 
-à l'instanr considéré, mais aussi de tout ce qui s'est passé auparavant. Par contre, connaissant l'état actuel de contraintes et de déformations, et con­naissant la variation de sollicitation, on peut espérer trouver la solution. Dans le cadre de l'hypothèse quasi-statique, on est donc amené à se poser un problème incrémentaI (ou problème en vitesses). 
-
-Problème incrémentaI. Connaissaht à l'instant t le champ des contraintes champ des déplacements .l.L... (f):, k) , trouver leurs varia-et .u.l. 0<,,.1;) vérifiant -les équation d'équilibre incrémentaI es 
-(43) o
-+ t = 
--les c9nditions ~ux limites 
- J. 
-(44 ) : 
-T·..
-<f~~ m~ 1 Sf 
-cl.
-(45) ..u, . 
-..u, ... 15.... = .. 
--la loi de comportement incrémentale 
-
-'1'
-avec ~.. donné par la loi d'écoulement plastique.
-La 
-Si nouS acceptons le principe du travail maximal, c'est encore 
-un problème bien posé. 
-ThéOrème cl 'unicité. En acceptant le principe du travail maximal, le problème [posé plus haut admet une solution unique en rr·· 
-L~ 
-Dem. Supposons en effet qu'il existe deux solutions (0-.. ,i.J..~ ) et (ir.1, ,;"l,).
-~à ~ ~~ ~ 
-Leur différence 
- 0  0  .t  "'\
-." 
-(47) cr .. = 0".. -0".. .u. . .u.. -M.. 
-... ... ...
-"! "i "'i 
-vérifie les équations 
-(48 ) , 
-(Par contre, elle ne vérifie pas nécessairement la loi de comportement \eqref{eq:Ch10-046} 
-
- 0  0 
-qui est non linéaire). En appliq'twnt à <r.. et.u.. le lemme fondamental du "t '" 
-§ IX.I. 1 , on obtient alors 
-\eqref{eq:Ch10-049} ~ 0 Mais 
-. t . tl,· .,
-+ <r.. é.. .. -(L . 
-.L~ "'i "'~ 
-En tout point x, on connait le tenseur des contraintes, on connait donc la 
-zone élas tique CL... où f((fL!!) <0 et la zone plas tique n. t où f(<f.;,~) = 0 . 
-Dans la zone élastique, les taux de déformations plastiques sont identique­
-ment nuls. Dans la zone plastique, on vérifie directement que, d'après le 
-principe du travail maximal: 
-i\
-t-.;  < E. =(). 
-(J 
-charge décharge 
-\eqref{eq:Ch10-050} = 0 ~ 0 
-Ainsi, on peut écrire à partir de \eqref{eq:Ch10-049},(5U) 
-(51 ) 
-~
-( 
-'.~ .t, . 
-= (f é .. .. CT., o
-~~ Ni ... ~ Ai
-.Qt 
-or, est défini positif. On obtient donc 
-(52) 
-
-(53) 
-cqfd 
-
+\newtheorem*{PrInc}{Problème incrémental}
+\begin{PrInc}
+    Connaissaht à l'instant $t$ le champ des contraintes $\sigma_{ij}(x,t)$ et le champ des déplacements $u_i(x,t)$, trouver leurs variations vérifiant 
+    \begin{itemize}
+        \item les équation d'équilibre incrémentales 
+            \begin{equation}
+                \dot{\sigma}_{ij,j} + \dot{f}_i = 0
+                \label{eq:Ch10-043}
+            \end{equation}
+        \item les conditions aux limites 
+            \begin{equation}
+                \dot{\sigma}_{ij} n_j|_{S_f} = \dot{T}_i^d
+                \label{eq:Ch10-044}
+            \end{equation}
+            \begin{equation}
+                \dot{u}_i|_{S_u} = \dot{u}_i^d
+                \label{eq:Ch10-045}
+            \end{equation}
+        \item la loi de comportement incrémentale 
+            \begin{equation}
+                \dot{\varepsilon}_{ij} = \Lambda_{ijkh} \dot{\sigma}_{kh} + \dot{\varepsilon}_{ij}^p
+                \label{eq:Ch10-046}
+            \end{equation}
+            avec $\dot{\varepsilon}_{ij}^p$ donné par la loi d'écoulement plastique.
+    \end{itemize}
+\end{PrInc}
+Si nous acceptons le principe du travail maximal, c'est encore 
+un problème bien posé.
+\newtheorem*{ThUni}{Théorème de l'unicité}
+\begin{ThUni}
+    En acceptant le principe du travail maximal, le problème posé plus haut admet une solution unique en $\dot{\sigma}_{ij}$.
+\end{ThUni}
+\begin{proof}
+    Supposons en effet qu'il existe deux solutions $\left( \dot{\sigma}_{ij}^1, \dot{u}_i^1 \right)$ et $\left( \dot{\sigma}_{ij}^2, \dot{u}_i^2 \right)$.
+    Leur différence
+    \begin{equation}
+        \dot{\sigma}_{ij}^0 = \dot{\sigma}_{ij}^1 -  \dot{\sigma}_{ij}^2, \quad \dot{u}_i^0 = \dot{u}_i^2 - \dot{u}_i^1
+        \label{eq:Ch10-047}
+    \end{equation}
+    vérifie les équations 
+    \begin{equation}
+        \dot{\sigma}_{ij,j}^0 = 0, \quad \dot{\sigma}_{ij}^0 n_j|_{S_f} = 0, \quad \dot{u}_i^0 |_{S_u} = 0
+        \label{eq:Ch10-048}
+    \end{equation}
+    (Par contre, elle ne vérifie pas nécessairement la loi de comportement \eqref{eq:Ch10-046} qui est non linéaire).
+    En appliquant à $\dot{\sigma}_{ij}^0$ et $\dot{u}_i^0$ le lemme fondamental du paragraphe~\ref{ssec:Ch09-1.1}, on obtient alors 
+    \begin{equation}
+        \iiint_{\Omega} \dot{\sigma}_{ij}^0 \dot{\varepsilon}_{ij}^0 \ud v = \iiint_{\Omega} \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right)\left( \dot{\varepsilon}_{ij}^2 - \dot{\varepsilon}_{ij}^1 \right) \ud v = 0
+        \label{eq:Ch10-049}
+    \end{equation}
+    Mais
+    \[
+    \begin{aligned}
+        \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right)\left( \dot{\varepsilon}_{ij}^2 - \dot{\varepsilon}_{ij}^1 \right) & = \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right) \left( \dot{\varepsilon}_{ij}^{e,2} - \dot{\varepsilon}_{ij}^{e,1} \right) + \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right)\left( \dot{\varepsilon}_{ij}^{p,2} - \dot{\varepsilon}_{ij}^{p,1} \right) \\
+        & = \Lambda_{ijkh} \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right) \left( \dot{\sigma}_{kh}^2 - \dot{\sigma}_{kh}^1 \right) + \dot{\sigma}_{ij}^2 \dot{\varepsilon}_{ij}^{p,2} + \dot{\sigma}_{ij}^1 \dot{\varepsilon}_{ij}^{p,1} - \dot{\sigma}_{ij}^2 \dot{\varepsilon}_{ij}^{p,1} - \dot{\sigma}_{ij}^1 \dot{\varepsilon}_{ij}^{p,2}
+    \end{aligned}
+    \]
+    En tout point $x$, on connait le tenseur des contraintes, on connait donc la zone élastique $\Omega_e$ où $f\left( \sigma_{ij} \right) < 0$ et la zone plastique $\Omega_p$ où $f\left( \sigma_{ij} \right) < 0$. 
+    Dans la zone élastique, les taux de déformations plastiques sont identiquement nuls.
+    Dans la zone plastique, on vérifie directement que, d'après le principe du travail maximal: 
+    \begin{equation}
+        \dot{\varepsilon}_{ij}^{p,1} \dot{\sigma}_{ij}^1 = 0 \quad \dot{\varepsilon}_{ij}^{p,1} \dot{\sigma}_{ij}^2 \leq 0
+        \label{eq:Ch10-050}
+    \end{equation}
+    Ainsi, on peut écrire à partir de \eqref{eq:Ch10-049}, \eqref{eq:Ch10-050}
+    \begin{equation}
+        \iiint_{\Omega} \Lambda_{ijkh} \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right) \left( \dot{\sigma}_{kh}^2 - \dot{\sigma}_{kh}^1 \right) \ud v = \iiint_{\Omega_p} \left( \dot{\sigma}_{ij}^2 \dot{\varepsilon}_{ij}^{p,1} + \dot{\sigma}_{ij}^1 \dot{\varepsilon}_{ij}^{p,2} \right) \ud v \leq 0
+        \label{eq:Ch10-051}
+    \end{equation}
+    or, $\Lambda_{ijkh}$ est défini positif.
+    On obtient donc
+    \begin{equation}
+        \iiint_{\Omega} \Lambda_{ijkh} \left( \dot{\sigma}_{ij}^2 - \dot{\sigma}_{ij}^1 \right) \left( \dot{\sigma}_{kh}^2 - \dot{\sigma}_{kh}^1 \right) \ud v = 0
+        \label{eq:Ch10-052}
+    \end{equation}
+    \begin{equation}
+        \dot{\sigma}_{ij}^2 = \dot{\sigma}_{ij}^1
+        \label{eq:Ch10-053}
+    \end{equation}
+\end{proof}
 
 Par contre, on ne sait pas démontrer l'unicité des déformations. 
-Ces problèmes sont des problèmes mathématiques difficiles et encore mal con­
-nus. 
-On sait également démontrer des théorèmes variationnels analogues à ceux des § IX J.2 et IX.J.3, qui donnent naissance à des méthodes numéri­ques de solution du problème incrémentai. La résolution d'un problème élas­to-plastique quasi-statique se fait donc pas à pas, par résolution d'une suite de problèmes en vitesses. Mais il est important de remarquer que pour toutes ces questions, la formulation de la loi d'écoulement plastique par le principe du travail maximal joue un rôle essentiel. 
-3.2 INTRODUCTION A L'ANALYSE LIMITE 
+Ces problèmes sont des problèmes mathématiques difficiles et encore mal connus.
+
+On sait également démontrer des théorèmes variationnels analogues à ceux des paragraphes~\ref{ssec:Ch09-1.2} et \ref{ssec:Ch10-1.3}, qui donnent naissance à des méthodes numériques de solution du problème incrémental.
+La résolution d'un problème élasto-plastique quasi-statique se fait donc pas à pas, par résolution d'une suite de problèmes en vitesses.
+Mais il est important de remarquer que pour toutes ces questions, la formulation de la loi d'écoulement plastique par le principe du travail maximal joue un rôle essentiel. 
+
+\subsection{Introduction a l'analyse limite} \label{ssec:Ch10-3.2}
 Nous considérons un problème où le chargement dépend d'un seul paramètre 
-S.... = rf ou 
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        S_u = \emptyset \text{ ou } u_i^d = 0 \\
+        T_i^d = \lambda T_i^{d0}, \quad f_i = \lambda f_i^0
+    \end{aligned}
+    \right.
+    \label{eq:Ch10-054}
+\end{equation}
+Pour les problèmes envisagés au paragraphe~\ref{sec:Ch10-2}, on  a $\lambda = \mathcal{M}$ pour la poutre en flexion et $\lambda=p$ pour le réservoir sphérique.  
 
-(54)  T.el. ...  =  ? T/o  
-Pour les problèmes envisagés  au  §  2,  on  a  '.l.:'hl  pour  la  poutre  en  flexion  
-et ').: t  pour le réservoir sphérique.  
-Si  l'on fait croître le chargement,  on  obtient  toujours  le même  
-' 
+Si l'on fait croître le chargement, on obtient toujours le même comportement.
+Jusqu'à $\lambda=\lambda_e$ la solution élastique convient.
+Au delà apparaît une zone plastique qui progresse au fur et à mesure que $\lambda$ augmente, et jusqu'à ce que pour $\lambda-\lambda_l$ on ait ruine de la structure par déformations plastiques illimitées. 
 
-comportement. Jusqu'à ~ = ~e la solution élastique convient. Au delà 
-apparaît une zone plastique qui progresse au fur et à mesure que ~ aug­mente, et jusqu'à ce que pour'). = ?,t on ait ruine de la structure par dé­
-formations plastiques illimitées. 
-La charge correspondant à 'il =?,t est appelée "charge limite". C'est la charge maximale supportable et, d'un point de vue pratique, c'est le résultat le plus intéressant et le plus significatif d'un calcul en plas­ticité. On a donc cherché à développer des méthodes permettant de calculer 
-directement cette charge limite, sans réso~urion cc~~lète du problème élas­
-to-plastique: c'est le domaine de l'analyse limite. 
+La charge correspondant à $\lambda=\lambda_l$ est appelée «~charge limite~».
+C'est la charge maximale supportable et, d'un point de vue pratique, c'est le résultat le plus intéressant et le plus significatif d'un calcul en plasticité.
+On a donc cherché à développer des méthodes permettant de calculer directement cette charge limite, sans résolution complète du problème élasto-plastique: c'est le domaine de l'analyse limite. 
+
 La théorie s'appuie sur deux théorèmes fondamentaux. 
-Défini tion 1. Un champ de contraintes â-.. sera un champ licite pour un 
-~~~~~~. ~~ 
-chargement (t,T;.,tL) s'il est statiquement admissible et si en tout point 
-[ 
-il vérifie le critère de plasticité. 
-~ 
-Définition 2. Un champ de vitesses ~. sera un champ cinématiquement et 
-~ 
-plastiquement admissible (CCPA) s'il est cinématiquement admissible et si 
-0' 
-en  chaque point  il existe  un  tenseur  de  contraintes  tel que f... puis­ 
-.~  
-se  être la déformation plastique associée.  
+\begin{deff}
+    Un champ de contraintes $\hat{\sigma}_{ij}$ sera un champ licite pour un chargement $(f_i,T_i^d)$ s'il est statiquement admissible et si en tout point il vérifie le critère de plasticité. 
+\end{deff}
+\begin{deff}
+    Un champ de vitesses $\tilde{\dot{u}}_i$ sera un champ cinématiquement et plastiquement admissible (CCPA) s'il est cinématiquement admissible et si en chaque point il existe un  tenseur de contraintes $\tilde{\sigma}_{ij}$ tel que $\tilde{\dot{\varepsilon}}_{ij}$ puisse être la déformation plastique associée.  
+\end{deff}
 
--168 ­
-Dans le cas des métaux par exemple, cette dernière condition re­vient simplement à imposer la condition 
-':' 
-(55) e ..  o 
-..... 
-On d~finit alors la fonction de dilsipation 
-(56) 
+Dans le cas des métaux par exemple, cette dernière condition revient simplement à imposer la condition 
+\begin{equation}
+    \tilde{\dot{\varepsilon}}_{ii} = 0
+    \label{eq:Ch10-055}
+\end{equation}
+On définit alors la fonction de dissipation 
+\begin{equation}
+    D\left( \tilde{\dot{\tens{\varepsilon}}}_p \right) = \tilde{\sigma}_{ij} \tilde{\dot{\varepsilon}}_{ij}^p
+    \label{eq:Ch10-056}
+\end{equation}
+fonction définie sans ambiguïté, bien qu'il puisse exister plusieurs $\tilde{\sigma}_{ij}$ compatibles avec $\tilde{\dot{\varepsilon}}_{ij}^p$.
+Pour le critère de von Mises par exemple 
+\begin{equation}
+    D\left( \tilde{\dot{\tens{\varepsilon}}}_p \right) = \frac{2}{3} \sigma_e \tilde{\varepsilon}_{ij}^p \tilde{\varepsilon}_{ij}^p \quad \left( \dot{\varepsilon}_{ii}^p = 0 \right)
+    \label{eq:Ch10-057}
+\end{equation}
+On peut alors démontrer les deux thêorèmes suivants.
+\newtheorem*{ThSta}{Théorème statique}
+\begin{ThSta}
+    S'il existe un champ de contraintes licite pour le chargement $\left( f_i, T_i^d \right)$, alors la structure peut supporter ce chargement.
+\end{ThSta}
+\newtheorem*{ThCin}{Théorème cinématique}
+\begin{ThCin}
+    S'il existe un CCPA tel que 
+    \begin{equation}
+        \iiint_{\Omega} f_i \tilde{\dot{u}}_i \ud v + \iint_{S_f} T_i^d \tilde{\dot{u}}_i \ud S > \iiint_{\Omega} D \left( \tilde{\dot{\varepsilon}}_{ij} \right) \ud v
+        \label{eq:Ch10-058}
+    \end{equation}
+    alors la structure ne peut pas supporter le chargement $\left( f_i, T_i^d \right)$.
+\end{ThCin}
+Le premier théorème permet de construire des bornes inférieures de la charge limite.
+En effet, soit $\hat{\sigma}_{ij}^0$ un CSA pour le chargement $\left( f_i, T_i^d \right)$.
+Alors, le champ $\lambda \hat{\sigma}_{ij}^0$ sera CSA pour le chargement $\left( f^0_i, T_i^{d0} \right)$.
+En choisissant pour $\lambda$ la plus grande valeur conduisant à un champ licite 
+\begin{equation}
+    \hat{\lambda} = \sup \left\{ \lambda | f\left( \lambda \hat{\sigma}_{ij}^0 \right) \leq 0\ \forall x \right\}
+    \label{eq:Ch10-059}
+\end{equation}
+alors, le théorème statique permet d'affirmer que $\hat{\lambda}$ est une borne inférieure de la charge limite. 
 
--
-N
-fonction définie sans ambiguïté, bien qu'il puisse exister plusieurs a:. 
-"'a
-compatibles avec Pour le critère de von Mises par exemple 
+De la même manière, le second théorème permet d'obtenir des bornes supêrieures de la charge limite.
+Soit en effet $\tilde{\dot{u}}_i$ un CCPA, alors la structure ne pourra pas supporter les chargements vérifiant \eqref{eq:Ch10-058}.
+La quantité 
+\begin{equation}
+    \tilde{\lambda} = \iiint_{\Omega} D \left( \tilde{\dot{\varepsilon}}_{ij} \right) \ud v \left\{ \iiint_{\Omega} f_i^0 \tilde{\dot{u}}_i \ud v + \iint_{S_f} T_i^{d0} \tilde{\dot{u}}_i \ud S \right\}^{-1}
+    \label{eq:Ch10-060}
+\end{equation}
+est donc une borne supérieure de $\lambda_l$.
+On en déduit un encadrement 
+\begin{equation}
+    \hat{\lambda} \leq \lambda_l \leq \tilde{\lambda}
+    \label{eq:Ch10-061}
+\end{equation}
+qui permet d'approcher relativement simplement la charge limite. 
+On notera l'analogie de cette méthode avec celle présentée en élasticité. 
 
- -i' '-i'
-(57) 
-E. .' c. .. 
-..t ...t 
-
-On peut alors démontrer les deux thêorèmes suivants 
-Théorème statique. S'il existe un champ de contraintes licite pour le char­[ gement (J. ,TeL), alors la structure peut supporter ce chargement.
-fA. .. 
-Théorème cinématique. S'il existe un CCPA tel que 
-(58) 
-
-.. (l' TeL 1. cLS )
-~s k At 
-f 
-
-alors la structure ne peut pas supporter le chargement (p.. ,reL). 
-~.. "" 
-Le premier théor~me permet de construire des bornes inférieures de la charge limite. En effet, soit â-.~ un CSA pour le chargement (1~ ,T.d.o).
-""'6 6"..... .... 
-Alors, le champ (').~; ) sera CSA pour le chargement (') ( ,?T"-d.·). En choisissant pour ~ la plus grande valeur conduisant à un champ licite 
-
-ft. 
-alors, le thêorème statique permet d'affirmer que ~ est une borne inférieu­re de la charge limite. 
-De la même manière, le second théorème permet d'obtenir des bornes supêrieures de la charge limite. Soit en effet 1t~ un CCPA, alors la struc­ture ne pourra pas supporter les chargements vérifiant' (58). La quantité 
-
-est donc une borne supérieure de ~i . On en déduit un encadrement 
-(61) 1). , '>-! ~ '). 
-qui permet d'approcher relativement simplement la charge limite. On notera 
--169 ­
-l'analogie de cette méthode avec celle présentée en élasticit~. 
-L'analyse limite est utilis'e 
--en mfcanique des structures, car la charge limite caractérise bien la capacitf de résistance d'une structure -bien mieux en tout cas que la charge élastique-~e -. La tendance actuelle de la règlementation en matiè­re de calcul d'ouvrage consiste à substituer un calcul plastique au calcul élastique traditionnel. 
--pour les problèmes ~mise en forme des métaux (laminage, fiiage, etc.), car elle permet d'évaluer les efforts nécessaires. 
-en mécanique des sols, pour calculer la capacité de résistance d'un ouvrage. Il convient alors d'agir avec précaution, car les th'orèmes que nous avons énonc's supposent le principe du travail maximal, principe non vérifié pour les 801s. 
+L'analyse limite est utilisée:
+\begin{itemize}
+    \item en mécanique des structures, car la charge limite caractérise bien la capacité de résistance d'une structure -- bien mieux en tout cas que la charge élastique $\lambda_e$.
+        La tendance actuelle de la règlementation en matière de calcul d'ouvrage consiste à substituer un calcul plastique au calcul élastique traditionnel. 
+    \item pour les problèmes mise en forme des métaux (laminage, filage, etc.), car elle permet d'évaluer les efforts nécessaires. 
+    \item en mécanique des sols, pour calculer la capacité de résistance d'un ouvrage.
+        Il convient alors d'agir avec précaution, car les théorèmes que nous avons énoncés supposent le principe du travail maximal, principe non vérifié pour les sols. 
+\end{itemize}
