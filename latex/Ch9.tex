@@ -660,35 +660,56 @@ Le terme «~méthode d'éléments finis~» recouvre un ensemble de méthodes pou
 \end{enumerate}
 A titre d'exemple, nous allons présenter les trois éléments les  plus simples pour un espace de fonctions à valeur scalaire  (pour une fonction à valeur vectorielle ou tensorielle, il suffit de  considérer séparément chaque composante) dans le plan.  
 
-\paragraph{Exemple 1.} Elément triangulaire avec fonction linéaire sur chaque triangle 
+\paragraph{Exemple 1.}
+\begin{multicols}{2}
+Elément triangulaire avec fonction linéaire sur chaque triangle 
 \[
 f = a +b x_1+cx_2
 \]
 La valeur de la fonction $f$ en un point du triangle ABC dépend de 3 paramètres, par exemple la valeur de $f$ aux trois sommets 
+\columnbreak
+\begin{center}
+    \includegraphics{../images/T1_Ch09-02}
+\end{center}
+\end{multicols}
 \begin{equation}
     f = f_A \lambda_A (x_1,x_2) + f_B \lambda_B (x_1,x_2) + f_C \lambda_C (x_1, x_2)
     \label{eq:Ch09-064}
 \end{equation}
 où $\lambda_A$, $\lambda_B$, $\lambda_C$ sont les «~coordonnées barycentriques~» du point $M$. 
 
-\paragraph{Exemple 2.} Elément rectangulaire avec fonction bilinéaire 
+\paragraph{Exemple 2.} 
+\begin{multicols}{2}
+Elément rectangulaire avec fonction bilinéaire 
 \[
 f = a +b x_1+cx_2 +dx_1x_2
 \]
 La valeur de la fonction $f$ en un point $M$ du rectangle ABCD dépend de 4 paramètres: la valeur $f$ aux nœuds A, B, C, D. 
-\begin{equation}
-    f = f_A \frac{(x_1 - x_1^B)(x_2 -x_2^C)}{(x_1^A - x_1^B)(x_2^A-x_2^C)} +  f_B \frac{(x_1 - x_1^A)(x_2 -x_2^D)}{(x_1^B - x_1^A)(x_2^B-x_2^B)} + f_C \frac{(x_1 - x_1^D)(x_2 -x_2^A)}{(x_1^C - x_1^D)(x_2^C-x_2^A)} + f_D \frac{(x_1 - x_1^C)(x_2 -x_2^B)}{(x_1^D - x_1^C)(x_2^D-x_2^B)}
+\columnbreak
+\begin{center}
+    \includegraphics{../images/T1_Ch09-03}
+\end{center}
+\end{multicols}
+\begin{multline}
+    f = f_A \frac{(x_1 - x_1^B)(x_2 -x_2^C)}{(x_1^A - x_1^B)(x_2^A-x_2^C)} +  f_B \frac{(x_1 - x_1^A)(x_2 -x_2^D)}{(x_1^B - x_1^A)(x_2^B-x_2^B)} \\
+    + f_C \frac{(x_1 - x_1^D)(x_2 -x_2^A)}{(x_1^C - x_1^D)(x_2^C-x_2^A)} + f_D \frac{(x_1 - x_1^C)(x_2 -x_2^B)}{(x_1^D - x_1^C)(x_2^D-x_2^B)}
     \label{eq:Ch09-065} 
-\end{equation}
+\end{multline}
 
-\paragraph{Exemple 3.} Elérnent triangulaire avec fonction quadratique sur chaque triangle 
+\paragraph{Exemple 3.}
+\begin{multicols}{2}
+Elément triangulaire avec fonction quadratique sur chaque triangle 
 \begin{equation}
     f = a + b x_1 + c x_2 + d x_1^2 + e x_1 x_2 +f x_2^2
     \label{eq:Ch09-066}
 \end{equation}
 La valeur de la fonction sur le triangle ABC dépend de 6 paramètres: la valeur de $f$ aux 6 nœuds A, B, C, D, E, F, et ainsi de suite.
 On trouvera dans la littérature sur les éléments finis des «~catalogues~» d'éléments. 
-
+\columnbreak
+\begin{center}
+    \includegraphics{../images/T1_Ch09-04}
+\end{center}
+\end{multicols}
 Après avoir découpé le modèle et choisi les éléments, une fonction de l'espace discrétisé est définie par sa valeur en un certain nombre de nœuds, et on doit minimiser une fonction d'un nombre fini de variables, problème qui se prête bien au calcul numérique. 
 
 Pour la torsion, par exemple, on peut à partir de \eqref{eq:Ch09-048} construire méthodes d'éléments finis
@@ -700,9 +721,9 @@ Pour la torsion, par exemple, on peut à partir de \eqref{eq:Ch09-048} construir
 \subsection{Application à un exemple} \label{ssec:Ch09-3.2}
 Pour montrer la mise en œuvre de la méthode, nous allons envisager un exemple.
 Considérons en déformations planes un barrage triagulaire OAB
-%\begin{center}
-    %\includegraphics
-%\end{center}
+\begin{center}
+    \includegraphics{../images/T1_Ch09-05}
+\end{center}
 Les forces de volume se réduisent à la pesanteur 
 \begin{equation}
     f_1 = 0 \quad,\quad f_2 = -\rho g
@@ -733,7 +754,9 @@ la solution minimise la fonctionnelle
 \end{equation}
 
 Pour discrétiser ce problème, nous introduisons un découpage en éléments finis 
-
+\begin{center}
+    \includegraphics{../images/T1_Ch09-07}
+\end{center}
 Par exemple, nous introduisons un maillage régulier et des éléments triangulaires du type \eqref{eq:Ch09-064}, et nous approchons $\mathcal{U}$ par
 \[
 \mathcal{U}_n = \left\{ \left( u_1, u_2 \right),\ u_1 \text{ et } u_2\ \text{nuls sur AB et de la forme~\eqref{eq:Ch09-064} sur chaque triangle} \right\}
