@@ -871,13 +871,18 @@ L'intégration de l'énergie de déformation sur le triangle abc donne
 \end{equation}
 où $\underline{u}$ désigne le vecteur colonne des déplacements  aux nœuds, donc un sous-vecteur de $\underline{U}$, et où $\underline{\underline{a}}_{abc}$ est une matrice symétrique $6\times6$ qui résulte de l'intégration sur le triangle et il dépend donc uniquement de la géométrie.
 
-Si l'on dérive la forme qui \tmp{ itit } $W_{abc}$ par rapport aux 
-un déplacements des nœuds, on obtient un vecteur colonne
+Si l'on dérive la forme qui \tmp{ itit } $W_{abc}$ par rapport aux déplacements des nœuds, on obtient un vecteur colonne
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch09-08}
+    \end{center}
+    \columnbreak
 \begin{equation}
     f = \underline{\underline{a}}_{abc} \underline{u} = \frac{\partial W_{abc}}{\partial \underline{u}}
     \label{eq:Ch09-079}
 \end{equation}
 qui peut s'interpréter énergétiquement comme donnant les «~forces élastiques $\vec{f}^a$, $\vec{f}^b$, $\vec{f}^c$~», qui doivent être appliquées aux nœuds pour produire le déplacement $\underline{u}$.
+\end{multicols}
 Ceci résulte par exemple du bilan énergétique \eqref{eq:Ch09-032} qui montre que pour une variation $\ud \underline{u}$ des déplacements aux nœuds, la variation de l'énergie de déformation 
 \begin{equation}
     \ud W_{abc} = \underline{f}^T \ud u
@@ -905,14 +910,21 @@ on obtiendra
     \label{eq:Ch09-083}
 \end{equation}
 D'un point de vue énergétique, on peut interpréter \eqref{eq:Ch09-082} en disant que les forces de volume sont équivalentes aux trois forces concentrées $\vec{\varphi}^a$, $\vec{\varphi}^b$, $\vec{\varphi}^c$ appliquées aux nœuds. 
-%\begin{center}
-    %\includegraphics
-%\end{center}
+\begin{center}
+    \includegraphics{../images/T1_Ch09-09}
+\end{center}
 De manière générale, l'écriture du travail des efforts de volume conduit à décomposer ces efforts en trois forces concentrées appliquées aux nœuds. 
 
 \subsubsection{Discrétisation des efforts surfaciques}
 Soit ac un côté du triangle abc appartenant à $S_f$, c'est à dire où les efforts surfaciques sont donnés
-
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch09-10}
+    \end{center}
+    \begin{center}
+        \includegraphics{../images/T1_Ch09-11}
+    \end{center}
+\end{multicols}
 La restriction de \eqref{eq:Ch09-075} à ac donne, dans le cas particulier du barrage (ac vertical) 
 \begin{equation}
     \tilde{u}_1 = u_1^a \frac{x_2 - x_2^c}{x_2^a -x_2^c} + u_1^c \frac{x_2 - x_2^a}{x_2^c -x_2^a}
@@ -939,8 +951,14 @@ Par contre,  $u_i^b$ n'intervient pas dans \eqref{eq:Ch09-084}, et donc $\vec{\p
 Pour calculer $K \left( \tilde{u}_i \right)$, c'est à dire pour expliciter \eqref{eq:Ch09-071}, on doit sommer la contribution de tous les triangles pour l'énergie de déformation et le travail des forces de volume, ainsi que la contribution de tous les segments de $S_f$ pour le travail des forces de surface.
 Pour minimiser la fonction $K\left( \underline{U} \right)$ résultante, il faut annuler la dérivée de $K$ par rapport à chaque déplacement de chaque nœud. 
 \subsubsection{Cas d'un nœud intérieur a}
+\begin{multicols}{2}
+    \begin{center}
+        \includegraphics{../images/T1_Ch09-12}
+    \end{center}
+    \columnbreak
 Chaque nœud intérieur appartient à $n$ triangles $T_1,\ T_2, \cdots T_n$ ($n=6$ dans notre exemple).
 D'après ce qu'on a vu au paragraphe précédent, le déplacement $u_i^ a$ n'interviendra dans $K$ que par la contribution de ces $n$ triangles.
+\end{multicols}
 On pourra donc écrire 
 \begin{equation}
     \frac{\partial W}{\partial u_i^a} = \frac{\partial W_{T_1}}{\partial u_i^a} + \cdots + \frac{\partial W_{T_n}}{\partial u_i^a} = f_i^{a,T_1} + \cdots + f_i^{a, T_n}
@@ -970,9 +988,14 @@ On peut interpréter cette équation comme exprimant l'équilibre au nœud a sou
 Dans notre exemple, cette force est égale au tiers (car les trois sommets de chaque triangle participent) du poids des éléments entourant a. 
 
 \subsubsection{Cas d'un nœud frontière}
+\begin{multicols}{2}
 C'est à dire un nœud appartenant à $S_f$ (car sur $S_u$ le déplacement est donné).
 L'analyse précédente reste valable, mais il faut rajouter la contribution des 2 segments de $S_f$ issus de a.
-
+\columnbreak
+\begin{center}
+    \includegraphics{../images/T1_Ch09-13}
+\end{center}
+\end{multicols}
 On obtient alors 
 \begin{equation}
     \frac{\partial}{\partial u_i^a} \int_{OA} \varpi x_2 \tilde{u}_1 \ud x_2 = - \psi_i^{a,T_1} - \psi_i^{a,T_2}
