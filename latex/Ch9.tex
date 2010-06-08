@@ -1,4 +1,4 @@
-\chapter{Méthodes variationnelles} \label{chap:09}
+\chapter{Méthodes variationnelles} \label{chap:Ch09}
 \section{Théoremes variationnels} \label{sec:Ch09-1}
 Dans tout ce chapitre, nous nous intéresserons à un problème statique régulier (paragraphe~\ref{ssec:Ch07-1.1}) pour un matériau élastique linéaire quelconque (isotrope ou anisotrope) caractérisé par un tenseur d'élasticité $A_{ijkh}$.
 Pour simplifier l'écriture, nous supposerons le matériau homogène, $A_{ijkh} =$ Cte et nous prendrons les CL sous la forme mixte \eqref{eq:Ch07-007}.
@@ -367,7 +367,7 @@ Ainsi, un CSA est défini par une condition $\hat{\Phi} (x_2, x_3)$ nulle sur $\
     \quad , \quad \hat{\sigma}_{12} = \frac{\partial \hat{\Phi}}{\partial x_3} \quad,\quad \hat{\sigma}_{13} = - \frac{\partial \hat{\Phi}}{\partial x_2}
     \label{eq:Ch09-035}
 \end{equation}
-Pour calculer l'énergie de déformation, en élasticité isotrope, on utitlise les formules suivantes, qui s'obtiennent directement à partir des formules du chapitre~\ref{chap:05}
+Pour calculer l'énergie de déformation, en élasticité isotrope, on utitlise les formules suivantes, qui s'obtiennent directement à partir des formules du chapitre~\ref{chap:Ch05}
 \begin{align}
     w(\sigma_{ij}) &= w (\varepsilon_{ij}) = \frac{1}{2} \sigma_{ij} \varepsilon_{ij} \\
     &= \frac{1}{2E} \left\{ \sigma_{11}^2 + \sigma_{22}^2 + \sigma_{33}^2 - 2 \nu \left( \sigma_{11} \sigma_{22} - \sigma_{22} \sigma_{33} + \sigma_{33}\sigma_{11} \right) \right\} + \frac{1}{2G} \left( \sigma_{12}^2 + \sigma_{23}^2 + \sigma_{13}^2 \right) \\
@@ -402,7 +402,7 @@ Compte-tenu de \eqref{eq:Ch09-035}, il vient
     T_u^d \left( \hat{\sigma}_{ij} \right) &= - \alpha l \iint_{\Sigma} \left( x_2 \frac{\partial \hat{\Phi}}{\partial x_2} + x_3 \frac{\partial \hat{\Phi}}{\partial x_3} \right) \ud x_2 \ud x_3 \\
     &= 2 \alpha l \iint_{\Sigma} \hat{\Phi} \ud x_2 \ud x_3
 \end{align*}
-en reprenant le calcul de \eqref{eq:Ch08-063}.
+en reprenant le calcul de \eqref{eq:Ch07-063}.
 Finalement 
 \begin{equation}
     H \left( \hat{\sigma}_{ij} \right) = \iint_{\Sigma} \left\{ 2 \alpha l \hat{\Phi} - \frac{l}{2G} \left[ \left( \frac{\partial \hat{\Phi}}{\partial x_2} \right)^2 + \left( \frac{\partial \hat{\Phi}}{\partial x_3} \right)^2 \right] \right\} \ud x_2 \ud x_3
@@ -425,7 +425,7 @@ Un CCA $\tilde{u}_i$ doit uniquement vérifier les CL de type cinématique
     \right.
     \label{eq:Ch09-042}
 \end{equation}
-et, en nous inspirant de la structure \eqref{eq:Ch08-076} de la solution, nous prenons pour CCA le champ 
+et, en nous inspirant de la structure \eqref{eq:Ch07-076} de la solution, nous prenons pour CCA le champ 
 \begin{equation}
     \tilde{u}_1 = \alpha \tilde{\psi} (x_2, x_3) \quad \tilde{u}_2 = -\alpha x_1 x_3 \quad \tilde{u}_3 = \alpha x_1 x_2
     \label{eq:Ch09-043}
@@ -450,7 +450,7 @@ et on tire de \eqref{eq:Ch09-036}
 soit finalement, grâce à \eqref{eq:Ch09-038}, 
 \begin{equation}
     H \left( \tilde{u}_{i} \right) = \frac{G\alpha^2 l}{2} \iint_{\Sigma} \left\{ \left( x_3 - \frac{\partial \tilde{\psi}}{\partial x_2} \right)^2 + \left( x_2 + \frac{\partial \tilde{\psi}}{\partial x_3} \right)^2 \right\}\ud x_2 \ud x_3
-    \label{eq:Ch09-045}
+    \label{eq:Ch09-046}
 \end{equation}
 
 Ainsi, compte tenu de \eqref{eq:Ch09-046} et \eqref{eq:Ch09-041}, le théorème de comparaison permet d'encadrer $H(u_i) = K(\sigma_{ij})$.
@@ -459,7 +459,7 @@ Compte-tenu de \eqref{eq:Ch09-038} et \eqref{eq:Ch09-039}, on a pour la solution
     H(u_i) = K (\sigma_{ij}) = W = \alpha l \mathcal{M}_1 - W = \frac{\alpha l \mathcal{M}_1}{2} = \frac{G\alpha^2 l}{2} I    
     \label{eq:Ch09-047}
 \end{equation}
-compte-tenu de \eqref{eq:Ch08-064}.
+compte-tenu de \eqref{eq:Ch07-064}.
 Le théorème de comparaison nous donne donc 
 \begin{equation}
     \left\{
