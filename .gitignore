@@ -8,4 +8,5 @@
 *.blg
 *.brf
 *.toc
+*.thm
 latex/MMC.pdf*

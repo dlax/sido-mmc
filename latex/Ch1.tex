@@ -38,13 +38,13 @@ Pour écrire la loi fondamentale, il faut schématiser les efforts exercés sur 
         \rput(3.8,0.5){$M$}
     \end{pspicture}
 \end{center}
-\begin{cauchy}
+\begin{Postulat}[Postulat de Cauchy.]
     \hfill
     \begin{enumerate}[(a)]
         \item Les efforts de contact exercés sur $D$ à travers $\partial D$ sont schématisés par une densité superficielle de force $\vec{T}$;
         \item Cette densité superficielle $\vec{T}$ ne dépend que du point $M$ considéré et du vecteur normal $\vec{n}$ à $\partial D$: $\vec{T}(M,\vec{n})$.
     \end{enumerate}
-\end{cauchy}
+\end{Postulat}
 
 Malgré son apparence toute naturelle, ce postulat n'est pas le seul possible.
 On peut par exemple considérer que ces efforts de contact sont schématisés par une densité superficielle de force $\vec{T}$ et de moment $\vec{M}$ -- on parle alors de «~milieux avec couples de contraintes~», exemple embryonnaire de milieux avec microstructure (nous reparlerons de ces milieux au paragraphe~\ref{ssec:Ch01-2.2}).
@@ -83,14 +83,12 @@ où l'on a introduit les composantes des vecteurs qui interviennent dans \eqref{
 Nous verrons que paragraphe~\ref{ssec:Ch01-3.1} que la loi de conservation de l'énergie rentre également dans ce cadre.
 \subsection{Étude d'une loi de conservation} \label{ssec:Ch01-1.2}
 Pour utiliser la loi de conservation générale~\eqref{eq:Ch01-004}, il faut expliciter la dérivée particulaire d'une intégrale de volume.
-\begin{lem}[Dérivée particulaire d'une intégrale de volume]
+\begin{lem}[Dérivée particulaire d'une intégrale de volume]\label{lem:Ch01-1}
     \begin{equation}
         \frac{\ud}{\ud t}\iiint_D \mathcal{A} \ud v =\iiint_D\frac{\partial \mathcal{A}}{\partial t}\ud S+\iint_{\partial D}\mathcal{A}\vec{V}\cdot\vec{n}\ud S
         \label{eq:Ch01-005}
     \end{equation}
-    \label{lem:Ch01-1}
 \end{lem}
-
 \begin{multicols}{2}
     \raggedcolumns
     \setcounter{unbalance}{2}
@@ -140,7 +138,7 @@ En utilisant le théorème de la divergence (Annexe~\ref{Ann:A}) et la formule d
 Par une hypothèse analogue au Postulat de Cauchy, on suppose que la densité surfacique $\alpha$ dépend uniquement du point considéré et de la normale $\vec{n}$: $\alpha(M,\vec{n})$.
 Moyennant des hypothèses de continuité que nous ne préciserons pas davantage, on montre alors:
 
-\begin{lem}[]
+\begin{lem}
     \hfill
     \begin{enumerate}[(a)]
         \item $\alpha(M,-\vec{n}) =-\alpha(M,\vec{n})$
@@ -280,15 +278,15 @@ Un calcul simple montre alors que:
     \frac{\ud\mathcal{A}}{\ud t}+\mathcal{A}\dive \vec{V}=\rho\left\{\frac{1}{\rho}\frac{\ud \mathcal{A}}{\ud t}-\frac{1}{\rho^2}\mathcal{A}\frac{\ud \rho}{\ud t}\right\}=\rho \frac{\ud}{\ud t}\left(\frac{\mathcal{A}}{\rho}\right)
 \end{equation*}
 Le Lemme~\ref{lem:Ch01-1} et le Théorème~\ref{thm:Ch01-1} deviennent alors:
-\begin{lem}[Lemme 1']
+\begin{lem}[Lemme~\ref{lem:Ch01-1}']
     \begin{equation}
         \frac{\ud}{\ud t}\iiint_D\mathcal{A}\ud v=\iiint_D\rho\frac{\ud}{\ud t}\left(\frac{\mathcal{A}}{\rho}\right)(12)
         \label{eq:Ch01-012}
     \end{equation}
     \label{lem:Ch01-1p}
 \end{lem}
-%\theoremstyle{thm}
-\begin{thm}[Théorème 1']
+
+\begin{thm}[Théorème~\ref{thm:Ch01-1}']
     \begin{equation}
         \rho\frac{\ud}{\ud t}\left(\frac{\mathcal{A}}{\rho}\right)=A+a_{i,i}(13)
         \label{eq:Ch01-013}
@@ -458,25 +456,23 @@ En particulier, le lemme suivant montre que la puissance virtuelle des efforts i
     \end{description}
 \end{proof}
 Nous avons donc démontré, à partir de la loi fondamentale, le
-\newtheorem*{TPV}{Théorème des puissances virtuelles}
-\begin{TPV}
+\begin{thm}[Théorème des puissances virtuelles]
     Dans tout mouvement virtuel, la puissance virtuelle des quantités d'accélération est égale à la puissance virtuelle des efforts extérieurs et intérieurs
     \begin{equation}
         \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{a})} = \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{ext})} + \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}
         \label{eq:Ch01-028}
     \end{equation}
-\end{TPV}
+\end{thm}
 
 En particulier, si on prend comme champ de vitesses le champ des vitesse réelles, on obtien le
-\newtheorem*{TEC}{Théorème de l'énergie cinétique}
-\begin{TEC}
+\begin{thm}[Théorème de l'énergie cinétique]
     La dérivée par rapport au temps de l'énergie cinétique est égale à la puissance des efforts extérieurs et intérieurs
     \begin{align}
         \frac{\ud}{\ud t}\left( \frac{1}{2}\iiint_{\Omega} \rho V_iV_i \ud v\right) &= \iiint_{\Omega} f_i V_i \ud v &+ \iint_{\partial\Omega} T_i V_i \ud S &- \iiint_{\Omega} \sigma_{ij} D_ij \ud v \nonumber\\
         \frac{\ud K}{\ud t} &= \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{ext})} &&+ \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}
         \label{eq:Ch01-029}
     \end{align}
-\end{TEC}
+\end{thm}
 \subsection{Le principe des puissances virtuelles} \label{ssec:Ch01-2.2}
 Dans le cours de Mécanique Analytique, on a vu que l'on pouvait reconstruire la mécanique d'un système de solides à partir de l'énoncé des puissances virtuelles pris comme loi physique de départ.
 La loi fondamentale est alors obtenue comme conséquence.
@@ -485,15 +481,14 @@ En d'autres termes, un système d'efforts est une forme linéaire sur l'espace d
 L'espace des efforts est donc dual de l'espace des vitesses virtuelles.
 
 Nous postulons donc
-\newtheorem*{PPV}{Principe des puissances virtuelles}
-\begin{PPV}
+\begin{Principe}[Principe des puissances virtuelles.]
     La puissance virtuelle des quantités d'accélération est égale à la puissance virtuelle des efforts intérieurs et extérieurs
     \begin{equation}
         \mathop{\mathcal{P}}^{\ast}{\!}^{(a)} = \mathop{\mathcal{P}}^{\ast}{\!}^{(ext)} + \mathop{\mathcal{P}}^{\ast}{\!}^{(int)}
         \label{eq:Ch01-030}
     \end{equation}
     dans tout mouvement virtuel.
-\end{PPV}
+\end{Principe}
 
 
 Toutes ces puissances virtuelles sont des formes linéaires sur l'espace $\mathop{\mathcal{V}}^{\ast}$ des champs de vitesses virtuelles:
@@ -507,10 +502,9 @@ Toutes ces puissances virtuelles sont des formes linéaires sur l'espace $\matho
         (la puissance des efforts à distance $\mathop{\mathcal{P}}^{\ast}{\!}^{(d)}$ et la puissance des efforts de contact $\mathop{\mathcal{P}}^{\ast}{\!}^{(c)}$) est imposée par la nature des efforts extérieurs (donc connus) appliqués.
     \item La puissance des efforts intérieurs, par contre, pose davantage de problèmes:\\
         on sait que
-        \newtheorem*{AXM}{Axiome}
-        \begin{AXM}
+        \begin{Axiome}
             La puissance virtuelle des efforts intérieurs est nulle dans tout mouvement rigidifiant.
-        \end{AXM}
+        \end{Axiome}
 \end{itemize}
 
 Construire une théorie des milieux continus, c'est d'abord choisir l'espace $\mathop{\mathcal{V}}^{\ast}$ des champs de vitesses virtuelles, c'est ensuite choisir la forme des quatre formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(d)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(c)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$.
@@ -575,14 +569,13 @@ Il reste
 \end{equation}
 Les efforts intérieurs sont donc caractérisés par un tenseur symétrique $\sigma_{ij}$.
 Nous obtenons donc 
-\newtheorem*{PPVMMC}{Principe des puissances virtuelles en MMC}
-\begin{PPVMMC}
+\begin{Principe}[Principe des puissances virtuelles en MMC.]
     \begin{equation}
         \iiint_{\Omega} \rho \gamma_i \mathop{V}^{\ast}_i \ud v = \iiint_{\Omega} f_i \mathop{V}^{\ast}_i \ud v + \iint_{\partial \Omega} T_i^e \mathop{V}^{\ast}_i \ud S - \iiint_{\Omega} \sigma_{ij} \mathop{D}^{\ast}_{ij} \ud v
         \label{eq:Ch01-038}
     \end{equation}
     pour tout champ de vitesses virtuelles $\mathop{V}^{\ast}_i$.
-\end{PPVMMC}
+\end{Principe}
 
 Pour utiliser ce principe, il suffit maintenant de reprendre à l'envers le calcul du paragraphe~\ref{ssec:Ch01-3.1}:
 \begin{align*}

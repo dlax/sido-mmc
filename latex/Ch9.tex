@@ -41,14 +41,13 @@ Partant d'un CSA $\hat{\sigma}_{ij}$ on peut lui associer un champ de déformati
 Avec cette terminologie, le problème d'élasticité \eqref{eq:Ch09-001} à \eqref{eq:Ch09-005} se ramène à la recherche d'un CCA $\hat{u}_i$ et d'un CSA $\hat{\sigma}_{ij}$ reliés par la loi de comportement \eqref{eq:Ch09-004}.
 Toute la suite de ce chapitre sera basée sur le lemme suivant -- généralisation du théorème des travaux virtuels \eqref{eq:Ch03-046}.
 
-\newtheorem*{lfond}{Lemme fondamental}
-\begin{lfond}
+\begin{lem}[Lemme fondamental]
     Soit ${\mathop{u}^{\ast}}_i$ un champ de déplacements (virtuels) quelconque et $\hat{\sigma}_{ij}$ un CSA, alors
     \begin{equation}
         \iiint_{\Omega} \hat{\sigma}_{ij} {\mathop{\varepsilon}^{\ast}}_{ij} \ud v = \iiint_{\Omega} f_{i} {\mathop{u}^{\ast}}_i \ud v + \iint_{\partial \Omega} \hat{\sigma}_{ij} n_j {\mathop{u}^{\ast}}_i \ud S
         \label{eq:Ch09-008}
     \end{equation}
-\end{lfond}
+\end{lem}
 \begin{proof}
     La  démonstration  est directement calquée sur celle du paragraphe~\ref{ssec:Ch01-2.1}.
     Nous partons du premier membre et utilisons la symétrie de $\hat{\sigma}_{ij}$.
@@ -60,14 +59,13 @@ Toute la suite de ce chapitre sera basée sur le lemme suivant -- généralisati
     On retrouve le théorème des travaux virtuels en prenant comme CSA $\hat{\sigma}_{ij}$ le champ solution $\sigma_{ij}$.
 \end{proof}
 
-\newtheorem*{ttv}{Théorème des travaux virtuels}
-\begin{ttv}
+\begin{thm}[Théorème des travaux virtuels]
     Pour tout champ de déplacements virtuels ${\mathop{u}^{\ast}}_{i}$
     \begin{equation}
         \iiint_{\Omega} \sigma_{ij} {\mathop{\varepsilon}^{\ast}}_{ij} \ud v = \iiint_{\Omega} f_i {\mathop{u}^{\ast}}_i \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j {\mathop{u}^{\ast}}_i \ud S
         \label{eq:Ch09-009}
     \end{equation}
-\end{ttv}
+\end{thm}
 
 D'un point de vue algébrique, et en revenant à la structure décrite à la fin du paragraphe~\ref{ssec:Ch03-2.3}, on peut généraliser \eqref{eq:Ch03-050} en
 \begin{equation}
@@ -114,22 +112,21 @@ On introduit également le travail des efforts (volumiques et surfaciques) donn�
 \end{equation}
 Pour les CL mixtes \eqref{eq:Ch06-007} choisies, le travail des efforts surfaciques donnés, $T_f^d$ s'exprime simplement.
 Pour un problème régulier quelconque, l'expression peut être plus compliquée, mais, comme on l'a vu au paragraphe~\ref{ssec:Ch06-1.1}, le travail des efforts de surface se décompose sans ambiguïté en $T_u^d$ et $T_f^d$ (voir par exemple \eqref{eq:Ch06-010} et le paragraphe~\ref{ssec:Ch09-1.4}). 
-\begin{defn}
+\begin{deff}
     L'énergie potentielle du CCA $\tilde{u}_i$ est
     \begin{equation}
         K(\tilde{u}_i) = W(\tilde{\varepsilon}_{ij}) - \tilde{T}_f^d (\tilde{u}_i)
         \label{eq:Ch09-015}
     \end{equation}
-\end{defn}
+\end{deff}
 On 	démontre alors
-\newtheorem*{ThEP}{Théorème de l'énergie potentielle}
-\begin{ThEP}
+\begin{thm}[Théorème de l'énergie potentielle]
     Parmi tous les CCA, la (ou les) solution $u_i$ minimise l'énergie potentielle
     \begin{equation}
         K(u_i) \leq K (\tilde{u}_i) \quad \forall \tilde{u}_i \text{ CCA}
         \label{eq:Ch09-016}
     \end{equation}
-\end{ThEP}
+\end{thm}
 \begin{proof}
     Soit $u_i$ une solution du problème \eqref{eq:Ch09-001} à \eqref{eq:Ch09-005}, et $\tilde{u}_i$ un CCA.
     Nous définissons
@@ -159,8 +156,7 @@ On 	démontre alors
 \end{proof}
 
 On tire également de cette démonstration 
-\newtheorem*{ThEU}{Théorème d'existence et d'unicité}
-\begin{ThEU}
+\begin{thm}[Théorème d'existence et d'unicité]
     Pour un problème de type I ou un problème mixte, il existe une solution unique.
     Pour un problème de type II. il existe une solution définie à un mouvement de solide rigide près si-et-seulement-si
     \begin{equation}
@@ -171,7 +167,7 @@ On tire également de cette démonstration
         \label{eq:Ch09-019}
     \end{equation}
     c'est à dire si-et-seulement-si les efforts appliqués forment un torseur nul. 
-\end{ThEU}
+\end{thm}
 \begin{proof}
     \textit{Unicité.}
     Soit $u_i^1$ et $u_i^2$ deux solutions, ils sont aussi CCA, et l'application de \eqref{eq:Ch09-016} montre que 
@@ -211,22 +207,21 @@ et son travail dans les déplacements donnés par
     \label{eq:Ch09-023}
 \end{equation}
 et nous définissons 
-\begin{defn}
+\begin{deff}
     L'énergie complémentaire du CSA est
     \begin{equation}
         H \left( \hat{\sigma}_{ij} \right) = T_{u}^d \left( \hat{\sigma}_{ij} \right) - \hat{W}\left( \hat{\sigma}_{ij} \right)
         \label{eq:Ch09-024}
     \end{equation}
-\end{defn}
+\end{deff}
 et on obtient le résultat suivant 
-\newtheorem*{ThECp}{Théorème de l'énergie complémentaire}
-\begin{ThECp}
+\begin{thm}[Théorème de l'énergie complémentaire]
     Parmi tous les CSA, la solution $\sigma_{ij}$ maximise l'énergie complémentaire
     \begin{equation}
         H \left( \hat{\sigma}_{ij} \right) \leq H \left( \sigma_{ij} \right) \quad \forall \hat{\sigma}_{ij} \text{ CSA}
         \label{eq:Ch09-025}
     \end{equation}
-\end{ThECp}
+\end{thm}
 \begin{proof}
     Soit $\sigma_{ij}$ la solution, $\sigma_{ij}$ un CSA, et posons
     \begin{equation}
@@ -255,14 +250,13 @@ et on obtient le résultat suivant
     \end{equation}
     d'où la conclusion, puisque, comme $A_{ijkh}$, la matrice $\Lambda_{ijkh}$ est définie positive.
 \end{proof}
-\newtheorem*{ThComp}{Théorème de la comparaison}
-\begin{ThComp}
+\begin{thm}[Théorème de la comparaison]
     Soit $\left( u_i, \sigma_{ij} \right)$ la solution d'un problème régulier, $\tilde{u}_i$ un CCA et $\hat{\sigma}_{ij}$ un CSA
     \begin{equation}
         H \left( \hat{\sigma}_{ij} \right) \leq H \left( \sigma_{ij} \right) = K \left( u_i \right) \leq K \left( \tilde{u}_i \right)
         \label{eq:Ch09-029}
     \end{equation}
-\end{ThComp}
+\end{thm}
 
 Les deux théorèmes de l'énergie potentielle et de l'énergie complémentaire permettent d'écrire les deux inégalités.
 Il reste donc à montrer l'égalité 
@@ -287,14 +281,13 @@ pour la solution.
 \end{proof}
 
 Au passage nous avons démontré
-\newtheorem*{ThTra}{Théorème du travail}
-\begin{ThTra}
+\begin{thm}[Théorème du travail]
     Dans un problème élastostatique, l'énergie de déformation est égale à la moitié du travail des efforts extérieurs dans le déplacement solution.
     \begin{equation}
         W = \frac{1}{2} \iiint_{\Omega} \sigma_{ij} \varepsilon_{ij} \ud v = \frac{1}{2} \left\{ \iiint_{\Omega} f_i u_i \ud v + \iint_{\partial \Omega} \sigma_{ij} n_j u_i \ud S \right\}
         \label{eq:Ch09-031}
     \end{equation}
-\end{ThTra}
+\end{thm}
 
 On peut d'ailleurs obtenir directement ce résultat par une approche de type énergétique.
 Partons en effet du bilan énergétique en élasticité du paragraphe~\ref{ssec:Ch06-1.2} -- équation~\eqref{eq:Ch06-014}
@@ -528,14 +521,13 @@ Néanmoins, on voit que notre CSA est déjà assez proche de la solution, et peu
 On considère un solide élastique pouvant être soumis à deux chargements différents.
 Soit $\left( u_i^1, \sigma_{ij}^1 \right)$ et $\left( u_i^2, \sigma_{ij}^2 \right)$ les solutions correspondantes.
 
-\newtheorem*{ThMB}{Théorème de réciprocité au de Maxwell-Betti}
-\begin{ThMB}
+\begin{thm}[Théorème de réciprocité au de Maxwell-Betti]
     Le travail des efforts extérieurs $2$ dans le déplacement $1$ est égal au travail des efforts extérieurs $1$ dans le déplacement $2$.
     \begin{equation}
         \iint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud S = \iiint_{\Omega} f_i^1 u_i^2 \ud v + \iint_{\partial \Omega} T_i^1 u_i^2 \ud S
         \label{eq:Ch09-056}
     \end{equation}
-\end{ThMB}
+\end{thm}
 \begin{proof}
     On utilise le théorème des travaux virtuels appliqué au problème 1 avec comme déplacement virtuel le déplacement $u_i^2$ solution du problème 2. 
     On obtient
@@ -598,15 +590,14 @@ Plus généralement, le théorème de Maxwell Betti permet souvent d'obtenir san
 
 \subsection{Le théorème de Castigliano} \label{ssec:Ch09-2.2}
 On considère encore le même solide élastique pouvant être soumis à deux systèmes de chargements 1 et 2. 
-\newtheorem*{ThCast}{Théorème de Castigliano}
-\begin{ThCast}
+\begin{thm}[Théorème de Castigliano]
     Soit $\hat{\sigma}_{ij}^2$ un CSA pour le problème 2.
     Le travail des efforts extérieurs 2 dans le déplacement 1 est égal à la dérivée à l'origine de la fonction donnant l'énergie de déformation du champ de contraintes $\sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2$ en fonction de $\lambda$.
     \begin{equation}
         \iiint_{\Omega} f_i^2 u_i^1 \ud v + \iint_{\partial \Omega} T_i^2 u_i^1 \ud S = \frac{\ud}{\ud \lambda} \left\{ \hat{W}\left( \sigma_{ij}^1 + \lambda \hat{\sigma}_{ij}^2 \right) \right\} |_{\lambda=0}
         \label{eq:Ch09-062}
     \end{equation}
-\end{ThCast}
+\end{thm}
 \begin{proof}
     On développe 
     \[

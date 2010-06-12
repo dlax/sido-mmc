@@ -1,24 +1,24 @@
 % Mécanique des solides
 % François Sidoroff
 %
-\documentclass[dvips,11pt,a4paper]{memoir}
+\documentclass[dvips,11pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[frenchb]{babel}
 \usepackage[T1]{fontenc}
 %\usepackage{lmodern}
-\usepackage{amsmath,amsfonts}
+\usepackage{amsmath,amsfonts,amscd}
 \usepackage[bbgreekl]{mathbbol}
-\usepackage{amsthm}
-\usepackage{amscd}
+%\usepackage{amsthm}
+\usepackage[amsmath,amsthm,thmmarks,framed]{ntheorem}
+\usepackage{framed}
 \usepackage{cancel}
 \usepackage{paralist}
+\usepackage{geometry}
 
 \usepackage[dvips]{graphicx}
 \usepackage{psfrag}
 \usepackage[dvips]{color}
 \usepackage{pstricks,pstricks-add}%pst-text,pst-plot,pst-all}
-\usepackage[indention=.5cm,textfont=it,labelfont={sf,bf},labelsep=space]{caption}
-\usepackage{subfig}
 \usepackage[backref,colorlinks=true,dvips,bookmarks=true,pagebackref]{hyperref}
 \hypersetup{pdfauthor={F.~Sidoroff},
  pdftitle={M\'ecanique~des~solides},
@@ -27,27 +27,27 @@
 \usepackage{wrapfig}
 \usepackage{multicol}
 \usepackage{enumerate}
-\usepackage{memhfixc}
 \usepackage{cite}
 
 \usepackage{esvect}
-
-% page layout
-\settrimmedsize{297mm}{210mm}{*}
-\setlength{\trimtop}{0pt}
-\setlength{\trimedge}{\stockwidth}
-\addtolength{\trimedge}{-\paperwidth}
-\settypeblocksize{634pt}{448.13pt}{*}
-\setulmargins{4cm}{*}{*}
-\setlrmargins{*}{*}{1.5}
-\setmarginnotes{17pt}{51pt}{\onelineskip}
-\setheadfoot{\onelineskip}{2\onelineskip}
-\setheaderspaces{*}{2\onelineskip}{*}
-\checkandfixthelayout
-
-%\headstyles{memman}
-%\chapterstyle{thatcher}
-\setsecnumdepth{subsubsection}
+% packages intéressants
+\usepackage{cclicenses}
+%\usepackage{environ}
+%\usepackage{esdiff}
+%\usepackage{genmpage} % Generalization of LaTeX's minipages.
+%\usepackage{nag} % Detecting and warning about obsolete LaTeX commands
+%\usepackage{ntheorem} % Enhanced theorem environment.
+\usepackage{sfheaders} % Sans headers.
+%\usepackage{sfmath} % Sans-serif mathematics.
+%\usepackage{shadethm} % Shade the background of any box.
+%\usepackage{theoremref} % References with automatic theorem names.
+%\usepackage{thmtools} % Extensions to theorem environments.
+%\usepackage{tocloft} % Control table of contents, figures, etc.
+%\usepackage{vertbars} % Mark vertical rules in margin of text.
+%\usepackage{wallpaper} % Easy addition of wallpapers (background images) to LaTeX documents, including tiling.
+%\usepackage{koma-script} % A bundle of versatile classes and packages
+%\usepackage{ntgclass} % "European" versions of standard classes.
+%\usepackage{thmbox} % Decorate theorem statements.
 
 \newcommand{\tmp}[1]{{\color{red}{#1}}}
 % alias math
@@ -69,32 +69,41 @@
 %   * utiliser les macros de revtex pour \overstar par ex.
 %   * redéfinir \leq en \leqslant
 
-\newtheorem{thm}{Théoreme}[chapter]
-\newtheorem{cor}[thm]{Corollaire}
-\newtheorem{prop}{Proposition}
-\newtheorem{lem}{Lemme}
-\theoremstyle{remark}
-\newtheorem*{rmq}{Remarque}
-\newtheorem{deff}{Définition}
-
-\theoremstyle{plain}
-\newtheorem*{cauchy}{Postulat de Cauchy}
-\newtheorem*{thmn}{Théoreme}
-
-\theoremstyle{definition}
-\newtheorem*{defn}{Définition}
+% default settings
+%\theoremstyle{plain}
+%\theoremheaderfont{\normalfont\bfseries}
+%\theorembodyfont{\itshape}
+%\theoremseparator{}
+%\theoremindent0cm
+%\theoremnumbering{arabic}
+%\theoremsymbol{}
 
 
-%\newtheoremstyle{break}% name
-  %{9pt}%      Space above, empty = `usual value'
-  %{9pt}%      Space below
-  %{\itshape}% Body font
-  %{}%         Indent amount (empty = no indent, \parindent = para indent)
-  %{\bfseries}% Thm head font
-  %{.}%        Punctuation after thm head
-  %{\newline}% Space after thm head: \newline = linebreak
-  %{}%         Thm head spec
+%\def\theoremframecommand{%
+    %\psshadowbox[fillstyle=solid,fillcolor=blue,linecolor=black]}
+\def\theoremframecommand{%
+    {\color{blue} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{thm}{Théorème}[chapter]
+\newtheorem*{Axiome}{Axiome}
+\def\theoremframecommand{%
+    {\color{yellow} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{lem}{Lemme}[chapter]
+\def\theoremframecommand{%
+    {\color{green} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{deff}{Définition}
 
+\theoremstyle{empty}
+\theoremseparator{}
+\def\theoremframecommand{%
+    {\color{red} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{Principe}{Principe}
+\newshadedtheorem{Postulat}{Postulat}
+
+\theoremstyle{break}
+\theoremseparator{:}
+\theoremheaderfont{\itshape}
+\theoremsymbol{\(\square\)}
+\renewtheorem*{proof}{Démonstration}
 
 \author{F. Sidorrof}
 \title{M\'ecanique des Solides}
@@ -106,18 +115,18 @@
 \psset{linewidth=1pt,arrowsize=2pt 4}
 \part{Mécanique des Milieux Continus}
 \include{Ch1}
-\include{Ch2}
-\include{Ch3}
-\include{Ch4}
-\include{Ch5}
-\include{Ch6}
-\include{Ch7}
-\include{Ch8}
+%\include{Ch2}
+%\include{Ch3}
+%\include{Ch4}
+%\include{Ch5}
+%\include{Ch6}
+%\include{Ch7}
+%\include{Ch8}
 \include{Ch9}
-\include{Ch10}
-\include{Ch11}
-\appendix
-\include{AnnA}
+%\include{Ch10}
+%\include{Ch11}
+%\appendix
+%\include{AnnA}
 \nocite{*}
 \bibliographystyle{plain-fr}
 \bibliography{biblio-sidoroff}
