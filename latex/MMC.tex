@@ -78,32 +78,33 @@
 %\theoremnumbering{arabic}
 %\theoremsymbol{}
 
+\theoremstyle{break}
+\theoremheaderfont{\bfseries\sffamily}  
 
-%\def\theoremframecommand{%
-    %\psshadowbox[fillstyle=solid,fillcolor=blue,linecolor=black]}
 \def\theoremframecommand{%
     {\color{blue} \vrule width 5pt \hspace{10pt}}}
+\theoremheaderfont{\bfseries\sffamily}
 \newshadedtheorem{thm}{Théorème}[chapter]
-\newtheorem*{Axiome}{Axiome}
-\def\theoremframecommand{%
-    {\color{yellow} \vrule width 5pt \hspace{10pt}}}
-\newshadedtheorem{lem}{Lemme}[chapter]
 \def\theoremframecommand{%
     {\color{green} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{lem}{Lemme}[chapter]
+\def\theoremframecommand{%
+    {\color{yellow} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{deff}{Définition}
 
-\theoremstyle{empty}
-\theoremseparator{}
+\theoremstyle{emptybreak}
+\theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
     {\color{red} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{Principe}{Principe}
 \newshadedtheorem{Postulat}{Postulat}
+\newshadedtheorem{Axiome}{Axiome}
 
-\theoremstyle{break}
-\theoremseparator{:}
-\theoremheaderfont{\itshape}
-\theoremsymbol{\(\square\)}
-\renewtheorem*{proof}{Démonstration}
+%\theoremstyle{break}
+%\theoremseparator{:}
+%\theoremheaderfont{\itshape}
+%\theoremsymbol{\(\square\)}
+%\renewtheorem*{proof}{Démonstration}
 
 \author{F. Sidorrof}
 \title{M\'ecanique des Solides}
