@@ -125,13 +125,12 @@ et le critère de Tresca (paragraphe~\ref{ssec:Ch05-3.1})
 \end{equation}
 
 Pour les sols, la pression hydrostatique intervient essentiellement dans le critère, et on obtient en général de bons résultats en prenant le critère de Coulomb 
-\newtheorem*{ccoulomb}{Critère de Coulomb}
-\begin{ccoulomb}
+\begin{defn}[Critère de Coulomb]
     \begin{equation}
         |\vec{T}_t| < c - T_n \tan \varphi
         \label{eq:Ch10-013}
     \end{equation}
-\end{ccoulomb}
+\end{defn}
 où $c$ est «~la cohésion~» et $\varphi$ «~l'angle de frottement interne~».
 En particulier, pour un sol sans cohésion,$ c = 0$ (cas des matériaux granulaires comme le sable), le critère de Coulomb exprime simplement une loi de frottement coulombien sur chaque facette. 
 \begin{multicols}{2}
@@ -196,8 +195,7 @@ Comme dans le cas unidimensionnel, la déformation plastique reste constante si 
 \end{equation}
 La déformation plastique ne varie donc que sur le seuil et dans un processus de charge ($f=0$, $\dot{f}=0$).
 La loi d'évolution est alors habituellement définie par 
-\newtheorem*{PTM}{Principe du travail maximal}
-\begin{PTM}
+\begin{Principe}[Principe du travail maximal]
     Dans un état de contraintes $\sigma_{ij}$, le taux de 
 déformation plastique vérifie l'inégalité 
     \begin{equation}
@@ -205,7 +203,7 @@ déformation plastique vérifie l'inégalité
         \label{eq:Ch10-020}
     \end{equation}
     pour tout $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}$ acceptable, $\displaystyle f\left( {\mathop{\sigma}^{\ast}}_{ij} \right) \leq 0$.
-\end{PTM}
+\end{Principe}
 
 En particulier, il s'ensuit que la restriction thermodynamique \eqref{eq:Ch10-018} est automatiquement vérifiée (il suffit de prendre $\displaystyle {\mathop{\sigma}^{\ast}}_{ij}=0$ dans \eqref{eq:Ch10-020}). 
 
@@ -445,8 +443,7 @@ En effet, l'état de contraintes et de déformations dans un matériau élasto-p
 Par contre, connaissant l'état actuel de contraintes et de déformations, et connaissant la variation de sollicitation, on peut espérer trouver la solution.
 Dans le cadre de l'hypothèse quasi-statique, on est donc amené à se poser un problème incrémental (ou problème en vitesses). 
 
-\newtheorem*{PrInc}{Problème incrémental}
-\begin{PrInc}
+\begin{defn}[Problème incrémental]
     Connaissaht à l'instant $t$ le champ des contraintes $\sigma_{ij}(x,t)$ et le champ des déplacements $u_i(x,t)$, trouver leurs variations vérifiant 
     \begin{itemize}
         \item les équation d'équilibre incrémentales 
@@ -470,13 +467,12 @@ Dans le cadre de l'hypothèse quasi-statique, on est donc amené à se poser un 
             \end{equation}
             avec $\dot{\varepsilon}_{ij}^p$ donné par la loi d'écoulement plastique.
     \end{itemize}
-\end{PrInc}
+\end{defn}
 Si nous acceptons le principe du travail maximal, c'est encore 
 un problème bien posé.
-\newtheorem*{ThUni}{Théorème de l'unicité}
-\begin{ThUni}
+\begin{thmn}[Théorème de l'unicité]
     En acceptant le principe du travail maximal, le problème posé plus haut admet une solution unique en $\dot{\sigma}_{ij}$.
-\end{ThUni}
+\end{thmn}
 \begin{proof}
     Supposons en effet qu'il existe deux solutions $\left( \dot{\sigma}_{ij}^1, \dot{u}_i^1 \right)$ et $\left( \dot{\sigma}_{ij}^2, \dot{u}_i^2 \right)$.
     Leur différence
@@ -582,19 +578,17 @@ Pour le critère de von Mises par exemple
     \label{eq:Ch10-057}
 \end{equation}
 On peut alors démontrer les deux thêorèmes suivants.
-\newtheorem*{ThSta}{Théorème statique}
-\begin{ThSta}
+\begin{thmn}[Théorème statique]
     S'il existe un champ de contraintes licite pour le chargement $\left( f_i, T_i^d \right)$, alors la structure peut supporter ce chargement.
-\end{ThSta}
-\newtheorem*{ThCin}{Théorème cinématique}
-\begin{ThCin}
+\end{thmn}
+\begin{thmn}[Théorème cinématique]
     S'il existe un CCPA tel que 
     \begin{equation}
         \iiint_{\Omega} f_i \tilde{\dot{u}}_i \ud v + \iint_{S_f} T_i^d \tilde{\dot{u}}_i \ud S > \iiint_{\Omega} D \left( \tilde{\dot{\varepsilon}}_{ij} \right) \ud v
         \label{eq:Ch10-058}
     \end{equation}
     alors la structure ne peut pas supporter le chargement $\left( f_i, T_i^d \right)$.
-\end{ThCin}
+\end{thmn}
 Le premier théorème permet de construire des bornes inférieures de la charge limite.
 En effet, soit $\hat{\sigma}_{ij}^0$ un CSA pour le chargement $\left( f_i, T_i^d \right)$.
 Alors, le champ $\lambda \hat{\sigma}_{ij}^0$ sera CSA pour le chargement $\left( f^0_i, T_i^{d0} \right)$.

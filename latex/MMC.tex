@@ -15,9 +15,10 @@
 \usepackage{paralist}
 \usepackage{geometry}
 
+%\usepackage[adobe-utopia,uppercase=upright,greeklowercase=upright]{mathdesign}
 \usepackage[dvips]{graphicx}
 \usepackage{psfrag}
-\usepackage[dvips]{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{pstricks,pstricks-add}%pst-text,pst-plot,pst-all}
 \usepackage[backref,colorlinks=true,dvips,bookmarks=true,pagebackref]{hyperref}
 \hypersetup{pdfauthor={F.~Sidoroff},
@@ -28,6 +29,7 @@
 \usepackage{multicol}
 \usepackage{enumerate}
 \usepackage{cite}
+\usepackage{wallpaper}
 
 \usepackage{esvect}
 % packages intéressants
@@ -82,23 +84,29 @@
 \theoremheaderfont{\bfseries\sffamily}  
 
 \def\theoremframecommand{%
-    {\color{blue} \vrule width 5pt \hspace{10pt}}}
-\theoremheaderfont{\bfseries\sffamily}
+    {\color{BurntOrange} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{thm}{Théorème}[chapter]
 \def\theoremframecommand{%
-    {\color{green} \vrule width 5pt \hspace{10pt}}}
+    {\color{Goldenrod} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{lem}{Lemme}[chapter]
 \def\theoremframecommand{%
-    {\color{yellow} \vrule width 5pt \hspace{10pt}}}
+    {\color{Dandelion} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{deff}{Définition}
 
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
-    {\color{red} \vrule width 5pt \hspace{10pt}}}
+    {\color{Bittersweet} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{Principe}{Principe}
 \newshadedtheorem{Postulat}{Postulat}
 \newshadedtheorem{Axiome}{Axiome}
+\def\theoremframecommand{%
+    {\color{Dandelion} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{defn}{Définition}
+\newshadedtheorem{Hypothese}{Hypothese}
+\def\theoremframecommand{%
+    {\color{BurntOrange} \vrule width 5pt \hspace{10pt}}}
+\newshadedtheorem{thmn}{Théorème}
 
 %\theoremstyle{break}
 %\theoremseparator{:}
@@ -108,26 +116,27 @@
 
 \author{F. Sidorrof}
 \title{M\'ecanique des Solides}
+\title{Mécanique des Milieux Continus}
 
 \begin{document}
+%\include{Titre}
 \frontmatter
 \tableofcontents
 \mainmatter
 \psset{linewidth=1pt,arrowsize=2pt 4}
-\part{Mécanique des Milieux Continus}
 \include{Ch1}
-%\include{Ch2}
-%\include{Ch3}
-%\include{Ch4}
-%\include{Ch5}
-%\include{Ch6}
-%\include{Ch7}
-%\include{Ch8}
+\include{Ch2}
+\include{Ch3}
+\include{Ch4}
+\include{Ch5}
+\include{Ch6}
+\include{Ch7}
+\include{Ch8}
 \include{Ch9}
-%\include{Ch10}
-%\include{Ch11}
-%\appendix
-%\include{AnnA}
+\include{Ch10}
+\include{Ch11}
+\appendix
+\include{AnnA}
 \nocite{*}
 \bibliographystyle{plain-fr}
 \bibliography{biblio-sidoroff}

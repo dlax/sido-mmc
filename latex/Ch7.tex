@@ -67,11 +67,9 @@ Pour obtenir un problème régulier, il faudrait préciser la manière dont les 
 Plus précisément, on peut imaginer plusieurs --	en fait une infinité -- répartitions d'efforts surfaciques vérifiant \eqref{eq:Ch07-005}, \eqref{eq:Ch07-006}, \eqref{eq:Ch07-007}, \eqref{eq:Ch07-008}, sur $\Sigma_1$, et de même sur $\Sigma_0$ chacune de ces répartitions sera associé un problème régulier (de type II), donc avec solution unique.
 Ainsi le problème de Saint Venant, tel que nous l'avons formulé, admet une infinité de solutions.
 
-\theoremstyle{definition}
-\newtheorem*{psv}{Principe de Saint Venant}
-\begin{psv}
+\begin{Principe}[Principe de Saint Venant]
     L'état de contrainte et de déformation loin des extrémités dépend uniquement du torseur des efforts appliqués, et non de la manière précise dont ces efforts sont appliqués.
-\end{psv}
+\end{Principe}
 
 En d'autres termes, deux répartitions d'efforts surfaciques conduisant au même torseur, conduiront à deux solutions très voisines, sauf au voisinage immédiat des extrémités.
 Ainsi le problème de Saint Venant admet une infinité de solutions, mais ces solutions sont très voisines les unes des autres, et il n'y a pas lieu de les distinguer -- à moins de vouloir des informations précises sur ce qui se passe au voisinage des extrémités.
@@ -340,7 +338,9 @@ Les relations \eqref{eq:Ch07-032} et \eqref{eq:Ch07-033} montrent qu'après la d
 \end{center}
 
 On construit souvent la théorie élémentaire de la flexion à partir de
-\paragraph{Hypothèse de Navier-Bernoulli.} Les sections droites restent planes et normales à la fibre moyenne.
+\begin{Hypothese}[Hypothèse de Navier-Bernoulli]
+    Les sections droites restent planes et normales à la fibre moyenne.
+\end{Hypothese}
 
 Cette hypothèse se trouve donc vérifiée ici.
 On constate également que le moment $\mathcal{M}$ appliqué produit une courbure de la ligne moyenne
