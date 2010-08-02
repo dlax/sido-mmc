@@ -1,7 +1,7 @@
 % Mécanique des solides
 % François Sidoroff
 %
-\documentclass[dvips,11pt,a4paper]{book}
+\documentclass[dvips,11pt,a4paper,fleqn]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[frenchb]{babel}
 \frenchbsetup{IndentFirst=false}
@@ -14,7 +14,7 @@
 \usepackage{framed}
 \usepackage{cancel}
 \usepackage{paralist}
-\usepackage{geometry}
+\usepackage[top=3cm,left=3cm,right=3cm,bottom=2.5cm,a4paper]{geometry}
 
 %\usepackage[adobe-utopia,uppercase=upright,greeklowercase=upright]{mathdesign}
 \usepackage[dvips]{graphicx}
@@ -101,7 +101,7 @@
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
-    {\color{Bittersweet} \vrule width 5pt \hspace{10pt}}}
+    {\color{Bittersweet} \vrule width 5pt}{\color{Bittersweet!10} \vrule width 2pt}\colorbox{Bittersweet!10}}
 \newshadedtheorem{Principe}{Principe}
 \newshadedtheorem{Postulat}{Postulat}
 \newshadedtheorem{Axiome}{Axiome}
@@ -130,19 +130,19 @@
 \mainmatter
 \psset{linewidth=1pt,arrowsize=2pt 4}
 \include{Ch1}
-\include{Ch2}
-\include{Ch3}
-\include{Ch4}
-\include{Ch5}
-\include{Ch6}
-\include{Ch7}
-\include{Ch8}
-\include{Ch9}
-\include{Ch10}
-\include{Ch11}
-\appendix
-\include{AnnA}
-\nocite{*}
-\bibliographystyle{plain-fr}
-\bibliography{biblio-sidoroff}
+%\include{Ch2}
+%\include{Ch3}
+%\include{Ch4}
+%\include{Ch5}
+%\include{Ch6}
+%\include{Ch7}
+%\include{Ch8}
+%\include{Ch9}
+%\include{Ch10}
+%\include{Ch11}
+%\appendix
+%\include{AnnA}
+%\nocite{*}
+%\bibliographystyle{plain-fr}
+%\bibliography{biblio-sidoroff}
 \end{document}
