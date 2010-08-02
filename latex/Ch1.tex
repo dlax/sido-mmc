@@ -194,7 +194,7 @@ soit, en utilisant a), en posant $a_i=\alpha(\vec{e}_i)$ et en remarquant que $S
     \alpha(\vec{n})=a_in_i
 \end{equation*}
 Par utilisation de ces deux lemmes, on obtient la forme locale ou différentielle de la loi de conservation~\eqref{eq:Ch01-004}:
-\begin{thm}
+\begin{thm}[Forme locale de la loi de conservation]
     \begin{equation}
         \frac{\ud \mathcal{A}}{\ud t} = -\mathcal{A}V_{i,i} + a_{i,i} + A
         \label{eq:Ch01-008}
@@ -450,7 +450,7 @@ En particulier, le lemme suivant montre que la puissance virtuelle des efforts i
                 \label{eq:Ch01-027}
             \end{equation}
             permet d'écrire~\eqref{eq:Ch01-026}.
-            Nous démonstrerons ce résultat au chapitre~\ref{chap:Ch03} (paragraphe~\ref{ssec:Ch01-3.1}, Théorème~\ref{thm:Ch03-2}).
+            Nous démonstrerons ce résultat au Théorème~\ref{thm:Ch03-2}).
     \end{description}
 \end{proof}
 Nous avons donc démontré, à partir de la loi fondamentale, le
@@ -462,14 +462,17 @@ Nous avons donc démontré, à partir de la loi fondamentale, le
     \end{equation}
 \end{thmn}
 
-En particulier, si on prend comme champ de vitesses le champ des vitesse réelles, on obtien le
+En particulier, si on prend comme champ de vitesses le champ des vitesse réelles, on obtient le
 \begin{thmn}[Théorème de l'énergie cinétique]
     La dérivée par rapport au temps de l'énergie cinétique est égale à la puissance des efforts extérieurs et intérieurs
-    \begin{align}
-        \frac{\ud}{\ud t}\left( \frac{1}{2}\iiint_{\Omega} \rho V_iV_i \ud v\right) &= \iiint_{\Omega} f_i V_i \ud v &+ \iint_{\partial\Omega} T_i V_i \ud S &- \iiint_{\Omega} \sigma_{ij} D_ij \ud v \nonumber\\
-        \frac{\ud K}{\ud t} &= \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{ext})} &&+ \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}
-        \label{eq:Ch01-029}
-    \end{align}
+\begin{equation}
+\everymath{\displaystyle} 
+    \begin{array}{ccccc}
+        \frac{\ud}{\ud t}\left( \frac{1}{2}\iiint_{\Omega} \rho V_iV_i \ud v\right) &=& \iiint_{\Omega} f_i V_i \ud v &+& \iint_{\partial\Omega} T_i V_i \ud S - \iiint_{\Omega} \sigma_{ij} D_ij \ud v\\[12pt]
+        \frac{\ud K}{\ud t}  &=& \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{ext})} &+& \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}
+    \end{array}
+       \label{eq:Ch01-029}
+\end{equation}
 \end{thmn}
 \subsection{Le principe des puissances virtuelles} \label{ssec:Ch01-2.2}
 Dans le cours de Mécanique Analytique, on a vu que l'on pouvait reconstruire la mécanique d'un système de solides à partir de l'énoncé des puissances virtuelles pris comme loi physique de départ.
