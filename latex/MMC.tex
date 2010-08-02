@@ -4,9 +4,10 @@
 \documentclass[dvips,11pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[frenchb]{babel}
+\frenchbsetup{IndentFirst=false}
 \usepackage[T1]{fontenc}
 %\usepackage{lmodern}
-\usepackage{amsmath,amsfonts,amscd}
+\usepackage{amsmath,amsfonts,amscd,amssymb}
 \usepackage[bbgreekl]{mathbbol}
 %\usepackage{amsthm}
 \usepackage[amsmath,amsthm,thmmarks,framed]{ntheorem}
@@ -53,7 +54,7 @@
 
 \newcommand{\tmp}[1]{{\color{red}{#1}}}
 % alias math
-\newcommand{\ud}{\mathrm{d}}
+\newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \DeclareMathOperator*{\dive}{\mathrm{div}}
 \DeclareMathOperator*{\grad}{\mathrm{grad}}
 \DeclareMathOperator*{\gradb}{\mathbf{grad}}
@@ -70,6 +71,8 @@
 % TODO: 
 %   * utiliser les macros de revtex pour \overstar par ex.
 %   * redéfinir \leq en \leqslant
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
 
 % default settings
 %\theoremstyle{plain}
@@ -81,6 +84,8 @@
 %\theoremsymbol{}
 
 \theoremstyle{break}
+\setlength\theorempreskipamount{0pt}
+\setlength\theorempostskipamount{0pt}
 \theoremheaderfont{\bfseries\sffamily}  
 
 \def\theoremframecommand{%
