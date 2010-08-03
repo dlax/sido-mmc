@@ -2,7 +2,7 @@
 Les éléments de base de la mécanique des milieux continus\footnote{Dans la suite de ce document, il sera fait appel à ce domaine sous la forme contractée usuelle MMC.}, à savoir, la cinématique des milieux continus, les variables lagrangiennes et eulériennes, les dérivées particulaires ainsi que la description des efforts intérieurs et des contraintes, ont présentés dans le cours d'introduction à la MMC.
 Nous nous bornerons donc, dans ce chapitre, à les replacer dans un contexte «~Mécanique des Solides~». 
 En particulier, nous ne donnerons pas le détail des démonstrations. 
-Le lecteur pourra se référer aux traités classiques (voir \cite{Germain-62,Germain-73,Mandel-66,Mandel-74,Gontier-69,Roy-66,Sedov-71,Eringen-67,Prager-61,Lai-78}).
+Le lecteur pourra se référer aux traités classiques~\cite{Germain-62,Germain-73,Mandel-66,Mandel-74,Gontier-69,Roy-66,Sedov-71,Eringen-67,Prager-61,Lai-78}.
 \section{Lois de conservation} \label{sec:Ch01-1}
 \subsection{Lois de la physique} \label{ssec:Ch01-1.1}
 En MMC, on appelle «~loi de conservation~», la traduction mathématique des lois de la physique.
@@ -436,7 +436,7 @@ On retrouve donc l'énoncé classique des puissances virtuelles, à condition d'
     \label{eq:Ch01-025}
 \end{equation}
 On peut s'assurer que c'est une interprétation justifiée dans la mesure où elle généralise la puissance virtuelle des efforts intérieurs introduite en mécanique rationnelle pour un système de solides rigides~\cite{Germain-62,Gontier-69}.
-En particulier, le lemme suivant montre que la puissance virtuelle des efforts intérieurs est nulle dans tout champ de vitesses rigidifiant, c'est-à-dire lorsque $\displaystyle {\mathop{V}^{\ast}}_i$ est le champ de vitesses d'un solide rigide. 
+En particulier, le lemme suivant montre que la puissance virtuelle des efforts intérieurs est nulle dans tout champ de vitesses rigidifiant, c'est-à-dire lorsque ${\mathop{V}^{\ast}}_i$ est le champ de vitesses d'un solide rigide. 
 
 \begin{lem}
     Une condition nécessaire et suffisante pour qu'un champ de vitesses ${\mathop{V}^{\ast}}_i$ soit rigidifiant est que le tenseur taux de déformation associé ${\mathop{D}^{\ast}}_{ij}$ soit nul.
@@ -523,26 +523,26 @@ Toutes ces puissances virtuelles sont des formes linéaires sur l'espace $\matho
 \end{Axiome}
 
 Construire une théorie des milieux continus, c'est d'abord choisir l'espace $\mathop{\mathcal{V}}^{\ast}$ des champs de vitesses virtuelles, c'est ensuite choisir la forme des quatre formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(d)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(c)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$.
-Le reste de la théorie -- donc en particulier les équations du mouvement -- s'obtiennent par des calculs simples.
+Le reste de la théorie ---en particulier, les équations du mouvement--- s'obtient par des calculs simples.
 
-Considérons par exemple le cas de la mécanique des solides rigides: l'espace $\mathop{\mathcal{V}}^{\ast}$ des vitesses virtuelles est l'espace des champs de vitesses d'un solide, espace vectoriel de dimension 6.
-Les formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(ext)}$ (d'après l'axiome, $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$ identiquement nulle) sont donc des éléments du dual de cet espace: l'espace des «~torseurs~».
+Considérons, par exemple, le cas de la mécanique des solides rigides: l'espace $\mathop{\mathcal{V}}^{\ast}$ des vitesses virtuelles est l'espace des champs de vitesses d'un solide, espace vectoriel de dimension six.
+Les formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(ext)}$ (d'après l'axiome, $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$ identiquement nulle) sont donc des éléments du dual de cet espace: l'espace des \emph{torseurs}.
 Le principe des puissances virtuelles est donc équivalent à la loi fondamentale
 \begin{equation}
-    \left[ \mathcal{A} \right] = \left[ \mathcal{F}^{(ext)} \right]
+    \bigl[ \mathcal{A} \bigr] = \bigl[ \mathcal{F}^{(ext)} \bigr]
     \label{eq:Ch01-032}
 \end{equation}
-où $\left[ \mathcal{A} \right]$ est le torseur des quantités d'accélération et $\left[ \mathcal{F}^{(ext)} \right]$ le torseur des efforts extérieurs.
+où $\bigl[ \mathcal{A} \bigr]$ est le torseur des quantités d'accélération et $\bigl[ \mathcal{F}^{(ext)} \bigr]$, celui des efforts extérieurs.
 
 De manière générale, la mécanique des milieux continus peut être construite indifféremment à partir des lois de conservation, comme nous l'avons fait au paragraphe~\ref{ssec:Ch01-1.1}, ou à partir du principe des puissances virtuelles, comme nous le ferons au paragraphe~\ref{ssec:Ch01-2.3}.
 L'approche des puissances virtuelles présente cependant un double avantage:
 \begin{enumerate}
-    \item Elle est beaucoup plus systématique, et permet donc une généralisation plus facile lorsque l'on veut sortir du cadre des milieux continus classiques, pour étudier par exemple les milieux avec micro-structure évoqués au paragraphe~\ref{ssec:Ch01-1.1} cas des cristaux liquides ou bien les matériaux électromagnétiques.
-    \item Elle met clairement en évidence la relation entre la description cinématique et la schématisation des efforts: plus on raffine la description cinématique, plus il faut raffiner la schématisation des efforts, et réciproquement.
+    \item elle est beaucoup plus systématique, et permet donc une généralisation plus facile lorsque l'on veut sortir du cadre des milieux continus classiques, pour étudier par exemple les milieux avec micro--structure évoqués au paragraphe~\ref{ssec:Ch01-1.1} cas des cristaux liquides ou bien les matériaux électromagnétiques;
+    \item elle met clairement en évidence la relation entre la description cinématique et la schématisation des efforts: plus on raffine la description cinématique, plus il faut raffiner la schématisation des efforts, et réciproquement.
         Par exemple, dans le cas du solide rigide, on voit clairement que la schématisation des efforts par des torseurs est liée à la cinématique du solide rigide: deux répartitions d'efforts différentes conduisant au même torseur sont équivalentes, car elles développent la même puissance dans tout mouvement possible.
 \end{enumerate}
 
-Pour ce cours élémentaire, nous ne partirons pas systématiquement de l'approche «~puissances virtuelles~», mais nous la mentionnerons régulièrement, et nous l'utiliserons pour mettre en évidence la dualité contraintes--déformations, ce qui sera une simple vérification en mécanique des milieux continus, mais jouera un rôle essentiel plus tard, en Résistance des Matériaux.
+Pour ce cours élémentaire, nous ne partirons pas systématiquement de l'approche \emph{puissances virtuelles}, mais nous la mentionnerons régulièrement, et nous l'utiliserons pour mettre en évidence la dualité contraintes--déformations, ce qui sera une simple vérification en mécanique des milieux continus, mais jouera un rôle essentiel plus tard, en Résistance des Matériaux.
 
 \subsection{Théorie du premier gradient} \label{ssec:Ch01-2.3}
 Comme nous l'avons annoncé, nous allons ici reconstruire les équations fondamentales du paragraphe~\ref{ssec:Ch01-1.1} à partir du principe des puissances virtuelles.
@@ -593,10 +593,9 @@ Nous obtenons donc
 \end{Principe}
 
 Pour utiliser ce principe, il suffit maintenant de reprendre à l'envers le calcul du paragraphe~\ref{ssec:Ch01-3.1}:
-\begin{align*}
-    \iiint_{\Omega} \sigma_{ij} \mathop{D}^{\ast}_{ij} \ud v &= \iiint_{\Omega} \sigma_{ij} \mathop{V}^{\ast}_{i,j} \\
-    &= \iint_{\partial \Omega} \sigma_{ij} \mathop{V}^{\ast}_{i} n_j \ud S - \iiint_{\Omega} \sigma_{ij,j} \mathop{V}^{\ast}_{i} \ud v
-\end{align*}
+\begin{equation*}
+    \iiint_{\Omega} \sigma_{ij} \mathop{D}^{\ast}_{ij} \ud v = \iiint_{\Omega} \sigma_{ij} \mathop{V}^{\ast}_{i,j} = \iint_{\partial \Omega} \sigma_{ij} \mathop{V}^{\ast}_{i} n_j \ud S - \iiint_{\Omega} \sigma_{ij,j} \mathop{V}^{\ast}_{i} \ud v
+\end{equation*}
 ou l'on a utilisé la symétrie de $\sigma_{ij}$ et le théorème de la divergence.
 On obtient alors
 \begin{displaymath}
@@ -616,26 +615,27 @@ Le premier principe de la thermodynamique affirme que la variation de l'énergie
     \frac{\ud}{\ud t} \left( E + K \right) = \mathcal{P}^{(ext)} + Q
     \label{eq:Ch01-040}
 \end{equation}
-où 1'énergie cinétique $K$ et la puissance âes efforts extérieurs $\mathcal{P}^{(ext)}$ sont données par
+où 1'énergie cinétique $K$ et la puissance des efforts extérieurs $\mathcal{P}^{(ext)}$ sont données par
 \begin{equation}
     K = \iiint_{D} \frac{1}{2} \rho V_i V_i \ud v
     \label{eq:Ch01-041}
 \end{equation}
+et
 \begin{equation}
     \mathcal{P}^{(ext)} = \iiint_{D} f_i V_i \ud v + \iint_{\partial D} T_i V_i \ud S
     \label{eq:Ch01-042}
 \end{equation}
-où l'énergie interne $E$ est définie par
+L'énergie interne $E$ est définie comme suit:
 \begin{equation}
     E = \iiint_{D} \rho e \ud v
     \label{eq:Ch01-043}
 \end{equation}
-en notant $e$ l'énergie interne par unité de masse, et où le taux de chaleur $Q$ apportée à $D$ résulte d'un apport volumique $r$ (rayonnnement) dans $D$ et d'un apport surfacique $h$ (conduction) à travers $\ud D$
+en notant $e$ l'énergie interne par unité de masse, et où le taux de chaleur $Q$ apportée à $D$ résulte d'un apport volumique $r$ (rayonnnement) dans $D$ et d'un apport surfacique $h$ (conduction) à travers $\partial D$
 \begin{equation}
     Q = \iiint_{D} r \ud v + \iint_{\partial D} h \ud S
     \label{eq:Ch01-044}
 \end{equation}
-Le premler principe de la thermodynamique conduit donc à la loi de consvation de l'énergie
+Le premler principe de la thermodynamique conduit donc à la loi de conservation de l'énergie
 \begin{equation}
     \frac{\ud}{\ud t} \iiint_D \rho \left( e + \frac{1}{2} V_i V_i \right) \ud v = \iiint_D \left( f_i V_i + r \right) \ud v + \iint_{\partial D} \left( T_i V_i + h \right) \ud S
     \label{eq:Ch01-045}
@@ -650,7 +650,7 @@ dans~\eqref{eq:Ch01-004}
     \end{tabular}
 \end{table*}
 
-Compte-tenu de~\eqref{eq:Ch01-014}, le Lemme~\ref{lem:Ch01-2} du paragraphe~\ref{ssec:Ch01-1.2} permet d'introduire le vecteur flux de chaleur $\vec{q}$ qui permet de décrire les échanges de chaleur à travers $\partial D$ par
+Compte-tenu de~\eqref{eq:Ch01-014}, le Lemme~\ref{lem:Ch01-2} du paragraphe~\ref{ssec:Ch01-1.2} permet d'introduire le vecteur flux de chaleur $\vec{q}$ à travers $\partial D$ par
 \begin{equation}
     h = - \vec{q} \cdot \vec{n} = -q_i n_i
     \label{eq:Ch01-046}
@@ -665,7 +665,7 @@ Le terme entre parenthèses disparaît d'après l'équation du mouvement~\eqref{
     \rho \frac{\ud e }{\ud t} = \sigma_{ij} D_{ij} + r - q_{j,j}
     \label{eq:Ch01-047}
 \end{equation}
-forme  locale du premier principe de la thermodynamique.
+forme locale du premier principe de la thermodynamique.
 
 On aurait également pu obtenir~\eqref{eq:Ch01-047} en utilisant le théorème de l'énergie cinétique du paragraphe~\ref{ssec:Ch01-2.1}.
 Ce théorème permet en effet de remplacer~\eqref{eq:Ch01-040} par
@@ -691,7 +691,7 @@ Remarquons toutefois que l'on n'a pas le droit d'écrire cette relation aux disc
 \subsection{Inégalité de Clausius-Duhem} \label{ssec:Ch01-3.2}
 Le second principe de la thermodynamique qui, en thermostatique, pour un processus homotherme, s'écrit classiquement
 \begin{equation}
-    \ud S \geq \frac{1}{T} \ud Q
+    \ud S \geq \frac{\ud Q}{T}
     \label{eq:Ch01-051}
 \end{equation}
 se généralise habituellement à la MMC sous la forme 
@@ -704,7 +704,7 @@ exprimant que, pour tout domaine matériel $D$, le taux de ``production interne'
     S = \iiint_{D} \rho \eta \ud v
     \label{eq:Ch01-053}
 \end{equation}
-où $\eta$ est l'entropie par unité de masse, et les ``échanges'' lT dT entropie avec l'extérieur, liés aux échanges de chaleur~\eqref{eq:Ch01-044} par
+où $\eta$ est l'entropie par unité de masse, et les \emph{échanges} lT dT entropie avec l'extérieur, liés aux échanges de chaleur~\eqref{eq:Ch01-044} par
 \begin{equation}
     \mathcal{S}^{(ext)} = \iiint_{D} \frac{r}{\theta} \ud v + \iint_{\partial D} \frac{h}{\theta} \ud S
     \label{eq:Ch01-054}
@@ -750,6 +750,5 @@ En reportant dans le théorème de l'énergie cinétique, on obtient
     \mathcal{P}^{(ext)} = \frac{\ud K}{\ud t} + \frac{\ud U}{\ud t} + \Phi^{(irr)} \qquad \Phi^{(irr)} = \iiint_{D} \phi \ud v \geq 0
     \label{eq:Ch01-060}
 \end{equation}
-
 La puissance des efforts extérieurs, c'est-à-dire la puissance dépensée, contribue à augmenter l'énergie cinétique et l'énergie du matériau, et est dissipée dans $\Phi^{(irr)}$.
 
