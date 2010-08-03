@@ -160,18 +160,16 @@ Par abus de langage, on dit que le tenseur des contraintes est diagonal, et on �
     \end{bmatrix}
     \label{eq:Ch02-009}
 \end{equation}
-
 Les contraintes principales s'obtiennent par résolution de l'équation caractéristique 
-\begin{align}
-    P_{\mathbb{\sigma}} & = \det
+\begin{equation}
+    P_{\mathbb{\sigma}}  = \det
     \begin{bmatrix}
         \sigma_{11}-\lambda & \sigma_{12} & \sigma_{13}\\
         \sigma_{12} & \sigma_{22}-\lambda & \sigma_{23}\\
         \sigma_{13} & \sigma_{22} & \sigma_{33}-\lambda
-    \end{bmatrix} \nonumber \\ 
-        & = -\lambda^3 + I_1 \lambda^2 - I_2 \lambda + I_3
+    \end{bmatrix}  = -\lambda^3 + I_1 \lambda^2 - I_2 \lambda + I_3
     \label{eq:Ch02-010}
-\end{align}
+\end{equation}
 où $I_1$, $I_2$, $I_3$	sont les invariants de $\mathbb{\sigma}$ définis par (Annexe~\ref{Ann:A})
 \begin{equation}
     \left\{
@@ -183,7 +181,7 @@ où $I_1$, $I_2$, $I_3$	sont les invariants de $\mathbb{\sigma}$ définis par (A
     \right.
     \label{eq:Ch02-011}
 \end{equation}
-On 	décompose habituellement le tenseur des contraintes en déviateur et partie sphérique
+On décompose habituellement le tenseur des contraintes en déviateur et partie sphérique
 \begin{equation}
     \sigma_{ij} = \sigma \delta_{ij} + s_{ij}
     \label{eq:Ch02-012}
@@ -193,7 +191,7 @@ où  $\sigma$ est la partie sphérique
     \sigma = \frac{1}{3}I_1 = \frac{\sigma_{11} + \sigma_{22} + \sigma_{33}}{3} = \frac{\sigma_1 + \sigma_2 + \sigma_3}{3}
     \label{eq:Ch02-013}
 \end{equation}
-et où $s_{ij}$ est le déviateur (on appelle déviateur un tenseur de trace nulle)
+et où $s_{ij}$ est le déviateur\footnote{Pour rappel, on appelle déviateur un tenseur de trace nulle.}
 \begin{equation}
     \left\{
     \begin{aligned}
@@ -212,9 +210,9 @@ et les invariants $J_2$, $J_3$ (puisque $J_1 = 0$ par~\eqref{eq:Ch02-014}) du d�
 \begin{equation}
     \left\{
     \begin{aligned}
-        J_2 &= -\frac{1}{2}s_{ij}s_{ij}\\
-        &= s_1 s_2 + s_2 s_3 + s_3 s_1\\
-        &= -\frac{1}{2} \left( s_1^2 + s_2^2 + s_3^2 \right)\\
+        J_2 &= -\frac{1}{2}s_{ij}s_{ij}
+        = s_1 s_2 + s_2 s_3 + s_3 s_1
+        = -\frac{1}{2} \left( s_1^2 + s_2^2 + s_3^2 \right)\\
         &= -\frac{1}{6} \left[ \left( \sigma_1 - \sigma_2 \right)^2 + \left( \sigma_2 - \sigma_3 \right)^2 + \left( \sigma_3 -\sigma_1 \right)^2 \right]\\
         J_3 &= \det \left( s_{ij} \right)  = s_1 s_2 s_3
     \end{aligned}
@@ -224,6 +222,7 @@ et les invariants $J_2$, $J_3$ (puisque $J_1 = 0$ par~\eqref{eq:Ch02-014}) du d�
 \subsection{États de contraintes particuliers} \label{ssec:Ch02-1.3}
 Nous allons envisager divers cas particuliers correspondant à des états de contraintes remarquables. 
 \subsubsection{État de tension ou compression hydrostatique}
+Les trois contraintes principales sont égales, le déviateur est nul, et toutes les directions sont principales, soit:
 \begin{equation}
     \mathbb{\sigma} = 
     \begin{bmatrix}
@@ -231,13 +230,9 @@ Nous allons envisager divers cas particuliers correspondant à des états de con
         0 & \sigma & 0 \\
         0 & 0 & \sigma
     \end{bmatrix}
-    \begin{aligned}
-        \text{tension si } & \sigma > 0\\
-        \text{compression si } & \sigma < 0
-    \end{aligned}
     \label{eq:Ch02-017}
 \end{equation}
-Les trois contraintes principales sont égales, le déviateur est nul, et toutes les directions sont principales.
+qui représente un état de tension si $\sigma > 0$ et un état de compression si $\sigma < 0$.
 Sur toute facette s'exerce donc une contrainte purement normale.
 \begin{multicols}{2}
     \begin{center}
@@ -250,8 +245,13 @@ Sur toute facette s'exerce donc une contrainte purement normale.
         $\sigma < 0$ (compression)
     \end{center}
 \end{multicols}
-C'est l'état de contraintes qui existe dans les fluides à l'équilibre, d'où la terminologie «~hydrostatique~».
+C'est l'état de contraintes qui existe dans les fluides à l'équilibre, d'où la terminologie \emph{hydrostatique}.
 \subsubsection{État  de  contraintes  de  révolution}
+Deux des contraintes principales coïncident; les directions principales sont:
+\begin{enumerate}
+    \item la direction $x_1$, pour $\sigma_1$;
+    \item toute direction du plan $\left( x_2, x_3 \right)$, pour $\sigma_2$.
+\end{enumerate}
 \begin{equation}
     \mathbb{\sigma} = 
     \begin{bmatrix}
@@ -261,11 +261,6 @@ C'est l'état de contraintes qui existe dans les fluides à l'équilibre, d'où 
     \end{bmatrix}
     \label{eq:Ch02-018}
 \end{equation}
-Deux des contraintes principales coïncident; les directions principales sont:
-\begin{enumerate}
-    \item la direction $x_1$, pour $\sigma_1$;
-    \item toute direction du plan $\left( x_2, x_3 \right)$, pour $\sigma_2$.
-\end{enumerate}
 La décomposition en déviateur et partie sphérique devient 
 \begin{equation}
     \mathbb{\sigma} = \sigma 
@@ -280,21 +275,21 @@ La décomposition en déviateur et partie sphérique devient
         1 & 0 & 0\\
         0 & -\frac{1}{2} & 0\\
         0 & 0 & -\frac{1}{2}
-    \end{bmatrix},\ 
-    \sigma = \frac{\sigma_1 + 2\sigma_2}{3} \quad s = \frac{2\left( \sigma_1 - \sigma_2 \right)}{3}
+    \end{bmatrix}\;\text{avec} \;\;
+    \sigma = \frac{\sigma_1 + 2\sigma_2}{3} \;\;\text{et}\;\; s = \frac{2\left( \sigma_1 - \sigma_2 \right)}{3}
     \label{eq:Ch02-019}
 \end{equation}
 \begin{multicols}{2}
     \begin{center}
         \psfrag{s1}{$\sigma_1$}
         \psfrag{s2}{$\sigma_2$}
-        \includegraphics{../images/T1_Ch02-0007a}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0007a}
     \end{center}
     \columnbreak
     \begin{center}
         \psfrag{s1}{$\sigma_1$}
         \psfrag{s2}{$\sigma_2$}
-        \includegraphics{../images/T1_Ch02-0007b}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0007b}
     \end{center}
 \end{multicols}
 C'est l'état de contrainte qui se réalise avec $\sigma_1 <\sigma_2 < 0$ dans le sol en profondeur. 
@@ -323,6 +318,8 @@ C'est un cas particulier du précédent avec $\sigma_2 = 0$ (pas de contrainte l
 C'est l'état de contrainte le plus facile à réaliser expérimentalement: il suffit d'exercer une force longitudinale sur un barreau (essai  de  traction).
 \end{minipage}
 \subsubsection{État de cisaillement pur}
+C'est un état de contrainte purement déviatoire.
+Les directions principales sont l'axe $x_3$ ($\sigma_3= 0$) et les bissectrices des axes $x_1$, $x_2$ (contraintes principales $+\tau$ et $-\tau$). 
 \begin{equation}
     \mathbb{\sigma} = 
     \begin{bmatrix}
@@ -332,22 +329,18 @@ C'est l'état de contrainte le plus facile à réaliser expérimentalement: il s
     \end{bmatrix}
     \label{eq:Ch02-021}
 \end{equation}
-État de contrainte purement déviatoire.
-Les directions principales sont l'axe $x_3$ ($\sigma_3= 0$) et les bissectrices des axes $x_1$, $x_2$ (contraintes principales $+\tau$ et $-\tau$). 
-\begin{multicols}{2}
+%\begin{multicols}{2}
     \begin{center}
         \psfrag{x1}{$x_1$}
         \psfrag{x2}{$x_2$}
         \psfrag{t}{$\tau$}
-        \includegraphics{../images/T1_Ch02-0009a}
-    \end{center}
-    \begin{center}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0009a}\hspace*{2cm}
         \psfrag{x1}{$x_1$}
         \psfrag{x2}{$x_2$}
         \psfrag{t}{$\tau$}
-        \includegraphics{../images/T1_Ch02-0009b}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0009b}
     \end{center}
-\end{multicols}
+%\end{multicols}
 \subsubsection{État plan de contraintes}
 \begin{equation}
     \mathbb{\sigma} = 
@@ -376,12 +369,12 @@ Les directions principales sont l'axe $x_3$ ($\sigma_3= 0$) et les bissectrices 
 \end{minipage}
 \begin{minipage}[r]{.7\textwidth}
 Les directions principales sont la direction $x_3$ et deux directions perpendiculaires du plan $x_1$, $x_2$.
-Lorsque $\vec{n}$ varie dans le plan $x_1$, $x_2$, le vecteur contrainte reste dans le plan, et on peut se limiter au plan $x_1$, $x_2$.
+Lorsque $\vec{n}$ varie dans le plan $(x_1,x_2)$. Le vecteur contrainte reste dans le plan et il est possible de se limiter au plan $(x_1,x_2)$.
 Nous ferons l'étude complète au paragraphe~\ref{ssec:Ch02-3.2}.
 \end{minipage}
 
 \section{Représentations géométriques des contraintes} \label{sec:Ch02-2}
-L'état de contraintes en un point donné est caractérisé par la valeur en ce point du tenseur des contraintes, c'est-à-dire par 6 nombres.
+L'état de contraintes en un point donné est caractérisé par la valeur en ce point du tenseur des contraintes, c'est-à-dire par six nombres.
 Pour visualiser cette entité, on a introduit diverses représentations géométriques.
 \subsection{Quadriques des contraintes} \label{ssec:Ch02-2.1}
 \subsubsection{Ellipsolde de Lamé}
@@ -390,23 +383,23 @@ Si nous nous plaçons en repère principal, l'équation~\eqref{eq:Ch02-005} donn
 \begin{equation*}
     T_1 = \sigma_1 n_1 \qquad T_2 = \sigma_2 n_2 \qquad T_3 = \sigma_3 n_3
 \end{equation*}
-et, puisque le vecteur $vec{n}$ est unitaire 
+et, puisque le vecteur $\vec{n}$ est unitaire 
 \begin{equation}
     \frac{T_1^2}{\sigma_1^2} + \frac{T_2^2}{\sigma_2^2} + \frac{T_3^2}{\sigma_3^2} = 1
     \label{eq:Ch02-023}
 \end{equation}
-Le lieu de l'extrémité ($T_1$, $T_2$, $T_3$) est un ellipsoïde d'axes principaux sont les directions principales du tenseur des contraintes et de demi-axe les valeurs absolues des contraintes principales -- c'est l'el1ipsoïde de Lamé.
-Mais cet ellipsoïde ne permet pas de visualiser le vecteur contrainte associé à une facette donnée.
+Le lieu de l'extrémité ($T_1$, $T_2$, $T_3$) est un ellipsoïde d'axes principaux, les directions principales du tenseur des contraintes et de demi--axes, les valeurs absolues des contraintes principales: c'est l'ellipsoïde de Lamé.
+Cet ellipsoïde ne permet pas de visualiser le vecteur contrainte associé à une facette donnée.
 \subsubsection{Quadrique directrice des contraintes normales}
 Nous considérons la (ou les) quadrique(s) réelle(s) d'équation 
 \begin{equation}
     \Phi(x) = \sigma_{ij} x_i x_j = \pm 1
     \label{eq:Ch02-024}
 \end{equation}
-C'est une (ou deux) quadrique(s) d'axes principaux les directions principales du tenseur des contraintes et de demi-axes ($1/\sqrt{|\sigma_1|}$, \ldots).
+C'est une (ou deux) quadrique(s) d'axes principaux les directions principales du tenseur des contraintes et de demi--axes, les quantités $1/\sqrt{|\sigma_1|}$...
 On les appelle quadriques directrices des contraintes, car elles permettent de construire le vecteur contrainte associé à une direction $\vec{n}$ quelconque par la construction suivante. 
 
-\noindent\underline{Construction:} On mène de l'origine la demi-droite de direction $\vec{n}$, qui coupe la quadrique en un point $M$.  
+\paragraph{Construction:} on mène de l'origine la demi-droite de direction $\vec{n}$, qui coupe la quadrique en un point $M$.  
 \begin{itemize}
     \item la contrainte normale  est donnée  à  partir de  la longueur $OM=\rho$ par
         \begin{equation}
@@ -423,7 +416,7 @@ On les appelle quadriques directrices des contraintes, car elles permettent de c
         \psfrag{n}{$\vec{n}$}
         \psfrag{N}{$\vec{N}$}
         \psfrag{M}{M}
-        \includegraphics{../images/T1_Ch02-0011}
+        \includegraphics[scale=1.1]{../images/T1_Ch02-0011}
     \end{center}
     \columnbreak
     \begin{proof}
@@ -456,7 +449,7 @@ Le tenseur des contraintes (ou plus généralement tout tenseur symétrique) peu
 Dans de nombreux cas, l'orientation du repère principal ne joue pas un rôle essentiel, et on pourra caractériser le tenseur des contraintes par les trois contraintes principales $\sigma_1$, $\sigma_2$, $\sigma_3$.
 On peut donc représenter un tenseur des contraintes par un point d'un espace à trois dimensions $O\sigma_1\sigma_2\sigma_3$: au tenseur $\mathbb{\sigma}$ on associe le point $\Sigma$ ayant comme coordonnées les contraintes principales $\sigma_1$, $\sigma_2$, $\sigma_3$ de $\mathbb{\sigma}$ (le repère $O\sigma_1\sigma_2\sigma_3$ étant postulé orthonormé).
 
-\begin{wrapfigure}[15]{l}{.55\textwidth}
+%\begin{wrapfigure}[15]{l}{.55\textwidth}
     \begin{center}
         \psfrag{P}{$\Pi$}
         \psfrag{S}{$S$}
@@ -469,13 +462,14 @@ On peut donc représenter un tenseur des contraintes par un point d'un espace à
         \psfrag{D}{$\Delta$}
         \includegraphics{../images/T1_Ch02-0012}
     \end{center}
-\end{wrapfigure}
+%\end{wrapfigure}
+
 Cette représentation, très utile, exige néanmoins certaines précautions: on représente géométriquement l'espace des contraintes principales par un espace vectoriel mais ce n'est pas un espace vectoriel.
 En particulier, les changements d'axes sont dépourvus de sens.
 En particulier également, la somme de deux tenseurs $\sigma_{ij}^{(1)} + \sigma_{ij}^{(2)}$ ne correspond pas à la somme vectorielle (sauf dans le cas où les tenseurs $\sigma_{ij}^{(1)}$ et $\sigma_{ij}^{(2)}$ ont mêmes directions principales).
-Enfin, un tenseur des contraintes est représenté, en toute rigueur, non pas par un point, mais par 6 points, car la numérotation des valeurs propres $\sigma_1$, $\sigma_2$, $\sigma_3$ est arbitraire. 
+Enfin, un tenseur des contraintes est représenté, en toute rigueur, non pas par un point, mais par six points car la numérotation des valeurs propres $\sigma_1$, $\sigma_2$ et $\sigma_3$ est arbitraire. 
 
-Dans cet espace, les tenseurs sphériques sont représentés par les points de l'«~axe hydrostatique $\Delta$~» (cosinus directeurs: $1/\sqrt{3},\ 1/\sqrt{3},\ 1/\sqrt{3}$).
+Dans cet espace, les tenseurs sphériques sont représentés par les points de l'\emph{axe hydrostatique} $\Delta$ de cosinus directeurs: $1/\sqrt{3},\ 1/\sqrt{3},\ 1/\sqrt{3}$.
 Les déviateurs sont représentés par les points du plan déviatoire $\Pi$ , perpendiculaire en O à l'axe hydrostatique $\Delta$
 \begin{equation}
     \sigma_1 + \sigma_2 + \sigma_3 = 0
@@ -502,7 +496,7 @@ la projection des axes $O\sigma_1$, $O\sigma_2$, $O\sigma_3$, qui font entre eux
     \vec{OS} = \sigma_1 \vec{h}_1 + \sigma_2 \vec{h}_2 + \sigma_3 \vec{h}_3
     \label{eq:Ch02-028}
 \end{equation}
-$\vec{h}_1$, $\vec{h}_2$, $\vec{h}_3$ étant les trois vecteurs unitaires portés par les axes $O\sigma_1$, $O\sigma_2$, $O\sigma_3$ -- ou plutôt par leurs projections, mais nous les notons encore $O\sigma_1$, $O\sigma_2$, $O\sigma_2$, $O\sigma_3$.
+$\vec{h}_1$, $\vec{h}_2$, $\vec{h}_3$ étant les trois vecteurs unitaires portés par les axes $O\sigma_1$, $O\sigma_2$, $O\sigma_3$ ---ou plutôt, par leurs projections, mais nous les notons encore $O\sigma_1$, $O\sigma_2$, $O\sigma_2$, $O\sigma_3$.
 En particulier, on vérifie bien que le point $S$ ainsi construit caractérise le déviateur, puisque, si l'on rajoute à $\mathbb{\sigma}$ un tenseur sphérique arbitraire, le point $S$ ne change pas, car $\vec{h}_1 + \vec{h}_2 + \vec{h}_3 = 0$.
 
 On peut alors montrer que la position du point $S$ est complètement caractérisée par les deux invariants $J_2$ et $J_3$ introduits par~\eqref{eq:Ch02-016}.
@@ -511,10 +505,10 @@ Plus précisément, un calcul direct montre que les coordonnées polaires $\left
     r = \sqrt{-3J_2},\ \cos 3 \theta = \frac{3\sqrt{3}}{2}\frac{J_3}{J_2^{3/2}}
     \label{eq:Ch02-029}
 \end{equation}
-Le second invariant $J_2$ détermine la distance $OS$, c'est-à-dire «~l'intensité~» du déviateur, tandis que le troisième invariant $J_3$ détermine son orientation. 
+Le second invariant $J_2$ détermine la distance $OS$, c'est-à-dire \emph{l'intensité} du déviateur, tandis que le troisième invariant $J_3$ détermine son orientation. 
 Plus précisément, on constate que l'on a 
 \begin{align}
-    3\theta = \pm \arccos \left( \frac{3\sqrt{3}}{2} \frac{J_3}{J_2^{3/2}} \right) + 2 k \pi\nonumber\\
+    3\theta &= \pm \arccos \left( \frac{3\sqrt{3}}{2} \frac{J_3}{J_2^{3/2}} \right) + 2 k \pi\nonumber\\
     \theta &= \pm \frac{1}{3}\arccos \left( \frac{3\sqrt{3}}{2} \frac{J_3}{J_2^{3/2}} \right) + \frac{2 k \pi}{3}
     \label{eq:Ch02-030}
 \end{align}
@@ -533,7 +527,7 @@ Plus précisément, on constate que l'on a
         \includegraphics{../images/T1_Ch02-0014}
     \end{center}
 \end{wrapfigure}
-ce qui donne les 6 points $S$ correspondant aux 6 numérotations possibles des trois valeurs propres. 
+ce qui donne les six points $S$ correspondant aux six numérotations possibles des trois valeurs propres. 
 Si l'on impose par exemple $\sigma_1 > \sigma_2 > \sigma_3$ alors on se restreint au quartier $O\sigma_1\sigma_3^{\prime}$ et le point $S$ est complètement défini. 
 
 Finalement, on constate que la position du point $\Sigma$ dans l'espace des contraintes principales est complètement caractérisée par $I_1$, $J_2$, $J_3$: $I_1$ fixe la projection sur $\Delta$, $J_2$ la distance à $\Delta$ et $J_3$ l'orientation de la projection de $O\Sigma$ sur $\Pi$.
@@ -572,7 +566,7 @@ qui permet de calculer $T_n = T_i n_i$ et $|T|^2 = T_n^2 + T_t^2$
     \label{eq:Ch02-032}
 \end{equation}
 Etant donnée une valeur de $T_n$ et de $T_t$, peut-on trouver une facette qui leur corresponde ?
-Pour cela, il faut calculer $n_1$, $n_2$, $n_3$ à partir du système formé par \eqref{eq:Ch02-031}, \eqref{eq:Ch02-032} et la relation 
+Pour cela, il faut calculer $n_1$, $n_2$ et $n_3$ à partir du système formé par \eqref{eq:Ch02-031}, \eqref{eq:Ch02-032} et la relation 
 \begin{equation}
     1 = n_1^2 + n_2^2 + n_3^2
     \label{eq:Ch02-033}
@@ -605,10 +599,10 @@ Les conditions~\eqref{eq:Ch02-036} exigent donc
     \vec{MM_2} \cdot \vec{MM_3} \geq 0, \quad \vec{MM_1} \cdot \vec{MM_3} \leq 0, \quad \vec{MM_1} \cdot \vec{MM_2} \geq 0
     \label{eq:Ch02-038}
 \end{equation}
-c'est-à-dire que les angles $\bigl( \vec{MM_2},\vec{MM_3} \bigr)$ et  $\bigl( \vec{MM_1},\vec{MM_2} \bigr)$ soient aigus et que l'angle $\bigl( \vec{MM_1}, \vec{MM_3} \bigr)$ soit obtus, c'est-à-dire, encore, que le point $M$ soit à l'extérieur des deux demi-cercles de diamètres $M_1M_2$ et $M_2M_3$, et à l'intérieur du demi-cercle de diamètre $M_1M_3$.
-Ainsi, quand $\vec{n}$ varie, le point $M$ reste dans la surface hachurée appelée -- tricercle de Mohr -- et qui devient un demi cercle si deux valeurs propres coïncident, et un point pour un tenseur sphérique.
+c'est-à-dire que les angles $\bigl( \vec{MM_2},\vec{MM_3} \bigr)$ et  $\bigl( \vec{MM_1},\vec{MM_2} \bigr)$ soient aigus et que l'angle $\bigl( \vec{MM_1}, \vec{MM_3} \bigr)$ soit obtus, autrement dit que le point $M$ soit à l'extérieur des deux demi-cercles de diamètres $M_1M_2$ et $M_2M_3$, et à l'intérieur du demi--cercle de diamètre $M_1M_3$.
+Ainsi, quand $\vec{n}$ varie, le point $M$ reste dans la surface hachurée appelée \emph{tricercle de Mohr} et qui devient un demi--cercle si deux valeurs propres coïncident, et un point pour un tenseur sphérique.
 
-On constate d'autre part que $M$ décrit le demi cercle de diamètre $M_1M_3$ lorsque $\vec{n}$ varie dans le plan $\vec{e}_1, \vec{e}_3$ (car \eqref{eq:Ch02-035} montre que $n_2 = 0$  si et seulement si $\vec{MM_1}$ est orthogonal à $\vec{MM_3}$).
+On constate d'autre part que $M$ décrit le demi--cercle de diamètre $M_1M_3$ lorsque $\vec{n}$ varie dans le plan $\vec{e}_1, \vec{e}_3$ (car \eqref{eq:Ch02-035} montre que $n_2 = 0$  si et seulement si $\vec{MM_1}$ est orthogonal à $\vec{MM_3}$).
 On voit également que le maximum de la contrainte de cisaillement (lorsque l'on fait varier la facette) est égale au rayon du plus grand cercle, c'est-à-dire à la demi différence des contraintes principales extrêmes
 \begin{equation}
     |T_t|_{max} = \frac{\sigma_1 - \sigma_3}{2} = \frac{1}{2} \max_{i,j} |\sigma_i - \sigma_j|
@@ -616,7 +610,7 @@ On voit également que le maximum de la contrainte de cisaillement (lorsque l'on
 \end{equation}
 On montrera au paragraphe~\ref{ssec:Ch02-3.2} que ce maximum est atteint lorsque $\vec{n}$ est bissectrice des directions principales.  
 
-\subsection{Cercle de Mohr -- Pole} \label{ssec:Ch02-3.2}
+\subsection{Cercle de Mohr et pole} \label{ssec:Ch02-3.2}
 Nous considérons maintenant un état plan de contraintes~\eqref{eq:Ch02-022}, et nous faisons varier $\vec{n}$, dans le plan $\bigl( x_1,x_2 \bigr)$.
 On peut alors orienter la direction tangentielle à la facette en introduisant un vecteur unitaire $\vec{t}$ à $+\pi/2$ de $\vec{n}$.
 La contrainte tangentielle $T_t$ devient donc une quantité algébrique, et la représentation dans le plan de Mohr permet de déterminer l'orientation du vecteur contrainte. 
@@ -629,12 +623,12 @@ La contrainte tangentielle $T_t$ devient donc une quantité algébrique, et la r
         \psfrag{t}{$\theta$}
         \psfrag{Tt}{$T_t$}
         \psfrag{Tn}{$T_n$}
-        \includegraphics{../images/T1_Ch02-0016a}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0016a}
     \end{center}
     \columnbreak
     \begin{center}
         \psfrag{Tn}{$T_n$}
-        \includegraphics{../images/T1_Ch02-0016b}
+        \includegraphics[height=3cm]{../images/T1_Ch02-0016b}
     \end{center}
 \end{multicols}
 Pour calculer $T_n$ et $T_t$ on écrit
@@ -653,24 +647,20 @@ Pour calculer $T_n$ et $T_t$ on écrit
 \end{displaymath}
 on calcule le vecteur contrainte
 \begin{equation}
-    \left\{
-    \begin{array}{lll}
-        T_1 & = \sigma_{11} \cos \theta & + \sigma_{12} \sin \theta\\
-        T_2 & = \sigma_{12} \cos \theta & + \sigma_{22} \sin \theta
+    \begin{array}{lllll}
+        T_1 & = &\sigma_{11} \cos \theta & +& \sigma_{12} \sin \theta\\
+        T_2 & = &\sigma_{12} \cos \theta & + &\sigma_{22} \sin \theta
     \end{array}
-    \right.
     \label{eq:Ch02-040}
 \end{equation}
 et ensuite et en projetant $T_n$ et $T_t$ sur $\vec{n}$ et $\vec{t}$
 \begin{equation}
-    \left\{
     \begin{aligned}
         T_n &= \sigma_{11} \cos^2 \theta + 2 \sigma_{12} \cos \theta \sin \theta + \sigma_{22} \sin^2 \theta\\
             &= \frac{\sigma_{11} + \sigma_{22}}{2} + \frac{\sigma_{11} - \sigma_{22}}{2} \cos 2 \theta + \sigma_{12} \sin 2 \theta\\
         T_t &= \left(\sigma_{22}-\sigma_{11}\right) \cos \theta \sin \theta + \sigma_{12} \left( \cos^2\theta -\sin^2 \theta \right)\\
             &= -\frac{\left(\sigma_{11}-\sigma_{22}\right)}{2} + \sigma_{12} \cos 2 \theta
     \end{aligned}
-    \right.
     \label{eq:Ch02-041}
 \end{equation}
 Les directions principales s'obtiennent en annulant la contrainte tangentielle $T_t = 0$:
@@ -681,19 +671,17 @@ Les directions principales s'obtiennent en annulant la contrainte tangentielle $
 ce qui définit $\theta_0$ à $k\pi/2$ près.
 Nous choisissons $\theta_0$ en posant 
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \sigma_{12} &= \sqrt{\left( \frac{\sigma_{11} - \sigma_{12}}{2} \right)^2 + \sigma_{12}^2} \sin 2 \theta_0 \\
-        \frac{\sigma_{11} - \sigma_{22}}{2} &= \sqrt{\left( \frac{\sigma_{11} - \sigma_{12}}{2} \right)^2 + \sigma_{12^2}} \cos 2 \theta_0
+        &\sigma_{12} = \sqrt{\left( \frac{\sigma_{11} - \sigma_{12}}{2} \right)^2 + \sigma_{12}^2} \sin 2 \theta_0 \\
+       & \frac{\sigma_{11} - \sigma_{22}}{2} = \sqrt{\left( \frac{\sigma_{11} - \sigma_{12}}{2} \right)^2 + \sigma_{12^2}} \cos 2 \theta_0
     \end{aligned}
-    \right.
     \label{eq:Ch02-043}
 \end{equation}
 En reportant dans \eqref{eq:Ch02-043}, on obtient alors 
 \begin{equation}
     \begin{aligned}
-        T_n &= \frac{\sigma_{11} + \sigma_{22}}{2} + \sqrt{\left( \frac{\sigma_{11} - \sigma_{22}}{2} \right)^2 + \sigma_{12}^2} \cos 2 \left( \theta_0 - \theta \right)\\
-        T_t &= \sqrt{\left( \frac{\sigma_{11} - \sigma_{22}}{2} \right)^2 + \sigma_{12}^2} \sin 2 \left( \theta_0 - \theta \right)
+        T_n &= \frac{\sigma_{11} + \sigma_{22}}{2} + \sqrt{\left( \frac{\sigma_{11} - \sigma_{22}}{2} \right)^2 + \sigma_{12}^2}\, \cos 2 \left( \theta_0 - \theta \right)\\
+        T_t &= \sqrt{\left( \frac{\sigma_{11} - \sigma_{22}}{2} \right)^2 + \sigma_{12}^2}\, \sin 2 \left( \theta_0 - \theta \right)
     \end{aligned}
     \label{eq:Ch02-044}
 \end{equation}
@@ -722,7 +710,7 @@ Lorsque $\theta$ varie, le point $M$, représentant le vecteur contrainte dans l
     \psfrag{O}{$O$}
     \includegraphics{../images/T1_Ch02-0017}
 \end{center}
-Les points  et $M_1\ \left( \sigma_{11},\ \sigma_{12} \right)$ et $M_2\ \left( \sigma_{22},\ -\sigma_{12} \right)$ correspondent à $\vec{n} = \vec{e}_1$ et $\vec{n}=\vec{e}_2$ respectivement. 
+Les points  et $M_1\bigl( \sigma_{11},\ \sigma_{12} \bigr)$ et $M_2\bigl( \sigma_{22},\ -\sigma_{12} \bigr)$ correspondent à $\vec{n} = \vec{e}_1$ et $\vec{n}=\vec{e}_2$ respectivement. 
 Pour obtenir le point $M$ correspondant à une normale $\vec{n}$ formant un angle $\theta$ avec $\vec{e}_1$, il faut tourner par rapport à $\Omega M_1$ d' un angle $2\theta$ dans le sens rétrograde.
 Les points $A_1$ et $A_2$ correspondent aux directions principales, $\theta = \theta_0 + k\pi/2$ et les contraintes principales sont données par 
 \begin{equation}
@@ -748,10 +736,10 @@ Le point $M_1$ est appelé pôle du cercle de Mohr, et il permet une constructio
     \psfrag{2t}{$2\theta$}
     \includegraphics{../images/T1_Ch02-0018}
 \end{center}
-Pour obtenir le point $M$, c'est-à-dire le vecteur contrainte s'exerçant sur une facette inclinée de $\theta$ par rapport à la verticale, on utilise la construction suivante.
+Pour obtenir le point $M$, c'est-à-dire le vecteur contrainte s'exerçant sur une facette inclinée de $\theta$ par rapport à la verticale, on utilise la construction suivante:
 \begin{enumerate}
-    \item On trace $M_1 M^{\prime}$ parallèle à la facette considérée, qui coupe le cercle de Mohr en $M^{\prime}$.
-    \item $M$ est le symétrique de $M^{\prime}$ par rapport à l'axe des $T_n$.
+    \item on trace $M_1 M^{\prime}$ parallèle à la facette considérée, qui coupe le cercle de Mohr en $M^{\prime}$;
+    \item on trace $M$ est le symétrique de $M^{\prime}$ par rapport à l'axe des $T_n$.
 \end{enumerate}
-On en tire en particulier les directions principales $M_1 A_1$ et $M_1 A_2$ ainsi que les directions de contrainte tangentielle maximum $M_1 B_1$ et $M_1 B_2$. 
+On en déduit, en particulier, les directions principales $M_1 A_1$ et $M_1 A_2$ ainsi que les directions de contrainte tangentielle maximum $M_1 B_1$ et $M_1 B_2$. 
 
