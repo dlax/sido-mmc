@@ -92,7 +92,7 @@ Ce tenseur est la base de la description des grandes déformations.
     \label{eq:Ch03-008}
 \end{equation}
 \subsection{Le tenseur des déformations} \label{ssec:Ch03-1.2}
-En l'absence de déformation, c'est à dire dans un mouvement de solide rigide \eqref{eq:Ch03-003}, on a
+En l'absence de déformation, c'est-à-dire dans un mouvement de solide rigide \eqref{eq:Ch03-003}, on a
 \begin{equation}
     C_{jk} = Q_{ij} Q_{ik} = \delta_{jk}
     \label{eq:Ch03-009}
@@ -114,7 +114,7 @@ Comme pour le tenseur des contraintes, on démontre (voir Annexe~\ref{Ann:A}) qu
     E_{ij}' = Q_{ik} Q_{jl} E_{kl}
     \label{eq:Ch03-012}
 \end{equation}
-II reste à relier ce tenseur des déformations au concept physique de déformation, c'est à dire aux variations de longueur et d'angle.
+II reste à relier ce tenseur des déformations au concept physique de déformation, c'est-à-dire aux variations de longueur et d'angle.
 \begin{defn}
     On appelle ``allongement dans la direction $\vec{n}$'', $\varepsilon \left( \vec{n} \right)$, le rapport
     \begin{equation}
@@ -231,7 +231,7 @@ On peut donc, à partir de ces composantes, construire la déformée d'un cube u
     \label{eq:Ch03-019}
 \end{equation}
 
-Comme pour le tenseur des contraintes, on peut diagonaliser le tenseur des déformations, c'est à dire trouver un repère orthogonal où la matrice représentant $\mathbb{E}$ est diagonale, $E_1$, $E_2$ et $E_3$ sont appelés allongements
+Comme pour le tenseur des contraintes, on peut diagonaliser le tenseur des déformations, c'est-à-dire trouver un repère orthogonal où la matrice représentant $\mathbb{E}$ est diagonale, $E_1$, $E_2$ et $E_3$ sont appelés allongements
 \begin{equation}
     \mathbb{E} = 
     \begin{bmatrix}
@@ -265,18 +265,14 @@ Le tenseur des déformations est alors donné par
 \end{equation}
 \section{Petites déformations} \label{sec:Ch03-2}
 \subsection{Hypothèse des petites perturbations} \label{ssec:Ch03-2.1}
-En Mécanique des Solides, on fait souvent l'hypothèse:
-\par\noindent\textbf{Hypothèse des petites perturbations.} Le solide s'écarte peu de sa configuration de référence.
-
-Les déplacements et les déformations restent petits. 
-Ceci a deux conséquences essentielles 
+En Mécanique des Solides, on fait souvent l'hypothèse des petites perturbations pour laquelle le solide s'écarte peu de sa configuration de référence. Les déplacements et les déformations restent petits, ce qui a deux conséquences essentielles:
 \begin{enumerate}
-    \item On peut identifier variables de Lagrange $a_i$ et variables d'Euler $x_i$, dans la mesure où la différence entre les deux est négligeable.
-        Ceci est tout à fait essentiel, car certaines équations s'écrivent naturellement en variables eulériennes -- les équations d'équilibre par exemple -- alors que d'autres s'écrivent plus naturellement en variables lagrangiennes -- la définition des déformations par exemple.
-        Entres autres, cela revient à écrire les équations d'équilibre dans la configuration telle qu'elle existe avant déformation, alors qu'il faudrait, en toute rigueur, les écrire dans la configuration réelle où s'appliquent effectivement les efforts.
-        Cette approximation habituellement appelée hypothèse de linéarité externe, est habituellement justifiée, mais on rencontrera quelques cas, en particulier toutes les questions de stabilité, où elle ne l'est pas.
-    \item Dans tous les calculs,, on ne conserve que les termes les plus significatifs, en négligeant les termes d'ordre supérieur en $u_i$ et ses dérivées.
-        En d'autres termes, on effectue une linéarisation autour de la configuration de référence, supposée naturelle, c'est à dire libre de contraintes, cararctérisée par 
+    \item on peut identifier variables de Lagrange $a_i$ et variables d'Euler $x_i$, dans la mesure où la différence entre les deux est négligeable.
+        Ceci est tout à fait essentiel, car certaines équations s'écrivent naturellement en variables eulériennes ---les équations d'équilibre, par exemple--- alors que d'autres s'écrivent plus naturellement en variables lagrangiennes ---la définition des déformations.
+        Entre autres, cela revient à écrire les équations d'équilibre dans la configuration telle qu'elle existe avant déformation, alors qu'il faudrait, en toute rigueur, les écrire dans la configuration réelle où s'appliquent effectivement les efforts.
+        Cette approximation, habituellement appelée hypothèse de linéarité externe, est souvent justifiée mais on rencontrera quelques cas, en particulier toutes les questions de stabilité, où elle ne l'est pas;
+    \item dans tous les calculs, on ne conserve que les termes les plus significatifs, en négligeant les termes d'ordre supérieur en $u_i$ et ses dérivées.
+        En d'autres termes, on effectue une linéarisation autour de la configuration de référence, supposée naturelle, c'est-à-dire libre de contraintes, cararctérisée par 
         \begin{equation}
             \rho = \rho_c, \quad u_i = 0, \quad \sigma_{ij} = 0
             \label{eq:Ch03-024}
@@ -297,7 +293,7 @@ Ceci a deux conséquences essentielles
         \begin{equation*}
             \frac{\ud}{\ud t} \left( \rho_0 +\rho' \right) + \left( \rho_0 + \rho' \right) \frac{\partial V_i}{\partial x_i} = 0
         \end{equation*}
-        mais  $\ud \rho_0 / \ud t$, $\ud \rho' / \ud t = \partial \rho' / \partial t$ en variables de Lagrange, et on peut négliger le  terme $\rho' \partial V_i / \partial x_i$ qui est du second ordre par rapport à la perturbation.
+        mais  $\ud \rho_0/\ud t$, $\ud \rho' / \ud t = \partial \rho' / \partial t$ en variables de Lagrange, et on peut négliger le  terme $\rho' \partial V_i / \partial x_i$ qui est du second ordre par rapport à la perturbation.
         Il  reste  donc
         \begin{equation*}
             \frac{\partial \rho'}{\partial t} + \rho_0' \frac{\partial^2 u_i}{\partial x_i \partial t} = 0
@@ -315,7 +311,7 @@ Ceci a deux conséquences essentielles
             \label{eq:Ch03-028}
         \end{equation}
 \end{enumerate}
-En particulier,  on constate que $\rho'$ disparaît disparaît de l'équation du mouvement.
+En particulier, on constate que $\rho'$ disparaît disparaît de l'équation du mouvement.
 En Mécanique des Solides, on peut oublier l'équation de continuité qui permet seulement de calculer $\rho'$ par \eqref{eq:Ch03-027} une fois connu le déplacement $u_i \left( x_i, t \right)$.
 \subsection{Tenseur linéarisé des déformations} \label{ssec:Ch03-2.2}
 Dans le cadre d'hypothèse des petites perturbations, le tenseur des déformations introduit au paragraphe~\ref{ssec:Ch03-1.2} et défini par \eqref{eq:Ch03-023} à partir du déplacement $u_i$ devient
@@ -326,16 +322,15 @@ Dans le cadre d'hypothèse des petites perturbations, le tenseur des déformatio
 Ce tenseur $\varepsilon_{ij}$ est le tenseur des déformations linéarisées.
 En grandes déformations, en effet, le tenseur de Green-Lagrange que nous avons défini, n'est pas le seul possible, et on peut en introduire bien d'autres, mais en petites déformations, tous ces tenseurs se réduisent au tenseur $\mathbb{\varepsilon}$ défini par~\eqref{eq:Ch03-029}.
 Par linéarisation des formules \eqref{eq:Ch03-015} et \eqref{eq:Ch03-016}, il permet de calculer l'allongement dans une direction $\vec{n}$ le glissement dans deux directions $\vec{m}$ et $\vec{n}$ par les formules
-\begin{align}
-    \varepsilon \left( \vec{n} \right) &= \varepsilon_{ij} n_i n_j \label{eq:Ch03-030} \\
-    \gamma \left( \vec{m}, \vec{n} \right) &= 2 \varepsilon_{ij} n_i m_j \label{eq:Ch03-031} 
-\end{align}
+\begin{equation}
+\varepsilon (\vec{n}) = \varepsilon_{ij} n_i n_j\quad\text{et}\quad\gamma(\vec{m},\vec{n}) = 2 \varepsilon_{ij} n_i m_j \label{eq:Ch03-031} 
+\end{equation}
 obtenues simplement par développement limité des diverses fonctions internenant dans \eqref{eq:Ch03-015} et \eqref{eq:Ch03-016}.
 On obtient aussi la signification des composantes $\varepsilon_{ij}$
-\begin{align}
-    \varepsilon \left( \vec{e}_1 \right) &= \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} \label{eq:Ch03-032} \\
-    \gamma \left( \vec{e}_1, \vec{e}_2 \right) &= \gamma_{12} = 2 \varepsilon_{12} = \left( \frac{\partial u_1}{\partial x_2} + \frac{\partial u_2}{\partial x_1} \right) \label{eq:Ch03-033}
-\end{align}
+\begin{equation}
+    \varepsilon (\vec{e}_1) = \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} \quad\text{et}\quad 
+    \gamma (\vec{e}_1,\vec{e}_2) = \gamma_{12} = 2 \varepsilon_{12} = \left( \frac{\partial u_1}{\partial x_2} + \frac{\partial u_2}{\partial x_1} \right) \label{eq:Ch03-033}
+\end{equation}
 Pour dégager la signification de ce tenseur, on peut considérer le mouvement du voisinage d'un point $M$ on peut écrire
 \begin{align*}
     \left( \overrightarrow{M'M_t'} \right)_i &= u_i \left( x + \ud x \right) \\
@@ -415,8 +410,7 @@ On peut refaire sur le tenseur des déformations tout ce que nous avons fait au 
     \right.
     \label{eq:Ch03-038}
 \end{equation}
-
-Physiquement, cette décomposition correspond à la décomposition de la déformation en une dilatation uniforme (partie sphérique) et une distorsion, c'est à dire une déformation sans changement de volume (déviateur).
+Physiquement, cette décomposition correspond à la décomposition de la déformation en une dilatation uniforme (partie sphérique) et une distorsion, c'est-à-dire une déformation sans changement de volume (déviateur).
 En effet, on vérifie facilement que la trace $\varepsilon_{ii}$ du tenseur des déformations est égale à la variation relative de volume
 \begin{equation}
     \frac{\Delta V}{V} = \varepsilon_{ii} = 3\varepsilon
@@ -425,10 +419,9 @@ En effet, on vérifie facilement que la trace $\varepsilon_{ii}$ du tenseur des 
 Il suffit par exemple de partir d'un élément de volume parallélépipédique orienté selon les directions principales du tenseur des déformations
 
 Après déformation, cet élément devient un parallélépipède rectangle de côté $(1+\varepsilon_1)\ud x_1$, $(1+\varepsilon_2)\ud x_2$, $(1+\varepsilon_3)\ud x_3$ et son volume est
-\begin{align*}
-    V+\Delta V &= (1+\varepsilon_1)(1+\varepsilon_2)(1+\varepsilon_3)\ud x_1 \ud x_2 \ud x_3 \\
-    &= \left[ 1 + \left( \varepsilon_1 + \varepsilon_2 + \varepsilon_3 \right) \right] V
-\end{align*}
+\begin{equation}
+    V+\Delta V = (1+\varepsilon_1)(1+\varepsilon_2)(1+\varepsilon_3)\ud x_1 \ud x_2 \ud x_3 = \left[ 1 + \left( \varepsilon_1 + \varepsilon_2 + \varepsilon_3 \right) \right] V
+\end{equation}
 en négligeant les termes d'ordre 2 en $\varepsilon_1$, $\varepsilon_2$, $\varepsilon_3$, ce qui donne directement \eqref{eq:Ch03-039}.
 La conservation de la masse
 \begin{equation*}
@@ -548,7 +541,7 @@ Plus précisément, on a l'analogie suivante
 
 Réciproquement, tout ce que nous avons fait au paragraphe~\ref{ssec:Ch03-1.2} peut se transposer directement en termes de déplacements.
 Il s'agit simplement d'un changement de terminologie.
-On parle de déplacement virtuel $\displaystyle{\mathop{u}^{*}}_i$ au lieu de vitesses virtuelles $\displaystyle{\mathop{V}^{*}}_i$ et de "travaux virtuels" au lieu de "puissances virtuelles".
+On parle de déplacement virtuel ${\mathop{u}^{*}}_i$ au lieu de vitesses virtuelles ${\mathop{V}^{*}}_i$ et de \emph{travaux virtuels} au lieu de \emph{puissances virtuelles}.
 Par exemple, \eqref{eq:Ch01-024} ou \eqref{eq:Ch01-038} peut s'écrire
 \begin{equation}
     \iiint_{\Omega} \rho \gamma_i {\mathop{u}^*}_i \ud v = \iiint_{\Omega} f_i {\mathop{u}^*}_i \ud v + \iint_{\partial \Omega} T_i {\mathop{u}^*}_i \ud S - \iiint_{\Omega} \sigma_{ij} {\mathop{\varepsilon}^*}_{ij} \ud v
@@ -562,18 +555,18 @@ En particulier, le travail des efforts intérieurs par unité de volume est
     \label{eq:Ch03-047}
 \end{equation}
 qui met en dualité le tenseur des contraintes $\sigma_{ij}$ que nous avons étudié au chapitre~\ref{chap:Ch02}, et le tenseur des déformations $\varepsilon_{ij}$ que nous venons d'introduire.
-C'est une propriété tout à fait universelle: dans toute théorie des milieux continus, il y a dualité entre les contraintes et les déformations, c'est à dire entre la schématisation des efforts intérieurs et la description cinématique.
+C'est une propriété tout à fait universelle: dans toute théorie des milieux continus, il y a dualité entre les contraintes et les déformations, c'est-à-dire entre la schématisation des efforts intérieurs et la description cinématique.
+
 Dans le cadre de la MMC classique, que nous développons actuellement, cela n'apporte qu'une simple vérification.
 Dans d'autres cas, où la schématisation à adopter est moins évidente, cela sera pour nous un guide précieux.
 
-On peut pousser plus loin cette dualité, en remarquant que dans toute théorie des milieux continus, on travaille sur quatre espaces\\
-\begin{tabular}{lll}
-    - l'espace des déplacements &$\mathcal{U} $&$ u \in \mathcal{U}$ \\
-    - l'espace des déformations &$\mathcal{D} $&$ \varepsilon \in \mathcal{D}$ \\
-    - l'espace des contraintes  &$\mathcal{S} $&$ \sigma \in \mathcal{S}$ \\
-    - l'espace des chargements  &$\mathcal{C} $&$ \phi = \left( f_i, T_i^e \right) \in \mathcal{C}$ \\
-\end{tabular}
-
+On peut pousser plus loin cette dualité, en remarquant que dans toute théorie des milieux continus, on travaille sur quatre espaces:
+\begin{itemize}
+    \item l'espace des déplacements, $\mathcal{U}$,  $u \in \mathcal{U}$
+    \item l'espace des déformations, $\mathcal{D}$, $\varepsilon \in \mathcal{D}$
+    \item l'espace des contraintes, $\mathcal{S}$,  $\sigma \in \mathcal{S}$
+    \item l'espace des chargements, $\mathcal{C}$, $\phi = \left( f_i, T_i^e \right) \in \mathcal{C}$
+\end{itemize}
 Le travail des efforts extérieurs met en dualité $\mathcal{U}$ et $\mathcal{C}$ par
 \begin{equation}
     \langle u, \phi \rangle = \iiint_{\Omega} u_i f_i \ud v + \iint_{\partial \Omega} u_{i} T_i^e \ud S
@@ -589,12 +582,11 @@ et, en statique, le théorème des travaux virtuels \eqref{eq:Ch03-046} peut s'�
     \langle\langle \mathop{\varepsilon}^* , \sigma \rangle \rangle = \langle \mathop{u}^* , \phi \rangle
     \label{eq:Ch03-050}
 \end{equation}
-
-Nous reviendrons sur cette dualité lorsque nous parlerons des méthodes variationnelles (chapitre \ref{chap:Ch09}).
+Nous reviendrons sur cette dualité lorsque nous parlerons des méthodes variationnelles auchapitre \ref{chap:Ch09}.
 \section{Compatibilite des déformations} \label{sec:Ch03-3}
-Connaissant le champ des déplacements $u_i (x)$ on en déduit par \eqref{eq:Ch03-029} le champ des déformations $\varepsilon_{ij}(x)$.
-Réciproquement, si on connaît le champ des déformations $\varepsilon_{ij}(x)$, peut-on calculer le champ des déplacements $u_i (x)$ ?
-Et si oui, comment?
+Connaissant le champ des déplacements $u_i (x)$, on en déduit par~\eqref{eq:Ch03-029}, le champ des déformations $\varepsilon_{ij}(x)$.
+Réciproquement, si on connaît le champ des déformations $\varepsilon_{ij}(x)$, peut-on calculer le champ des déplacements $u_i (x)$ ? Et si oui, comment?
+
 Le premier problème est celui de la compatibilité des déformations, le second celui de l'intégration d'un champ de déplacements.
 Ce problème est extrêmement important en mécanique des solides, car nous verrons que la solution s'obtient souvent sous forme d'un champ de déformation; il faut alors remonter aux déplacements.
 Remarquons que, en vertu de l'analogie discutée au paragraphe~\ref{ssec:Ch03-2.3}, on pourra transposer tous nos résultats en termes de vitesse et de taux de déformation, le problème étant alors de calculer le champ des vitesses à partir de la valeur en tout point du tenseur taux de déformation.
@@ -604,7 +596,7 @@ Pour calculer le déplacement $u_i$, il faut intégrer les formes différentiell
     \ud u_i = u_{i,j} \ud x_j = \left( \varepsilon_{ij} + \omega_{ij} \right) \ud x_j
     \label{eq:Ch03-051}
 \end{equation}
-Or. on connaît $\varepsilon_{ij}(x)$ mais on ne connaît pas $\omega_{ij}$.
+Or, on connaît $\varepsilon_{ij}(x)$ mais on ne connaît pas $\omega_{ij}$.
 La première étape consiste donc à calculer la rotation $\omega_{ij}$.
 \begin{lem} \label{lem:Ch03-1}
     Les dérivées de la rotation sont liées à celles de la déformation par la relation
@@ -616,8 +608,7 @@ La première étape consiste donc à calculer la rotation $\omega_{ij}$.
 \begin{proof}
     On part de la définition 
     \begin{align*}
-        \omega_{ij} &= \frac{1}{2} \left( u_{i,j} - u_{j,i} \right) \\
-        &= \frac{1}{2} \left( u_{i,jl} - u_{j,il} \right) = \frac{1}{2} \left( u_{i,jl} + u_{l,ij} - u_{l,ij} - u_{j,il} \right) \\
+        \omega_{ij} &= \frac{1}{2} \left( u_{i,j} - u_{j,i} \right) = \frac{1}{2} \left( u_{i,jl} - u_{j,il} \right) = \frac{1}{2} \left( u_{i,jl} + u_{l,ij} - u_{l,ij} - u_{j,il} \right) \\
         &= \frac{1}{2} \left( u_{i,l} + u_{l,i} \right)_{,j} - \frac{1}{2} \left( u_{l,j} + u_{j,l} \right)_{,i} \\
         &= \varepsilon_{il,j} - \varepsilon_{jl,i}
     \end{align*}
@@ -630,32 +621,30 @@ On peut alors calculer la rotation $\omega_{ij}$ par intégration du système
     \label{eq:Ch03-053}
 \end{equation}
 \begin{lem} \label{lem:Ch03-2}
-    Une CNS pour que le système 
+    Une condition nécessaire et suffisante pour que le système 
     \begin{equation}
         \ud f = a_l \ud x_l
         \label{eq:Ch03-054}
     \end{equation}
-    soit intégrable, c'est à dire pour que l'on puisse calculer $f$ à partir des $a_l = f_{,l}$ est que 
+    soit intégrable, c'est-à-dire pour que l'on puisse calculer $f$ à partir des $a_l = f_{,l}$ est que 
     \begin{equation}
         a_{l,m} = a_{m,l}
         \label{eq:Ch03-055}
     \end{equation}
 \end{lem}
 \begin{proof}
-    La CN est évidente (elle exprime simplement que $f_{,lm} = f_{,ml}$).
+    La condition nécessaire est évidente (elle exprime simplement que $f_{,lm} = f_{,ml}$).
     On démontre en mathématiques que cette condition est également suffisante.
 \end{proof}
 
-En appliquant ce lemme au système différentiel \eqref{eq:Ch03-053}, on obtient la condition suivante
+En appliquant ce lemme au système différentiel~\eqref{eq:Ch03-053}, on obtient la condition suivante
 \begin{equation}
-    \begin{aligned}
-        \left( \varepsilon_{il,j} -\varepsilon_{jl,i} \right)_{,k} = \left( \varepsilon_{ik,j} - \varepsilon_{jk,i} \right)_{,l} \\
+        \left( \varepsilon_{il,j} -\varepsilon_{jl,i} \right)_{,k} = \left( \varepsilon_{ik,j} - \varepsilon_{jk,i} \right)_{,l} \quad\Leftrightarrow\quad
         \varepsilon_{il,jk} + \varepsilon_{jk,il} - \varepsilon_{jl,ik} - \varepsilon_{ik,jl} = 0
-    \end{aligned}
     \label{eq:Ch03-056}
 \end{equation}
-Cette condition est une CNS pour que l'on puisse calculer $\omega_{ij}$ à partir de $\varepsilon_{ij}$.
-C'est donc une condition nécessaire pour que le champ de déformation $\varepsilon_{ij}$ soit intégrable, c'est à dire pour que l'on puisse calculer le déplacement $u_i$.
+Cette condition est une condition nécessaire et suffisante pour que l'on puisse calculer $\omega_{ij}$ à partir de $\varepsilon_{ij}$.
+C'est donc une condition nécessaire pour que le champ de déformation $\varepsilon_{ij}$ soit intégrable, c'est-à-dire pour que l'on puisse calculer le déplacement $u_i$.
 
 On tire également du Lemme~\ref{lem:Ch03-1} le résultat suivant
 \begin{thm} \label{thm:Ch03-2}
@@ -665,7 +654,7 @@ On tire également du Lemme~\ref{lem:Ch03-1} le résultat suivant
         \label{eq:Ch03-057}
     \end{equation}
 \end{thm}
-Il est en effet clair que si le déplacement est un déplacement de solide rigide (infinitésimal, bien entendu), alors le tenseur des déformations associé est nul, puisque $u_{i,j}$ est antisymétrique.
+Il est en effet clair que si le déplacement est un déplacement de solide rigide, infinitésimal, bien entendu, alors le tenseur des déformations associé est nul, puisque $u_{i,j}$ est antisymétrique.
 Le théorème~\ref{thm:Ch03-2} constitue une réciproque.
 Compte-tenu de l'analogie présentée au paragraphe~\ref{ssec:Ch03-2.3}, ce théorème est identique au Lemme~\ref{lem:Ch01-3} paragraphe~\ref{ssec:Ch01-2.1}.
 
@@ -690,7 +679,7 @@ Pour que cela soit possible, il faut et il suffit, d'après le Lemme~\ref{lem:Ch
 \begin{equation*}
     \varepsilon_{ij,l} + \omega_{ij,l} = \varepsilon_{il,j} + \omega_{il,j}
 \end{equation*}
-Mais les dérivées $\omega_{ij,l}$ ont été calculées par \eqref{eq:Ch03-052}, et cette condition devient 
+Cependant, les dérivées $\omega_{ij,l}$ ont été calculées par \eqref{eq:Ch03-052}, et cette condition devient 
 \begin{equation*}
     \varepsilon_{ij,l} + \varepsilon_{il,j} - \varepsilon_{jl,i} = \varepsilon_{il,j} + \varepsilon_{ij,l} - \varepsilon_{jl,i}
 \end{equation*}
@@ -698,10 +687,10 @@ condition qui se trouve identiquement vérifiée, et le système \eqref{eq:Ch03-
 \begin{equation*}
     \omega_{ij}^0 x_j + c_i^0
 \end{equation*}
-près, c'est à dire à un déplacement de solide rigide près.
+près, c'est-à-dire à un déplacement de solide rigide près.
 Nous avons donc démontré le résultat suivant
 \begin{thm} \label{thm:Ch03-3}
-    Pour que le champ de déformation $\varepsilon_{ij}(x)$ soit intégrable, il faut et il suffit que les ``équations de compacibilité'' \eqref{eq:Ch03-056}
+    Pour que le champ de déformation $\varepsilon_{ij}(x)$ soit intégrable, il faut et il suffit que les \emph{équations de compatibilité}~\eqref{eq:Ch03-056}
     \begin{equation*}
         \varepsilon_{il,jk} + \varepsilon_{jk,il} - \varepsilon_{jl,ik} - \varepsilon_{ik,jl} = 0
     \end{equation*}
@@ -709,37 +698,26 @@ Nous avons donc démontré le résultat suivant
     On peut alors calculer le déplacernent à un déplacement de solide près.
 \end{thm}
 
-Pratiquement, pour intégrer un champ de déformation $\varepsilon_{ij}$, c'est à dire pour calculer $u_i$ par résolution du systême d'équations aux dérivées partielles 
+Pratiquement, pour intégrer un champ de déformation $\varepsilon_{ij}$, c'est-à-dire pour calculer $u_i$ par résolution du système d'équations aux dérivées partielles 
 \begin{equation}
     \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} = \varepsilon_{ij} (x)
     \label{eq:Ch03-058}
 \end{equation}
-il faut \begin{inparaenum}[(1)]
-\item vérifier les équations de compatibilité \eqref{eq:Ch03-056}; si elles ne sont pas vérifiées, le problème n'admet pas de solution.
-    Si elles le sont, alors on peut 
-\item calculer le déplacement $u_i$
-\end{inparaenum}; pour cela, on peut utiliser deux méthodes:
-\begin{enumerate}[(a)]
-    \item Méthode systématique: on intègre~\eqref{eq:Ch03-053}, puis \eqref{eq:Ch03-051}.
-    \item Méthode directe: on calcule par résolution directe de \eqref{eq:Ch03-058} une solution particulière, et on remarque que la solution générale de \eqref{eq:Ch03-058} est la somme d'une solution particulière et de la solution générale de l'équation sans second membre, $\varepsilon_{ij} = 0$, qui, d'après le Théorème~\ref{thm:Ch03-2}, est un déplacement de solide rigide.
+il faut vérifier les équations de compatibilité~\eqref{eq:Ch03-056}; si elles ne sont pas vérifiées, le problème n'admet pas de solution. Si elles le sont, alors on peut  calculer le déplacement $u_i$; pour cela, on peut utiliser deux méthodes:
+\begin{enumerate}
+    \item méthode systématique: on intègre~\eqref{eq:Ch03-053}, puis \eqref{eq:Ch03-051};
+    \item méthode directe: on calcule par résolution directe de \eqref{eq:Ch03-058} une solution particulière, et on remarque que la solution générale de \eqref{eq:Ch03-058} est la somme d'une solution particulière et de la solution générale de l'équation sans second membre, $\varepsilon_{ij} = 0$, qui, d'après le Théorème~\ref{thm:Ch03-2}, est un déplacement de solide rigide.
         Nous verrons dans la suite des exemples de cette démarche.
 \end{enumerate}
-
-Les équations de compatibilité \eqref{eq:Ch03-056} font intervenir 4 indices, $i$, $j$, $k$, $l$, variant de 1 à 3, soit a priori 81 équations.
-Mais on constate que la quantité \eqref{eq:Ch03-056} est antisymétrique en $i$ et $j$, antisymétrique en $k$ et $l$, et symétrique par rapport aux couples $(i,j)$ et $(k,l)$.
-Il reste donc finalement 6 équations indépendantes obtenues pour $ijkl = (1212),\ (1213)$, et permutation circulaire.
-On obtient
+Les équations de compatibilité \eqref{eq:Ch03-056} font intervenir quatre indices $i$, $j$, $k$ et $l$, variant de 1 à 3, soit \textit{a priori} 81 équations. Néanmoins, on constate que la quantité \eqref{eq:Ch03-056} est antisymétrique en $i$ et $j$, antisymétrique en $k$ et $l$, et symétrique par rapport aux couples $(i,j)$ et $(k,l)$.
+Il reste donc finalement six équations indépendantes obtenues pour $ijkl = (1212),\ (1213)$, et permutation circulaire. On obtient
 \begin{equation}
-    \left\{
-    \begin{aligned}
-        &\varepsilon_{11,22} + \varepsilon_{22,11} - 2 \varepsilon_{12,12} = 0 \\
-        &\varepsilon_{11,23} + \left( \varepsilon_{23,1} - \varepsilon_{31,2} - \varepsilon_{12,3} \right)_{,1} = 0
-    \end{aligned}
-    \right.
+        \varepsilon_{11,22} + \varepsilon_{22,11} - 2 \varepsilon_{12,12} = 0 \quad\text{et}\quad
+        \varepsilon_{11,23} + \left( \varepsilon_{23,1} - \varepsilon_{31,2} - \varepsilon_{12,3} \right)_{,1} = 0
     \label{eq:Ch03-059}
 \end{equation}
-et les 4 équations qui s'en déduisent par permutation circulaire.
-On peut également obtenir un système de 6 équations équivalentes, en faisant $k=j$
+et les qutre équations qui s'en déduisent par permutation circulaire.
+On peut également obtenir un système de six équations équivalentes, en faisant $k=j$
 \begin{equation}
     \begin{aligned}
         &\varepsilon_{il,kk} + \varepsilon_{kk,il} - \left( \varepsilon_{kl,ik} + \varepsilon_{ik,kl} \right) = 0 \\
@@ -750,7 +728,7 @@ On peut également obtenir un système de 6 équations équivalentes, en faisant
 forme symétrique en $i,j$, qui donne donc 6 équations équivalentes à \eqref{eq:Ch03-059}.
 
 Terminons par deux cas particuliers importants.
-\begin{enumerate}[(a)]
+\begin{enumerate}
     \item Déformation homogène
         \begin{equation}
             \varepsilon_{i?} = \varepsilon_{ij}^0 = \text{Cte}
@@ -776,6 +754,7 @@ Terminons par deux cas particuliers importants.
             \end{aligned}
             \label{eq:Ch03-064}
         \end{equation}
+et:
         \begin{equation}
             \begin{aligned}
                 \ud u_i &= \left( A_{ijk} + A_{ikj} - A_{jki} \right) x_k \ud x_j + \omega_{ij}^0 \ud x_j \\
