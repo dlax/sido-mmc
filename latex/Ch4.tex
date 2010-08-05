@@ -1,166 +1,151 @@
 \chapter{Lois de comportement} \label{chap:Ch04}
 \section{Problèmes de mécanique des solides} \label{sec:Ch04-1}
 \subsection{Formulations dynamiques et quasi-statiques}  \label{ssec:Ch04-1.1}
-Pour résoudre un problème de Mécanique des Solides, il faut calculer la solution $(u_i, \sigma_{ij})$, c'est à dire calculer les champs de vecteurs déplacements $u_i(x)$ et de tenseurs des contraintes $\sigma_{ij}(x)$, à partir des données, qui sont constituées par
+Pour résoudre un problème de Mécanique des Solides, il faut calculer la solution $(u_i, \sigma_{ij})$, c'est-à-dire calculer les champs de vecteurs déplacements $u_i(x)$ et de tenseurs des contraintes $\sigma_{ij}(x)$, à partir des données, qui sont constituées par
 \begin{enumerate}
-    \item L'ensemble des sollicitations imposées au solide
+    \item l'ensemble des sollicitations imposées au solide:
         \begin{itemize}
-            \item forces volumiques
+            \item forces volumiques;
             \item conditions aux limites (forces ou déplacements imposés à la surface).
         \end{itemize}
-    \item Les conditions initiales, précisant la position et la vitesse initiale du solide.
+    \item les conditions initiales, précisant la position et la vitesse initiale du solide.
 \end{enumerate}
 \textbf{Exemple:} Réservoir sphérique soumis à une pression intérieure $n$
 \begin{center}
     \includegraphics{../images/T1_Ch04-0001}
 \end{center}
 \begin{itemize}
-    \item Les forces volumiques sont supposées nulles (pesanteur négligeable)
+    \item les forces volumiques sont supposées nulles (pesanteur négligeable)
         \begin{equation}
             f_i = 0
             \label{eq:Ch04-001}
         \end{equation}
-    \item La surface extérieure $r=b$ est soumise à la pression atmosphérique, la contrainte est donc nulle d'après \eqref{eq:Ch02-002}:
+    \item la surface extérieure $r=b$ est soumise à la pression atmosphérique, la contrainte est donc nulle d'après~\eqref{eq:Ch02-002}:
         \begin{equation}
-            r=b \text{ : } \sigma_{ij} n_j = T_i = 0
+            r=b:\quad \sigma_{ij} n_j = T_i = 0
             \label{eq:Ch04-002}
         \end{equation}
-    \item La surface intérieure $r=a$ est soumise à la pression $p$ (supposée mesurée par rapport à la pression atmosphérique) d'où
+    \item la surface intérieure $r=a$ est soumise à la pression $p$ (supposée mesurée par rapport à la pression atmosphérique) d'où
         \begin{equation}
-            r=a \text{ : } \sigma_{ij} n_j = T_i = -p n_i
+            r=a:\quad \sigma_{ij} n_j = T_i = -p n_i
             \label{eq:Ch04-003}
         \end{equation}
 \end{itemize}
-\begin{enumerate}%[a)] FIXME
-    \item Problème dynamique:  On  donne  la pression  $p(t)$  comme  fonction  du  temps; on  donne  également les  conditions  initiales  -- par  exemple,  à  $t=0$,  le réservoir est au repos
+\begin{enumerate}
+    \item problème dynamique: on  donne  la pression  $p(t)$  comme  fonction  du  temps; on  donne  également les  conditions  initiales  -- par  exemple,  à  $t=0$,  le réservoir est au repos
         \begin{equation}
             u_i(x,0)=0 \quad V_i(x,0) = \frac{\partial u_i}{\partial t}(x,0) = 0
             \label{eq:Ch04-004}
         \end{equation}
-        et on cherche la solution $u_i(x,t),\ \sigma_{ij}(x,t)$ qm doit vérifier l'équation du mouvement \eqref{eq:Ch03-028}
+        et on cherche la solution $u_i(x,t),\ \sigma_{ij}(x,t)$ qm doit vérifier l'équation du mouvement~\eqref{eq:Ch03-028}
         \begin{equation}
             \rho_0 \frac{\partial^2 u_i}{\partial t^2} = \frac{\partial \sigma_{ij}}{\partial x_j} + f_i
             \label{eq:Ch04-005}
         \end{equation}
-        avec \eqref{eq:Ch04-001}, les conditions aux limites \eqref{eq:Ch04-002} et \eqref{eq:Ch04-003}, et les conditions initiales \eqref{eq:Ch04-004}.
+        avec~\eqref{eq:Ch04-001}, les conditions aux limites~\eqref{eq:Ch04-002} et~\eqref{eq:Ch04-003}, et les conditions initiales~\eqref{eq:Ch04-004}.
         Ce problème correspond par exemple à l'étude de la mise en charge brutale du réservoir.
-        Moyennant une modification des conditions initiales \eqref{eq:Ch04-004}, il correspond aussi à l'étude des vibrations du réservoir, si l'on impose une pression $p(t)$ sinusoïdale
+        Moyennant une modification des conditions initiales~\eqref{eq:Ch04-004}, il correspond aussi à l'étude des vibrations du réservoir, si l'on impose une pression $p(t)$ sinusoïdale
         \begin{equation}
             p(t) = p_0 \cos \omega t
             \label{eq:Ch04-006}
         \end{equation}
-        on recherche alors une solution périodique en $t$, condition qui remplace \eqref{eq:Ch04-004}.
-    \item Problème statique: La pression $p$ est constante c'est la pression en service du réservoir.
-        On recherche alros une solution statique, c'est à dire indépendante du temps $u_i(x),\ \sigma_{ij}(x)$ vérifiant les équations d'équilibre
+        on recherche alors une solution périodique en $t$, condition qui remplace~\eqref{eq:Ch04-004}.
+    \item problème statique: la pression $p$ est constante c'est la pression en service du réservoir.
+        On recherche alros une solution statique, c'est-à-dire indépendante du temps $u_i(x),\ \sigma_{ij}(x)$ vérifiant les équations d'équilibre
         \begin{equation}
             \frac{\partial \sigma_{ij}}{\partial x_j} +f_i = 0
             \label{eq:Ch04-007}
         \end{equation}
-        avec \eqref{eq:Ch04-001} et les CI (conditions aux limites) \eqref{eq:Ch04-002} et \eqref{eq:Ch04-003}.
+        avec~\eqref{eq:Ch04-001} et les CI (conditions aux limites)~\eqref{eq:Ch04-002} et~\eqref{eq:Ch04-003}.
         Le temps a disparu, et les conditions initiales n'ont plus lieu d'être.
-    \item Problème quasi-statique: On suppose comme en a) que la pression $t$ varie au cours du temps, $p(t)$, mais on fait l'hypothèse suivante
-        \par\underline{Hypothèse quasi-statique:} Les évolutions sont suffisamment lentes pour que, dans l'équation du mouvement \eqref{eq:Ch04-005}, on puisse négliger le terme d'accélération et donc la remplacer par l'équation d'équilibre \eqref{eq:Ch04-007}.
-
-        En d'autres termes, la sollicitation dépend du temps, mais on résoud à chaque instant un problème statique.
-        Cette hypothèse est tout à fait essentielle en mécanique des solides, car elle permet de ramener à des problèmes statiques les problèmes réels qui, eux, dépendent toujours du temps.
-        L'essentiel de ce cours sera désormais limité au cas où cette hypothèse est valable, l'étude des problèmes réellement dynamiques (chocs, vibrations) étant renvoyée au cours de Mécanique des Vibrations.
+    \item Problème quasi-statique: On suppose comme en a) que la pression $t$ varie au cours du temps, $p(t)$, mais on fait l'hypothèse quasi-statique: les évolutions sont suffisamment lentes pour que, dans l'équation du mouvement~\eqref{eq:Ch04-005}, on puisse négliger le terme d'accélération et donc la remplacer par l'équation d'équilibre~\eqref{eq:Ch04-007}. En d'autres termes, la sollicitation dépend du temps, mais on résoud à chaque instant un problème statique. Cette hypothèse est tout à fait essentielle en mécanique des solides, car elle permet de ramener à des problèmes statiques les problèmes réels qui, eux, dépendent toujours du temps. L'essentiel de ce cours sera désormais limité au cas où cette hypothèse est valable, l'étude des problèmes réellement dynamiques (chocs, vibrations) étant renvoyée au cours de Mécanique des Vibrations.
 \end{enumerate}
 \subsection{Conditions aux limites} \label{ssec:Ch04-1.2}
 \textbf{Exemple 2.} Ecrasement d'un lopin entre les deux plateaux rigides d'une presse:
-\begin{wrapfigure}{l}{7cm}
+
+\begin{wrapfigure}[12]{l}{6.5cm}
     \begin{center}
         \includegraphics{../images/T1_Ch04-0002}
     \end{center}
 \end{wrapfigure}
 Un bloc métallique cylindrique est écrasé entre les deux plateaux rigides d'une presse.
 Le plateau inférieur $x_3 =0$ est immobile, tandis que le plateau supérieur $x_3 =h$ s'enfonce d'une longueur $U(t)$.
-À nouveau, on peut s'intéresser aux problèmes dynamique, statique ou quasi-statique, mais nous nous limiterons au dernier cas: la solution dépend du temps puisque la sollicitation en dépend, mais nous écrirons néanmoins les équations d'équilibre.
+À nouveau, on peut s'intéresser aux problèmes dynamique, statique ou quasi-statique, mais nous nous limiterons au dernier cas: la solution dépend du temps puisque la sollicitation en dépend, mais nous écrirons néanmoins les équations d'équilibre de la statique.
 
-Comme dans l'exemple précédent, et comme dans la majorité des cas en Mécanique des Solides, la seule force de volume est la pesanteur, et nous la négligerons, d'où \eqref{eq:Ch04-001}.
-La surface latérale $S_l$ est libre de contraintes
+Comme dans l'exemple précédent, et comme dans la majorité des cas en Mécanique des Solides, la seule force de volume est la pesanteur, et nous la négligerons, d'où~\eqref{eq:Ch04-001}.
+La surface latérale $S_\ell$ est libre de contraintes
 \begin{equation}
-    \text{sur } S_l:\quad T_i = \sigma_{ij} n_j = 0
+    \text{sur } S_\ell:\quad T_i = \sigma_{ij} n_j = 0
     \label{eq:Ch04-008}
 \end{equation}
-Sur les extrémités $S_0$ $(x_3=0)$ et $S_1$ $(x_3=h)$, la condition exprimant la rigidité des plateaux porte sur le déplacement vertical
+Sur les extrémités $S_0$ $(x_3=0)$ et $S_\ell$ $(x_3=h)$, la condition exprimant la rigidité des plateaux porte sur le déplacement vertical
 \begin{equation}
-    \begin{cases}
-        x_3 = 0: & u_3 = 0 \\
-        x_3 = h: & u_3 = -U(t)
-    \end{cases}
+    \begin{aligned}
+        & x_3=0:\quad&& u_3 = 0 \\
+        & x_3=h: && u_3 = -U(t)
+    \end{aligned}
     \label{eq:Ch04-009}
 \end{equation}
 mais les autres conditions aux limites dépendent des conditions de contact entre les plateaux et le lopin.
 
-\emph{S'il n'y a pas de frottement}, c'est à dire si le contact est parfaitement lubrifié, alors la force de contact, en $x_3=h$, par
+\emph{S'il n'y a pas de frottement}, c'est-à-dire si le contact est parfaitement lubrifié, alors la force de contact, qui est donnée par exemple, en $x_3=h$, par
 \begin{equation}
     \vec{n} = \left( 0,0,+1 \right), \quad \vec{T} = \left( \sigma_{13}, \sigma_{23}, \sigma_{33} \right)
     \label{eq:Ch04-010}
 \end{equation}
 doit être normale à la surface de contact.
-Les conditions \eqref{eq:Ch04-009} doivent être complétées par les conditions $\sigma_{13} = \sigma_{23} = 0$
+Les conditions~\eqref{eq:Ch04-009} doivent être complétées par les conditions $\sigma_{13} = \sigma_{23} = 0$
 \begin{equation}
-    \left\{
     \begin{aligned}
-        x_3 = 0: & u_3 = 0, & \sigma_{13} = \sigma_{23} = 0 \\
-        x_3 = h: & u_3 = -U(t), & \sigma_{13} = \sigma_{23} = 0
+        &x_3 = 0:\quad && u_3 = 0, & \sigma_{13} = \sigma_{23} = 0 \\
+        &x_3 = h: && u_3 = -U(t), & \sigma_{13} = \sigma_{23} = 0
     \end{aligned}
-    \right.
     \label{eq:Ch04-011}
 \end{equation}
-
-\emph{S'il n'y a pas de glissement}, c'est à dire s'il y a adhérence complète entre le lopin et le plateau, alors il faut compléter \eqref{eq:Ch04-009} par les conditions cinématiques d'adhérence $u_1 = u_2 = 0$
+\emph{S'il n'y a pas de glissement}, c'est-à-dire s'il y a adhérence complète entre le lopin et le plateau, alors il faut compléter~\eqref{eq:Ch04-009} par les conditions cinématiques d'adhérence $u_1 = u_2 = 0$
 \begin{equation}
-    \begin{cases}
-        x_3 = 0: & u_1 = u_2 = u_3 = 0 \\
-        x_3 = h: & u_1 = u_2 = 0, u_3 = -U(t)
-    \end{cases}
+    \begin{aligned}
+        &x_3 = 0:\quad&& u_1 = u_2 = u_3 = 0 \\
+        &x_3 = h: && u_1 = u_2 = 0, u_3 = -U(t)
+    \end{aligned}
     \label{eq:Ch04-012}
 \end{equation}
-
-Dans le cas réel, il y a frottement entre le plateau et le lopin, et il faut compléter \eqref{eq:Ch04-009} par la condition exprimant la loi de frottement. 
+Dans le cas réel, il y a frottement entre le plateau et le lopin, et il faut compléter~\eqref{eq:Ch04-009} par la condition exprimant la loi de frottement. 
 Nous adoptons la loi de frottement de Coulomb, avec un coefficient de frottement $f$,
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \vec{V} = 0 & \text{si} & |\vec{T}| < fN \\
-        \vec{V} = \lambda \vec{T} & \text{si} & |\vec{T}| = fN, \lambda \geq 0
+        &\vec{V} = 0 && \text{si}\quad |\vec{T}| < fN \\
+        &\vec{V} = \lambda \vec{T} && \text{si} \quad |\vec{T}| = fN, \lambda \geq 0
     \end{aligned}
-    \right.
     \label{eq:Ch04-013}
 \end{equation}
-\begin{wrapfigure}{r}{4cm}
+
     \begin{center}
         \includegraphics{../images/T1_Ch04-0003}
     \end{center}
-\end{wrapfigure}
 
-que l'on peut encore rééecrire sous la forme
+\noindent que l'on peut encore rééecrire sous la forme
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \vec{V} = \lambda \vec{T}\\
-        \lambda \geq 0, \quad fN - |\vec{T}| \geq 0, \quad \lambda \left( fN - |\vec{T}| \right) = 0
-    \end{aligned}\right.
+        &\vec{V} = \lambda \vec{T},\quad\lambda \geq 0, \quad fN - |\vec{T}| \geq 0, \quad \lambda \left( fN - |\vec{T}| \right) = 0
+    \end{aligned}
     \label{eq:Ch04-014}
 \end{equation}
 On obtient alors
 \begin{equation}
-    \left\{
     \begin{aligned}
-        x_3 = 0:&\quad u_3 = 0, \frac{\partial u_1}{\partial t} =\lambda \sigma_{13}, \frac{\partial u_2}{\partial t} = \lambda \sigma_{23}, \\
-            & \lambda \geq 0, -f \sigma_{33} - \sqrt{\sigma_{13}^2 + \sigma_{23}^2} \geq 0, \lambda \left( -f \sigma_{33} - \sqrt{\sigma_{13}^2 + \sigma_{23}^2} \right) = 0 \\
-        x_3 = h:&\quad u_3 = -U(t), \frac{\partial u_1}{\partial t} = -\lambda \sigma_{13}, \text{etc.}
+        x_3 = 0:&\quad u_3 = 0, \frac{\partial u_1}{\partial t} =\lambda \sigma_{13},\quad \frac{\partial u_2}{\partial t} = \lambda \sigma_{23}, \\
+            & \lambda \geq 0,\quad -f \sigma_{33} - \sqrt{\sigma_{13}^2 + \sigma_{23}^2} \geq 0,\quad \lambda \left( -f \sigma_{33} - \sqrt{\sigma_{13}^2 + \sigma_{23}^2} \right) = 0 \\
+        x_3 = h:&\quad u_3 = -U(t),\quad \frac{\partial u_1}{\partial t} = -\lambda \sigma_{13},\ldots
     \end{aligned}
-    \right.
     \label{eq:Ch04-015}
 \end{equation}
+Le problème de l'écrasement d'un lopin consiste donc à trouver $u_i(x,t), \sigma_{ij}(x,t)$, vérifiant à chaque instant les équations d'équilibre~\eqref{eq:Ch04-007} avec $f_i = 0$, et les conditions aux limites~\eqref{eq:Ch04-008} et~\eqref{eq:Ch04-011},~\eqref{eq:Ch04-012} ou~\eqref{eq:Ch04-013}, suivant la nature du problème et suivant la précision des résultats cherchés: le problème~\eqref{eq:Ch04-015} est certainement plus proche de la réalité que les problèmes~\eqref{eq:Ch04-011} ou~\eqref{eq:Ch04-012}, mais les problèmes~\eqref{eq:Ch04-011} et~\eqref{eq:Ch04-012} sont beaucoup plus simples, et peuvent constituer une approximation suffisante pour nos besoins.
 
-Le problème de l'écrasement d'un lopin consiste donc à trouver $u_i(x,t), \sigma_{ij}(x,t)$, vérifiant à chaque instant les équations d'équilibre \eqref{eq:Ch04-007} avec $f_i = 0$, et les conditions aux limites \eqref{eq:Ch04-008} et \eqref{eq:Ch04-011}, \eqref{eq:Ch04-012} ou \eqref{eq:Ch04-013}, suivant la nature du problème et suivant la précision des résultats cherchés: le problème \eqref{eq:Ch04-015} est certainement plus proche de la réalité que les problèmes \eqref{eq:Ch04-011} ou \eqref{eq:Ch04-012}, mais les problèmes \eqref{eq:Ch04-011} et \eqref{eq:Ch04-012} sont beaucoup plus simples, et peuvent constituer une approximation suffisante pour les besoins que l'on a.
-De même, si le frottement est important, le problème \eqref{eq:Ch04-012} est certainement plus proche de la réalité qUe le problème \eqref{eq:Ch04-011}.
-Néanmoins, le problème \eqref{eq:Ch04-011}, qui, comme on le verra, se résoud très simplement, peut être un approxmation suffisante, par exemple pour le calcul de la force $F$ à appliquer sur la presse et qui sera donnée par
+De même, si le frottement est important, le problème~\eqref{eq:Ch04-012} est certainement plus proche de la réalité que le problème~\eqref{eq:Ch04-011}.
+Néanmoins, le problème~\eqref{eq:Ch04-011}, qui, comme on le verra, se résoud très simplement, peut être un approxmation suffisante, par exemple pour le calcul de la force $F$ à appliquer sur la presse et qui sera donnée par
 \begin{equation}
-    F(t) = - \iint_{S_0} \sigma_{33} \ud x_1 \ud x_2 = - \iint_{s_1} \sigma_{33} \ud x_1 \ud x_2
+    F(t) = - \iint_{S_0} \sigma_{33} \ud x_1 \ud x_2 = - \iint_{S_\ell} \sigma_{33} \ud x_1 \ud x_2
     \label{eq:Ch04-016}
 \end{equation}
 
@@ -172,73 +157,67 @@ Néanmoins, le problème \eqref{eq:Ch04-011}, qui, comme on le verra, se résoud
 \end{center}
 \end{wrapfigure}
 Le bloc est soumis à la seule action de la pesanteur.
-En notant $\rho_0 = \rho$ la masse volumique du solide, et $g$ l'accélération de la pesanteur, on a donc
+En notant $\rho_0 = \rho$, la masse volumique du solide, et $g$, l'accélération de la pesanteur, on a donc
 \begin{equation}
     f_1 = f_2 = 0, \quad f_3 = -\rho g
     \label{eq:Ch04-017}
 \end{equation}
-La surface latérale $S_l$ et l'extrémité $S_1\ (x_3=h)$ sont libres de contraintes
+La surface latérale $S_\ell$ et l'extrémité $S_1(x_3=h)$ sont libres de contraintes
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \text{sur } S_l & \sigma_{ij} n_j = 0 \\
-        x_3 = h & \sigma_{13} = \sigma_{23} = \sigma_{33} = 0
+        &\text{sur } S_\ell:\quad && \sigma_{ij} n_j = 0 \\
+        &x_3 = h: && \sigma_{13} = \sigma_{23} = \sigma_{33} = 0
     \end{aligned}
-    \right.
     \label{eq:Ch04-018}
 \end{equation}
-Sur l'extrémité $S_0\ (x_3=O),$ les conditions aux limites dépendent, comme dans le cas précédent, des conditions de contact: dans le cas de non frottement on a
+Sur l'extrémité $S_0\ (x_3=0)$, les conditions aux limites dépendent, comme dans le cas précédent, des conditions de contact: dans le cas de non frottement on a
 \begin{equation}
     x_3 = 0: \quad u_3 = 0 \quad \sigma_{13} = \sigma_{23} = 0
     \label{eq:Ch04-019}
 \end{equation}
-dans le cas de non glissement, on a 
+et dans le cas de non glissement, on a 
 \begin{equation}
     x_3 = 0: \quad u_1 = u_2 = u_3 = 0
     \label{eq:Ch04-020}
 \end{equation}
 
-\begin{wrapfigure}{l}{5cm}
+\begin{wrapfigure}{l}{5.5cm}
     \begin{center}
         \includegraphics{../images/T1_Ch04-0005}
     \end{center}
 \end{wrapfigure}
-dans le cas du frottement coulombien, on a une expresslon analogue à \eqref{eq:Ch04-015}.
+Dans le cas du frottement coulombien, on a une expresslon analogue à~\eqref{eq:Ch04-015}.
 Toutes ces conditions supposent que le contact entre le bloc et le plan reste maintenu.
 Il peut arriver -- figure ci-contre -- qu'une partie du bloc se soulève.
 Il s'agit alors d'une liaison unilatérale.
 La surface $S_0$ se décompose en deux zones (que l'on ne connaît pas, leur détemination fait partie du problème)
 \begin{itemize}
-    \item une zone de contact où l'on a
+    \item une zone de contact:
         \begin{equation}
-            u_3 = 0, \quad \sigma_{33} \leq 0
+            u_3 = 0: \quad \sigma_{33} \leq 0
             \label{eq:Ch04-021}
         \end{equation}
-    \item une zone de non contact, libre de contraintes, où l'on a
+    \item une zone de non contact, libre de contraintes:
         \begin{equation}
-            u_3 \geq 0, \quad \sigma_{33} = 0
+            u_3 \geq 0: \quad \sigma_{33} = 0
             \label{eq:Ch04-022}
         \end{equation}
 \end{itemize}
-On peut regrouper \eqref{eq:Ch04-021}, \eqref{eq:Ch04-022} en
+On peut regrouper~\eqref{eq:Ch04-021},~\eqref{eq:Ch04-022} en
 \begin{equation}
     u_3 \geq 0, \quad \sigma_{33} \leq 0, \quad u_3 \sigma_{33} = 0
     \label{eq:Ch04-023}
 \end{equation}
-En supposant le contact sans frottement, il faut donc remplacer \eqref{eq:Ch04-019} par
+En supposant le contact sans frottement, il faut donc remplacer~\eqref{eq:Ch04-019} par
 \begin{equation}
-    x_3 = 0 
-    \begin{cases}
-        \sigma_{13} = \sigma_{23} = 0 \\
+    x_3 = 0:\quad\sigma_{13} = \sigma_{23} = 0, \quad
         u_3 \geq 0, \quad \sigma_{33} \leq 0, \quad u_3 \sigma_{33} = 0
-    \end{cases}
     \label{eq:Ch04-024}
 \end{equation}
-
 En toute rigueur, il aurait aussi fallu envisager cette possibilité dans l'exemple précédent, mais elle était peu plausible physiquement.
 
 On pourrait également envisager d'autres types de conditions aux limites sur $S_0$.
-\begin{wrapfigure}{l}{3cm}
+\begin{wrapfigure}{l}{3.5cm}
     \begin{center}
         \includegraphics{../images/T1_Ch04-0006}
     \end{center}
@@ -249,48 +228,44 @@ Les efforts exercés sur le solide par le ballon se ramènent alors à une press
     x_3 = 0: \quad \sigma_{33} =-p, \sigma_{13} = \sigma_{23} = 0
     \label{eq:Ch04-025}
 \end{equation}
-
-On peut déterminer $p$ en remarquant que, d'après les équations d'équilibre, les efforts exercés sur le bloc à travers $S_0$ doivent équilibrer les autres efforts appliqués, c'est à dire en l'occurence le poids du bloc.
+On peut déterminer $p$ en remarquant que, d'après les équations d'équilibre, les efforts exercés sur le bloc à travers $S_0$ doivent équilibrer les autres efforts appliqués, en l'occurence, le poids du bloc.
 On obtient donc la condition suivante
 \begin{equation}
     -\iint_{S_0} \sigma_{33} \ud x_1 \ud x_2 = \rho g S h
     \label{eq:Ch04-026}
 \end{equation}
 valable quelles que soient les conditions aux limites sur $S_0$.
-Avec les conditions \eqref{eq:Ch04-025}, on en tire la valeur de $p$
+Avec les conditions~\eqref{eq:Ch04-025}, on en déduit la valeur de $p$
 \begin{equation}
     p = \rho g h
     \label{eq:Ch04-027}
 \end{equation}
-
-De manière générale, dans un problème réel, l'écriture des conditions aux limites est une étape tout à fait essentielle, car d'une part ces conditions comprennent l'essentiel de la physique du problème, d'autre part elles conditionnent la facilité -- voire la possibilité -- de la résolution du problème mathématique obtenu.
+De manière générale, dans un problème réel, l'écriture des conditions aux limites est une étape tout à fait essentielle, car d'une part ces conditions comprennent l'essentiel de la physique du problème, d'autre part elles conditionnent la facilité ---voire la possibilité--- de la résolution du problème mathématique obtenu.
 Il faudra souvent faire un compromis entre la précision de la description physique et la facilité de résolution du problème mathématique.
 
 \subsection{Lois de comportement}  \label{ssec:Ch04-1.3}
-Pour résoudre un problème de mécanique des solides, if faut donc résoudre un système d'équations aux dérivées partielles.
-Pour l'instant, nous avons trois équations scalaires -- les équations du mouvement~\eqref{eq:Ch04-005} ou les équations d'équilibre~\eqref{eq:Ch04-007}, suivant que l'en considère le problème dynamique ou le problème quasi-statique -- pour 9 champs inconnus: 3 composantes du déplacement $u_i(x,t)$ et 6 composantes du tenseur des contraintes $\sigma_{ij}(x,t)$.
-Il manque donc 6 équations scalaires.
-Ces 6 équations nous seront fournies par la ``loi de comportement'' du matériau.
-Toutes les équations écrites jusqu'à présent étaient -- dans le cadre d'une schématisation donnée -- -universelles, c'est à dire indépendantes du matériau considéré.
-Les équations écrites au paragraphe~\ref{ssec:Ch04-1.2} restent les mêmes pour un bloc d'acier, d'aluminium, de matière plastique, de caoutchouc, de bois, de béton, d'argile, de pâte à modeler, \ldots , sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations).
+Pour résoudre un problème de mécanique des solides, il faut donc résoudre un système d'équations aux dérivées partielles.
+Pour l'instant, nous avons trois équations scalaires ---les équations du mouvement~\eqref{eq:Ch04-005} ou les équations d'équilibre~\eqref{eq:Ch04-007}, suivant que l'en considère le problème dynamique ou le problème quasi-statique--- pour neuf champs inconnus: trois composantes du déplacement $u_i(x,t)$ et six composantes du tenseur des contraintes $\sigma_{ij}(x,t)$. Il manque donc six équations scalaires.
+Ces six équations nous seront fournies par la \emph{loi de comportement} du matériau.
+Toutes les équations écrites jusqu'à présent étaient -- dans le cadre d'une schématisation donnée -- -universelles, c'est-à-dire indépendantes du matériau considéré.
+Les équations écrites au paragraphe~\ref{ssec:Ch04-1.2} restent les mêmes pour un bloc d'acier, d'aluminium, de matière plastique, de caoutchouc, de bois, de béton, d'argile, de pâte à modeler... sous la seule réserve que les hypothèses fondamentales soient vérifiées (théorie du premier gradient, petites déformations).
 
-De manière générale, la loi de comportement se présente comme une ``relation'' entre le tenseur des contraintes et le tenseur des déformations.
-Cette relation peut être de nature très diverse -- nous en verrons quelques exemples en~\ref{sec:Ch04-2} -- mais elle sera en général de nature ``fonctionnelle''.
-À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations -- c'est à dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs -- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
+De manière générale, la loi de comportement se présente comme une \emph{relation} entre le tenseur des contraintes et le tenseur des déformations.
+Cette relation peut être de nature très diverse ---nous en verrons quelques exemples en~\ref{sec:Ch04-2}--- mais elle sera en général de nature \emph{fonctionnelle}.
+À quelques cas singuliers près, nous pouvons admettre qu'elle donne le tenseur des contraintes à partir de l'histoire du tenseur des déformations ---c'est-à-dire de la valeur du tenseur des déforrnations à l'instant considéré et à tous les instants antérieurs--- ou bien le tenseur des déformations à partir de l'histoire du tenseur des contraintes.
 \begin{equation}
     \tens{\sigma} (t) = \mathop{\tens{\sigma}}_{s=0}^{\infty} \left\{ \tens{\varepsilon} (t-s) \right\}, \quad \tens{\varepsilon} (t) = \mathop{\tens{\varepsilon}}_{s=0}^{\infty} \left\{ \tens{\sigma} (t-s) \right\}
     \label{eq:Ch04-028}
 \end{equation}
-
-Cette loi de comportement ne peut être déterminée qu'expérimentalement par un certain nombre ``d'essais''.
-Les essais les plus faciles à interpréter sont les ``essais homogènes'' où l'on cherche à réaliser dans une éprouvette un état de contrainte et de déformation homogène.
+Cette loi de comportement ne peut être déterminée qu'expérimentalement par un certain nombre d'\emph{essais}.
+Les essais les plus faciles à interpréter sont les \emph{essais homogènes} où l'on cherche à réaliser dans une éprouvette, un état de contrainte et de déformation homogène.
 L'exemple le plus simple est l'essai de compression simple, qui correspond à l'exemple 2 du paragraphe~\ref{ssec:Ch04-1.2}.
 Si l'on cherche un état de contrainte et de déformation homogène
 \begin{equation}
     \sigma_{ij} (x,t) = \sigma_{ij}(t), \quad \varepsilon_{ij}(x,t) = \varepsilon_{ij}(t)
     \label{eq:Ch04-029}
 \end{equation}
-alors la condition aux limites~\eqref{eq:Ch04-008} sur la surface latérale montre que toutes les composantes de $\sigma_{ij}(t)$ sont nulles, sauf $\sigma_{33}$ -- en effet, sur $S_l$ $n_3=0$ tandis que $n_1$ et $n_2$ sont quelconques -- et \eqref{eq:Ch04-016} donne $\sigma_{33}(t)=-F(t)/S$
+alors la condition aux limites~\eqref{eq:Ch04-008} sur la surface latérale montre que toutes les composantes de $\sigma_{ij}(t)$ sont nulles, sauf $\sigma_{33}$ ---en effet, sur $S_l$ $n_3=0$ tandis que $n_1$ et $n_2$ sont quelconques--- et~\eqref{eq:Ch04-016} donne $\sigma_{33}(t)=-F(t)/S$
 \begin{equation}
     \tens{\sigma}(t) = \begin{bmatrix}
         0 & 0 & 0 \\
@@ -299,42 +274,40 @@ alors la condition aux limites~\eqref{eq:Ch04-008} sur la surface latérale mont
     \end{bmatrix}
     \label{eq:Ch04-030}
 \end{equation}
-La loi de conportement \eqref{eq:Ch04-028} donne alors $\tens{\varepsilon}(t)$ en fonction de $F(t)$.
-On obtient alors la forme générale de déplacement par \eqref{eq:Ch03-062}
+La loi de conportement~\eqref{eq:Ch04-028} donne alors $\tens{\varepsilon}(t)$ en fonction de $F(t)$.
+On obtient alors la forme générale de déplacement par~\eqref{eq:Ch03-062}
 \begin{equation}
     \left\{
     \begin{aligned}
-        u_1 &= \varepsilon_{11} x_1 &+ \varepsilon_{12}x_2 &+ \varepsilon_{13}x_3 &+ \omega_{2}x_3 - \omega_{3} x_2 +c_1\\
-        u_2 &= \varepsilon_{12} x_1 &+ \varepsilon_{22}x_2 &+ \varepsilon_{23}x_3 &+ \omega_{3}x_1 - \omega_{1} x_3 +c_2\\
-        u_3 &= \varepsilon_{13} x_1 &+ \varepsilon_{23}x_2 &+ \varepsilon_{33}x_3 &+ \omega_{1}x_2 - \omega_{2} x_1 +c_3
+        u_1 &= \varepsilon_{11} x_1 + \varepsilon_{12}x_2 + \varepsilon_{13}x_3 + \omega_{2}x_3 - \omega_{3} x_2 +c_1\\
+        u_2 &= \varepsilon_{12} x_1 + \varepsilon_{22}x_2 + \varepsilon_{23}x_3 + \omega_{3}x_1 - \omega_{1} x_3 +c_2\\
+        u_3 &= \varepsilon_{13} x_1 + \varepsilon_{23}x_2 + \varepsilon_{33}x_3 + \omega_{1}x_2 - \omega_{2} x_1 +c_3
     \end{aligned}
     \right.
     \label{eq:Ch04-031}
 \end{equation}
-La CL~\eqref{eq:Ch04-009} en $x_3 =0$ donne alors
+La condition aux limites~\eqref{eq:Ch04-009} en $x_3 =0$ donne alors
 \begin{equation*}
     c_3 = 0, \quad \omega_1 = -\varepsilon_{23}, \quad \omega_2 = \varepsilon_{13}
 \end{equation*}
-La CL~\eqref{eq:Ch04-009}  en $x_3=h$ est alors vérifiée si
+La condition aux limites~\eqref{eq:Ch04-009}  en $x_3=h$ est alors vérifiée si
 \begin{equation}
     U(t) = -h \varepsilon_{33}(t)
     \label{eq:Ch04-032}
 \end{equation}
 et il vient
 \begin{equation}
-    \left\{
     \begin{aligned}
-        u_1(x,t) &= \varepsilon_{11}x_1 &+ (\varepsilon_{12} - \omega_3) x_2 &+ 2\varepsilon_{13}x_3 \\
-        u_2(x,t) &= (\varepsilon_{12} + \omega_3) x_1 &+ \varepsilon_{22}x_2 &+ 2\varepsilon_{23}x_3 \\
+        u_1(x,t) &= \varepsilon_{11}x_1 + (\varepsilon_{12} - \omega_3) x_2 &+ 2\varepsilon_{13}x_3 \\
+        u_2(x,t) &= (\varepsilon_{12} + \omega_3) x_1 + \varepsilon_{22}x_2 &+ 2\varepsilon_{23}x_3 \\
         u_3(x,t) &= -U(t) x_3/h
     \end{aligned}
-    \right.
     \label{eq:Ch04-033}
 \end{equation}
-Et la solution définie par \eqref{eq:Ch04-030}, \eqref{eq:Ch04-033} est solution du problème associé au cas sans frottement défini par les CL \eqref{eq:Ch04-011}.
-Ainsi, pour réaliser un essai de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au maximum des conditions de non frottement, et en imposant, par exemple, une force $F(t)$ -- essai à force imposée --, la mesure des déplacements donne alors $\tens{\varepsilon}(t)$, et permet donc de déterminer la loi de comportement pour un tenseur $\tens{\sigma}$ de la forme \eqref{eq:Ch04-030}.
+La solution définie par~\eqref{eq:Ch04-030}, à savoir~\eqref{eq:Ch04-033}, est solution du problème associé au cas sans frottement défini par les conditions aux limites~\eqref{eq:Ch04-011}.
+Ainsi, pour réaliser un essai de compression simple, on écrase un lopin en lubrifiant le contact, pour s'approcher au maximum des conditions de non frottement, et en imposant, par exemple, une force $F(t)$ ---essai à force imposée---, la mesure des déplacements donne alors $\tens{\varepsilon}(t)$ et permet donc de déterminer la loi de comportement pour un tenseur $\tens{\sigma}$ de la forme~\eqref{eq:Ch04-030}.
 
-Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors un tenseur $\tens{\sigma}(t)$ de la forme \eqref{eq:Ch04-030} produit une déformation de la forme
+Si le matériau est isotrope ---notion que nous préciserons plus tard--- alors un tenseur $\tens{\sigma}(t)$ de la forme~\eqref{eq:Ch04-030} produit une déformation de la forme
 \begin{equation}
     \tens{\epsilon} (t) = 
     \begin{bmatrix}
@@ -346,11 +319,11 @@ Si le matériau est isotrope -- notion que nous préciserons plus tard -- alors 
 \end{equation}
 La déformation se réduit à un écrasement longitudinal, mesuré par $U(t)$ et une dilatation transversale que l'on mesure facilement à l'aide d'une jauge de déformation.
 
-\subsection{Les essais 	classiques} \label{ssec:Ch04-1.4}
+\subsection{Essais classiques} \label{ssec:Ch04-1.4}
 L'essai de compression simple est le prototype des essais homogènes.
 L'idée de base est de réaliser un état de contrainte et de déformation homogène qui peut alors être déterminé par des mesures globales d'efforts et de déformation.
 Pour les métaux et la plupart des solides, l'essai de base est ``l'essai de traction'', où un barreau cylindrique de longueur $l$ et de section $S$ est soumis à une force longitudinale $F$.
-L'état de contrainte et de déformation a la même forme~\eqref{eq:Ch04-030}, \eqref{eq:Ch04-034} que pour l'essai de compression.
+L'état de contrainte et de déformation a la même forme~\eqref{eq:Ch04-030},~\eqref{eq:Ch04-034} que pour l'essai de compression.
 
 \begin{wrapfigure}{l}{3cm}
     \begin{center}
@@ -380,7 +353,7 @@ On mesure
     \label{eq:Ch04-035}
 \end{equation}
 
-Les conditions aux limites \eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que, pourvu que l'éprouvette soit assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$ , c'est à dire des conditions aux limites précises sur $S_0$ et $S_1$.
+Les conditions aux limites~\eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que, pourvu que l'éprouvette soit assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$ , c'est-à-dire des conditions aux limites précises sur $S_0$ et $S_\ell$.
 C'est le principe de Saint-Venant, sur lequel nous reviendrons au chapitre~\ref{chap:Ch07}.
 
 L'essai de traction est le plus simple à réaliser, mais il ne permet d'obtenir la loi de comportement que pour un tenseur des contraintes de traction ou compression simple.
@@ -509,7 +482,7 @@ C'est le phénomène d'écrouïssage.
 
 Le point $B$ correspond à l'apparition de la striction -- instabilité géométrique qui conduit à la localisation de la déformation.
 La contrainte $\sigma$ diminue alors jusqu'à rupture.
-En fait, il s'agit de la contrainte apparente, c'est à dire ramenée à la surface initiale, la contrainte vraie, c'est à dire ramenée à la surface réelle de la striction, elle, continue à augmenter.
+En fait, il s'agit de la contrainte apparente, c'est-à-dire ramenée à la surface initiale, la contrainte vraie, c'est-à-dire ramenée à la surface réelle de la striction, elle, continue à augmenter.
 De toute façon, la déformation n'est plus homogène, et cette portion de courbe ne décrit pas directement le comportement.
 De plus, l'hypothèse des petites déformations n'est plus vérifiée.
 \begin{multicols}{2}
@@ -664,7 +637,7 @@ Le comportement viscoélastique peut être représenté par une combinaison de r
             \end{center}
         \end{multicols}
         qui est la loi de comportement sous forme différentielle.
-        Conformément à \eqref{eq:Ch04-028}, on voit que, connaissant l'histoire de $\sigma$ (ou de $\varepsilon$), on peut en déduire la valeur à l'instant $t$ de $\varepsilon$ (ou de $\sigma$ par intégration de l'équation différentielle~\eqref{eq:Ch04-043}.
+        Conformément à~\eqref{eq:Ch04-028}, on voit que, connaissant l'histoire de $\sigma$ (ou de $\varepsilon$), on peut en déduire la valeur à l'instant $t$ de $\varepsilon$ (ou de $\sigma$ par intégration de l'équation différentielle~\eqref{eq:Ch04-043}.
     \item Par montage en parallèle d'un ressort et d'un amortisseur, on obtient le modèle de Kelvin-Voigt
         \begin{multicols}{2}
             \begin{equation}
