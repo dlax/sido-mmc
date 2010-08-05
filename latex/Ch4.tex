@@ -322,7 +322,7 @@ La déformation se réduit à un écrasement longitudinal, mesuré par $U(t)$ et
 \subsection{Essais classiques} \label{ssec:Ch04-1.4}
 L'essai de compression simple est le prototype des essais homogènes.
 L'idée de base est de réaliser un état de contrainte et de déformation homogène qui peut alors être déterminé par des mesures globales d'efforts et de déformation.
-Pour les métaux et la plupart des solides, l'essai de base est ``l'essai de traction'', où un barreau cylindrique de longueur $l$ et de section $S$ est soumis à une force longitudinale $F$.
+Pour les métaux et la plupart des solides, l'essai de base est \emph{l'essai de traction} où un barreau cylindrique de longueur $\ell$ et de section $S$ est soumis à une force longitudinale $F$.
 L'état de contrainte et de déformation a la même forme~\eqref{eq:Ch04-030},~\eqref{eq:Ch04-034} que pour l'essai de compression.
 
 \begin{wrapfigure}{l}{3cm}
@@ -333,7 +333,7 @@ L'état de contrainte et de déformation a la même forme~\eqref{eq:Ch04-030},~\
 On mesure 
 \begin{itemize}
     \item la force de traction $F(t)$
-    \item l'allongement longitudinal $\varepsilon_{l} = \Delta l(t)/l$
+    \item l'allongement longitudinal $\varepsilon_\ell = \Delta \ell(t)/\ell$
     \item l'allongement transfersal $\varepsilon_T(t)$
 \end{itemize}
 \begin{equation}
@@ -353,14 +353,14 @@ On mesure
     \label{eq:Ch04-035}
 \end{equation}
 
-Les conditions aux limites~\eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que, pourvu que l'éprouvette soit assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$ , c'est-à-dire des conditions aux limites précises sur $S_0$ et $S_\ell$.
+Les conditions aux limites~\eqref{eq:Ch04-011} de non frottement sont pratiquement irréalisables, mais on constate expérimentalement que si l'éprouvette est assez longue, alors les résultats de l'essai ne dépendent pratiquement pas de la manière dont est appliquée la force $F$, c'est-à-dire des conditions aux limites précises sur $S_0$ et $S_\ell$.
 C'est le principe de Saint-Venant, sur lequel nous reviendrons au chapitre~\ref{chap:Ch07}.
 
 L'essai de traction est le plus simple à réaliser, mais il ne permet d'obtenir la loi de comportement que pour un tenseur des contraintes de traction ou compression simple.
-Cela suffit pour déterminer complètement certaines lois de comportement, mais il est souvent nécessaire de réaliser des états de contrainte plus complexes.
+Cela suffit pour déterminer complètement certaines lois de comportement même s'il est souvent nécessaire de réaliser des états de contrainte plus complexes.
 Le choix est alors guidé par la possibilité technologique de réaliser un état de contrainte et déformation le plus homogène possible.
-L'essai le plus couramment utilisé pour les métaux est l'essai de ``traction-torsion'' d'un tube mince.
-Un tube mince de diamètre $D$, d'épaisseur $e$ et de longueur $l$ est soumis à une force longitudinale $F(t) \vec{e}_3$ et à un couple de torsion $M(t) \vec{e}_3$.
+L'essai le plus couramment utilisé pour les métaux est l'essai de \emph{traction-torsion} d'un tube mince.
+Un tube mince de diamètre $D$, d'épaisseur $e$ et de longueur $\ell$ est soumis à une force longitudinale $F(t) \vec{e}_3$ et à un couple de torsion $M(t) \vec{e}_3$.
 
 \begin{wrapfigure}[14]{l}{3cm}
     \begin{center}
@@ -369,24 +369,24 @@ Un tube mince de diamètre $D$, d'épaisseur $e$ et de longueur $l$ est soumis �
 \end{wrapfigure}
 On mesure
 \begin{itemize}
-    \item l'allongement longitudinal $\Delta l(t)/l$
+    \item l'allongement longitudinal $\Delta \ell(t)/\ell$
     \item l'allongement transversal $\varepsilon_T(t)$
     \item la rotation relative $\Delta \theta(t)$ des deux sections extrémités.
 \end{itemize}
-Pourvu que le le tube soit suffisament mince, l'état de contrainte et de déformation est donné dans le repère local $\left(\vec{e}_r, \vec{e}_{\theta}, \vec{e}_z  \right)$ associé aux coordonnées cylindrique par
+Pourvu que le le tube soit suffisament mince, l'état de contrainte et de déformation est donné dans le repère local $(\vec{e}_r, \vec{e}_{\theta}, \vec{e}_z)$ associé aux coordonnées cylindriques par
 \begin{equation}
     \tens{\sigma} =
     \begin{bmatrix}
-        0 & 0 & 0 \\
-        0 & 0 & 2M/\pi D^2 e \\
-        0 & 2M/\pi D^2 e & F/\pi D e
+        0 & 0 & 0 \\[2pt]
+        0 & 0 & \frac{2M}{\pi D^2 e} \\[2pt]
+        0 & \frac{2M}{\pi D^2 e} & \frac{F}{\pi D e}
     \end{bmatrix}
     \quad
     \tens{\varepsilon} = 
     \begin{bmatrix}
-        \varepsilon_T & 0 & 0 \\
-        0 & \varepsilon_T & D \Delta \theta / 4 l \\
-        0 & D \Delta \theta / 4 l & \Delta l/l
+        \varepsilon_T & 0 & 0 \\[2pt]
+        0 & \varepsilon_T & D \frac{\Delta \theta}{4 \ell} \\[2pt]
+        0 & D \frac{\Delta \theta}{4\ell} & \frac{\Delta \ell}{\ell}
     \end{bmatrix}
     \label{eq:Ch04-036}
 \end{equation}
@@ -397,10 +397,10 @@ En mécanique des sols, où l'on a affaire à des matériaux peu ou pas cohéren
 
 \begin{wrapfigure}[8]{l}{3cm}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0009}
+        \includegraphics[width=2.8cm]{../images/T1_Ch04-0009}
     \end{center}
 \end{wrapfigure}
-Dans l'essai oediométrique, on comprime le matériau dans un moule rigide.
+Dans l'essai \emph{oedométrique}, on comprime le matériau dans un moule rigide.
 On réalise ainsi un état de contrainte et de déformation de la forme
 \begin{equation}
     \tens{\varepsilon} =
@@ -419,12 +419,12 @@ On réalise ainsi un état de contrainte et de déformation de la forme
     \label{eq:Ch04-037}
 \end{equation}
 
-\begin{wrapfigure}[10]{l}{3cm}
+\begin{wrapfigure}[11]{l}{3cm}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0010}
+        \includegraphics[width=2.8cm]{../images/T1_Ch04-0010}
     \end{center}
 \end{wrapfigure}
-Dans l'essai ``triaxial'', on place une éprouvette dans une cellule triaxiale que l'on soumet à une pression $p$ et on superpose une force longitudinale $P$.
+Dans l'essai \emph{triaxial}, on place une éprouvette dans une cellule triaxiale que l'on soumet à une pression $p$ et on superpose une force longitudinale $P$.
 On réalise ainsi un état de contrainte et de déformation de révolution (paragraphe~\ref{ssec:Ch02-1.3})
 \begin{equation}
     \tens{\varepsilon} =
@@ -450,19 +450,19 @@ Malheureusement, ces essais ne fournissent sur les lois de comportement que des 
 
 \section{Comportement des solides} \label{sec:Ch04-2}
 \subsection{Diversité des comportements} \label{ssec:Ch04-2.1}
-Le but de ce paragraphe est double: d'une part nous allons décrire quelques uns des types de comportement que l'on peut rencontrer; d'autre part nous allons introduire la terminologie utilisée pour caractériser ces comportements.
+Le but de ce paragraphe est double: d'une part, nous allons décrire quelques-uns des comportements types; d'autre part, nous allons introduire la terminologie utilisée pour caractériser ces comportements.
 
 Pour les métaux à température ambiante, le comportement est convenablement décrit par la courbe de traction, résultat de l'essai de traction.
 On fait croître la force $F$ et on mesure l'allongement longitudinal $\varepsilon_L$.
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0011}
+        \includegraphics[height=4cm]{../images/T1_Ch04-0011}
 
         Acier doux
     \end{center}
     \columnbreak
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0012}
+        \includegraphics[height=4cm]{../images/T1_Ch04-0012}
 
         Acier durs, métaux non ferreux
     \end{center}
@@ -475,60 +475,59 @@ La région $OA$ correspond à un comportement élastique linéaire, dont les deu
 \end{itemize}
 Cette région correspond à la déformation réversible du réseau cristallin. 
 
-A partir du seuil $A$, on entre dans la zone $AB$ de comportement plastique, essentiellement caractérisé par son irréversibilité: si, arrivé en $b$ on décharge, alors on redescend, non pas le long de la courbe de charge $b\ A$, mais sur une droite $bc$ parallèle à $OA$.
+\`A partir du seuil $A$, on entre dans la zone $AB$ de comportement plastique, essentiellement caractérisé par son irréversibilité: si, arrivé en $b$ on décharge, alors on redescend, non pas le long de la courbe de charge $bA$, mais sur une droite $bc$ parallèle à $OA$.
 En fait le comportement est alors à nouveau élastique tant que l'on ne redépasse pas le nouveau seuil $b$.
 En particulier, on constate que la déformation plastique entre $A$ et $b$ a eu comme effet d'élargir la région élastique.
 C'est le phénomène d'écrouïssage.
 
-Le point $B$ correspond à l'apparition de la striction -- instabilité géométrique qui conduit à la localisation de la déformation.
+Le point $B$ correspond à l'apparition de la striction ---instabilité géométrique qui conduit à la localisation de la déformation.
 La contrainte $\sigma$ diminue alors jusqu'à rupture.
-En fait, il s'agit de la contrainte apparente, c'est-à-dire ramenée à la surface initiale, la contrainte vraie, c'est-à-dire ramenée à la surface réelle de la striction, elle, continue à augmenter.
-De toute façon, la déformation n'est plus homogène, et cette portion de courbe ne décrit pas directement le comportement.
-De plus, l'hypothèse des petites déformations n'est plus vérifiée.
-\begin{multicols}{2}
+En fait, il s'agit de la contrainte apparente, c'est-à-dire ramenée à la surface initiale et la contrainte vraie ramenée à la surface réelle de la striction, elle, continue à augmenter.
+De toute façon, la déformation n'est plus homogène, et cette portion de courbe ne décrit pas directement le comportement. Qui plus est, l'hypothèse des petites déformations n'est plus vérifiée.
+
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0013}
+        \includegraphics[height=4.5cm]{../images/T1_Ch04-0013}\quad\qquad
+        \includegraphics[height=4.5cm]{../images/T1_Ch04-0014}
     \end{center}
-    \columnbreak
-    \begin{center}
-        \includegraphics{../images/T1_Ch04-0014}
-    \end{center}
-\end{multicols}
+
 En compression simple, on obtient en général un comportement symétrique $OA'B'$ (mais sans striction).
 Pour certains matériaux fragiles (béton, fonte, roches, etc.), cependant, on obtient en compression simple un comportement ductile, comme celui que nous avons décrit, et en traction simple, un comportement fragile conduisant à rupture très rapide.
 Pour les métaux, on observe souvent l'effet Bauschinger: après une précharge $OAa$ en traction, l'écrouissage qui se traduit par une augmentation du seuil en traction, entraîne également une diminution du seuil en compression, alors qu'au départ les deux étaient approximativement égaux.
 
-La courbe de traction permet également de décrire le comportement d'autres matériaux, comme le caoutchouc, (comportement élastique non linéaire en première approximation) ou les sols -- on représente alors le résultat d'un essai «~triaxial~» à $p$ fixé -- qui présentent un comportement de type élasta-plastique avec une région élastique très réduite et avec ou sans pic suivant que le matériau est initialement plus ou moins tassé.
+La courbe de traction permet également de décrire le comportement d'autres matériaux, comme le caoutchouc, (comportement élastique non linéaire en première approximation) ou les sols ---on représente alors le résultat d'un essai triaxial à $p$ fixé--- qui présentent un comportement de type élasta-plastique avec une région élastique très réduite et avec ou sans pic suivant que le matériau est initialement plus ou moins tassé.
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0015}
+        \includegraphics[height=3cm]{../images/T1_Ch04-0015}
 
         caoutchouc
     \end{center}
     \columnbreak
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0016}
+        \includegraphics[height=3cm]{../images/T1_Ch04-0016}
 
         sols
     \end{center}
 \end{multicols}
 
-Pour des matériaux comme les matières plastiques ou les métaux à haute température, la courbe de traction perd toute signification, car elle dépend de manière cruciale de la vitesse de déformation.
+Pour des matériaux comme les matières plastiques ou les métaux à haute température, la courbe de traction perd toute signification car elle dépend de manière cruciale de la vitesse de déformation.
 On caractérise alors le comportement par des essais de fluage et de relaxation.
-Pour l'essai de fluage, toujours en traction ou compression simple, on impose une contrainte constante et on observe la déformation en fonction du temps: l'application de la contrainte s'accompagne d'une déformation instantanée, puis la déformation se poursuit, puis se stabilise, soit vers une constante, soit vers un état de fluage stationnaire à vitesse de déformation constante.
+
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0017}
+        \includegraphics[height=3.5cm]{../images/T1_Ch04-0017}
 
-        Matériau de type fluide
+        matériau de type fluide
     \end{center}
     \columnbreak
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0018}
+        \includegraphics[height=3.5cm]{../images/T1_Ch04-0018}
 
-        Solide
+        solide
     \end{center}
 \end{multicols}
+
+Pour l'essai de fluage, toujours en traction ou compression simple, on impose une contrainte constante et on observe la déformation en fonction du temps: l'application de la contrainte s'accompagne d'une déformation instantanée, puis la déformation se poursuit, puis se stabilise, soit vers une constante, soit vers un état de fluage stationnaire à vitesse de déformation constante.
+
 Si à un l'instant $t_0$ on relache la contrainte, alors la déformation de décompose en trois port parties:
 \begin{itemize}
     \item une déformation instantanée (recouvrance instantanée),
@@ -540,22 +539,22 @@ cette dernière pouvant disparaître pour un matériau de type solide.
 L'essai de relaxation consiste à appliquer une déformation constante, et à observer la contrainte nécessaire
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0019}
+        \includegraphics[height=3.5cm]{../images/T1_Ch04-0019}
 
         Fluide
     \end{center}
     \columnbreak
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0020}
+        \includegraphics[height=3.5cm]{../images/T1_Ch04-0020}
 
         Solide
     \end{center}
 \end{multicols}
 
-Si l'on pousse plus loin l'essai de fluage, on voit apparaître après le fluage primaire (régime transitoire) et le fluage secondaire (régime stabilisé) une zone de fluage tertiaire qui correspond au phénomène «~d'endommagement~» (détérioration du matériau qui conduit à la rupture).
+Si l'on pousse plus loin l'essai de fluage, on voit apparaître après le fluage primaire (régime transitoire) et le fluage secondaire (régime stabilisé) une zone de fluage tertiaire qui correspond au phénomène \emph{d'endommagement} (détérioration du matériau qui conduit à la rupture).
 \begin{multicols}{2}
     \begin{center}
-        \includegraphics{../images/T1_Ch04-0021}
+        \includegraphics[height=3.5cm]{../images/T1_Ch04-0021}
     \end{center}
     \columnbreak
     \begin{enumerate}
@@ -565,13 +564,13 @@ Si l'on pousse plus loin l'essai de fluage, on voit apparaître après le fluage
     \end{enumerate}
 \end{multicols}
 
-Ce type de comportement dépendant du temps est appelé «~viscoplastique~»  ou «~viscoélastique~», selon qu'il existe ou non un seuil en dessous duquel le comportement peut être considéré comme élastique.
-En première approximation, les matières plastiques ont un comportement viscoélastique, et les métaux à haute température un comportement viscoplastique.
+Ce type de comportement dépendant du temps est appelé \emph{viscoplastique} ou \emph{viscoélastique}, selon qu'il existe ou non un seuil en dessous duquel le comportement peut être considéré comme élastique.
+En première approximation, les matières plastiques ont un comportement viscoélastique et les métaux à haute température, un comportement viscoplastique.
 
 \subsection{Modèles rhéologiques} \label{ssec:Ch04-2.2}
 Il est important de savoir construire des modèles mathématiques de comportement décrivant, au moins qualitativement, les différents types de comportement que nous venons de présenter.
 Les modèles rhéologiques forment une classe déjà très vaste de tels modèles.
-Ils s'obtiennent par combinaison de 3 modèles élémentaires
+Ils s'obtiennent par combinaison de trois modèles élémentaires
 \begin{itemize}
     \item le ressort, modèle de comportement élastique
         \begin{multicols}{2}
@@ -615,7 +614,7 @@ Les modèles rhéologiques s'obtiennent par montage en parallèle (les contraint
 
 Le comportement viscoélastique peut être représenté par une combinaison de ressorts et d'amortisseurs. 
 \begin{itemize}
-    \item Par montage en série d'un ressort et d'un amortisseur, on obtient le modèle de Maxwell:
+    \item par montage en série d'un ressort et d'un amortisseur, on obtient le modèle de Maxwell:
         \begin{multicols}{2}
             \begin{equation}
                 \left\{
@@ -637,8 +636,8 @@ Le comportement viscoélastique peut être représenté par une combinaison de r
             \end{center}
         \end{multicols}
         qui est la loi de comportement sous forme différentielle.
-        Conformément à~\eqref{eq:Ch04-028}, on voit que, connaissant l'histoire de $\sigma$ (ou de $\varepsilon$), on peut en déduire la valeur à l'instant $t$ de $\varepsilon$ (ou de $\sigma$ par intégration de l'équation différentielle~\eqref{eq:Ch04-043}.
-    \item Par montage en parallèle d'un ressort et d'un amortisseur, on obtient le modèle de Kelvin-Voigt
+        Conformément à~\eqref{eq:Ch04-028}, on voit que, connaissant l'histoire de $\sigma$ (ou de $\varepsilon$), on peut en déduire la valeur à l'instant $t$ de $\varepsilon$ (ou de $\sigma$ par intégration de l'équation différentielle~\eqref{eq:Ch04-043};
+    \item par montage en parallèle d'un ressort et d'un amortisseur, on obtient le modèle de Kelvin-Voigt
         \begin{multicols}{2}
             \begin{equation}
                 \left\{
@@ -654,7 +653,7 @@ Le comportement viscoélastique peut être représenté par une combinaison de r
                 \includegraphics{../images/T1_Ch04-0026}
             \end{center}
         \end{multicols}
-    \item Par montage en série-d'un modèle de-Maxwell et d'un modèle de Kelvin-Voigt, on obtient le modèle de Burgers
+    \item par montage en série d'un modèle de Maxwell et d'un modèle de Kelvin-Voigt, on obtient le modèle de Burgers
         \begin{multicols}{2}
             \begin{equation}
                 \sigma = E \varepsilon + \eta \dot \varepsilon
@@ -677,28 +676,26 @@ Et ainsi de suite.
 
 Les comportements élasto-plastiques s'obtiennent par combinaison de ressorts et de patins.
 \begin{itemize}
-    \item Par montage en série d'un ressort et d'un patin, on obtient un modèle élasto-plastique sans écrouissage
+    \item par montage en série d'un ressort et d'un patin, on obtient un modèle élasto-plastique sans écrouissage
         \begin{center}
             \includegraphics{../images/T1_Ch04-0028}
         \end{center}
-    \item On obtient un modèle avec écrouissage linéaire montage suivant
+    \item on obtient un modèle avec écrouissage linéaire par le montage suivant
         \begin{center}
             \includegraphics{../images/T1_Ch04-0029}
         \end{center}
 \end{itemize}
+Enfin, on peut obtenir des comportements viscoplastiques par des combinaisons des trois éléments de base.
+Par exemple, le modèle de Bingham permet de décrire le comportement du goudron et de certaines pâtes.
 
-\begin{wrapfigure}{l}{6cm}
     \begin{center}
         \includegraphics{../images/T1_Ch04-0030}
     \end{center}
-\end{wrapfigure}
-Enfin, on peut obtenir des comportements viscoplastiques par des combinaisons des trois éléments de base.
-Par exemple le modèle de Bingham permet de décrire le comportement du goudron et de certaines pâtes.
 
 De manière générale, le choix d'un modèle représentant le comportement d'un matériau réel est un problème difficile.
-Le comportement des matériaux réels est complexe, et nous n'en avons présenté qu'une esquisse très  incomplète.
-Même pour des matériaux aussi courants que l'acier, de nombreux aspects du comportement restent mal connus, et il est impossible de  construire un modèle représentant le comportement d'un matérjau donné en toutes circonstances.
+Le comportement des matériaux réels est complexe et nous n'en avons présenté qu'une esquisse très  incomplète.
+Même pour des matériaux aussi courants que l'acier, de nombreux aspects du comportement restent mal connus et il est impossible de  construire un modèle représentant le comportement d'un matérjau donné en toutes circonstances.
 Dans chaque problème, il convient de choisir le modèle le plus simple conduisant à des résultats satisfaisants pour l'utilisation qu'on veut en faire.
 Dans certains cas, en particulier si l'on recherche une grande fiabilité, il conviendra de faire le calcul avec une loi de comportement très sophistiquée, prenant en compte tous les risques de ruine possibles, ces calculs étant rendus possibles par les développements de l'informatique.
-Dans d'autres cas, par contre, on pourra se satisfaire d'approximations plus grossières du comportement, et c'est la raison d'être des modèles élémentaires qui feront l'objet de la suite de ce cours.
+Dans d'autres cas, par contre, on pourra se satisfaire d'approximations plus grossières et c'est la raison d'être des modèles élémentaires qui feront l'objet de la suite de ce cours.
 

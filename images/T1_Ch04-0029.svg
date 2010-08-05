@@ -15,7 +15,7 @@
    id="svg5505"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="T1_Ch04-0029.svg">
+   sodipodi:docname="T1_Ch04-0029.eps">
   <defs
      id="defs5507">
     <inkscape:perspective
@@ -241,10 +241,10 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1280"
-     inkscape:window-height="717"
+     inkscape:window-width="1920"
+     inkscape:window-height="1125"
      inkscape:window-x="0"
-     inkscape:window-y="29"
+     inkscape:window-y="24"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -287,15 +287,15 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-end:url(#EmptyTriangleOutM)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 397.80771,534.61216 200,0"
+       d="m 327.80771,534.61216 200,0"
        id="path3215" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 472.80771,574.61216 0,-80"
+       d="m 402.80771,574.61216 0,-80"
        id="path3217" />
     <g
        id="g6301"
-       transform="matrix(0.74562864,-0.15378112,0.15378112,0.74562864,38.429213,208.45732)">
+       transform="matrix(0.74562864,-0.15378112,0.15378112,0.74562864,-31.570787,208.45732)">
       <path
          sodipodi:nodetypes="ccc"
          id="path4869"
@@ -339,7 +339,7 @@
     </g>
     <g
        id="content"
-       transform="matrix(1.35,0,0,-1.35,158.65271,1450.0292)"
+       transform="matrix(1.35,0,0,-1.35,88.65271,1450.0292)"
        xml:space="preserve"
        stroke-miterlimit="10.433"
        fill-rule="even-odd"
@@ -370,7 +370,7 @@
        fill-rule="even-odd"
        stroke-miterlimit="10.433"
        xml:space="preserve"
-       transform="matrix(1.35,0,0,-1.35,293.12621,1502.1671)"
+       transform="matrix(1.35,0,0,-1.35,223.12621,1502.1671)"
        id="g5383"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0">
 <path
