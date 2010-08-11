@@ -683,24 +683,17 @@ Nous pouvons donc supposer que la partie sphérique du tenseur des contraintes n
     f \left( J_2, J_3 \right) < 0
     \label{eq:Ch05-061}
 \end{equation}
-
-\begin{wrapfigure}{l}{5cm}
-    \begin{center}
-        \includegraphics{../images/T1_Ch05-02}
-    \end{center}
-\end{wrapfigure}
-
 Dans l'espace des contraintes principales, la surface seuil est un cylindre de génératrice parallèle à l'axe hydrostatique.
-
-\begin{wrapfigure}{l}{7cm}
-    \begin{center}
-        \includegraphics{../images/T1_Ch05-03}
-    \end{center}
-\end{wrapfigure}
 
 Le seuil sera donc complètement défini par l'intersection de la surface seuil avec le plan déviatoire (voir \ref{ssec:Ch02-2.2}) ou plutôt, compte tenu des symétries, par cette intersection limitée à un secteur de 60 degrés, le reste étant complété par symétrie.
 
+
+
 Il va de soi que la détermination expérimentale de cette courbe est très difficile.
+
+    \begin{center}
+        \includegraphics[height=3.5cm]{../images/T1_Ch05-02}\qquad \includegraphics[height=3.5cm]{../images/T1_Ch05-03}
+    \end{center}
 
 Pour d'autres matériaux, en particulier pour les sols, la \emph{pression moyenne} $-\sigma = \frac{1}{3}\sigma_{kk}$ intervient crutialement dans $f$.
 On suppose alors souvent que la \emph{contrainte principale intermédiaire} n'intervient pas dans $f$, c'est-à-dire que $f\left( \sigma_1, \sigma_{2}, \sigma_3 \right)$ dépend uniquement de la plus grande et de lit plus petite des contraintes principales:
@@ -710,50 +703,53 @@ On suppose alors souvent que la \emph{contrainte principale intermédiaire} n'in
 \end{equation}
 Il ressort alors du paragraphce~\ref{ssec:Ch02-3.1} que dans la représentation de Mohr, seul intervient le plus grand des trois demi-cerles.
 
-Le critère est alors complètement défini par la «~courbe intrinsèque~» $\mathcal{C}$, enveloppe des demi-cercles limites, c'est-à-dire à  correspondant à $f=0$. 
+Le critère est alors complètement défini par la \emph{courbe intrinsèque} $\mathcal{C}$, enveloppe des demi-cercles limites, c'est-à-dire correspondant à $f=0$. 
 C'est le critère de la courbe intrinsèque.
 
 \subsection{Critères de Von Mises et Tresca} \label{ssec:Ch05-3.2}
-Pour les métaux, ou plus généralement pour les matériaux dont le critère peut s'écrire sous la forme~\eqref{eq:Ch05-061}, on 'utilise habituellement les critères de limite d'élasticité de von Mises ou de Tresca.
-Le critère~\eqref{eq:Ch05-061} peut s'écrire sous la forme 
+Pour les métaux, ou plus généralement pour les matériaux dont le critère peut s'écrire sous la forme~\eqref{eq:Ch05-061}, on utilise habituellement les critères de limite d'élasticité de von Mises ou de Tresca.
+Le critère~\eqref{eq:Ch05-061} peut s'écrire sous la forme: 
 \begin{equation}
     -J_2 < \kappa\left( J_3 \right)
     \label{eq:Ch05-063}
 \end{equation}
 qui, d'après (\ref{eq:Ch02-029},\ref{eq:Ch02-030}), définit l'équation polaire de la courbe seuil dans le plan déviatoire  $\Pi$.
-Le critère le plus simple s'obtient en écrivant que $\kappa$ ne dépend pas de $J_3$, c'est-à-dire que le cylindre seuil est de révolution.
+Le critère le plus simple s'obtient en écrivant que $\kappa$ ne dépend pas de $J_3$, autrement dit que le cylindre seuil est de révolution.
 
 \subsubsection{Critère de von Mises}
+Ce critère s'écrit:
 \begin{equation}
     -J_2 = \frac{1}{2} s_{ij} s_{ij} < \kappa
     \label{eq:Ch05-064}
 \end{equation}
-où $\kappa$ est une constante, caractéristique du matériau, et que l'on peut relier à la limite élastique en traction $\sigma_e$.
-En traction simple en effet, le critère~\eqref{eq:Ch05-064} donne 
-\begin{equation*}
+où $\kappa$ est une constante, caractéristique du matériau, que l'on peut relier à la limite élastique en traction $\sigma_e$.
+En traction simple en effet, le critère~\eqref{eq:Ch05-064} donne: 
+\begin{equation}
     \frac{1}{2} s_{ij} s_{ij} = \frac{\sigma^2}{3} < \kappa
-\end{equation*}
+\end{equation}
 soit, par comparaison avec~\eqref{eq:Ch05-057}, $\kappa = \sigma_e^2/3$.
-Le critère de von Mises s'écrit donc 
+Le critère de von Mises s'écrit donc: 
 \begin{equation}
     \frac{1}{2} s_{ij} s_{ij} < \frac{\sigma_e^2}{3}
     \label{eq:Ch05-065}
 \end{equation}
 On peut en donner diverses interprétations physiques.
-Par exemple,~\eqref{eq:Ch05-049} montre que l'énergie de déformation $w$ se décompose en deux parties, une partie due à la dilatation, et une partie due à la distorsion, c'est-à-dire à la déformation sans changement de volume.
-D'après~\eqref{eq:Ch05-049}, le critère de von Mises exprime que «~l'énergie de distorsion~» ne doit pas dépasser un certain seuil 
+Par exemple, la condition~\eqref{eq:Ch05-049} montre que l'énergie de déformation $w$ se décompose en deux parties, une partie due à la dilatation, et une partie due à la distorsion, ou déformation sans changement de volume.
+D'après~\eqref{eq:Ch05-049}, le critère de von Mises exprime que \emph{l'énergie de distorsion} ne doit pas dépasser un certain seuil: 
 \begin{equation}
     w_{\mathrm{dist}} = \frac{1}{4\mu} s_{ij} s_{ij} < w_{\mathrm{lim}}
     \label{eq:Ch05-065b}
 \end{equation}
-\begin{wrapfigure}{l}{5cm}
+On peut également introduire les \emph{facettes octaédriques} normales aux quatre trissectrices des directions principales (ainsi nommées car elles forment un octaèdre).
+Les contraintes normale et tangentielle associées à ces facettes sont appelées contraintes normale et tangentielle octaédriques.
+
+\begin{wrapfigure}[7]{l}{4cm}
     \begin{center}
-        \includegraphics{../images/T1_Ch05-04}
+        \includegraphics[scale=1.3]{../images/T1_Ch05-04}
     \end{center}
 \end{wrapfigure}
-On peut également introduire les «~facettes octaédriques~» normales aux quatre trissectrices des directions principales (ainsi nommées car elles forment un octaèdre).
-Les contraintes normale et tangentielle associées à ces facettes sont appelées contraintes normale et tangentielle octaédriques.
-En se plaçant en repère principal, un calcul direct montre que 
+
+En repère principal, un calcul direct montre: 
 \begin{equation}
     \begin{aligned}
         T_n^{oct} &= \frac{\sigma_1+\sigma_2+\sigma_3}{3} = \frac{I_1}{3} \\
@@ -762,40 +758,37 @@ En se plaçant en repère principal, un calcul direct montre que
     \label{eq:Ch05-066}
 \end{equation}
 d'après~\eqref{eq:Ch02-016}.
-Le critère de von Mises exprime donc que la contrainte tangentielle octaédriquene doit pas dépasser un certain seuil 
+Le critère de von Mises exprime donc que la contrainte tangentielle octaédriquene ne doit pas dépasser un certain seuil: 
 \begin{equation}
     T_t^{oct} < T_{\mathrm{lim}}
     \label{eq:Ch05-067}
 \end{equation}
-
 Le critère de Tresca exprime que la contrainte tangentielle ne doit pas dépasser un certain seuil.
-
 \subsubsection{Critère de Tresca}
+Ce critère s'écrit:
 \begin{equation}
     T_t = |\vec{T}_t < \kappa
     \label{eq:Ch05-068}
 \end{equation}
-
-En un point donné, il faut donc vérifier que le maximum de la contrainte tangentielle, lorsque la facette varie, ne dépasse pas le seuil $\kappa$. 
-Compte-tenu des résultats du paragraphe~\ref{ssec:Ch02-3.1}, on peut écrire cette condition 
+En un point donné, il faut donc vérifier que le maximum de la contrainte tangentielle, lorsque la facette varie, ne dépasse pas $\kappa$. 
+Compte-tenu des résultats du paragraphe~\ref{ssec:Ch02-3.1}, on peut écrire cette condition comme suit:
 \begin{equation}
-    \mathrm{sup} T_t = \frac{\sigma_1 - \sigma_3}{2} < \kappa \quad \sigma_1 \geq \sigma_2 \geq \sigma_3
+    \mathrm{sup} T_t = \frac{\sigma_1 - \sigma_3}{2} < \kappa; \quad \sigma_1 \geq \sigma_2 \geq \sigma_3
     \label{eq:Ch05-069}
 \end{equation}
 et comme pour le critère de von Mises, on obtient la valeur de $\kappa$ en identifiant~\eqref{eq:Ch05-069} à~\eqref{eq:Ch05-057} dans le cas de la traction simple.
-Il vient 
+Il vient: 
 \begin{equation}
-    \sigma_1 - \sigma_3 < \sigma_e \quad \sigma_1 \geq \sigma_2 \geq \sigma_3
+    \sigma_1 - \sigma_3 < \sigma_e; \quad \sigma_1 \geq \sigma_2 \geq \sigma_3
     \label{eq:Ch05-070}
 \end{equation}
-Le critère de Tresca est un critère du type~\eqref{eq:Ch05-062}, la courbe intrinsèque étant la droite $T_t = \sigma_e/2$ 
+Le critère de Tresca est un critère du type~\eqref{eq:Ch05-062}, la courbe intrinsèque étant la droite $T_t = \sigma_e/2$. 
 \begin{center}
-    \includegraphics{../images/T1_Ch05-05}
+    \includegraphics[height=3.5cm]{../images/T1_Ch05-05}
 \end{center}
-
 Les deux critères de von Mises et Tresca s'appliquent aux métaux.
 Ils conduisent à des résultats légèrement différents.
-Par exemple, en cisaillement simple~\eqref{eq:Ch02-021}, on obtient comme limite élastique $\tau_2$
+Par exemple, en cisaillement simple~\eqref{eq:Ch02-021}, limite élastique $\tau_e$ devient:
 \begin{equation}
     \tau_e = 
     \begin{cases}
@@ -804,16 +797,16 @@ Par exemple, en cisaillement simple~\eqref{eq:Ch02-021}, on obtient comme limite
     \end{cases}
     \label{eq:Ch05-071}
 \end{equation}
-Dans l'espace des contraintes principales, la surface seuil est un cylindre à base circulaire pour von Mises, hexagonale pour Tresca 
+Dans l'espace des contraintes principales, la surface seuil est un cylindre à base circulaire pour von Mises, hexagonale pour Tresca.
 \begin{center}
-    \includegraphics{../images/T1_Ch05-06}
+    \includegraphics[height=4.5cm]{../images/T1_Ch05-06a}\qquad  \includegraphics[height=4.5cm]{../images/T1_Ch05-06b}
 \end{center}
 La figure ci-dessus montre l'intersection de ces cylindres avec le plan déviatoire $\Pi$ et avec le plan $\sigma_3=0$, description qui conviendra pour les états de contraintes planes.
 Pratiquement, ils conduisent à des résultats suffisamment voisins pour que, dans les applications courantes, on puisse utiliser indifféremment l'un ou l'autre.
-On utilisera donc le critère de von Mises lorsque l'on connaîtra le tenseur des contraintes par ses composantes, puisque ce critère s'exprime alors par la relation 
+On utilisera donc le critère de von Mises lorsque l'on connaîtra le tenseur des contraintes par ses composantes, puisque ce critère s'exprime alors par la relation: 
 \begin{equation}
     \left( \sigma_{11} - \sigma_{22} \right)^2 + \left( \sigma_{22} - \sigma_{33} \right)^2 + \left( \sigma_{33} - \sigma_{11} \right)^2 + 6\sigma_{12}^2 + 6 \sigma_{23}^2 + 6\sigma_{31}^2 < 2 \sigma_e^2
     \label{eq:Ch05-072}
 \end{equation}
 Ce critère se prête donc bien aux calculs analytiques ou numériques.
-On utilisera le critère de Tresca~\eqref{eq:Ch05-070} lorsque l'on connaîtra a priori les directions principales du tenseur des contraintes; il conduira alors à des calculs plus simples que le critère de von Mises. 
+On utilisera le critère de Tresca~\eqref{eq:Ch05-070} lorsque l'on connaîtra \emph{a priori} les directions principales du tenseur des contraintes; il conduira alors à des calculs plus simples que le critère de von Mises. 
