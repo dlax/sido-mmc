@@ -1,6 +1,6 @@
 \chapter{Problème de Saint--Venant} \label{chap:Ch07} 
 \section{Traction et flexion pure} \label{sec:Ch07-1}
-\subsection{Le principe de Saint--Venant} \label{ssec:Ch07-1.1}
+\subsection{Principe de Saint--Venant} \label{ssec:Ch07-1.1}
 Le problème de Saint--Venant est le problème de base de la Résistance des Matériaux.
 Une poutre cylindrique est sollicitee à ses deux extrémités, les efforts exercés étant caractérisés par leur torseur résultant.
 
@@ -706,58 +706,54 @@ A(x_1) = -a x_1 +d,\quad B(x_1) = b x_1 +e,\quad C(x_1) = c x_1 +f
     \end{aligned}
     \label{eq:Ch07-073} 
 \end{equation}
-On voit sur \eqref{eq:Ch07-073} que les 5 constantes $b$, $c$, $d$, $e$, $f$ correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration.
-A un déplacement de solide près, on a donc 
+On voit sur \eqref{eq:Ch07-073} que les 5 constantes $b$, $c$, $d$, $e$ et $f$ correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration.
+\`A un déplacement de solide près, on a donc: 
 \begin{equation}
-    u_2 = -a x_1 x_3 \quad , \quad u_3 = a x_1 x_2
+    u_2 = -a x_1 x_3, \quad u_3 = a x_1 x_2
     \label{eq:Ch07-074}
 \end{equation}
-ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la constante $a$, rotation par unité de longueur, est donc «~l'angle unitaire de torsion~» introduit au paragraphe~\ref{ssec:Ch07-1.1} pour la section circulaire.
-On peut maintenant calculer $u_1$ à partir de \eqref{eq:Ch07-072} 
+ce qui correspond, comme dans le cas de la section circulaire, à une rotation de chaque section d'un angle proportionnel à la distance à l'origine; la constante $a$, rotation par unité de longueur, est donc \emph{l'angle unitaire de torsion} introduit au paragraphe~\ref{ssec:Ch07-1.1} pour la section circulaire.
+On peut maintenant calculer $u_1$ à partir de \eqref{eq:Ch07-072}: 
 \begin{equation}
-    u_{1,2} = \alpha \varphi_{,3} + a x_3 \quad , \quad u_{1,3} = -\alpha \varphi_{,2} - a x_2
+    u_{1,2} = \alpha \varphi_{,3} + a x_3, \quad u_{1,3} = -\alpha \varphi_{,2} - a x_2
     \label{eq:Ch07-075}
 \end{equation}
-système qui sera intégrable si et seulement si $u_{1,23} = u_{1,32}$
+système qui sera intégrable si et seulement si $u_{1,23} = u_{1,32}$:
 \begin{displaymath}
     \alpha \Delta \varphi + 2 a = 0
 \end{displaymath}
-ce qui, d'après \eqref{eq:Ch07-060}, donne finalement $a=\alpha$, et la constante $\alpha$, introduite en \eqref{eq:Ch07-054} est l'angle unitaire de torsion, et le déplacement est finalement, à un déplacement de solide près 
+ce qui, d'après \eqref{eq:Ch07-060}, donne finalement $a=\alpha$, et la constante $\alpha$, introduite en \eqref{eq:Ch07-054} est l'angle unitaire de torsion. Le déplacement est finalement, à un déplacement de solide près: 
 \begin{equation}
-    \left\{
     \begin{aligned}
         u_1 &= \alpha \psi (x_2, x_3) \\
         u_2 &= - \alpha x_1 x_3 \\
         u_3 &= \alpha x_1 x_2
     \end{aligned}
-    \right.
     \label{eq:Ch07-076}
 \end{equation}
-Ainsi, la rotation de chaque section s'accompagne d'un «~gauchissement~» que l'on peut observer expérimentalement.
-La fonction de gauchissement $\psi$ est donnée par 
+Ainsi, la rotation de chaque section s'accompagne d'un \emph{gauchissement} que l'on peut observer expérimentalement.
+La fonction de gauchissement $\psi$ est donnée par: 
 \begin{equation}
     \frac{\partial \Psi}{\partial x_2} = \left( \frac{\partial \varphi}{\partial x_3} + x_3 \right) \quad , \quad \frac{\partial \Psi}{\partial x_3} = -\left( \frac{\partial \varphi}{\partial x_2} + x_2 \right)
     \label{eq:Ch07-077}
 \end{equation}
 et $\psi$ est la fonction harmonique conjuguée de la fonction harmonique $\varphi + \frac{1}{2} (x_2^2 + x_3^2)$.
-Si 	on calcule sur $\partial \Sigma$ la dérivée normale de $\psi$, il vient, en utilisant \eqref{eq:Ch07-056} et \eqref{eq:Ch07-057} 
+Si on calcule sur $\partial \Sigma$ la dérivée normale de $\psi$, il vient, en utilisant \eqref{eq:Ch07-056} et \eqref{eq:Ch07-057}: 
 \begin{align*}
     \frac{\ud \psi}{\ud n} &= \frac{\partial \psi}{\partial x_2} n_2 + \frac{\partial \psi}{\partial x_3} n_3 \\
     &= \left( \frac{\partial \varphi}{\partial x_3} \frac{\ud x_2}{\ud s} + \frac{\partial \varphi}{\partial x_2} \frac{\ud x_2}{\ud s} \right) + x_3 \frac{\ud x_2}{\ud s} + x_2 \frac{\ud x_2}{\ud s} \\
     &= \frac{\ud}{\ud s} \left[ \frac{1}{2} \left( x_2^2 + x_3^2 \right) \right]
 \end{align*}
 quantité connue le long de $\partial \Sigma$.
-Ainsi la fonction $\psi$ vérifie
+Ainsi la fonction $\psi$ vérifie:
 \begin{equation}
-    \left\{
     \begin{aligned}
         &\Delta \psi = 0 \\
         &\frac{\ud \psi}{\ud n} = \frac{\ud}{\ud s} \left[ \frac{1}{2} \left( x_2^2 + x_3^2 \right) \right] & \text{ sur } \partial \Sigma
     \end{aligned}
-    \right.
     \label{eq:Ch07-078}
 \end{equation}
-c'est un problème de Neumann, qui admet une solution unique.
+c'est un problème de Neumann qui admet une solution unique.
 Ainsi, pour résoudre le problème de torsion, on peut, soit calculer $\varphi$ par le problème \eqref{eq:Ch07-060} et en déduire ensuite $\psi$ par \eqref{eq:Ch07-077}, soit calculer $\psi$ par le problème \eqref{eq:Ch07-078} et en déduire ensuite $\varphi$ par \eqref{eq:Ch07-077}. 
 
 Finalement, si l'on compare les relations \eqref{eq:Ch07-064} et \eqref{eq:Ch07-068} du cas général, aux relations \eqref{eq:Ch07-041} et \eqref{eq:Ch07-046} relatives à la section circulaire, on constate que, dans le cas général également, la rigidité de la section est caractérisée par le module de rigidité $I$ et sa résistance par le rapport $I/\eta$.
@@ -765,7 +761,7 @@ Mais dans le cas général,
 \begin{inparaenum}[a)]
     \item il faut résoudre le problème \eqref{eq:Ch07-060} pour pouvolr calculer ces constantes (nous verrons cependant au chapitre~\ref{chap:Ch09} que l'on peut obtenir des estimations de $I$ sans calculer $\varphi$),
     \item la torsion s'accompagne d'un gauchissement des sections.
-        Si ce gauchissement est empêché, par exemple par des CL d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre).
+        Si ce gauchissement est empêché, par exemple par des conditions aux limites d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre).
 \end{inparaenum}
 
 Bien entendu, conformément à la démarche générale décrite au paragraphe~\ref{ssec:Ch07-1.1}, nous avons résolu un problème particulier correspondant au problème de la torsion, et le principe de Saint--Venant nous permet d'affirmer que loin des extrémités c'est la solution.
@@ -775,108 +771,101 @@ On pourrait écrire des CL donnant sur les extrémités le dêplacement $(u_1, u
 \begin{equation}
     \left\{
     \begin{aligned}
-        x_1 = 0 : &\ \sigma_{11} = 0 \quad , \quad u_2 = u_3 = 0 \\
-        x_1 = l : &\ \sigma_{11} = 0 \quad , \quad u_2 = -\alpha l x_3 \quad,\quad u_3 = \alpha l x_2
+        x_1 = 0 : &\ \sigma_{11} = 0, \quad u_2 = u_3 = 0 \\
+        x_1 = l : &\ \sigma_{11} = 0, \quad u_2 = -\alpha l x_3,\quad u_3 = \alpha l x_2
     \end{aligned}
     \right.
     \label{eq:Ch07-079} 
 \end{equation}
-Rajoutées à \eqref{eq:Ch07-001}, ces CL définissent bien un problème régulier (paragraphe~\ref{ssec:Ch06-1.1}), et cette formulation présente l'avantage de ne pas faire intervenir les fonctions $\varphi$ ou $\psi$ \textit{a priori} inconnues. 
+Ajoutées à \eqref{eq:Ch07-001}, ces conditions aux limites définissent bien un problème régulier (paragraphe~\ref{ssec:Ch06-1.1}) et cette formulation présente l'avantage de ne pas faire intervenir les fonctions $\varphi$ ou $\psi$ \textit{a priori} inconnues. 
 
 \subsection{Sections particulières} \label{ssec:Ch07-2.4}
 \subsubsection{Section circulaire}
 D'après la symétrie, les fonctions $\varphi$ et $\psi$ ne dépendent que de $r$.
-Il vient directement 
+Il vient directement: 
 \begin{equation}
-    \varphi =\frac{1}{2}\left( a^2 - r^2 \right) \quad , \quad \psi = 0 \quad , \quad r^2 = x_2^2 + x_3^2 
+    \varphi =\frac{1}{2}\left( a^2 - r^2 \right), \quad \psi = 0, \quad r^2 = x_2^2 + x_3^2 
     \label{eq:Ch07-080}
 \end{equation}
 et on retrouve tous les résultats du paragraphe~\ref{ssec:Ch07-1.1}.
 En particulier, la fonction de gauchissement est nulle.
 \subsubsection{Section elliptique}
-\begin{multicols}{2}
-    La section $\Sigma$ est limitée par l'ellipse d'équation
+La section $\Sigma$ est limitée par l'ellipse d'équation:
     \begin{equation}
         \frac{x_2^2}{a^2} + \frac{x_3^2}{b^2} = 1
         \label{eq:Ch07-081}
     \end{equation}
-    \columnbreak
-    \begin{center}
+
+\begin{center}
         \includegraphics{../images/T1_Ch07-16}
     \end{center}
-\end{multicols}
-On trouve alors pour $\varphi$ et $\psi$
+
+
+On trouve alors pour $\varphi$ et $\psi$:
 \begin{align}
-    \varphi &= \frac{a^2 b^2}{a^2 + b^2} \left( 1 - \frac{x_2^2}{a^2} - \frac{x_3^2}{b^2} \right) \label{eq:Ch07-082}\\
+    \varphi &= \frac{a^2 b^2}{a^2 + b^2} \left(1-\frac{x_2^2}{a^2}-\frac{x_3^2}{b^2} \right) \label{eq:Ch07-082}\\
     \psi &= \frac{a^2 - b^2}{a^2 + b^2} x_2 x_3 \label{eq:Ch07-083}
 \end{align}
-Pour le module de rigidité à la torsion, on trouve
+Pour le module de rigidité à la torsion, on trouve:
 \begin{equation}
     I = \frac{\pi a^3 b^3}{a^2 + b^2}
     \label{eq:Ch07-084}
 \end{equation}
 Les contraintes sont données par
 \begin{equation}
-    \begin{aligned}
-        \sigma_{12} &= - \frac{\mathcal{M}}{I} \frac{\partial \varphi}{\partial x_3} = - \frac{2 \mathcal{M}}{\pi a b^3} x_3 \\
-        \sigma_{13} &= \frac{\mathcal{M}}{I}\frac{\partial \varphi}{\partial x_2} = \frac{2 \mathcal{M}}{\pi a^3 b} x_2
-    \end{aligned}
+        \sigma_{12} = - \frac{\mathcal{M}}{I} \frac{\partial \varphi}{\partial x_3} = - \frac{2 \mathcal{M}}{\pi a b^3} x_3 ,\qquad
+        \sigma_{13} = \frac{\mathcal{M}}{I}\frac{\partial \varphi}{\partial x_2} = \frac{2 \mathcal{M}}{\pi a^3 b} x_2
     \label{eq:Ch07-085}
 \end{equation}
-et la contrainte de cisaillement maximale
+et la contrainte de cisaillement maximale:
 \begin{equation}
     \abs{\vec{T}}_{\text{max}} = \sup \frac{2\mathcal{M}}{\pi a b} \sqrt{\frac{x_3^2}{b^4} + \frac{x_2^2}{a^4}} = \frac{2\mathcal{M}}{\pi a b^2}
     \label{eq:Ch07-086}
 \end{equation}
-est atteinte à l'extrémité du petit axe $x_3 = b$, ce qui donne 
+est atteinte à l'extrémité du petit axe $x_3 = b$, ce qui donne: 
 \begin{equation}
     \rho = \frac{2 a^2 b}{a^2 + b^2}
     \label{eq:Ch07-087}
 \end{equation}
 \subsubsection{Section rectangulaire}
-\begin{multicols}{2}
-    On recherche la solution sous forme d'un développement en série de Fourier double 
-    \columnbreak
-    \begin{center}
-        \includegraphics{../images/T1_Ch07-17}
-    \end{center}
-\end{multicols}
+On recherche la solution sous forme d'un développement en série de Fourier double: 
 \begin{equation}
     \varphi = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} A_{mn} \cos \frac{(2m-1)\pi x_2}{2a} \cos \frac{(2n-1)\pi x_3}{2b}
     \label{eq:Ch07-088}
 \end{equation}
-qui vérifie automatiquement la CL \eqref{eq:Ch07-058}.
-On dérive \eqref{eq:Ch07-088} terme à terme, ce qui permet  d'obtenir le développement de $\Delta\varphi$ que l'on identifie  avec le développement de la fonction constante $-2$, et  on  obtient les  constantes $A_{mn}$.
 
-On obtient des calculs plus simples en cherchant la solution sous la forme 
+\begin{center}
+        \includegraphics{../images/T1_Ch07-17}
+    \end{center}
+
+qui vérifie automatiquement la condition \eqref{eq:Ch07-058}.
+On dérive \eqref{eq:Ch07-088} terme à terme, ce qui permet  d'obtenir le développement de $\Delta\varphi$ que l'on identifie  avec le développement de la fonction constante $-2$ et  on  obtient les  constantes $A_{mn}$.
+
+On obtient des calculs plus simples en cherchant la solution sous la forme: 
 \begin{equation}
     \varphi = \sum_{m=0}^{\infty} \cos \frac{(2m-1) \pi x_2}{2a} \psi_m (x_3)    
     \label{eq:Ch07-089}
 \end{equation}
 développement en série de Fourier simple (mais qui présente l'inconvénient de détruire la symétrie en $x_2$ et $x_3$).
-On calcule $\Delta \varphi$ par dérivation terme à terme, on  identifie  avec le développement de la constante $-2$, et on  obtient pour $\psi_m$ une équation différentielle du second ordre
+On calcule $\Delta \varphi$ par dérivation terme à terme, on  identifie  avec le développement de la constante $-2$, et on  obtient pour $\psi_m$ une équation différentielle du second ordre:
 \begin{displaymath}
     \frac{\ud^2 \psi_m}{\ud x_3^2} - \left( \frac{(2m-1)^2\pi^2}{2a} \right)^2 \psi_m (x_3) = (-1)^m \frac{8}{(2m-1)\pi}
 \end{displaymath}
 qui donne $\psi_m$ par intégration avec les conditions aux limites $\psi_m(\pm b)=0$.
-On obtient finalement
+On obtient finalement:
 \begin{equation}
     \varphi = \frac{32a^3}{\pi^3} \sum_{m=0}^{\infty} \frac{(-1)^m}{(2m-1)} \left\{ 1 - \frac{\cosh \frac{(2m-1)\pi x_3}{2a}}{\cosh \frac{(2m-1)b}{2a}} \right\} \cos \frac{(2m-1)\pi x_2}{2a}
     \label{eq:Ch07-090}
 \end{equation}
 qui permet de calculer la solution et en particulier le module de rigidité à la torsion $I$ et la longueur $\rho$ qui intervient dans \eqref{eq:Ch07-068}.
-On trouve 
+On trouve: 
 \begin{equation}
-    \left\{
-    \begin{aligned}
-        I &= 16 a^3 b h_1 (b/a) = 4 S a^2 h_1 (b/a) \\
-        \rho &= 2 a h (b/a)
-    \end{aligned}
-    \right.
+        I = 16 a^3 b h_1 \frac{b}{a} = 4 S a^2 h_1 \frac{b}{a};\qquad
+        \rho = 2 a h \frac{b}{a}
     \label{eq:Ch07-091}
 \end{equation}
 la contrainte tangentielle maximale étant obtenue au milieu du grand côté $x_3 = \pm b$ si on suppose $a>b$.
-Les fonctions $h_1$ et $h$ sont données par le tableau suivant 
+Les fonctions $h_1$ et $h$ sont données par le tableau suivant: 
 \begin{center}
 \begin{tabular}{c|c|c|c|c|c|c}
     $b/a$ & 1 & 1,5 & 2 & 3 & 5 & $\infty$ \\ \hline
@@ -903,7 +892,7 @@ Il reste à résoudre le problème 2.
 \end{multicols}
 Considérons la section d'abscisse $x_1$ et considérons la poutre $\left[ 0,x_1 \right] \times \Sigma$.
 Elle est en équilibre sous l'action du torseur $[\mathcal{T}_0]$ des efforts appliqués sur la section $x_1 = 0$ et du torseur $[\mathcal{T}(x_1)]$ des efforts de contact exercés sur la poutre  $[O,x_1]\times \Sigma$ par la partie supprimée $[x_1,l]\times \Sigma$.
-Comme précédemment, nous représentons $[\mathcal{T}(x_1)]$ par sa  résultante $\vec{\mathcal{R}} (x_1)$ et son moment $\vec{\mathcal{M}} (x_1)$ par rapport au centre $(x_1,0,0)$ de la section considérée
+Comme précédemment, nous représentons $[\mathcal{T}(x_1)]$ par sa  résultante $\vec{\mathcal{R}} (x_1)$ et son moment $\vec{\mathcal{M}} (x_1)$ par rapport au centre $(x_1,0,0)$ de la section considérée.
 \begin{multicols}{2}
     \begin{center}
         \includegraphics{../images/T1_Ch07-19a}
@@ -913,40 +902,37 @@ Comme précédemment, nous représentons $[\mathcal{T}(x_1)]$ par sa  résultant
         \includegraphics{../images/T1_Ch07-19b}
     \end{center}
 \end{multicols}
-L'équilibre de la poutre $[O,x_1]\times \Sigma$ donne alors
+L'équilibre de la poutre $[O,x_1]\times \Sigma$ donne alors:
 \begin{displaymath}
     \vec{\mathcal{R}} = F \vec{e}_2 \quad,\quad \vec{\mathcal{M}} = F (l -x_1) \vec{e}_3
 \end{displaymath}
-de sorte que la répartition des contraintes dans la section $x_1$ doit être telle que
+de sorte que la répartition des contraintes dans la section $x_1$ doit être telle que:
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \iint_{\Sigma x_1} \sigma_{11} \ud x_2 \ud x_3 &= 0 \\
-        \iint_{\Sigma x_1} x_3\sigma_{11} \ud x_2 \ud x_3 &= 0 \\
-        -\iint_{\Sigma x_1} x_2\sigma_{11} \ud x_2 \ud x_3 &= F (l-x_1)
+       & \iint_{\Sigma x_1} \sigma_{11} \ud x_2 \ud x_3 = 0 \\
+       & \iint_{\Sigma x_1} x_3\sigma_{11} \ud x_2 \ud x_3 = 0 \\
+        -&\iint_{\Sigma x_1} x_2\sigma_{11} \ud x_2 \ud x_3 = F (l-x_1)
     \end{aligned}
-    \right.
     \label{eq:Ch07-092}
 \end{equation}
-\begin{equation}
-    \iint_{\Sigma x_1} \sigma_{12} \ud x_2 \ud x_3 = F
-    \label{eq:Ch07-093}
-\end{equation}
-\begin{equation}
-    \iint_{\Sigma x_1} \sigma_{13} \ud x_2 \ud x_3 = 0
-    \label{eq:Ch07-094}
-\end{equation}
-\begin{equation}
-    \iint_{\Sigma x_1} \left( x_2\sigma_{13} - x_3 \sigma_{12} \right) \ud x_2 \ud x_3 = 0
+et:
+\begin{subequations}
+\begin{align}
+    &\iint_{\Sigma x_1} \sigma_{12} \ud x_2 \ud x_3 = F
+    \label{eq:Ch07-093}\\
+    &\iint_{\Sigma x_1} \sigma_{13} \ud x_2 \ud x_3 = 0
+    \label{eq:Ch07-094}\\
+    &\iint_{\Sigma x_1} \left( x_2\sigma_{13} - x_3 \sigma_{12} \right) \ud x_2 \ud x_3 = 0
     \label{eq:Ch07-095}
-\end{equation}
-En partant de \eqref{eq:Ch07-092}, les résultats du paragraphe~\ref{ssec:Ch07-1.2} nous suggèrent de prendre
+\end{align}
+\end{subequations}
+En partant de \eqref{eq:Ch07-092}, les résultats du paragraphe~\ref{ssec:Ch07-1.2} nous suggèrent de prendre:
 \begin{equation}
-    \sigma_{11} = - \frac{F\left( l - x_1 \right)x_2}{J} \quad,\quad J = J_2
+    \sigma_{11} = - \frac{F\left( l - x_1 \right)x_2}{J},\quad J = J_2
     \label{eq:Ch07-096}
 \end{equation}
 D'autre part, \eqref{eq:Ch07-093} montre que $\sigma_{12}$ ne peut pas être nul.
-Nous prenons donc dans un premier temps
+Nous prenons donc dans un premier temps:
 \begin{equation}
     \tens{\sigma} = 
     \begin{bmatrix}
@@ -957,16 +943,16 @@ Nous prenons donc dans un premier temps
     \label{eq:Ch07-097}
 \end{equation}
 avec $\sigma_{11}$ donné par \eqref{eq:Ch07-096}.
-Les équations d'équilibre nous donnent alors
+Les équations d'équilibre nous donnent alors:
 \begin{displaymath}
-    \sigma_{11,1} + \sigma_{12,2} = 0 \quad,\quad \sigma_{12,1} = 0
+    \sigma_{11,1} + \sigma_{12,2} = 0 ,\quad \sigma_{12,1} = 0
 \end{displaymath}
-soit, compte-tenu de \eqref{eq:Ch07-096}, 
+soit, compte-tenu de \eqref{eq:Ch07-096}: 
 \begin{equation}
     \sigma_{12} = -\frac{F}{2J} ( x_2^2 + f(x_3) )
     \label{eq:Ch07-098}
 \end{equation}
-Les équations de Beltrami sont toutes vérifées, sauf l'équation relative aux indices $1,2$ qui donne 
+Les équations de Beltrami sont toutes vérifées, sauf l'équation relative aux indices $1,2$ qui donne: 
 \begin{displaymath}
     \sigma_{12,11}+\sigma_{12,22} + \frac{1}{1+\nu} \sigma_{11,12} = 0 
 \end{displaymath}
@@ -974,15 +960,17 @@ Les équations de Beltrami sont toutes vérifées, sauf l'équation relative aux
     -\frac{F}{2J} \left( f''(x_3) + 2 \right) + \frac{1}{1+\nu} \frac{F}{J} = 0
 \end{displaymath}
 \begin{displaymath}
-    f''(x_3)= -\frac{2\nu}{1+\nu} \quad,\quad f(x_3) = - \frac{\nu}{1+\nu} x_3^2 + a x_3 + b
+    f''(x_3)= -\frac{2\nu}{1+\nu}
+\end{displaymath}
+\begin{displaymath}
+f(x_3) = - \frac{\nu}{1+\nu} x_3^2 + a x_3 + b
 \end{displaymath}
 \begin{equation}
     \sigma_{12} = - \frac{F}{2J} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 + ax_3 +b\right)
     \label{eq:Ch07-099}
 \end{equation}
-
-Par contre, puisque $\sigma_{13}$ est nul, la CL sur la surface latérale, qui s'écrit encore sous la forme \eqref{eq:Ch07-055}, ne peut pas être vérifiée.
-Nous superposons donc à l'état de contraintes obtenu jusqu'à présent, un état de contraintes $\tilde{\tens{\sigma}}$ avec $\tilde{\sigma}_{13}$ non nul
+Par contre, puisque $\sigma_{13}$ est nul, la condition aux limite sur la surface latérale, qui s'écrit encore sous la forme \eqref{eq:Ch07-055}, ne peut pas être vérifiée.
+Nous superposons donc à l'état de contraintes obtenu jusqu'à présent, un état de contraintes $\tilde{\tens{\sigma}}$ avec $\tilde{\sigma}_{13}$ non nul:
 \begin{equation}
     \tens{\sigma} = \tens{\sigma}^0 + \tilde{\tens{\sigma}} = 
     \begin{bmatrix}
@@ -999,64 +987,59 @@ Nous superposons donc à l'état de contraintes obtenu jusqu'à présent, un ét
     \label{eq:Ch07-100}
 \end{equation}
 \begin{equation}
-    \sigma_{11} = -\frac{F(l-x_1)x_2}{J} \quad,\quad \sigma_{12}^0 = -\frac{F}{2J} \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right)
+    \sigma_{11} = -\frac{F(l-x_1)x_2}{J},\quad \sigma_{12}^0 = -\frac{F}{2J} \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right)
     \label{eq:Ch07-101}
 \end{equation}
-
 Par construction, le champ $\tens{\sigma}^0$ vérifie les équations d'équilibre 
 et les équations de Beltrami; le champ $\tilde{\tens{\sigma}}$  devra donc les vérifier également.
-On peut alors reprendre l'analyse du paragraphe~\ref{ssec:Ch07-2.2} et obtenir 
+On peut alors reprendre l'analyse du paragraphe~\ref{ssec:Ch07-2.2} et obtenir: 
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \tilde{\sigma}_{12} = \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_3} \quad \tilde{\sigma}_{13} = - \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_2} \\
-        \Delta \tilde{\varphi} = \text{Cte} = -2C
+       & \tilde{\sigma}_{12} = \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_3} \\& \tilde{\sigma}_{13} = - \frac{F}{J} \frac{\partial \tilde{\varphi}}{\partial x_2} \\
+        &\Delta \tilde{\varphi} = \text{Cte} = -2C
     \end{aligned}
-    \right.
     \label{eq:Ch07-102}
 \end{equation}
-Nous faisons le changement de fonction 
+Nous faisons le changement de fonction: 
 \begin{equation}
     \tilde{\varphi} (x_2,x_3) = C\varphi(x_2,x_3) + \chi (x_2,x_3)
     \label{eq:Ch07-103}
 \end{equation}
-où $\varphi$ est la fonction introduite au paragraphe~\ref{ssec:Ch07-2.2}, solution du problème \eqref{eq:Ch07-060}, de sorte que
+où $\varphi$ est solution du problème \eqref{eq:Ch07-060}, de sorte que:
 \begin{equation}
     \Delta\chi = 0
     \label{eq:Ch07-104}
 \end{equation}
-Comme au paragraphe~\ref{ssec:Ch07-2.2}, la CL sur la surface latérale peut s'écrire 
+Comme au paragraphe~\ref{ssec:Ch07-2.2}, la condition aux limites sur la surface latérale peut s'écrire: 
 \begin{displaymath}
     \sigma_{12} \frac{\ud x_3}{\ud s} - \sigma_{13} \frac{\ud x_2}{\ud s} = 0
 \end{displaymath}
 \begin{displaymath}
     -\frac{F}{2J} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \frac{\ud x_3}{\ud s} + \frac{F}{J} \left( \frac{\ud \chi}{\ud s} + C \frac{\ud \varphi}{\ud s} \right) = 0
 \end{displaymath}
-Le dernier terme s'annule d'après \eqref{eq:Ch07-060} et on a 
+Le dernier terme s'annule d'après \eqref{eq:Ch07-060} et on a: 
 \begin{equation}
     \frac{\ud \chi}{\ud s} = \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right] \frac{\ud x_3}{\ud s}
     \label{eq:Ch07-105}
 \end{equation}
-Sur $\partial \Sigma$, $x_2$ et $x_3$ sont fonctions de $s$ et par intégration de \eqref{eq:Ch07-105} sur $\partial \Sigma$ on peut obtenir la valeur de $\chi$ sur $\partial \Sigma$ à une constante près
+Sur $\partial \Sigma$, $x_2$ et $x_3$ sont fonctions de $s$ et par intégration de \eqref{eq:Ch07-105} sur $\partial \Sigma$ on peut obtenir la valeur de $\chi$ sur $\partial \Sigma$ à une constante près:
 \begin{equation}
     \chi(s) = \chi_0 (s) = \int_{s_0}^s \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right] \frac{\ud x_3}{\ud s} \ud s
     \label{eq:Ch07-106}
 \end{equation}
-Pour s'assurer que \eqref{eq:Ch07-106} définit sans ambiguité la fonction $\chi_0$ sur $\partial \Sigma$, il faut vérifier que 
+Pour s'assurer que \eqref{eq:Ch07-106} définit sans ambiguité la fonction $\chi_0$ sur $\partial \Sigma$, il faut vérifier que: 
 \begin{equation}
     \oint \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right]\ud x_3 = 0
     \label{eq:Ch07-107}
 \end{equation}
 Ceci résulte directement de la formule de Stokes et de \eqref{eq:Ch07-018}. 
 
-Ainsi, la fonction $\chi$ est déterminée par 
+Ainsi, la fonction $\chi$ est déterminée par: 
 \begin{equation}
-    \left\{
     \begin{aligned}
-        \Delta\chi = 0 \\
-        \chi|_{\partial \Sigma} = \chi_0 & \text{ définie par \eqref{eq:Ch07-106}}
+        &\Delta\chi = 0 \\
+        &\chi|_{\partial \Sigma} = \chi_0 && \text{ définie par \eqref{eq:Ch07-106}}
     \end{aligned}
-    \right.
     \label{eq:Ch07-108}
 \end{equation}
 C'est un problème de Dirichlet qui admet une solution unique dépendant uniquement de la section $\Sigma$.
@@ -1065,7 +1048,7 @@ C'est un problème de Dirichlet qui admet une solution unique dépendant uniquem
 Pour terminer la détermination du champ de contraintes, en particulier pour déterminer la constante $C$, il convient de vérifier les conditions aux limites sur l'extrémité $x_1 = l$ c'est-à-dire de vérifier les conditions \eqref{eq:Ch07-092}, \eqref{eq:Ch07-093}, \eqref{eq:Ch07-094} et \eqref{eq:Ch07-095} pour $x_1$.
 Par construction de $\sigma_{11}$ les relations \eqref{eq:Ch07-092} sont 
 vérifiées pour tout $x_1$.
-A partir des calculs du paragraphe précédent, on a
+\`A partir des calculs du paragraphe précédent, on a:
 \begin{equation}
     \begin{aligned}
         \sigma_{12} &= \frac{F}{J_2} \left\{ -\frac{1}{2} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) + \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right\} \\
@@ -1075,37 +1058,37 @@ A partir des calculs du paragraphe précédent, on a
 \end{equation}
 et $\sigma_{12}$ et $\sigma_{13}$ dépendent uniquement de $x_2$ et $x_3$.
 
-Pour \eqref{eq:Ch07-093}, nous partons de \eqref{eq:Ch07-109} et 
+Pour \eqref{eq:Ch07-093}, nous partons de \eqref{eq:Ch07-109} et: 
 \begin{equation}
     \mathcal{R}_2 = - \frac{F}{2 J_2} \iint_{\Sigma} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \ud x_2 \ud x_3 + \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3
     \label{eq:Ch07-110}
 \end{equation}
-Compte-tenu de la définition~\eqref{eq:Ch07-021} de $J_2$ et $J_3$ on obtient pour le premier terme
+Compte-tenu de la définition~\eqref{eq:Ch07-021} de $J_2$ et $J_3$ on obtient pour le premier terme:
 \begin{equation}
     -\frac{F}{2} \left[ 1 - \frac{\nu}{1+\nu} \frac{J_3}{J_2} \right]
     \label{eq:Ch07-111}
 \end{equation}
-Pour le second terme, on utilise la formule de Stokes
+Pour le second terme, on utilise la formule de Stokes:
 \begin{displaymath}
     \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3 = -\frac{F}{J_2} \oint_{\partial \Sigma} \left( \chi + \cancel{C\varphi} \right) \ud x_2
 \end{displaymath}
-Le terme en $\varphi$ diparaît par \eqref{eq:Ch07-060}, et on intègre le terme en $\chi$ par parties.
-Compte-tenu de \eqref{eq:Ch07-105}, on obtient
+Le terme en $\varphi$ diparaît par \eqref{eq:Ch07-060} et on intègre le terme en $\chi$ par parties.
+Compte-tenu de \eqref{eq:Ch07-105}, on obtient:
 \begin{displaymath}
     -\frac{F}{J_2} \oint_{\partial \Sigma} \chi \ud x_2 = \frac{F}{J_2} \oint_{\partial \Sigma} x_2 \ud \chi = \frac{F}{2J_2} \oint_{\partial \Sigma} x_2 \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right) \ud x_3
 \end{displaymath}
-On utilise à nouveau la formule de Stokes 
+On utilise à nouveau la formule de Stokes: 
 \begin{align*}
     \frac{F}{2J_2} x_2 \left( x_2^2 - \frac{\nu}{1+\nu}x_3^2 \right) \ud x_3 &= \frac{F}{2J_2} \iint_{\Sigma} \frac{\partial}{\partial x_2} \left[ x_2 \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) \right]\ud x_2 \ud x_3 \\
     &= \frac{F}{2J_2} \iint_{\Sigma} \left( 3x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right)\ud x_2 \ud x_3
 \end{align*}
-et compte-tenu de \eqref{eq:Ch07-021}, le deuxième terme de \eqref{eq:Ch07-110} donne 
+et compte-tenu de \eqref{eq:Ch07-021}, le deuxième terme de \eqref{eq:Ch07-110} donne: 
 \begin{equation}
     \frac{F}{2} \left[ 3 - \frac{\nu}{1+\nu} \frac{J_3}{J_2} \right]
     \label{eq:Ch07-112}
 \end{equation}
 La combinaison de \eqref{eq:Ch07-110} et \eqref{eq:Ch07-112} donne alors $\mathcal{R}=F$, et permet de vérifier \eqref{eq:Ch07-093}.
-La vérification de \eqref{eq:Ch07-094} est analogue. 
+La vérification de \eqref{eq:Ch07-094} est analogue: 
 \begin{equation}
     \begin{split}
         \mathcal{R}_3 &= \iint_{\Sigma} \sigma_{13} \ud x_2 \ud x_3 = - \frac{F}{J_2} \iint_{\Sigma} \left( \frac{\partial \chi}{\partial x_2} + C \frac{\partial \varphi}{\partial x_2} \right) \ud x_2 \ud x_3 \\
@@ -1114,36 +1097,33 @@ La vérification de \eqref{eq:Ch07-094} est analogue.
     \end{split}
     \label{eq:Ch07-113}
 \end{equation}
-d'après \eqref{eq:Ch07-020}.
-
-Il reste à écrire \eqref{eq:Ch07-095}.
-Le calcul est mené de manière similaire
+d'après \eqref{eq:Ch07-020}. Il reste à écrire \eqref{eq:Ch07-095}. Le calcul est mené de manière similaire:
 \begin{align*}
     \mathcal{M}_1 &= \iint_{\Sigma} \left( x_2 \sigma_{13} - x_3 \sigma_{12} \right) \ud x_2 \ud x_3 \\
     &= \frac{F}{J_2} \left\{ \frac{1}{2} \iint_{\Sigma} \left( x_2^2 x_3 - \frac{\nu}{1+\nu} x_3^2 \right) \ud x_2 \ud x_3 - \iint_{\Sigma} \left( x_2 \frac{\partial \chi}{\partial x_2} + x_3 \frac{\partial \chi}{\partial x_3}  \right)\ud x_2 \ud x_3 \right\}
 \end{align*}
-D'après le calcul qui a donné \eqref{eq:Ch07-063}, il vient 
+D'après le calcul qui a donné \eqref{eq:Ch07-063}, il vient: 
 \begin{displaymath}
     -\iint_{\Sigma} \left( x_2 \frac{\partial \varphi}{\partial x_2} + x_3 \frac{\partial \varphi}{\partial x_3} \right) \ud x_2 \ud x_3 = 2 \iint_{\Sigma} \varphi \ud x_2 \ud x_3 = I
 \end{displaymath}
-de sorte que nous pouvons écrire 
+de sorte que nous pouvons écrire: 
 \begin{equation}
     \mathcal{M}_1 = \frac{F}{J_2} \left( H - CI \right)
     \label{eq:Ch07-114}
 \end{equation}
-où la constante $H$, donnée par
+où la constante $H$, donnée par:
 \begin{equation}
     H = \frac{1}{2} \iint_{\Sigma} \left[ x_2^2 x_3 - \frac{\nu}{1+\nu} x_3^3 - 2x_2 \frac{\partial \chi}{\partial x_2} -2x_3 \frac{\partial \chi}{\partial x_3} \right] \ud x_2 \ud x_3
     \label{eq:Ch07-115}
 \end{equation}
 dépend uniquement de la section $\Sigma$.
-La condition \eqref{eq:Ch07-095} donne alors la valeur de la constante 
+La condition \eqref{eq:Ch07-095} donne alors la valeur de la constante: 
 \begin{equation}
     C = \frac{H}{I}
     \label{eq:Ch07-116}
 \end{equation}
 et le champ de contraintes est parfaitement défini.
-Il est de la forme 
+Il est de la forme: 
 \begin{equation}
     \tens{\sigma} = \frac{F}{J_2} 
     \begin{bmatrix}
@@ -1153,55 +1133,42 @@ Il est de la forme
     \end{bmatrix}
     \label{eq:Ch07-117}
 \end{equation}
-où $\alpha$ et $\beta$ sont deux fonctions homogènes au carré d'une longueur, et qui dépendent uniquement de la section $\Sigma$.
+où $\alpha$ et $\beta$ sont deux fonctions homogènes au carré d'une longueur qui dépendent uniquement de la section $\Sigma$.
 
 La solution du problème de la flexion composée peut donc, comme pour la torsion, s'obtenir par résolution de problèmes de Dirichlet, mais les calculs sont beaucoup plus laborieux.
 En particulier, on peut écrire le critère de limite d'élasticité et calculer le déplacement, mais on ne peut pas en tirer une interprétation simple comme pour les autres problèmes.
 En particulier, l'hypothèse de Navier-Bernoulli (voir paragraphe~\ref{ssec:Ch07-1.3}) n'est plus vérifiée, les sections droites ne restent plus planes: en torsion comme en flexion composée, l'apparition de contraintes de cisaillement entraîne un gauchissement de la section.
 
 \subsection{Section circulaire}
-Si la section est symétrique par rapport à l'axe $x_2$ alors, en prenant l'origine des abscisses curvilignes sur l'axe $x_2$ on voit que la fonction $\chi_0$ définie sur $\partial \chi$ par \eqref{eq:Ch07-106} prend des valeurs opposées en deux points symétriques par rapport à l'axe des $x_2$.
-Il en résulte que la fonction $\chi$ définie par le problème \eqref{eq:Ch07-108} est impaire en $x_3$
+Si la section est symétrique par rapport à l'axe $x_2$ alors, en prenant l'origine des abscisses curvilignes sur l'axe $x_2$, on voit que la fonction $\chi_0$ définie sur $\partial \chi$ par \eqref{eq:Ch07-106} prend des valeurs opposées en deux points symétriques par rapport à l'axe des $x_2$.
+Il en résulte que la fonction $\chi$ définie par le problème \eqref{eq:Ch07-108} est impaire en $x_3$:
 \begin{equation}
     \chi_2 (x_2,-x_3) = - \chi (x_2, x_3)
     \label{eq:Ch07-118}
 \end{equation}
 La quantité intégrée dans \eqref{eq:Ch07-115} est donc impaire en $x_3$, $H$ est nul, et la constante $C$ est nulle.
-On obtient pour le vecteur contrainte tangentielle sur la section droite $\left( 0,\sigma_{12}, \sigma_{13} \right)$ la symétrie par rapport à l'axe $x_2$
-\begin{multicols}{2}
-    \begin{center}
-        \includegraphics{../images/T1_Ch07-20}
-    \end{center}
-    \columnbreak
-    \begin{equation}
-        \left\{
-        \begin{aligned}
-            \sigma_{12} (x_2, -x_3) &= \sigma_{12} (x_2, x_3) \\
-            \sigma_{13} (x_2, -x_3) &= -\sigma_{13} (x_2, x_3)
-        \end{aligned}
-        \right.
-        \label{eq:Ch07-119}
-    \end{equation}
-\end{multicols}
+On obtient pour le vecteur contrainte tangentielle sur la section droite $\left( 0,\sigma_{12}, \sigma_{13} \right)$ la symétrie par rapport à l'axe $x_2$:
 
-A titre d'exemple, nous allons calculer la fonction $\chi$ et la répartition de contraintes pour une section $\Sigma$ circulaire, de rayon $a$.
-Pour calculer $\chi_0$ on écrit \eqref{eq:Ch07-105}
-\begin{multicols}{2}
-    \begin{center}
-        \includegraphics{../images/T1_Ch07-21}
-    \end{center}
-    \columnbreak
-    \begin{align*}
+\begin{tabular}{m{2cm}p{1cm}m{8cm}}
+        \includegraphics{../images/T1_Ch07-20}&&
+$\begin{aligned}
+            \sigma_{12} (x_2, -x_3) &= \sigma_{12} (x_2, x_3) \\[3pt]
+            \sigma_{13} (x_2, -x_3) &= -\sigma_{13} (x_2, x_3)
+        \end{aligned}$
+\end{tabular}
+
+\`A titre d'exemple, nous allons calculer la fonction $\chi$ et la répartition de contraintes pour une section $\Sigma$ circulaire, de rayon $a$.
+Pour calculer $\chi_0$ on écrit \eqref{eq:Ch07-105}:
+
+
+\begin{tabular}{m{2cm}p{1cm}m{8cm}}
+        \includegraphics{../images/T1_Ch07-21}&&
+$\begin{aligned}
         \ud\chi &= \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
         &= \frac{1}{2} \left[ (a^2 - x_3^2) - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
         &= \frac{1}{2} \left[ a^2 - \frac{1+2\nu}{1+\nu} x_3^2 \right] \ud x_3
-    \end{align*}
-\end{multicols}
-\begin{align}
-    \chi_0 &= \frac{1}{2} \left[ a^2 x_3 - \frac{1+2\nu}{3(1+\nu)} x_3^3 \right] \nonumber\\
-    \chi_0 &= \frac{a^3}{2} \left[ \sin \theta - \frac{1+2\nu}{3(1+\nu)} \sin^3 \theta \right]
-    \label{eq:Ch07-120}
-\end{align}
+    \end{aligned}$
+\end{tabular}
 
 Pour calculer 1a fonction $\chi (x_2,x_3)$ nous devons trouver la fonction $\chi$ harmonique qui prend la valeur \eqref{eq:Ch07-120} pour $r=a$.
 Pour cela on remarque que les fonctions
@@ -1210,12 +1177,12 @@ Pour cela on remarque que les fonctions
     \label{eq:Ch07-121}
 \end{equation}
 sont harmoniques pour tout entier $n$.
-On écrit alors 
+On écrit alors: 
 \begin{equation}
     \sin 3 \theta = 3 \sin \theta - 4 \sin^3 \theta
     \label{eq:Ch07-122}
 \end{equation}
-et on peut réécrire \eqref{eq:Ch07-120} sous la forme 
+et on peut réécrire \eqref{eq:Ch07-120} sous la forme: 
 \begin{equation}
     \begin{aligned}
         \chi_0 &= \frac{a^3}{2} \left[ \sin \theta - \frac{1+2\nu}{12 (1+\nu)} \left( 3 \sin \theta - \sin 3 \theta \right) \right] \\
@@ -1223,7 +1190,7 @@ et on peut réécrire \eqref{eq:Ch07-120} sous la forme
     \end{aligned}
     \label{eq:Ch07-123}
 \end{equation}
-On utilise à nouveau \eqref{eq:Ch07-122} pour écrire
+On utilise à nouveau \eqref{eq:Ch07-122} pour écrire:
 \begin{displaymath}
     \chi = \frac{1}{2} \left[ \frac{1+2\nu}{4(1+\nu)} r^3 \sin \theta - \frac{1+2\nu}{3(1+\nu)} r^3 \sin^3 \theta + \frac{3+2\nu}{4(1+\nu)}a^2 r \sin \theta \right]
 \end{displaymath}
@@ -1231,7 +1198,7 @@ On utilise à nouveau \eqref{eq:Ch07-122} pour écrire
     \chi = \frac{1}{8(1+\nu)} \left\{ (1+2\nu) \left( x_2^2 x_3 - \frac{x_3^2}{3}\right) + (3+2\nu) a^2 x_3 \right\}
     \label{eq:Ch07-124}
 \end{equation}
-ce qui donne pour les contraintes 
+ce qui donne pour les contraintes: 
 \begin{equation}
     \begin{aligned}
         \sigma_{12} &= \frac{F}{8J_2} \frac{3+2\nu}{1+\nu} \left[ a^2 - x_2^2 - \frac{1-2\nu}{3+ 2\nu}x_3^2 \right] \\
