@@ -1,4 +1,4 @@
-% Mécanique des solides
+% Mécanique des milieux continus
 % François Sidoroff
 %
 \documentclass[dvips,11pt,a4paper,fleqn]{book}
@@ -23,7 +23,7 @@
 \usepackage{pstricks,pstricks-add}%pst-text,pst-plot,pst-all}
 \usepackage[backref,colorlinks=true,dvips,bookmarks=true,pagebackref]{hyperref}
 \hypersetup{pdfauthor={F.~Sidoroff},
- pdftitle={M\'ecanique~des~solides},
+ pdftitle={M\'ecanique~des~milieux~continus},
  bookmarksnumbered=true}
 \usepackage{stmaryrd} % pour llbracket et rrbracket
 \usepackage{wrapfig}
@@ -54,7 +54,7 @@
 %\usepackage{ntgclass} % "European" versions of standard classes.
 %\usepackage{thmbox} % Decorate theorem statements.
 
-\newcommand{\tmp}[1]{{\color{red}{#1}}}
+\newcommand{\tmp}[1]{{\color{violet}{#1}}}
 % alias math
 \newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \DeclareMathOperator*{\dive}{\mathrm{div}}
@@ -131,20 +131,20 @@
 \tableofcontents
 \mainmatter
 \psset{linewidth=1pt,arrowsize=2pt 4}
-%\include{Ch1}
-%\include{Ch2}
-%\include{Ch3}
-%\include{Ch4}
-%\include{Ch5}
-%\include{Ch6}
+\include{Ch1}
+\include{Ch2}
+\include{Ch3}
+\include{Ch4}
+\include{Ch5}
+\include{Ch6}
 \include{Ch7}
-%\include{Ch8}
-%\include{Ch9}
-%\include{Ch10}
-%\include{Ch11}
-%\appendix
-%\include{AnnA}
-%\nocite{*}
-%\bibliographystyle{plain-fr}
-%\bibliography{biblio-sidoroff}
+\include{Ch8}
+\include{Ch9}
+\include{Ch10}
+\include{Ch11}
+\appendix
+\include{AnnA}
+\nocite{*}
+\bibliographystyle{plain-fr}
+\bibliography{biblio-sidoroff}
 \end{document}

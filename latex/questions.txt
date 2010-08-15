@@ -1,0 +1,3 @@
+P.5 : En utilisant le lemme ??, on obtient en première approximation :
+P.11 : équation (1.36)
+P.126 : Si l'on dérive la forme qui ??? W_abc par rapport...
