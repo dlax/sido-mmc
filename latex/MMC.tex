@@ -121,12 +121,41 @@
 %\theoremsymbol{\(\square\)}
 %\renewtheorem*{proof}{Démonstration}
 
-\author{F. Sidorrof}
-\title{M\'ecanique des Solides}
-\title{Mécanique des Milieux Continus}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% définition de l'apparence de la page de titre
+\definecolor{Vert}{RGB}{22,200,22}
+\newcommand*{\titleCC}{\begingroup% City of Cambridge
+\pagestyle{empty}
+\AddToShipoutPicture*{\put(145,-30){\includegraphics[scale=1.1]{../images/fondECL.eps}}}
+\vspace*{2em}
+\centering
+\par\normalfont\fontsize{25}{30}\sffamily\selectfont\textbf{Mécanique des Milieux Continus}
+\vfill\rmfamily
+{\Large François Sidoroff}\par
+\vfill
+\includegraphics[height=5cm]{../images/LogoECL.eps}
+\par\vfill
+{\small 28/09/2004}\par
+\vspace*{0.5em}
+\newpage\thispagestyle{empty}
+\textcolor{white}{p}
+\endgroup \vfill
+\begin{flushright}
+\psframebox[framearc=.5,fillcolor=white,framesep=2pt,linecolor=Vert,linewidth=1pt]{\includegraphics[width=1cm]{../icon/share2.eps}\includegraphics[width=1cm]{../icon/remix2.eps}}
+\hspace*{1pt}\psframebox[framearc=.5,fillcolor=white,framesep=2pt,linecolor=red,linewidth=1pt]{\includegraphics[width=1cm]{../icon/by2.eps}\includegraphics[width=1cm]{../icon/nc-eu2.eps}\includegraphics[width=1cm]{../icon/sa2.eps}}\\
+
+\vspace*{2pt}
+\sffamily
+Ce document est sous licence Creative Commons \\
+Paternité\\ Pas d'Utilisation Commerciale \\ Partage des Conditions Initiales à l'Identique\\ 3.0 France\\
+\url{http://creativecommons.org/licenses/by-nc-sa/3.0/deed.fr}
+\end{flushright}} 
+
+
 
 \begin{document}
-%\include{Titre}
+\titleCC
 \frontmatter
 \tableofcontents
 \mainmatter
