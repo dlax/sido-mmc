@@ -517,47 +517,43 @@ On sait également démontrer des théorèmes variationnels analogues à ceux de
 La résolution d'un problème élasto-plastique quasi-statique se fait donc pas à pas, par résolution d'une suite de problèmes en vitesses.
 Mais il est important de remarquer que pour toutes ces questions, la formulation de la loi d'écoulement plastique par le principe du travail maximal joue un rôle essentiel. 
 
-\subsection{Introduction a l'analyse limite} \label{ssec:Ch10-3.2}
-Nous considérons un problème où le chargement dépend d'un seul paramètre 
+\subsection{Introduction à l'analyse limite} \label{ssec:Ch10-3.2}
+Nous considérons un problème où le chargement dépend d'un seul paramètre: 
 \begin{equation}
-    \left\{
-    \begin{aligned}
-        S_u = \emptyset \text{ ou } u_i^d = 0 \\
+        S_u = \varnothing \,\text{ ou }\, u_i^d = 0, \quad
         T_i^d = \lambda T_i^{d0}, \quad f_i = \lambda f_i^0
-    \end{aligned}
-    \right.
     \label{eq:Ch10-054}
 \end{equation}
-Pour les problèmes envisagés au paragraphe~\ref{sec:Ch10-2}, on  a $\lambda = \mathcal{M}$ pour la poutre en flexion et $\lambda=p$ pour le réservoir sphérique.  
+Pour les problèmes envisagés au paragraphe~\ref{sec:Ch10-2}, on  a $\lambda = \mathcal{M}$ pour la poutre en flexion et $\lambda=p$, pour le réservoir sphérique.  
 
 Si l'on fait croître le chargement, on obtient toujours le même comportement.
-Jusqu'à $\lambda=\lambda_e$ la solution élastique convient.
-Au delà apparaît une zone plastique qui progresse au fur et à mesure que $\lambda$ augmente, et jusqu'à ce que pour $\lambda-\lambda_l$ on ait ruine de la structure par déformations plastiques illimitées. 
+Jusqu'à $\lambda=\lambda_e$, la solution élastique convient.
+Au-delà apparaît une zone plastique qui progresse au fur et à mesure que $\lambda$ augmente, et jusqu'à ce que pour $\lambda-\lambda_l$ on ait ruine de la structure par déformations plastiques illimitées. 
 
-La charge correspondant à $\lambda=\lambda_l$ est appelée «~charge limite~».
+La charge correspondant à $\lambda=\lambda_l$ est appelée \emph{charge limite}.
 C'est la charge maximale supportable et, d'un point de vue pratique, c'est le résultat le plus intéressant et le plus significatif d'un calcul en plasticité.
 On a donc cherché à développer des méthodes permettant de calculer directement cette charge limite, sans résolution complète du problème élasto-plastique: c'est le domaine de l'analyse limite. 
 
 La théorie s'appuie sur deux théorèmes fondamentaux. 
 \begin{deff}
-    Un champ de contraintes $\hat{\sigma}_{ij}$ sera un champ licite pour un chargement $(f_i,T_i^d)$ s'il est statiquement admissible et si en tout point il vérifie le critère de plasticité. 
+    Un champ de contraintes $\hat{\sigma}_{ij}$ sera un champ licite pour un chargement $(f_i,T_i^d)$ s'il est statiquement admissible et si, en tout point, il vérifie le critère de plasticité. 
 \end{deff}
 \begin{deff}
-    Un champ de vitesses $\tilde{\dot{u}}_i$ sera un champ cinématiquement et plastiquement admissible (CCPA) s'il est cinématiquement admissible et si en chaque point il existe un  tenseur de contraintes $\tilde{\sigma}_{ij}$ tel que $\tilde{\dot{\varepsilon}}_{ij}$ puisse être la déformation plastique associée.  
+    Un champ de vitesses $\tilde{\dot{u}}_i$ sera un champ cinématiquement et plastiquement admissible (CCPA) s'il est cinématiquement admissible et si, en chaque point, il existe un  tenseur de contraintes $\tilde{\sigma}_{ij}$ tel que $\tilde{\dot{\varepsilon}}_{ij}$ puisse être la déformation plastique associée.  
 \end{deff}
 
-Dans le cas des métaux par exemple, cette dernière condition revient simplement à imposer la condition 
+Dans le cas des métaux par exemple, cette dernière condition revient simplement à imposer la condition: 
 \begin{equation}
     \tilde{\dot{\varepsilon}}_{ii} = 0
     \label{eq:Ch10-055}
 \end{equation}
-On définit alors la fonction de dissipation 
+On définit alors sans ambiguïté la fonction de dissipation: 
 \begin{equation}
     D\left( \tilde{\dot{\tens{\varepsilon}}}_p \right) = \tilde{\sigma}_{ij} \tilde{\dot{\varepsilon}}_{ij}^p
     \label{eq:Ch10-056}
 \end{equation}
-fonction définie sans ambiguïté, bien qu'il puisse exister plusieurs $\tilde{\sigma}_{ij}$ compatibles avec $\tilde{\dot{\varepsilon}}_{ij}^p$.
-Pour le critère de von Mises par exemple 
+bien qu'il puisse exister plusieurs $\tilde{\sigma}_{ij}$ compatibles avec $\tilde{\dot{\varepsilon}}_{ij}^p$.
+Pour le critère de von Mises par exemple: 
 \begin{equation}
     D\left( \tilde{\dot{\tens{\varepsilon}}}_p \right) = \frac{2}{3} \sigma_e \tilde{\varepsilon}_{ij}^p \tilde{\varepsilon}_{ij}^p \quad \left( \dot{\varepsilon}_{ii}^p = 0 \right)
     \label{eq:Ch10-057}
@@ -567,7 +563,7 @@ On peut alors démontrer les deux thêorèmes suivants.
     S'il existe un champ de contraintes licite pour le chargement $\left( f_i, T_i^d \right)$, alors la structure peut supporter ce chargement.
 \end{thmn}
 \begin{thmn}[Théorème cinématique]
-    S'il existe un CCPA tel que 
+    S'il existe un CCPA \tmp{CCPA???} tel que: 
     \begin{equation}
         \iiint_{\Omega} f_i \tilde{\dot{u}}_i \ud v + \iint_{S_f} T_i^d \tilde{\dot{u}}_i \ud S > \iiint_{\Omega} D \left( \tilde{\dot{\varepsilon}}_{ij} \right) \ud v
         \label{eq:Ch10-058}
@@ -575,9 +571,9 @@ On peut alors démontrer les deux thêorèmes suivants.
     alors la structure ne peut pas supporter le chargement $\left( f_i, T_i^d \right)$.
 \end{thmn}
 Le premier théorème permet de construire des bornes inférieures de la charge limite.
-En effet, soit $\hat{\sigma}_{ij}^0$ un CSA pour le chargement $\left( f_i, T_i^d \right)$.
+En effet, soit $\hat{\sigma}_{ij}^0$ un champ statiqument admissible (CSA) pour le chargement $\left( f_i, T_i^d \right)$.
 Alors, le champ $\lambda \hat{\sigma}_{ij}^0$ sera CSA pour le chargement $\left( f^0_i, T_i^{d0} \right)$.
-En choisissant pour $\lambda$ la plus grande valeur conduisant à un champ licite 
+En choisissant pour $\lambda$ la plus grande valeur conduisant à un champ licite: 
 \begin{equation}
     \hat{\lambda} = \sup \left\{ \lambda | f\left( \lambda \hat{\sigma}_{ij}^0 \right) \leq 0\ \forall x \right\}
     \label{eq:Ch10-059}
@@ -586,13 +582,13 @@ alors, le théorème statique permet d'affirmer que $\hat{\lambda}$ est une born
 
 De la même manière, le second théorème permet d'obtenir des bornes supêrieures de la charge limite.
 Soit en effet $\tilde{\dot{u}}_i$ un CCPA, alors la structure ne pourra pas supporter les chargements vérifiant~\eqref{eq:Ch10-058}.
-La quantité 
+La quantité: 
 \begin{equation}
     \tilde{\lambda} = \iiint_{\Omega} D \left( \tilde{\dot{\varepsilon}}_{ij} \right) \ud v \left\{ \iiint_{\Omega} f_i^0 \tilde{\dot{u}}_i \ud v + \iint_{S_f} T_i^{d0} \tilde{\dot{u}}_i \ud S \right\}^{-1}
     \label{eq:Ch10-060}
 \end{equation}
 est donc une borne supérieure de $\lambda_l$.
-On en déduit un encadrement 
+On en déduit un encadrement:
 \begin{equation}
     \hat{\lambda} \leq \lambda_l \leq \tilde{\lambda}
     \label{eq:Ch10-061}
@@ -602,9 +598,9 @@ On notera l'analogie de cette méthode avec celle présentée en élasticité.
 
 L'analyse limite est utilisée:
 \begin{itemize}
-    \item en mécanique des structures, car la charge limite caractérise bien la capacité de résistance d'une structure -- bien mieux en tout cas que la charge élastique $\lambda_e$.
-        La tendance actuelle de la règlementation en matière de calcul d'ouvrage consiste à substituer un calcul plastique au calcul élastique traditionnel. 
-    \item pour les problèmes mise en forme des métaux (laminage, filage, etc.), car elle permet d'évaluer les efforts nécessaires. 
+    \item en mécanique des structures, car la charge limite caractérise bien la capacité de résistance d'une structure ---bien mieux en tout cas que la charge élastique $\lambda_e$.
+        La tendance actuelle de la règlementation en matière de calcul d'ouvrage consiste à substituer un calcul plastique au calcul élastique traditionnel;
+    \item pour les problèmes de mise en forme des métaux (laminage, filage, etc.), car elle permet d'évaluer les efforts nécessaires; 
     \item en mécanique des sols, pour calculer la capacité de résistance d'un ouvrage.
         Il convient alors d'agir avec précaution, car les théorèmes que nous avons énoncés supposent le principe du travail maximal, principe non vérifié pour les sols. 
 \end{itemize}
