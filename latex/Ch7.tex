@@ -1,7 +1,7 @@
-\chapter{Problème de Saint--Venant} \label{chap:Ch07} 
+\chapter{Problème de Saint-Venant} \label{chap:Ch07} 
 \section{Traction et flexion pure} \label{sec:Ch07-1}
-\subsection{Principe de Saint--Venant} \label{ssec:Ch07-1.1}
-Le problème de Saint--Venant est le problème de base de la Résistance des Matériaux.
+\subsection{Principe de Saint-Venant} \label{ssec:Ch07-1.1}
+Le problème de Saint-Venant est le problème de base de la Résistance des Matériaux.
 Une poutre cylindrique est sollicitee à ses deux extrémités, les efforts exercés étant caractérisés par leur torseur résultant.
 
 \begin{center}
@@ -27,12 +27,14 @@ La poutre étant en équi1ibre, les efforts exercés sur et $\Sigma_0$ et $\Sigm
     \end{aligned}
     \label{eq:Ch07-002}
 \end{equation}
-Ainsi, on peut calculer $\vv{\mathcal{R}}_0$ et $\vv{\mathcal{M}}_0$ en fonction de $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$, et les efforts exercés sur la poutre seront caractérisés par les deux vecteurs $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$. Pour relier ces efforts aux contraintes, il faut considérer les efforts exercés sur $\Omega$ à travers  $\Sigma_1$, soit $\vv{T} = \left( \sigma_{11}, \sigma_{12}, \sigma_{13} \right)$ selon la direction $\vv{n} = \left( 1,0,0 \right)$, puis intégrer sur toute la section. Il vient:
+Ainsi, on peut calculer $\vv{\mathcal{R}}_0$ et $\vv{\mathcal{M}}_0$ en fonction de $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$, et les efforts exercés sur la poutre seront caractérisés par les deux vecteurs $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$.
+Pour relier ces efforts aux contraintes, il faut considérer les efforts exercés sur $\Omega$ à travers  $\Sigma_1$, soit $\vv{T} = \left( \sigma_{11}, \sigma_{12}, \sigma_{13} \right)$ selon la direction $\vv{n} = \left( 1,0,0 \right)$, puis intégrer sur toute la section.
+Il vient:
 \begin{equation}
     \vv{\mathcal{R}} = \iint_{\Sigma_1} \vv{T} \ud S;\quad \vv{\mathcal{M}} = \iint_{\Sigma_1} \vv{AM} \wedge \vv{T} \ud S
     \label{eq:Ch07-004}
 \end{equation}
-soit, en composante par composante pour les réactions:
+soit, composante par composante pour les réactions:
 \begin{subequations}
 \begin{align}
     \mathcal{R}_1 &= \iint_{\Sigma_1} \sigma_{11} \ud x_2 \ud x_3    \label{eq:Ch07-005} \\
@@ -50,32 +52,33 @@ et pour les moments:
 \end{subequations}
 On aurait des formules analogues sur $\Sigma_0$.
 
-Il est clair que le problème de Saint--Venant ainsi posé n'est pas régulier, par manque de données.
+Il est clair que le problème de Saint-Venant ainsi posé n'est pas régulier, par manque de données.
 En effet, les conditions \eqref{eq:Ch07-005} à~\eqref{eq:Ch07-008} sont insuffisantes pour déterminer la répartition des efforts $\vv{T}$ sur $\Sigma_1$.
 Pour obtenir un problème régulier, il faudrait préciser la manière dont les torseurs $\vv{T}$ sur $\Sigma_1$ sont appliqués.
-Plus précisément, on peut imaginer plusieurs ---en fait, une infinité--- répartitions d'efforts surfaciques vérifiant \eqref{eq:Ch07-005} à~\eqref{eq:Ch07-008}, sur $\Sigma_1$, et de même sur $\Sigma_0$ chacune de ces répartitions sera associé un problème régulier (de type II), donc avec solution unique.
-Ainsi le problème de Saint--Venant, tel que nous l'avons formulé, admet une infinité de solutions.
+Plus précisément, on peut imaginer plusieurs ---~en fait, une infinité~--- répartitions d'efforts surfaciques vérifiant \eqref{eq:Ch07-005} à~\eqref{eq:Ch07-008}, sur $\Sigma_1$, et de même sur $\Sigma_0$ chacune de ces répartitions sera associé un problème régulier (de type II), donc avec solution unique.
+Ainsi le problème de Saint-Venant, tel que nous l'avons formulé, admet une infinité de solutions.
 
-\begin{Principe}[Principe de Saint--Venant]
+\begin{Principe}[Principe de Saint-Venant]
     L'état de contrainte et de déformation loin des extrémités dépend uniquement du torseur des efforts appliqués et non de la manière précise dont ces efforts sont appliqués.
 \end{Principe}
 
 En d'autres termes, deux répartitions d'efforts surfaciques conduisant au même torseur, conduiront à deux solutions très voisines, sauf au voisinage immédiat des extrémités.
-Ainsi le problème de Saint--Venant admet une infinité de solutions, mais ces solutions sont très voisines les unes des autres, et il n'y a pas lieu de les distinguer, à moins de vouloir des informations précises sur ce qui se passe au voisinage des extrémités.
+Ainsi le problème de Saint-Venant admet une infinité de solutions, mais ces solutions sont très voisines les unes des autres, et il n'y a pas lieu de les distinguer, à moins de vouloir des informations précises sur ce qui se passe au voisinage des extrémités.
 
-Initialement, ce principe était d'origine intuitive; c'est lui qui se trouve à la base du célèbre mémoire de Saint--Venant qui, déjà en 1856, contenait l'essentiel de ce chapitre.
+Initialement, ce principe était d'origine intuitive; c'est lui qui se trouve à la base du célèbre mémoire de Saint-Venant qui, déjà en 1856, contenait l'essentiel de ce chapitre.
 Depuis, il a reçu de nombreuses vérifications expérimentales directes ou indirectes, car c'est le postulat de base de la Résistance des Matériaux.
 Récemment, on a pu le démontrer dans certains cas particuliers par une étude mathématique des équations de l'élasticité.
 
 Ce principe joue un rôle tout à fait essentiel pour deux raisons.
 Tout d'abord, dans la pratique, on verra que l'on connaît assez rarement la répartition des efforts, alors que l'on a facilement leur torseur résultant.
-Ensuite, c'est grâce à lui que nous pourrons résoudre le problème de Saint--Venant, en jouant sur la latitude qui nous est laissée sur la répartition précise des efforts.
+Ensuite, c'est grâce à lui que nous pourrons résoudre le problème de Saint-Venant, en jouant sur la latitude qui nous est laissée sur la répartition précise des efforts.
 
 Notre démarche va être la suivante.
 Nous allons tout d'abord décomposer le problème en six problèmes élémentaires correspondant à chacune des composantes de $\vv{\mathcal{R}}$ et $\vv{\mathcal{M}}$.
 Ensuite, pour chacun de ces problèmes élémentaires, nous trouverons une solution, et par superposition, nous aurons une solution du problème complet.
 
-\paragraph{Problème 1 --- traction}
+Nous décomposons donc le problème de Saint Venant en 6 problèmes.
+\paragraph{Problème 1 -- traction}
 \begin{equation}
     \mathcal{R}_1 = F, \quad \mathcal{R}_2 = \mathcal{R}_3 = 0, \quad \vv{\mathcal{M}} = 0
     \label{eq:Ch07-009}
@@ -90,7 +93,7 @@ soit d'après \eqref{eq:Ch07-002}:
         \includegraphics{../images/T1_Ch07-02}
     \end{center}
 \end{multicols}
-\paragraph{Problèmes 2 et 3 --- flexion composée}
+\paragraph{Problèmes 2 et 3 -- flexion composée}
 \begin{equation}
     \mathcal{R}_1 = 0 = \mathcal{R}_3, \quad \mathcal{R}_2 = F, \quad \vv{\mathcal{M}} = 0
     \label{eq:Ch07-010}
@@ -105,7 +108,7 @@ pour le problème 2 (le problème 3 s'obtient en échangeant les indices 2 et 3)
         \includegraphics{../images/T1_Ch07-03}
     \end{center}
 \end{multicols}
-\paragraph{Problème 4 --- torsion}
+\paragraph{Problème 4 -- torsion}
 \begin{equation}
     \vv{\mathcal{R}} = 0 , \quad \mathcal{M}_1 = \mathcal{M}, \quad \mathcal{M}_2 = \mathcal{M}_3 = 0
     \label{eq:Ch07-011}
@@ -119,7 +122,7 @@ pour le problème 2 (le problème 3 s'obtient en échangeant les indices 2 et 3)
         \includegraphics{../images/T1_Ch07-04}
     \end{center}
 \end{multicols}
-\paragraph{Problèmes 5 et 6 --- flexion pure}
+\paragraph{Problèmes 5 et 6 -- flexion pure}
 \begin{equation}
     \vv{\mathcal{R}} = 0 , \quad \mathcal{M}_1 = \mathcal{M}_2 = 0, \quad \mathcal{M}_3 = 0
     \label{eq:Ch07-012}
@@ -239,10 +242,10 @@ C'est la solution du problème régulier associé aux conditions aux limites:
     x_1 = 0 \text{ et } x_1 = l: \quad \sigma_{11} = F/S, \ \sigma_{12} = \sigma_{13} = 0
     \label{eq:Ch07-024}
 \end{equation}
-En général, les conditions aux limites réelles ---par exemple dans un essai de traction--- sont différentes mais le principe de Saint--Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage et c'est bien ce que l'on fait dans un essai de traction.
+En général, les conditions aux limites réelles ---~par exemple dans un essai de traction~--- sont différentes mais le principe de Saint-Venant nous assure que cela n'a guère d'importance, à condition de se placer loin des têtes d'amarrage et c'est bien ce que l'on fait dans un essai de traction.
 
 \subsection{Flexion pure} \label{ssec:Ch07-1.3}
-Considérons maintenant le problème 6 ---le problème 5 se traiterait de manière identique.
+Considérons maintenant le problème 6 --- le problème 5 se traiterait de manière identique.
 Le tenseur des contraintes a la forme:
 \begin{equation}
     \tens{\sigma} = 
@@ -272,9 +275,9 @@ Comme au paragraphe~\ref{ssec:Ch06-2.1}, nous procéderons directement en écriv
 soit, en développant par rapport au champ de déplacement:
 \begin{equation}
     \begin{aligned}
-       & \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} = -\frac{\mathcal{M}}{EJ}x_2 && \Rightarrow u_1 = \frac{\mathcal{M}}{EJ}x_1x_2 + \varphi_1 \left( x_2,x_3 \right) \\
-       & \varepsilon_{22} = \frac{\partial u_2}{\partial x_2} = \frac{\nu\mathcal{M}}{EJ}x_2 && \Rightarrow u_2 = \frac{\nu\mathcal{M}}{EJ}x_2^2 + \varphi_2 \left( x_1,x_3 \right) \\
-       & \varepsilon_{33} = \frac{\partial u_3}{\partial x_3} = \frac{\nu\mathcal{M}}{EJ}x_2 && \Rightarrow u_3 = \frac{\nu\mathcal{M}}{EJ}x_2x_3 + \varphi_3 \left( x_1,x_2 \right)
+       & \varepsilon_{11} = \frac{\partial u_1}{\partial x_1} = -\frac{\mathcal{M}}{EJ}x_2 & \Rightarrow\ & u_1 = \frac{\mathcal{M}}{EJ}x_1x_2 + \varphi_1 \left( x_2,x_3 \right) \\
+       & \varepsilon_{22} = \frac{\partial u_2}{\partial x_2} = \frac{\nu\mathcal{M}}{EJ}x_2 & \Rightarrow\ & u_2 = \frac{\nu\mathcal{M}}{EJ}x_2^2 + \varphi_2 \left( x_1,x_3 \right) \\
+       & \varepsilon_{33} = \frac{\partial u_3}{\partial x_3} = \frac{\nu\mathcal{M}}{EJ}x_2 & \Rightarrow\ & u_3 = \frac{\nu\mathcal{M}}{EJ}x_2x_3 + \varphi_3 \left( x_1,x_2 \right)
     \end{aligned}
     \label{eq:Ch07-028}
 \end{equation}
@@ -344,17 +347,16 @@ soit, en introduisant $\eta$ valeur maximale de $\left|x_2\right|$:
 \end{equation}
 Ainsi, d'un point de vue géométrique, la rigidité d'une poutre est caractérisée  par le moment  d'inertie $J$,  tandis que sa résistance est caractérisée par le rapport $J/\eta$:
 \begin{itemize}
-\item section rectangulaire\\[5pt]
-\begin{tabular}{m{2cm}p{1cm}m{7cm}}
-        \includegraphics{../images/T1_Ch07-07}&&
-        $\displaystyle J = \frac{bh^3}{12},\ \frac{J}{\eta} = \frac{bh^2}{6},\ \frac{J}{S} = \frac{h^2}{12},\ \frac{J}{\eta S} = \frac{h}{6}$
-\end{tabular}
-\item section en I
-\\[5pt]
-\begin{tabular}{m{2cm}p{1cm}m{7cm}}
+    \item section rectangulaire\\[5pt]
+        \begin{tabular}{m{2cm}p{1cm}m{7cm}}
+            \includegraphics{../images/T1_Ch07-07}&&
+            $\displaystyle J = \frac{bh^3}{12},\ \frac{J}{\eta} = \frac{bh^2}{6},\ \frac{J}{S} = \frac{h^2}{12},\ \frac{J}{\eta S} = \frac{h}{6}$
+        \end{tabular}
+    \item section en I\\[5pt]
+    \begin{tabular}{m{2cm}p{1cm}m{7cm}}
         \includegraphics{../images/T1_Ch07-08}&&
         $\displaystyle J \approx \frac{bh^2l}{2},\ \frac{J}{\eta} \approx bhl,\ \frac{J}{S} = \frac{h^2}{4},\ \frac{J}{\eta S} = \frac{h}{2}$
-\end{tabular}
+    \end{tabular}
 \end{itemize}
 Ceci montre la supériorité, à poids égal, de la section en $I$ sur la section rectangulaire et, plus généralement, des sections en profil mince sur les sections massives.
 
@@ -461,18 +463,16 @@ En introduisant $R$ rayon de la section, il vient, en combinant avec \eqref{eq:C
 
 La rigidité à la torsion d'un arbre circulaire ou annulaire est donc caractérisée par le moment d'inertie polaire de sa section $I_0$ et sa résistance par le rapport $I_0/\mathcal{R}$:
 \begin{itemize}
-\item section circulaire\\[5pt]
-\begin{tabular}{m{2cm}p{1cm}m{8cm}}
-        \includegraphics{../images/T1_Ch07-12}&&
-        $\displaystyle I_0 = \frac{\pi D^4}{32},\ \frac{I_0}{S} = \frac{D^2}{8},\ \frac{I_0}{\mathcal{R}} = \frac{\pi D^3}{16},\ \frac{I_0}{\mathcal{R} S} = \frac{D}{4}$
-\end{tabular}
-
+    \item section circulaire\\[5pt]
+        \begin{tabular}{m{2cm}p{1cm}m{8cm}}
+            \includegraphics{../images/T1_Ch07-12}&&
+            $\displaystyle I_0 = \frac{\pi D^4}{32},\ \frac{I_0}{S} = \frac{D^2}{8},\ \frac{I_0}{\mathcal{R}} = \frac{\pi D^3}{16},\ \frac{I_0}{\mathcal{R} S} = \frac{D}{4}$
+        \end{tabular}
 \item section en tube mince\\[5pt]
-\begin{tabular}{m{2cm}p{1cm}m{8cm}}
+    \begin{tabular}{m{2cm}p{1cm}m{8cm}}
         \includegraphics{../images/T1_Ch07-13}&&
         $\displaystyle     I_0 = \frac{r\pi D^3 e}{4},\ \frac{I_0}{S} = \frac{D^2}{4},\ \frac{I_0}{\mathcal{R}} = \frac{\pi D^3 e}{2},\ \frac{I_0}{\mathcal{R} S} = \frac{D}{2}$
-\end{tabular}
-
+    \end{tabular}
 \end{itemize}
 Ces relations montrent la supériorité, à poids égal, des sections annulaires sur les sections massives.
 Dans le cas des tubes minces, on constate aussi que $r \sim D/2$ et que les composantes \eqref{eq:Ch07-044} du tenseur des contraintes dans le repère $\left( \vec{e}_r, \vec{e}_{\theta}, \vec{e}_1 \right)$ peuvent s'écrire:
@@ -521,7 +521,7 @@ et:
         \frac{\partial \sigma_{13}}{\partial x_1} = 0 \Rightarrow \quad \sigma_{13} = \sigma_{13} \left( x_2, x_3 \right)
     \label{eq:Ch07-050}
 \end{equation}
-L'équation \eqref{eq:Ch07-049} montre alors ---voir par exemple le Lemme 2 du paragraphe~\ref{ssec:Ch03-3.1}--- que la forme différentielle:
+L'équation \eqref{eq:Ch07-049} montre alors ---~voir par exemple le Lemme 2 du paragraphe~\ref{ssec:Ch03-3.1}~--- que la forme différentielle:
 \begin{equation}
     \ud \Phi = \sigma_{12} \ud x_3 - \sigma_{13} \ud x_2
     \label{eq:Ch07-051}
@@ -536,7 +536,7 @@ Les équations de Beltrami donnent alors:
     \frac{\partial}{\partial x_2} \Delta \Phi = \frac{\partial}{\partial x_3} \Delta \Phi = 0
     \label{eq:Ch07-053}
 \end{equation}
-ce qui montre que \textcolor{red}{mot manquant...} est constant; nous noterons $-2G\alpha$ cette constante, $\alpha$ étant une constante d'intégration dont nous verrons plus loin la signification:
+ce qui montre que $\Delta \Phi$ est constant; nous noterons $-2G\alpha$ cette constante, $\alpha$ étant une constante d'intégration dont nous verrons plus loin la signification:
 \begin{equation}
     \Delta \Phi + 2 G \alpha = 0
     \label{eq:Ch07-054}
@@ -553,10 +553,10 @@ ce qui montre que \textcolor{red}{mot manquant...} est constant; nous noterons $
     \label{eq:Ch07-055}
 \end{equation}
 En introduisant le vecteur unitaire tangent à $\partial \Sigma$:
-    \begin{equation}
-        \vec{t} = \left( \ud x_2 / \ud s, \ud x_3/\ud s \right)
-    \end{equation}
-    il vient:
+\[
+    \vec{t} = \left( \ud x_2 / \ud s, \ud x_3/\ud s \right)
+\]
+il vient:
 \begin{equation}
     n_2 = t_3 = \frac{\ud x_3}{\ud s}, \quad n_3 = -t_2 = - \frac{\ud x_2}{\ud s}
     \label{eq:Ch07-056}
@@ -598,14 +598,14 @@ Pour calculer les autres composantes, nous utiliserons la formule de Stokes:
     \iint_{S} \left( \frac{\partial Q}{\partial x_2} - \frac{\partial P}{\partial x_3} \right) \ud x_2 \ud x_3 = \oint_{\partial S} P \ud x_2 + Q \ud x_3
     \label{eq:Ch07-061}
 \end{equation}
-\`A partir de \eqref{eq:Ch07-006} et \eqref{eq:Ch07-052}, il vient:
+À partir de \eqref{eq:Ch07-006} et \eqref{eq:Ch07-052}, il vient:
 \begin{equation}
     \mathcal{R}_2 = \iint_{\Sigma} \sigma_{12} \ud x_2 \ud x_3 = \iint_{\Sigma} \frac{\partial \Phi}{\partial x_3} \ud x_2 \ud x_3 = - \oint_{\partial \Sigma} \Phi \ud x_2 = 0
     \label{eq:Ch07-062}
 \end{equation}
 d'après la formule de Stokes \eqref{eq:Ch07-061} et \eqref{eq:Ch07-058}.
 De la même manière, on a $\mathcal{R}_3 = 0$.
-\`A partir de \eqref{eq:Ch07-007}, on a:
+À partir de \eqref{eq:Ch07-007}, on a:
 \begin{equation}
     \begin{aligned}
         \mathcal{M}_1 &= -\iint_{\Sigma} \left( x_2 \frac{\partial \Phi}{\partial x_2} + x_3 \frac{\partial \Phi}{\partial x_3} \right) \ud x_2 \ud x_3 \\
@@ -640,10 +640,10 @@ L'état de contraintes étant un état de cisaillement simple, le critère de li
     \label{eq:Ch07-067}
 \end{equation}
 avec $\tau_e$ donné par \eqref{eq:Ch05-071}.
-\`A partir de $\Phi$ ou $\varphi$, cette condition entraîne: 
-\begin{equation}
-\sqrt{\Phi_{,3}^2 + \Phi_{,2}^2} = G \alpha \sqrt{\varphi_{,3}^2 + \varphi_{,2}^2} = G \alpha \abs{\grad \varphi} < \tau_e
-\end{equation}
+À partir de $\Phi$ ou $\varphi$, cette condition entraîne: 
+\[
+    \sqrt{\Phi_{,3}^2 + \Phi_{,2}^2} = G \alpha \sqrt{\varphi_{,3}^2 + \varphi_{,2}^2} = G \alpha \abs{\grad \varphi} < \tau_e
+\]
 soit finalement:
 \begin{equation}
     \frac{\mathcal{M}}{I/\rho} < \tau_e, \quad \rho = \left[ \sup_{\Sigma} \abs{\grad \varphi} \right]^{-1}
@@ -655,7 +655,7 @@ Ainsi le problème général de la torsion est résolu, sitôt que l'on connaît
 
 \subsection{Calcul du déplacehent} \label{ssec:Ch07-2.3}
 Pour terminer le calcul, il reste à déterminer le déplacement.
-\`A partir de \eqref{eq:Ch07-048}, \eqref{eq:Ch07-052} et \eqref{eq:Ch07-059}, le tenseur des déformations est donné par:
+À partir de \eqref{eq:Ch07-048}, \eqref{eq:Ch07-052} et \eqref{eq:Ch07-059}, le tenseur des déformations est donné par:
 \begin{equation}
     \tens{\varepsilon} = 
     \frac{\alpha}{2} 
@@ -676,9 +676,9 @@ et il est possible d'intégrer le champ de déplacements, soit:
     \label{eq:Ch07-070}
 \end{equation}
 et:
-\begin{equation}
-2\varepsilon_{23} = u_{2,3} + u_{3,2} =0 \quad \Rightarrow \quad u_{2,3} = - u_{3,2} = A(x_1)
-\end{equation}
+\[
+    2\varepsilon_{23} = u_{2,3} + u_{3,2} =0 \quad \Rightarrow \quad u_{2,3} = - u_{3,2} = A(x_1)
+\]
 puisque $u_{2,3} = u_{2,3}(x_1,x_3)$ et $u_{3,2} = u_{3,2} (x_1,x_2)$. Par conséquent:
 \begin{equation}
     \begin{aligned}
@@ -695,10 +695,10 @@ et on peut interpréter $A(x_1)$ comme la rotation de la section droite d'abscis
     \end{aligned}
     \label{eq:Ch07-072}
 \end{equation}
-Cependant, dans ces relations, seules les dérivées $A'(x_1) (=\ud A /\ud x_1)$, $B'(x_1)$ et dépendent de $C'(x_1)$ \textcolor{red}{formulation étrange et insensée} elles doivent donc être constantes:
-\begin{equation}
+Cependant, dans ces relations, seules les dérivées $A'(x_1) (=\ud A /\ud x_1)$, $B'(x_1)$ et dépendent de $C'(x_1)$ \tmp{formulation étrange et insensée} elles doivent donc être constantes:
+\[
 A(x_1) = -a x_1 +d,\quad B(x_1) = b x_1 +e,\quad C(x_1) = c x_1 +f
-\end{equation}
+\]
 \begin{equation}
     \begin{aligned}
         u_2 &= -a x_1 x_3 + \ud x_3 + b x_1 + e\\
@@ -707,7 +707,7 @@ A(x_1) = -a x_1 +d,\quad B(x_1) = b x_1 +e,\quad C(x_1) = c x_1 +f
     \label{eq:Ch07-073} 
 \end{equation}
 On voit sur \eqref{eq:Ch07-073} que les 5 constantes $b$, $c$, $d$, $e$ et $f$ correspondent au déplacement de solide rigide arbitraire, qui doit nécessairement s'introduire dans l'intégration.
-\`A un déplacement de solide près, on a donc: 
+À un déplacement de solide près, on a donc: 
 \begin{equation}
     u_2 = -a x_1 x_3, \quad u_3 = a x_1 x_2
     \label{eq:Ch07-074}
@@ -764,7 +764,7 @@ Mais dans le cas général,
         Si ce gauchissement est empêché, par exemple par des conditions aux limites d'encastrement, on rencontre le difficile problème de la torsion gênée (par opposition à la torsion libre).
 \end{inparaenum}
 
-Bien entendu, conformément à la démarche générale décrite au paragraphe~\ref{ssec:Ch07-1.1}, nous avons résolu un problème particulier correspondant au problème de la torsion, et le principe de Saint--Venant nous permet d'affirmer que loin des extrémités c'est la solution.
+Bien entendu, conformément à la démarche générale décrite au paragraphe~\ref{ssec:Ch07-1.1}, nous avons résolu un problème particulier correspondant au problème de la torsion, et le principe de Saint-Venant nous permet d'affirmer que loin des extrémités c'est la solution.
 Il peut être utile de fonnuler explicitement le problème régulier que nous avons résolu.
 Pour cela, il faut compléter les CL~\eqref{eq:Ch07-001} par des CL sur les extrémités.
 On pourrait écrire des CL donnant sur les extrémités le dêplacement $(u_1, u_2, u_3)$ connu par \eqref{eq:Ch07-076}, ou bien donnant les efforts appliqués $\vec{T}$ connus par \eqref{eq:Ch07-065} et \eqref{eq:Ch07-052}, mais la formulation la plus commode, que nous utiliserons au chapitre~\ref{chap:Ch09}, fait intervenir des données mixtes
@@ -833,11 +833,9 @@ On recherche la solution sous forme d'un développement en série de Fourier dou
     \varphi = \sum_{m=0}^{\infty} \sum_{n=0}^{\infty} A_{mn} \cos \frac{(2m-1)\pi x_2}{2a} \cos \frac{(2n-1)\pi x_3}{2b}
     \label{eq:Ch07-088}
 \end{equation}
-
 \begin{center}
-        \includegraphics{../images/T1_Ch07-17}
-    \end{center}
-
+    \includegraphics{../images/T1_Ch07-17}
+\end{center}
 qui vérifie automatiquement la condition \eqref{eq:Ch07-058}.
 On dérive \eqref{eq:Ch07-088} terme à terme, ce qui permet  d'obtenir le développement de $\Delta\varphi$ que l'on identifie  avec le développement de la fonction constante $-2$ et  on  obtient les  constantes $A_{mn}$.
 
@@ -1048,7 +1046,7 @@ C'est un problème de Dirichlet qui admet une solution unique dépendant uniquem
 Pour terminer la détermination du champ de contraintes, en particulier pour déterminer la constante $C$, il convient de vérifier les conditions aux limites sur l'extrémité $x_1 = l$ c'est-à-dire de vérifier les conditions \eqref{eq:Ch07-092}, \eqref{eq:Ch07-093}, \eqref{eq:Ch07-094} et \eqref{eq:Ch07-095} pour $x_1$.
 Par construction de $\sigma_{11}$ les relations \eqref{eq:Ch07-092} sont 
 vérifiées pour tout $x_1$.
-\`A partir des calculs du paragraphe précédent, on a:
+À partir des calculs du paragraphe précédent, on a:
 \begin{equation}
     \begin{aligned}
         \sigma_{12} &= \frac{F}{J_2} \left\{ -\frac{1}{2} \left( x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right) + \frac{\partial \chi}{\partial x_3} + C \frac{\partial \varphi}{\partial x_3} \right\} \\
@@ -1150,26 +1148,35 @@ La quantité intégrée dans \eqref{eq:Ch07-115} est donc impaire en $x_3$, $H$ 
 On obtient pour le vecteur contrainte tangentielle sur la section droite $\left( 0,\sigma_{12}, \sigma_{13} \right)$ la symétrie par rapport à l'axe $x_2$:
 
 \begin{tabular}{m{2cm}p{1cm}m{8cm}}
-        \includegraphics{../images/T1_Ch07-20}&&
-$\begin{aligned}
+    \includegraphics{../images/T1_Ch07-20}&&
+    \begin{equation}
+        \begin{aligned}
             \sigma_{12} (x_2, -x_3) &= \sigma_{12} (x_2, x_3) \\[3pt]
             \sigma_{13} (x_2, -x_3) &= -\sigma_{13} (x_2, x_3)
-        \end{aligned}$
+        \end{aligned}
+        \label{eq:Ch07-119}
+    \end{equation}
 \end{tabular}
 
-\`A titre d'exemple, nous allons calculer la fonction $\chi$ et la répartition de contraintes pour une section $\Sigma$ circulaire, de rayon $a$.
-Pour calculer $\chi_0$ on écrit \eqref{eq:Ch07-105}:
-
-
+À titre d'exemple, nous allons calculer la fonction $\chi$ et la répartition de contraintes pour une section $\Sigma$ circulaire, de rayon $a$.
+Pour calculer $\chi_0$ on écrit \eqref{eq:Ch07-105}:\\
 \begin{tabular}{m{2cm}p{1cm}m{8cm}}
-        \includegraphics{../images/T1_Ch07-21}&&
-$\begin{aligned}
+    \includegraphics{../images/T1_Ch07-21}&&
+    \[
+    \begin{aligned}
         \ud\chi &= \frac{1}{2} \left[ x_2^2 - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
         &= \frac{1}{2} \left[ (a^2 - x_3^2) - \frac{\nu}{1+\nu} x_3^2 \right] \ud x_3 \\
         &= \frac{1}{2} \left[ a^2 - \frac{1+2\nu}{1+\nu} x_3^2 \right] \ud x_3
-    \end{aligned}$
+    \end{aligned}
+    \]
 \end{tabular}
-
+\begin{equation}
+    \begin{aligned}
+        \chi_0 &= \frac{1}{2} \left[ a^2 x_3 - \frac{1+2\nu}{3(1+\nu)} x_3^3 \right]\\
+        \chi_0 &= \frac{a^3}{2} \left[ \sin \theta - \frac{1+2\nu}{3(1+\nu)} \sin^3 \theta \right]
+    \end{aligned}
+    \label{eq:Ch07-120}
+\end{equation}
 Pour calculer 1a fonction $\chi (x_2,x_3)$ nous devons trouver la fonction $\chi$ harmonique qui prend la valeur \eqref{eq:Ch07-120} pour $r=a$.
 Pour cela on remarque que les fonctions
 \begin{equation}
