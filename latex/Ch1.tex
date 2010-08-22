@@ -1,11 +1,11 @@
 \chapter{Mécanique des milieux continus} \label{chap:Ch01}
 Les éléments de base de la mécanique des milieux continus\footnote{Dans la suite de ce document, il sera fait appel à ce domaine sous la forme contractée usuelle MMC.}, à savoir, la cinématique des milieux continus, les variables lagrangiennes et eulériennes, les dérivées particulaires ainsi que la description des efforts intérieurs et des contraintes, ont présentés dans le cours d'introduction à la MMC.
-Nous nous bornerons donc, dans ce chapitre, à les replacer dans un contexte «~Mécanique des Solides~». 
+Nous nous bornerons donc, dans ce chapitre, à les replacer dans un contexte \emph{Mécanique des Solides}.
 En particulier, nous ne donnerons pas le détail des démonstrations. 
 Le lecteur pourra se référer aux traités classiques~\cite{Germain-62,Germain-73,Mandel-66,Mandel-74,Gontier-69,Roy-66,Sedov-71,Eringen-67,Prager-61,Lai-78}.
 \section{Lois de conservation} \label{sec:Ch01-1}
 \subsection{Lois de la physique} \label{ssec:Ch01-1.1}
-En MMC, on appelle «~loi de conservation~», la traduction mathématique des lois de la physique.
+En MMC, on appelle \emph{loi de conservation}, la traduction mathématique des lois de la physique.
 Dans le cadre d'une schématisation donnée, elles sont donc universelles. 
 Par exemple, dans le cas de la MMC classique objet de ce cours, il faut écrire pour tout domaine matériel $D$:
 \begin{itemize}
@@ -36,7 +36,7 @@ où $\frac{\ud}{\ud t}$ est la dérivée «~particulaire~», c'est-à-dire la d�
 
 Pour écrire la loi fondamentale, il faut schématiser les efforts exercés sur le domaine $D$:
 \begin{itemize}
-    \item les efforts à distance ---la pesanteur par exemple--- sont caractérisés par une densité volumique $\vec{f}$ où $\vec{f}=\rho \vec{g}$, par exemple, pour la pesanteur;
+    \item les efforts à distance ---~la pesanteur par exemple~--- sont caractérisés par une densité volumique $\vec{f}$ où $\vec{f}=\rho \vec{g}$, par exemple, pour la pesanteur;
     \item les efforts de contact, c'est-à-dire les efforts exercés sur $D$ à travers la frontière $\partial D$ de $D$ seront caractérisés par une densité superficielle de force $\vec{T}$ en vertu du:
 \end{itemize}
 
@@ -48,7 +48,7 @@ Pour écrire la loi fondamentale, il faut schématiser les efforts exercés sur 
 \end{Postulat}
 
 Malgré son apparence toute naturelle, ce postulat n'est pas le seul possible.
-On peut, par exemple, considérer que ces efforts de contact sont schématisés par une densité superficielle de force $\vec{T}$ et de moment $\vec{M}$ ---on parle alors de \emph{milieux avec couples de contraintes}, exemple embryonnaire de milieux avec microstructure dont nous reparlerons au paragraphe~\ref{ssec:Ch01-2.2}.
+On peut, par exemple, considérer que ces efforts de contact sont schématisés par une densité superficielle de force $\vec{T}$ et de moment $\vec{M}$ --- on parle alors de \emph{milieux avec couples de contraintes}, exemple embryonnaire de milieux avec microstructure dont nous reparlerons au paragraphe~\ref{ssec:Ch01-2.2}.
 
 Moyennant ces schématisations, la loi fondamentale de la dynamique: «~La dérivée par rapport au temps du torseur des quantités de mouvement d'un domaine matériel $D$ quelconque est égale au torseur de tous les efforts extérieurs (à distance et de contact) appliqués à $D$~» va se traduire par les deux lois de conservation:
 \begin{itemize}
@@ -70,7 +70,7 @@ De manière générale, une loi de conservation exprime un bilan:
 \end{equation}
 valable pour tout domaine matériel $D$: la variation d'une quantité (de densité volumique $\mathcal{A}$) provient, d'une part, de la production interne de cette quantité (densité volumique $\mathcal{A}$) et d'autre part, des échanges avec l'extérieur à travers $\partial D$ (densité surfacique $\alpha$).
 
-Les trois lois de conservation qui nous intéressent~\eqref{eq:Ch01-001},~\eqref{eq:Ch01-002} et~\eqref{eq:Ch01-003} rentrent dans ce cadre d'après le tableau suivant:
+Les trois lois de conservation qui nous intéressent \eqref{eq:Ch01-001}, \eqref{eq:Ch01-002} et \eqref{eq:Ch01-003} rentrent dans ce cadre d'après le tableau suivant:
 \begin{table}[h]\centering
     \begin{tabular}{l|c|c|c|}
         & A & $\alpha$ & A \\\hline
@@ -80,7 +80,7 @@ Les trois lois de conservation qui nous intéressent~\eqref{eq:Ch01-001},~\eqref
     \end{tabular}
     %\caption{Quantités mécaniques}
 \end{table}
-où l'on a introduit les composantes des vecteurs qui interviennent dans les égalités~\eqref{eq:Ch01-002} et~\eqref{eq:Ch01-003}\footnote{Le lecteur peut se rendre à l'annexe~\ref{Ann:A} pour l'expression des produits vectoriels qui interviennent dans~\eqref{eq:Ch01-003}.}.
+où l'on a introduit les composantes des vecteurs qui interviennent dans les égalités~\eqref{eq:Ch01-002} et \eqref{eq:Ch01-003}\footnote{Le lecteur peut se rendre à l'annexe~\ref{Ann:A} pour l'expression des produits vectoriels qui interviennent dans~\eqref{eq:Ch01-003}.}.
 Nous verrons, au paragraphe~\ref{ssec:Ch01-3.1}, que la loi de conservation de l'énergie rentre également dans ce cadre.
 \subsection{Étude d'une loi de conservation} \label{ssec:Ch01-1.2}
 Pour utiliser la loi de conservation générale~\eqref{eq:Ch01-004}, il faut expliciter la dérivée particulaire d'une intégrale de volume.
@@ -136,7 +136,7 @@ En utilisant le théorème de la divergence (Annexe~\ref{Ann:A}) et la formule d
 \begin{equation*}
     \frac{\ud \mathcal{A}}{\ud t}=\frac{\partial \mathcal{A}}{\partial t}+\mathcal{A}_{,i}V_i
 \end{equation*}
-où l'on a utilisé la convention de sommation et la notation $f_{,i}=\partial f/\partial x_i$ ---voir Annexe~\ref{Ann:A}, on peut transformer~\eqref{eq:Ch01-005} en:
+où l'on a utilisé la convention de sommation et la notation $f_{,i}=\partial f/\partial x_i$ --- voir Annexe~\ref{Ann:A}, on peut transformer~\eqref{eq:Ch01-005} en:
 \begin{equation}
     \frac{\ud}{\ud t}\iiint_{D} \mathcal{A} \ud v=\iiint_{D}\left\{\frac{\partial\mathcal{A}}{\partial t}+(\mathcal{A}V_i)_{,i}\right\} \ud v=\iiint_{D} \left\{\frac{\ud\mathcal{A}}{\ud t}+\mathcal{A}\dive\vec{V}\right\} \ud v
     \label{eq:Ch01-006}
@@ -166,7 +166,7 @@ Moyennant des hypothèses de continuité que nous ne préciserons pas davantage,
     \includegraphics[clip,scale=1.2]{../images/T1_Ch01-0003.eps}%\vspace{.2cm}
 \end{wrapfigure}
 \noindent Le point a) exprime simplement que ce qui rentre dans $D$ est l'opposé de ce qui en sort.
-Lorsque $\varepsilon\rightarrow 0$, les seuls termes qui subsistent sont ceux relatifs aux deux faces, et~\eqref{eq:Ch01-004} donne le point a).
+Lorsque $\varepsilon\rightarrow 0$, les seuls termes qui subsistent sont ceux relatifs aux deux faces, et \eqref{eq:Ch01-004} donne le point a).
 \vspace{1em}
 
 \begin{wrapfigure}[5]{r}{.25\textwidth}
@@ -185,10 +185,10 @@ Lorsque $\varepsilon\rightarrow 0$, les seuls termes qui subsistent sont ceux re
     \psfrag{n}{\scriptsize $\vec n$}
     \includegraphics[clip,scale=1.1]{../images/T1_Ch01-0004.eps}
 \end{wrapfigure}
-\noindent Pour démontrer le point b), on écrit~\eqref{eq:Ch01-004} pour un domaine $D$ en forme de tétraèdre $M_OM_1M_2M_3$, la face $M_1M_2M_3$ restant perpendiculaire au vecteur $\vec{n}$ donné.
+\noindent Pour démontrer le point b), on écrit \eqref{eq:Ch01-004} pour un domaine $D$ en forme de tétraèdre $M_OM_1M_2M_3$, la face $M_1M_2M_3$ restant perpendiculaire au vecteur $\vec{n}$ donné.
 Lorsque les dimensions du tétraèdre tendent vers zéro, la fonction $\alpha(M,\vec{n})$ reste à peu près constante en et ne dépend donc que de $\vec{n}$.
 
-De plus, seule subsiste dans~\eqref{eq:Ch01-004} l'intégrale de surface:
+De plus, seule subsiste dans \eqref{eq:Ch01-004} l'intégrale de surface:
 \begin{equation*}
     0=\iint\limits_{M_1M_2M_3}\alpha(\vec{n}) \ud S+\iint\limits_{M_0M_1M_2}\alpha(-\vec{e}_3) \ud S+ \iint\limits_{M_0M_1M_3}\alpha(-\vec{e}_2) \ud S+\iint\limits_{M_0M_2M_3}\alpha(-\vec{e}_1) \ud S
 \end{equation*}
@@ -365,7 +365,7 @@ Le tenseur des contraintes est symétrique.
     \sigma_{12} = \sigma_{21}, \quad \sigma_{13}= \sigma_{31}, \quad \sigma_{23} = \sigma_{32}
 \end{displaymath}
 Ainsi, la loi fondamentale de la dynamique est, sous forme locale, équivalente â l'équation du mouvement~\eqref{eq:Ch01-015} avec un tenseur des contraintes symétrique.
-\`A nouveau, ces résultats supposent la continuité des fonctions en cause.
+À nouveau, ces résultats supposent la continuité des fonctions en cause.
 En présence d'une surface de discontinuité $\Sigma$, il faut rajouter les relations de discontinuité~\eqref{eq:Ch01-010} qui donnent:
 \begin{itemize}
      \item pour la conservation de la masse:
@@ -379,7 +379,7 @@ En présence d'une surface de discontinuité $\Sigma$, il faut rajouter les rela
         \label{eq:Ch01-021}
     \end{equation}
 \end{itemize}
-tandis que l'équation correspondante pour la conservation du moment cinétique est automatiquement vérifiée si~\eqref{eq:Ch01-022} l'est.
+tandis que l'équation correspondante pour la conservation du moment cinétique est automatiquement vérifiée si \eqref{eq:Ch01-022} l'est.
 
 Dans le cas statique, ces relations de discontinuité se ramènent à la seule condition:
 \begin{equation}
@@ -405,7 +405,7 @@ mais en utilisant le
     &=\iint_{\partial \Omega}\sigma_{ij} {\mathop{V}^{*}}_i n_j \ud S-\iiint_{\Omega} \sigma_{ij} {\mathop{V}^{*}}_{i,j} \ud v
 \end{align*}
 \end{thmn}
-Grâce à~\eqref{eq:Ch01-014}, on retrouve dans le premier terme les efforts $\vec{T}$ appliqués sur $\Omega$ à travers $\partial \Omega$, tandis que, d'après la symétrie de $\sigma_{ij}$, on peut remplacer ${\mathop{V}^{*}}_{i,j}$ par sa partie symétrique ${\mathop{D}^{*}}_{ij}$ (Annexe~\ref{Ann:A}):
+Grâce à \eqref{eq:Ch01-014}, on retrouve dans le premier terme les efforts $\vec{T}$ appliqués sur $\Omega$ à travers $\partial \Omega$, tandis que, d'après la symétrie de $\sigma_{ij}$, on peut remplacer ${\mathop{V}^{*}}_{i,j}$ par sa partie symétrique ${\mathop{D}^{*}}_{ij}$ (Annexe~\ref{Ann:A}):
 \begin{equation}
     {\mathop{V}^{{\ast}}}_{i,j}={\mathop{D}^{{\ast}}}_{ij}+{\mathop{\Omega}^{{\ast}}}_{ij},\qquad
     {\mathop{D}^{{\ast}}}_{ij}={\mathop{V}^{{\ast}}}_{i,j}+{\mathop{V}^{{\ast}}}_{j,i},\qquad
@@ -459,7 +459,7 @@ En particulier, le lemme suivant montre que la puissance virtuelle des efforts i
                 {\mathop{D}^{\ast}}_{ij} = \frac{1}{2} \left( {\mathop{V}^{\ast}}_{i,j} + {\mathop{V}^{\ast}}_{j,i} \right) = 0
                 \label{eq:Ch01-027}
             \end{equation}
-            permet d'écrire~\eqref{eq:Ch01-026}.
+            permet d'écrire \eqref{eq:Ch01-026}.
             Nous démonstrerons ce résultat au Théorème~\ref{thm:Ch03-2}.
     \end{description}
 \end{proof}
@@ -523,7 +523,7 @@ Toutes ces puissances virtuelles sont des formes linéaires sur l'espace $\matho
 \end{Axiome}
 
 Construire une théorie des milieux continus, c'est d'abord choisir l'espace $\mathop{\mathcal{V}}^{\ast}$ des champs de vitesses virtuelles, c'est ensuite choisir la forme des quatre formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(d)}$, $\mathop{\mathcal{P}}^{\ast}{\!}^{(c)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$.
-Le reste de la théorie ---en particulier, les équations du mouvement--- s'obtient par des calculs simples.
+Le reste de la théorie ---~en particulier, les équations du mouvement~--- s'obtient par des calculs simples.
 
 Considérons, par exemple, le cas de la mécanique des solides rigides: l'espace $\mathop{\mathcal{V}}^{\ast}$ des vitesses virtuelles est l'espace des champs de vitesses d'un solide, espace vectoriel de dimension six.
 Les formes linéaires $\mathop{\mathcal{P}}^{\ast}{\!}^{(a)}$ et $\mathop{\mathcal{P}}^{\ast}{\!}^{(ext)}$ (d'après l'axiome, $\mathop{\mathcal{P}}^{\ast}{\!}^{(int)}$ identiquement nulle) sont donc des éléments du dual de cet espace: l'espace des \emph{torseurs}.
@@ -565,7 +565,7 @@ La schématisation des efforts intérieurs, par contre, diffère de celle du par
     \label{eq:Ch01-034}
 \end{equation}
 où les quantités $A_i$ et $B_{ij}$ caractérisent les efforts intérieurs.
-En décomposant le tenseur gradient des vitesses $\mathop{V}^{\ast}_{i,j}$ en partie symétrique et antisymétrique, conformément à~\eqref{eq:Ch01-023}, on peut remplacer~\eqref{eq:Ch01-034} par
+En décomposant le tenseur gradient des vitesses $\mathop{V}^{\ast}_{i,j}$ en partie symétrique et antisymétrique, conformément à \eqref{eq:Ch01-023}, on peut remplacer \eqref{eq:Ch01-034} par
 \begin{equation}
     \mathop{\mathcal{P}}^{\ast}{\!}^{(int)} = \iiint_{\Omega} \left( A_i \mathop{V}^{\ast}_i + \chi_{ij} \mathop{\Omega}^{\ast}_{ij} - \sigma_{ij} \mathop{D}^{\ast}_{ij} \right) \ud v
     \label{eq:Ch01-035} 
@@ -601,7 +601,7 @@ On obtient alors
 \begin{displaymath}
     \iiint_{\Omega} \left( \rho \gamma_i -f_i - \sigma_{ij,j} \right) \mathop{V}^{\ast}_i \ud v + \iint_{\partial \Omega} \left( \sigma_{ij} n_j - T_i^e \right) \mathop{V}^{\ast}_i \ud S = 0
 \end{displaymath}
-Ceci devant être vrai pour tout champ $\mathop{V}^{\ast}_i$, on en tire l'équation du mouvement~\eqref{eq:Ch01-035} et la relation
+Ceci devant être vrai pour tout champ $\mathop{V}^{\ast}_i$, on en tire l'équation du mouvement \eqref{eq:Ch01-035} et la relation
 \begin{equation}
     T_i^e = \sigma_{ij} n_j
     \label{eq:Ch01-039}
@@ -641,7 +641,7 @@ Le premler principe de la thermodynamique conduit donc à la loi de conservation
     \label{eq:Ch01-045}
 \end{equation}
 qui rentre dans le cadre des lois de conservation définies au paragraphe~\ref{ssec:Ch01-1.1} en prenant
-dans~\eqref{eq:Ch01-004}
+dans \eqref{eq:Ch01-004}
 \begin{table*}
     \centering
     \begin{tabular}[]{c|c|c}
@@ -650,7 +650,7 @@ dans~\eqref{eq:Ch01-004}
     \end{tabular}
 \end{table*}
 
-Compte-tenu de~\eqref{eq:Ch01-014}, le Lemme~\ref{lem:Ch01-2} du paragraphe~\ref{ssec:Ch01-1.2} permet d'introduire le vecteur flux de chaleur $\vec{q}$ à travers $\partial D$ par
+Compte-tenu de \eqref{eq:Ch01-014}, le Lemme~\ref{lem:Ch01-2} du paragraphe~\ref{ssec:Ch01-1.2} permet d'introduire le vecteur flux de chaleur $\vec{q}$ à travers $\partial D$ par
 \begin{equation}
     h = - \vec{q} \cdot \vec{n} = -q_i n_i
     \label{eq:Ch01-046}
@@ -660,25 +660,25 @@ L'application du Théorème~\ref{thm:Ch01-1p} donne alors
     & \rho \left( \frac{\ud e}{\ud t} + V_i \gamma_i \right) = \left( \sigma_{ij} V_i - q_j \right)_{,j} + f_i V_i + r\\
     & \rho \frac{\ud e}{\ud t} + \left( \rho \gamma_i - \sigma_{ij,j} - f_i \right) V_i = \sigma_{ij} V_{i,j} + r - q_{j,j}
 \end{align*}
-Le terme entre parenthèses disparaît d'après l'équation du mouvement~\eqref{eq:Ch01-015}, et, compte-tenu de la symétrie de $\sigma_{ij}$, il reste
+Le terme entre parenthèses disparaît d'après l'équation du mouvement \eqref{eq:Ch01-015}, et, compte-tenu de la symétrie de $\sigma_{ij}$, il reste
 \begin{equation}
     \rho \frac{\ud e }{\ud t} = \sigma_{ij} D_{ij} + r - q_{j,j}
     \label{eq:Ch01-047}
 \end{equation}
 forme locale du premier principe de la thermodynamique.
 
-On aurait également pu obtenir~\eqref{eq:Ch01-047} en utilisant le théorème de l'énergie cinétique du paragraphe~\ref{ssec:Ch01-2.1}.
-Ce théorème permet en effet de remplacer~\eqref{eq:Ch01-040} par
+On aurait également pu obtenir \eqref{eq:Ch01-047} en utilisant le théorème de l'énergie cinétique du paragraphe~\ref{ssec:Ch01-2.1}.
+Ce théorème permet en effet de remplacer \eqref{eq:Ch01-040} par
 \begin{equation}
     \frac{\ud E}{\ud t} = Q - \mathcal{P}^{(int)}
     \label{eq:Ch01-048}
 \end{equation}
-ce  qui, d'après~\eqref{eq:Ch01-025}, donne, au lieu de~\eqref{eq:Ch01-045},
+ce  qui, d'après \eqref{eq:Ch01-025}, donne, au lieu de \eqref{eq:Ch01-045},
 \begin{equation}
     \frac{\ud}{\ud t} \iiint_{D} \rho e \ud v = \iiint_{D} \left( \sigma_{ij} D_{ij} + r \right) \ud v + \iint_{\partial D} h \ud S
     \label{eq:Ch01-049}
 \end{equation}
-et l'application du Lemme~\ref{lem:Ch01-2} et du Théorème~\ref{thm:Ch01-1p} à cette loi de conservation redonne directement~\eqref{eq:Ch01-046} et~\eqref{eq:Ch01-047}.
+et l'application du Lemme~\ref{lem:Ch01-2} et du Théorème~\ref{thm:Ch01-1p} à cette loi de conservation redonne directement \eqref{eq:Ch01-046} et \eqref{eq:Ch01-047}.
 
 On pourrait également écrire l'équation aux discontinuités~\eqref{eq:Ch01-010} associée à cette loi de conservation~\eqref{eq:Ch01-045}
 \begin{equation}
@@ -686,7 +686,7 @@ On pourrait également écrire l'équation aux discontinuités~\eqref{eq:Ch01-01
     \label{eq:Ch01-050}
 \end{equation}
 mais elle sert peu en mécanique des solides.
-Remarquons toutefois que l'on n'a pas le droit d'écrire cette relation aux discontinuités sur la loi de conservation~\eqref{eq:Ch01-049}, car on a utilisé pour obtenir~\eqref{eq:Ch01-045} le théorème de l'énergie cinétique, lequel suppose que le champ des vitesses est continu.
+Remarquons toutefois que l'on n'a pas le droit d'écrire cette relation aux discontinuités sur la loi de conservation \eqref{eq:Ch01-049}, car on a utilisé pour obtenir \eqref{eq:Ch01-045} le théorème de l'énergie cinétique, lequel suppose que le champ des vitesses est continu.
 
 \subsection{Inégalité de Clausius-Duhem} \label{ssec:Ch01-3.2}
 Le second principe de la thermodynamique qui, en thermostatique, pour un processus homotherme, s'écrit classiquement
@@ -704,13 +704,13 @@ exprimant que, pour tout domaine matériel $D$, le taux de ``production interne'
     S = \iiint_{D} \rho \eta \ud v
     \label{eq:Ch01-053}
 \end{equation}
-où $\eta$ est l'entropie par unité de masse, et les \emph{échanges} lT dT entropie avec l'extérieur, liés aux échanges de chaleur~\eqref{eq:Ch01-044} par
+où $\eta$ est l'entropie par unité de masse, et les \emph{échanges} lT dT entropie avec l'extérieur, liés aux échanges de chaleur \eqref{eq:Ch01-044} par
 \begin{equation}
     \mathcal{S}^{(ext)} = \iiint_{D} \frac{r}{\theta} \ud v + \iint_{\partial D} \frac{h}{\theta} \ud S
     \label{eq:Ch01-054}
 \end{equation}
 où $\theta$ est la température absolue.
-Ainsi, compte-tenu de~\eqref{eq:Ch01-046}, le second principe de la thermodynamique s'écrit sous la forme
+Ainsi, compte-tenu de \eqref{eq:Ch01-046}, le second principe de la thermodynamique s'écrit sous la forme
 \begin{equation}
     \frac{\ud}{\ud t} \iiint_D \rho \eta \ud v \geq \iiint_{D} \frac{r}{\theta} \ud v - \iint_{\partial D} \frac{q_i n_i}{\theta} \ud S
     \label{eq:Ch01-055}
@@ -721,7 +721,7 @@ En utilisant le \tmp{Lemme~\ref{lem:Ch01-2p}} et le théorème de la divergence,
         \rho \theta \frac{\ud \eta}{\ud t}  &\geq r - q_{i,i} + \frac{1}{\theta} q_i\theta_{,i}
     \label{eq:Ch01-056}
 \end{align}
-En éliminant $r$ entre~\eqref{eq:Ch01-047} et~\eqref{eq:Ch01-056}, on obtient
+En éliminant $r$ entre \eqref{eq:Ch01-047} et \eqref{eq:Ch01-056}, on obtient
 \begin{equation}
     -\rho \left( \frac{\ud e}{\ud t} - \theta \frac{\ud \eta}{\ud t} \right) - \frac{1}{\theta}q_i \theta_{,i} + \sigma_{ij}D_{ij} \geq 0
     \label{eq:Ch01-057}
@@ -734,7 +734,7 @@ c'est l'inégalité de Clausius-Duhem, que l'on peut aussi écrire sous la forme
 où $\psi = e -\eta \theta$ est 1'énergie libre par unité de masse.
 
 D'un point de vue purement mécanique, le second principe traduit l'irréversibilité et joue donc un rôle important.
-En ``oubliant'' les variables thermiques, on peut réécrire~\eqref{eq:Ch01-057} ou~\eqref{eq:Ch01-058} sous la forme
+En ``oubliant'' les variables thermiques, on peut réécrire \eqref{eq:Ch01-057} ou \eqref{eq:Ch01-058} sous la forme
 \begin{equation}
     \left\{
     \begin{aligned}
