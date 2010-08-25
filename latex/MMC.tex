@@ -53,6 +53,11 @@
 %\usepackage{koma-script} % A bundle of versatile classes and packages
 %\usepackage{ntgclass} % "European" versions of standard classes.
 %\usepackage{thmbox} % Decorate theorem statements.
+\usepackage{soulutf8}
+\sodef\an{}{.5em}{2.5em plus1em}{2.5em plus.1em minus.1em}
+\sodef\bn{}{.1em}{0.5em plus0.5em}{1em plus.1em minus.1em}
+\newcommand{\policetitre}{\fontsize{22}{30}\selectfont}
+\soulregister{\policetitre}{0} 
 
 \newcommand{\tmp}[1]{{\color{violet}{#1}}}
 % alias math
@@ -122,30 +127,42 @@
 %\renewtheorem*{proof}{Démonstration}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % définition de l'apparence de la page de titre
 \definecolor{Vert}{RGB}{22,200,22}
-\newcommand*{\titleCC}{\begingroup% City of Cambridge
+\newcommand*{\titleCC}{%
+\begingroup
 \pagestyle{empty}
-\AddToShipoutPicture*{\put(145,-30){\includegraphics[scale=1.1]{../images/fondECL.eps}}}
-\vspace*{2em}
+\AddToShipoutPicture*{\put(0,20){\includegraphics[scale=1]{../images/fondECL2.eps}}}
 \centering
-\par\normalfont\fontsize{25}{30}\sffamily\selectfont\textbf{Mécanique des Milieux Continus}
-\vfill\rmfamily
-{\Large François Sidoroff}\par
+\vspace*{3.5cm}
+\bn{\policetitre\textsc{Mécanique des milieux continus}}\par
+\vspace*{15cm}
+\an{\huge\textsc{François Sidoroff}}
 \vfill
-\includegraphics[height=5cm]{../images/LogoECL.eps}
-\par\vfill
-{\small 28/09/2004}\par
-\vspace*{0.5em}
+\flushleft
+\includegraphics[height=1cm]{../images/LogoECLini.eps}
+%\endgroup} 
+%\newcommand*{\titleCC}{\begingroup% City of Cambridge
+%\pagestyle{empty}
+%\AddToShipoutPicture*{\put(145,-30){\includegraphics[scale=1.1]{../images/fondECL.eps}}}
+%\vspace*{2em}
+%\centering
+%\par\normalfont\fontsize{25}{30}\sffamily\selectfont\textbf{Mécanique des Milieux Continus}
+%\vfill\rmfamily
+%{\Large François Sidoroff}\par
+%\vfill
+%\includegraphics[height=5cm]{../images/LogoECL.eps}
+%\par\vfill
+%{\small 28/09/2004}\par
+%\vspace*{0.5em}
 \newpage\thispagestyle{empty}
 \textcolor{white}{p}
 \endgroup \vfill
 \begin{flushright}
 \psframebox[framearc=.5,fillcolor=white,framesep=2pt,linecolor=Vert,linewidth=1pt]{\includegraphics[width=1cm]{../icon/share2.eps}\includegraphics[width=1cm]{../icon/remix2.eps}}
-\hspace*{1pt}\psframebox[framearc=.5,fillcolor=white,framesep=2pt,linecolor=red,linewidth=1pt]{\includegraphics[width=1cm]{../icon/by2.eps}\includegraphics[width=1cm]{../icon/nc-eu2.eps}\includegraphics[width=1cm]{../icon/sa2.eps}}\\
-
-\vspace*{2pt}
+\hspace*{1pt}\psframebox[framearc=.5,fillcolor=white,framesep=2pt,linecolor=red,linewidth=1pt]{\includegraphics[width=1cm]{../icon/by2.eps}\includegraphics[width=1cm]{../icon/nc-eu2.eps}\includegraphics[width=1cm]{../icon/sa2.eps}}\\[2pt]
 \sffamily
 Ce document est sous licence Creative Commons \\
 Paternité\\ Pas d'Utilisation Commerciale \\ Partage des Conditions Initiales à l'Identique\\ 3.0 France\\
@@ -155,7 +172,7 @@ Paternité\\ Pas d'Utilisation Commerciale \\ Partage des Conditions Initiales �
 
 
 \begin{document}
-%\titleCC
+\titleCC
 %\frontmatter
 %\tableofcontents
 \mainmatter
