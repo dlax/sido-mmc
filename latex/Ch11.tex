@@ -1,142 +1,112 @@
 \chapter{Thermoélasticité linéaire}\label{chap:Ch11}
 Jusqu'à présent, nous n'avons pas tenu compte de la variable température. Dans de nombreux problèmes, cependant, il est nécessaire de la prendre en compte (problèmes de contraintes thermiques, par exemple). 
 \section{Lois de comportement}\label{sec:Ch11-1}
-\subsection{La théorie thermoélastique}\label{ssec:Ch11-1.1}
+\subsection{Théorie thermoélastique}\label{ssec:Ch11-1.1}
 Un matériau thermoélastique est un matériau dans lequel la seule source de dissipation est la conduction thermique.
 Nous considérons une théorie de petites perturbations autour d'un état de référence à contraintes et déformations nulles et à la température de référence $\theta_0$.
-Nous poserons 
+Nous poserons: 
 \begin{equation}
     \theta=\theta_0 + \bar{\theta}
     \label{eq:Ch11-001}
 \end{equation}
 avec $ \bar{\theta}$ petit.
 D'autre part, l'entropie n'étant définie qu'à une constante près, nous la prendrons nulle dans cet état de référence.
-Finalement, $ \varepsilon_{ij}$, $\sigma_{ij}$, $\bar{\theta}$ et $\eta$ seront des variables de perturbation, et nous pourrons négliger les termes d'ordre supérieur par rapport à ces variables. 
+Finalement, $\varepsilon_{ij}$, $\sigma_{ij}$, $\bar{\theta}$ et $\eta$ seront des variables de perturbation et nous pourrons négliger les termes d'ordre supérieur par rapport à ces variables. 
 
-Dans ces conditions, l'équation de conservation de l'énergie \eqref{eq:Ch01-047} et l'inégalité de Clausias-Duhem \eqref{eq:Ch01-057} s'écrivent 
-\begin{equation}
-    \rho_0 \frac{\partial e}{\partial t} = \sigma_{ij} \frac{\partial \varepsilon_{ij}}{\partial t} + r - q_{j,j}
-    \label{eq:Ch11-002}
-\end{equation}
-\begin{equation}
-    -\rho_0 \left(\frac{\partial e}{\partial t} - \theta\frac{\partial \eta}{\partial t}\right) + \sigma_{ij} \frac{\partial \varepsilon_{ij}}{\partial t} - \frac{1}{\theta_0} q_i \theta_{,i} \geq 0
+Dans ces conditions, l'équation de conservation de l'énergie \eqref{eq:Ch01-047} et l'inégalité de Clausias-Duhem \eqref{eq:Ch01-057} s'écrivent: 
+\begin{subequations}
+\begin{align}
+    &\rho_0 \frac{\partial e}{\partial t} = \sigma_{ij} \frac{\partial \varepsilon_{ij}}{\partial t} + r - q_{j,j}
+    \label{eq:Ch11-002}\\
+    &-\rho_0 \left(\frac{\partial e}{\partial t} - \theta\frac{\partial \eta}{\partial t}\right) + \sigma_{ij} \frac{\partial \varepsilon_{ij}}{\partial t} - \frac{1}{\theta_0} q_i \theta_{,i} \geq 0
     \label{eq:Ch11-003}
-\end{equation}
-
+\end{align}
+\end{subequations}
 En élasticité, $e$ dépendait de $\varepsilon_{ij}$.
-En thermoélasticité, $e$ dépendra de $\varepsilon_{ij}$ et de $\eta$ 
+En thermoélasticité, $e$ dépendra de $\varepsilon_{ij}$ et de $\eta$: 
 \begin{equation}
     e=e(\varepsilon_{ij},\eta)
     \label{eq:Ch11-004}
 \end{equation}
-L'inégalité de Clausius-Duhem \eqref{eq:Ch11-003} donne alors 
+L'inégalité de Clausius-Duhem \eqref{eq:Ch11-003} donne alors: 
 \begin{equation}
     -\rho_0 \left(\frac{\partial e}{\partial t} - \theta \right) \frac{\partial \eta}{\partial t} + \left(\sigma_{ij} -\rho_0\frac{\partial e}{\partial \varepsilon_{ij}}\right)\frac{\partial \varepsilon_{ij}}{\partial t} - \frac{1}{\theta_0} q_i \theta_{,i} \geq 0
     \label{eq:Ch11-005}
 \end{equation}
-et, pour que la seule source de dissipation soit la conduction thermique, on doit avoir 
+et, pour que la seule source de dissipation soit la conduction thermique, on doit avoir: 
 \begin{equation}
-    \theta=\frac{\partial e}{\partial eta}\qquad \sigma_{ij} =\rho_0\frac{\partial e}{\partial \varepsilon_{ij}}
+    \theta=\frac{\partial e}{\partial eta},\quad \sigma_{ij} =\rho_0\frac{\partial e}{\partial \varepsilon_{ij}},\quad q_i \theta_{,i}\leq 0
     \label{eq:Ch11-006}
 \end{equation}
+Comme dans le cas élastique, nous pouvons faire un développement en série de $e$: 
 \begin{equation}
-    q_i \theta_{,i}\leq 0
-    \label{eq:Ch11-007}
-\end{equation}
-Comme dans le cas élastique, nous pouvons faire un développement en série de $e$ 
-\begin{equation}
-  \left\{
-  \begin{aligned}
-    \rho_0 e(\varepsilon_{ij},\eta) = \rho_0 e_0 & + a_{ij} \varepsilon_{ij} +\rho_0 a_0 \eta \\
-                                                 & + \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh} + h_{ij} \varepsilon_{ij} \eta + \frac{1}{2} m \eta^2
-  \end{aligned}
-  \right.
+    \rho_0 e(\varepsilon_{ij},\eta) = \rho_0 e_0  + a_{ij} \varepsilon_{ij} +\rho_0 a_0 \eta 
+                                                  + \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh} + h_{ij} \varepsilon_{ij} \eta + \frac{1}{2} m \eta^2
     \label{eq:Ch11-008}
 \end{equation}
+et:
 \begin{equation}
-  \left\{
   \begin{aligned}
     \rho_0 \theta & = \rho_0 a_0 + h_{ij} \varepsilon_{ij} + m \eta \\
     \sigma_{ij}   & = a_{ij} + A_{ijkh} \varepsilon_{kh} + h_{ij} \eta
   \end{aligned}
-  \right.
     \label{eq:Ch11-009}
 \end{equation}
 Or, dans la configuration de référence, on a $\varepsilon_{ij}=\eta=0$, $\sigma_{ij}=0$ et $\theta=\theta_0$.
 On doit donc avoir $a_0 = \theta_0$, $a_{ij}=0$ et on peut aussi prendre $e_0=0$.
-On obtient alors 
-\begin{equation}
-  \begin{aligned}
-    \rho_0 e & = \rho_0 \theta_0 \eta + \rho_0 \bar{e}(\varepsilon_{ij},\eta) \\
-    \rho_0 \bar{e} = \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh} + h_{ij} \varepsilon_{ij}\eta + \frac{1}{2} m \eta^2
-  \end{aligned}.
-    \label{eq:Ch11-010}
-\end{equation}
-\begin{equation}
-    \sigma_{ij} = \rho_0 \frac{\partial \bar{e}}{\partial \varepsilon_{ij}} = A_{ijkh} \varepsilon_{kh} + h_{ij} \eta \quad \rho_0 \bar{\theta} = \frac{\partial \bar{e}}{\partial \eta} = h_{ij} \varepsilon_{ij} + m \eta
-    \label{eq:Ch11-011}
-\end{equation}
-
-Compte-tenu de \eqref{eq:Ch11-006}, l'équation \eqref{eq:Ch11-002} devient, après linéarisation 
+On obtient alors: 
+\begin{subequations}
+  \begin{align}
+   & \rho_0 e  = \rho_0 \theta_0 \eta + \rho_0 \bar{e}(\varepsilon_{ij},\eta)\label{eq:Ch11-010} \\
+   &\rho_0 \bar{e} = \frac{1}{2} A_{ijkh} \varepsilon_{ij}\varepsilon_{kh} + h_{ij} \varepsilon_{ij}\eta + \frac{1}{2} m \eta^2\\
+&    \sigma_{ij} = \rho_0 \frac{\partial \bar{e}}{\partial \varepsilon_{ij}} = A_{ijkh} \varepsilon_{kh} + h_{ij} \eta \\ &\rho_0 \bar{\theta} = \frac{\partial \bar{e}}{\partial \eta} = h_{ij} \varepsilon_{ij} + m \eta
+  \label{eq:Ch11-011}
+\end{align}
+\end{subequations}
+Compte-tenu de \eqref{eq:Ch11-006}, l'équation \eqref{eq:Ch11-002} devient, après linéarisation: 
 \begin{equation}
     \rho_0 \theta_0 \frac{d \eta}{dt} = r - q_{j,j}
     \label{eq:Ch11-012}
 \end{equation}
-
 Pour compléter la théorie, il faut écrire une loi de conduction thermique, donnant le flux de chaleur en fonction du gradient de température.
-En théorie linéaire, on prend la loi de Fourier 
+En théorie linéaire, on prend la loi de Fourier: 
 \begin{equation}
     q_i = -K_{ij} \theta_{,j}
     \label{eq:Ch11-013}
 \end{equation}
-avec un tenseur de conduction $K_{ij}$ symétrique -- cette symétrie est expérimentalement bien vérifiée, et théoriquement bien fondée par les relations d'Onsager; elle n'est toutefois pas indispensable, on peut imaginer un tenseur de conduction non symétrique -- et défini positif -- d'après le second principe \eqref{eq:Ch11-007}.
+avec un tenseur de conduction $K_{ij}$ symétrique --- cette symétrie est expérimentalement bien vérifiée, et théoriquement bien fondée par les relations d'Onsager; elle n'est toutefois pas indispensable, on peut imaginer un tenseur de conduction non symétrique --- et défini positif --- d'après le second principe \eqref{eq:Ch11-006}.
 
-Le formalisme \eqref{eq:Ch11-010}, \eqref{eq:Ch11-011} définit les contraintes et la température en fonction des déformations et de l'entropie, ceci étant lié au choix de l'énergie interne comme potentiel thermodynamique.
+Le formalisme \eqref{eq:Ch11-010} et \eqref{eq:Ch11-011} définit les contraintes et la température en fonction des déformations et de l'entropie, ceci étant lié au choix de l'énergie interne comme potentiel thermodynamique.
 Une transformation de Legendre sur $e(\varepsilon_{ij},\eta)$ permettra d'écrire d'autres relations.
-Par exemple, on peut introduire une «~enthalpie libre~»
+Par exemple, on peut introduire une \emph{enthalpie libre}:
 \begin{equation}
- \left\{
-  \begin{aligned}
-    \rho_0 g(\sigma_{ij},\theta) = \sigma_{ij}\varepsilon_{ij} + \rho_0 \theta \eta - \rho_0 e \\
-    \eta = \frac{\partial g}{\partial \theta} \qquad,\qquad \varepsilon{ij} = \rho_0 \frac{\partial g}{\partial \sigma_{ij}}
-  \end{aligned}
-  \right.
+    \rho_0 g(\sigma_{ij},\theta) = \sigma_{ij}\varepsilon_{ij} + \rho_0 \theta \eta - \rho_0 e \quad\text{avec}\quad
+    \eta = \frac{\partial g}{\partial \theta} \quad\text{et}\quad \varepsilon_{ij} = \rho_0 \frac{\partial g}{\partial \sigma_{ij}}
     \label{eq:Ch11-014}
 \end{equation}
+soit, en notant $\varepsilon_{ij} = \Sigma_{ijkh} \sigma_{kh} + l_{ij} \bar{\theta}$ et $\rho_0 \eta = l_{ij} \sigma_{ij} + n \bar{\theta}$:
 \begin{equation}
     \rho_0 g = \frac{1}{2} \Sigma_{ijkh} \sigma_{ij}\sigma_{kh} + l_{ij} \sigma_{ij} \bar{\theta} +\frac{1}{2} n \bar{\theta}^2
     \label{eq:Ch11-015}
 \end{equation}
+où les coefficients de la forme quadratique $\rho_0 g$ peuvent s'exprimer à partir de ceux de la forme $\rho_0 \bar{e}$ par les relations: 
 \begin{equation}
-    \left\{
-    \begin{aligned}
-        \varepsilon_{ij} & = \Sigma_{ijkh} \sigma_{kh} + l_{ij} \bar{\theta} \\
-        \rho_0 \eta      & = l_{ij} \sigma_{ij} + n \bar{\theta}
-    \end{aligned}
-    \right.
-    \label{eq:Ch11-016}
-\end{equation}
-où les coefficients de la forme quadratique $\rho_0 g$ peuvent s'exprimer à partir de ceux de la forme $\rho_0 \bar{e}$ par les relations 
-\begin{equation}
- \left\{
   \begin{aligned}
-    n             & = & \left(m - h_{ij} \Lambda_{ijkl} h_{kl}\right)^{-1} \\
-    l_{ij}        & = & -n \Lambda_{ijkl} h_{kl} \\
-    \Sigma_{ijkl} & = & \Lambda_{ijkl} + n \Lambda_{ijpq}\Lambda_{klmn} h_{pq} h_{mn}
+    &n              =  \left(m - h_{ij} \Lambda_{ijkl} h_{kl}\right)^{-1} \\
+    &l_{ij}         = -n \Lambda_{ijkl} h_{kl} \\
+    &\Sigma_{ijkl}  =  \Lambda_{ijkl} + n \Lambda_{ijpq}\Lambda_{klmn} h_{pq} h_{mn}
   \end{aligned}
-  \right.
     \label{eq:Ch11-016}
 \end{equation}
 De même, on pourra exprimer $\varepsilon{ij}$ et $\bar{\theta}$ en fonction de l'enthalpie $h(\sigma_{ij},\eta)$, et $\sigma_{ij}$ et $\eta$ en fonction de l'énergie libre $\psi(\varepsilon_{ij},\bar{\theta})$. 
-
 \subsection{Thermoélasticité classique}\label{ssec:Ch11-1.2} 
 Dans le cas isotrope, les différents tenseurs prennent des formes simples.
-Un tenseur du 4ème ordre prend la forme \eqref{eq:Ch05-022} et dépend donc de 2 coefficients.
+Un tenseur du quatrième ordre prend la forme \eqref{eq:Ch05-022} et dépend donc de deux coefficients.
 Un tenseur du second ordre est sphérique et fait donc intervenir un coefficient.
-La théorie fera donc intervenir 5 coefficients scalaires: 4 coefficients pour le potentiel thermodynamique \eqref{eq:Ch11-010} ou \eqref{eq:Ch11-015}, et 1 pour le tenseur de conduction $K_{ij}$.
-En effet, \eqref{eq:Ch11-013} devient
+La théorie fera donc intervenir cinq coefficients scalaires: quatre coefficients pour le potentiel thermodynamique \eqref{eq:Ch11-010} ou \eqref{eq:Ch11-015} et un pour le tenseur de conduction $K_{ij}$.
+En effet, \eqref{eq:Ch11-013} devient:
 \begin{equation}
-    q_i = =k \theta_{,i} \quad , \quad k \geq 0
+    q_i = k \theta_{,i}, \quad k \geq 0
     \label{eq:Ch11-018}
 \end{equation}
 où $k$ est la conductivité thermique. 
@@ -144,108 +114,99 @@ où $k$ est la conductivité thermique.
 Nous convenons désormais d'omettre les barres sur $e$ et $\theta$.
 En particulier, $\theta$ désignera désormais non pas la température absolue, mais sa variation par rapport à la température de référence. 
 
-Si $\alpha$ est la coefficient de dilatation linéaire du matériau, alors en l'absence de contraintes, une variation de température $\theta$ entraîne une dilatation thermique 
+Si $\alpha$ est la coefficient de dilatation linéaire du matériau, alors en l'absence de contraintes, une variation de température $\theta$ entraîne une dilatation thermique: 
 \begin{equation}
     \varepsilon_{ij} = \alpha \theta \delta_{ij}
     \label{eq:Ch11-019}
 \end{equation}
 D'autre part, à la température de référence $\theta_0$, le matériau se comporte comme un matériau élastique isotrope, avec un module d'Young $E$ et un coefficient de Poisson $\nu$, mesurés en conditions isothermes.
 Nous pouvons donc écrire 
-\begin{equation}
-    \varepsilon_{ij} = \frac{1+\nu}{E}\sigma_{ij} - \frac{\nu}{E}\sigma_{kk}\delta_{ij} + \alpha \theta \delta_{ij}
-    \label{eq:Ch11-020}
-\end{equation}
-\begin{equation}
-    \sigma_{ij} = \lambda \varepsilon_{kk} \delta_{ij} + 2 \mu \varepsilon_{ij} -3 K \alpha \theta \delta_{ij}
+\begin{subequations}
+\begin{align}
+   & \varepsilon_{ij} = \frac{1+\nu}{E}\sigma_{ij} - \frac{\nu}{E}\sigma_{kk}\delta_{ij} + \alpha \theta \delta_{ij}
+    \label{eq:Ch11-020}\\
+   & \sigma_{ij} = \lambda \varepsilon_{kk} \delta_{ij} + 2 \mu \varepsilon_{ij} -3 K \alpha \theta \delta_{ij}
     \label{eq:Ch11-021}
-\end{equation}
+\end{align}
+\end{subequations}
 où $ 3 K = 3 \lambda + 2 \mu $ est le module de rigidité à la compression isotherme, et $\lambda$ et $\mu$ sont les coefficients de Lamé isothermes donnés par \eqref{eq:Ch05-033} à partir de $E$ et $\nu$.
 
-Quant au coefficient de $\theta^2$ dans le potentiel thermodynamique, on peut le relier à la chaleur spécifique à contraintes ou déformations constantes 
+Quant au coefficient de $\theta^2$ dans le potentiel thermodynamique, on peut le relier à la chaleur spécifique à contraintes ou déformations constantes: 
 \begin{equation}
-    c = c_{\varepsilon} = \theta_0 \left(\frac{\partial^2 e}{\partial \theta^2}\right)_{\varepsilon_{ij}=\mbox{Cte}} \quad , \quad c_{\sigma} = \theta_0 \left(\frac{\partial^2 e}{\partial \theta^2}\right)_{\sigma_{ij}=\mbox{Cte}}
+    c = c_{\varepsilon} = \theta_0 \left(\frac{\partial^2 e}{\partial \theta^2}\right)_{\varepsilon_{ij}=\text{cte}}, \quad c_{\sigma} = \theta_0 \left(\frac{\partial^2 e}{\partial \theta^2}\right)_{\sigma_{ij}=\text{cte}}
     \label{eq:Ch11-022}
 \end{equation}
-ce qui nous permet d'écrire, à partir de \eqref{eq:Ch11-016}, 
+ce qui nous permet d'écrire, à partir de \eqref{eq:Ch11-016}: 
 \begin{equation}
     \rho_0\eta = \alpha \sigma_{ii} + \frac{\rho_0 c_{\sigma}}{\theta_0}\theta
     \label{eq:Ch11-023}
 \end{equation}
-ou bien, en fonction de déformations, 
+ou bien, en fonction de déformations: 
 \begin{equation}
     \rho_0\eta = 3 K \alpha \varepsilon_{ii} + \frac{\rho_0 c}{\theta_0}\theta
     \label{eq:Ch11-024}
 \end{equation}
-et l'on obtient la relation 
+et l'on obtient la relation: 
 \begin{equation}
     c_{\sigma} = c +\frac{9 K \alpha^2 \theta_0}{\rho_0}
     \label{eq:Ch11-025}
 \end{equation}
-relation entre les chaleurs spécifiques à déformations constantes et contraintes constantes. 
+entre les chaleurs spécifiques à déformations constantes et contraintes constantes. 
 
-Ainsi, la théorie classique de la thermoélasticité fait intervenir 5 coefficients: deux coefficients élastiques isothermes, le coefficient de dilatation $\alpha$, la chaleur spécifique à déformations constantes $c$ et la conductibilité thermique $k$.
-
+Ainsi, la théorie classique de la thermoélasticité fait intervenir cinq coefficients: deux coefficients élastiques isothermes, le coefficient de dilatation $\alpha$, la chaleur spécifique à déformations constantes $c$ et la conductibilité thermique $k$.
 \section{Problèmes de thermoélasticité}\label{sec:Ch11-2}
 \subsection{Problèmes aux limites}\label{ssec:Ch11-2.1}
 Les équations de la thermoélasticité sont les équations du mouvement et l'équation de l'énergie \eqref{eq:Ch11-012}
-\begin{equation}
-    \rho_0 \frac{\partial^2 u_i}{\partial t^2} = \sigma_{ij,j}+f_i
-    \label{eq:Ch11-026}
-\end{equation}
-\begin{equation}
-    \rho_0 \theta_0 \frac{\partial \eta}{\partial t} = r - q_{j,j}
+\begin{subequations}
+\begin{align}
+    &\rho_0 \frac{\partial^2 u_i}{\partial t^2} = \sigma_{ij,j}+f_i
+    \label{eq:Ch11-026}\\
+    &\rho_0 \theta_0 \frac{\partial \eta}{\partial t} = r - q_{j,j}
     \label{eq:Ch11-027}
-\end{equation}
-complétées par les lois de comportement, \eqref{eq:Ch11-018}, \eqref{eq:Ch11-021} et \eqref{eq:Ch11-024} par exemple, des conditions initiales 
+\end{align}
+\end{subequations}
+complétées par les lois de comportement, \eqref{eq:Ch11-018}, \eqref{eq:Ch11-021} et \eqref{eq:Ch11-024} par exemple, des conditions initiales: 
 \begin{equation}
- \left\{
-  \begin{aligned}
-    u_i(x,0) = u_i^0(x) \quad , \quad \frac{\partial u_i}{\partial t}(x,0) = V_i^0(x) \\
+    u_i(x,0) = u_i^0(x), \quad \frac{\partial u_i}{\partial t}(x,0) = V_i^0(x),\quad
     \theta(x,0) = \theta^0(x)
-  \end{aligned}
-  \right.
     \label{eq:Ch11-028}
 \end{equation}
 et des conditions aux limites, qui sont les mêmes qu'en élasticité pour les variables mécaniques et qui, pour les variables thermiques, donnent, soit la température, soit le flux de chaleur.
-Nous prendrons par exemple des conditions aux limites mixtes 
+Nous prendrons par exemple des conditions aux limites mixtes: 
 \begin{equation}
-  \begin{aligned}
-    u_i|_{S_u} = u_i^d \quad\quad  \sigma_{ij}n_j|_{S_f} = T_i^d\\
-    \theta|_{S_\theta} = \theta^d \quad\quad  q_in_i|_{S_q} = q^d
-  \end{aligned}
+    u_i|_{S_u} = u_i^d,\quad  \sigma_{ij}n_j|_{S_f} = T_i^d,\quad\theta|_{S_\theta} = \theta^d,\quad  q_in_i|_{S_q} = q^d
     \label{eq:Ch11-029}
 \end{equation}
 avec $S =S_u+S_f=S_{\theta}+S_q$.
 Le problème est bien posé, et on peut démontrer un théorème d'unicité analogue à celui du paragraphe \ref{ssec:Ch06-1.2}.
  
-Compte-tenu des lois de comportement \eqref{eq:Ch11-021}, \eqref{eq:Ch11-024} et \eqref{eq:Ch11-028}, les équations \eqref{eq:Ch11-026} et \eqref{eq:Ch11-027} donnent 
-\begin{equation}
-    \rho_0 \frac{\partial^2 u_i}{\partial t^2} = (\lambda +\mu) u_{k,ik} + \mu u_{i,kk} - 3 K \alpha \theta_{,i} +f_i
-    \label{eq:Ch11-030}
-\end{equation}
-\begin{equation}
-    \rho_0 c \frac{\partial \theta}{\partial t} = r + k\theta_{,ii} - 3 K \alpha \theta_0 \frac{\partial^2 u_i}{\partial x_i \partial t}
+Compte-tenu des lois de comportement \eqref{eq:Ch11-021}, \eqref{eq:Ch11-024} et \eqref{eq:Ch11-028}, les équations \eqref{eq:Ch11-026} et \eqref{eq:Ch11-027} donnent: 
+\begin{subequations}
+\begin{align}
+    &\rho_0 \frac{\partial^2 u_i}{\partial t^2} = (\lambda +\mu) u_{k,ik} + \mu u_{i,kk} - 3 K \alpha \theta_{,i} +f_i
+    \label{eq:Ch11-030}\\
+    &\rho_0 c \frac{\partial \theta}{\partial t} = r + k\theta_{,ii} - 3 K \alpha \theta_0 \frac{\partial^2 u_i}{\partial x_i \partial t}
     \label{eq:Ch11-031}
-\end{equation}
-
+\end{align}
+\end{subequations}
 Dans de nombreux cas, on peut raisonnablement négliger le dernier terme de \eqref{eq:Ch11-031}.
-On arrive ainsi à la «~thermoélasticité découplée~».
-En effet, le déplacement disparaît de l'équation \eqref{eq:Ch11-031}, on peut donc déjà résoudre le problème thermique 
+On arrive ainsi à la \emph{thermoélasticité découplée}.
+En effet, le déplacement disparaît de l'équation \eqref{eq:Ch11-031}, on peut donc déjà résoudre le problème thermique:
 \begin{equation}
   \begin{aligned}
-    \rho_0 c \frac{\partial \theta}{\partial t} = r + k\Delta \theta \\
-    \theta|_{S_\theta} = \theta^d \quad\quad  q_in_i|_{S_q} = q^d \\
-    \theta (x,0) = \theta^0(x)
+    &\rho_0 c \frac{\partial \theta}{\partial t} = r + k\Delta \theta \\
+    &\theta|_{S_\theta} = \theta^d,\quad  q_in_i|_{S_q} = q^d \\
+    &\theta (x,0) = \theta^0(x)
   \end{aligned}
     \label{eq:Ch11-032}
 \end{equation}
 problème classique pour l'équation de la chaleur et qui permet de calculer la répartition de température indépendamment des déformations.
-Une fois connu le champ de température, on peut revenir au problème mécanique 
+Une fois connu le champ de température, on peut revenir au problème mécanique: 
 \begin{equation}
   \begin{aligned}
-    \rho_0 \frac{\partial^2 vec{u}}{\partial t^2} = (\lambda + \mu) \grad \dive \vec{u} + \mu \Delta \vec{u} +\vec{f} - 3 K \alpha \grad \theta \\
-    u_i|_{S_u} = u_i^d \quad,\quad  \sigma_{ij}n_j|_{S_f} = T_i^d \\
-    u_i(x,0)= u_i^0(x) \quad,\quad  \frac{\partial u_i}{\partial t}(x,0) = V_i^0(x)
+    &\rho_0 \frac{\partial^2 \vec{u}}{\partial t^2} = (\lambda + \mu) \grad \dive \vec{u} + \mu \Delta \vec{u} +\vec{f} - 3 K \alpha \grad \theta \\
+    &u_i|_{S_u} = u_i^d,\quad  \sigma_{ij}n_j|_{S_f} = T_i^d \\
+    &u_i(x,0)= u_i^0(x),\quad  \frac{\partial u_i}{\partial t}(x,0) = V_i^0(x)
   \end{aligned}
     \label{eq:Ch11-033}
 \end{equation}
@@ -256,99 +217,94 @@ Nous avons formulé ici le problème dynamique mais l'on peut aussi envisager le
 On peut alors démontrer des principes variationnels analogues à ceux du cas élastique.
 On peut également envisager un problème mécanique quasi-statique avec un problème thermique dynamique. 
 
-\subsection{Un exemple}\label{ssec:Ch11-2.2}
-A titre d'exemple, nous allons calculer les contraintes thermiques engendrées par l'échauffement d'une cavité sphérique de rayon $a$ dans un massif infini.
-Nous considérons donc le problème défini par 
-\begin{equation}
-    f_i = 0 \quad,\quad r=0
-    \label{eq:Ch11-034}
-\end{equation}
-\begin{equation}
-    r \rightarrow \infty: \quad \theta \rightarrow 0 \quad,\quad \sigma_{ij}\rightarrow 0
-    \label{eq:Ch11-035}
-\end{equation}
-\begin{equation}
-    r =a: \quad \theta=\theta_1 \quad,\quad \sigma_{ij}n_j = 0
-    \label{eq:Ch11-036}
-\end{equation}
-
-Il s'agit d'un problème statique et l'équation thermique \eqref{eq:Ch11-031} donne 
+\subsection{Exemple}\label{ssec:Ch11-2.2}
+\`A titre d'exemple, nous allons calculer les contraintes thermiques engendrées par l'échauffement d'une cavité sphérique de rayon $a$ dans un massif infini.
+Nous considérons donc le problème défini par: 
+\begin{subequations}
+\begin{align}
+&    r=0:\quad f_i = 0
+    \label{eq:Ch11-034}\\
+&   r \rightarrow \infty: \quad \theta \rightarrow 0,\quad \sigma_{ij}\rightarrow 0
+    \label{eq:Ch11-035}\\
+&    r =a: \quad \theta=\theta_1,\quad \sigma_{ij}n_j = 0\label{eq:Ch11-036}
+\end{align}
+\end{subequations}
+Il s'agit d'un problème statique et l'équation thermique \eqref{eq:Ch11-031} donne: 
 \begin{equation}
     \Delta \theta = 0
     \label{eq:Ch11-037}
 \end{equation}
 D'après la symétrie du problème, $\theta$ dépend uniquement de $r$, $\theta=\theta(r)$.
-On a 
+On a: 
 \begin{equation}
     \Delta \theta = \theta''(r) +\frac{2}{r}\theta'(r)
     \label{eq:Ch11-038}
 \end{equation}
-et l'équation \eqref{eq:Ch11-037} s'intègre en 
+et l'équation \eqref{eq:Ch11-037} s'intègre en: 
 \begin{equation}
     \Delta \theta = \frac{A}{r} + B
     \label{eq:Ch11-039}
 \end{equation}
 où $A$ et $B$ sont deux constantes d'intégration que nous déterminons à partir des conditions aux limites pour $r= a$ et $r \rightarrow \infty$.
-On obtient 
+On obtient:
 \begin{equation}
     \Delta \theta = \theta_1\frac{a}{r}
     \label{eq:Ch11-040}
 \end{equation}
 et nous avons résolu le problème thermique qui, en statique, est toujours découplé du problème mécanique. 
 
-Pour résoudre le problème mécanique, nous partons de l'équation du mouvement \eqref{eq:Ch11-030} qui, en statique, donne, en supposant $\vec{f}=0$, 
+Pour résoudre le problème mécanique, nous partons de l'équation du mouvement \eqref{eq:Ch11-030} qui, en statique, donne, en supposant $\vec{f}=0$: 
 \begin{equation}
     (\lambda+\mu) \grad \dive \vec{u} + \mu \Delta \vec{u} - 3K\alpha \grad \theta = 0
 \end{equation}
-ou bien, voir \eqref{eq:Ch05-025}, 
+ou bien, voir \eqref{eq:Ch05-025}: 
 \begin{equation}
     (\lambda+2\mu) \grad \dive \vec{u} + \mu \rot \rot \vec{u} - 3K\alpha \grad \theta = 0
     \label{eq:Ch11-041}
 \end{equation}
-D'après la symétrie du problème, le déplacement est radial 
+D'après la symétrie du problème, le déplacement est radial: 
 \begin{equation}
     u_i=g(r) x_i
     \label{eq:Ch11-042}
 \end{equation}
-et, comme on l'a vu au paragraphe \ref{ssec:Ch05-2.2}, $\rot \vec{u}$. L'équation s'intègre alors pour donner 
-\begin{equation} 
-\grad\left[(\lambda + 2 \mu) \dive \vec{u} - 3 K \alpha \theta \right] = 0
-\end{equation}
-\begin{equation}
-    \dive \vec{u} = \frac{3K\alpha}{\lambda + 2 \mu} \theta + 3 A
+et, comme on l'a vu au paragraphe \ref{ssec:Ch05-2.2}, $\rot \vec{u}$. L'équation s'intègre alors pour donner: 
+\begin{subequations} 
+\begin{align}
+&\grad\left[(\lambda + 2 \mu) \dive \vec{u} - 3 K \alpha \theta \right] = 0\\
+&    \dive \vec{u} = \frac{3K\alpha}{\lambda + 2 \mu} \theta + 3 A
     \label{eq:Ch11-043}
-\end{equation}
+\end{align}
+\end{subequations}
 où $A$ est une constante d'intégration.
-Compte-tenu de \eqref{eq:Ch05-047} et de \eqref{eq:Ch11-040}, on obtient alors pour $g(r)$ l'équation différentielle suivante 
+Compte-tenu de \eqref{eq:Ch05-047} et de \eqref{eq:Ch11-040}, on obtient alors pour $g(r)$ l'équation différentielle suivante: 
 \begin{equation}
     3g(r)+\frac{g'(r)}{r} = 3A + \frac{3K\alpha\theta_1 a}{\lambda + 2 \mu}\frac{1}{r}
     \label{eq:Ch11-044}
 \end{equation}
-qui s'intègre pour donner 
+qui s'intègre pour donner: 
 \begin{equation}
     g(r) = A + \frac{B}{r^3}+\frac{3K\alpha\theta_1 a}{2(\lambda + 2\mu)}\frac{1}{r}
     \label{eq:Ch11-045}
 \end{equation}
-
 Il reste à déterminer les deux constantes d'intégration $A$ et $B$ en écrivant les conditions aux limites sur les contraintes.
-Pour cela, nous posons 
+Pour cela, nous posons: 
 \begin{equation}
     C_0 = \frac{3K\alpha\theta_1 a}{2(\lambda + 2\mu)}
     \label{eq:Ch11-046}
 \end{equation}
-et nous calculons 
+et nous calculons: 
 \begin{equation}
     \varepsilon_{ij}=\left(A+\frac{B}{r^3}+\frac{C_0}{r}\right)\delta_{ij}-\left(\frac{3B}{r^3}+\frac{C_0}{r}\right)\frac{x_ix_j}{r^2}
     \label{eq:Ch11-047}
 \end{equation}
-et les déformations principales sont 
+et les déformations principales sont: 
 \begin{equation}
-    \varepsilon_1 = \varepsilon_2 = A + \frac{B}{r^3} + \frac{C_0}{r} \quad,\quad \varepsilon_3 = A - \frac{2B}{r^3}
+    \varepsilon_1 = \varepsilon_2 = A + \frac{B}{r^3} + \frac{C_0}{r},\quad \varepsilon_3 = A - \frac{2B}{r^3}
     \label{eq:Ch11-048}
 \end{equation}
 la valeur propre $\varepsilon_3$ étant associée à la direction radiale.
 On peut ensuite calculer les contraintes par \eqref{eq:Ch11-021}, et la condition à l'infini donne directement $A= 0$.
-On calcule ensuite $\sigma_3$ 
+On calcule ensuite $\sigma_3$: 
 \begin{equation}
   \begin{aligned}
     \sigma_3 & = \frac{2C_0\lambda}{r} - \frac{4\mu B}{r^3} - 2(\lambda+2\mu)\frac{C_0}{r} \\
@@ -356,19 +312,17 @@ On calcule ensuite $\sigma_3$
   \end{aligned}
     \label{eq:Ch11-049}
 \end{equation}
-et en écrivant que $\sigma_3$ est nul pour $r=a$, on obtient la valeur de $B$  
+et en écrivant que $\sigma_3$ est nul pour $r=a$, on obtient la valeur de $B$:  
 \begin{equation}
     B = - C_0 a^2
     \label{eq:Ch11-050}
 \end{equation}
-Soit finalement
+soit, finalement:
 \begin{equation}
-  \left\{
   \begin{aligned}
-    g(r)                & = \frac{3K\alpha \theta_1}{2(\lambda + 2\mu}\frac{a}{r}\frac{r^2-a^2}{r^2} \\
-    \sigma_3            & = - \frac{6\mu K \alpha \theta_1}{\lambda + 2\mu} \frac{a}{r}\frac{r^2-a^2}{r^2}\\
-    \sigma_1 = \sigma_2 & = - \frac{3\mu K \alpha \theta_1}{\lambda + 2\mu} \frac{a}{r}\frac{r^2-a^2}{r^2}
+   & g(r)                 = \frac{3K\alpha \theta_1}{2(\lambda + 2\mu}\frac{a}{r}\frac{r^2-a^2}{r^2} \\
+   & \sigma_3             = - \frac{6\mu K \alpha \theta_1}{\lambda + 2\mu} \frac{a}{r}\frac{r^2-a^2}{r^2}\\
+   & \sigma_1 = \sigma_2  = - \frac{3\mu K \alpha \theta_1}{\lambda + 2\mu} \frac{a}{r}\frac{r^2-a^2}{r^2}
   \end{aligned}
-  \right.
     \label{eq:Ch11-051}
 \end{equation}
