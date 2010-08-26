@@ -1,28 +1,26 @@
 \chapter{Problèmes plans en élasticité}\label{chap:Ch08}
 \section{Élasticité plane}\label{sec:Ch08-1}
 \subsection{Déformations planes}\label{ssec:Ch08-1.1}
-Dans de nombreux problèmes, on peut supposer les déformations planes.
+Dans de nombreux problèmes, on peut supposer les déformations planes avec le champ de déplacement suivant:
 \begin{equation}
-    u_1=u_1(x_1,x_2), u_2=u_2(x_1,x_2), u_3=0
+    u_1=u_1(x_1,x_2),\quad u_2=u_2(x_1,x_2),\quad u_3=0
     \label{eq:Ch08-001}
 \end{equation}
-On en tire le tenseur des déformations 
+On en déduit le tenseur des déformations: 
 \begin{equation}
     \tens{\varepsilon}=
     \begin{bmatrix}
         \varepsilon_{11} & \varepsilon_{12} & 0 \\
         \varepsilon_{12} & \varepsilon_{22} & 0 \\
         0                & 0                & 0 \\     
-    \end{bmatrix}
+    \end{bmatrix},
     \quad
-    \begin{aligned}
-         \varepsilon_{11}&= u_{1,1} \\
-         \varepsilon_{22}&= u_{2,2} \\
-         \varepsilon_{12}&= \frac{1}{2}(u_{1,2}+u_{2,1} 
-    \end{aligned}
+         \varepsilon_{11}= u_{1,1},\quad
+         \varepsilon_{22}= u_{2,2},\quad
+         \varepsilon_{12}= \frac{1}{2}(u_{1,2}+u_{2,1}) 
 \label{eq:Ch08-002}
 \end{equation}
-et, par la loi de comportement, le tenseur des contraintes
+et, par la loi de comportement, le tenseur des contraintes:
 \begin{equation}
     \tens{\sigma} =
     \begin{bmatrix}
@@ -32,77 +30,74 @@ et, par la loi de comportement, le tenseur des contraintes
     \end{bmatrix}
 \label{eq:Ch08-003}
 \end{equation}
-avec les relations suivantes :
-\begin{equation}
-   \begin{cases}
-     E\varepsilon_{11} = \sigma_{11}-\nu(\sigma_{22}+\sigma_{33}) \\
-     E\varepsilon_{22} = \sigma_{22}-\nu(\sigma_{11}+\sigma_{33}) \\
-     E\varepsilon_{12} = (1+\nu)\sigma_{12}
-   \end{cases}
-    \label{eq:Ch08-004}
-\end{equation}
-\begin{equation}
+avec les relations suivantes:
+\begin{subequations}
+   \begin{align}
+&\!\begin{aligned}
+     &E\varepsilon_{11} = \sigma_{11}-\nu(\sigma_{22}+\sigma_{33}) \\
+     &E\varepsilon_{22} = \sigma_{22}-\nu(\sigma_{11}+\sigma_{33}) \\
+     &E\varepsilon_{12} = (1+\nu)\sigma_{12}
+   \end{aligned}
+    \label{eq:Ch08-004}\\
+&
      E\varepsilon_{33} = 0 = \sigma_{33}-\nu(\sigma_{11}+\sigma_{22})
     \label{eq:Ch08-005}
-\end{equation}
-L'équation \eqref{eq:Ch08-005} donne alors
+\end{align}
+\end{subequations}
+L'équation \eqref{eq:Ch08-005} donne alors:
 \begin{equation}
     \sigma_{33}=\nu(\sigma_{11}+\sigma_{22})
     \label{eq:Ch08-006}
 \end{equation}
-et en reportant dans \eqref{eq:Ch08-004} il vient 
+et en reportant dans \eqref{eq:Ch08-004}, il vient: 
 \begin{equation}
-   \begin{cases}
-     E\varepsilon_{11} = (1-\nu^2)\sigma_{11} - \nu(1+\nu)\sigma_{22}\\
-     E\varepsilon_{22} = (1-\nu^2)\sigma_{22} - \nu(1+\nu)\sigma_{11}\\
-     E\varepsilon_{12} = (1+\nu)\sigma_{12}
-   \end{cases}
+   \begin{aligned}
+    & E\varepsilon_{11} = (1-\nu^2)\sigma_{11} - \nu(1+\nu)\sigma_{22}\\
+    & E\varepsilon_{22} = (1-\nu^2)\sigma_{22} - \nu(1+\nu)\sigma_{11}\\
+    & E\varepsilon_{12} = (1+\nu)\sigma_{12}
+   \end{aligned}
     \label{eq:Ch08-007}
 \end{equation}
-
 Pour résoudre un problème en déformations planes, il faut trouver les déplacements $u_1$, $u_2$ et les contraintes $\sigma_{11}$, $\sigma_{22}$, et $\sigma_{12}$ en fonction des coordonnées $(x_1,x_2)$ dans le plan.
 Si nous travaillons sur les contraintes, c'est-à-dire en utilisant l'approche du paragraphe~\ref{ssec:Ch06-1.4}, il faudra vérifier les équations d'équilibre et les équations de Beltrami. 
-Les équations d'équilibre s'écrivent 
+Les équations d'équilibre s'écrivent: 
 \begin{equation}
-   \begin{cases}
-     \sigma_{11,1}+\sigma_{12,2}=0\\
-     \sigma_{12,1}+\sigma_{22,2}=0
-   \end{cases}
+   \begin{aligned}
+     &\sigma_{11,1}+\sigma_{12,2}=0\\
+     &\sigma_{12,1}+\sigma_{22,2}=0
+   \end{aligned}
     \label{eq:Ch08-008}
 \end{equation}
 en supposant nulles les forces de volume (sinon, l'analyse qui suit peut s'étendre, avec des résultats plus compliqués). 
-Ces équations expriment que les formes 
+Ces équations expriment que les formes: 
 \begin{equation*}
-\sigma_{11}dx_2-\sigma_{12}dx_1 \qquad,\qquad \sigma_{22}dx_1-\sigma_{12}dx_2
+\sigma_{11}\ud x_2-\sigma_{12}\ud x_1,\quad \sigma_{22}\ud x_1-\sigma_{12}\ud x_2
 \end{equation*}
-sont des différentielles totales. Il existe donc deux fonctions   $\varphi{x_1,x_2}$ et $\psi(x_1,x_2)$ telles que 
+sont des différentielles totales. Il existe donc deux fonctions $\varphi{x_1,x_2}$ et $\psi(x_1,x_2)$ telles que 
 \begin{equation*}
-\sigma_{11}=\varphi_{,2} \qquad \sigma_{12}=-\psi_{,2}=-\varphi_{,1} \qquad \sigma_{22}=\psi_{,1}
+\sigma_{11}=\varphi_{,2},\quad \sigma_{12}=-\psi_{,2}=-\varphi_{,1},\quad \sigma_{22}=\psi_{,1}
 \end{equation*}
-
-En comparant les deux expressions de $\sigma_{12}$, on voit que la forme 
+En comparant les deux expressions de $\sigma_{12}$, on voit que la forme: 
 \begin{equation*}
-\psi dx_1 + \varphi dx_2
+\psi \ud x_1 + \varphi \ud x_2
 \end{equation*}
-est une différentielle totale, il existe donc une fonction $\chi(x_1,x_2)$ telle que 
+est une différentielle totale, il existe donc une fonction $\chi(x_1,x_2)$ telle que: 
 \begin{equation*}
-\varphi=\chi_{,2} \qquad \psi=\chi_{,1}
+\varphi=\chi_{,2},\quad \psi=\chi_{,1}
 \end{equation*}
-
-La fonction $\chi(x_1,x_2)$ est appelée «~fonction d'Airy~» ou «~fonction de contraintes~» du problème. 
-Elle permet de calculer les contraintes par 
+La fonction $\chi(x_1,x_2)$ est appelée \emph{fonction d'Airy} ou \emph{fonction de contraintes} du problème. 
+Elle permet de calculer les contraintes par: 
 \begin{equation}
-\sigma_{11}=\chi_{,22} \qquad \sigma_{12}=\chi_{,12} \qquad \sigma_{22}=\chi_{,11}
+\sigma_{11}=\chi_{,22},\quad \sigma_{12}=\chi_{,12},\quad \sigma_{22}=\chi_{,11}
     \label{eq:Ch08-009}
 \end{equation}
-
 les équations de l'équilibre étant alors automatiquement vérifiées. 
-En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-009}, 
+En remarquant que, d'après \eqref{eq:Ch08-006} et \eqref{eq:Ch08-009}: 
 \begin{equation}
 \sigma_{kk}=(1+\nu)(\sigma){11}+\sigma_{22}=(1+\nu)\Delta\chi
 \label{eq:Ch08-010}
 \end{equation}
-les équations de Beltrami \eqref{eq:Ch06-031} donnent 
+les équations de Beltrami \eqref{eq:Ch06-031} donnent: 
 \begin{equation}
   \begin{aligned}
   i,j = 1,1 & : &  (1+\nu) \Delta\chi_{,22} + (1+\nu) \Delta\chi_{,11}=0 \\
@@ -112,37 +107,36 @@ les équations de Beltrami \eqref{eq:Ch06-031} donnent
   \end{aligned}
 \label{eq:Ch08-011}
 \end{equation}
-
-Toutes ces équations seront vérifiées si et seulement si la fonction $\chi$ est biharmonique 
+Toutes ces équations seront vérifiées si et seulement si la fonction $\chi$ est biharmonique: 
 \begin{equation}
 \Delta\Delta\chi=\chi_{,1111}+2\chi_{,1122}+\chi_{,2222}=0
 \label{eq:Ch08-012}
 \end{equation}
 Ainsi, pour résoudre un problème en déformations planes, il faut trouver une fonction de contraintes $\chi$ biharmonique vérifiant les conditions aux limites. 
-On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par intégration du système 
+On en tire alors les contraintes $\sigma_{11}$, $\sigma_{22}$ et $\sigma_{12}$ par \eqref{eq:Ch08-009}, $\sigma_{33}$ par \eqref{eq:Ch08-006}, les déformations par \eqref{eq:Ch08-007} et les déplacements par intégration du système: 
 \begin{equation}
-  \left\{
   \begin{aligned}
-  \varepsilon_{11}=u_{11}=\frac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
-  \varepsilon_{22}=u_{22}=\frac{1+\nu}{E}[(1-\nu)\chi_{,11}-\nu\chi_{,22}] \\
-  2\varepsilon_{12}=u_{12}+u_{21}=\frac{2(1+\nu)}{E}\chi_{,12}
+  &\varepsilon_{11}=u_{11}=\frac{1+\nu}{E}[(1-\nu)\chi_{,22}-\nu\chi_{,11}] \\
+  &\varepsilon_{22}=u_{22}=\frac{1+\nu}{E}[(1-\nu)\chi_{,11}-\nu\chi_{,22}] \\
+  &2\varepsilon_{12}=u_{12}+u_{21}=\frac{2(1+\nu)}{E}\chi_{,12}
   \end{aligned}
-  \right.
 \label{eq:Ch08-013}
 \end{equation}
 système qui est intégrable puisque les équations de Beltrami sont vérifiées. 
 \subsection{Contraintes planes}\label{ssec:Ch08-1.2}
-L'hypothèse des déformations planes convient pour une pièce suffisamment longue pour que l'on puisse négliger la déformation longitudinale. 
-Pour une plaque mince, chargée dans son plan, la condition aux limites pour 
+L'hypothèse des déformations planes convient dans le cadre d'une pièce suffisamment longue pour laquelle il est possible de négliger la déformation longitudinale. 
+
 \begin{center}
     \includegraphics{../images/T1_Ch08-01}
 \end{center}
-$x_3=\pm h/2$ donne 
+
+Pour une plaque mince, chargée dans son plan, la condition aux limites pour 
+$x_3=\pm h/2$ donne: 
 \begin{equation}
   x3 = \pm \frac{h}{2} : \qquad \sigma_{13}=\sigma_{23}=\sigma_{33}=0
 \label{eq:Ch08-014}
 \end{equation}
-et on recherche donc un état de contraintes planes 
+et on recherche donc un état de contraintes planes: 
 \begin{equation}
   \tens{\sigma}=\begin{bmatrix}
      \sigma_{11}(x_1,x_2) & \sigma_{12}(x_1,x_2) & 0 \\
@@ -151,7 +145,7 @@ et on recherche donc un état de contraintes planes
    \end{bmatrix}
 \label{eq:Ch08-015}
 \end{equation}
-Le tenseur des déformations est donné par
+Le tenseur des déformations est donné par:
 \begin{equation}
   \tens{\varepsilon} = \begin{bmatrix}
      \varepsilon_{11} & \varepsilon_{12} & 0           \\
@@ -160,129 +154,120 @@ Le tenseur des déformations est donné par
    \end{bmatrix}
 \label{eq:Ch08-016}
 \end{equation}
+avec les relations:
 \begin{equation}
-    \begin{cases}
-        E \varepsilon_{11} & = \sigma_{11}-\nu\sigma_{22}\\
-        E \varepsilon_{22} & = \sigma_{22}-\nu\sigma_{11}\\
-        E \varepsilon_{33} & = -\nu (\sigma_{11}+\sigma_{22})\\
-        E \varepsilon_{12} & = (1+\nu)\sigma_{12}
-    \end{cases}
+    \begin{aligned}
+        &E \varepsilon_{11}  = \sigma_{11}-\nu\sigma_{22}\\
+        &E \varepsilon_{22}  = \sigma_{22}-\nu\sigma_{11}\\
+        &E \varepsilon_{33}  = -\nu (\sigma_{11}+\sigma_{22})\\
+        &E \varepsilon_{12}  = (1+\nu)\sigma_{12}
+    \end{aligned}
     \label{eq:Ch08-017}
 \end{equation}
 Les équations d'équilibre se traitent comme en déformations planes et conduisent à \eqref{eq:Ch08-009}. 
-On a alors 
+On a alors: 
 \begin{equation}
   \sigma_{kk}=\sigma_{11}+\sigma_{22}=\Delta\chi
 \label{eq:Ch08-018}
 \end{equation}
-et les équations de Beltrami donnent 
+et les équations de Beltrami entraînent: 
 \begin{equation}
-  \begin{cases}
-    i,j=1,1  &  (1+\nu) \Delta\chi_{,22}+\Delta\chi_{,11} = 0\\
-    i,j=2,2  &  (1+\nu) \Delta\chi_{,11}+\Delta\chi_{,22} = 0\\
-    i,j=1,2  & -(1+\nu) \Delta\chi_{,12}+\Delta\chi_{,12} = 0
-  \end{cases}
+  \begin{aligned}
+    i,j=1,1  &\quad  (1+\nu) \Delta\chi_{,22}+\Delta\chi_{,11} = 0\\
+    i,j=2,2  &\quad  (1+\nu) \Delta\chi_{,11}+\Delta\chi_{,22} = 0\\
+    i,j=1,2  &\quad -(1+\nu) \Delta\chi_{,12}+\Delta\chi_{,12} = 0
+  \end{aligned}
 \label{eq:Ch08-019}
 \end{equation}
 équations qui ne pourront être vérifiées que si $\Delta\chi$ est fonction linéaire des coordonnées, ce qui est bien trop restrictif pour permettre de résoudre des problèmes réels.
-Nous oublions donc provisoirement les équations de Beltrami, et nous allons chercher à calculer les déplacements à partir de \eqref{eq:Ch08-017} 
+Nous oublions donc provisoirement les équations de Beltrami, et nous allons chercher à calculer les déplacements à partir de \eqref{eq:Ch08-017}: 
 \begin{equation*}
   E\varepsilon_{11}=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
 \end{equation*}
-et finalement on obtient 
+et finalement on obtient: 
 \begin{equation}
-  \begin{cases}
+  \begin{aligned}
     \varepsilon_{11}   &  = u_{1,1} = (1+\nu) \Delta\chi_{,22}+\Delta\chi_{,11} = 0\\
     \varepsilon_{22}   &  = u_{2,2} =   (1+\nu) \Delta\chi_{,11}+\Delta\chi_{,22} = 0\\
-    2\varepsilon_{12}  &  = u_{1,1} =  -(1+\nu) \Delta\chi_{,12}+\Delta\chi_{,12} = 0
-  \end{cases}
+    2\varepsilon_{12}  &  = u_{1,1} =  -(1+\nu) \Delta\chi_{,12}+\Delta\chi_{,12} = 0\\
+E\varepsilon_{11}&=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
+  \end{aligned}
 \label{eq:Ch08-020}
 \end{equation}
-\begin{equation*}
-  E\varepsilon_{11}=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
-\label{eq:Ch08-021}
-\end{equation*}
 Le système \eqref{eq:Ch08-020} est formellement identique au système \eqref{eq:Ch08-020} en remplaçant $\nu$ par $\nu/(1+\nu)$.
 Il permettra donc de calculer $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ si et seulement si la fonction $\chi$ est biharmonique.
-Il reste à intégrer les équations \eqref{eq:Ch08-021} pour calculer $u_3$ 
+Il reste à intégrer les équations \eqref{eq:Ch08-021} pour calculer $u_3$: 
 \begin{equation}
   \varepsilon = - \frac{\nu}{E} \quad \Rightarrow \quad u_3 = - \frac{\nu}{E} \Delta \chi(x_1,x_2)x_3+a(x_1,x_2)
 \label{eq:Ch08-022}
 \end{equation}
+avec:
 \begin{equation}
-  \left\{
   \begin{aligned}
      2 \varepsilon_{13} & = u_{3,1}+u_{1,3}=-\frac{\nu}{E} \Delta \chi_{,1}x_3+a_{,1} = 0 \\
      2 \varepsilon_{23} & = u_{3,2}+u_{2,3}=-\frac{\nu}{E} \Delta \chi_{,2}x_3+a_{,2} = 0
   \end{aligned}
-  \right.
 \label{eq:Ch08-023}
 \end{equation}
 équations qui ne pourront jamais être vérifiées puisque $a$ et $\chi$ ne dépendent que de $x_1$ et $x_2$. 
-Ainsi, si $\chi$ est biharmonique, on ne peut pas calculer les déplacements ; c'est tout à fait normal, puisque les équations de Beltrami \eqref{eq:Ch08-019} donnent 
+Ainsi, si $\chi$ est biharmonique, on ne peut pas calculer les déplacements ; c'est tout à fait normal, puisque les équations de Beltrami \eqref{eq:Ch08-019} donnent: 
 \begin{equation}
   \Delta \chi(,11) = \Delta \chi(,22) = \Delta \chi(,12) = 0
 \label{eq:Ch08-024}
 \end{equation}
 conditions que nous avons volontairement laissées de côté.
-Cependant, pour une plaque mince, $x_3$ est petit, et en première approximation, \eqref{eq:Ch08-023} donne $a_{,1}=a_{,2}=0$, $a=Cste$ et la solution ainsi construite est une approximation satisfaisante de la réalité : c'est l'approximation «~contraintes planes~».
+Cependant, pour une plaque mince, $x_3$ est petit, et en première approximation, \eqref{eq:Ch08-023} donne $a_{,1}=a_{,2}=0$, $a=\text{cste}$ et la solution ainsi construite est une approximation satisfaisante de la réalité : c'est l'approximation \emph{contraintes planes}.
  
-Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par intégration du système
+Ainsi, en déformations planes comme en contraintes planes, la solution est donnée par une fonction de contraintes $\chi(x_1,x_2)$ biharmonique, donnant les contraintes par \eqref{eq:Ch08-019} et les déplacements $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ par intégration du système:
 \begin{equation}
-  \left\{
   \begin{aligned}
     u_{1,1} & =\frac{1+\nu}{E}\{ \chi_{,22}+ r \Delta \chi \} \\
     u_{2,2} & =\frac{1+\nu}{E}\{ \chi_{,11}+ r \Delta \chi \} \\
     u_{1,2} & + u_{2,1} = -\frac{2(1+\nu)}{E}\chi_{,12}
   \end{aligned}
-  \right.
-\label{eq:Ch08-025}
-\end{equation}
-\begin{equation*}
-  \text{avec} \quad \left| 
+\quad\text{avec} \quad \left| 
   \begin{aligned}
     r & = \nu \text{ en déformations planes} \\
     r & = \nu / (1+\nu) \text{ en contraintes planes}
   \end{aligned}
-  \right.
-\end{equation*}
-De plus, en déformations planes, la contrainte axiale $\sigma_{33}$ est donnée par \eqref{eq:Ch08-006}, tandis que, en contraintes planes, la variation d'épaisseur de la plaque mince est donnée par \eqref{eq:Ch08-022} 
+  \right.\label{eq:Ch08-025}
+\end{equation}
+De plus, en déformations planes, la contrainte axiale $\sigma_{33}$ est donnée par \eqref{eq:Ch08-006}, tandis qu'en contraintes planes, la variation d'épaisseur de la plaque mince est donnée par \eqref{eq:Ch08-022}: 
 \begin{equation}
 u_3 = -\frac{\nu}{E}\Delta\chi
 \label{eq:Ch08-026}
 \end{equation}
-
 \subsection{Utilisation de la variable complexe} \label{ssec:Ch08-1.3}
-Introduisons la variable complexe 
+Introduisons la variable complexe: 
 \begin{equation}
   z=x_1+\imath x_2 \qquad \bar{z}=x_1-\imath x_2
 \label{eq:Ch08-027}
 \end{equation}
 \begin{thmn}[Théorème de la représentation]
-Toute fonction réelle harmonique peut s'écrire sous la forme 
+Toute fonction réelle harmonique peut s'écrire sous la forme: 
 \begin{equation}
     \varphi(x_1,x_2)=\Re \left[ F(z) \right]
     \label{eq:Ch08-028}
 \end{equation}
-Toute fonction réelle biharmonique peut s'écrire sous la forme 
+Toute fonction réelle biharmonique peut s'écrire sous la forme: 
 \begin{equation}
     \chi(x_1,x_2)=\Re \left[ \bar{z}G(z)+K(z) \right]
     \label{eq:Ch08-029}
 \end{equation}
-avec $F$ , $G$ et $K$ fonctions holomorphes. 
+avec $F$, $G$ et $K$, fonctions holomorphes. 
 \end{thmn}
 \begin{proof}
-La première représentation est classique: on sait que les parties réelle et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques conjuguées, c'est-à-dire reliées par les conditions de Cauchy 
+La première représentation est classique: on sait que les parties réelle et imaginaire d'une fonction holomorphe sont deux fonctions harmoniques conjuguées, c'est-à-dire reliées par les conditions de Cauchy: 
 \begin{equation}
-    \begin{cases}
-        \varphi(z)=P(x_1,x_2)+\imath Q(x_1,x_2) \\
-        P_{,1}=Q_{,2} \quad , \quad P_{,2}=Q_{,1}
-    \end{cases}
+    \begin{aligned}
+       & \varphi(z)=P(x_1,x_2)+i Q(x_1,x_2) \\
+       & P_{,1}=Q_{,2}, \quad P_{,2}=Q_{,1}
+    \end{aligned}
     \label{eq:Ch08-030}
 \end{equation}
-La seconde représentation peut s'obtenir à partir de la précédente par deux méthodes. \\
-1ère méthode. À partir de \eqref{eq:Ch08-027}, on voit que toute fonction de $(x_1,x_2)$ peut être considérée comme fonction de $(z,\bar{z})$. 
-On obtient alors facilement 
+La seconde représentation peut s'obtenir à partir de la précédente par deux méthodes.
+\paragraph{1\fup{re} méthode} À partir de \eqref{eq:Ch08-027}, on voit que toute fonction de $(x_1,x_2)$ peut être considérée comme fonction de $(z,\bar{z})$. 
+On obtient alors facilement: 
 \begin{equation*}
   \Delta \varphi = \frac{\partial^2\varphi}{\partial x_1^2} + \frac{\partial^2\varphi}{\partial x_2^2} = \frac{\partial^2\varphi}{\partial z \partial \bar{z}}
 \end{equation*}
@@ -290,118 +275,106 @@ de sorte que si $\varphi$ est biharmonique
 \begin{equation*}
   \Delta\Delta\varphi=\frac{\partial^4\varphi}{\partial^2 z \partial^2 \bar{z}}=0
 \end{equation*}
-on obtient $\varphi=\bar{z}F_1(z)+G_1(z)+zF_2(\bar{z})+G_2(\bar{z})$ \\
-et en écrivant que $\varphi$ est réelle, on obtient \eqref{eq:Ch08-029}.\\
-2ème méthode. Si $\chi$ est biharmonique, la fonction $p=\Delta\chi$ est harmonique, et on peut écrire 
+on obtient $\varphi=\bar{z}F_1(z)+G_1(z)+zF_2(\bar{z})+G_2(\bar{z})$
+et en écrivant que $\varphi$ est réelle, on obtient \eqref{eq:Ch08-029}.
+\paragraph{2\fup{e} méthode} Si $\chi$ est biharmonique, la fonction $p=\Delta\chi$ est harmonique et on peut écrire: 
 \begin{equation*}
     p=\Re \left[ g(z)\right]
 \end{equation*}
-Nous introduisons la fonction 
+Nous introduisons la fonction: 
 \begin{equation*}
     G(z) = \frac{1}{4}\int g(z) \ud z = P + \imath Q
 \end{equation*}
 avec $p=4P_{,1}=4Q_{,2}$.
-On obtient alors 
+On obtient alors: 
 \begin{equation*}
     \Delta (\chi - Px_1 + Qx_2) = \Delta\chi - 2P_{,1} - 2Q_{,2} = \Delta\chi - p = 0
 \end{equation*}
-et la fonction $\chi - Px_1 + Qx_2$, est harmonique, d'où
+et la fonction $\chi - Px_1 + Qx_2$, est harmonique, d'où:
 \begin{equation*}
-    \begin{aligned}
-        \chi & = Px_1 + Qx_2 + \Re \left[ K(z)\right]\\
-             & = \Re \left[ \bar{z}G(z) + K(z) \right]
-    \end{aligned}
+        \chi  = Px_1 + Qx_2 + \Re \left[ K(z)\right] = \Re \left[ \bar{z}G(z) + K(z) \right]
 \end{equation*}
 \end{proof}
-
 L'application de ce théorème montre que la fonction de contrainte d'un problème d'élasticité plane est déterminée par deux fonctions holomorphes $G$ et $K$.
-On posera 
+On pose: 
 \begin{equation}
-  \begin{cases}
-    G    & = P + \imath Q \\
-    K    & = R + \imath S \\
+  \begin{aligned}
+    G    & = P + i Q \\
+    K    & = R + i S \\
     \chi & = Px_1 + Qx_2 + R
-  \end{cases}
+  \end{aligned}
 \label{eq:Ch08-031}
 \end{equation}
-et les relations \eqref{eq:Ch08-009} donneront 
+et les relations \eqref{eq:Ch08-009} donnent: 
 \begin{equation}
-  \begin{cases}
+  \begin{aligned}
     \sigma_{11} & = P_{,22} x_1 + Q_{,22} x_2 + 2 Q_{,2} + R_{,22} \\
     \sigma_{22} & = P_{,11} x_1 + Q_{,11} x_2 + 2 P_{,1} + R_{,11} \\
     \sigma_{12} & = Q_{,11} x_1 - P_{,11} x_2 + S_{,11}
-  \end{cases}
+  \end{aligned}
 \label{eq:Ch08-032}
 \end{equation}
-En regroupant et en utilisant les relations de Cauchy \eqref{eq:Ch08-030}, on obtient 
+En regroupant et en utilisant les relations de Cauchy \eqref{eq:Ch08-030}, on obtient: 
 \begin{equation}
-    \begin{cases}
-        \sigma_{11} + \sigma_{22} = 4 \Re \left[ G'(z) \right] \\
-        \sigma_{22} - \sigma_{11} + 2 \imath \sigma_{12} = 2 \left[ \bar{z}G''(z) + K''(z) \right]
-    \end{cases}
+    \begin{aligned}
+        &\sigma_{11} + \sigma_{22} = 4 \Re \left[ G'(z) \right] \\
+        &\sigma_{22} - \sigma_{11} + 2 i \sigma_{12} = 2 \left[ \bar{z}G''(z) + K''(z) \right]
+    \end{aligned}
     \label{eq:Ch08-033}
 \end{equation}
-L'intégration de \eqref{eq:Ch08-025} donne également 
+L'intégration de \eqref{eq:Ch08-025} donne également: 
 \begin{equation}
-  \left\{
   \begin{aligned}
     u_1 & = \frac{1+\nu}{E}\{(3-4r)P - P_{,1}x_1 - Q_{,1}x_2 - R_{,1} + Cx_2 + \alpha \}\\
     u_2 & = \frac{1+\nu}{E}\{(3-4r)Q - Q_{,1}x_1 - P_{,1}x_2 - S_{,1} + Cx_1 + \beta \}\\
   \end{aligned}
-  \right.
 \label{eq:Ch08-034}
 \end{equation}
-ou sous forme complexe 
+ou sous forme complexe: 
 \begin{equation}
-    \frac{E}{1+\nu}(u_1 + \imath u_2) = (3-4r)G(z) - z\overline{G'(z)} - \overline{K'(z)} - \imath C z + \alpha +\imath\beta
+    \frac{E}{1+\nu}(u_1 + i u_2) = (3-4r)G(z) - z\overline{G'(z)} - \overline{K'(z)} - i C z + \alpha +i\beta
     \label{eq:Ch08-035}
 \end{equation}
 les trois derniers termes représentant le mouvement de solide. 
 Ces représentations sont à la base de la théorie de l'élasticité plane qui permet de pousser très loin les calculs (voir \cite{Muskhelishvili-53}). 
 Nous présenterons simplement quelques exemples.
 
-\section{Exemples d'applications}\label{sec:Ch08-2}
+\section{Exemples}\label{sec:Ch08-2}
 \subsection{Problème de Saint-Venant}\label{ssec:Ch08-2.1}
-Une classe de solutions s'obtient en prenant pour $\chi$ un polynôme homogène de degré $n$, ou, ce qui revient au même, 
+Une classe de solutions s'obtient en prenant pour $\chi$ un polynôme homogène de degré $n$, ou, ce qui revient au même: 
 \begin{equation}
-  G(z)=Az^{n-1} \qquad K(z)=Bz^{n}
+  G(z)=Az^{n-1},\quad K(z)=Bz^{n}
     \label{eq:Ch08-036}
 \end{equation}
-On obtient ainsi pour tout entier $n$ une solution dépendant de 4 constantes.
-$n=2$ : Un polynôme du second degré est automatiquement biharmonique, et conduit à un état de contraintes constant 
+On obtient ainsi, pour tout entier $n$, une solution dépendant de quatre constantes.
+\begin{itemize}
+\item $n=2$ : Un polynôme du second degré est automatiquement biharmonique, et conduit à un état de contraintes constant 
 \begin{equation}
-  \left\{
   \begin{aligned}
     \chi        & = \frac{1}{2}\left\{\alpha x_1^2 + 2 \beta x_1 x_2 + \gamma x_2^2\right\} \\
     \sigma_{11} & = \gamma \quad \sigma_{22} = \alpha \quad \sigma_{12} = \beta
   \end{aligned}
-  \right.
     \label{eq:Ch08-037}
 \end{equation}
-$n=3$ : Un polynôme du 3ème degré est aussi automatiquement biharmonique, et conduit à un état de contraintes linéaire 
+\item $n=3$ : Un polynôme du 3ème degré est aussi automatiquement biharmonique, et conduit à un état de contraintes linéaire: 
 \begin{equation}
-  \left\{
   \begin{aligned}
     \chi        & = \frac{1}{6}\left\{a x_1^3 + 3 b x_1^2 x_2 + 3 c x_1 x_2^2 + d x_2^3\right\} \\
     \sigma_{11} & = c x_1 + d x_2 \quad \sigma_{22} = a x_1 + b x_2 \quad \sigma_{12} = -(b x_1 + c x_2)
   \end{aligned}
-  \right.
     \label{eq:Ch08-038}
 \end{equation}
-$n=4$ : Pour un polynôme du 4ème degré, on a 
+\item $n=4$ : Pour un polynôme du quatrième degré, on a: 
 \begin{equation}
-  \left\{
-  \begin{aligned}
-    \chi         = \frac{1}{6}\left\{A x_1^4 + 2 B x_1^3 x_2 + 3 (A+D) x_1^2x_2^2 + 2 C x_1 x_2^3 + D x_2^4\right\} \\
-    \begin{aligned}
-      \sigma_{11} & = -(A+D) x_1^2 &+    2 C x_1 x_2 &+   2 D x_2^2 \\
-      \sigma_{22} & =    2 A x_1^2 &+    2 B x_1 x_2 &- (A+D) x_2^2 \\
-      \sigma_{12} & =     -B x_1^2 &+ 2(A+D) x_1 x_2 &-     C x_2^2 
-    \end{aligned}
-  \end{aligned}
-  \right.
-    \label{eq:Ch08-039}
+\begin{aligned}
+&\chi = \frac{1}{6}\left\{A x_1^4 + 2 B x_1^3 x_2 + 3 (A+D) x_1^2x_2^2 + 2 C x_1 x_2^3 + D x_2^4\right\} \\
+&\sigma_{11}  = -(A+D) x_1^2 +    2 C x_1 x_2 +   2 D x_2^2 \\
+&\sigma_{22}  =    2 A x_1^2 +    2 B x_1 x_2 - (A+D) x_2^2 \\
+&\sigma_{12}  =     -B x_1^2 + 2(A+D) x_1 x_2 -     C x_2^2 
+\end{aligned}
+\label{eq:Ch08-039}
 \end{equation}
+\end{itemize}
 et ainsi de suite. 
 
 À titre d'application, montrons qu'une superposition de solutions de ce type permet de résoudre le problème de Saint-Venant en contraintes ou déformations planes. 
@@ -415,71 +388,62 @@ et ainsi de suite.
     \end{center}
 \end{multicols}
 Le matériau occupe le rectangle $\left[0,l\right] \times\left [-h/2,h/2\right]$ ; la surface latérale $x_2=\pm h/2$ est libre de contrainte, et les extrémités $x_1=O$ et $x = l$ sont soumises à deux torseurs plans en équilibre (voir paragraphe \ref{ssec:Ch07-1.1}). 
-Les conditions aux limites sont donc, sur la surface latérale 
+Les conditions aux limites sont donc, sur la surface latérale: 
 \begin{equation}
   x_2 = \pm h/2 \qquad \sigma_{12} = \sigma_{12} = 0
     \label{eq:Ch08-040}
 \end{equation}
-et sur l'extrémité $x_1 = l$ 
+et sur l'extrémité $x_1 = l$: 
 \begin{equation}
-  \left\{
-  \begin{aligned}
-     \int^{+h/2}_{-h/2}     \sigma_{11} \ud x_2 & = P \\
-     \int^{+h/2}_{-h/2}     \sigma_{12} \ud x_2 & = Q \\
-    -\int^{+h/2}_{-h/2} x_2 \sigma_{11} \ud x_2 & = M
-  \end{aligned}
-  \right.
+     \int^{+h/2}_{-h/2}     \sigma_{11} \ud x_2  = P,\quad
+     \int^{+h/2}_{-h/2}     \sigma_{12} \ud x_2  = Q,\quad
+    -\int^{+h/2}_{-h/2} x_2 \sigma_{11} \ud x_2  = M
     \label{eq:Ch08-041}
 \end{equation}
 Bien entendu, comme nous l'avons discuté au paragraphe \ref{ssec:Ch07-1.1}, ce problème admet plusieurs solutions, et nous allons chercher s'il en existe une correspondant à une fonction de contrainte $\chi(x_1,x_2)$ polynôme non homogène du 4ème degré, c'est-à-dire superposition de \eqref{eq:Ch08-037}, \eqref{eq:Ch08-038} et \eqref{eq:Ch08-039}.
-La condition aux limites \eqref{eq:Ch08-040} donne 
+La condition aux limites \eqref{eq:Ch08-040} donne: 
 \begin{equation}
-  \left\{
   \begin{aligned}
     \alpha +a x_1 \pm b \frac{h}{2} + 2 A x_1^2 \pm 2 B \frac{h}{2} x_1 - (A+D)\frac{h^2}{4} & = 0 \\
     \beta +b x_1 \pm c \frac{h}{2} + B x_1^2 \pm (A+D) \frac{h}{2} x_1 + C \frac{h^2}{4}&=0
   \end{aligned}
-  \right.
     \label{eq:Ch08-042}
 \end{equation}
 relations qui doivent être vérifiées pour tout $x_1$.
-Il vient
+Il vient:
 \begin{equation}
-  \left\{
   \begin{aligned}
-    A = B = 0 \quad a = b =0 \quad B = A+D =0 \quad b = c =0\\
-    \alpha=(A+D)\frac{h^2}{4}=0 \quad \beta + C \frac{h^2}{4} =0
+    A = B = 0, \quad a = b =0, \quad B = A+D =0, \quad b = c =0\\
+    \alpha=(A+D)\frac{h^2}{4}=0, \quad \beta + C \frac{h^2}{4} =0
   \end{aligned}
-  \right.
     \label{eq:Ch08-043}
 \end{equation}
-et il reste finalement
+et il reste finalement:
 \begin{equation}
   \chi = \frac{C}{3} x_1 x_2^3 + \frac{d}{6} x_2^3 +\frac{\gamma}{2} x_2^2 - C\frac{h^2}{4} x_1 x_2
     \label{eq:Ch08-044}
 \end{equation}
+avec:
 \begin{equation}
-  \left\{
   \begin{aligned}
     \sigma_{11} & = 2 C x_1 x_2 + d x_2 + \gamma \\
     \sigma_{12} & = C (\frac{h^2}{4} - x_2^2) \\
     \sigma_{22} & = 0
   \end{aligned}
-  \right.
     \label{eq:Ch08-045}
 \end{equation}
-Les trois conditions \eqref{eq:Ch08-041} permettent alors de déterminer les constantes $C$, $d$ et $\gamma$ en fonction de $P$, $Q$ et $M$ , c'est-à-dire des efforts appliqués 
+Les trois conditions \eqref{eq:Ch08-041} permettent alors de déterminer les constantes $C$, $d$ et $\gamma$ en fonction de $P$, $Q$ et $M$ , c'est-à-dire des efforts appliqués: 
 \begin{equation}
-  \gamma = \frac{P}{h} \qquad C = \frac{6Q}{h^3} \qquad \frac{12(M-Ql)}{h^3}
+  \gamma = \frac{P}{h}, \quad C = \frac{6Q}{h^3}, \quad \frac{12(M-Ql)}{h^3}
     \label{eq:Ch08-044}
 \end{equation}
-
 La répartition des contraintes normales est linéaire, comme dans le cas général (paragraphe \ref{ssec:Ch06-1.2}) et la répartition des contraintes tangentielles $\sigma_{12}$ est parabolique. C'est ce que l'on obtiendrait à partir de l'analyse du paragraphe \ref{sec:Ch06-3} pour une section rectangulaire très large (déformations planes) ou très étroite (contraintes planes). 
 
 \subsection{Traction plane d'une plaque perforée}\label{ssec:Ch08-2.2}
 Pour certaines géométries simples, l'utilisation de la variable complexe permet de construire explicitement la solution d'une vaste classe de problèmes. 
 C'est en particulier le cas pour les domaines intérieurs ou extérieurs limités par un cercle. 
 À titre d'exemple, nous allons donner la solution qui correspond à la traction d'une plaque perforée. 
+
 \begin{multicols}{2}
     \begin{center}
         \includegraphics{../images/T1_Ch08-03a}
@@ -491,7 +455,7 @@ C'est en particulier le cas pour les domaines intérieurs ou extérieurs limité
 \end{multicols}
 
 Si le rayon $a$ du trou est petit par rapport aux dimensions de la plaque, on peut supposer en première approximation la plaque infinie.
-Dans le repère $(x_1,x_2)$, l'état de contraintes à l'infini est donc
+Dans le repère $(x_1,x_2)$, l'état de contraintes à l'infini est donc:
 \begin{equation}
   \tens{\sigma}=
     \begin{bmatrix}
@@ -500,38 +464,35 @@ Dans le repère $(x_1,x_2)$, l'état de contraintes à l'infini est donc
     \end{bmatrix}
     \label{eq:Ch08-047}
 \end{equation}
-ce qui, d'après \eqref{eq:Ch08-033}, correspond à 
+ce qui, d'après \eqref{eq:Ch08-033}, correspond à: 
 \begin{equation}
-  G(z) = \frac{\sigma^{\infty}}{4} z \qquad K(z) = \frac{\sigma^{\infty}}{2}\frac{z^2}{2}
+  G(z) = \frac{\sigma^{\infty}}{4} z, \quad K(z) = \frac{\sigma^{\infty}}{2}\frac{z^2}{2}
     \label{eq:Ch08-048}
 \end{equation}
-C'est la solution qui se réalise en l'absence de trou, mais en présence d'un trou cette solution ne vérifie pas les conditions aux limites sur le trou, qui s'écrivent 
+C'est la solution qui se réalise en l'absence de trou, mais en présence d'un trou cette solution ne vérifie pas les conditions aux limites sur le trou, qui s'écrivent: 
 \begin{equation}
   r = a : \quad \sigma_{rr}=\sigma_{r\theta}=0
     \label{eq:Ch08-049}
 \end{equation}
-en notant $\sigma_{rr}$, $\sigma_{r\theta}$, $\sigma_{\theta\theta}$ les composantes du tenseur des contraintes sur le repère $(\vec{e_r},\vec{e_{\theta}})$ associé aux coordonnées cylindriques. Le trou induit donc dans \eqref{eq:Ch08-048} une perturbation, et on montre qu'alors 
+en notant $\sigma_{rr}$, $\sigma_{r\theta}$ et $\sigma_{\theta\theta}$ les composantes du tenseur des contraintes sur le repère $(\vec{e_r},\vec{e_{\theta}})$ associé aux coordonnées cylindriques. Le trou induit donc dans \eqref{eq:Ch08-048} une perturbation, et on montre qu'alors: 
 \begin{equation}
-  G(z) = \frac{\sigma^{\infty}}{4}\left[z-\frac{a^2}{z}\right] \quad K'(z)=\frac{\sigma^{\infty}}{2}\left[z-\frac{a^2}{z}-\frac{a^4}{z^3}\right]
+  G(z) = \frac{\sigma^{\infty}}{4}\left[z-\frac{a^2}{z}\right], \quad K'(z)=\frac{\sigma^{\infty}}{2}\left[z-\frac{a^2}{z}-\frac{a^4}{z^3}\right]
     \label{eq:Ch08-050}
 \end{equation}
 Les contraintes sont alors données par 
 \begin{equation}
-  \left\{
   \begin{aligned}
-    \sigma_{rr} & = \frac{\sigma^{\infty}}{2}\left\{(1-\frac{a^2}{r^2})-(1-\frac{4a^2}{r^2}+\frac{3a^4}{r^4})\cos{2\theta}\right\} \\
-    \sigma_{r\theta} & = \frac{\sigma^{\infty}}{2} (1-\frac{2a^2}{r^2}+\frac{3a^4}{r^4})\sin{2\theta}  \\
-    \sigma_{\theta\theta} & = \frac{\sigma^{\infty}}{2}\left\{(1+\frac{a^2}{r^2})+(1+\frac{3a^2}{r^2})\cos{2\theta}\right\} 
+    \sigma_{rr} & = \frac{\sigma^{\infty}}{2}\Biggl\{\Biggl(1-\frac{a^2}{r^2}\Biggr)-\Biggl(1-\frac{4a^2}{r^2}+\frac{3a^4}{r^4}\Biggr)\cos{2\theta}\Biggr\} \\
+    \sigma_{r\theta} & = \frac{\sigma^{\infty}}{2} \Biggl(1-\frac{2a^2}{r^2}+\frac{3a^4}{r^4}\Biggr)\sin{2\theta}  \\
+    \sigma_{\theta\theta} & = \frac{\sigma^{\infty}}{2}\Biggl\{\Biggl(1+\frac{a^2}{r^2}\Biggr)+\Biggl(1+\frac{3a^2}{r^2}\Biggr)\cos{2\theta}\Biggr\} 
   \end{aligned}
-  \right.
     \label{eq:Ch08-051}
 \end{equation}
-En particulier, sur le trou on a bien \eqref{eq:Ch08-049} et 
+En particulier, sur le trou on vérifie bien \eqref{eq:Ch08-049} et:
 \begin{equation}
   \sigma_{\theta\theta}=\sigma^{\infty}(1+2\cos{2\theta})
     \label{eq:Ch08-052}
 \end{equation}
-
 L'état de contraintes sur le bord du trou est un état de traction simple avec une contrainte variant de $+3\sigma^{\infty}$ (traction, sur l'axe des $x_1$) à $-\sigma^{\infty}$ (compression, sur l'axe des $x_2$). 
 La contrainte maximale est trois fois plus grande que la contrainte à l'infini. 
 C'est un exemple de concentration de contrainte : la présence d'un trou, ou plus généralement d'un défaut, aussi petit soit-il, cause une augmentation importante des contraintes locales au voisinage du trou. 
