@@ -6,10 +6,9 @@
 \usepackage[frenchb]{babel}
 \frenchbsetup{IndentFirst=false}
 \usepackage[T1]{fontenc}
-%\usepackage{lmodern}
+\usepackage{lmodern}
 \usepackage{amsmath,amsfonts,amscd,amssymb}
 \usepackage[bbgreekl]{mathbbol}
-%\usepackage{amsthm}
 \usepackage[amsmath,amsthm,thmmarks,framed]{ntheorem}
 \usepackage{framed}
 \usepackage{cancel}
@@ -76,9 +75,6 @@
 \providecommand{\norm}[1]{\lVert#1\rVert}
 
 \newcommand{\tens}[1]{\underline{\underline{#1}}}
-% TODO: 
-%   * utiliser les macros de revtex pour \overstar par ex.
-%   * redéfinir \leq en \leqslant
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
@@ -96,29 +92,36 @@
 \setlength\theorempostskipamount{0pt}
 \theoremheaderfont{\bfseries\sffamily}  
 
+\definecolor{RougeECL}{RGB}{190, 30, 45}
+\colorlet{RougeECL2}{RougeECL!20}
+\definecolor{GrisECL}{RGB}{153, 153, 153}
+\definecolor{Gris}{gray}{0.9}
+
 \def\theoremframecommand{%
-    {\color{BurntOrange} \vrule width 5pt}{\color{BurntOrange!10} \vrule width 2pt}\colorbox{BurntOrange!10}}
+    %{\color{BurntOrange} \vrule width 5pt}{\color{BurntOrange!10} \vrule width 2pt}\colorbox{BurntOrange!10}}
+    {\color{RougeECL} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{thm}{Théorème}[chapter]
 \def\theoremframecommand{%
-    {\color{Goldenrod} \vrule width 5pt}{\color{Goldenrod!10} \vrule width 2pt}\colorbox{Goldenrod!10}}
+    %{\color{Goldenrod} \vrule width 5pt}{\color{Goldenrod!10} \vrule width 2pt}\colorbox{Goldenrod!10}}
+    {\color{RougeECL} \vrule width 5pt}{\color{Gris!30} \vrule width 2pt}\colorbox{Gris!30}}
 \newshadedtheorem{lem}{Lemme}[chapter]
 \def\theoremframecommand{%
-    {\color{Dandelion} \vrule width 5pt}{\color{Dandelion!10} \vrule width 2pt}\colorbox{Dandelion!10}}
+    {\color{Dandelion} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{deff}{Définition}
 
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
-    {\color{Bittersweet} \vrule width 5pt}{\color{Bittersweet!10} \vrule width 2pt}\colorbox{Bittersweet!10}}
+    {\color{Bittersweet} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{Principe}{Principe}
 \newshadedtheorem{Postulat}{Postulat}
 \newshadedtheorem{Axiome}{Axiome}
 \def\theoremframecommand{%
-    {\color{Dandelion} \vrule width 5pt \hspace{10pt}}}
+    {\color{RougeECL2} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{defn}{Définition}
 \newshadedtheorem{Hypothese}{Hypothese}
 \def\theoremframecommand{%
-    {\color{BurntOrange} \vrule width 5pt}{\color{BurntOrange!10} \vrule width 2pt}\colorbox{BurntOrange!10}}
+    {\color{BurntOrange} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{thmn}{Théorème}
 
 %\theoremstyle{break}
@@ -173,25 +176,25 @@ Paternité\\ Pas d'Utilisation Commerciale \\ Partage des Conditions Initiales �
 
 
 \begin{document}
-%\titleCC
-%\frontmatter
-%\tableofcontents
-%\mainmatter
-%\psset{linewidth=1pt,arrowsize=2pt 4}
-%\include{Ch1}
+\titleCC
+\frontmatter
+\tableofcontents
+\mainmatter
+\psset{linewidth=1pt,arrowsize=2pt 4}
+\include{Ch1}
 %\include{Ch2}
 %\include{Ch3}
 %\include{Ch4}
 %\include{Ch5}
 %\include{Ch6}
 %\include{Ch7}
-\include{Ch8}
+%\include{Ch8}
 %\include{Ch9}
 %\include{Ch10}
 %\include{Ch11}
 %\appendix
 %\include{AnnA}
-%\nocite{*}
-%\bibliographystyle{plain-fr}
-%\bibliography{biblio-sidoroff}
+\nocite{*}
+\bibliographystyle{plain-fr}
+\bibliography{biblio-sidoroff}
 \end{document}

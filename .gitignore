@@ -6,6 +6,7 @@
 *.aux
 *.log
 *.blg
+*.bbl
 *.brf
 *.toc
 *.thm

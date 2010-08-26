@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
 <manage_target braces="true" utf8="true">biblio-sidoroff.bib</manage_target>
-<library_folder monitor="false"></library_folder>
+<library_folder monitor="true"></library_folder>
 <taglist>
 </taglist>
 <doclist>
@@ -214,7 +214,7 @@
   <doc>
     <filename></filename>
     <relative_filename></relative_filename>
-    <key>Solomon</key>
+    <key>Solomon-68</key>
     <notes></notes>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
@@ -332,20 +332,20 @@
   <doc>
     <filename></filename>
     <relative_filename></relative_filename>
-    <key>Gurtin-xx</key>
+    <key>Gurtin-72</key>
     <notes></notes>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>Linear elasticity</bib_title>
+    <bib_title>The Theory of Linear elasticity</bib_title>
     <bib_authors>Gurtin, M. E.</bib_authors>
     <bib_journal></bib_journal>
-    <bib_volume></bib_volume>
+    <bib_volume>VIa/2</bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year>19xx</bib_year>
-    <bib_extra key="address">Berlin</bib_extra>
-    <bib_extra key="publisher">Springer Verlag</bib_extra>
-    <bib_extra key="series">Handbuch der Physik, Bd VIa 2</bib_extra>
+    <bib_year>1972</bib_year>
+    <bib_extra key="address">Heidelberg</bib_extra>
+    <bib_extra key="publisher">Springer-Verlag</bib_extra>
+    <bib_extra key="series">Handbuch der Physik</bib_extra>
   </doc>
   <doc>
     <filename></filename>
@@ -367,18 +367,18 @@
   <doc>
     <filename></filename>
     <relative_filename></relative_filename>
-    <key>Zienkiewicz-xx</key>
+    <key>Zienkiewicz-73</key>
     <notes></notes>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
-    <bib_title>La méthode des éléments finis appliqueée à l&apos;art de l&apos;ingénieur</bib_title>
+    <bib_title>La méthode des éléments finis appliquée à l&apos;art de l&apos;ingénieur</bib_title>
     <bib_authors>Zienkiewicz, O. C.</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year>19xx</bib_year>
-    <bib_extra key="publisher">??</bib_extra>
+    <bib_year>1973</bib_year>
+    <bib_extra key="publisher">Ediscience</bib_extra>
   </doc>
   <doc>
     <filename></filename>
@@ -484,7 +484,7 @@
   <doc>
     <filename></filename>
     <relative_filename></relative_filename>
-    <key>Prager-xx</key>
+    <key>Prager-58</key>
     <notes></notes>
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
@@ -494,7 +494,7 @@
     <bib_volume></bib_volume>
     <bib_number></bib_number>
     <bib_pages></bib_pages>
-    <bib_year>19xx</bib_year>
+    <bib_year>1958</bib_year>
     <bib_extra key="address">Paris</bib_extra>
     <bib_extra key="publisher">Dunod</bib_extra>
   </doc>
