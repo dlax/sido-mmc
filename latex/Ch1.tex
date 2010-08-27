@@ -399,12 +399,12 @@ Nous partons donc de l'équation du mouvement~\eqref{eq:Ch01-015} que nous multi
     \iiint_{\Omega}\rho\gamma_i {\mathop{V}^{*}}_i \ud v=\iiint_{\Omega}\sigma_{ij,j} {\mathop{V}^{*}}_i \ud v+\iiint_{\Omega}f_i {\mathop{V}^{*}}_i \ud v
 \end{equation*}
 mais en utilisant le
-\begin{thmn}[Théorème de la divergence]
+\begin{thm}[Théorème de la divergence]
 \begin{align*}
     \iiint_{\Omega}\sigma_{ij,j} {\mathop{V}^{*}}_i \ud v &= \iiint_{\Omega}[(\sigma_{ij} {\mathop{V}^{*}}_i)_{,j}-\sigma_{ij} {\mathop{V}^{*}}_{i,j}]\ud v\\
     &=\iint_{\partial \Omega}\sigma_{ij} {\mathop{V}^{*}}_i n_j \ud S-\iiint_{\Omega} \sigma_{ij} {\mathop{V}^{*}}_{i,j} \ud v
 \end{align*}
-\end{thmn}
+\end{thm}
 Grâce à \eqref{eq:Ch01-014}, on retrouve dans le premier terme les efforts $\vec{T}$ appliqués sur $\Omega$ à travers $\partial \Omega$, tandis que, d'après la symétrie de $\sigma_{ij}$, on peut remplacer ${\mathop{V}^{*}}_{i,j}$ par sa partie symétrique ${\mathop{D}^{*}}_{ij}$ (Annexe~\ref{Ann:A}):
 \begin{equation}
     {\mathop{V}^{{\ast}}}_{i,j}={\mathop{D}^{{\ast}}}_{ij}+{\mathop{\Omega}^{{\ast}}}_{ij},\qquad
@@ -466,17 +466,17 @@ En particulier, le lemme suivant montre que la puissance virtuelle des efforts i
 
 Nous avons donc démontré, à partir de la loi fondamentale, le
 
-\begin{thmn}[Théorème des puissances virtuelles]
+\begin{thm}[Théorème des puissances virtuelles]
     Dans tout mouvement virtuel, la puissance virtuelle des quantités d'accélération est égale à la puissance virtuelle des efforts extérieurs et intérieurs
     \begin{equation}
         \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{a})} = \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{ext})} + \mathop{\mathcal{P}}^{\ast}{\!}^{(\text{int})}
         \label{eq:Ch01-028}
     \end{equation}
-\end{thmn}
+\end{thm}
 
 En particulier, si on prend comme champ de vitesses le champ des vitesse réelles, on obtient le
 
-\begin{thmn}[Théorème de l'énergie cinétique]
+\begin{thm}[Théorème de l'énergie cinétique]
     La dérivée par rapport au temps de l'énergie cinétique est égale à la puissance des efforts extérieurs et intérieurs
 \begin{equation}
 \everymath{\displaystyle} 
@@ -486,7 +486,7 @@ En particulier, si on prend comme champ de vitesses le champ des vitesse réelle
     \end{array}
        \label{eq:Ch01-029}
 \end{equation}
-\end{thmn}
+\end{thm}
 \subsection{Principe des puissances virtuelles} \label{ssec:Ch01-2.2}
 Dans le cours de Mécanique Analytique, on a vu que l'on pouvait reconstruire la mécanique d'un système de solides à partir de l'énoncé des puissances virtuelles pris comme loi physique de départ.
 La loi fondamentale est alors obtenue comme conséquence.
@@ -582,14 +582,13 @@ Il reste
     \mathop{\mathcal{P}}^{\ast}{\!}^{(int)} = -\iiint_{\Omega} \sigma_{ij} \mathop{D}^{\ast}_{ij} \ud v
     \label{eq:Ch01-037}
 \end{equation}
-Les efforts intérieurs sont donc caractérisés par un tenseur symétrique $\sigma_{ij}$.
-Nous obtenons donc 
-\begin{Principe}[Principe des puissances virtuelles en MMC]
+Les efforts intérieurs sont donc caractérisés par un tenseur symétrique $\sigma_{ij}$ et nous obtenons:
+\begin{Principe}[Principe des puissances virtuelles]
+Pour tout champ de vitesses virtuelles $\mathop{V}^{\ast}_i$:
     \begin{equation}
         \iiint_{\Omega} \rho \gamma_i \mathop{V}^{\ast}_i \ud v = \iiint_{\Omega} f_i \mathop{V}^{\ast}_i \ud v + \iint_{\partial \Omega} T_i^e \mathop{V}^{\ast}_i \ud S - \iiint_{\Omega} \sigma_{ij} \mathop{D}^{\ast}_{ij} \ud v
         \label{eq:Ch01-038}
     \end{equation}
-    pour tout champ de vitesses virtuelles $\mathop{V}^{\ast}_i$.
 \end{Principe}
 
 Pour utiliser ce principe, il suffit maintenant de reprendre à l'envers le calcul du paragraphe~\ref{ssec:Ch01-3.1}:

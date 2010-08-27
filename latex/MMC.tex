@@ -87,6 +87,14 @@
 %\theoremnumbering{arabic}
 %\theoremsymbol{}
 
+% environnement noir
+\makeatletter
+\renewtheoremstyle{break}%
+  {\item\hbox to \textwidth{\theorem@headerfont ##1\
+      ##2\theorem@separator\hfill}}%
+  {\item\hbox to \textwidth{\theorem@headerfont ##1\ ##2\ ---\ ##3\theorem@separator\hfill}}
+\makeatother
+
 \theoremstyle{break}
 \setlength\theorempreskipamount{0pt}
 \setlength\theorempostskipamount{0pt}
@@ -98,31 +106,42 @@
 \definecolor{Gris}{gray}{0.9}
 
 \def\theoremframecommand{%
-    %{\color{BurntOrange} \vrule width 5pt}{\color{BurntOrange!10} \vrule width 2pt}\colorbox{BurntOrange!10}}
-    {\color{RougeECL} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
-\newshadedtheorem{thm}{Théorème}[chapter]
-\def\theoremframecommand{%
     %{\color{Goldenrod} \vrule width 5pt}{\color{Goldenrod!10} \vrule width 2pt}\colorbox{Goldenrod!10}}
     {\color{RougeECL} \vrule width 5pt}{\color{Gris!30} \vrule width 2pt}\colorbox{Gris!30}}
 \newshadedtheorem{lem}{Lemme}[chapter]
 \def\theoremframecommand{%
     {\color{Dandelion} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{deff}{Définition}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
-    {\color{Bittersweet} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
+    {\color{RougeECL} \vrule width 5pt}{\color{Gris!50} \vrule width 2pt}\colorbox{Gris!50}}
 \newshadedtheorem{Principe}{Principe}
-\newshadedtheorem{Postulat}{Postulat}
 \newshadedtheorem{Axiome}{Axiome}
 \def\theoremframecommand{%
     {\color{RougeECL2} \vrule width 5pt \hspace{10pt}}}
 \newshadedtheorem{defn}{Définition}
 \newshadedtheorem{Hypothese}{Hypothese}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\theoremframecommand{%
     {\color{BurntOrange} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
 \newshadedtheorem{thmn}{Théorème}
+
+\theoremstyle{break}
+\def\theoremframecommand{%
+    \setlength{\fboxrule}{1pt}%
+    \setlength{\fboxsep}{5pt}%
+    \fcolorbox{RougeECL!50}{RougeECL!10}}%
+\newshadedtheorem{thm}{Théorème}[chapter]
+
+\theoremstyle{break}
+\def\theoremframecommand{%
+    \setlength{\fboxrule}{1pt}%
+    \setlength{\fboxsep}{5pt}%
+    \fcolorbox{gray!50}{gray!10}}%
+\newshadedtheorem{Postulat}{Postulat}
 
 %\theoremstyle{break}
 %\theoremseparator{:}
