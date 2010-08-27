@@ -108,10 +108,10 @@
 \def\theoremframecommand{%
     %{\color{Goldenrod} \vrule width 5pt}{\color{Goldenrod!10} \vrule width 2pt}\colorbox{Goldenrod!10}}
     {\color{RougeECL} \vrule width 5pt}{\color{Gris!30} \vrule width 2pt}\colorbox{Gris!30}}
-\newshadedtheorem{lem}{Lemme}[chapter]
-\def\theoremframecommand{%
-    {\color{Dandelion} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
-\newshadedtheorem{deff}{Définition}
+\newshadedtheorem{deff}{Définition}[chapter]
+%\def\theoremframecommand{%
+%    {\color{Dandelion} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
+%\newshadedtheorem{deff}{Définition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
@@ -125,9 +125,9 @@
 \newshadedtheorem{Hypothese}{Hypothese}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\theoremframecommand{%
-    {\color{BurntOrange} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
-\newshadedtheorem{thmn}{Théorème}
+%\def\theoremframecommand{%
+%    {\color{BurntOrange} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
+%\newshadedtheorem{thmn}{Théorème}
 
 \theoremstyle{break}
 \def\theoremframecommand{%
@@ -135,6 +135,7 @@
     \setlength{\fboxsep}{5pt}%
     \fcolorbox{RougeECL!50}{RougeECL!10}}%
 \newshadedtheorem{thm}{Théorème}[chapter]
+\newshadedtheorem{thmn}{Théorème}[chapter]
 
 \theoremstyle{break}
 \def\theoremframecommand{%
@@ -142,6 +143,7 @@
     \setlength{\fboxsep}{5pt}%
     \fcolorbox{gray!50}{gray!10}}%
 \newshadedtheorem{Postulat}{Postulat}
+\newshadedtheorem{lem}{Lemme}[chapter]
 
 %\theoremstyle{break}
 %\theoremseparator{:}
@@ -201,18 +203,18 @@ Paternité\\ Pas d'Utilisation Commerciale \\ Partage des Conditions Initiales �
 \mainmatter
 \psset{linewidth=1pt,arrowsize=2pt 4}
 \include{Ch1}
-%\include{Ch2}
-%\include{Ch3}
-%\include{Ch4}
-%\include{Ch5}
-%\include{Ch6}
-%\include{Ch7}
-%\include{Ch8}
-%\include{Ch9}
-%\include{Ch10}
-%\include{Ch11}
-%\appendix
-%\include{AnnA}
+\include{Ch2}
+\include{Ch3}
+\include{Ch4}
+\include{Ch5}
+\include{Ch6}
+\include{Ch7}
+\include{Ch8}
+\include{Ch9}
+\include{Ch10}
+\include{Ch11}
+\appendix
+\include{AnnA}
 \nocite{*}
 \bibliographystyle{plain-fr}
 \bibliography{biblio-sidoroff}
