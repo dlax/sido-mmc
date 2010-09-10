@@ -106,6 +106,18 @@
 \titlespacing{\subsection}
   {0pc}{3.5ex plus .1ex minus .2ex}{1.5ex minus .1ex}
 
+% enlève l'entête des pages de fin de chapitre si nombre de pages impair
+\makeatletter
+\renewcommand{\cleardoublepage}{%
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}% <--
+\newpage
+\fi
+}
+\makeatother
+
 %% Table des matières
 \usepackage{titletoc}
 \contentsmargin{0pc}
