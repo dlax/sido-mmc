@@ -83,12 +83,10 @@ Ainsi la variation du produit scalaire de deux vecteurs est caractérisée par l
 $\mathbb{C}$ est le tenseur des dilatations ou tenseur de Cauchy-Green droit.
 Ce tenseur est la base de la description des grandes déformations.
 \begin{equation}
-    \left\{
     \begin{aligned}
         & D_{ij} = F_{ik} F_{jl} \dot{C}_{kl} \\
         & \frac{\ud}{\ud t} \left( \vec{\ud x} \cdot \vec{\delta x} \right) = D_{ij} \ud x_i \partial x_j = \dot{C}_{kl} \ud a_k \ud a_l
     \end{aligned}
-    \right.
     \label{eq:Ch03-008}
 \end{equation}
 \subsection{Le tenseur des déformations} \label{ssec:Ch03-1.2}
@@ -143,14 +141,14 @@ II reste à relier ce tenseur des déformations au concept physique de déformat
     \end{align}
 \end{thm}
 \begin{proof}
-    \begin{displaymath}
+    \[
         \left\{
         \begin{array}{lll}
             \vec{MM'} &= \vec{\ud a} &= \ud a \vec{n} \\
             \vec{MM''} &= \vec{\delta a} &= \delta a \vec{m}
         \end{array}
         \right.
-    \end{displaymath}
+    \]
     \scalebox{1} % Change this value to rescale the drawing.
     {
     \begin{pspicture}(0,-1.7917844)(10.749063,1.8396447)
@@ -174,14 +172,14 @@ II reste à relier ce tenseur des déformations au concept physique de déformat
     \end{pspicture} 
     }
 
-    \begin{displaymath}
+    \[
         \left\{
-        \begin{array}{ll}
+        \begin{aligned}
             \vec{M_t M_t'} &= \vec{\ud x} \\
             \vec{M_t M_t''} &= \vec{\delta x}
-        \end{array}
+        \end{aligned}
         \right.
-    \end{displaymath}
+    \]
     Par définition de $\varepsilon \left( \vec{n} \right)$ et d'après \eqref{eq:Ch03-011}, on a
     \begin{displaymath}
         \varepsilon \left( \vec{n} \right) = \frac{M_t M_t' - MM'}{MM'} = \frac{|\vec{\ud x}| - \vec{\ud a}}{\ud a}

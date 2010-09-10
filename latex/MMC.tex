@@ -19,10 +19,25 @@
 \usepackage{psfrag}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{pstricks-add}%pst-text,pst-plot,pst-all}
-\usepackage[backref,colorlinks=true,dvips,linkcolor=black,bookmarks=true,pagebackref]{hyperref}
-\hypersetup{pdfauthor={F.~Sidoroff},
- pdftitle={M\'ecanique~des~milieux~continus},
- bookmarksnumbered=true}
+\usepackage[dvips,pagebackref]{hyperref}
+\hypersetup{
+    bookmarks=true,
+    unicode=true,
+    pdffitwindow=true,
+    pdfauthor={François~Sidoroff},
+    pdftitle={Mécanique~des~milieux~continus},
+    bookmarksnumbered=true,
+    backref=true,
+    pagebackref=true,
+    colorlinks=true,
+    hyperindex=true,
+    linktoc=section,
+    %linktocpage=true,
+    linkcolor=darkgray,
+    pageanchor=true,
+    citecolor=RougeECL,
+    breaklinks=true
+    }
 \usepackage{stmaryrd} % pour llbracket et rrbracket
 \usepackage{wrapfig}
 \usepackage{multicol}
@@ -47,6 +62,7 @@
 \renewcommand{\sectionmark}[1]%
    {\markright{\thesection.\ #1}}
 \renewcommand{\headrulewidth}{0.5pt}
+\addtolength{\headheight}{\baselineskip}
 \renewcommand{\headrule}{{\color{gray!50}%
   \hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
 \renewcommand{\footrulewidth}{0pt}
@@ -54,23 +70,6 @@
 \fancyhead[LE,RO]{\sffamily \thepage}
 \fancyhead[LO]{\sffamily \rightmark}
 \fancyhead[RE]{\sffamily \leftmark}
-
-%\usepackage{calc}
-%\fancyheadoffset[LE,RO]{\marginparsep+\marginparwidth}
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
-%\fancyhf{}
-%\fancyhead[LE,RO]{\bfseries\thepage}
-%\fancyhead[LO]{\bfseries\rightmark}
-%\fancyhead[RE]{\bfseries\leftmark}
-%\fancypagestyle{plain}{%
-   %\fancyhead{} % get rid of headers
-   %\renewcommand{\headrulewidth}{0pt} % and the line
-%}
-
-%\renewcommand{\headrule}{{\color{gray!50}%
-  %\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
-
 
 %% Entêtes des chapitres
 \usepackage[sl,sf,outermarks]{titlesec}
@@ -103,7 +102,7 @@
 
 \titleformat{\subsection}
 {\sffamily}
-{\textcolor{RougeECL}{\thesubsection}}{1em}{\textcolor{gray!98}}
+{\textcolor{RougeECL}{\thesubsection}}{1em}{\textcolor{darkgray}}
 \titlespacing{\subsection}
   {0pc}{3.5ex plus .1ex minus .2ex}{1.5ex minus .1ex}
 
@@ -173,6 +172,7 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
+%% Environnements de type théorèmes
 % default settings
 %\theoremstyle{plain}
 %\theoremheaderfont{\normalfont\bfseries}
@@ -225,8 +225,7 @@
     \fcolorbox{gray!50}{gray!10}}%
 \newshadedtheorem{lem}{Lemme}[chapter]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% définition de l'apparence de la page de titre
+%% Page de titre
 \definecolor{Vert}{RGB}{22,200,22}
 \newcommand*{\titleCC}{%
 \begingroup
