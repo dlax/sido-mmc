@@ -32,16 +32,112 @@
 \usepackage{subfig}
 
 \usepackage{esvect}
+\renewcommand{\vec}{\vv}
 % packages intéressants
 \usepackage{cclicenses}
 \usepackage{array}
+
+\definecolor{RougeECL}{RGB}{190, 30, 45}
+
+%% Entêtes et pieds de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]%
+   {\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]%
+   {\markright{\thesection.\ #1}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{{\color{gray!50}%
+  \hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[LE,RO]{\sffamily \thepage}
+\fancyhead[LO]{\sffamily \rightmark}
+\fancyhead[RE]{\sffamily \leftmark}
+
+%\usepackage{calc}
+%\fancyheadoffset[LE,RO]{\marginparsep+\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{}
+%\fancyhead[LE,RO]{\bfseries\thepage}
+%\fancyhead[LO]{\bfseries\rightmark}
+%\fancyhead[RE]{\bfseries\leftmark}
+%\fancypagestyle{plain}{%
+   %\fancyhead{} % get rid of headers
+   %\renewcommand{\headrulewidth}{0pt} % and the line
+%}
+
+%\renewcommand{\headrule}{{\color{gray!50}%
+  %\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+
+
+%% Entêtes des chapitres
+\usepackage[sl,sf,outermarks]{titlesec}
+%\titlespacing{\chapter}{0pt}{0pt}{210pt}
+% Most of titles have some depth. The total space is
+% a bit larger than the picture box.
+%\titleformat{\chapter}[block]
+  %{\begin{picture}(330,200)}
+  %{\put(450,80){%
+     %\makebox(0,0)[rb]{%
+       %\chapterfont\textcolor[named]{SkyBlue}{\thechapter}}}
+   %\put(0,230){%
+     %\makebox(0,0)[lb]{%
+       %\Huge\sffamily\underline{Chapitre \thechapter}}}}
+  %{0pt}
+  %{\put(0,190){\parbox[t]{300pt}{%
+     %\Huge\sffamily\filright#1}}}
+  %[\end{picture}]
+
+%\titleformat{ command }[ shape ]{ format }{ label }{ sep }{ before }[ after ]
+
+\titleformat{\chapter}[block]
+{\huge\sffamily}{\textcolor{RougeECL}{\chaptertitlename\ \thechapter}}{20pt}{{\color{gray!50}\hrule height 2pt width .74\textwidth}\vskip5pt\hfill\normalfont\slshape\sffamily\Huge}
+
+\titleformat{\section}
+{\LARGE\sffamily\slshape}
+{\textcolor{RougeECL}{\thesection}}{1em}{}
+\titlespacing{\section}
+  {0pc}{3.5ex plus .1ex minus .2ex}{1.5ex minus .1ex}
+
+\titleformat{\subsection}
+{\sffamily}
+{\textcolor{RougeECL}{\thesubsection}}{1em}{\textcolor{gray!98}}
+\titlespacing{\subsection}
+  {0pc}{3.5ex plus .1ex minus .2ex}{1.5ex minus .1ex}
+
+%% Table des matières
+\usepackage{titletoc}
+\contentsmargin{0pc}
+\titlecontents{chapter}
+   [0pc]% retrait à gauche
+   {\addvspace{10pt}\fontsize{13}{14}\sffamily\bfseries}% matériel avant commun aux entrées numérotées ou pas
+   {\contentslabel[\llap{\thecontentslabel}]{0.5pc}}% avant lorsqu'il y a un numéro
+   {}% avant lorsqu'il n'y a pas de numéro
+{\titlerule*[1pc]{\tiny\textbullet}\textcolor{RougeECL}{\thecontentspage}}% points de suspension et numéro de page
+   [\addvspace{0pt}]% matériel après
+
+\titlecontents{section}[2.2pc]
+   {\addvspace{1pt}\fontsize{11}{13}\sffamily}
+   {\contentslabel[\llap{\thecontentslabel}]{0.5pc}}
+   {}
+   {\ \small\textcolor{RougeECL}{\thecontentspage}}
+
+\titlecontents{subsection}[4.2pc]
+   {\addvspace{-1pt}\small\sffamily}
+   {\contentslabel[\llap{\thecontentslabel}]{0.5pc}}
+   {}
+   {\ \scriptsize\textcolor{RougeECL}{\thecontentspage}}
+   [\addvspace{1pt}]
+
+%\usepackage{sfheaders} % Sans headers.
 
 %\usepackage{environ}
 %\usepackage{esdiff}
 %\usepackage{genmpage} % Generalization of LaTeX's minipages.
 %\usepackage{nag} % Detecting and warning about obsolete LaTeX commands
 %\usepackage{ntheorem} % Enhanced theorem environment.
-\usepackage{sfheaders} % Sans headers.
 %\usepackage{sfmath} % Sans-serif mathematics.
 %\usepackage{shadethm} % Shade the background of any box.
 %\usepackage{theoremref} % References with automatic theorem names.
@@ -58,7 +154,7 @@
 \newcommand{\policetitre}{\fontsize{22}{30}\selectfont}
 \soulregister{\policetitre}{0} 
 
-\newcommand{\tmp}[1]{{\color{violet}{#1}}}
+\newcommand{\tmp}[1]{{\color{green}{#1}}}
 % alias math
 \newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \DeclareMathOperator*{\dive}{\mathrm{div}}
@@ -99,34 +195,20 @@
 \setlength\theorempostskipamount{0pt}
 \theoremheaderfont{\bfseries\sffamily}  
 
-\definecolor{RougeECL}{RGB}{190, 30, 45}
-\colorlet{RougeECL2}{RougeECL!20}
-\definecolor{GrisECL}{RGB}{153, 153, 153}
-\definecolor{Gris}{gray}{0.9}
-
 \def\theoremframecommand{%
-    %{\color{Goldenrod} \vrule width 5pt}{\color{Goldenrod!10} \vrule width 2pt}\colorbox{Goldenrod!10}}
-    {\color{RougeECL} \vrule width 5pt}{\color{Gris!30} \vrule width 2pt}\colorbox{Gris!30}}
+    {\color{RougeECL!50} \vrule width 3pt}{\color{gray!10} \vrule width 2pt}\colorbox{gray!10}}
 \newshadedtheorem{deff}{Définition}[chapter]
-%\def\theoremframecommand{%
-%    {\color{Dandelion} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
-%\newshadedtheorem{deff}{Définition}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newshadedtheorem{defn}{Définition}
 \theoremstyle{emptybreak}
 \theoremheaderfont{\bfseries\sffamily}
 \def\theoremframecommand{%
-    {\color{RougeECL} \vrule width 5pt}{\color{Gris!50} \vrule width 2pt}\colorbox{Gris!50}}
+    {\color{RougeECL!50} \vrule width 3pt}{\color{gray!10} \vrule width 2pt}\colorbox{gray!10}}
 \newshadedtheorem{Principe}{Principe}
 \newshadedtheorem{Axiome}{Axiome}
+\newshadedtheorem{Postulat}{Postulat}
 \def\theoremframecommand{%
-    {\color{RougeECL2} \vrule width 5pt \hspace{10pt}}}
-\newshadedtheorem{defn}{Définition}
-\newshadedtheorem{Hypothese}{Hypothese}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\def\theoremframecommand{%
-%    {\color{BurntOrange} \vrule width 5pt}{\color{Gris} \vrule width 2pt}\colorbox{Gris}}
-%\newshadedtheorem{thmn}{Théorème}
+    {\color{gray!50} \vrule width 3pt}{\color{gray!10} \vrule width 2pt}\colorbox{gray!10}}
+\newshadedtheorem{Hypothese}{Hypothèse}
 
 \theoremstyle{break}
 \def\theoremframecommand{%
@@ -141,16 +223,7 @@
     \setlength{\fboxrule}{1pt}%
     \setlength{\fboxsep}{5pt}%
     \fcolorbox{gray!50}{gray!10}}%
-\newshadedtheorem{Postulat}{Postulat}
 \newshadedtheorem{lem}{Lemme}[chapter]
-
-%\theoremstyle{break}
-%\theoremseparator{:}
-%\theoremheaderfont{\itshape}
-%\theoremsymbol{\(\square\)}
-%\renewtheorem*{proof}{Démonstration}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % définition de l'apparence de la page de titre
