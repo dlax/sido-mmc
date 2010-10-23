@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
 <manage_target braces="true" utf8="true">biblio-sidoroff.bib</manage_target>
-<library_folder monitor="true"></library_folder>
+<library_folder monitor="false"></library_folder>
 <taglist>
 </taglist>
 <doclist>
@@ -388,7 +388,7 @@
     <bib_type>book</bib_type>
     <bib_doi></bib_doi>
     <bib_title>Solid mechanics, a variational approach</bib_title>
-    <bib_authors>Dym C. I. and Shames, I. H.</bib_authors>
+    <bib_authors>Dym, C. I. and Shames, I. H.</bib_authors>
     <bib_journal></bib_journal>
     <bib_volume></bib_volume>
     <bib_number></bib_number>
