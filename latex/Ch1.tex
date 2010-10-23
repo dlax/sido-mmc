@@ -219,7 +219,7 @@ Par utilisation de ces deux lemmes, on obtient la forme locale ou différentiell
 
 \begin{proof}[Deuxième démonstration]
     On écrit la loi de conservation~\eqref{eq:Ch01-004} en choisissant comme domaine $D$ un petit parallélépipède de côtés $h_1$, $h_2$, $h_3$.
-    En utilisant le \tmp{lemme X}, on obtient en première approximation:
+    En utilisant le Lemme~\ref{lem:Ch01-1}, on obtient en première approximation:
     \begin{align*}
         \frac{\ud}{\ud t}\iiint_D \mathcal{A} \ud v &= \iiint_D\left(\frac{\ud \mathcal{A}}{\ud t}+\mathcal{A}\dive \vec{V}\right)\ud v  \simeq \left(\frac{\ud \mathcal{A}}{\ud t}+\mathcal{A}\dive \vec{V}\right) h_1h_2h_3
     \end{align*}
@@ -573,7 +573,7 @@ En décomposant le tenseur gradient des vitesses $\mathop{V}^{\ast}_{i,j}$ en pa
 avec $\sigma_{ij}$ symétrique et $\chi_{ij}$ antisymétrique.
 D'autre part, on a vu (démonstration du Lemme~\ref{lem:Ch01-3}) que dans un mouvement rigidifiant on avait
 \begin{equation}
-    \mathop{V}^{\ast}_i = a_i \text{qcq}, \quad \tmp{\varepsilon_i k_j b_k \text{qcq}, \quad \mathop{I}^{\ast}_ij = 0}
+    \mathop{V}^{\ast}_i = a_i \text{qcq}, \quad \varepsilon_{ikj} b_k \text{qcq}, \quad \mathop{I}^{\ast}_{ij} = 0
     \label{eq:Ch01-036}
 \end{equation}
 L'axiome du paragraphe~\ref{ssec:Ch01-2.2} montre alors que $A_i$ et $\chi_{ij}$ doivent être nuls.
@@ -714,7 +714,7 @@ Ainsi, compte-tenu de \eqref{eq:Ch01-046}, le second principe de la thermodynami
     \frac{\ud}{\ud t} \iiint_D \rho \eta \ud v \geq \iiint_{D} \frac{r}{\theta} \ud v - \iint_{\partial D} \frac{q_i n_i}{\theta} \ud S
     \label{eq:Ch01-055}
 \end{equation}
-En utilisant le \tmp{Lemme~\ref{lem:Ch01-2p}} et le théorème de la divergence, on obtient la forme locale du second principe
+En utilisant le Lemme~\ref{lem:Ch01-2} et le théorème de la divergence, on obtient la forme locale du second principe
 \begin{align}
         \rho \frac{\ud \eta}{\ud t}  &\geq \frac{r}{\theta} - \left( \frac{q_i}{\theta} \right)_{,i} \nonumber\\
         \rho \theta \frac{\ud \eta}{\ud t}  &\geq r - q_{i,i} + \frac{1}{\theta} q_i\theta_{,i}

@@ -179,8 +179,7 @@ On déduit également de cette démonstration ce qui suit:
         \label{eq:Ch09-021}
     \end{equation}
     et les deux solutions ne diffèrent que d'un mouvement de solide.
-    Si $S_u$ existe (plus précisément, si $S_u$ est de mesure nulle \tmp{n'est-ce pas un peu paradoxal ?}), les conditions aux limites en déplacement permettent de montrer que $\vec{\omega} = \vec{\alpha} = 0$ 
-et donc $u_i^1 = u_i^2$ d'où l'unicité. 
+    Si $S_u$ existe (plus précisément, si $S_u$ est de mesure non nulle), les conditions aux limites en déplacement permettent de montrer que $\vec{\omega} = \vec{\alpha} = 0$ et donc $u_i^1 = u_i^2$ d'où l'unicité. 
     Par contre, si $S_u$ est vide (problème de type II), on ne peut plus éliminer ce mouvement de solide qui reste indéterminé.
 
     \textit{Existence.}
@@ -309,13 +308,14 @@ Nous avons formulé au paragraphe~\ref{ssec:Ch07-2.3} le problème régulier le 
     \begin{center}
         \includegraphics{../images/T1_Ch09-01}
     \end{center}
+    \columnbreak
     \[
         \Omega = [0,l]\times \Sigma
     \]
-\end{multicols}\tmp{c'est un peu bizarre ce $f_i$ isolé}
-\[
-f_i = 0
-\]
+    \[
+    f_i = 0
+    \]
+\end{multicols}
 \begin{equation}
     \begin{aligned}
         S_l:\ [0,l] \times \partial \Sigma & \sigma_{ij} n_j = 0 \\
@@ -360,7 +360,7 @@ et à partir de \eqref{eq:Ch09-035}, on obtient:
     &= \frac{l}{2G} \iint_{\Sigma} \left\{ \left( \frac{\partial \hat{\Phi}}{\partial x_3} \right)^2 + \left( \frac{\partial \hat{\Phi}}{\partial x_2} \right)^2 \right\} \ud x_2 \ud x_3
     \label{eq:Ch09-037}
 \end{align}
-Pour calculer $T_u^d$ et $T_f^d$ il faut expliciter la décomposition~\eqref{eq:Ch06-008} pour le problème \eqref{eq:Ch09-033}\tmp{bizarre...}: 
+Pour calculer $T_u^d$ et $T_f^d$ il faut expliciter la décomposition~\eqref{eq:Ch06-008} pour le problème \eqref{eq:Ch09-033}: 
 \begin{equation*}
     \begin{aligned}
         \iint_{\partial \Sigma} \sigma_{ij} n_j u_i \ud S &= \iint_{S_l} T_i^d u_i \ud S + \iint_{\Sigma_1} \left[ \sigma_{11}^d u_1 \right. &+ \left. \sigma_{12} u_2^d + \sigma_{13} u_3^d \right] \ud x_2 \ud x_3 \\
@@ -826,7 +826,7 @@ L'intégration de l'énergie de déformation sur le triangle abc donne:
 \end{equation}
 où $\underline{u}$ désigne le vecteur colonne des déplacements  aux nœuds, donc un sous-vecteur de $\underline{U}$, et où $\underline{\underline{a}}_{abc}$ est une matrice symétrique $6\times6$ qui résulte de l'intégration sur le triangle et il dépend donc uniquement de la géométrie.
 
-Si l'on dérive la forme qui \tmp{ itit } $W_{abc}$ par rapport aux déplacements des nœuds, on obtient un vecteur colonne
+Si l'on dérive la forme quadratique $W_{abc}$ par rapport aux déplacements des nœuds, on obtient un vecteur colonne
 \begin{multicols}{2}
     \begin{center}
         \includegraphics{../images/T1_Ch09-08}

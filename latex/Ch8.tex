@@ -182,17 +182,20 @@ et les équations de Beltrami entraînent:
 équations qui ne pourront être vérifiées que si $\Delta\chi$ est fonction linéaire des coordonnées, ce qui est bien trop restrictif pour permettre de résoudre des problèmes réels.
 Nous oublions donc provisoirement les équations de Beltrami, et nous allons chercher à calculer les déplacements à partir de \eqref{eq:Ch08-017}: 
 \begin{equation*}
-  E\varepsilon_{11}=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
+  E\varepsilon_{11}=\chi_{,22}-\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
 \end{equation*}
 et finalement on obtient: 
 \begin{equation}
-  \begin{aligned}
-    \varepsilon_{11}   &  = u_{1,1} = (1+\nu) \Delta\chi_{,22}+\Delta\chi_{,11} = 0\\
-    \varepsilon_{22}   &  = u_{2,2} =   (1+\nu) \Delta\chi_{,11}+\Delta\chi_{,22} = 0\\
-    2\varepsilon_{12}  &  = u_{1,1} =  -(1+\nu) \Delta\chi_{,12}+\Delta\chi_{,12} = 0\\
-E\varepsilon_{11}&=\chi_{,22}+\nu\chi_{,11}=(1+\nu)\chi_{,22}-\nu\Delta\chi
-  \end{aligned}
-\label{eq:Ch08-020}
+    \begin{aligned}
+        \varepsilon_{11}   &  = u_{1,1} = \frac{1+\nu}{E} \left[\chi_{,22}-\frac{\nu}{1+\nu}\Delta\chi\right]\\
+        \varepsilon_{22}   &  = u_{2,2} =   \frac{1+\nu}{E} \left[\chi_{,11}-\frac{\nu}{1+\nu}\Delta\chi\right]\\
+        2\varepsilon_{12}  &  = u_{1,2} + u_{2,1} =  -\frac{2(1+\nu)}{E} \chi_{,12}
+    \end{aligned}
+    \label{eq:Ch08-020}
+\end{equation}
+\begin{equation}
+    \varepsilon_{33} = u_{3,3} = -\frac{\nu}{E}\Delta \chi \quad,\quad \varepsilon_{13} = \varepsilon_{23} = 0
+    \label{eq:Ch08-021}
 \end{equation}
 Le système \eqref{eq:Ch08-020} est formellement identique au système \eqref{eq:Ch08-020} en remplaçant $\nu$ par $\nu/(1+\nu)$.
 Il permettra donc de calculer $u_1(x_1,x_2)$ et $u_2(x_1,x_2)$ si et seulement si la fonction $\chi$ est biharmonique.
@@ -435,9 +438,10 @@ avec:
 Les trois conditions \eqref{eq:Ch08-041} permettent alors de déterminer les constantes $C$, $d$ et $\gamma$ en fonction de $P$, $Q$ et $M$ , c'est-à-dire des efforts appliqués: 
 \begin{equation}
   \gamma = \frac{P}{h}, \quad C = \frac{6Q}{h^3}, \quad \frac{12(M-Ql)}{h^3}
-    \label{eq:Ch08-044}
+    \label{eq:Ch08-046}
 \end{equation}
-La répartition des contraintes normales est linéaire, comme dans le cas général (paragraphe \ref{ssec:Ch06-1.2}) et la répartition des contraintes tangentielles $\sigma_{12}$ est parabolique. C'est ce que l'on obtiendrait à partir de l'analyse du paragraphe \ref{sec:Ch06-3} pour une section rectangulaire très large (déformations planes) ou très étroite (contraintes planes). 
+La répartition des contraintes normales est linéaire, comme dans le cas général (paragraphe \ref{ssec:Ch06-1.2}) et la répartition des contraintes tangentielles $\sigma_{12}$ est parabolique.
+C'est ce que l'on obtiendrait à partir de l'analyse du paragraphe \ref{sec:Ch06-3} pour une section rectangulaire très large (déformations planes) ou très étroite (contraintes planes). 
 
 \subsection{Traction plane d'une plaque perforée}\label{ssec:Ch08-2.2}
 Pour certaines géométries simples, l'utilisation de la variable complexe permet de construire explicitement la solution d'une vaste classe de problèmes. 
