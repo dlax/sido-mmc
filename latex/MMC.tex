@@ -14,7 +14,6 @@
 \usepackage{paralist}
 \usepackage[top=3cm,left=3cm,right=3cm,bottom=2.5cm,a4paper]{geometry}
 
-%\usepackage[adobe-utopia,uppercase=upright,greeklowercase=upright]{mathdesign}
 \usepackage[dvips]{graphicx}
 \usepackage{psfrag}
 \usepackage[dvipsnames]{xcolor}
@@ -73,23 +72,6 @@
 
 %% Entêtes des chapitres
 \usepackage[sl,sf,outermarks]{titlesec}
-%\titlespacing{\chapter}{0pt}{0pt}{210pt}
-% Most of titles have some depth. The total space is
-% a bit larger than the picture box.
-%\titleformat{\chapter}[block]
-  %{\begin{picture}(330,200)}
-  %{\put(450,80){%
-     %\makebox(0,0)[rb]{%
-       %\chapterfont\textcolor[named]{SkyBlue}{\thechapter}}}
-   %\put(0,230){%
-     %\makebox(0,0)[lb]{%
-       %\Huge\sffamily\underline{Chapitre \thechapter}}}}
-  %{0pt}
-  %{\put(0,190){\parbox[t]{300pt}{%
-     %\Huge\sffamily\filright#1}}}
-  %[\end{picture}]
-
-%\titleformat{ command }[ shape ]{ format }{ label }{ sep }{ before }[ after ]
 
 \titleformat{\chapter}[block]
 {\huge\sffamily}{\textcolor{RougeECL}{\chaptertitlename\ \thechapter}}{20pt}{{\color{gray!50}\hrule height 2pt width .74\textwidth}\vskip5pt\hfill\normalfont\slshape\sffamily\Huge}
@@ -142,30 +124,13 @@
    {\ \scriptsize\textcolor{RougeECL}{\thecontentspage}}
    [\addvspace{1pt}]
 
-%\usepackage{sfheaders} % Sans headers.
-
-%\usepackage{environ}
-%\usepackage{esdiff}
-%\usepackage{genmpage} % Generalization of LaTeX's minipages.
-%\usepackage{nag} % Detecting and warning about obsolete LaTeX commands
-%\usepackage{ntheorem} % Enhanced theorem environment.
-%\usepackage{sfmath} % Sans-serif mathematics.
-%\usepackage{shadethm} % Shade the background of any box.
-%\usepackage{theoremref} % References with automatic theorem names.
-%\usepackage{thmtools} % Extensions to theorem environments.
-%\usepackage{tocloft} % Control table of contents, figures, etc.
-%\usepackage{vertbars} % Mark vertical rules in margin of text.
-%\usepackage{wallpaper} % Easy addition of wallpapers (background images) to LaTeX documents, including tiling.
-%\usepackage{koma-script} % A bundle of versatile classes and packages
-%\usepackage{ntgclass} % "European" versions of standard classes.
-%\usepackage{thmbox} % Decorate theorem statements.
 \usepackage{soulutf8}
 \sodef\an{}{.5em}{2.5em plus1em}{2.5em plus.1em minus.1em}
 \sodef\bn{}{.1em}{0.5em plus0.5em}{1em plus.1em minus.1em}
 \newcommand{\policetitre}{\fontsize{22}{30}\selectfont}
 \soulregister{\policetitre}{0} 
 
-\newcommand{\tmp}[1]{{\color{green}{#1}}}
+%\newcommand{\tmp}[1]{{\color{green}{#1}}}
 % alias math
 \newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \DeclareMathOperator*{\dive}{\mathrm{div}}
@@ -185,14 +150,6 @@
 \renewcommand{\geq}{\geqslant}
 
 %% Environnements de type théorèmes
-% default settings
-%\theoremstyle{plain}
-%\theoremheaderfont{\normalfont\bfseries}
-%\theorembodyfont{\itshape}
-%\theoremseparator{}
-%\theoremindent0cm
-%\theoremnumbering{arabic}
-%\theoremsymbol{}
 
 % environnement noir
 \makeatletter
