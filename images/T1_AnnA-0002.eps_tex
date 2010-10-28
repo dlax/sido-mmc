@@ -43,7 +43,7 @@
   \global\let\svgwidth\undefined
   \makeatother
   \begin{picture}(1,1.30361863)%
-    \put(0,0){\includegraphics[width=\unitlength]{../images/T1_AnnA-0002.eps}}%
+    \put(0,0){\includegraphics[width=\unitlength]{T1_AnnA-0002.eps}}%
     \put(0.37185617,0.28812704){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$r$}}}%
     \put(0.17730889,0.82251645){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$z$}}}%
     \put(0.48900935,0.9175713){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\vec{e}_z$}}}%
